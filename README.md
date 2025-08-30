@@ -45,13 +45,3 @@ If you are a non-Windows user, enter the console, select the corresponding model
 
 I can only test and maintain devices I physically own.  
 If you have other clone devices and want to help improve compatibility, feel free to submit a **PR**!
-"""
-
-# Define the file path
-file_path = '/mnt/data/ArkOS_4.4_Kernel_Support_for_Clone_Devices_README.txt'
-
-# Write the content to a file
-with open(file_path, 'w') as f:
-    f.write(readme_content)
-
-file_path  # Return the file path for downloading
