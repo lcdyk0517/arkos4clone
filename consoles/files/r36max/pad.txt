@@ -1,0 +1,1 @@
+1900bb3e4b4800000011000000010000,GO-Super Gamepad,a:b1,b:b0,x:b2,y:b3,back:b15,start:b16,leftshoulder:b4,rightshoulder:b5,lefttrigger:b6,righttrigger:b7,leftstick:b9,rightstick:b10,dpup:b11,dpdown:b12,dpleft:b13,dpright:b14,leftx:a0,lefty:a1,rightx:a2,righty:a3,platform:Linux,
