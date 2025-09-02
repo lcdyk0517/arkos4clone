@@ -23,12 +23,34 @@ ALIASES = {
 }
 
 # 2) 排除规则（glob 通配，多条规则其一匹配即排除）
-#   例如：
-#     "_template"   -> 排除名为 _template 的目录
-#     ".*"          -> 排除所有以点开头的隐藏目录
-#     "README*"     -> 排除 README 开头的目录
 EXCLUDE_PATTERNS = {
-    "files",
+    "files", "kenrel", "logo",
+}
+
+# 3) 额外复制映射：
+#    键：你“选中”的 consoles 子目录名（real name）
+#    值：一个列表，里面是“还需要一起复制”的其它目录路径：
+#       - 如果是相对路径：相对于 consoles/ 目录（例如 "common"、"shared/skins"）
+#       - 如果是绝对路径：按绝对路径处理（例如 "D:/assets/overrides" 或 "/opt/assets"）
+#    复制规则与主复制一致：会把来源目录下“所有内容”覆盖复制到目标（脚本目录）。
+EXTRA_COPY_MAP = {
+    # 示例：选中 r36max 时，同时把 consoles/common 与 consoles/shared/ui 也复制过去
+    "mymini": ["logo/480P/", "kenrel/common/"],
+    "r36max": ["logo/720P/", "kenrel/common/"],
+    "r36pro": ["logo/480P/", "kenrel/common/"],
+    "xf35h": ["logo/480P/", "kenrel/common/"],
+    "xf40h": ["logo/720P/", "kenrel/common/"],
+    "origin r36s panel 0": ["logo/480P/", "kenrel/common/"],
+    "origin r36s panel 1": ["logo/480P/", "kenrel/common/"],
+    "origin r36s panel 2": ["logo/480P/", "kenrel/common/"],
+    "origin r36s panel 3": ["logo/480P/", "kenrel/common/"],
+    "origin r36s panel 4": ["logo/480P/", "kenrel/common/"],
+    "origin r36s panel 5": ["logo/480P/", "kenrel/panel5/"],
+
+    # 示例：选中 mymini 时，从绝对路径再拼一份内容（按需修改/删除）
+    # "mymini": ["/absolute/path/to/extra_stuff"],
+
+    # 按需添加更多键值
 }
 
 # ===================== 工具函数 =====================
@@ -84,13 +106,6 @@ def show_menu(items):
         print(f"{i}. {display}")
     print("0. Exit (or press q)")
 
-def copy_file(src, dst):
-    """
-    覆盖复制单个文件
-    """
-    shutil.copy2(src, dst)
-    print(f"✅ Copied {src} → {dst}")
-
 def copy_all_contents(src_dir, dst_dir):
     """
     复制 src_dir 下所有内容至 dst_dir（保留层级，覆盖同名文件）
@@ -115,9 +130,95 @@ def copy_all_contents(src_dir, dst_dir):
 
     return files_copied, dirs_touched
 
+def remove_files_by_ext(base_dir, extensions):
+    """
+    删除 base_dir 目录（仅该层，不递归）中指定扩展名的所有文件。
+    extensions: 形如 {'.dtb', '.ini'}
+    返回删除计数
+    """
+    removed = 0
+    for name in os.listdir(base_dir):
+        full = os.path.join(base_dir, name)
+        if os.path.isfile(full):
+            _, ext = os.path.splitext(name)
+            if ext.lower() in extensions:
+                try:
+                    os.remove(full)
+                    removed += 1
+                    print(f"🧹 Removed file: {full}")
+                except Exception as e:
+                    print(f"⚠️ Failed to remove {full}: {e}")
+    return removed
+
+def remove_dir_if_exists(path):
+    """
+    删除目录（若存在），返回是否删除成功
+    """
+    if os.path.isdir(path):
+        try:
+            shutil.rmtree(path)
+            print(f"🧹 Removed folder: {path}")
+            return True
+        except Exception as e:
+            print(f"⚠️ Failed to remove folder {path}: {e}")
+    return False
+
+def clean_destination(dst_dir):
+    """
+    清理目标目录：删除 .dtb / .ini 文件（仅顶层），并删除 BMPs 文件夹。
+    """
+    print("\n🧽 Cleaning destination directory...")
+    removed_files = remove_files_by_ext(dst_dir, {".dtb", ".ini", ".orig", ".tony"})
+    bmps_removed = remove_dir_if_exists(os.path.join(dst_dir, "BMPs"))
+    print(f"✨ Cleaned. Removed files: {removed_files}, removed BMPs: {bmps_removed}")
+
+def resolve_extra_source(consoles_dir, path_str):
+    """
+    解析 EXTRA_COPY_MAP 里的路径：
+      - 绝对路径：原样返回
+      - 相对路径：认为是相对 consoles_dir
+    """
+    if os.path.isabs(path_str):
+        return path_str
+    return os.path.join(consoles_dir, path_str)
+
+def copy_with_extras(selected_real_name, consoles_dir, dst_dir):
+    """
+    先复制选中目录，再根据 EXTRA_COPY_MAP 复制额外来源。
+    """
+    total_files = 0
+    total_dirs = 0
+
+    # 1) 复制选中目录
+    selected_src = os.path.join(consoles_dir, selected_real_name)
+    print("📂 Copying selected folder (overwrite existing files)...")
+    f1, d1 = copy_all_contents(selected_src, dst_dir)
+    total_files += f1
+    total_dirs += d1
+    print(f"✅ Selected copied: files={f1}, dirs={d1}")
+
+    # 2) 复制额外来源（如果配置了）
+    extras = EXTRA_COPY_MAP.get(selected_real_name, [])
+    if extras:
+        print("\n➕ Copying extra mapped sources:")
+        for p in extras:
+            src_path = resolve_extra_source(consoles_dir, p)
+            if not os.path.isdir(src_path):
+                print(f"⚠️ Extra source not found or not a directory, skipped: {src_path}")
+                continue
+            f, d = copy_all_contents(src_path, dst_dir)
+            total_files += f
+            total_dirs += d
+            print(f"   • {src_path}  → files={f}, dirs={d}")
+    else:
+        print("\n(no extra sources mapped for this selection)")
+
+    return total_files, total_dirs
+
 def choose_folder_and_copy(items, consoles_dir):
     """
-    交互选择，并复制选中目录的全部内容到“脚本所在目录”
+    交互选择，并复制选中目录（含额外映射）到“脚本所在目录”；
+    在复制前会清理目标目录中的 .dtb / .ini 文件，以及 BMPs 文件夹。
     """
     if not items:
         print("(No subfolders to choose from.)")
@@ -142,9 +243,11 @@ def choose_folder_and_copy(items, consoles_dir):
             print(f"Source: {src_dir}")
             print(f"Destination (script/exe directory): {dst_dir}")
 
-            print("📂 Copying selected folder (files will be overwritten)...")
-            files_copied, dirs_touched = copy_all_contents(src_dir, dst_dir)
-            print(f"\n✨ Done! Files copied: {files_copied}, directories created/merged: {dirs_touched}.")
+            # 先清理，再复制
+            clean_destination(dst_dir)
+
+            total_files, total_dirs = copy_with_extras(real, consoles_dir, dst_dir)
+            print(f"\n✨ Done! Total files copied: {total_files}, directories created/merged: {total_dirs}.")
             return
         else:
             print("⚠️ Number out of range, try again.")
