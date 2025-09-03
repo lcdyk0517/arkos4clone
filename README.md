@@ -5,8 +5,8 @@ Currently, I can only maintain the devices I personally own, but contributions a
 
 ## Supported Devices
 
-- **XF40H** [RK915 is currently unavailable, but it will be fixed in the future]
-- **XF35H**[RK915 is currently unavailable, but it will be fixed in the future]
+- **XF40H** 
+- **XF35H**
 - **MyMini**
 - **R36Pro**
 - **R36Max**

@@ -16,7 +16,7 @@ case "$DTB" in
   rk3326-xf40v-linux.dtb)    LABEL="xf40v" ;;
   *)                         LABEL="r36s"   ;;  # 默认
 esac
-
+rk915_set=("xf40h" "xf40v" "xf35h")   # 按需增删
 # =============== 路径配置（可按需调整）===============
 SRC_CONSOLES_DIR="/boot/consoles/files"               # 源机型库
 QUIRKS_DIR="/home/ark/.quirks"                  # 目标机型库
@@ -150,6 +150,17 @@ else
     echo "$LABEL" > "$CONSOLE_FILE"
     apply_quirks_for "$LABEL"
   fi
+fi
+# 安装915wifi驱动
+if [[ -f "$CONSOLE_FILE" ]]; then
+  cur_console="$(tr -d '\r\n' < "$CONSOLE_FILE")"
+  for x in "${rk915_set[@]}"; do
+    if [[ "$cur_console" == "$x" ]]; then
+      msg "insmod rk915.ko: $cur_console"
+      sudo insmod -f /usr/lib/modules/4.4.189/kernel/drivers/net/wireless/rk915.ko
+      break
+    fi
+  done
 fi
 
 msg "Done."
