@@ -29,20 +29,20 @@ ExfatPctToRemain=$(echo print 100*$newExtSizePct | perl)
 #echo "$ExfatPctToRemain" > /home/ark/growpercentage.log
 
 # # Expand the ext4 partition if possible to make room for future update needs
-# if [ $ExfatPctToRemain -lt "100" ]; then
-#   printf "d\n3\nw\n" | sudo fdisk /dev/mmcblk0
-#   sudo growpart --free-percent=$ExfatPctToRemain -v /dev/mmcblk0 2
-#   sudo resize2fs /dev/mmcblk0p2
-#   ext4endSector=$(sudo sfdisk -l /dev/mmcblk0 | grep mmcblk0p2 | awk '{print $3}')
-#   exfatstartSector=$(echo print 1+$ext4endSector | perl)
-#   printf "n\np\n3\n$exfatstartSector\n\nt\n3\n11\nw\n" | sudo fdisk /dev/mmcblk0
-# fi
+if [ $ExfatPctToRemain -lt "100" ]; then
+  printf "d\n3\nw\n" | sudo fdisk /dev/mmcblk0
+  sudo growpart --free-percent=$ExfatPctToRemain -v /dev/mmcblk0 2
+  sudo resize2fs /dev/mmcblk0p2
+  ext4endSector=$(sudo sfdisk -l /dev/mmcblk0 | grep mmcblk0p2 | awk '{print $3}')
+  exfatstartSector=$(echo print 1+$ext4endSector | perl)
+  printf "n\np\n3\n$exfatstartSector\n\nt\n3\n11\nw\n" | sudo fdisk /dev/mmcblk0
+fi
 
 # Keep root (p2) as is (~6.5G), just recreate p3 using the remaining space
-printf "d\n3\nw\n" | sudo fdisk /dev/mmcblk0
-ext4endSector=$(sudo sfdisk -l /dev/mmcblk0 | awk '/mmcblk0p2/ {print $3}')
-exfatstartSector=$((ext4endSector + 1))
-printf "n\np\n3\n$exfatstartSector\n\nt\n3\n11\nw\n" | sudo fdisk /dev/mmcblk0
+# printf "d\n3\nw\n" | sudo fdisk /dev/mmcblk0
+# ext4endSector=$(sudo sfdisk -l /dev/mmcblk0 | awk '/mmcblk0p2/ {print $3}')
+# exfatstartSector=$((ext4endSector + 1))
+# printf "n\np\n3\n$exfatstartSector\n\nt\n3\n11\nw\n" | sudo fdisk /dev/mmcblk0
 
 sudo mkfs.exfat -s 16K -n EASYROMS /dev/mmcblk0p3
 sync
