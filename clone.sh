@@ -14,6 +14,7 @@ case "$DTB" in
   rk3326-xf36pro-linux.dtb)  LABEL="r36pro" ;;
   rk3326-xf40h-linux.dtb)    LABEL="xf40h" ;;
   rk3326-xf40v-linux.dtb)    LABEL="xf40v" ;;
+  rk3326-hg36-linux.dtb)     LABEL="r36pro" ;;
   *)                         LABEL="r36s"   ;;  # 默认
 esac
 rk915_set=("xf40h" "xf40v" "xf35h")   # 按需增删
