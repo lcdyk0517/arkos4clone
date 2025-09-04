@@ -8,9 +8,9 @@ Currently, I can only maintain the devices I personally own, but contributions a
 - **XF40H** 
 - **XF35H**
 - **MyMini**
-- **R36Pro**
+- **R36Pro** / **K36 PANEL1**
 - **R36Max**
-- **Arkos (K36) Panel1 / Panel5** [future]
+- **HG36**
 - ...
 
 ## What We Did
