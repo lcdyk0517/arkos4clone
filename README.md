@@ -13,6 +13,12 @@ Currently, I can only maintain the devices I personally own, but contributions a
 - **HG36**
 - ...
 
+## 设备捐赠
+
+​	目前只接受厂家捐赠设备，不接受玩家的捐赠，也暂时不接受其他非设备捐赠
+
+​	移植单纯是爱好，捐赠设备联系QQ：2670878301，注明来意
+
 ## What We Did
 
 To make ArkOS work on clone devices, the following changes and adaptations were made:

@@ -115,14 +115,6 @@ else
   warn "Consoles dir not found: $SRC_CONSOLES_DIR (continue)"
 fi
 
-# 检测 /boot/adjust-keys.sh 是否存在
-if [ -f "/boot/adjust-keys.sh" ]; then
-  mkdir -p /opt/system/clone
-  cp -f /boot/adjust-keys.sh /opt/system/clone/
-  rm -rf /boot/adjust-keys.sh
-  echo "[boot] Copied adjust-keys.sh -> /opt/system/clone/"
-fi
-
 # 检测 /boot/fix_audio.sh 是否存在
 if [ -f "/boot/fix_audio.sh" ]; then
   mkdir -p /opt/system/clone
