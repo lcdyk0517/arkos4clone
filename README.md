@@ -24,7 +24,7 @@ Currently, I can only maintain the devices I personally own, but contributions a
 To make ArkOS work on clone devices, the following changes and adaptations were made:
 
 1. **Controller driver modification**
-   - Related PR: [christianhaitian/linux#5](https://github.com/christianhaitian/linux/pull/5)
+   - Kernel Source:[lcdyk0517/arkos.bsp.4.4: Linux kernel source tree](https://github.com/lcdyk0517/arkos.bsp.4.4)
 2. **DTS reverse-porting for compatibility**
    - The DTS files were **reverse-ported from the 5.10 kernel to the 4.4 kernel** to ensure proper hardware support.
    - Reference: [AveyondFly/rocknix_dts](https://github.com/AveyondFly/rocknix_dts/tree/main/3326/arkos_4.4_dts)
