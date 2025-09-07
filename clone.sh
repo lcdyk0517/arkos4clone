@@ -118,10 +118,10 @@ fi
 # 检测 /boot/fix_audio.sh 是否存在
 if [ -f "/boot/fix_audio.sh" ]; then
   mkdir -p /opt/system/clone
-  cp -f /boot/fix_audio.sh /opt/system/clone/
-  ./fix_audio.sh
-  rm -rf /boot/fix_audio.sh
-  echo "[boot] Copied fix_audio.sh.sh -> /opt/system/clone/"
+  cp -f "/boot/fix_audio.sh" "/opt/system/clone/Toggle Audio.sh"
+  "/boot/fix_audio.sh"
+  rm -rf "/boot/fix_audio.sh"
+  echo "[boot] Copied fix_audio.sh -> /opt/system/clone/Toggle Audio.sh"
 fi
 
 # 按规则处理 /boot/.console
