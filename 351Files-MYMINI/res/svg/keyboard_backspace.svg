@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Svg Vector Icons : http://www.onlinewebfonts.com/icon -->
+
+<svg
+   version="1.1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 1000 1000"
+   enable-background="new 0 0 1000 1000"
+   xml:space="preserve"
+   id="svg336"
+   sodipodi:docname="keyboard_backspace.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs340" /><sodipodi:namedview
+   id="namedview338"
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1.0"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   showgrid="false"
+   inkscape:zoom="0.513"
+   inkscape:cx="500"
+   inkscape:cy="500"
+   inkscape:window-width="1366"
+   inkscape:window-height="721"
+   inkscape:window-x="-4"
+   inkscape:window-y="-4"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="g334" />
+<metadata
+   id="metadata328"> Svg Vector Icons : http://www.onlinewebfonts.com/icon </metadata>
+<g
+   id="g334"><path
+     d="m 636,500 70.4,-70.4 c 10.9,-10.9 8.7,-23.3 8.7,-23.3 0,-13.4 -8.4,-20.1 -8.4,-20.1 -9.2,-9.2 -20.6,-9.4 -20.6,-9.4 -14.8,0 -23.5,9.4 -23.5,9.4 l -70.4,70.3 -70.4,-70.3 c 0,0 -8.7,-9.4 -23.5,-9.4 0,0 -11.3,0.1 -20.6,9.4 0,0 -8.4,6.8 -8.4,20.1 0,0 -2.2,12.4 8.7,23.3 l 70.4,70.4 -69.6,69.5 c -9.7,7.9 -9.7,23.5 -9.7,23.5 0,12.1 9.5,21.9 9.5,21.9 8.5,8.5 20.4,7.7 20.4,7.7 15.6,0 22.8,-8.6 22.8,-8.6 l 70.3,-70.3 70.3,70.3 c 0,0 7.2,8.6 22.8,8.6 0,0 11.9,0.8 20.4,-7.7 0,0 9.5,-9.8 9.5,-21.9 0,0 0,-15.6 -9.7,-23.5 z"
+     id="path330"
+     style="fill:#ffffff" /><path
+     d="M 990,715.3 V 286.9 C 985.9,166.3 868.9,163.2 868.9,163.2 H 319.5 c -15.3,0 -24.2,8.7 -24.2,8.7 L 18.7,477.5 C 9.6,486.8 10,499 10,499 c 0,16.4 9.5,25.6 9.5,25.6 l 273.4,302.9 c 10.6,10.6 22.8,9.4 22.8,9.4 H 868.9 C 993.1,830.1 990,715.3 990,715.3 Z m -82.5,-11.2 c 0,0 -1.6,57.2 -56.9,57.2 H 337.4 l -235.3,-261.6 236.1,-260 1.3,-1.6 h 511.2 c 0,0 56.9,5.8 56.9,60.1 l -0.1,405.9 z"
+     id="path332"
+     style="fill:#ffffff" /></g>
+</svg>

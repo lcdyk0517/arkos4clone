@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="25.999573"
+   height="26.000034"
+   viewBox="0 0 25.999573 26.000034"
+   id="icon"
+   version="1.1"
+   sodipodi:docname="keyboard_shift_full.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1797"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="16.03125"
+     inkscape:cx="11.695906"
+     inkscape:cy="14.003899"
+     inkscape:window-width="1366"
+     inkscape:window-height="721"
+     inkscape:window-x="-4"
+     inkscape:window-y="-4"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="icon" />
+  <defs
+     id="defs1789">
+    <style
+       id="style1787">
+      .cls-1 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <title
+     id="title1791">mac--shift</title>
+  <path
+     d="M 17.999786,26.000035 H 7.9997865 a 2.0023,2.0023 0 0 1 -2,-2 v -10 H 0.99978648 a 1,1 0 0 1 -0.707,-1.707 L 12.292786,0.29303511 a 0.9994,0.9994 0 0 1 1.414,0 l 12,11.99999989 a 1,1 0 0 1 -0.707,1.707 h -5 v 10 a 2.0027,2.0027 0 0 1 -2,2 z m -14.5858995,-14 h 4.5859 v 12 h 9.9999995 v -12 h 4.5859 l -9.5859,-9.5858999 z"
+     id="path1793"
+     style="fill:#ffffff;fill-opacity:1"
+     inkscape:label="path1793" />
+  <path
+     style="fill:#ffffff;fill-opacity:1;stroke-width:3.30604"
+     d="M 12.592105,1.5849171 C 11.756288,2.2225932 11.083254,3.0552143 10.314161,3.7727961 7.8172757,6.2813157 5.2943441,8.768582 2.8137145,11.290365 c -0.5430429,0.564497 -0.1221069,1.608702 0.6581305,1.641873 1.1893712,0.03824 2.3836762,0.02146 3.5749386,0.03864 0.00836,3.680723 -0.016678,7.364832 0.012514,11.043444 0.026875,0.680821 0.745415,1.040975 1.3617554,0.93889 3.20123,-0.0084 6.40585,0.0167 9.604969,-0.01251 0.680821,-0.02688 1.040975,-0.745415 0.93889,-1.361756 0,-3.534113 0,-7.068226 0,-10.602339 1.233871,-0.02492 2.477861,0.05003 3.705383,-0.03754 0.764181,-0.09239 1.068276,-1.145062 0.523784,-1.669575 C 20.013812,8.1008098 16.854783,4.9060981 13.661267,1.7536512 13.361331,1.4893336 12.959745,1.4515585 12.592105,1.5849171 Z"
+     id="path4656" />
+</svg>
