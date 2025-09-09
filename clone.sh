@@ -18,6 +18,8 @@ case "$DTB" in
   *)                         LABEL="r36s"   ;;  # 默认
 esac
 rk915_set=("xf40h" "xf40v" "xf35h")   # 按需增删
+p480_set=("mymini" "xf35h" "r36pro")   # 按需增删
+p720_set=("r36max" "xf40h" "xf35h")   # 按需增删
 # =============== 路径配置（可按需调整）===============
 SRC_CONSOLES_DIR="/boot/consoles/files"               # 源机型库
 QUIRKS_DIR="/home/ark/.quirks"                  # 目标机型库
@@ -27,6 +29,7 @@ RETRO64_NAME="retroarch64.cfg"                  # 位于每个机型目录
 RETRO32_NAME="retroarch32.cfg"                  # 位于每个机型目录
 PAD_NAME="pad.txt"                              # 位于每个机型目录
 FIXPAD_PATH="$QUIRKS_DIR/fix_pad.sh"            # 你的 fix_pad.sh 所在处
+FIXPM_PATH="/opt/system/clone/fix-pm.sh"            # 你的 fix_pad.sh 所在处
 
 # =============== 小工具函数（英文输出 / 中文注释）===============
 msg()  { echo "[clone.sh] $*"; }
@@ -105,6 +108,40 @@ apply_quirks_for() {
     fi
   else
     warn "fix_pad.sh not found: $FIXPAD_PATH"
+  fi
+
+  # 6) fix_pm.sh
+  if [[ -f "$FIXPM_PATH" ]]; then
+    chmod 0777 "$FIXPM_PATH" || warn "chmod failed on $FIXPM_PATH"
+    if [[ -f "$padfile" ]]; then
+      "$FIXPM_PATH"
+    else
+      warn "fix-pm.sh run failed"
+    fi
+  else
+    warn "fix-pm.shnot found: $FIXPAD_PATH"
+  fi
+}
+
+copy_file() {
+  if [[ -f "$CONSOLE_FILE" ]]; then
+    # 读取当前机型
+    cur_console="$(tr -d '\r\n' < "$CONSOLE_FILE")"
+    for x in "${p480_set[@]}"; do
+      if [[ "$cur_console" == "$x" ]]; then
+        cp_if_exists "$QUIRKS_DIR/480p/351Files" "/opt/351Files" "yes"
+        break
+      fi
+    done
+    for x in "${p720_set[@]}"; do
+      if [[ "$cur_console" == "$x" ]]; then
+        cp_if_exists "$QUIRKS_DIR/720p/351Files" "/opt/351Files" "yes"
+        break
+      fi
+    done
+    if[[ cur_console == "r36s" ]]; then
+      cp_if_exists "/opt/351Files/351Files.r36s" "/opt/351Files/351Files" "yes"
+    fi
   fi
 }
 

@@ -77,6 +77,16 @@ apply_quirks_for() {
   else
     warn "fix_pad.sh not found: $FIXPAD_PATH"
   fi
+  if [[ -f "$FIXPM_PATH" ]]; then
+    chmod 0777 "$FIXPM_PATH" || warn "chmod failed on $FIXPM_PATH"
+    if [[ -f "$padfile" ]]; then
+      "$FIXPM_PATH"
+    else
+      warn "fix-pm.sh run failed"
+    fi
+  else
+    warn "fix-pm.shnot found: $FIXPAD_PATH"
+  fi
 }
 
 # =============== Main ===============
