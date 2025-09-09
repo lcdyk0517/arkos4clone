@@ -33,12 +33,23 @@ msg()  { echo "[clone.sh] $*"; }
 warn() { echo "[clone.sh][WARN] $*" >&2; }
 err()  { echo "[clone.sh][ERR ] $*" >&2; }
 
-# 如果源存在则复制；isfile=yes 时以文件目标安装（保持权限 0644）
+# 如果源存在则复制；isfile=yes 时以文件目标安装（保持权限 0755）
 cp_if_exists() {
   local src="$1" dst="$2" isfile="${3:-no}"
   if [[ -e "$src" ]]; then
     if [[ "$isfile" == "yes" ]]; then
-      install -m 0644 -D "$src" "$dst"
+      mkdir -p "$(dirname "$dst")"
+      # 保留属主/属组/时间戳等
+      if cp -a "$src" "$dst" 2>/dev/null; then
+        :
+      else
+        # 极端情况下的兜底：还用 install，但把所有权按源文件纠正回去
+        install -m 0755 -D "$src" "$dst"
+        chown --reference="$src" "$dst" 2>/dev/null || true
+        touch -r "$src" "$dst" 2>/dev/null || true
+      fi
+      # 统一权限为 0755（不影响属主/属组）
+      chmod 0755 "$dst" || true
     else
       mkdir -p "$dst"
       cp -a "$src" "$dst/"
@@ -101,19 +112,20 @@ apply_quirks_for() {
 msg "DTB filename: ${DTB:-<empty>}, LABEL: $LABEL"
 
 # 先同步 /boot/consoles -> ~/.quirks（有 rsync 用 rsync）
-if [[ -d "$SRC_CONSOLES_DIR" ]]; then
-  mkdir -p "$QUIRKS_DIR"
-  if command -v rsync >/dev/null 2>&1; then
-    rsync -a --delete "$SRC_CONSOLES_DIR"/ "$QUIRKS_DIR"/
-  else
-    cp -a "$SRC_CONSOLES_DIR"/. "$QUIRKS_DIR"/
-  fi
-  # 删除源目录（复制完成后）
-  rm -rf "$SRC_CONSOLES_DIR"
-  msg "Consoles synced to: $QUIRKS_DIR"
-else
-  warn "Consoles dir not found: $SRC_CONSOLES_DIR (continue)"
-fi
+# 暂时不需要这个，构建包时手动添加
+# if [[ -d "$SRC_CONSOLES_DIR" ]]; then
+#   mkdir -p "$QUIRKS_DIR"
+#   if command -v rsync >/dev/null 2>&1; then
+#     rsync -a --delete "$SRC_CONSOLES_DIR"/ "$QUIRKS_DIR"/
+#   else
+#     cp -a "$SRC_CONSOLES_DIR"/. "$QUIRKS_DIR"/
+#   fi
+#   # 删除源目录（复制完成后）
+#   rm -rf "$SRC_CONSOLES_DIR"
+#   msg "Consoles synced to: $QUIRKS_DIR"
+# else
+#   warn "Consoles dir not found: $SRC_CONSOLES_DIR (continue)"
+# fi
 
 # 检测 /boot/fix_audio.sh 是否存在
 if [ -f "/boot/fix_audio.sh" ]; then
@@ -139,9 +151,21 @@ else
   if [[ "$CUR_VAL" == "$LABEL" ]]; then
     msg "Console unchanged ($CUR_VAL); nothing to do."
   else
-    msg "Console changed: $CUR_VAL -> $LABEL; applying new quirks."
-    echo "$LABEL" > "$CONSOLE_FILE"
-    apply_quirks_for "$LABEL"
+    (
+      # ==== 所有输出都到 tty1 ====
+      # 复位/清屏并回到左上角
+      printf '\033c'
+      echo "==============================="
+      echo "   arkos for clone lcdyk  ..."
+      echo "==============================="
+      echo
+      echo "[firstboot.sh] old config: ${CUR_VAL}"
+      echo "[firstboot.sh] new config: ${LABEL}"
+      echo
+      # 顺序保持不变：先写 .console，再应用 quirks（避免重入时再次触发）
+      echo "$LABEL" > "$CONSOLE_FILE"
+      apply_quirks_for "$LABEL"
+    ) > /dev/tty1 2>&1
   fi
 fi
 # 安装915wifi驱动

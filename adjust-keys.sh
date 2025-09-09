@@ -11,14 +11,27 @@ RETRO32_NAME="retroarch32.cfg"
 PAD_NAME="pad.txt"
 FIXPAD_PATH="$QUIRKS_DIR/fix_pad.sh"
 
-msg()  { echo "[adjust-keys] $*"; }
-warn() { echo "[adjust-keys][WARN] $*" >&2; }
+# =============== Helpers ===============
+msg() {
+  echo "[adjust-keys] $*" | tee -a /dev/tty1
+}
+warn() {
+  echo "[adjust-keys][WARN] $*" | tee -a /dev/tty1 >&2
+}
 
 cp_if_exists() {
   local src="$1" dst="$2" isfile="${3:-no}"
   if [[ -e "$src" ]]; then
     if [[ "$isfile" == "yes" ]]; then
-      install -m 0644 -D "$src" "$dst"
+      mkdir -p "$(dirname "$dst")"
+      if cp -a "$src" "$dst" 2>/dev/null; then
+        :
+      else
+        install -m 0755 -D "$src" "$dst"
+        chown --reference="$src" "$dst" 2>/dev/null || true
+        touch -r "$src" "$dst" 2>/dev/null || true
+      fi
+      chmod 0755 "$dst" || true
     else
       mkdir -p "$dst"
       cp -a "$src" "$dst/"
