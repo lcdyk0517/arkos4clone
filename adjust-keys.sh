@@ -65,6 +65,24 @@ apply_quirks_for() {
 
   cp_if_exists "$base/$RETRO64_NAME" "/home/ark/.config/retroarch/retroarch.cfg" "yes"
   cp_if_exists "$base/$RETRO32_NAME" "/home/ark/.config/retroarch32/retroarch.cfg" "yes"
+  
+  if [[ "$dtbval" == "r36s" ]]; then
+    cp_if_exists "$QUIRKS_DIR/controls.ini.r36s" "/opt/ppsspp/backupforromsfolder/ppsspp/PSP/SYSTEM/controls.ini" "yes"
+    [ -d "/roms/psp/ppsspp/PSP/SYSTEM" ] && cp_if_exists "$QUIRKS_DIR/controls.ini.r36s" "/roms/psp/ppsspp/PSP/SYSTEM/controls.ini" "yes"
+    [ -d "/roms2/psp/ppsspp/PSP/SYSTEM" ] && cp_if_exists "$QUIRKS_DIR/controls.ini.r36s" "/roms2/psp/ppsspp/PSP/SYSTEM/controls.ini" "yes"
+  else
+    cp_if_exists "$QUIRKS_DIR/controls.ini.clone" "/opt/ppsspp/backupforromsfolder/ppsspp/PSP/SYSTEM/controls.ini" "yes"
+    [ -d "/roms/psp/ppsspp/PSP/SYSTEM" ] && cp_if_exists "$QUIRKS_DIR/controls.ini.clone" "/roms/psp/ppsspp/PSP/SYSTEM/controls.ini" "yes"
+    [ -d "/roms2/psp/ppsspp/PSP/SYSTEM" ] && cp_if_exists "$QUIRKS_DIR/controls.ini.clone" "/roms2/psp/ppsspp/PSP/SYSTEM/controls.ini" "yes"
+  fi
+
+  if [[ "$dtbval" == "r36s" ]]; then
+    cp_if_exists "$QUIRKS_DIR/drastic.cfg.r36s" "/opt/drastic/config/drastic.cfg" "yes"
+  elif [[ "$dtbval" == "mymini" ]]; then
+    cp_if_exists "$QUIRKS_DIR/drastic.cfg.mymini" "/opt/drastic/config/drastic.cfg" "yes"
+  else
+    cp_if_exists "$QUIRKS_DIR/drastic.cfg.clone" "/opt/drastic/config/drastic.cfg" "yes"
+  fi
 
   if [[ -f "$FIXPAD_PATH" ]]; then
     chmod 0777 "$FIXPAD_PATH" || true
@@ -77,16 +95,7 @@ apply_quirks_for() {
   else
     warn "fix_pad.sh not found: $FIXPAD_PATH"
   fi
-  if [[ -f "$FIXPM_PATH" ]]; then
-    chmod 0777 "$FIXPM_PATH" || warn "chmod failed on $FIXPM_PATH"
-    if [[ -f "$padfile" ]]; then
-      "$FIXPM_PATH"
-    else
-      warn "fix-pm.sh run failed"
-    fi
-  else
-    warn "fix-pm.shnot found: $FIXPAD_PATH"
-  fi
+  cp_if_exists "$QUIRKS_DIR/control.txt" "/opt/system/Tools/PortMaster/control.txt" "yes"
 }
 
 # =============== Main ===============

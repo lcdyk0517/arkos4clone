@@ -18,8 +18,8 @@ case "$DTB" in
   *)                         LABEL="r36s"   ;;  # 默认
 esac
 rk915_set=("xf40h" "xf40v" "xf35h")   # 按需增删
-p480_set=("mymini" "xf35h" "r36pro")   # 按需增删
-p720_set=("r36max" "xf40h" "xf35h")   # 按需增删
+p480_set=("mymini" "xf35h" "r36pro" "r36s")   # 按需增删
+p720_set=("r36max" "xf40h" "xf35h" "xf40v")   # 按需增删
 # =============== 路径配置（可按需调整）===============
 SRC_CONSOLES_DIR="/boot/consoles/files"               # 源机型库
 QUIRKS_DIR="/home/ark/.quirks"                  # 目标机型库
@@ -29,7 +29,6 @@ RETRO64_NAME="retroarch64.cfg"                  # 位于每个机型目录
 RETRO32_NAME="retroarch32.cfg"                  # 位于每个机型目录
 PAD_NAME="pad.txt"                              # 位于每个机型目录
 FIXPAD_PATH="$QUIRKS_DIR/fix_pad.sh"            # 你的 fix_pad.sh 所在处
-FIXPM_PATH="/opt/system/clone/fix-pm.sh"            # 你的 fix_pad.sh 所在处
 
 # =============== 小工具函数（英文输出 / 中文注释）===============
 msg()  { echo "[clone.sh] $*"; }
@@ -96,7 +95,27 @@ apply_quirks_for() {
   # 4) retroarch32.cfg -> retroarch32/retroarch.cfg
   cp_if_exists "$base/$RETRO32_NAME" "/home/ark/.config/retroarch32/retroarch.cfg" "yes"
 
-  # 5) fix_pad.sh
+  # 5) controls.ini -> SYSTEM/controls.ini
+  if [[ "$dtbval" == "r36s" ]]; then
+    cp_if_exists "$QUIRKS_DIR/controls.ini.r36s" "/opt/ppsspp/backupforromsfolder/ppsspp/PSP/SYSTEM/controls.ini" "yes"
+    [ -d "/roms/psp/ppsspp/PSP/SYSTEM" ] && cp_if_exists "$QUIRKS_DIR/controls.ini.r36s" "/roms/psp/ppsspp/PSP/SYSTEM/controls.ini" "yes"
+    [ -d "/roms2/psp/ppsspp/PSP/SYSTEM" ] && cp_if_exists "$QUIRKS_DIR/controls.ini.r36s" "/roms2/psp/ppsspp/PSP/SYSTEM/controls.ini" "yes"
+  else
+    cp_if_exists "$QUIRKS_DIR/controls.ini.clone" "/opt/ppsspp/backupforromsfolder/ppsspp/PSP/SYSTEM/controls.ini" "yes"
+    [ -d "/roms/psp/ppsspp/PSP/SYSTEM" ] && cp_if_exists "$QUIRKS_DIR/controls.ini.clone" "/roms/psp/ppsspp/PSP/SYSTEM/controls.ini" "yes"
+    [ -d "/roms2/psp/ppsspp/PSP/SYSTEM" ] && cp_if_exists "$QUIRKS_DIR/controls.ini.clone" "/roms2/psp/ppsspp/PSP/SYSTEM/controls.ini" "yes"
+  fi
+
+  # 6) drastic.cfg -> /opt/drastic/config/drastic.cfg
+  if [[ "$dtbval" == "r36s" ]]; then
+    cp_if_exists "$QUIRKS_DIR/drastic.cfg.r36s" "/opt/drastic/config/drastic.cfg" "yes"
+  elif [[ "$dtbval" == "mymini" ]]; then
+    cp_if_exists "$QUIRKS_DIR/drastic.cfg.mymini" "/opt/drastic/config/drastic.cfg" "yes"
+  else
+    cp_if_exists "$QUIRKS_DIR/drastic.cfg.clone" "/opt/drastic/config/drastic.cfg" "yes"
+  fi
+
+  # 7) fix_pad.sh
   if [[ -f "$FIXPAD_PATH" ]]; then
     chmod 0777 "$FIXPAD_PATH" || warn "chmod failed on $FIXPAD_PATH"
     local padfile="$base/$PAD_NAME"
@@ -109,41 +128,49 @@ apply_quirks_for() {
   else
     warn "fix_pad.sh not found: $FIXPAD_PATH"
   fi
-
-  # 6) fix_pm.sh
-  if [[ -f "$FIXPM_PATH" ]]; then
-    chmod 0777 "$FIXPM_PATH" || warn "chmod failed on $FIXPM_PATH"
-    if [[ -f "$padfile" ]]; then
-      "$FIXPM_PATH"
-    else
-      warn "fix-pm.sh run failed"
-    fi
-  else
-    warn "fix-pm.shnot found: $FIXPAD_PATH"
-  fi
 }
 
 copy_file() {
   if [[ -f "$CONSOLE_FILE" ]]; then
-    # 读取当前机型
+    local cur_console
     cur_console="$(tr -d '\r\n' < "$CONSOLE_FILE")"
+
     for x in "${p480_set[@]}"; do
       if [[ "$cur_console" == "$x" ]]; then
         cp_if_exists "$QUIRKS_DIR/480p/351Files" "/opt/351Files" "yes"
+        cp_if_exists "$QUIRKS_DIR/480p/drastic/TF1/libSDL2-2.0.so.0.3000.2" "/opt/drastic/TF1/" "yes"
+        cp_if_exists "$QUIRKS_DIR/480p/drastic/TF2/libSDL2-2.0.so.0.3000.2" "/opt/drastic/TF2/" "yes"
+        cp_if_exists "$QUIRKS_DIR/480p/drastic/bg" "/roms/nds/bg" "no"
+        [ -d "/roms2/nds/bg" ] && cp_if_exists "$QUIRKS_DIR/480p/drastic/bg" "/roms2/nds/bg" "no"
         break
       fi
     done
+
     for x in "${p720_set[@]}"; do
       if [[ "$cur_console" == "$x" ]]; then
         cp_if_exists "$QUIRKS_DIR/720p/351Files" "/opt/351Files" "yes"
+        cp_if_exists "$QUIRKS_DIR/720p/drastic/TF1/libSDL2-2.0.so.0.3000.2" "/opt/drastic/TF1/" "yes"
+        cp_if_exists "$QUIRKS_DIR/720p/drastic/TF2/libSDL2-2.0.so.0.3000.2" "/opt/drastic/TF2/" "yes"
+        cp_if_exists "$QUIRKS_DIR/720p/drastic/bg" "/roms/nds/bg" "no"
+        [ -d "/roms2/nds/bg" ] && cp_if_exists "$QUIRKS_DIR/720p/drastic/bg" "/roms2/nds/bg" "no"
         break
       fi
     done
-    if[[ cur_console == "r36s" ]]; then
+
+    if [[ "$cur_console" == "r36s" ]]; then
       cp_if_exists "/opt/351Files/351Files.r36s" "/opt/351Files/351Files" "yes"
     fi
   fi
+  cp_if_exists "$QUIRKS_DIR/control.txt" "/opt/system/Tools/PortMaster/control.txt" "yes"
 }
+
+copt_add_libs() {
+  if [[ -d "/opt/system/Tools/PortMaster/libs" ]]; then
+    sudo mv /roms/ports/libs/* /opt/system/Tools/PortMaster/libs
+    sudo rm -rf /roms/ports/libs/
+  fi
+}
+
 
 # =============== 执行开始 ===============
 msg "DTB filename: ${DTB:-<empty>}, LABEL: $LABEL"
@@ -183,9 +210,11 @@ if [[ ! -f "$CONSOLE_FILE" ]]; then
   echo "$LABEL" > "$CONSOLE_FILE"
   msg "Wrote new console file: $CONSOLE_FILE -> $LABEL"
   apply_quirks_for "$LABEL"
+  copy_file
 else
   CUR_VAL="$(tr -d '\r\n' < "$CONSOLE_FILE" || true)"
   if [[ "$CUR_VAL" == "$LABEL" ]]; then
+    copt_add_libs 
     msg "Console unchanged ($CUR_VAL); nothing to do."
   else
     (
@@ -202,6 +231,7 @@ else
       # 顺序保持不变：先写 .console，再应用 quirks（避免重入时再次触发）
       echo "$LABEL" > "$CONSOLE_FILE"
       apply_quirks_for "$LABEL"
+      copy_file
     ) > /dev/tty1 2>&1
   fi
 fi

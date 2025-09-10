@@ -80,13 +80,19 @@ sudo rm -f /boot/fstab.exfat
 #sudo swapoff /swapfile
 #sudo rm -f -v /swapfile
 if [ $exitcode -eq 0 ]; then
-  dialog --infobox "Completed expansion of EASYROMS partition and conversion to exfat. The system will now reboot and load ArkOS." $height $width 2>&1 > /dev/tty1 | sleep 10
+  dialog --infobox "The expansion of the EASYROMS partition and conversion to exFAT have been completed. The system will now enter ArkOS Clone adjustment." $height $width 2>&1 > /dev/tty1 | sleep 3
   /boot/clone.sh >/dev/tty1 2>&1 || true
   # systemctl disable firstboot.service
   # sudo rm -v /boot/firstboot.sh
   sudo cp /boot/clone.sh /boot/firstboot.sh
   sudo rm /boot/clone.sh
   sudo rm -v -- "$0"
+  dialog --colors --infobox \
+  "Clone adjustment completed. The system will now reboot.  
+
+  \Z1\ZbNote:\Zn On the first boot, PortMaster will install some dependencies. This may take a few minutes, so please be patient.  
+  After the first boot, please run \Z3/ports/Install.Full.PortMaster.sh\Zn." \
+  $height $width 2>&1 > /dev/tty1 | sleep 10
   reboot
 else
   dialog --infobox "EASYROMS partition expansion and conversion to exfat failed for an unknown reason.  Please expand the partition using an alternative tool such as Minitool Partition Wizard.  System will reboot and load ArkOS now." $height $width 2>&1 > /dev/tty1 | sleep 10
@@ -96,5 +102,6 @@ else
   sudo cp /boot/clone.sh /boot/firstboot.sh
   sudo rm /boot/clone.sh
   sudo rm -v -- "$0"
+  sleep 3
   reboot
 fi
