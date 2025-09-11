@@ -52,10 +52,10 @@ export TERM=linux
 MODEL="$(cat /boot/.console 2>/dev/null || echo unknown)"
 detect_backend() {
   case "${MODEL}" in
-    xf35h|xf40h) echo "mcu_led" ;;
-    mymini)      echo "mymini"  ;;
-    xf40v|xf35v) echo "ws2812"  ;;
-    *)           echo "unsupported" ;;
+    xf35h|xf40h)          echo "mcu_led" ;;
+    mymini|r36ultra)      echo "gpio"  ;;
+    xf40v|xf35v)          echo "ws2812"  ;;
+    *)                    echo "unsupported" ;;
   esac
 }
 BACKEND="$(detect_backend)"

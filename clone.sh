@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# Test
+# if [[ -w /dev/tty1 ]]; then
+#   exec > /dev/tty1 2>&1
+# fi
+
 # =============== DTB -> LABEL 映射（按你的表）===============
 # 从 /boot/boot.ini 中匹配：load mmc 1:1 ${dtb_loadaddr} <DTB>
 BOOTINI="/boot/boot.ini"
@@ -15,11 +20,12 @@ case "$DTB" in
   rk3326-xf40h-linux.dtb)    LABEL="xf40h" ;;
   rk3326-xf40v-linux.dtb)    LABEL="xf40v" ;;
   rk3326-hg36-linux.dtb)     LABEL="r36pro" ;;
+  rk3326-r36ultra-linux.dtb) LABEL="r36ultra" ;;
   *)                         LABEL="r36s"   ;;  # 默认
 esac
-rk915_set=("xf40h" "xf40v" "xf35h")   # 按需增删
+rk915_set=("xf40h" "xf40v" "xf35h" "r36ultra")   # 按需增删
 p480_set=("mymini" "xf35h" "r36pro" "r36s")   # 按需增删
-p720_set=("r36max" "xf40h" "xf35h" "xf40v")   # 按需增删
+p720_set=("r36max" "xf40h" "xf35h" "xf40v" "r36ultra")   # 按需增删
 # =============== 路径配置（可按需调整）===============
 SRC_CONSOLES_DIR="/boot/consoles/files"               # 源机型库
 QUIRKS_DIR="/home/ark/.quirks"                  # 目标机型库
@@ -165,8 +171,8 @@ copy_file() {
 }
 
 copt_add_libs() {
-  if [[ -d "/opt/system/Tools/PortMaster/libs" ]]; then
-    sudo mv /roms/ports/libs/* /opt/system/Tools/PortMaster/libs
+  if [[ -d "/roms/ports/libs" ]]; then
+    cp_if_exists /roms/ports/libs /opt/system/Tools/PortMaster/libs "no"
     sudo rm -rf /roms/ports/libs/
   fi
 }
