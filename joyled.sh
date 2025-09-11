@@ -127,7 +127,7 @@ breath Breathing (generic)
 flow Flow effect
 EOF
       ;;
-    mymini)
+    gpio)
       cat <<'EOF'
 off Turn off LED
 battery Battery service control
@@ -257,7 +257,7 @@ apply_choice_mcu() {
 }
 
 # -----------------------
-# Backend: mymini (LED class)
+# Backend: gpio (LED class)
 # -----------------------
 led_disable_triggers() {
   for t in /sys/class/leds/*/trigger; do
@@ -415,7 +415,7 @@ MainMenu() {
 
     case "$BACKEND" in
       mcu_led) apply_choice_mcu    "$CHOICE" || true ;;
-      mymini)  apply_choice_mymini "$CHOICE" || true ;;
+      gpio)  apply_choice_mymini "$CHOICE" || true ;;
       ws2812)  apply_choice_ws2812 "$CHOICE" || true ;;
     esac
   done
