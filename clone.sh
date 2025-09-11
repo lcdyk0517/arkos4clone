@@ -25,7 +25,7 @@ case "$DTB" in
 esac
 rk915_set=("xf40h" "xf40v" "xf35h" "r36ultra")   # 按需增删
 p480_set=("mymini" "xf35h" "r36pro" "r36s")   # 按需增删
-p720_set=("r36max" "xf40h" "xf35h" "xf40v" "r36ultra")   # 按需增删
+p720_set=("r36max" "xf40h" "xf40v" "r36ultra")   # 按需增删
 # =============== 路径配置（可按需调整）===============
 SRC_CONSOLES_DIR="/boot/consoles/files"               # 源机型库
 QUIRKS_DIR="/home/ark/.quirks"                  # 目标机型库
