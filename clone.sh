@@ -9,23 +9,51 @@ set -euo pipefail
 # =============== DTB -> LABEL 映射（按你的表）===============
 # 从 /boot/boot.ini 中匹配：load mmc 1:1 ${dtb_loadaddr} <DTB>
 BOOTINI="/boot/boot.ini"
-DTB="$(grep -oE 'load[[:space:]]+mmc[[:space:]]+1:1[[:space:]]+\$\{dtb_loadaddr\}[[:space:]]+[[:graph:]]+' "$BOOTINI" \
-      | awk '{print $NF}' | tail -n1 | xargs basename || true)"
-
-case "$DTB" in
-  rk3326-mymini-linux.dtb)   LABEL="mymini" ;;
-  rk3326-r36max-linux.dtb)   LABEL="r36max" ;;
-  rk3326-xf35h-linux.dtb)    LABEL="xf35h" ;;
-  rk3326-xf36pro-linux.dtb)  LABEL="r36pro" ;;
-  rk3326-xf40h-linux.dtb)    LABEL="xf40h" ;;
-  rk3326-xf40v-linux.dtb)    LABEL="xf40v" ;;
-  rk3326-hg36-linux.dtb)     LABEL="r36pro" ;;
-  rk3326-r36ultra-linux.dtb) LABEL="r36ultra" ;;
-  *)                         LABEL="r36s"   ;;  # 默认
-esac
-rk915_set=("xf40h" "xf40v" "xf35h" "r36ultra")   # 按需增删
-p480_set=("mymini" "xf35h" "r36pro" "r36s")   # 按需增删
-p720_set=("r36max" "xf40h" "xf40v" "r36ultra")   # 按需增删
+DTB=""
+if [[ -r "$BOOTINI" ]]; then
+  # 容忍失败：整条管道最后加 || true
+  DTB="$(grep -oE 'load[[:space:]]+mmc[[:space:]]+1:1[[:space:]]+\$\{dtb_loadaddr\}[[:space:]]+[[:graph:]]+' "$BOOTINI" \
+        | awk '{print $NF}' | tail -n1 | xargs -r basename || true)"
+else
+  warn "boot.ini not readable: $BOOTINI"
+fi
+declare -A dtb2label=(
+  [rk3326-mymini-linux.dtb]=mymini
+  [rk3326-r36max-linux.dtb]=r36max
+  [rk3326-xf35h-linux.dtb]=xf35h
+  [rk3326-xf36pro-linux.dtb]=r36pro
+  [rk3326-xf40h-linux.dtb]=xf40h
+  [rk3326-xf40v-linux.dtb]=xf40v
+  [rk3326-hg36-linux.dtb]=hg36
+  [rk3326-r36ultra-linux.dtb]=r36ultra
+  [rk3326-k36s-linux.dtb]=k36s
+)
+declare -A console_profile=(
+  [mymini]=480p
+  [xf35h]=480p
+  [r36pro]=480p
+  [r36s]=480p
+  [k36s]=480p
+  [hg36]=480p
+  [r36max]=720p
+  [xf40h]=720p
+  [xf40v]=720p
+  [r36ultra]=720p
+)
+declare -A ogage_conf_map=(
+  [xf40h]=select
+  [xf35h]=select
+  [mymini]=select
+  [k36s]=mode
+  [r36pro]=mode
+  [hg36]=mode
+  [r36ultra]=mode
+  [r36max]=mode
+  [r36s]=happy5
+  # 按需增删：  [机型]=select|mode
+)
+rk915_set=("xf40h" "xf40v" "xf35h" "r36ultra" "k36s")   # 按需增删
+LABEL="${dtb2label[$DTB]:-r36s}"   # 默认 r36s
 # =============== 路径配置（可按需调整）===============
 SRC_CONSOLES_DIR="/boot/consoles/files"               # 源机型库
 QUIRKS_DIR="/home/ark/.quirks"                  # 目标机型库
@@ -53,11 +81,11 @@ cp_if_exists() {
       else
         # 极端情况下的兜底：还用 install，但把所有权按源文件纠正回去
         install -m 0755 -D "$src" "$dst"
-        chown --reference="$src" "$dst" 2>/dev/null || true
-        touch -r "$src" "$dst" 2>/dev/null || true
+        sudo chown --reference="$src" "$dst" 2>/dev/null || true
+        sudo touch -r "$src" "$dst" 2>/dev/null || true
       fi
       # 统一权限为 0755（不影响属主/属组）
-      chmod 0755 "$dst" || true
+      sudo chmod 0755 "$dst" || true
     else
       mkdir -p "$dst"
       cp -a "$src" "$dst/"
@@ -65,6 +93,26 @@ cp_if_exists() {
     msg "Copied: $src -> $dst"
   else
     warn "Source not found, skip: $src"
+  fi
+}
+
+apply_ogage_conf() {
+  local dtbval="$1" kind conf
+  # 键不存在时，kind 为空串（避免 set -u 爆炸）
+  kind="${ogage_conf_map[$dtbval]-}"
+
+  case "$kind" in
+    select) conf="$QUIRKS_DIR/ogage.select.conf" ;;
+    mode)   conf="$QUIRKS_DIR/ogage.mode.conf" ;;
+    happy5)   conf="$QUIRKS_DIR/ogage.happy5.conf" ;;
+    *)      conf="" ;;
+  esac
+
+  if [[ -n "$conf" ]]; then
+    msg "change hotkey: $dtbval -> $(basename "$conf")"
+    cp_if_exists "$conf" "/home/ark/ogage.conf" "yes"
+  else
+    msg "hotkey unchanged for: $dtbval (no mapping)"
   fi
 }
 
@@ -104,18 +152,18 @@ apply_quirks_for() {
   # 5) controls.ini -> SYSTEM/controls.ini
   if [[ "$dtbval" == "r36s" ]]; then
     cp_if_exists "$QUIRKS_DIR/controls.ini.r36s" "/opt/ppsspp/backupforromsfolder/ppsspp/PSP/SYSTEM/controls.ini" "yes"
-    [ -d "/roms/psp/ppsspp/PSP/SYSTEM" ] && cp_if_exists "$QUIRKS_DIR/controls.ini.r36s" "/roms/psp/ppsspp/PSP/SYSTEM/controls.ini" "yes"
-    [ -d "/roms2/psp/ppsspp/PSP/SYSTEM" ] && cp_if_exists "$QUIRKS_DIR/controls.ini.r36s" "/roms2/psp/ppsspp/PSP/SYSTEM/controls.ini" "yes"
+    [ -d "/roms/psp/ppsspp/PSP/SYSTEM" ] && cp_if_exists "$QUIRKS_DIR/controls.ini.r36s" "/roms/psp/ppsspp/PSP/SYSTEM/controls.ini" "yes" || true
+    [ -d "/roms2/psp/ppsspp/PSP/SYSTEM" ] && cp_if_exists "$QUIRKS_DIR/controls.ini.r36s" "/roms2/psp/ppsspp/PSP/SYSTEM/controls.ini" "yes" || true
   else
     cp_if_exists "$QUIRKS_DIR/controls.ini.clone" "/opt/ppsspp/backupforromsfolder/ppsspp/PSP/SYSTEM/controls.ini" "yes"
-    [ -d "/roms/psp/ppsspp/PSP/SYSTEM" ] && cp_if_exists "$QUIRKS_DIR/controls.ini.clone" "/roms/psp/ppsspp/PSP/SYSTEM/controls.ini" "yes"
-    [ -d "/roms2/psp/ppsspp/PSP/SYSTEM" ] && cp_if_exists "$QUIRKS_DIR/controls.ini.clone" "/roms2/psp/ppsspp/PSP/SYSTEM/controls.ini" "yes"
+    [ -d "/roms/psp/ppsspp/PSP/SYSTEM" ] && cp_if_exists "$QUIRKS_DIR/controls.ini.clone" "/roms/psp/ppsspp/PSP/SYSTEM/controls.ini" "yes"  || true
+    [ -d "/roms2/psp/ppsspp/PSP/SYSTEM" ] && cp_if_exists "$QUIRKS_DIR/controls.ini.clone" "/roms2/psp/ppsspp/PSP/SYSTEM/controls.ini" "yes" || true
   fi
 
   # 6) drastic.cfg -> /opt/drastic/config/drastic.cfg
   if [[ "$dtbval" == "r36s" ]]; then
     cp_if_exists "$QUIRKS_DIR/drastic.cfg.r36s" "/opt/drastic/config/drastic.cfg" "yes"
-  elif [[ "$dtbval" == "mymini" ]]; then
+  elif [[ "$dtbval" == "mymini" || "$dtbval" == "k36s" ]]; then
     cp_if_exists "$QUIRKS_DIR/drastic.cfg.mymini" "/opt/drastic/config/drastic.cfg" "yes"
   else
     cp_if_exists "$QUIRKS_DIR/drastic.cfg.clone" "/opt/drastic/config/drastic.cfg" "yes"
@@ -123,50 +171,48 @@ apply_quirks_for() {
 
   # 7) fix_pad.sh
   if [[ -f "$FIXPAD_PATH" ]]; then
-    chmod 0777 "$FIXPAD_PATH" || warn "chmod failed on $FIXPAD_PATH"
+    chmod +x "$FIXPAD_PATH" || warn "chmod failed on $FIXPAD_PATH"
     local padfile="$base/$PAD_NAME"
     if [[ -f "$padfile" ]]; then
-      # 全盘：把最后的 / 改成 . 可做局部测试
-      "$FIXPAD_PATH" "$padfile" /
+      msg "Start fix_pad $(date +'%F %T')"
+      if ! "$FIXPAD_PATH" "$padfile" / </dev/null; then
+        warn "fix_pad returned non-zero (ignored)"
+      fi
+      msg "End   fix_pad $(date +'%F %T')"
     else
       warn "pad.txt not found: $padfile (skip fix_pad)"
     fi
   else
     warn "fix_pad.sh not found: $FIXPAD_PATH"
   fi
+
+
+  # 8) fix ogage
+  apply_ogage_conf "$dtbval"
+}
+
+install_profile_assets() {
+  local prof="$1"
+  case "$prof" in
+    480p|720p)
+      cp_if_exists "$QUIRKS_DIR/$prof/351Files" "/opt/351Files" "no"
+      cp_if_exists "$QUIRKS_DIR/$prof/drastic/TF1/libSDL2-2.0.so.0.3000.2" "/opt/drastic/TF1/" "yes"
+      cp_if_exists "$QUIRKS_DIR/$prof/drastic/TF2/libSDL2-2.0.so.0.3000.2" "/opt/drastic/TF2/" "yes"
+      cp_if_exists "$QUIRKS_DIR/$prof/drastic/bg" "/roms/nds" "no"
+      [[ -d "/roms2/nds/bg" ]] && cp_if_exists "$QUIRKS_DIR/$prof/drastic/bg" "/roms2/nds" "no" || true
+      ;;
+    *) msg "No profile assets for: $prof" ;;
+  esac
 }
 
 copy_file() {
-  if [[ -f "$CONSOLE_FILE" ]]; then
-    local cur_console
-    cur_console="$(tr -d '\r\n' < "$CONSOLE_FILE")"
+  [[ -f "$CONSOLE_FILE" ]] && cur_console="$(tr -d '\r\n' < "$CONSOLE_FILE")" || cur_console=""
+  [[ -n "$cur_console" ]] && install_profile_assets "${console_profile[$cur_console]}"
 
-    for x in "${p480_set[@]}"; do
-      if [[ "$cur_console" == "$x" ]]; then
-        cp_if_exists "$QUIRKS_DIR/480p/351Files" "/opt/351Files" "yes"
-        cp_if_exists "$QUIRKS_DIR/480p/drastic/TF1/libSDL2-2.0.so.0.3000.2" "/opt/drastic/TF1/" "yes"
-        cp_if_exists "$QUIRKS_DIR/480p/drastic/TF2/libSDL2-2.0.so.0.3000.2" "/opt/drastic/TF2/" "yes"
-        cp_if_exists "$QUIRKS_DIR/480p/drastic/bg" "/roms/nds/bg" "no"
-        [ -d "/roms2/nds/bg" ] && cp_if_exists "$QUIRKS_DIR/480p/drastic/bg" "/roms2/nds/bg" "no"
-        break
-      fi
-    done
-
-    for x in "${p720_set[@]}"; do
-      if [[ "$cur_console" == "$x" ]]; then
-        cp_if_exists "$QUIRKS_DIR/720p/351Files" "/opt/351Files" "yes"
-        cp_if_exists "$QUIRKS_DIR/720p/drastic/TF1/libSDL2-2.0.so.0.3000.2" "/opt/drastic/TF1/" "yes"
-        cp_if_exists "$QUIRKS_DIR/720p/drastic/TF2/libSDL2-2.0.so.0.3000.2" "/opt/drastic/TF2/" "yes"
-        cp_if_exists "$QUIRKS_DIR/720p/drastic/bg" "/roms/nds/bg" "no"
-        [ -d "/roms2/nds/bg" ] && cp_if_exists "$QUIRKS_DIR/720p/drastic/bg" "/roms2/nds/bg" "no"
-        break
-      fi
-    done
-
-    if [[ "$cur_console" == "r36s" ]]; then
-      cp_if_exists "/opt/351Files/351Files.r36s" "/opt/351Files/351Files" "yes"
-    fi
+  if [[ "$cur_console" == "r36s" ]]; then
+    cp_if_exists "/opt/351Files/351Files.r36s" "/opt/351Files/351Files" "yes"
   fi
+
   cp_if_exists "$QUIRKS_DIR/control.txt" "/opt/system/Tools/PortMaster/control.txt" "yes"
 }
 
@@ -217,6 +263,7 @@ if [[ ! -f "$CONSOLE_FILE" ]]; then
   msg "Wrote new console file: $CONSOLE_FILE -> $LABEL"
   apply_quirks_for "$LABEL"
   copy_file
+  sleep 5
 else
   CUR_VAL="$(tr -d '\r\n' < "$CONSOLE_FILE" || true)"
   if [[ "$CUR_VAL" == "$LABEL" ]]; then
@@ -235,9 +282,10 @@ else
       echo "[firstboot.sh] new config: ${LABEL}"
       echo
       # 顺序保持不变：先写 .console，再应用 quirks（避免重入时再次触发）
-      echo "$LABEL" > "$CONSOLE_FILE"
+      echo "$LABEL" | sudo tee "$CONSOLE_FILE" > /dev/null
       apply_quirks_for "$LABEL"
       copy_file
+      sleep 5
     ) > /dev/tty1 2>&1
   fi
 fi

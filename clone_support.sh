@@ -59,7 +59,7 @@ sudo chown -R 1002:1002 "$MOUNT_DIR/root/opt/351Files/" 2>/dev/null || true
 sudo chmod -R 755 "$MOUNT_DIR/root/opt/351Files/" 2>/dev/null || true
 
 echo "== 注入 retrorun 启动脚本 =="
-sudo cp -r ./replace_file/* "$MOUNT_DIR/root/usr/local/bin/
+sudo cp -f ./replace_file/*.sh "$MOUNT_DIR/root/usr/local/bin/"
 sudo chown root:root "$MOUNT_DIR/root/usr/local/bin/atomiswave.sh" 2>/dev/null || true
 sudo chown root:root "$MOUNT_DIR/root/usr/local/bin/dreamcast.sh" 2>/dev/null || true
 sudo chown root:root "$MOUNT_DIR/root/usr/local/bin/naomi.sh" 2>/dev/null || true
@@ -70,7 +70,7 @@ sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/naomi.sh" 2>/dev/null || true
 sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/saturn.sh" 2>/dev/null || true
 
 
-# 复制 roms.tar 出来操作
+echo "== 复制 roms.tar 出来操作 =="
 sudo cp "$MOUNT_DIR/root/roms.tar" /home/lcdyk/arkos/
 mkdir -p /home/lcdyk/arkos/tmproms
 tar -xf /home/lcdyk/arkos/roms.tar -C /home/lcdyk/arkos/tmproms
@@ -82,5 +82,9 @@ tar -cf /home/lcdyk/arkos/roms.tar -C /home/lcdyk/arkos/tmproms .
 rm -rf /home/lcdyk/arkos/tmproms
 sudo cp /home/lcdyk/arkos/roms.tar "$MOUNT_DIR/root/"
 sudo chmod -R 755 $MOUNT_DIR/root/roms.tar
+
+echo "== ogage快捷键复制 =="
+sudo cp -r ./replace_file/ogage "$MOUNT_DIR/root/usr/local/bin/"
+sudo cp -r ./replace_file/ogage "$MOUNT_DIR/root/home/ark/.quirks/"
 
 echo "== 完成 =="

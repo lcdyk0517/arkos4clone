@@ -16,6 +16,7 @@ ALIASES = {
     "xf40h": "XiFan XF40H",
     "hg36": "GameConsole HG36",
     "r36ultra": "GameConsole R36Ultra",
+    "k36s": "GameConsole K36S | GameConsole R36T",
     "origin r36s panel 0": "GameConsole R36s Panel 0",
     "origin r36s panel 1": "GameConsole R36s Panel 1",
     "origin r36s panel 2": "GameConsole R36s Panel 2",
@@ -43,6 +44,7 @@ EXTRA_COPY_MAP = {
     "xf35h": ["logo/480P/", "kenrel/common/"],
     "xf40h": ["logo/720P/", "kenrel/common/"],
     "r36ultra": ["logo/720P/", "kenrel/common/"],
+    "k36s": ["logo/480P/", "kenrel/common/"],
     "hg36": ["logo/480p/", "kenrel/common/"],
     "origin r36s panel 0": ["logo/480P/", "kenrel/common/"],
     "origin r36s panel 1": ["logo/480P/", "kenrel/common/"],
@@ -58,6 +60,32 @@ EXTRA_COPY_MAP = {
 }
 
 # ===================== 工具函数 =====================
+def intro_and_wait():
+    if not sys.stdin.isatty():  # 非交互直接返回
+        return
+    print("\n================ Welcome 欢迎使用 ================")
+    print("说明：本系统目前只支持下列机型，如果你的 R36 克隆机不在列表中，则暂时无法使用。")
+    print("⚠️ 请不要使用原装 EE 卡中的 dtb 文件搭配本系统，否则会导致系统无法启动！")
+    print()
+    print("选择机型前请阅读：")
+    print("  • 本工具会清理目标目录顶层的 .dtb/.ini/.orig/.tony 文件，并删除 BMPs 文件夹；")
+    print("  • 随后复制所选机型及额外映射资源。")
+    print("  • 按 Enter 继续；输入 q 退出。")
+    print("-----------------------------------------")
+    print("NOTE:")
+    print("  • This system currently only supports the listed R36 clones;")
+    print("    if your clone is not in the list, it is not supported yet.")
+    print("  • ⚠️ Do NOT use the dtb files from the stock EE card with this system — it will brick the boot.")
+    print()
+    print("Before selecting a console:")
+    print("  • This tool cleans top-level .dtb/.ini/.orig/.tony files and removes the BMPs/ folder,")
+    print("    then copies the chosen console and any mapped extra sources.")
+    print("  • Press Enter to continue; type 'q' to quit.")
+    cont = input("\n按 Enter 继续 / Press Enter to continue (q to quit): ").strip().lower()
+    if cont == 'q':
+        print("已退出 / Exited.")
+        sys.exit(0)
+
 def get_base_dir():
     """
     返回当前脚本/可执行程序所在目录（兼容 PyInstaller 冻结的可执行文件）
@@ -80,11 +108,15 @@ def is_excluded(name: str) -> bool:
 
 def list_subfolders(parent_dir):
     """
-    列出未被排除的子目录，返回 [(display_name, real_name)]，按显示名排序
+    列出未被排除、且在 EXTRA_COPY_MAP 中配置过的子目录（大小写/前后空格不敏感）。
+    返回 [(display_name, real_name)]，按显示名排序
     """
     if not os.path.exists(parent_dir):
         print("❌ 'consoles' folder not found:", parent_dir)
         return []
+
+    # 用规范化后的名字做白名单：strip + casefold
+    wl_norm2real = {k.strip().casefold(): k for k in EXTRA_COPY_MAP.keys()}
 
     items = []
     for name in os.listdir(parent_dir):
@@ -93,13 +125,21 @@ def list_subfolders(parent_dir):
             continue
         if is_excluded(name):
             continue
-        # 显示名优先用别名，没有则用原名
-        display = ALIASES.get(name, name)
-        items.append((display, name))
 
-    # 按显示名不区分大小写排序
+        norm = name.strip().casefold()
+
+        if norm not in wl_norm2real:
+            # 不在白名单，跳过
+            continue
+
+        real_key = wl_norm2real[norm]  # EXTRA_COPY_MAP 里的真实 key
+        display = ALIASES.get(real_key, real_key)
+        items.append((display, name))   # 显示别名，实际拷目录用扫描到的 name
+
     items.sort(key=lambda x: x[0].casefold())
     return items
+
+
 
 def show_menu(items):
     """
@@ -259,7 +299,10 @@ def choose_folder_and_copy(items, consoles_dir):
 def main():
     consoles_dir = get_consoles_dir()
     items = list_subfolders(consoles_dir)   # [(display_name, real_name)]
+    intro_and_wait()  
+    os.system("cls" if os.name == "nt" else "clear")
     show_menu(items)
+ 
     choose_folder_and_copy(items, consoles_dir)
 
 if __name__ == "__main__":
