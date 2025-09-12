@@ -12,6 +12,8 @@ Currently, I can only maintain the devices I personally own, but contributions a
 - **R36Max**
 - **HG36**
 - **R36Ultra**
+- **R36T**
+- **K36S**
 - ...
 
 ## 设备捐赠
