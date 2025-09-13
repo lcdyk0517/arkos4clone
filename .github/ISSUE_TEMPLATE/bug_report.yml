@@ -1,0 +1,78 @@
+name: Bug Report
+description: Report a bug (please make sure you are using the latest version first!)
+title: "[Bug]: "
+labels: [bug]
+assignees: []
+
+body:
+  - type: checkboxes
+    attributes:
+      label: Pre-submission checklist
+      description: Please confirm before submitting
+      options:
+        - label: I am using the **latest version** of the project
+          required: true
+        - label: I have searched existing issues to make sure this is not a duplicate
+          required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Enter the version you are using
+      placeholder: e.g.,0913
+    validations:
+      required: true
+
+  - type: textarea
+    id: console
+    attributes:
+      label: Console Output / Error
+      description: Paste relevant console output or error messages here
+      placeholder: |
+        Example:
+        Error: Something went wrong at line 42...
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: Describe the situation you encountered
+      placeholder: A clear and concise description of the problem.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: Provide detailed steps so we can reproduce the issue
+      placeholder: |
+        1. Run '...'
+        2. Click on '...'
+        3. Observe the error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior (Optional)
+      description: What did you expect to happen?
+      placeholder: A clear description of the expected behavior.
+
+  - type: textarea
+    id: media
+    attributes:
+      label: Screenshots / Video / Logs (Optional)
+      description: Upload screenshots, videos, or additional logs that help explain the issue.
+      placeholder: Drag and drop files here or paste logs.
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context (Optional)
+      description: Add any other context about the problem here.
+      placeholder: Related environment details, dependencies, etc.
