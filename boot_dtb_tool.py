@@ -16,6 +16,7 @@ ALIASES = {
     "xf40h": "XiFan XF40H",
     "hg36": "GameConsole HG36",
     "r36ultra": "GameConsole R36Ultra",
+    "rx6h": "GameConsole RX6H",
     "k36s": "GameConsole K36S | GameConsole R36T",
     "origin r36s panel 0": "GameConsole R36s Panel 0",
     "origin r36s panel 1": "GameConsole R36s Panel 1",

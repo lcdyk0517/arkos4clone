@@ -111,7 +111,7 @@ apply_quirks_for() {
 
   # ogage快捷键修复
   case "$dtbval" in
-    xf40h|xf35h|mymini)
+    xf40h|xf35h|mymini|rx6h)
       msg "set ogage: $dtbval -> ogage.select.conf"
       cp_if_exists "$QUIRKS_DIR/ogage.select.conf" "/home/ark/ogage.conf" "yes"
       ;;
