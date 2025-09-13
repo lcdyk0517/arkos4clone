@@ -31,8 +31,12 @@ To make ArkOS work on clone devices, the following changes and adaptations were 
 2. **DTS reverse-porting for compatibility**
    - The DTS files were **reverse-ported from the 5.10 kernel to the 4.4 kernel** to ensure proper hardware support.
    - Reference: [AveyondFly/rocknix_dts](https://github.com/AveyondFly/rocknix_dts/tree/main/3326/arkos_4.4_dts)
-3. **U-Boot DTS adjustments for aeux-maintained ArkOS**
-   - Reference repo: [AeolusUX/ArkOS-R3XS](https://github.com/AeolusUX/ArkOS-R3XS)
+3. - **U-Boot DTS adjustments for aeux-maintained ArkOS**
+     - Reference repo: [AeolusUX/ArkOS-R3XS](https://github.com/AeolusUX/ArkOS-R3XS)
+4. - **351Files GitHub repo**
+     - Reference repo: [lcdyk0517/351Files](https://github.com/lcdyk0517/351Files)
+5. - **ogage GitHub repo**
+     - Reference repo: [lcdyk0517/ogage](https://github.com/lcdyk0517/ogage)
 
 ## How to Use
 
