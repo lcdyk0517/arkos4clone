@@ -143,15 +143,15 @@ EOF
     ws2812)
       cat <<'EOF'
 off Turn off LED
-flow Flow effect
-breath General breathing
-breath_red Breathing Red
-breath_green Breathing Green
-breath_blue Breathing Blue
-breath_blue_red Breathing Blue+Red
-breath_green_blue Breathing Green+Blue
-breath_red_green Breathing Red+Green
-breath_red_green_blue Breathing RGB
+scrolling Scrolling effect
+breathing General breathing
+breathing_red Breathing Red
+breathing_green Breathing Green
+breathing_blue Breathing Blue
+breathing_blue_red Breathing Blue+Red
+breathing_green_blue Breathing Green+Blue
+breathing_red_green Breathing Red+Green
+breathing_red_green_blue Breathing RGB
 red_green_blue Solid RGB (white-ish)
 blue_red Solid Magenta
 blue Solid Blue
@@ -315,19 +315,93 @@ apply_choice_mymini() {
 # -----------------------
 # Backend: ws2812
 # -----------------------
+
+# 将菜单 tag 映射为 ws2812ctl 的精确模式名
+ws2812_mode_arg() {
+  case "$1" in
+    off)                       echo "OFF" ;;
+    scrolling)                 echo "Scrolling" ;;
+    breathing)                 echo "Breathing" ;;
+    breathing_red)             echo "Breathing_Red" ;;
+    breathing_green)           echo "Breathing_Green" ;;
+    breathing_blue)            echo "Breathing_Blue" ;;
+    breathing_blue_red)        echo "Breathing_Blue_Red" ;;
+    breathing_green_blue)      echo "Breathing_Green_Blue" ;;
+    breathing_red_green)       echo "Breathing_Red_Green" ;;
+    breathing_red_green_blue)  echo "Breathing_Red_Green_Blue" ;;
+    red_green_blue)            echo "Red_Green_Blue" ;;
+    blue_red)                  echo "Blue_Red" ;;
+    blue)                      echo "Blue" ;;
+    green_blue)                echo "Green_Blue" ;;
+    green)                     echo "Green" ;;
+    red_green)                 echo "Red_Green" ;;
+    red)                       echo "Red" ;;
+    *)                         echo "" ;;
+  esac
+}
+
+# 杀掉已在运行的 ws2812ctl（若有）
+kill_ws2812ctl_if_running() {
+  # 根据二进制路径精确匹配
+  pkill -f "^${WS2812CTL_BIN} " >/dev/null 2>&1 || true
+}
+
+# 杀掉已在运行的 ws2812ctl（若有）
+kill_ws2812ctl_if_running() {
+  # 根据二进制路径精确匹配
+  pkill -f "^${WS2812CTL_BIN} " >/dev/null 2>&1 || true
+}
+
+# 以非阻塞方式启动 ws2812ctl；若有 coreutils 的 timeout 就用它
+start_ws2812ctl_async() {
+  local arg="$1"
+
+  # 先清旧
+  kill_ws2812ctl_if_running
+
+  if command -v timeout >/dev/null 2>&1; then
+    # 给个极短的启动窗口，避免阻塞当前脚本
+    # 有些实现会在收到参数后自行常驻，这里用 timeout 让前台立刻返回
+    timeout 0.3s "$WS2812CTL_BIN" "$arg" >/dev/null 2>&1 || true
+    # 若还需要后台守护（部分实现会在 timeout 后退出），再补一手纯后台
+    nohup "$WS2812CTL_BIN" "$arg" >/dev/null 2>&1 </dev/null &
+  else
+    # 直接后台 + 脱离终端
+    nohup "$WS2812CTL_BIN" "$arg" >/dev/null 2>&1 </dev/null &
+  fi
+
+  # 简单确认：给系统调度一点时间
+  sleep 0.05
+  # 可选：检查是否有新进程在跑（不强制失败）
+  pgrep -f "^${WS2812CTL_BIN} " >/dev/null 2>&1 || true
+}
+
+
 apply_choice_ws2812() {
   local name="$1"
   LAST_CHOICE="$name"
 
-  if "$WS2812CTL_BIN" "$name"; then
-    set_kv led.color "$name"
-    mkdir -p "$STATE_DIR"; echo "$name" | sudo tee "$STATE_FILE" >/dev/null || true
-    return 0
-  else
-    dialog --msgbox "Failed to apply: $name" 6 40 > "$CURR_TTY"
+  local arg; arg="$(ws2812_mode_arg "$name")"
+  if [[ -z "$arg" ]]; then
+    dialog --msgbox "Unknown/unsupported: $name" 6 40 > "$CURR_TTY"
     return 1
   fi
+
+  if [[ "$arg" == "OFF" ]]; then
+    # 关灯：直接杀旧实例；如有需要，再发一次 OFF（后台瞬发）
+    kill_ws2812ctl_if_running
+    nohup "$WS2812CTL_BIN" "OFF" >/dev/null 2>&1 </dev/null &  # 某些固件要求显式发送 OFF
+  else
+    # 其他效果：非阻塞后台启动
+    start_ws2812ctl_async "$arg"
+  fi
+
+  # 走到这里视为成功，不阻塞 UI
+  set_kv led.color "$name"
+  mkdir -p "$STATE_DIR"; echo "$name" | sudo tee "$STATE_FILE" >/dev/null || true
+  return 0
 }
+
 
 # -----------------------
 # Unsupported / Precheck
