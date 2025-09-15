@@ -24,6 +24,7 @@ ALIASES = {
     "origin r36s panel 3": "GameConsole R36s Panel 3",
     "origin r36s panel 4": "GameConsole R36s Panel 4",
     "origin r36s panel 5": "GameConsole R36s Panel 5",
+    "ymc a10mini": "YMC A10MINI",
 }
 
 # 2) 排除规则（glob 通配，多条规则其一匹配即排除）
@@ -53,6 +54,7 @@ EXTRA_COPY_MAP = {
     "origin r36s panel 3": ["logo/480P/", "kenrel/common/"],
     "origin r36s panel 4": ["logo/480P/", "kenrel/common/"],
     "origin r36s panel 5": ["logo/480P/", "kenrel/panel5/"],
+    "ymc a10mini": ["logo/480P/", "kenrel/common/"],
 
     # 示例：选中 mymini 时，从绝对路径再拼一份内容（按需修改/删除）
     # "mymini": ["/absolute/path/to/extra_stuff"],
@@ -110,7 +112,7 @@ def is_excluded(name: str) -> bool:
 def list_subfolders(parent_dir):
     """
     列出未被排除、且在 EXTRA_COPY_MAP 中配置过的子目录（大小写/前后空格不敏感）。
-    返回 [(display_name, real_name)]，按显示名排序
+    返回 [(display_name, real_name)]，顺序跟 EXTRA_COPY_MAP 的键顺序一致
     """
     if not os.path.exists(parent_dir):
         print("❌ 'consoles' folder not found:", parent_dir)
@@ -119,27 +121,23 @@ def list_subfolders(parent_dir):
     # 用规范化后的名字做白名单：strip + casefold
     wl_norm2real = {k.strip().casefold(): k for k in EXTRA_COPY_MAP.keys()}
 
+    # 保持 EXTRA_COPY_MAP 的键顺序
     items = []
-    for name in os.listdir(parent_dir):
-        full = os.path.join(parent_dir, name)
-        if not os.path.isdir(full):
-            continue
-        if is_excluded(name):
-            continue
+    for real_key in EXTRA_COPY_MAP.keys():
+        norm = real_key.strip().casefold()
+        # 实际目录必须存在才能展示
+        for name in os.listdir(parent_dir):
+            full = os.path.join(parent_dir, name)
+            if not os.path.isdir(full):
+                continue
+            if is_excluded(name):
+                continue
+            if name.strip().casefold() == norm:
+                display = ALIASES.get(real_key, real_key)
+                items.append((display, name))   # 显示别名，实际拷目录用扫描到的 name
+                break  # 找到对应目录就跳出
 
-        norm = name.strip().casefold()
-
-        if norm not in wl_norm2real:
-            # 不在白名单，跳过
-            continue
-
-        real_key = wl_norm2real[norm]  # EXTRA_COPY_MAP 里的真实 key
-        display = ALIASES.get(real_key, real_key)
-        items.append((display, name))   # 显示别名，实际拷目录用扫描到的 name
-
-    items.sort(key=lambda x: x[0].casefold())
     return items
-
 
 
 def show_menu(items):
