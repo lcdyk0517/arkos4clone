@@ -48,6 +48,7 @@ EXTRA_COPY_MAP = {
     "r36ultra": ["logo/720P/", "kenrel/common/"],
     "k36s": ["logo/480P/", "kenrel/common/"],
     "hg36": ["logo/480p/", "kenrel/common/"],
+    "rx6h": ["logo/480p/", "kenrel/common/"],
     "origin r36s panel 0": ["logo/480P/", "kenrel/common/"],
     "origin r36s panel 1": ["logo/480P/", "kenrel/common/"],
     "origin r36s panel 2": ["logo/480P/", "kenrel/common/"],
