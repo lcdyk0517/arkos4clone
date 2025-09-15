@@ -14,6 +14,8 @@ Currently, I can only maintain the devices I personally own, but contributions a
 - **R36Ultra**[Only V1 is supported.https://github.com/Vi-K36/EE-Clones-DTB/tree/main/R36%20Ultra%20(emmc)/Stock]
 - **R36T**
 - **K36S**
+- **RX6H**
+- **A10Mini**
 - ...
 
 ## 设备捐赠
