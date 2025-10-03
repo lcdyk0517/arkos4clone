@@ -42,7 +42,17 @@ To make ArkOS work on clone devices, the following changes and adaptations were 
 2. Flash the image to the SD card and run `dtb_selector.exe` to select the corresponding device, then reboot the device.
 
 Or —
-If you are a non-Windows user, enter the console, select the corresponding model, and then copy all the files to the root directory of the SD card.
+If you are a non-Windows user, perform the configuration manually by mounting the `BOOT` partition and:
+
+1. Copy all files from `consoles/<your-hardware>` (`boot.ini`, and two `dtb` files) to the root directory of the SD card.
+2. Copy `Image` from `consoles/kenrel/common`(sic) to the root directory of the SD card.
+3. Copy the `consoles/logo/<your-screen-res>/logo.bmp` to the root directory of the SD card.
+4. Unmount the SD card, install into the handheld, and reboot
+
+## Remapping the Joystick Axes
+
+Visit the [Joymux-Fix](https://github.com/lcdyk0517/joymux-fix) website for instructions on generating new `dtb` files
+with custom controller axis mappings.
 
 ## Known Limitations
 
