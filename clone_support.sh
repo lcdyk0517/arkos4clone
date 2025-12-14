@@ -2,7 +2,7 @@
 set -euo pipefail
 
 MOUNT_DIR="/home/lcdyk/arkos/mnt"
-UPDATE_DATE="11072025"
+UPDATE_DATE="20251213"
 MODDER="kk&lcdyk"
 
 # 统一的 rsync 选项：
