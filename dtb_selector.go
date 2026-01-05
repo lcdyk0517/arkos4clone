@@ -530,12 +530,13 @@ func readIntChoice(msg string) (int, error) {
 }
 
 // ===================== 文件操作 =====================
-func cleanTargetDirectory() error {
+func cleanTargetDirectory(baseDir string) error {
 	fmt.Println()
 	fmt.Println(colorWrap("开始清理目标目录 (Cleaning target directory)...", ansiCyan))
 
 	patterns := []string{"*.dtb", "*.ini", "*.orig", "*.tony", ".cn"}
 	for _, pat := range patterns {
+		pat := filepath.Join(baseDir, pat)
 		matches, err := filepath.Glob(pat)
 		if err != nil {
 			return err
@@ -548,7 +549,7 @@ func cleanTargetDirectory() error {
 		}
 	}
 
-	bmpPath := "BMPs"
+	bmpPath := filepath.Join(baseDir, "BMPs")
 	if _, err := os.Stat(bmpPath); err == nil {
 		fmt.Printf("  删除目录: %s\n", bmpPath)
 		if err := os.RemoveAll(bmpPath); err != nil {
@@ -716,28 +717,28 @@ func showMenu() (*SelectedConsole, error) {
 }
 
 // ===================== 复制逻辑 =====================
-func copySelectedConsole(selected *SelectedConsole) error {
+func copySelectedConsole(selected *SelectedConsole, baseDir string) error {
 	if selected == nil || selected.Config == nil {
 		return errors.New("no console selected")
 	}
 
 	fmt.Printf("\n%s\n", colorWrap("开始复制 (Copying): "+selected.DisplayName, ansiCyan))
 
-	srcPath := filepath.Join("consoles", selected.Config.RealName)
+	srcPath := filepath.Join(baseDir, "consoles", selected.Config.RealName)
 	if _, err := os.Stat(srcPath); os.IsNotExist(err) {
 		return fmt.Errorf("source directory not found: %s", srcPath)
 	}
 
-	if err := copyDirectory(srcPath, "."); err != nil {
+	if err := copyDirectory(srcPath, baseDir); err != nil {
 		return fmt.Errorf("failed to copy console: %v", err)
 	}
 
 	fmt.Println(colorWrap("正在复制额外资源 (Copying extra resources)...", ansiCyan))
 	for _, extra := range selected.Config.ExtraSources {
-		extraSrc := filepath.Join("consoles", extra)
+		extraSrc := filepath.Join(baseDir, "consoles", extra)
 		if _, err := os.Stat(extraSrc); err == nil {
 			fmt.Printf("  Copying: %s\n", extra)
-			if err := copyDirectory(extraSrc, "."); err != nil {
+			if err := copyDirectory(extraSrc, baseDir); err != nil {
 				return fmt.Errorf("failed to copy extra source %s: %v", extra, err)
 			}
 		} else {
@@ -769,21 +770,22 @@ func selectLanguage() (string, error) {
 		if err != nil {
 			return "", err
 		}
-		choice = strings.TrimSpace(choice)
-		if choice == "" || choice == "1" {
+
+		switch strings.TrimSpace(choice) {
+		case "", "1":
 			return "en", nil
-		} else if choice == "2" {
+		case "2":
 			return "cn", nil
-		} else {
+		default:
 			fmt.Println(colorWrap("选择无效，请重试 (Invalid selection).", ansiRed))
 		}
 	}
 }
 
 // 创建语言标记文件
-func createLanguageFile(lang string) error {
+func createLanguageFile(lang string, baseDir string) error {
 	if lang == "cn" {
-		f, err := os.Create(".cn")
+		f, err := os.Create(filepath.Join(baseDir, ".cn"))
 		if err != nil {
 			return err
 		}
@@ -795,6 +797,14 @@ func createLanguageFile(lang string) error {
 
 // ===================== main =====================
 func main() {
+	// get the directory where the executable binary is located
+	exePath, err := os.Executable()
+	if err != nil {
+		fmt.Printf("Failed to get exectuable directory: %v\n", err)
+		return
+	}
+	baseDir := filepath.Dir(exePath)
+
 	clearScreen()
 	fmt.Println(colorWrap("DTB Selector Tool - Go Version", ansiBold+ansiGreen))
 	introAndWaitFancy()
@@ -809,12 +819,12 @@ func main() {
 		return
 	}
 
-	if err := cleanTargetDirectory(); err != nil {
+	if err := cleanTargetDirectory(baseDir); err != nil {
 		fmt.Printf("Error cleaning directory: %v\n", err)
 		return
 	}
 
-	if err := copySelectedConsole(selected); err != nil {
+	if err := copySelectedConsole(selected, baseDir); err != nil {
 		fmt.Printf("Error copying files: %v\n", err)
 		return
 	}
@@ -827,7 +837,7 @@ func main() {
 		fmt.Printf("Error selecting language: %v\n", err)
 		return
 	}
-	if err := createLanguageFile(lang); err != nil {
+	if err := createLanguageFile(lang, baseDir); err != nil {
 		fmt.Printf("Error creating language file: %v\n", err)
 		return
 	}
