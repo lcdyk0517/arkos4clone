@@ -658,11 +658,12 @@ func selectConsole(brand string) (*ConsoleConfig, string, error) {
 	var consoleOptions []consoleOption
 
 	// 查找属于当前品牌的所有设备，每个显示名称都作为独立选项
-	for _, console := range Consoles {
+	for i := range Consoles {
+		console := &Consoles[i]
 		for _, entry := range console.BrandEntries {
 			if entry.Brand == brand {
 				consoleOptions = append(consoleOptions, consoleOption{
-					config:      &console,
+					config:      console,
 					displayName: entry.DisplayName,
 				})
 			}
