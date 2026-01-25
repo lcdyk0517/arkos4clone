@@ -54,7 +54,7 @@ printf "t\n3\n7\nw\n" | sudo fdisk /dev/mmcblk0
 sudo mount -t exfat -w /dev/mmcblk0p3 /roms
 exitcode=$?
 sleep 2
-sudo tar -xvf /roms.tar -C /
+sudo tar -xvf --warning=no-timestamp /roms.tar -C /
 sync
 sudo rm -rf -v /roms/themes/es-theme-nes-box/
 # Setup swapfile
