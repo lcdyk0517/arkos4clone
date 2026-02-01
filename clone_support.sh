@@ -17,7 +17,7 @@ sudo mkdir -p "$MOUNT_DIR/boot/consoles"
 sudo rsync $RSYNC_BOOT_OPTS --exclude='files' ./consoles/ "$MOUNT_DIR/boot/consoles/"
 
 # 这些都是普通文件，直接复制即可
-sudo cp -f ./sh/clone.sh ./dtb_selector_macos_intel ./dtb_selector_win32.exe ./dtb_selector_macos_apple ./sh/expandtoexfat.sh "$MOUNT_DIR/boot/"
+sudo cp -f ./sh/clone.sh ./dtb_selector_macos ./dtb_selector_win32.exe ./sh/expandtoexfat.sh "$MOUNT_DIR/boot/"
 
 echo "== 注入按键信息 =="
 sudo mkdir -p "$MOUNT_DIR/root/home/ark/.quirks"

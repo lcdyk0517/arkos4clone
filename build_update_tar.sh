@@ -79,9 +79,8 @@ rsync $RSYNC_BOOT_OPTS --exclude='files' ./consoles/ "$PAYLOAD_BOOT/consoles/"
 cp -f ./sh/clone.sh "$PAYLOAD_BOOT/firstboot.sh"
 
 # 其他 boot 工具保持原文件名
-cp -f ./dtb_selector_macos_intel \
+cp -f ./dtb_selector_macos \
       ./dtb_selector_win32.exe \
-      ./dtb_selector_macos_apple \
       ./sh/expandtoexfat.sh \
       "$PAYLOAD_BOOT/" 2>/dev/null || true
 
