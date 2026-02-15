@@ -91,7 +91,7 @@ To make ArkOS work on clone devices, the following changes and adaptations were 
 2. Flash the image to the SD card and run `dtb_selector.exe` to select the corresponding device, then reboot the device.
 
 Or —
-If you are a non-Windows user, perform the configuration manually by mounting the `BOOT` partition and:
+If you are a non-Windows user, perform the configuration manually by mounting the `BOOT` partition after flashing the image to the SD card and:
 
 1. Copy all files from `consoles/<your-hardware>` (`boot.ini`, and two `dtb` files) to the root directory of the SD card.
 2. Copy `Image` from `consoles/kernel/common`(sic) to the root directory of the SD card.
