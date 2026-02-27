@@ -382,220 +382,251 @@ var Brands = []string{
 	"Other",
 }
 
-var currentMenuLang = "en"
+// Multiple Language Support
+type Language struct {
+	Title   string
+	Variant LanguageVariant
 
-var i18n = map[string]map[string]string{
-	"title": {
-		"en": "DTB Selector Tool - Go Version",
-		"cn": "DTB 选择工具 - Go 版本",
-		"ko": "DTB 선택 도구 - Go 버전",
+	Common  LanguageCommon
+	Menu1   LanguageMenu1
+	Menu2   LanguageMenu2
+	Menu3   LanguageMenu3
+	Cleanup LanguageCleanup
+	Menu4   LanguageMenu4
+}
+
+type LanguageCommon struct {
+	Exit                 string
+	InvalidSelection     string
+	PleaseEnterNumber    string
+	Back                 string
+	SelectNumber         string
+	PressEnterToContinue string
+	GoodBye              string
+}
+
+type LanguageMenu1 struct {
+	SelectYourConsole string
+	Welcome           string
+	NoteInfo1         string
+	NoteInfo2         string
+	NoteInfo3         string
+
+	BeforeSelectingConsole string
+	SubInfo                string
+	Continue1              string
+	Continue2              string
+	CancelledBye           string
+}
+
+type LanguageMenu2 struct {
+	PleaseSelectBrand string
+}
+
+type LanguageMenu3 struct {
+	AvailableConsolesFor string
+	NoConsolesFound      string
+	Copying              string
+	CopyingExtra         string
+	CopyingFmt           string
+}
+
+type LanguageCleanup struct {
+	OperationCompleted   string
+	ModelsCopied         string
+	Tip1                 string
+	CleanTargetDir       string
+	DeleteFileFmt        string
+	DeletionFailedFmt    string
+	DeleteDirectoryFmt   string
+	DirDeletionFailedFmt string
+}
+
+type LanguageMenu4 struct {
+	SelectLanguage    string
+	DefaultEnglish    string
+	Info1             string
+	TagFileCreated    string
+	OperationComplete string
+}
+
+type LanguageVariant string
+
+const (
+	ENGLISH LanguageVariant = "en"
+	CHINESE LanguageVariant = "cn"
+	KOREAN  LanguageVariant = "ko"
+)
+
+var english = Language{
+	Title:   "DTB Selector Tool - Go Version",
+	Variant: ENGLISH,
+	Common: LanguageCommon{
+		Exit:                 " Exit : ",
+		SelectNumber:         "\nSelect number: ",
+		InvalidSelection:     "Invalid selection.",
+		PleaseEnterNumber:    "Please enter a number",
+		PressEnterToContinue: "Press Enter to continue...",
+		Back:                 "Back",
+		GoodBye:              "Goodbye!",
 	},
-	"choice_console": {
-		"en": "DTB Selector - Select Your Console",
-		"cn": "DTB Selector - 请选择机型",
-		"ko": "DTB Selector - 콘솔을 선택하세요",
+	Menu1: LanguageMenu1{
+		SelectYourConsole: "DTB Selector - Select Your Console",
+		Welcome:           "\n================ Welcome ================",
+		NoteInfo1:         "NOTE:\n• This system currently only supports the listed R36 clones;\n  if your clone is not in the list, it is not supported yet.",
+		NoteInfo2:         "💡 If you don't know what clone your device is, use https://lcdyk0517.github.io/dtbTools.html to help identify it",
+		NoteInfo3:         "• Do NOT use the dtb files from the stock EmuELEC card with this system — it will brick the boot.",
+
+		BeforeSelectingConsole: "Before selecting a console:",
+		SubInfo:                "  then copies the chosen console and any mapped extra sources.",
+		Continue1:              "  • Press Enter to continue; type 'q' to quit.",
+		Continue2:              "\nPress Enter to continue, Press ",
+		CancelledBye:           "Cancelled, bye! 👋",
 	},
-	"welcome_info1": {
-		"en": "\n================ Welcome ================",
-		"cn": "\n================ 欢迎使用 ================",
-		"ko": "\n================ 방가방가 ================",
+	Menu2: LanguageMenu2{
+		PleaseSelectBrand: "│ Please select a brand",
 	},
-	"welcome_info2": {
-		"en": "NOTE:\n• This system currently only supports the listed R36 clones;\n  if your clone is not in the list, it is not supported yet.",
-		"cn": "说明：\n本系统目前只支持下列机型，如果你的 R36 克隆机不在列表中，则暂时无法使用。",
-		"ko": "NOTE:\n• 이 시스템은 현재 나열된 기기만 지원합니다.\n  만약 사용하시는 기기가 목록에 없다면, 아직 지원되지 않습니다.",
+	Menu3: LanguageMenu3{
+		AvailableConsolesFor: "Available consoles for: ",
+		NoConsolesFound:      "No consoles found.",
+		Copying:              "Copying: ",
+		CopyingExtra:         "Copying extra resources...",
+		CopyingFmt:           "  Copying: %s\n",
 	},
-	"welcome_info3": {
-		"en": "💡 If you don't know what clone your device is, use https://lcdyk0517.github.io/dtbTools.html to help identify it",
-		"cn": "💡 如果你不知道你的设备是什么克隆，可以使用 https://lcdyk0517.github.io/dtbTools.html 来辅助判断",
-		"ko": "💡 사용 중인 기기가 어떤 제품인지 모르는 경우, https://lcdyk0517.github.io/dtbTools.html 을 이용하여 확인하세요.",
+	Cleanup: LanguageCleanup{
+		OperationCompleted:   "  ✅  Operation completed!",
+		ModelsCopied:         "Models that have been copied： ",
+		Tip1:                 "  Tip: verify files in the destination directory.",
+		CleanTargetDir:       "Cleaning target directory...",
+		DeleteFileFmt:        "  Delete file: %s\n",
+		DeletionFailedFmt:    "    Warning: Deletion failed %s: %v\n",
+		DeleteDirectoryFmt:   "  Delete directory: %s\n",
+		DirDeletionFailedFmt: "    Warning: Directory deletion failed %s: %v\n",
 	},
-	"welcome_info4": {
-		"en": "• Do NOT use the dtb files from the stock EmuELEC card with this system — it will brick the boot.",
-		"cn": "请不要使用原装 EmuELEC 卡中的 dtb 文件搭配本系统，否则会导致系统无法启动！",
-		"ko": "• 기본 EmuELEC 카드에 포함된 dtb 파일을 이 시스템에 사용하지 마십시오. 부팅이 불가능해집니다.",
-	},
-	"welcome_info5": {
-		"en": "Before selecting a console:",
-		"cn": "选择机型前请阅读：",
-		"ko": "기기를 선택하기 전에 다음 내용을 읽어주세요:",
-	},
-	"welcome_info6": {
-		"en": "  then copies the chosen console and any mapped extra sources.",
-		"cn": "  • 随后复制所选机型及额外映射资源。",
-		"ko": "  선택한 기기의 필요한 파일이 자동으로 복사됩니다.",
-	},
-	"welcome_info7": {
-		"en": "  • Press Enter to continue; type 'q' to quit.",
-		"cn": "  • 按 Enter 继续；输入 q 退出。",
-		"ko": "  • 계속하려면 Enter 키를 누르고, 종료하려면 'q' 키를 누르세요.",
-	},
-	"welcome_info8": {
-		"en": "\nPress Enter to continue, Press ",
-		"cn": "\n按 Enter 继续，或输入 ",
-		"ko": "\nEnter 계속，",
-	},
-	"welcome_info9": {
-		"en": " Exit : ",
-		"cn": " 退出：",
-		"ko": " 종료：",
-	},
-	"welcome_info10": {
-		"en": "Cancelled, bye! 👋",
-		"cn": "已取消，拜拜 👋",
-		"ko": "취소되었어요, 안녕! 👋",
-	},
-	"select_brand1": {
-		"en": "│ Please select a brand",
-		"cn": "│ 请选择品牌",
-		"ko": "│ 브랜드를 선택하세요",
-	},
-	"select_brand2": {
-		"en": "Exit",
-		"cn": "退出",
-		"ko": "종료",
-	},
-	"select_brand3": {
-		"en": "\nSelect number: ",
-		"cn": "\n选择序号: ",
-		"ko": "\n선택하세요: ",
-	},
-	"select_brand4": {
-		"en": "Invalid selection.",
-		"cn": "选择无效，请重试.",
-		"ko": "잘못된 선택이에요.",
-	},
-	"select_brand5": {
-		"en": "Please enter a number",
-		"cn": "请输入数字",
-		"ko": "숫자를 입력하세요",
-	},
-	"select_console1": {
-		"en": "Available consoles for: ",
-		"cn": "该品牌可用机型: ",
-		"ko": "선택 가능한 기기: ",
-	},
-	"select_console2": {
-		"en": "No consoles found.",
-		"cn": "该品牌下没有机型.",
-		"ko": "기기를 찾을 수 없어요.",
-	},
-	"select_console3": {
-		"en": "Press Enter to continue...",
-		"cn": "按 Enter 返回...",
-		"ko": "Enter를 눌러주세요...",
-	},
-	"select_console4": {
-		"en": "Back",
-		"cn": "返回",
-		"ko": "뒤로가기",
-	},
-	"select_console5": {
-		"en": "\nSelect number: ",
-		"cn": "\n选择序号: ",
-		"ko": "\n번호를 선택하세요: ",
-	},
-	"select_console6": {
-		"en": "Invalid selection.",
-		"cn": "选择无效，请重试.",
-		"ko": "잘못된 선택이에요.",
-	},
-	"copy_selected_console1": {
-		"en": "Copying: ",
-		"cn": "开始复制: ",
-		"ko": "복사중",
-	},
-	"copy_selected_console2": {
-		"en": "Copying extra resources...",
-		"cn": "正在复制额外资源...",
-		"ko": "기타 리소스 복사중...",
-	},
-	"copy_selected_console3": {
-		"en": "  Copying: %s\n",
-		"cn": "  Copying: %s\n",
-		"ko": "  복사중: %s\n",
-	},
-	"success_fancy1": {
-		"en": "  ✅  Operation completed!",
-		"cn": "  ✅  操作完成！",
-		"ko": "  ✅  성공!",
-	},
-	"success_fancy2": {
-		"en": "Models that have been copied： ",
-		"cn": "已复制的机型： ",
-		"ko": "복제된 모델： ",
-	},
-	"success_fancy3": {
-		"en": "  Tip: verify files in the destination directory.",
-		"cn": "  提示：请检查目标目录确保文件完整。",
-		"ko": "  팁: 대상 폴더의 파일을 확인하십시오.",
-	},
-	"clean_target_directory1": {
-		"en": "Cleaning target directory...",
-		"cn": "开始清理目标目录...",
-		"ko": "불필요한 파일 정리...",
-	},
-	"clean_target_directory2": {
-		"en": "  Delete file: %s\n",
-		"cn": "  删除文件: %s\n",
-		"ko": "  파일삭제: %s\n",
-	},
-	"clean_target_directory3": {
-		"en": "    Warning: Deletion failed %s: %v\n",
-		"cn": "    警告: 删除失败 %s: %v\n",
-		"ko": "    경고: 삭제실패 %s: %v\n",
-	},
-	"clean_target_directory4": {
-		"en": "  Delete directory: %s\n",
-		"cn": "  删除目录: %s\n",
-		"ko": "  폴더 삭제: %s\n",
-	},
-	"clean_target_directory5": {
-		"en": "    Warning: Directory deletion failed %s: %v\n",
-		"cn": "    警告: 删除目录失败 %s: %v\n",
-		"ko": "    경고: 폴더 삭제 실패 %s: %v\n",
-	},
-	"clean_target_directory6": {
-		"en": "",
-		"cn": "",
-		"ko": "",
-	},
-	"select_language1": {
-		"en": "Select language:",
-		"cn": "请选择语言:",
-		"ko": "언어 선택:",
-	},
-	"select_language2": {
-		"en": "  1. English (Default)",
-		"cn": "  1. English (默认)",
-		"ko": "  1. English (기본)",
-	},
-	"select_language3": {
-		"en": "Enter the number or press Enter. English is the default selection: ",
-		"cn": "输入序号或按 Enter 默认选择 English: ",
-		"ko": "번호를 입력하거나 Enter 키를 누르세요. 기본 설정은 영어입니다:",
-	},
-	"select_language4": {
-		"en": "Invalid selection.",
-		"cn": "选择无效，请重试 (Invalid selection).",
-		"ko": "잘못된 선택이에요.",
-	},
-	"create_language1": {
-		"en": "Chinese language tag file has been created. (.cn created)",
-		"cn": "已创建中文语言标记文件. (.cn created)",
-		"ko": "중국어 태그 파일이 생성되었어요. (.cn created)",
-	},
-	"create_language2": {
-		"en": "Operation complete! Language selected: ",
-		"cn": "操作完成！已选择语言: ",
-		"ko": "작업이 완료되었어요! 언어가 선택되었어요: ",
-	},
-	"goodbye": {
-		"en": "Goodbye!",
-		"cn": "再见！",
-		"ko": "빠이!",
+	Menu4: LanguageMenu4{
+		SelectLanguage:    "Select language:",
+		DefaultEnglish:    "  1. English (Default)",
+		Info1:             "Enter the number or press Enter. English is the default selection: ",
+		TagFileCreated:    "Chinese language tag file has been created. (.cn created)",
+		OperationComplete: "Operation complete! Language selected: ",
 	},
 }
+
+var chinese = Language{
+	Title:   "DTB 选择工具 - Go 版本",
+	Variant: CHINESE,
+	Common: LanguageCommon{
+		Exit:                 " 退出：",
+		SelectNumber:         "\n选择序号: ",
+		InvalidSelection:     "选择无效，请重试.",
+		PleaseEnterNumber:    "请输入数字",
+		PressEnterToContinue: "按 Enter 返回...",
+		Back:                 "返回",
+		GoodBye:              "再见！",
+	},
+	Menu1: LanguageMenu1{
+		SelectYourConsole: "DTB Selector - 请选择机型",
+		Welcome:           "\n================ 欢迎使用 ================",
+		NoteInfo1:         "说明：\n本系统目前只支持下列机型，如果你的 R36 克隆机不在列表中，则暂时无法使用。",
+		NoteInfo2:         "💡 如果你不知道你的设备是什么克隆，可以使用 https://lcdyk0517.github.io/dtbTools.html 来辅助判断",
+		NoteInfo3:         "请不要使用原装 EmuELEC 卡中的 dtb 文件搭配本系统，否则会导致系统无法启动！",
+
+		BeforeSelectingConsole: "选择机型前请阅读：",
+		SubInfo:                "  • 随后复制所选机型及额外映射资源。",
+		Continue1:              "  • 按 Enter 继续；输入 q 退出。",
+		Continue2:              "\n按 Enter 继续，或输入 ",
+		CancelledBye:           "已取消，拜拜 👋",
+	},
+	Menu2: LanguageMenu2{
+		PleaseSelectBrand: "│ 请选择品牌",
+	},
+	Menu3: LanguageMenu3{
+		AvailableConsolesFor: "该品牌可用机型: ",
+		NoConsolesFound:      "该品牌下没有机型.",
+		Copying:              "开始复制: ",
+		CopyingExtra:         "正在复制额外资源...",
+		CopyingFmt:           "  开始复制: %s\n",
+	},
+	Cleanup: LanguageCleanup{
+		OperationCompleted:   "  ✅  操作完成！",
+		ModelsCopied:         "已复制的机型： ",
+		Tip1:                 "  提示：请检查目标目录确保文件完整。",
+		CleanTargetDir:       "开始清理目标目录...",
+		DeleteFileFmt:        "  删除文件: %s\n",
+		DeletionFailedFmt:    "    警告: 删除失败 %s: %v\n",
+		DeleteDirectoryFmt:   "  删除目录: %s\n",
+		DirDeletionFailedFmt: "    警告: 删除目录失败 %s: %v\n",
+	},
+	Menu4: LanguageMenu4{
+		SelectLanguage:    "请选择语言:",
+		DefaultEnglish:    "  1. English (默认)",
+		Info1:             "输入序号或按 Enter 默认选择 English: ",
+		TagFileCreated:    "已创建中文语言标记文件. (.cn created)",
+		OperationComplete: "操作完成！已选择语言: ",
+	},
+}
+
+var korean = Language{
+	Title:   "DTB 선택 도구 - Go 버전",
+	Variant: KOREAN,
+	Common: LanguageCommon{
+		Exit:                 " 종료：",
+		SelectNumber:         "\n선택하세요: ",
+		InvalidSelection:     "잘못된 선택이에요.",
+		PleaseEnterNumber:    "숫자를 입력하세요",
+		PressEnterToContinue: "Enter를 눌러주세요...",
+		Back:                 "뒤로가기",
+		GoodBye:              "빠이!",
+	},
+	Menu1: LanguageMenu1{
+		SelectYourConsole: "DTB Selector - 콘솔을 선택하세요",
+		Welcome:           "\n================ 방가방가 ================",
+		NoteInfo1:         "NOTE:\n• 이 시스템은 현재 나열된 기기만 지원합니다.\n  만약 사용하시는 기기가 목록에 없다면, 아직 지원되지 않습니다.",
+		NoteInfo2:         "💡 사용 중인 기기가 어떤 제품인지 모르는 경우, https://lcdyk0517.github.io/dtbTools.html 을 이용하여 확인하세요.",
+		NoteInfo3:         "• 기본 EmuELEC 카드에 포함된 dtb 파일을 이 시스템에 사용하지 마십시오. 부팅이 불가능해집니다.",
+
+		BeforeSelectingConsole: "기기를 선택하기 전에 다음 내용을 읽어주세요:",
+		SubInfo:                "  선택한 기기의 필요한 파일이 자동으로 복사됩니다.",
+		Continue1:              "  • 계속하려면 Enter 키를 누르고, 종료하려면 'q' 키를 누르세요.",
+		Continue2:              "\nEnter 계속，",
+		CancelledBye:           "취소되었어요, 안녕! 👋",
+	},
+	Menu2: LanguageMenu2{
+		PleaseSelectBrand: "│ 브랜드를 선택하세요",
+	},
+	Menu3: LanguageMenu3{
+		AvailableConsolesFor: "선택 가능한 기기: ",
+		NoConsolesFound:      "기기를 찾을 수 없어요.",
+		Copying:              "복사중",
+		CopyingExtra:         "기타 리소스 복사중...",
+		CopyingFmt:           "  복사중: %s\n",
+	},
+	Cleanup: LanguageCleanup{
+		OperationCompleted:   "  ✅  성공!",
+		ModelsCopied:         "복제된 모델： ",
+		Tip1:                 "  팁: 대상 폴더의 파일을 확인하십시오.",
+		CleanTargetDir:       "불필요한 파일 정리...",
+		DeleteFileFmt:        "  파일삭제: %s\n",
+		DeletionFailedFmt:    "    경고: 삭제실패 %s: %v\n",
+		DeleteDirectoryFmt:   "  폴더 삭제: %s\n",
+		DirDeletionFailedFmt: "    경고: 폴더 삭제 실패 %s: %v\n",
+	},
+	Menu4: LanguageMenu4{
+		SelectLanguage:    "언어 선택:",
+		DefaultEnglish:    "  1. English (기본)",
+		Info1:             "번호를 입력하거나 Enter 키를 누르세요. 기본 설정은 영어입니다:",
+		TagFileCreated:    "중국어 태그 파일이 생성되었어요. (.ko created)",
+		OperationComplete: "작업이 완료되었어요! 언어가 선택되었어요: ",
+	},
+}
+
+var (
+	languages = map[LanguageVariant]Language{
+		ENGLISH: english,
+		CHINESE: chinese,
+		KOREAN:  korean,
+	}
+)
 
 // ===================== 全局输入 reader =====================
 var stdinReader = bufio.NewReader(os.Stdin)
@@ -609,16 +640,6 @@ var (
 	ansiCyan  = "\033[36m"
 	ansiBold  = "\033[1m"
 )
-
-func tr(key string) string {
-	if langMap, ok := i18n[key]; ok {
-		if val, ok := langMap[currentMenuLang]; ok {
-			return val
-		}
-		return langMap["en"]
-	}
-	return key
-}
 
 func supportsANSI() bool {
 	info, err := os.Stdout.Stat()
@@ -681,25 +702,26 @@ func p(s string) {
 	fmt.Println(s)
 }
 
-func introAndWaitFancy() {
-	fancyHeader(tr("choice_console"))
-	p(c(tr("welcome_info1"), HDR))
-	p(c(tr("welcome_info2"), BUL))
-	p(c(tr("welcome_info3"), NOTE))
-	p(c(tr("welcome_info4"), WARN))
+func introAndWaitFancy(lang *Language) {
+	menu1 := &lang.Menu1
+	fancyHeader(menu1.SelectYourConsole)
+	p(c(menu1.Welcome, HDR))
+	p(c(menu1.NoteInfo1, BUL))
+	p(c(menu1.NoteInfo2, NOTE))
+	p(c(menu1.NoteInfo3, WARN))
 	p("")
-	p(c(tr("welcome_info5"), EMP))
-	p(c(tr("welcome_info6"), BUL))
-	p(c(tr("welcome_info7"), NOTE))
+	p(c(menu1.BeforeSelectingConsole, EMP))
+	p(c(menu1.SubInfo, BUL))
+	p(c(menu1.Continue1, NOTE))
 	p(c("-----------------------------------------", DIM))
 
-	fmt.Print(colorWrap(tr("welcome_info8"), ansiBold))
+	fmt.Print(colorWrap(menu1.Continue2, ansiBold))
 	fmt.Print(colorWrap("q", ansiRed))
-	fmt.Print(colorWrap(tr("welcome_info9"), ansiBold))
+	fmt.Print(colorWrap(lang.Common.Exit, ansiBold))
 	line, _ := stdinReader.ReadString('\n')
 	if strings.TrimSpace(strings.ToLower(line)) == "q" {
 		fmt.Println()
-		fmt.Println(colorWrap(tr("welcome_info10"), ansiGreen))
+		fmt.Println(colorWrap(menu1.CancelledBye, ansiGreen))
 		os.Exit(0)
 	}
 }
@@ -742,7 +764,7 @@ func prompt(msg string) (string, error) {
 	return strings.TrimSpace(line), nil
 }
 
-func readIntChoice(msg string) (int, error) {
+func readIntChoice(lang *Language, msg string) (int, error) {
 	for {
 		resp, err := prompt(msg)
 		if err != nil {
@@ -750,7 +772,7 @@ func readIntChoice(msg string) (int, error) {
 		}
 		n, err := strconv.Atoi(resp)
 		if err != nil {
-			fmt.Println(colorWrap(tr("select_brand5"), ansiRed))
+			fmt.Println(colorWrap(lang.Common.PleaseEnterNumber, ansiRed))
 			continue
 		}
 		return n, nil
@@ -758,9 +780,11 @@ func readIntChoice(msg string) (int, error) {
 }
 
 // ===================== 文件操作 =====================
-func cleanTargetDirectory(baseDir string) error {
+func cleanTargetDirectory(lang *Language, baseDir string) error {
+	cleanup := &lang.Cleanup
+
 	fmt.Println()
-	fmt.Println(colorWrap(tr("clean_target_directory1"), ansiCyan))
+	fmt.Println(colorWrap(cleanup.CleanTargetDir, ansiCyan))
 
 	patterns := []string{"*.dtb", "*.ini", "*.orig", "*.tony", ".cn"}
 	for _, pat := range patterns {
@@ -770,18 +794,18 @@ func cleanTargetDirectory(baseDir string) error {
 			return err
 		}
 		for _, f := range matches {
-			fmt.Printf(tr("clean_target_directory2"), f)
+			fmt.Printf(cleanup.DeleteFileFmt, f)
 			if err := os.Remove(f); err != nil {
-				fmt.Printf(tr("clean_target_directory3"), f, err)
+				fmt.Printf(cleanup.DeletionFailedFmt, f, err)
 			}
 		}
 	}
 
 	bmpPath := filepath.Join(baseDir, "BMPs")
 	if _, err := os.Stat(bmpPath); err == nil {
-		fmt.Printf(tr("clean_target_directory4"), bmpPath)
+		fmt.Printf(cleanup.DeleteDirectoryFmt, bmpPath)
 		if err := os.RemoveAll(bmpPath); err != nil {
-			fmt.Printf(tr("clean_target_directory5"), bmpPath, err)
+			fmt.Printf(cleanup.DirDeletionFailedFmt, bmpPath, err)
 		}
 	}
 	return nil
@@ -845,19 +869,19 @@ type SelectedConsole struct {
 	DisplayName string
 }
 
-func selectBrand() (string, error) {
+func selectBrand(lang *Language) (string, error) {
 	clearScreen()
 	fmt.Println()
 	fmt.Println(colorWrap("┌────────────────────────────────────────┐", ansiCyan))
-	fmt.Println(colorWrap(tr("select_brand1"), ansiBold+ansiGreen))
+	fmt.Println(colorWrap(lang.Menu2.PleaseSelectBrand, ansiBold+ansiGreen))
 	fmt.Println(colorWrap("└────────────────────────────────────────┘", ansiCyan))
 	for i, brand := range Brands {
 		fmt.Printf("  %d. %s\n", i+1, brand)
 	}
-	fmt.Printf("  %d. %s\n", 0, tr("select_brand2"))
+	fmt.Printf("  %d. %s\n", 0, lang.Common.Exit)
 
 	for {
-		choice, err := readIntChoice(tr("select_brand3"))
+		choice, err := readIntChoice(lang, lang.Common.SelectNumber)
 		if err != nil {
 			return "", err
 		}
@@ -867,15 +891,15 @@ func selectBrand() (string, error) {
 		if choice > 0 && choice <= len(Brands) {
 			return Brands[choice-1], nil
 		}
-		fmt.Println(colorWrap(tr("select_brand4"), ansiRed))
+		fmt.Println(colorWrap(lang.Common.InvalidSelection, ansiRed))
 	}
 }
 
-func selectConsole(brand string) (*ConsoleConfig, string, error) {
+func selectConsole(lang *Language, brand string) (*ConsoleConfig, string, error) {
 	clearScreen()
 	fmt.Println()
 	fmt.Println(colorWrap("┌────────────────────────────────────────┐", ansiCyan))
-	fmt.Printf("│ %s\n", colorWrap(tr("select_console1")+brand, ansiBold+ansiGreen))
+	fmt.Printf("│ %s\n", colorWrap(lang.Menu3.AvailableConsolesFor+brand, ansiBold+ansiGreen))
 	fmt.Println(colorWrap("└────────────────────────────────────────┘", ansiCyan))
 
 	// 重新组织数据结构，每个显示名称对应一个配置
@@ -899,8 +923,8 @@ func selectConsole(brand string) (*ConsoleConfig, string, error) {
 	}
 
 	if len(consoleOptions) == 0 {
-		fmt.Println(colorWrap(tr("select_console2"), ansiRed))
-		_, _ = prompt(tr("select_console3"))
+		fmt.Println(colorWrap(lang.Menu3.NoConsolesFound, ansiRed))
+		_, _ = prompt(lang.Common.PressEnterToContinue)
 		return nil, "", nil
 	}
 
@@ -908,10 +932,10 @@ func selectConsole(brand string) (*ConsoleConfig, string, error) {
 	for i, option := range consoleOptions {
 		fmt.Printf("  %d. %s\n", i+1, option.displayName)
 	}
-	fmt.Printf("  %d. %s\n", 0, tr("select_console4"))
+	fmt.Printf("  %d. %s\n", 0, lang.Common.Back)
 
 	for {
-		choice, err := readIntChoice(tr("select_console5"))
+		choice, err := readIntChoice(lang, lang.Common.SelectNumber)
 		if err != nil {
 			return nil, "", err
 		}
@@ -923,19 +947,20 @@ func selectConsole(brand string) (*ConsoleConfig, string, error) {
 			fmt.Printf("Selected: %s\n", selected.displayName)
 			return selected.config, selected.displayName, nil
 		}
-		fmt.Println(colorWrap(tr("select_console6"), ansiRed))
+		fmt.Println(colorWrap(lang.Common.InvalidSelection, ansiRed))
 	}
 }
-func showMenu() (*SelectedConsole, error) {
+
+func showMenu(lang *Language) (*SelectedConsole, error) {
 	for {
-		brand, err := selectBrand()
+		brand, err := selectBrand(lang)
 		if err != nil {
 			return nil, err
 		}
 		if brand == "" {
 			return nil, nil
 		}
-		console, displayName, err := selectConsole(brand)
+		console, displayName, err := selectConsole(lang, brand)
 		if err != nil {
 			return nil, err
 		}
@@ -946,12 +971,12 @@ func showMenu() (*SelectedConsole, error) {
 }
 
 // ===================== 复制逻辑 =====================
-func copySelectedConsole(selected *SelectedConsole, baseDir string) error {
+func copySelectedConsole(lang *Language, selected *SelectedConsole, baseDir string) error {
 	if selected == nil || selected.Config == nil {
 		return errors.New("no console selected")
 	}
 
-	fmt.Printf("\n%s\n", colorWrap(tr("copy_selected_console1")+selected.DisplayName, ansiCyan))
+	fmt.Printf("\n%s\n", colorWrap(lang.Menu3.Copying+selected.DisplayName, ansiCyan))
 
 	srcPath := filepath.Join(baseDir, "consoles", selected.Config.RealName)
 	if _, err := os.Stat(srcPath); os.IsNotExist(err) {
@@ -962,11 +987,11 @@ func copySelectedConsole(selected *SelectedConsole, baseDir string) error {
 		return fmt.Errorf("failed to copy console: %v", err)
 	}
 
-	fmt.Println(colorWrap(tr("copy_selected_console2"), ansiCyan))
+	fmt.Println(colorWrap(lang.Menu3.CopyingExtra, ansiCyan))
 	for _, extra := range selected.Config.ExtraSources {
 		extraSrc := filepath.Join(baseDir, "consoles", extra)
 		if _, err := os.Stat(extraSrc); err == nil {
-			fmt.Printf(tr("copy_selected_console3"), extra)
+			fmt.Printf(lang.Menu3.CopyingFmt, extra)
 			if err := copyDirectory(extraSrc, baseDir); err != nil {
 				return fmt.Errorf("failed to copy extra source %s: %v", extra, err)
 			}
@@ -977,18 +1002,18 @@ func copySelectedConsole(selected *SelectedConsole, baseDir string) error {
 	return nil
 }
 
-func showSuccessFancy(consoleName string) {
+func showSuccessFancy(lang *Language, consoleName string) {
 	fmt.Println()
 	fmt.Println(colorWrap(strings.Repeat("=", 64), ansiCyan))
-	fmt.Println(colorWrap(tr("success_fancy1"), ansiBold+ansiGreen))
-	fmt.Printf("  %s\n", colorWrap(tr("success_fancy2")+consoleName, ansiBold+ansiBlue))
-	fmt.Println(colorWrap(tr("success_fancy3"), ansiCyan))
+	fmt.Println(colorWrap(lang.Cleanup.OperationCompleted, ansiBold+ansiGreen))
+	fmt.Printf("  %s\n", colorWrap(lang.Cleanup.ModelsCopied+consoleName, ansiBold+ansiBlue))
+	fmt.Println(colorWrap(lang.Cleanup.Tip1, ansiCyan))
 	fmt.Println(colorWrap(strings.Repeat("=", 64), ansiCyan))
 
-	_, _ = prompt(tr("select_console3"))
+	_, _ = prompt(lang.Common.PressEnterToContinue)
 }
 
-func selectMenuLanguage() (string, error) {
+func selectMenuLanguage() (*Language, error) {
 	clearScreen()
 
 	fmt.Println("====================================================")
@@ -1004,15 +1029,15 @@ func selectMenuLanguage() (string, error) {
 	for {
 		resp, err := prompt("Select number: ")
 		if err != nil {
-			return "", err
+			return nil, err
 		}
 		switch strings.TrimSpace(resp) {
 		case "", "1":
-			return "en", nil
+			return &english, nil
 		case "2":
-			return "cn", nil
+			return &chinese, nil
 		case "3":
-			return "ko", nil
+			return &korean, nil
 		default:
 			fmt.Println("Invalid selection.")
 		}
@@ -1030,57 +1055,48 @@ func main() {
 	baseDir := filepath.Dir(exePath)
 
 	// Select lanauage for Menu.
-	menuLang, err := selectMenuLanguage()
+	lang, err := selectMenuLanguage()
 	if err != nil {
 		fmt.Println("Language selection error:", err)
 		return
 	}
-	currentMenuLang = menuLang
 
 	clearScreen()
-	fmt.Println(colorWrap(tr("title"), ansiBold+ansiGreen))
-	introAndWaitFancy()
+	fmt.Println(colorWrap(lang.Title, ansiBold+ansiGreen))
+	introAndWaitFancy(lang)
 
-	selected, err := showMenu()
+	selected, err := showMenu(lang)
 	if err != nil {
 		fmt.Printf("Error: %v\n", err)
 		return
 	}
 	if selected == nil {
-		fmt.Println(colorWrap(tr("goodbye"), ansiGreen))
+		fmt.Println(colorWrap(lang.Common.GoodBye, ansiGreen))
 		return
 	}
 
-	if err := cleanTargetDirectory(baseDir); err != nil {
+	if err := cleanTargetDirectory(lang, baseDir); err != nil {
 		fmt.Printf("Error cleaning directory: %v\n", err)
 		return
 	}
 
-	if err := copySelectedConsole(selected, baseDir); err != nil {
+	if err := copySelectedConsole(lang, selected, baseDir); err != nil {
 		fmt.Printf("Error copying files: %v\n", err)
 		return
 	}
 
-	showSuccessFancy(selected.DisplayName)
+	showSuccessFancy(lang, selected.DisplayName)
 
 	// 根据菜单语言生成语言标记文件
-	if menuLang == "cn" {
-		f, err := os.Create(filepath.Join(baseDir, ".cn"))
+	if lang.Variant == CHINESE || lang.Variant == KOREAN {
+		f, err := os.Create(filepath.Join(baseDir, "."+string(lang.Variant)))
 		if err != nil {
 			fmt.Printf("Error creating language file: %v\n", err)
 			return
 		}
 		defer f.Close()
-		fmt.Println(colorWrap(tr("create_language1"), ansiCyan))
-	} else if menuLang == "ko" {
-		f, err := os.Create(filepath.Join(baseDir, ".ko"))
-		if err != nil {
-			fmt.Printf("Error creating language file: %v\n", err)
-			return
-		}
-		defer f.Close()
-		fmt.Println("Korean language tag file has been created. (.ko created)")
+		fmt.Println(colorWrap(lang.Menu4.TagFileCreated, ansiCyan))
 	}
 
-	fmt.Println(colorWrap(tr("create_language2")+menuLang, ansiGreen))
+	fmt.Println(colorWrap(lang.Menu4.OperationComplete+string(lang.Variant), ansiGreen))
 }
