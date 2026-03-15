@@ -139,6 +139,7 @@ truncate -s +"${ADD_MB}"M "$IMG"
 echo "== 刷新 loop 大小 =="
 sudo losetup -d "$LOOP"
 LOOP="$(sudo losetup --find --show -P "$IMG")"
+sudo losetup -c "$LOOP"
 settle
 echo "loop 已刷新: $LOOP"
 
