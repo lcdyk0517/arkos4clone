@@ -187,6 +187,7 @@ if [ "$(stat -c%s $MOUNT_DIR/root/roms.tar 2>/dev/null || echo 0)" -le $((100*10
   tar -xf "$WORK_DIR/roms.tar" -C "$WORK_DIR/tmproms"
   mkdir -p "$WORK_DIR/tmproms/roms/hbmame"
   tar -xf "$SCRIPT_DIR/zulu11.48.21-ca-jdk11.0.11-linux_aarch64.tar.gz" -C "$WORK_DIR/tmproms/roms/j2me"
+  rm -rf "$WORK_DIR/tmproms/roms/j2me/jdk"
   mv "$WORK_DIR/tmproms/roms/j2me/zulu11.48.21-ca-jdk11.0.11-linux_aarch64" "$WORK_DIR/tmproms/roms/j2me/jdk"
   sudo chown -R root:root "$WORK_DIR/tmproms/roms/j2me/jdk"
   sudo chmod -R 777 "$WORK_DIR/tmproms/roms/j2me/jdk"
@@ -202,7 +203,7 @@ if [ "$(stat -c%s $MOUNT_DIR/root/roms.tar 2>/dev/null || echo 0)" -le $((100*10
   mkdir -p "$WORK_DIR/tmproms/roms/pymo"
   if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
     echo "== 注入 dArkOS 主题 =="
-    sudo cp -r ./replace_file/pymo/pymo "$WORK_DIR/mnt/roms/themes/es-theme-nes-box/"
+    sudo cp -r ./replace_file/pymo/pymo "$WORK_DIR/tmproms/roms/themes/es-theme-nes-box/"
     sudo chown -R root:root "$WORK_DIR/tmproms/roms/themes/es-theme-nes-box/pymo"
     sudo chmod -R 777 "$WORK_DIR/tmproms/roms/themes/es-theme-nes-box/pymo"
   else

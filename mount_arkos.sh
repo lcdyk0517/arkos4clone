@@ -71,6 +71,9 @@ do_mount() {
   # sanity
   [[ -f "$img" ]] || { echo "Image not found: $img" >&2; exit 1; }
 
+  # mount points
+  mk_mount_dirs
+
   # create loop with partition scan
   local loop
   loop="$(losetup -fP --show "$img")"   # e.g. /dev/loop7
@@ -82,9 +85,6 @@ do_mount() {
 
   # show partitions
   lsblk -o NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT "$loop"
-
-  # mount points
-  mk_mount_dirs
 
   # Try common layout:
   #  p1 = boot (FAT32), p2 = root (ext4), p3 = roms (exFAT)

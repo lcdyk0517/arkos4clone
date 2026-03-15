@@ -149,6 +149,10 @@ check_pm_libs() {
     mkdir -p "$pm_libs_dir"
   fi
 
+  if [[ -n "${SUDO_USER:-}" ]]; then
+    chown -R "$SUDO_USER:$SUDO_USER" "$pm_libs_dir"
+  fi
+
   # 检查缺少的文件
   local missing=0
   for f in "${required_files[@]}"; do
@@ -452,7 +456,9 @@ move_to_script_dir() {
   local xz_file="$1"
   local dest="$SCRIPT_DIR/$(basename "$xz_file")"
   log_info "移动输出文件到脚本目录..."
-  mv "$xz_file" "$dest"
+  if ! [[ "$xz_file" -ef "$dest" ]]; then
+    mv -f "$xz_file" "$dest"
+  fi 
   log_ok "输出文件: $dest"
 }
 
