@@ -20,9 +20,9 @@ class Joypad:
     f3 = 705
     f1 = 704
 
-def runcmd(cmd, *args, **kw):
+def runcmd(cmd, *args):
     print(f">>> {cmd}")
-    check_output(cmd, *args, **kw)
+    check_output(cmd, *args)
 
 async def handle_event(device):
     async for event in device.async_read_loop():
@@ -30,7 +30,7 @@ async def handle_event(device):
             keys = arkos_joypad.active_keys()
             if Joypad.f1 in keys:
                 if event.code == Joypad.f3:
-                    runcmd("pkill GameTankEmulato", shell=True)
+                    runcmd(["pkill", "GameTankEmulato"])
                     exit
 
 def run():
