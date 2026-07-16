@@ -75,6 +75,15 @@ var Consoles = []ConsoleConfig{
 		},
 		ExtraSources: []string{"logo/720P/"},
 	},
+	//==================  Lenovo & GUSGU  ===================================
+	{
+		RealName: "h7",
+		BrandEntries: []BrandEntry{
+			{Brand: "Lenovo", DisplayName: "Lenovo GO2"},
+			{Brand: "GUSGU", DisplayName: "GUSGU H7"},
+		},
+		ExtraSources: []string{"logo/768P/"},
+	},
 	//==================  MagicX  ===================================
 	{
 		RealName: "xu10",
@@ -520,7 +529,9 @@ var Consoles = []ConsoleConfig{
 var Brands = []string{
 	"YMC",
 	"UDT",
+	"GUSGU",
 	"AISLPC",
+	"Lenovo",
 	"MagicX",
 	"Batlexp",
 	"Kinhank",

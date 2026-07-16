@@ -77,7 +77,13 @@ Non-Windows users, see [Manual Configuration](#manual-configuration).
 | Device | Logo | Kernel | Config Files | Notes |
 |--------|------|--------|--------------|-------|
 | R36Ultra | `720P` | User Select | `consoles/r36ultra/` | Thanks to Mr.Li |
-| R36UltraX | `7268P` | User Select | `consoles/r36ultrax/` | Thanks to Mr.Li |
+| R36UltraX | `768P` | User Select | `consoles/r36ultrax/` | Thanks to Mr.Li |
+
+### GUSGU
+
+| Device | Logo | Kernel | Config Files | Notes |
+|--------|------|--------|--------------|-------|
+| H7 | `768P` | User Select | `consoles/h7/` | Thanks to Mr.Li |
 
 ### AISLPC
 
@@ -86,6 +92,12 @@ Non-Windows users, see [Manual Configuration](#manual-configuration).
 | K36S | `480P` | User Select | `consoles/k36s/` | Thanks to Mr.Yin |
 | R36T | `480P` | User Select | `consoles/k36s/` | Thanks to Mr.Yin |
 | R36T MAX | `720P` | User Select | `consoles/r36tmax/` | Thanks to Mr.Yin |
+
+### Lenovo
+
+| Device | Logo | Kernel | Config Files | Notes |
+|--------|------|--------|--------------|-------|
+| GO2 | `768P` | User Select | `consoles/h7/` | Thanks to Mr.Li |
 
 ### MagicX
 
