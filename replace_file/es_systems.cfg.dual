@@ -955,6 +955,7 @@
 			<emulator name="retroarch">
 				<cores>
 					<core>snes9x</core>
+					<core>snes9x2002</core>
 					<core>snes9x2005</core>
 					<core>snes9x2010</core>
 					<core>chimerasnes</core>
@@ -963,8 +964,10 @@
 			</emulator>
 			<emulator name="retroarch32">
 				<cores>
+					<core>snes9x</core>
 					<core>snes9x2002</core>
 					<core>snes9x2005</core>
+					<core>snes9x2010</core>
 				</cores>
 			</emulator>
 			<emulator name="mednafen">
@@ -1025,13 +1028,16 @@
 					<core>chimerasnes</core>
 					<core>mednafen_supafaust</core>
 					<core>snes9x</core>
+					<core>snes9x2002</core>
 					<core>snes9x2005</core>
 				</cores>
 			</emulator>
 			<emulator name="retroarch32">
 				<cores>
+					<core>snes9x</core>
 					<core>snes9x2002</core>
 					<core>snes9x2005</core>
+					<core>snes9x2010</core>
 				</cores>
 			</emulator>
 		</emulators>
@@ -1063,6 +1069,7 @@
 			<emulator name="retroarch">
 				<cores>
 					<core>snes9x</core>
+					<core>snes9x2002</core>
 					<core>snes9x2005</core>
 					<core>snes9x2010</core>
 					<core>chimerasnes</core>
@@ -1071,8 +1078,10 @@
 			</emulator>
 			<emulator name="retroarch32">
 				<cores>
+					<core>snes9x</core>
 					<core>snes9x2002</core>
 					<core>snes9x2005</core>
+					<core>snes9x2010</core>
 				</cores>
 			</emulator>
 			<emulator name="mednafen">
@@ -1112,6 +1121,7 @@
 			<emulator name="retroarch">
 				<cores>
 					<core>snes9x</core>
+					<core>snes9x2002</core>
 					<core>snes9x2005</core>
 					<core>snes9x2010</core>
 					<core>chimerasnes</core>
@@ -1120,8 +1130,10 @@
 			</emulator>
 			<emulator name="retroarch32">
 				<cores>
+					<core>snes9x</core>
 					<core>snes9x2002</core>
 					<core>snes9x2005</core>
+					<core>snes9x2010</core>
 				</cores>
 			</emulator>
 			<emulator name="mednafen">
@@ -3639,6 +3651,7 @@
 			<emulator name="retroarch">
 				<cores>
 					<core>snes9x</core>
+					<core>snes9x2002</core>
 					<core>snes9x2005</core>
 					<core>snes9x2010</core>
 					<core>chimerasnes</core>
@@ -3647,8 +3660,10 @@
 			</emulator>
 			<emulator name="retroarch32">
 				<cores>
+					<core>snes9x</core>
 					<core>snes9x2002</core>
 					<core>snes9x2005</core>
+					<core>snes9x2010</core>
 				</cores>
 			</emulator>
 			<emulator name="mednafen">
@@ -3709,13 +3724,16 @@
 					<core>chimerasnes</core>
 					<core>mednafen_supafaust</core>
 					<core>snes9x</core>
+					<core>snes9x2002</core>
 					<core>snes9x2005</core>
 				</cores>
 			</emulator>
 			<emulator name="retroarch32">
 				<cores>
+					<core>snes9x</core>
 					<core>snes9x2002</core>
 					<core>snes9x2005</core>
+					<core>snes9x2010</core>
 				</cores>
 			</emulator>
 		</emulators>
@@ -3747,6 +3765,7 @@
 			<emulator name="retroarch">
 				<cores>
 					<core>snes9x</core>
+					<core>snes9x2002</core>
 					<core>snes9x2005</core>
 					<core>snes9x2010</core>
 					<core>chimerasnes</core>
@@ -3755,8 +3774,10 @@
 			</emulator>
 			<emulator name="retroarch32">
 				<cores>
+					<core>snes9x</core>
 					<core>snes9x2002</core>
 					<core>snes9x2005</core>
+					<core>snes9x2010</core>
 				</cores>
 			</emulator>
 			<emulator name="mednafen">
@@ -3796,6 +3817,7 @@
 			<emulator name="retroarch">
 				<cores>
 					<core>snes9x</core>
+					<core>snes9x2002</core>
 					<core>snes9x2005</core>
 					<core>snes9x2010</core>
 					<core>chimerasnes</core>
@@ -3804,8 +3826,10 @@
 			</emulator>
 			<emulator name="retroarch32">
 				<cores>
+					<core>snes9x</core>
 					<core>snes9x2002</core>
 					<core>snes9x2005</core>
+					<core>snes9x2010</core>
 				</cores>
 			</emulator>
 			<emulator name="mednafen">
