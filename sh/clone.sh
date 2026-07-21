@@ -423,6 +423,17 @@ main() {
     msg "Console unchanged: $cur_val"
   fi
 
+  # Fix for PPSSPP 2021 standalone:
+  # The R3XS build does not ship with a default backup configuration for
+  # PPSSPP 2021. Without it, configuration changes are not persisted.
+  # Copy the default backup configuration if it is missing.
+  if [[ -d "/opt/ppsspp/backupforromsfolder/ppsspp" ]] && \
+     [[ ! -d "/opt/ppsspp-2021/backupforromsfolder/ppsspp" ]]; then
+      sudo mkdir -p /opt/ppsspp-2021/backupforromsfolder
+      sudo cp -a /opt/ppsspp/backupforromsfolder/ppsspp \
+          /opt/ppsspp-2021/backupforromsfolder/
+  fi
+
   # 驱动加载
   sudo depmod -a 2>/dev/null || true
 
