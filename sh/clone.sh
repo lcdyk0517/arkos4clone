@@ -427,11 +427,14 @@ main() {
   # The R3XS build does not ship with a default backup configuration for
   # PPSSPP 2021. Without it, configuration changes are not persisted.
   # Copy the default backup configuration if it is missing.
-  if [[ -d "/opt/ppsspp/backupforromsfolder/ppsspp" ]] && \
-     [[ ! -d "/opt/ppsspp-2021/backupforromsfolder/ppsspp" ]]; then
-      sudo mkdir -p /opt/ppsspp-2021/backupforromsfolder
-      sudo cp -a /opt/ppsspp/backupforromsfolder/ppsspp \
-          /opt/ppsspp-2021/backupforromsfolder/
+  if [[ -d "/opt/ppsspp/backupforromsfolder/ppsspp" ]]; then
+    if [[ ! -d "/opt/ppsspp-2021/backupforromsfolder/ppsspp" ]]; then
+        sudo mkdir -p /opt/ppsspp-2021/backupforromsfolder
+        sudo cp -a /opt/ppsspp/backupforromsfolder/ppsspp \
+            /opt/ppsspp-2021/backupforromsfolder/
+    fi
+
+    sudo chown -R ark:ark /opt/ppsspp-2021/backupforromsfolder
   fi
 
   # 驱动加载
