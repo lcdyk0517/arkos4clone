@@ -1,10 +1,32 @@
 name: Bug Report
 description: Report a bug (please make sure you are using the latest version first!)
 title: "[Bug]: "
-labels: [bug]
+labels: []
 assignees: []
 
 body:
+  - type: markdown
+    attributes:
+      value: |
+        ## ⚠️ Important Notice / 重要提示
+
+        **Language / 语言**: Issues must be submitted in **English** or **Chinese**. Issues in other languages will be closed immediately.
+        **语言要求**: Issues必须使用**英语**或**中文**提交，其他语言的issues将直接关闭。
+
+        ---
+
+        **Boot Issues Troubleshooting / 启动问题故障排除**:
+        - If black screen after logo: Please change SD card and rewrite the image. If problem persists, connect charger then press reset button to boot.
+        - 如果出现logo后黑屏：请更换SD卡重新写入镜像。如果问题依旧，请连接充电器后按下reset键再开机。
+        - If device worked before but not now: Disconnect battery, reconnect it, then boot.
+        - 如果设备以前可以使用现在不行：请断开电池，重新连接后再开机。
+        - If logo doesn't display: DTB selection is incorrect.
+        - 若logo无法显示：则为DTB选择错误。
+        - If black screen after logo: Most likely insufficient battery power.
+        - 若出现logo黑屏：最大的可能是电池电量不够。
+        - **DO NOT submit issues for devices that cannot boot at all.**
+        - **无法启动的问题请不要提交issues。**
+
   - type: checkboxes
     attributes:
       label: Pre-submission checklist
@@ -14,6 +36,21 @@ body:
           required: true
         - label: I have searched existing issues to make sure this is not a duplicate
           required: true
+        - label: I have provided a screenshot from the DTB detection tool at https://lcdyk0517.github.io/dtbTools.html
+          required: true
+        - label: I have described which DTB I selected in the issue
+          required: true
+
+  - type: dropdown
+    id: firmware
+    attributes:
+      label: Firmware Type
+      description: Which firmware did you flash?
+      options:
+        - arkos4clone
+        - darkos4clone
+    validations:
+      required: true
 
   - type: input
     id: version
@@ -21,6 +58,24 @@ body:
       label: Version
       description: Enter the version you are using
       placeholder: e.g.,0913
+    validations:
+      required: true
+
+  - type: input
+    id: dtb
+    attributes:
+      label: DTB File
+      description: Which DTB file are you using? (e.g., R36S Clone -> Type 3 Panel 1)
+      placeholder: e.g., R36S Clone -> Type 3 Panel 1
+    validations:
+      required: true
+
+  - type: textarea
+    id: dtb_screenshot
+    attributes:
+      label: DTB Detection Screenshot
+      description: Please provide a screenshot from https://lcdyk0517.github.io/dtbTools.html showing your device's DTB detection result
+      placeholder: Drag and drop your screenshot here
     validations:
       required: true
 

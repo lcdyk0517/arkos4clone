@@ -1,0 +1,39 @@
+name: Issue Labeler
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    
+    steps:
+      - name: Add firmware label
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            const body = issue.body || '';
+            
+            // Check for firmware type in the body
+            let label = null;
+            
+            if (body.includes('**Firmware Type**\narkos4clone') || body.includes('Firmware Type**\narkos4clone')) {
+              label = 'arkos4clone';
+            } else if (body.includes('**Firmware Type**\ndarkos4clone') || body.includes('Firmware Type**\ndarkos4clone')) {
+              label = 'darkos4clone';
+            }
+            
+            if (label) {
+              // Add the label
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                labels: [label]
+              });
+              console.log(`Added label: ${label}`);
+            }
