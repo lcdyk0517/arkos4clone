@@ -5052,7 +5052,7 @@
 	<system>
 		<name>flash</name>
 		<fullname>flash [SD2]</fullname>
-		<path>/roms/flash/</path>
+		<path>/roms2/flash/</path>
 		<extension>.swf .SWF</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/flash.sh %ROM%; sudo perfnorm</command>
 		<platform>flash</platform>
