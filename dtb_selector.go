@@ -334,6 +334,13 @@ var Consoles = []ConsoleConfig{
 		},
 		ExtraSources: []string{"logo/480P/"},
 	},
+	{
+		RealName: "sauce panel5",
+		BrandEntries: []BrandEntry{
+			{Brand: "SoySauce R36s", DisplayName: "Soy Sauce Panel 5 [TEST]"},
+		},
+		ExtraSources: []string{"logo/480P/"},
+	},
 	//==================  Diium(SZDiiER)  ===================================
 	{
 		RealName: "dr28s",

@@ -177,12 +177,13 @@ Non-Windows users, see [Manual Configuration](#manual-configuration).
 | Panel 2 | `480P` | User Select | `consoles/sauce panel2/` | Thanks to QQ:2824907016 |
 | Panel 3 | `480P` | User Select | `consoles/sauce panel3/` | |
 | Panel 4 | `480P` | User Select | `consoles/sauce panel4/` | |
+| Panel 5 | `480P` | User Select | `consoles/sauce panel5/` | No devices modifications, looks like a Soysauce screen-swapped version. |
 
 ### Diium / SZDiiER
 
 | Device | Logo | Kernel | Config Files | Notes |
 |--------|------|--------|--------------|-------|
-| ~~Dr28s~~ | ~~`480P-270`~~ | ~~`User Select`~~ | ~~`consoles/dr28s/`~~ | ~~Maintenance suspended due to device damage~~ |
+| Dr28s | `480P-270` | `User Select` | `consoles/dr28s/` | |
 | D007 / D007 Plus | `480P` | User Select | `consoles/d007/` | |
 
 ### XiFan

@@ -48,7 +48,8 @@ platform_macos_apple_silicon() {
 }
 
 platform_macos() {
-  if ! which lipo &> /dev/null
+  LIPO=$(go env GOPATH)/bin/lipo
+  if [[ ! -x "$LIPO" ]]
   then
     echo "Installing: lipo"
     $GO install github.com/konoui/lipo@latest
@@ -59,7 +60,7 @@ platform_macos() {
 
   GOOS=darwin GOARCH=amd64 $GO build "$FLAGS" -o "${EXE}_amd64" "$SRC"
   GOOS=darwin GOARCH=arm64 $GO build "$FLAGS" -o "${EXE}_arm64" "$SRC"
-  lipo -output "$EXE" -create "${EXE}_arm64" "${EXE}_amd64"
+  "$LIPO" -output "$EXE" -create "${EXE}_arm64" "${EXE}_amd64"
 
   rm -f "${EXE}_amd64" "${EXE}_arm64"
 
