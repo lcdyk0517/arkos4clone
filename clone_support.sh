@@ -622,6 +622,7 @@ else
     safe sudo mkdir -p "$WORK_DIR/tmproms/roms/gametank"
     safe sudo mkdir -p "$WORK_DIR/tmproms/roms/pymo"
     safe sudo mkdir -p "$WORK_DIR/tmproms/roms/flash"
+    safe sudo mkdir -p "$WORK_DIR/tmproms/roms/spmp8000"
     tar -xf "$SCRIPT_DIR/zulu11.48.21-ca-jdk11.0.11-linux_aarch64.tar.gz" -C "$WORK_DIR/tmproms/roms/j2me"
     safe sudo mv "$WORK_DIR/tmproms/roms/j2me/zulu11.48.21-ca-jdk11.0.11-linux_aarch64" "$WORK_DIR/tmproms/roms/j2me/jdk"
     safe sudo chown -R root:root "$WORK_DIR/tmproms/roms/j2me/jdk"

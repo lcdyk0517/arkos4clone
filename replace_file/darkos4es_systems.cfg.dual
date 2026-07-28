@@ -2336,6 +2336,18 @@
 		<hardware>game engine</hardware>
 	</system>
 	<system>
+		<name>spmp8000</name>
+		<fullname>spmp8000</fullname>
+		<path>/roms/spmp8000/</path>
+		<extension>.bin .BIN</extension>
+		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/spmp8000emu_libretro.so %ROM%; sudo perfnorm</command>
+		<platform>spmp8000</platform>
+		<theme>spmp8000</theme>
+		<manufacturer>spmp8000</manufacturer>
+		<release>2005</release>
+		<hardware>game engine</hardware>
+	</system>
+	<system>
 		<name>bbk</name>
 		<fullname>BBK</fullname>
 		<path>/roms/bbk/</path>
@@ -4984,6 +4996,18 @@
 		<platform>native32</platform>
 		<theme>native32</theme>
 		<manufacturer>native32</manufacturer>
+		<release>2005</release>
+		<hardware>game engine</hardware>
+	</system>
+	<system>
+		<name>spmp8000</name>
+		<fullname>spmp8000 [SD2]</fullname>
+		<path>/roms2/spmp8000/</path>
+		<extension>.bin .BIN</extension>
+		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/spmp8000emu_libretro.so %ROM%; sudo perfnorm</command>
+		<platform>spmp8000</platform>
+		<theme>spmp8000</theme>
+		<manufacturer>spmp8000</manufacturer>
 		<release>2005</release>
 		<hardware>game engine</hardware>
 	</system>
