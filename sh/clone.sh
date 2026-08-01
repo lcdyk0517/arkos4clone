@@ -286,7 +286,10 @@ handle_d007_service() {
     sudo systemctl daemon-reload 2>/dev/null || true
     sudo systemctl enable --now adckeys.service 2>/dev/null || warn "adckeys.service failed"
   else
-    sudo systemctl disable --now adckeys.service 2>/dev/null || true
+    if systemctl is-enabled --quiet adckeys.service; then
+      msg "Non-D007 device -> disabling adckeys.service"
+      sudo systemctl disable --now adckeys.service 2>/dev/null || true
+    fi
   fi
 }
 
