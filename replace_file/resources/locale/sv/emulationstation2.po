@@ -1043,6 +1043,9 @@ msgstr "Ta bort sparade anslutningar"
 msgid "NETWORK INFO"
 msgstr "Nätverksinformation"
 
+msgid "SHOW STATUS ICONS"
+msgstr "Visa statusikoner"
+
 msgid "SCANNING WIFI NETWORKS"
 msgstr "Söker efter Wi-Fi nätverk"
 

@@ -3517,6 +3517,9 @@ msgstr "Удалить сохранённые подключения"
 msgid "NETWORK INFO"
 msgstr "Информация о сети"
 
+msgid "SHOW STATUS ICONS"
+msgstr "Показать значки состояния"
+
 msgid "SCANNING WIFI NETWORKS"
 msgstr "Сканирование сетей Wi-Fi"
 

@@ -3506,6 +3506,9 @@ msgstr "刪除已儲存連線"
 msgid "NETWORK INFO"
 msgstr "網路資訊"
 
+msgid "SHOW STATUS ICONS"
+msgstr "顯示狀態圖標"
+
 msgid "SCANNING WIFI NETWORKS"
 msgstr "正在掃描 Wi-Fi 網路"
 

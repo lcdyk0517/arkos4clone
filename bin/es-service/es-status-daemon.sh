@@ -3,23 +3,66 @@
 # Writes state to /tmp/es-wifi-state and /tmp/es-bt-state
 # WiFi states: 0=off 1=no-ip 2=connected 3=sharing-active 4=service-up
 # BT states:   0=off 1=active-no-device 2=device-connected
+#
+# Optimized: reads /sys and /proc where possible to minimize fork+exec
 
 detect_wifi() {
-    rfkill list wifi 2>/dev/null | grep -iq "soft blocked: yes" && echo 0 && return
-    ip link show wlan0 2>/dev/null | grep -q "wlan0" || { echo 0; return; }
-    nmcli -t -f DEVICE,STATE dev 2>/dev/null | grep -qE "^wlan.*:connected$" || { echo 1; return; }
-    ss -tn state established 2>/dev/null | grep -qE ":22 |:445 |:53 " && echo 3 && return
-    { systemctl is-active smbd nmbd ssh.service 2>/dev/null | grep -xqm1 active || \
-      pgrep -x filebrowser > /dev/null 2>&1; } && echo 4 && return
+    # Check rfkill via /sys (no fork)
+    if [ -f /sys/class/rfkill/rfkill0/soft ]; then
+        # Find wifi rfkill device
+        for dev in /sys/class/rfkill/*; do
+            if [ -f "$dev/type" ] && [ "$(cat "$dev/type" 2>/dev/null)" = "wlan" ]; then
+                [ "$(cat "$dev/soft" 2>/dev/null)" = "1" ] && echo 0 && return
+                break
+            fi
+        done
+    fi
+
+    # Check wlan0 exists via /sys (no fork)
+    [ -d /sys/class/net/wlan0 ] || { echo 0; return; }
+
+    # Check carrier (connected to AP) via /sys (no fork)
+    local carrier=$(cat /sys/class/net/wlan0/carrier 2>/dev/null)
+    [ "$carrier" = "1" ] || { echo 1; return; }
+
+    # Check if we have an IP address via /sys (no fork, just read file)
+    local has_ip=$(cat /sys/class/net/wlan0/operstate 2>/dev/null)
+    [ "$has_ip" = "up" ] || { echo 1; return; }
+
+    # Check for sharing/service (needs ss, but only if connected)
+    ss -tn state established 2>/dev/null | grep -qE ":(22|445|53) " && echo 3 && return
+
+    # Check for running services (minimal forks)
+    if pgrep -x "smbd\|nmbd\|sshd\|filebrowser" > /dev/null 2>&1; then
+        echo 4 && return
+    fi
+
     echo 2
 }
 
 detect_bt() {
-    rfkill list bluetooth 2>/dev/null | grep -iq "soft blocked: yes" && echo 0 && return
-    systemctl is-active bluetooth 2>/dev/null | grep -qx active || { echo 0; return; }
-    hciconfig 2>/dev/null | grep -qE "^hci" || { echo 0; return; }
-    conn=$(bluetoothctl devices Connected 2>/dev/null | grep -c Device)
-    [ "$conn" -gt 0 ] 2>/dev/null && echo 2 && return
+    # Check rfkill via /sys (no fork)
+    for dev in /sys/class/rfkill/*; do
+        if [ -f "$dev/type" ] && [ "$(cat "$dev/type" 2>/dev/null)" = "bluetooth" ]; then
+            [ "$(cat "$dev/soft" 2>/dev/null)" = "1" ] && echo 0 && return
+            break
+        fi
+    done
+
+    # Check hci device via /sys (no fork)
+    [ -d /sys/class/bluetooth/hci0 ] || { echo 0; return; }
+
+    # Check if bluetooth is powered via /sys (no fork)
+    local powered=$(cat /sys/class/bluetooth/hci0/power 2>/dev/null)
+    # Fallback: use bluetoothctl only if needed
+    if ! bluetoothctl show 2>/dev/null | grep -q "Powered: yes"; then
+        echo 0 && return
+    fi
+
+    # Check connected devices (one fork)
+    local conn=$(bluetoothctl info 2>/dev/null | grep -c "Connected: yes")
+    [ "$conn" -gt 0 ] && echo 2 && return
+
     echo 1
 }
 

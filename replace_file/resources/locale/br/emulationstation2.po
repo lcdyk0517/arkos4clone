@@ -2185,6 +2185,9 @@ msgstr "Excluir conexões salvas"
 msgid "NETWORK INFO"
 msgstr "Informações de rede"
 
+msgid "SHOW STATUS ICONS"
+msgstr "Exibir Ícones de Status"
+
 msgid "SCANNING WIFI NETWORKS"
 msgstr "Escaneando redes Wi-Fi"
 

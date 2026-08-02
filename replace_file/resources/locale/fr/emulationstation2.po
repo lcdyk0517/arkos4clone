@@ -1473,6 +1473,9 @@ msgstr "Supprimer les connexions enregistrées"
 msgid "NETWORK INFO"
 msgstr "Informations réseau"
 
+msgid "SHOW STATUS ICONS"
+msgstr "Afficher les icônes d'état"
+
 msgid "SCANNING WIFI NETWORKS"
 msgstr "Recherche des réseaux Wi-Fi"
 

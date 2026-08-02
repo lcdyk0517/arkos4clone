@@ -1502,6 +1502,9 @@ msgstr "Apagar conexões guardadas"
 msgid "NETWORK INFO"
 msgstr "Informação de rede"
 
+msgid "SHOW STATUS ICONS"
+msgstr "Mostrar ícones de status"
+
 msgid "SCANNING WIFI NETWORKS"
 msgstr "A procurar redes Wi-Fi"
 

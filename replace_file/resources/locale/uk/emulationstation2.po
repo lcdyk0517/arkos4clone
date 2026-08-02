@@ -3628,6 +3628,9 @@ msgstr "Видалити збережені підключення"
 msgid "NETWORK INFO"
 msgstr "Інформація про мережу"
 
+msgid "SHOW STATUS ICONS"
+msgstr "Показати значки стану"
+
 msgid "SCANNING WIFI NETWORKS"
 msgstr "Сканування мереж Wi-Fi"
 

@@ -1982,6 +1982,9 @@ msgstr "Διαγραφή αποθηκευμένων συνδέσεων"
 msgid "NETWORK INFO"
 msgstr "Πληροφορίες δικτύου"
 
+msgid "SHOW STATUS ICONS"
+msgstr "Εμφάνιση εικονιδίων κατάστασης"
+
 msgid "SCANNING WIFI NETWORKS"
 msgstr "Σάρωση δικτύων Wi-Fi"
 

@@ -2282,6 +2282,9 @@ msgstr "Gespeicherte Verbindungen löschen"
 msgid "NETWORK INFO"
 msgstr "Netzwerkinfo"
 
+msgid "SHOW STATUS ICONS"
+msgstr "Statusanzeigen anzeigen"
+
 msgid "SCANNING WIFI NETWORKS"
 msgstr "WLAN-Netzwerke werden gescannt"
 

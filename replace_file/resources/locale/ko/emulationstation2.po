@@ -1723,6 +1723,9 @@ msgstr "저장된 연결 삭제"
 msgid "NETWORK INFO"
 msgstr "네트워크 정보"
 
+msgid "SHOW STATUS ICONS"
+msgstr "상태 아이콘 표시"
+
 msgid "SCANNING WIFI NETWORKS"
 msgstr "Wi-Fi 네트워크 스캔 중"
 

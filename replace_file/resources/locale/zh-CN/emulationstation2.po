@@ -3523,6 +3523,9 @@ msgstr "删除已保存连接"
 msgid "NETWORK INFO"
 msgstr "网络信息"
 
+msgid "SHOW STATUS ICONS"
+msgstr "显示状态图标"
+
 msgid "SCANNING WIFI NETWORKS"
 msgstr "正在扫描 Wi-Fi 网络"
 

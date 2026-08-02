@@ -1350,6 +1350,9 @@ msgstr "保存済み接続を削除"
 msgid "NETWORK INFO"
 msgstr "ネットワーク情報"
 
+msgid "SHOW STATUS ICONS"
+msgstr "ステータスアイコンを表示"
+
 msgid "SCANNING WIFI NETWORKS"
 msgstr "Wi-Fi ネットワークをスキャン中"
 

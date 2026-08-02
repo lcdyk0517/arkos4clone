@@ -2714,6 +2714,9 @@ msgstr "Usuń zapisane połączenia"
 msgid "NETWORK INFO"
 msgstr "Informacje o sieci"
 
+msgid "SHOW STATUS ICONS"
+msgstr "Pokaż ikony stanu"
+
 msgid "SCANNING WIFI NETWORKS"
 msgstr "Skanowanie sieci Wi-Fi"
 

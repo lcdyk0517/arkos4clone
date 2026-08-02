@@ -1579,6 +1579,9 @@ msgstr "Xóa kết nối đã lưu"
 msgid "NETWORK INFO"
 msgstr "Thông tin mạng"
 
+msgid "SHOW STATUS ICONS"
+msgstr "Hiển thị biểu tượng trạng thái"
+
 msgid "SCANNING WIFI NETWORKS"
 msgstr "Đang quét mạng Wi-Fi"
 
