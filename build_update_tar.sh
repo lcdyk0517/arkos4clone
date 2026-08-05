@@ -466,6 +466,10 @@ else
   mkdir -p "$PAYLOAD_ROOT/opt/yabasanshiro"
   cp -a ./replace_file/yabasanshiro/. "$PAYLOAD_ROOT/opt/yabasanshiro/" 2>/dev/null || true
 
+  echo "== 添加 krkr2 =="
+  mkdir -p "$PAYLOAD_ROOT/opt/krkr2"
+  cp -a ./replace_file/krkr2/. "$PAYLOAD_ROOT/opt/krkr2/" 2>/dev/null || true
+
   echo "== 添加 OpenborFF =="
   mkdir -p "$PAYLOAD_ROOT/opt/OpenBorFF"
   cp -a ./replace_file/OpenBorFF/. "$PAYLOAD_ROOT/opt/OpenBorFF/" 2>/dev/null || true
@@ -551,6 +555,8 @@ EOF
   meta_add "0777" "1002:1002" "/opt/flycastsa/*"
   meta_add "0777" "1002:1002" "/opt/yabasanshiro"
   meta_add "0777" "1002:1002" "/opt/yabasanshiro/*"
+  meta_add "0777" "1002:1002" "/opt/krkr2"
+  meta_add "0777" "1002:1002" "/opt/krkr2/*"
   meta_add "0777" "1002:1002" "/opt/OpenBorFF"
   meta_add "0777" "1002:1002" "/opt/OpenBorFF/*"
   meta_add "0777" "1002:1002" "/opt/OpenBor"

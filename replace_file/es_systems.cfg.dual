@@ -2419,6 +2419,18 @@
 		<hardware>game engine</hardware>
 	</system>
 	<system>
+		<name>krkr2</name>
+		<fullname>krkr2</fullname>
+		<path>/roms/krkr2/</path>
+		<extension>.xp3 .XP3</extension>
+		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /opt/krkr2/start_krkr.sh %ROM%; sudo perfnorm</command>
+		<platform>krkr2</platform>
+		<theme>krkr2</theme>
+		<manufacturer>krkr2</manufacturer>
+		<release>1996</release>
+		<hardware>game engine</hardware>
+	</system>
+	<system>
 		<name>bbk</name>
 		<fullname>BBK</fullname>
 		<path>/roms/bbk/</path>
@@ -5164,6 +5176,18 @@
 		<platform>flash</platform>
 		<theme>flash</theme>
 		<manufacturer>flash</manufacturer>
+		<release>1996</release>
+		<hardware>game engine</hardware>
+	</system>
+	<system>
+		<name>krkr2</name>
+		<fullname>krkr2 [SD2]</fullname>
+		<path>/roms2/krkr2/</path>
+		<extension>.xp3 .XP3</extension>
+		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /opt/krkr2/start_krkr.sh %ROM%; sudo perfnorm</command>
+		<platform>krkr2</platform>
+		<theme>krkr2</theme>
+		<manufacturer>krkr2</manufacturer>
 		<release>1996</release>
 		<hardware>game engine</hardware>
 	</system>

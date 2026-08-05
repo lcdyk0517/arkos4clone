@@ -603,6 +603,11 @@ else
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/OpenBor/" 2>/dev/null
   safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/OpenBor/" 2>/dev/null
 
+  echo "== 添加 krkr2 =="
+  safe sudo cp -a ./replace_file/krkr2/. "$MOUNT_DIR/root/opt/krkr2/" 2>/dev/null
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/krkr2/" 2>/dev/null
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/krkr2/" 2>/dev/null
+
   echo "== 处理 roms.tar =="
   if [ "$(stat -c%s $MOUNT_DIR/root/roms.tar 2>/dev/null || echo 0)" -le $((100*1024*1024)) ]; then
     echo "== 复制 roms.tar 出来操作 =="
@@ -616,6 +621,7 @@ else
     safe sudo mkdir -p "$WORK_DIR/tmproms/roms/pymo"
     safe sudo mkdir -p "$WORK_DIR/tmproms/roms/flash"
     safe sudo mkdir -p "$WORK_DIR/tmproms/roms/spmp8000"
+    safe sudo mkdir -p "$WORK_DIR/tmproms/roms/krkr2"
     tar -xf "$SCRIPT_DIR/zulu11.48.21-ca-jdk11.0.11-linux_aarch64.tar.gz" -C "$WORK_DIR/tmproms/roms/j2me"
     safe sudo mv "$WORK_DIR/tmproms/roms/j2me/zulu11.48.21-ca-jdk11.0.11-linux_aarch64" "$WORK_DIR/tmproms/roms/j2me/jdk"
     safe sudo chown -R root:root "$WORK_DIR/tmproms/roms/j2me/jdk"

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalPreference>
+    <!-- 图片缓存限制 30MB (单位:字节) -->
+    <!-- 917MB设备建议20-40MB -->
+    <Item key="graphicCacheLimit" value="31457280"/>
+
+    <!-- 纹理压缩: etc2/half/none -->
+    <!-- ETC2压缩减少75%显存，Mali-G31支持 -->
+    <Item key="ogl_compress_tex" value="etc2"/>
+
+    <!-- 最大纹理尺寸，超过会缩放 -->
+    <!-- 720p屏幕设置512-1024足够 -->
+    <Item key="ogl_max_texsize" value="768"/>
+
+    <!-- 禁用BPG解码器（节省内存） -->
+    <Item key="enable_bpg" value="0"/>
+
+    <!-- 语言 (zh_CN/ja_JP/en_US) -->
+    <Item key="language" value="zh_CN"/>
+</GlobalPreference>
