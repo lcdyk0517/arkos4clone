@@ -19,7 +19,8 @@ jobs:
             const body = issue.body || '';
             
             // Check for firmware type in the body using regex
-            const firmwareMatch = body.match(/Firmware\s*Type\*\*\s*\n?\s*(arkos4clone|darkos4clone)/i);
+            // Match both "### Firmware Type" and "**Firmware Type**" formats
+            const firmwareMatch = body.match(/(?:###\s*Firmware\s*Type|Firmware\s*Type\*\*)\s*\n\s*(arkos4clone|darkos4clone)/i);
             
             if (firmwareMatch) {
               const label = firmwareMatch[1];
@@ -33,4 +34,5 @@ jobs:
               console.log(`Added label: ${label}`);
             } else {
               console.log('No firmware type found in issue body');
+              console.log('Body content:', body.substring(0, 500));
             }
