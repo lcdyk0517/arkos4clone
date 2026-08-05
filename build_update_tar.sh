@@ -433,7 +433,7 @@ else
   mkdir -p "$PAYLOAD_ROOT/opt/ppsspp"
   cp -a ./replace_file/ppsspp/. "$PAYLOAD_ROOT/opt/ppsspp/" 2>/dev/null || true
 
-  echo "== 更新 ScummVM v2026.2.0 =="
+  echo "== 更新 ScummVM v2026.3.0 =="
   mkdir -p "$PAYLOAD_ROOT/opt/scummvm"
   cp -a ./replace_file/scummvm/. "$PAYLOAD_ROOT/opt/scummvm/" 2>/dev/null || true
 
