@@ -196,7 +196,6 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   echo "== 添加 drastic-kk =="
   safe sudo mkdir -p "$MOUNT_DIR/root/opt/drastic-kk" 2>/dev/null
   safe sudo cp -a ./replace_file/drastic-kk/. "$MOUNT_DIR/root/opt/drastic-kk/" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/drastic-kk/patch" 2>/dev/null
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/drastic-kk" 2>/dev/null
   safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/drastic-kk" 2>/dev/null
   safe sudo cp -f ./bin/json-c3/* "$MOUNT_DIR/root/usr/lib/aarch64-linux-gnu/"
@@ -219,13 +218,11 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   safe sudo cp -a ./replace_file/flycastsa/. "$MOUNT_DIR/root/opt/flycastsa/" 2>/dev/null
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/flycastsa/" 2>/dev/null
   safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/flycastsa/" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/flycastsa/patch" 2>/dev/null
 
   echo "== 更新和添加 yabasanshiro-sa =="
   safe sudo cp -a ./replace_file/yabasanshiro/. "$MOUNT_DIR/root/opt/yabasanshiro/" 2>/dev/null
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/yabasanshiro/" 2>/dev/null
   safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/yabasanshiro/" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/yabasanshiro/patch" 2>/dev/null
 
   echo "== 处理 roms.tar =="
   if [ "$(stat -c%s $MOUNT_DIR/root/roms.tar 2>/dev/null || echo 0)" -le $((100*1024*1024)) ]; then
@@ -541,7 +538,6 @@ else
   echo "== 添加 drastic-kk =="
   safe sudo mkdir -p "$MOUNT_DIR/root/opt/drastic-kk" 2>/dev/null
   safe sudo cp -a ./replace_file/drastic-kk/. "$MOUNT_DIR/root/opt/drastic-kk/" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/drastic-kk/patch" 2>/dev/null
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/drastic-kk" 2>/dev/null
   safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/drastic-kk" 2>/dev/null
   safe sudo cp -f ./bin/json-c3/* "$MOUNT_DIR/root/usr/lib/aarch64-linux-gnu/"
@@ -580,7 +576,6 @@ else
   safe sudo cp -a ./replace_file/flycastsa/. "$MOUNT_DIR/root/opt/flycastsa/" 2>/dev/null
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/flycastsa/" 2>/dev/null
   safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/flycastsa/" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/flycastsa/patch" 2>/dev/null
 
   echo "== 添加 gametank-sa  =="
   safe sudo mkdir -p "$MOUNT_DIR/root/opt/gametank" 2>/dev/null
@@ -591,7 +586,6 @@ else
   echo "== 添加 ruffle-sa  =="
   safe sudo mkdir -p "$MOUNT_DIR/root/opt/rufflesa" 2>/dev/null
   safe sudo cp -a ./replace_file/rufflesa/. "$MOUNT_DIR/root/opt/rufflesa/" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/rufflesa/patch" 2>/dev/null
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/rufflesa" 2>/dev/null
   safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/rufflesa" 2>/dev/null
 
@@ -599,7 +593,6 @@ else
   safe sudo cp -a ./replace_file/yabasanshiro/. "$MOUNT_DIR/root/opt/yabasanshiro/" 2>/dev/null
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/yabasanshiro/" 2>/dev/null
   safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/yabasanshiro/" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/yabasanshiro/patch" 2>/dev/null
 
   echo "== 更新 OpenborFF =="
   safe sudo cp -a ./replace_file/OpenBor/. "$MOUNT_DIR/root/opt/OpenBor/" 2>/dev/null
@@ -653,12 +646,15 @@ else
   fi
 
   echo "== 调整retrorun =="
-  safe sudo cp -r ./replace_file/retrorun/retrorun32 "$MOUNT_DIR/root/usr/local/bin/"
-  safe sudo cp -r ./replace_file/retrorun/retrorun "$MOUNT_DIR/root/usr/local/bin/"
+  safe sudo cp -r ./replace_file/retrorun/* "$MOUNT_DIR/root/usr/local/bin/"
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/retrorun32"
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/retrorun"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/retrorunsdl"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/retrorunsdl32"
   safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/local/bin/retrorun32"
   safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/local/bin/retrorun"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/local/bin/retrorunsdl32"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/local/bin/retrorunsdl"
 
   echo "== 注入pymo =="
   safe sudo cp -r ./replace_file/pymo/cpymo "$MOUNT_DIR/root/usr/local/bin/"

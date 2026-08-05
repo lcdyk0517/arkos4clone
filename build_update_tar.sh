@@ -166,12 +166,10 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   echo "== 注入 drastic =="
   mkdir -p "$PAYLOAD_ROOT/opt/drastic"
   cp -a ./replace_file/drastic/. "$PAYLOAD_ROOT/opt/drastic/" 2>/dev/null || true
-  rm -rf "$PAYLOAD_ROOT/opt/drastic/patch" 2>/dev/null || true
 
   echo "== 注入 drastic-kk =="
   mkdir -p "$PAYLOAD_ROOT/opt/drastic-kk"
   cp -a ./replace_file/drastic-kk/. "$PAYLOAD_ROOT/opt/drastic-kk/" 2>/dev/null || true
-  rm -rf "$PAYLOAD_ROOT/opt/drastic-kk/patch" 2>/dev/null || true
 
   echo "== 添加 onscripter-sa =="
   mkdir -p "$PAYLOAD_ROOT/opt/onscripter"
@@ -189,12 +187,10 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   echo "== 更新和添加 flycastsa =="
   mkdir -p "$PAYLOAD_ROOT/opt/flycastsa"
   cp -a ./replace_file/flycastsa/. "$PAYLOAD_ROOT/opt/flycastsa/" 2>/dev/null || true
-  rm -rf "$PAYLOAD_ROOT/opt/flycastsa/patch" 2>/dev/null || true
 
   echo "== 更新和添加 yabasanshiro-sa =="
   mkdir -p "$PAYLOAD_ROOT/opt/yabasanshiro"
   cp -a ./replace_file/yabasanshiro/. "$PAYLOAD_ROOT/opt/yabasanshiro/" 2>/dev/null || true
-  rm -rf "$PAYLOAD_ROOT/opt/yabasanshiro/patch" 2>/dev/null || true
 
   echo "== 注入 retrorun =="
   mkdir -p "$PAYLOAD_ROOT/usr/local/bin"
@@ -411,12 +407,10 @@ else
   echo "== 注入 drastic =="
   mkdir -p "$PAYLOAD_ROOT/opt/drastic"
   cp -a ./replace_file/drastic/. "$PAYLOAD_ROOT/opt/drastic/" 2>/dev/null || true
-  rm -rf "$PAYLOAD_ROOT/opt/drastic/patch" 2>/dev/null || true
 
   echo "== 注入 drastic-kk =="
   mkdir -p "$PAYLOAD_ROOT/opt/drastic-kk"
   cp -a ./replace_file/drastic-kk/. "$PAYLOAD_ROOT/opt/drastic-kk/" 2>/dev/null || true
-  rm -rf "$PAYLOAD_ROOT/opt/drastic-kk/patch" 2>/dev/null || true
 
   echo "== 添加 onscripter-sa =="
   mkdir -p "$PAYLOAD_ROOT/opt/onscripter"
@@ -446,12 +440,10 @@ else
   echo "== 更新和添加 flycastsa =="
   mkdir -p "$PAYLOAD_ROOT/opt/flycastsa"
   cp -a ./replace_file/flycastsa/. "$PAYLOAD_ROOT/opt/flycastsa/" 2>/dev/null || true
-  rm -rf "$PAYLOAD_ROOT/opt/flycastsa/patch" 2>/dev/null || true
 
   echo "== 添加 rufflesa =="
   mkdir -p "$PAYLOAD_ROOT/opt/rufflesa"
   cp -a ./replace_file/rufflesa/. "$PAYLOAD_ROOT/opt/rufflesa/" 2>/dev/null || true
-  rm -rf "$PAYLOAD_ROOT/opt/rufflesa/patch" 2>/dev/null || true
 
   echo "== 添加 gametank-sa =="
   mkdir -p "$PAYLOAD_ROOT/opt/gametank"
@@ -459,8 +451,7 @@ else
 
   echo "== 注入 retrorun =="
   mkdir -p "$PAYLOAD_ROOT/usr/local/bin"
-  cp -r ./replace_file/retrorun/retrorun32 "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
-  cp -r ./replace_file/retrorun/retrorun "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
+  cp -r ./replace_file/retrorun/. "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
 
   echo "== 注入 pymo =="
   cp -r ./replace_file/pymo/cpymo "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
@@ -474,7 +465,6 @@ else
   echo "== 更新和添加 yabasanshiro-sa =="
   mkdir -p "$PAYLOAD_ROOT/opt/yabasanshiro"
   cp -a ./replace_file/yabasanshiro/. "$PAYLOAD_ROOT/opt/yabasanshiro/" 2>/dev/null || true
-  rm -rf "$PAYLOAD_ROOT/opt/yabasanshiro/patch" 2>/dev/null || true
 
   echo "== 添加 OpenborFF =="
   mkdir -p "$PAYLOAD_ROOT/opt/OpenBorFF"
@@ -579,6 +569,8 @@ EOF
   meta_add "0777" "1002:1002" "/usr/bin/emulationstation/emulationstation/*"
   meta_add "0777" "1002:1002" "/usr/local/bin/retrorun32"
   meta_add "0777" "1002:1002" "/usr/local/bin/retrorun"
+  meta_add "0777" "1002:1002" "/usr/local/bin/retrorunsdl32"
+  meta_add "0777" "1002:1002" "/usr/local/bin/retrorunsdl"
   meta_add "0777" "1002:1002" "/usr/local/bin/ogage"
   meta_add "0777" "1002:1002" "/home/ark/.quirks/ogage"
   meta_add "0777" "1002:1002" "/etc/systemd/system/351mp.service"

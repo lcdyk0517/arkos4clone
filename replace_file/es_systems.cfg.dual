@@ -449,11 +449,6 @@
 					<core>flycast</core>
 				</cores>
 			</emulator>
-			<emulator name="retrorun">
-				<cores>
-					<core>flycast</core>
-				</cores>
-			</emulator>
 			<emulator name="retroarch32">
 				<cores>
 					<core>flycast32_rumble</core>
@@ -461,11 +456,26 @@
 					<core>reicast_xtreme</core>
 				</cores>
 			</emulator>
+			<emulator name="retrorun">
+				<cores>
+					<core>flycast</core>
+				</cores>
+			</emulator>
 			<emulator name="retrorun32">
 				<cores>
 					<core>flycast32_rumble</core>
 					<core>flycast_xtreme</core>
-					<core>reicast_xtreme</core>
+				</cores>
+			</emulator>
+			<emulator name="retrorunsdl">
+				<cores>
+					<core>flycast</core>
+				</cores>
+			</emulator>
+			<emulator name="retrorunsdl32">
+				<cores>
+					<core>flycast32_rumble</core>
+					<core>flycast_xtreme</core>
 				</cores>
 			</emulator>
 		</emulators>
@@ -493,11 +503,6 @@
 					<core>flycast</core>
 				</cores>
 			</emulator>
-			<emulator name="retrorun">
-				<cores>
-					<core>flycast</core>
-				</cores>
-			</emulator>
 			<emulator name="retroarch32">
 				<cores>
 					<core>flycast32_rumble</core>
@@ -505,11 +510,26 @@
 					<core>reicast_xtreme</core>
 				</cores>
 			</emulator>
+			<emulator name="retrorun">
+				<cores>
+					<core>flycast</core>
+				</cores>
+			</emulator>
 			<emulator name="retrorun32">
 				<cores>
 					<core>flycast32_rumble</core>
 					<core>flycast_xtreme</core>
-					<core>reicast_xtreme</core>
+				</cores>
+			</emulator>
+			<emulator name="retrorunsdl">
+				<cores>
+					<core>flycast</core>
+				</cores>
+			</emulator>
+			<emulator name="retrorunsdl32">
+				<cores>
+					<core>flycast32_rumble</core>
+					<core>flycast_xtreme</core>
 				</cores>
 			</emulator>
 		</emulators>
@@ -1604,11 +1624,6 @@
 					<core>yabause</core>
 				</cores>
 			</emulator>
-			<emulator name="retrorun32">
-				<cores>
-					<core>yabasanshiro</core>
-				</cores>
-			</emulator>
 			<emulator name="retroarch">
 				<cores>
 					<core>yabause</core>
@@ -1616,6 +1631,21 @@
 				</cores>
 			</emulator>
 			<emulator name="retrorun">
+				<cores>
+					<core>yabasanshiro</core>
+				</cores>
+			</emulator>
+			<emulator name="retrorun32">
+				<cores>
+					<core>yabasanshiro</core>
+				</cores>
+			</emulator>
+			<emulator name="retrorunsdl">
+				<cores>
+					<core>yabasanshiro</core>
+				</cores>
+			</emulator>
+			<emulator name="retrorunsdl32">
 				<cores>
 					<core>yabasanshiro</core>
 				</cores>
@@ -1657,10 +1687,21 @@
 				<cores>
 					<core>flycast32_rumble</core>
 					<core>flycast_xtreme</core>
-					<core>reicast_xtreme</core>
 				</cores>
 			</emulator>
 			<emulator name="retrorun">
+				<cores>
+					<core>flycast_rumble</core>
+					<core>flycast</core>
+				</cores>
+			</emulator>
+			<emulator name="retrorunsdl32">
+				<cores>
+					<core>flycast32_rumble</core>
+					<core>flycast_xtreme</core>
+				</cores>
+			</emulator>
+			<emulator name="retrorunsdl">
 				<cores>
 					<core>flycast_rumble</core>
 					<core>flycast</core>
@@ -3157,11 +3198,6 @@
 					<core>flycast</core>
 				</cores>
 			</emulator>
-			<emulator name="retrorun">
-				<cores>
-					<core>flycast</core>
-				</cores>
-			</emulator>
 			<emulator name="retroarch32">
 				<cores>
 					<core>flycast32_rumble</core>
@@ -3169,11 +3205,26 @@
 					<core>reicast_xtreme</core>
 				</cores>
 			</emulator>
+			<emulator name="retrorun">
+				<cores>
+					<core>flycast</core>
+				</cores>
+			</emulator>
 			<emulator name="retrorun32">
 				<cores>
 					<core>flycast32_rumble</core>
 					<core>flycast_xtreme</core>
-					<core>reicast_xtreme</core>
+				</cores>
+			</emulator>
+			<emulator name="retrorunsdl">
+				<cores>
+					<core>flycast</core>
+				</cores>
+			</emulator>
+			<emulator name="retrorunsdl32">
+				<cores>
+					<core>flycast32_rumble</core>
+					<core>flycast_xtreme</core>
 				</cores>
 			</emulator>
 		</emulators>
@@ -3201,11 +3252,6 @@
 					<core>flycast</core>
 				</cores>
 			</emulator>
-			<emulator name="retrorun">
-				<cores>
-					<core>flycast</core>
-				</cores>
-			</emulator>
 			<emulator name="retroarch32">
 				<cores>
 					<core>flycast32_rumble</core>
@@ -3213,11 +3259,26 @@
 					<core>reicast_xtreme</core>
 				</cores>
 			</emulator>
+			<emulator name="retrorun">
+				<cores>
+					<core>flycast</core>
+				</cores>
+			</emulator>
 			<emulator name="retrorun32">
 				<cores>
 					<core>flycast32_rumble</core>
 					<core>flycast_xtreme</core>
-					<core>reicast_xtreme</core>
+				</cores>
+			</emulator>
+			<emulator name="retrorunsdl">
+				<cores>
+					<core>flycast</core>
+				</cores>
+			</emulator>
+			<emulator name="retrorunsdl32">
+				<cores>
+					<core>flycast32_rumble</core>
+					<core>flycast_xtreme</core>
 				</cores>
 			</emulator>
 		</emulators>
@@ -4312,18 +4373,28 @@
 					<core>yabause</core>
 				</cores>
 			</emulator>
-			<emulator name="retrorun32">
-				<cores>
-					<core>yabasanshiro</core>
-				</cores>
-			</emulator>
 			<emulator name="retroarch">
 				<cores>
 					<core>yabause</core>
 					<core>yabasanshiro</core>
 				</cores>
 			</emulator>
+			<emulator name="retrorun32">
+				<cores>
+					<core>yabasanshiro</core>
+				</cores>
+			</emulator>
 			<emulator name="retrorun">
+				<cores>
+					<core>yabasanshiro</core>
+				</cores>
+			</emulator>
+			<emulator name="retrorunsdl32">
+				<cores>
+					<core>yabasanshiro</core>
+				</cores>
+			</emulator>
+			<emulator name="retrorunsdl">
 				<cores>
 					<core>yabasanshiro</core>
 				</cores>
@@ -4365,10 +4436,21 @@
 				<cores>
 					<core>flycast32_rumble</core>
 					<core>flycast_xtreme</core>
-					<core>reicast_xtreme</core>
 				</cores>
 			</emulator>
 			<emulator name="retrorun">
+				<cores>
+					<core>flycast_rumble</core>
+					<core>flycast</core>
+				</cores>
+			</emulator>
+			<emulator name="retrorunsdl32">
+				<cores>
+					<core>flycast32_rumble</core>
+					<core>flycast_xtreme</core>
+				</cores>
+			</emulator>
+			<emulator name="retrorunsdl">
 				<cores>
 					<core>flycast_rumble</core>
 					<core>flycast</core>
