@@ -18,16 +18,11 @@ jobs:
             const issue = context.payload.issue;
             const body = issue.body || '';
             
-            // Check for firmware type in the body
-            let label = null;
+            // Check for firmware type in the body using regex
+            const firmwareMatch = body.match(/Firmware\s*Type\*\*\s*\n?\s*(arkos4clone|darkos4clone)/i);
             
-            if (body.includes('**Firmware Type**\narkos4clone') || body.includes('Firmware Type**\narkos4clone')) {
-              label = 'arkos4clone';
-            } else if (body.includes('**Firmware Type**\ndarkos4clone') || body.includes('Firmware Type**\ndarkos4clone')) {
-              label = 'darkos4clone';
-            }
-            
-            if (label) {
+            if (firmwareMatch) {
+              const label = firmwareMatch[1];
               // Add the label
               await github.rest.issues.addLabels({
                 owner: context.repo.owner,
@@ -36,4 +31,6 @@ jobs:
                 labels: [label]
               });
               console.log(`Added label: ${label}`);
+            } else {
+              console.log('No firmware type found in issue body');
             }
