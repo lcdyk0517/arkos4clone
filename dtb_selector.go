@@ -133,6 +133,13 @@ var Consoles = []ConsoleConfig{
 		ExtraSources: []string{"logo/854x480P/"},
 	},
 	{
+		RealName: "rgb10max2",
+		BrandEntries: []BrandEntry{
+			{Brand: "Powkiddy", DisplayName: "Powkiddy RGB10Max2"},
+		},
+		ExtraSources: []string{"logo/854x480P/"},
+	},
+	{
 		RealName: "rgb20s",
 		BrandEntries: []BrandEntry{
 			{Brand: "Powkiddy", DisplayName: "Powkiddy RGB20S"},
