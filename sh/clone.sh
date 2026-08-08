@@ -301,20 +301,6 @@ setup_audio() {
   cp_if_exists "$QUIRKS_DIR/asoundrc" "/home/ark/.asoundrc" "yes" || true
 }
 
-# ==================== D007 特殊处理 ====================
-handle_d007_service() {
-  if [[ "$(get_console_label)" == "d007" ]]; then
-    msg "D007 detected -> enabling adckeys.service"
-    sudo systemctl daemon-reload 2>/dev/null || true
-    sudo systemctl enable --now adckeys.service 2>/dev/null || warn "adckeys.service failed"
-  else
-    if systemctl is-enabled --quiet adckeys.service; then
-      msg "Non-D007 device -> disabling adckeys.service"
-      sudo systemctl disable --now adckeys.service 2>/dev/null || true
-    fi
-  fi
-}
-
 # ==================== 国际化配置 ====================
 apply_localization() {
   local lang="$1" es_lang ra_lang ppsspp_lang timezone
@@ -455,9 +441,6 @@ main() {
 
   # 音频配置
   setup_audio
-
-  # D007 服务
-  handle_d007_service
 
   # 国际化
   [[ -f "/boot/.cn" ]] && { apply_localization "cn"; sudo rm -f /boot/.cn; }

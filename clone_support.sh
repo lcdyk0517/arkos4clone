@@ -133,17 +133,6 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/onscripter.sh" 2>/dev/null
   safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/get_last_played.sh" 2>/dev/null
 
-  echo "== 注入 adc-key 服务脚本 =="
-  safe sudo cp -f ./bin/adc-key/adckeys.py "$MOUNT_DIR/root/usr/local/bin/"
-  safe sudo cp -f ./bin/adc-key/adckeys.sh "$MOUNT_DIR/root/usr/local/bin/"
-  safe sudo cp -f ./bin/adc-key/adckeys.service "$MOUNT_DIR/root/etc/systemd/system/"
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/adckeys.py" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/adckeys.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/systemd/system/adckeys.service" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/adckeys.py" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/adckeys.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/etc/systemd/system/adckeys.service" 2>/dev/null
-
   echo "== 注入 es-service 服务脚本 =="
   safe sudo cp -f ./bin/es-service/es-status-daemon.sh "$MOUNT_DIR/root/usr/local/bin/"
   safe sudo cp -f ./bin/es-service/es-status-daemon.service "$MOUNT_DIR/root/etc/systemd/system/"
@@ -472,17 +461,6 @@ else
   safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/freej2me.sh" 2>/dev/null
   safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/mediaplayer.sh" 2>/dev/null
   safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/get_last_played.sh" 2>/dev/null
-
-  echo "== 注入 adc-key 服务脚本 =="
-  safe sudo cp -f ./bin/adc-key/adckeys.py "$MOUNT_DIR/root/usr/local/bin/"
-  safe sudo cp -f ./bin/adc-key/adckeys.sh "$MOUNT_DIR/root/usr/local/bin/"
-  safe sudo cp -f ./bin/adc-key/adckeys.service "$MOUNT_DIR/root/etc/systemd/system/"
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/adckeys.py" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/adckeys.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/systemd/system/adckeys.service" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/adckeys.py" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/adckeys.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/etc/systemd/system/adckeys.service" 2>/dev/null
 
   echo "== 注入 es-service 服务脚本 =="
   safe sudo cp -f ./bin/es-service/es-status-daemon.sh "$MOUNT_DIR/root/usr/local/bin/"

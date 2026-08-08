@@ -133,12 +133,6 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   cp -f ./replace_file/onscripter.sh "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
   cp -f ./replace_file/mediaplayer.sh "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
 
-  echo "== 注入 adc-key 服务 =="
-  mkdir -p "$PAYLOAD_ROOT/etc/systemd/system"
-  cp -f ./bin/adc-key/adckeys.py "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
-  cp -f ./bin/adc-key/adckeys.sh "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
-  cp -f ./bin/adc-key/adckeys.service "$PAYLOAD_ROOT/etc/systemd/system/" 2>/dev/null || true
-
   echo "== 注入 es-service 服务 =="
   mkdir -p "$PAYLOAD_ROOT/etc/systemd/system"
   cp -f ./bin/es-service/es-status-daemon.sh "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
@@ -257,9 +251,6 @@ EOF
   for f in darkos4atomiswave.sh darkos4dreamcast.sh darkos4naomi.sh darkos4saturn.sh darkos4n64.sh darkos4pico8.sh darkos4get_last_played.sh drastic.sh drastic_kk.sh choose_drastic_ver.sh mediaplayer.sh onscripter.sh choose_ons_ver.sh; do
     meta_add "0777" "1000:1000" "/usr/local/bin/$f"
   done
-  meta_add "0777" "1000:1000" "/usr/local/bin/adckeys.py"
-  meta_add "0777" "1000:1000" "/usr/local/bin/adckeys.sh"
-  meta_add "0777" "1000:1000" "/etc/systemd/system/adckeys.service"
   meta_add "0777" "1000:1000" "/usr/local/bin/es-status-daemon.sh"
   meta_add "0777" "1000:1000" "/etc/systemd/system/es-status-daemon.service"
   meta_add "0777" "1000:1000" "/etc/zram.conf"
@@ -371,12 +362,6 @@ else
   cp -f ./replace_file/freej2me.sh "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
   cp -f ./replace_file/mediaplayer.sh "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
   cp -f ./replace_file/get_last_played.sh "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
-
-  echo "== 注入 adc-key 服务 =="
-  mkdir -p "$PAYLOAD_ROOT/etc/systemd/system"
-  cp -f ./bin/adc-key/adckeys.py "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
-  cp -f ./bin/adc-key/adckeys.sh "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
-  cp -f ./bin/adc-key/adckeys.service "$PAYLOAD_ROOT/etc/systemd/system/" 2>/dev/null || true
 
   echo "== 注入 es-service 服务 =="
   mkdir -p "$PAYLOAD_ROOT/etc/systemd/system"
@@ -525,9 +510,6 @@ EOF
   for f in atomiswave.sh dreamcast.sh naomi.sh saturn.sh n64.sh gametank.sh flash.sh gametankkeydemon.py pico8.sh drastic.sh drastic_kk.sh choose_drastic_ver.sh mediaplayer.sh get_last_played.sh choose_ons_ver.sh onscripter.sh freej2me.sh; do
     meta_add "0777" "1002:1002" "/usr/local/bin/$f"
   done
-  meta_add "0777" "1002:1002" "/usr/local/bin/adckeys.py"
-  meta_add "0777" "1002:1002" "/usr/local/bin/adckeys.sh"
-  meta_add "0777" "1002:1002" "/etc/systemd/system/adckeys.service"
   meta_add "0777" "1002:1002" "/usr/local/bin/es-status-daemon.sh"
   meta_add "0777" "1002:1002" "/etc/systemd/system/es-status-daemon.service"
   meta_add "0777" "1002:1002" "/etc/zram.conf"
@@ -682,7 +664,7 @@ else
 fi
 
 log "=== Step 1: Stop conflicting services ==="
-for s in adckeys.service zram-swap.service es-status-daemon.service batt_led.service ddtbcheck.service 351mp.service mpv.service oga_events; do
+for s in zram-swap.service es-status-daemon.service batt_led.service ddtbcheck.service 351mp.service mpv.service oga_events; do
   if [[ -e "/etc/systemd/system/$s" || -e "/lib/systemd/system/$s" ]]; then
     svc_stop_disable "$s"
   fi
@@ -881,8 +863,6 @@ fix_modules_perms
 log "=== Step 10: Enable services ==="
 if have_systemctl; then
   systemctl daemon-reload 2>/dev/null || true
-  systemctl enable adckeys.service 2>/dev/null && log "Enabled: adckeys.service" || true
-  systemctl restart adckeys.service 2>/dev/null && log "Started: adckeys.service" || true
   systemctl enable es-status-daemon.service 2>/dev/null && log "Enabled: es-status-daemon.service" || true
   systemctl restart es-status-daemon.service 2>/dev/null && log "Started: es-status-daemon.service" || true
   chmod 777 /usr/local/bin/ogage 2>/dev/null && log "Fixed: ogage chmod 777" || true

@@ -263,7 +263,6 @@ check_clone_dependencies() {
   local dirs=(
     "consoles"
     "bin"
-    "bin/adc-key"
     "bin/aic8800DC"
     "bin/json-c3"
     "mod_so/32"
@@ -313,9 +312,6 @@ check_clone_dependencies() {
     "bin/sdljoymap"
     "bin/sdljoytest"
     "bin/console_detect"
-    "bin/adc-key/adckeys.py"
-    "bin/adc-key/adckeys.sh"
-    "bin/adc-key/adckeys.service"
     "replace_file/351Files"
     "replace_file/es_systems.cfg"
     "replace_file/es_systems.cfg.dual"
