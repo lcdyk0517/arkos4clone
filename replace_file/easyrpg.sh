@@ -24,6 +24,6 @@ if [[ ${1,,} == *"scan_for_new_games.easyrpg"* ]]; then
   sleep 5
   printf "\033c" >> /dev/tty1
 else
-  export LD_LIBRARY_PATH=/home/ark/.quriks/libs/easyrpg_libs:$LD_LIBRARY_PATH
+  export LD_LIBRARY_PATH=/home/ark/.quirks/libs/easyrpg_libs:$LD_LIBRARY_PATH
   /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/easyrpg_libretro.so "$1"
 fi
