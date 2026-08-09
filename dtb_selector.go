@@ -109,6 +109,35 @@ var Consoles = []ConsoleConfig{
 		},
 		ExtraSources: []string{"logo/480P/"},
 	},
+	//==================  Ambernic  ===================================
+	{
+		RealName: "rg351mp",
+		BrandEntries: []BrandEntry{
+			{Brand: "Ambernic", DisplayName: "RG351MP"},
+		},
+		ExtraSources: []string{"logo/480P/"},
+	},
+	{
+		RealName: "rg351p",
+		BrandEntries: []BrandEntry{
+			{Brand: "Ambernic", DisplayName: "RG351P"},
+		},
+		ExtraSources: []string{"logo/320P/"},
+	},
+	{
+		RealName: "rg351v",
+		BrandEntries: []BrandEntry{
+			{Brand: "Ambernic", DisplayName: "RG351V Panel 1"},
+		},
+		ExtraSources: []string{"logo/480P/"},
+	},
+	{
+		RealName: "rg351v-v2",
+		BrandEntries: []BrandEntry{
+			{Brand: "Ambernic", DisplayName: "RG351V Panel 2"},
+		},
+		ExtraSources: []string{"logo/480P/"},
+	},
 	//==================  RetroBox  ===================================
 	{
 		RealName: "rp1",
@@ -124,6 +153,20 @@ var Consoles = []ConsoleConfig{
 			{Brand: "Powkiddy", DisplayName: "Powkiddy RGB10"},
 		},
 		ExtraSources: []string{"logo/320P/"},
+	},
+	{
+		RealName: "rgbv10",
+		BrandEntries: []BrandEntry{
+			{Brand: "Powkiddy", DisplayName: "Powkiddy RGBV10"},
+		},
+		ExtraSources: []string{"logo/320P/"},
+	},
+	{
+		RealName: "rgb10x",
+		BrandEntries: []BrandEntry{
+			{Brand: "Powkiddy", DisplayName: "Powkiddy RGB10X"},
+		},
+		ExtraSources: []string{"logo/480P/"},
 	},
 	{
 		RealName: "rgb10max1",
@@ -556,6 +599,7 @@ var Brands = []string{
 	"MagicX",
 	"Batlexp",
 	"Kinhank",
+	"Ambernic",
 	"RetroBox",
 	"Powkiddy",
 	"Clone R36s",

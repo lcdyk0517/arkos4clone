@@ -117,19 +117,31 @@ Non-Windows users, see [Manual Configuration](#manual-configuration).
 |--------|------|--------|--------------|-------|
 | K36 (Origin Panel) | `480P` | User Select | `consoles/k36/` | |
 
-### Powkiddy
+### Ambernic
 
 | Device | Logo | Kernel | Config Files | Notes |
 |--------|------|--------|--------------|-------|
-| RGB10 | `320P` | User Select | `consoles/rgb10/` | |
-| RGB20S | `480P` | User Select | `consoles/rgb20s/` | |
-| RGB10MAX1 | `854x480P` | User Select | `consoles/rgb10max1/` | |
+| RG351MP | `480P` | User Select | `consoles/rg351mp/` | |
+| RG351P | `320P` | User Select | `consoles/rg351p/` | |
+| RG351V Panel 2 | `480P` | User Select | `consoles/rg351v/` | |
+| RG351V Panel 2 | `480P` | User Select | `consoles/rg351v-v2/` | |
 
 ### RetroBox
 
 | Device | Logo | Kernel | Config Files | Notes |
 |--------|------|--------|--------------|-------|
 | P1 | `480P-270` | User Select | `consoles/rp1/` | |
+
+### Powkiddy
+
+| Device | Logo | Kernel | Config Files | Notes |
+|--------|------|--------|--------------|-------|
+| RGB10 | `320P` | User Select | `consoles/rgb10/` | |
+| RGBV10 | `320P` | User Select | `consoles/rgbv10/` | |
+| RGB10X | `480P` | User Select | `consoles/rgb10x/` | |
+| RGB10MAX1 | `854x480P` | User Select | `consoles/rgb10max1/` | |
+| RGB10MAX2 | `854x480P` | User Select | `consoles/rgb10max2/` | |
+| RGB20S | `480P` | User Select | `consoles/rgb20s/` | |
 
 ### Clone R36s Series
 
@@ -206,6 +218,7 @@ Non-Windows users, see [Manual Configuration](#manual-configuration).
 | XF45V | `768P` | User Select | `consoles/xf45v/` | Thanks to XiFan |
 | DC45V | `768P` | User Select | `consoles/dc45v/` | Thanks to XiFan |
 | RF45V | `768P` | User Select | `consoles/rf45v/` | Thanks to XiFan |
+| RF55H | `720x1280P-90` | User Select | `consoles/rf55h/` | Thanks to XiFan |
 
 ### Other Devices
 
