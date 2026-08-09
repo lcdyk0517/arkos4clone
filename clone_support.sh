@@ -88,6 +88,9 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/lib/firmware/aic8800DC" 2>/dev/null
   safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/lib/firmware/aic8800DC" 2>/dev/null
 
+  echo "== 注入 351 系列手柄伪装规则  =="
+  safe sudo cp -f ./bin/99-odroidgo3.rules "$MOUNT_DIR/root/etc/udev/rules.d" 2>/dev/null
+
   echo "== 注入 351Files 自适应 =="
   safe sudo mkdir -p "$MOUNT_DIR/root/opt/351Files/res"
   safe sudo cp -r ./res/* "$MOUNT_DIR/root/opt/351Files/res/" 2>/dev/null
@@ -399,12 +402,18 @@ else
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/lib/firmware/aic8800DC" 2>/dev/null
   safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/lib/firmware/aic8800DC" 2>/dev/null
 
+  echo "== 注入 351 系列手柄伪装规则  =="
+  safe sudo cp -f ./bin/99-odroidgo3.rules "$MOUNT_DIR/root/etc/udev/rules.d" 2>/dev/null
+
   echo "== 注入 351Files 自适应 =="
   safe sudo mkdir -p "$MOUNT_DIR/root/opt/351Files/res"
   safe sudo cp -r ./res/* "$MOUNT_DIR/root/opt/351Files/res/" 2>/dev/null
   safe sudo cp -r ./replace_file/351Files "$MOUNT_DIR/root/opt/351Files/" 2>/dev/null
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/351Files/" 2>/dev/null
   safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/351Files/" 2>/dev/null
+
+  echo "== 更新 usb-modeswitch-data =="
+  safe sudo cp -a ./bin/usb-modeswitch-data/* "$MOUNT_DIR/root/" 2>/dev/null
 
   echo "== 注入 ArkOS 启动脚本 =="
   safe sudo cp -f ./replace_file/atomiswave.sh "$MOUNT_DIR/root/usr/local/bin/"

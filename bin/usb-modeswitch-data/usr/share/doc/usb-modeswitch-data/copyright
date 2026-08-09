@@ -1,0 +1,34 @@
+This work was packaged for Debian by:
+
+    Didier Raboud <didier@raboud.com> on Tue, 12 Jan 2010 12:06:44 +0100
+
+It was downloaded from:
+
+   http://www.draisberghof.de/usb_modeswitch/
+
+Copyright:
+
+     Copyright 2007, 2008, 2009, 2010  Josua Dietze (mail to "usb_admin" at the
+     domain "draisberghof.de"; please do not post the complete address to The Net !
+     Or write a personal message through the forum to "Josh")
+
+License:
+
+    This package is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This package is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+On Debian systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL-2'.
+
+The Debian packaging is:
+
+    Copyright (C) 2009,2010, Didier Raboud <didier@raboud.com>
+
+and is licensed under the GPLv2+, as usb-modeswitch-data itself, see above.

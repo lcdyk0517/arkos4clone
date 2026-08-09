@@ -1,0 +1,5 @@
+# Create our custom symlink
+SUBSYSTEM=="input", ATTRS{name}=="GO-Super Gamepad", SYMLINK+="input/by-path/platform-odroidgo3-joypad-event-joystick"
+
+# Delete the default USB by-path symlink after it's created
+SUBSYSTEM=="input", ATTRS{name}=="GO-Super Gamepad", RUN+="/bin/rm -f /dev/input/by-path/platform-ff300000.usb-usb-0:1.2:1.0-event-joystick"

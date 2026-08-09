@@ -1,0 +1,33 @@
+===== usb-modeswitch-data =====
+
+=== Overriding entries from the database tarball ===
+
+From its 1.1.7 version, usb-modeswitch searches for device switching data in
+the usb-modeswitch-data database tarball [0]. This heavily reduces the
+database disk space, but makes configuration investigation harder. To solve
+this issue, usb-modeswitch is shipped with a patch that allows administrators
+to override the database entries from the tarball [0] with files under /etc.
+
+[0] /usr/share/usb_modeswitch/configPack.tar.gz 
+
+= Example =
+
+Let's assume one has a 3G dongle "05c6:1000 Qualcomm", which matching database
+entry [1] is 05c6:1000:uMa=Option , but isn't correctly switched. Hacking this
+database entry can be done as following:
+
+# cd /etc/usb_modeswitch.d
+# tar xzf /usr/share/usb_modeswitch/configPack.tar.gz 05c6:1000:uMa=Option
+
+Now the /etc/usb_modeswitch.d/05c6\:1000\:uMa=Option file will get used by
+usb_modeswitch_dispatcher when the "05c6:1000 Qualcomm" device gets plugged
+in.
+
+When a correct database entry is found, please report it on the upstream
+forum:
+
+	http://www.draisberghof.de/usb_modeswitch/bb/
+
+[1] One can find exactly which database entry is matching a given device gets
+    matched with by activating logs (/etc/usb_modeswitch.conf) and reading
+    them from /var/log/usb_modeswitch*.

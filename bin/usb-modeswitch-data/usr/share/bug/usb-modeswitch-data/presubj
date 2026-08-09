@@ -1,0 +1,16 @@
+Reporting a bug against usb-modeswitch-data
+-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-—-
+
+Debian will not ship patches to support devices not supported by
+upstream. If you think that your device should be supported by
+usb-modeswitch-data, please report it on the upstream forum:
+
+	http://www.draisberghof.de/usb_modeswitch/bb/
+
+Please do so, for two reasons:
+
+a) upstream is nice and responsive: new tarballs appear frequently,
+b) a device supported upstream benefits the whole community, not
+   only Debian.
+
+Of course, bugs for things going wrong are welcome!
