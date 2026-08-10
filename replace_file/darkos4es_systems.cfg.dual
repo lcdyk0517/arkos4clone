@@ -2348,6 +2348,18 @@
 		<hardware>game engine</hardware>
 	</system>
 	<system>
+		<name>flash</name>
+		<fullname>flash</fullname>
+		<path>/roms/flash/</path>
+		<extension>.swf .SWF</extension>
+		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/flash.sh %ROM%; sudo perfnorm</command>
+		<platform>flash</platform>
+		<theme>flash</theme>
+		<manufacturer>flash</manufacturer>
+		<release>1996</release>
+		<hardware>game engine</hardware>
+	</system>
+	<system>
 		<name>bbk</name>
 		<fullname>BBK</fullname>
 		<path>/roms/bbk/</path>
@@ -5009,6 +5021,18 @@
 		<theme>spmp8000</theme>
 		<manufacturer>spmp8000</manufacturer>
 		<release>2005</release>
+		<hardware>game engine</hardware>
+	</system>
+	<system>
+		<name>flash</name>
+		<fullname>flash [SD2]</fullname>
+		<path>/roms2/flash/</path>
+		<extension>.swf .SWF</extension>
+		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/flash.sh %ROM%; sudo perfnorm</command>
+		<platform>flash</platform>
+		<theme>flash</theme>
+		<manufacturer>flash</manufacturer>
+		<release>1996</release>
 		<hardware>game engine</hardware>
 	</system>
 	<system>
