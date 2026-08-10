@@ -1,209 +1,140 @@
 {
-"name":"trngaje",
-"number":14,
-"layout":[
-{
-    "index":1,
-    "name":"transparent",
-    "bg":"",
-    "type":1,
-
-    "screen0_x":0,
-    "screen0_y":0,
-    "screen0_w":256,
-    "screen0_h":192,
-
-    "screen1_x":0,
-    "screen1_y":0,
-    "screen1_w":854,
-    "screen1_h":480
-},
-{
-    "index":2,
-    "name":"s0",
-    "bg":"",
-    "type":4,
-
-    "screen0_x":0,
-    "screen0_y":0,
-    "screen0_w":0,
-    "screen0_h":0,
-
-    "screen1_x":171,
-    "screen1_y":48,
-    "screen1_w":512,
-    "screen1_h":384
-},
-
-{
-    "index":3,
-    "name":"s1",
-    "bg":"",
-    "type":4,
-
-    "screen0_x":0,
-    "screen0_y":0,
-    "screen0_w":0,
-    "screen0_h":0,
-
-    "screen1_x":107,
-    "screen1_y":0,
-    "screen1_w":640,
-    "screen1_h":480
-},
-
-{
-    "index":4,
-    "name":"horizontal",
-    "bg":"",
-
-    "screen0_x":0,
-    "screen0_y":80,
-    "screen0_w":427,
-    "screen0_h":320,
-
-    "screen1_x":427,
-    "screen1_y":80,
-    "screen1_w":427,
-    "screen1_h":320
-},
-
-{
-    "index":5,
-    "name":"horz-max:min",
-    "bg":"",
-
-    "screen0_x":0,
-    "screen0_y":0,
-    "screen0_w":640,
-    "screen0_h":480,
-
-    "screen1_x":640,
-    "screen1_y":160,
-    "screen1_w":214,
-    "screen1_h":160
-},
-
-{
-    "index":6,
-    "name":"horz-2:x",
-    "bg":"",
-
-    "screen0_x":0,
-    "screen0_y":48,
-    "screen0_w":512,
-    "screen0_h":384,
-
-    "screen1_x":512,
-    "screen1_y":112,
-    "screen1_w":342,
-    "screen1_h":256
-},
-
-{
-    "index":7,
-    "name":"vertical",
-    "bg":"",
-
-    "screen0_x":267,
-    "screen0_y":0,
-    "screen0_w":320,
-    "screen0_h":240,
-
-    "screen1_x":267,
-    "screen1_y":240,
-    "screen1_w":320,
-    "screen1_h":240
-},
-
-
-{
-    "index":13,
-    "name":"rotate",
-    "bg":"",
-    "type":2,
-    "rotate":90,
-
-    "screen0_x":67,
-    "screen0_y":0,
-    "screen0_w":480,
-    "screen0_h":360,
-
-    "screen1_x":427,
-    "screen1_y":0,
-    "screen1_w":480,
-    "screen1_h":360
-},
-
-{
-    "index":14,
-    "name":"rotate90-space",
-    "bg":"",
-    "type":2,
-    "rotate":90,
-
-    "screen0_x":44,
-    "screen0_y":0,
-    "screen0_w":480,
-    "screen0_h":360,
-
-    "screen1_x":450,
-    "screen1_y":0,
-    "screen1_w":480,
-    "screen1_h":360
-},
-
-{
-    "index":14,
-    "name":"rotate270-space",
-    "bg":"",
-    "type":2,
-    "rotate":270,
-
-    "screen0_x":44,
-    "screen0_y":0,
-    "screen0_w":480,
-    "screen0_h":360,
-
-    "screen1_x":450,
-    "screen1_y":0,
-    "screen1_w":480,
-    "screen1_h":360
-},
-
-{
-    "index":15,
-    "name":"rotate270-space",
-    "bg":"",
-    "type":3,
-
-    "screen0_x":63,
-    "screen0_y":48,
-    "screen0_w":512,
-    "screen0_h":384,
-
-    "screen1_x":64,
-    "screen1_y":48,
-    "screen1_w":512,
-    "screen1_h":384
-},
-
-{
-    "index":16,
-    "name":"hres1",
-    "type":3,
-
-    "screen0_x":0,
-    "screen0_y":0,
-    "screen0_w":640,
-    "screen0_h":480,
-
-    "screen1_x":0,
-    "screen1_y":0,
-    "screen1_w":640,
-    "screen1_h":480
-},
-]
-
+  "name": "lcdyk&kk",
+  "layout": [
+    {
+      "index": 0,
+      "type": 1,
+      "name": "transparent_1.0x",
+      "bg": "transparent_1.0x.png",
+      "rotate": 0,
+      "screen0_x": 0,
+      "screen0_y": 0,
+      "screen0_w": 256,
+      "screen0_h": 192,
+      "screen1_x": 0,
+      "screen1_y": 0,
+      "screen1_w": 640,
+      "screen1_h": 480
+    },
+    {
+      "index": 1,
+      "type": 4,
+      "name": "single_2.0x",
+      "bg": "single_2.0x.png",
+      "rotate": 0,
+      "screen0_x": 0,
+      "screen0_y": 0,
+      "screen0_w": 1,
+      "screen0_h": 1,
+      "screen1_x": 171,
+      "screen1_y": 48,
+      "screen1_w": 512,
+      "screen1_h": 384
+    },
+    {
+      "index": 2,
+      "type": 4,
+      "name": "single_2.5x",
+      "bg": "single_2.5x.png",
+      "rotate": 0,
+      "screen0_x": 0,
+      "screen0_y": 0,
+      "screen0_w": 1,
+      "screen0_h": 1,
+      "screen1_x": 107,
+      "screen1_y": 0,
+      "screen1_w": 640,
+      "screen1_h": 480
+    },
+    {
+      "index": 3,
+      "type": 0,
+      "name": "horizontal_1.7x_1.7x",
+      "bg": "horizontal_1.7x_1.7x.png",
+      "rotate": 0,
+      "screen0_x": 0,
+      "screen0_y": 80,
+      "screen0_w": 427,
+      "screen0_h": 320,
+      "screen1_x": 427,
+      "screen1_y": 80,
+      "screen1_w": 427,
+      "screen1_h": 320
+    },
+    {
+      "index": 4,
+      "type": 0,
+      "name": "horizontal_2.5x_0.8x",
+      "bg": "horizontal_2.5x_0.8x.png",
+      "rotate": 0,
+      "screen0_x": 0,
+      "screen0_y": 0,
+      "screen0_w": 640,
+      "screen0_h": 480,
+      "screen1_x": 640,
+      "screen1_y": 160,
+      "screen1_w": 214,
+      "screen1_h": 160
+    },
+    {
+      "index": 5,
+      "type": 0,
+      "name": "horizontal_2.0x_1.3x",
+      "bg": "horizontal_2.0x_1.3x.png",
+      "rotate": 0,
+      "screen0_x": 0,
+      "screen0_y": 48,
+      "screen0_w": 512,
+      "screen0_h": 384,
+      "screen1_x": 512,
+      "screen1_y": 112,
+      "screen1_w": 342,
+      "screen1_h": 256
+    },
+    {
+      "index": 6,
+      "type": 0,
+      "name": "vertical_1.3x_1.3x",
+      "bg": "vertical_1.3x_1.3x.png",
+      "rotate": 0,
+      "screen0_x": 267,
+      "screen0_y": 0,
+      "screen0_w": 320,
+      "screen0_h": 240,
+      "screen1_x": 267,
+      "screen1_y": 240,
+      "screen1_w": 320,
+      "screen1_h": 240
+    },
+    {
+      "index": 7,
+      "type": 2,
+      "name": "vertical_rotate90_1.9x_1.9x",
+      "bg": "vertical_rotate90_1.9x_1.9x.png",
+      "rotate": 90,
+      "screen0_x": 67,
+      "screen0_y": 0,
+      "screen0_w": 480,
+      "screen0_h": 360,
+      "screen1_x": 427,
+      "screen1_y": 0,
+      "screen1_w": 480,
+      "screen1_h": 360
+    },
+    {
+      "index": 8,
+      "type": 2,
+      "name": "vertical_rotate270_1.9x_1.9x",
+      "bg": "vertical_rotate270_1.9x_1.9x.png",
+      "rotate": 270,
+      "screen0_x": 44,
+      "screen0_y": 0,
+      "screen0_w": 480,
+      "screen0_h": 360,
+      "screen1_x": 450,
+      "screen1_y": 0,
+      "screen1_w": 480,
+      "screen1_h": 360
+    }
+  ]
 }
-
