@@ -109,32 +109,32 @@ var Consoles = []ConsoleConfig{
 		},
 		ExtraSources: []string{"logo/480P/"},
 	},
-	//==================  Ambernic  ===================================
+	//==================  Anbernic  ===================================
 	{
 		RealName: "rg351mp",
 		BrandEntries: []BrandEntry{
-			{Brand: "Ambernic", DisplayName: "RG351MP"},
+			{Brand: "Anbernic", DisplayName: "RG351MP"},
 		},
 		ExtraSources: []string{"logo/480P/"},
 	},
 	{
 		RealName: "rg351p",
 		BrandEntries: []BrandEntry{
-			{Brand: "Ambernic", DisplayName: "RG351P"},
+			{Brand: "Anbernic", DisplayName: "RG351P"},
 		},
 		ExtraSources: []string{"logo/320P/"},
 	},
 	{
 		RealName: "rg351v",
 		BrandEntries: []BrandEntry{
-			{Brand: "Ambernic", DisplayName: "RG351V Panel 1"},
+			{Brand: "Anbernic", DisplayName: "RG351V Panel 1"},
 		},
 		ExtraSources: []string{"logo/480P/"},
 	},
 	{
 		RealName: "rg351v-v2",
 		BrandEntries: []BrandEntry{
-			{Brand: "Ambernic", DisplayName: "RG351V Panel 2"},
+			{Brand: "Anbernic", DisplayName: "RG351V Panel 2"},
 		},
 		ExtraSources: []string{"logo/480P/"},
 	},
@@ -599,7 +599,7 @@ var Brands = []string{
 	"MagicX",
 	"Batlexp",
 	"Kinhank",
-	"Ambernic",
+	"Anbernic",
 	"RetroBox",
 	"Powkiddy",
 	"Clone R36s",
