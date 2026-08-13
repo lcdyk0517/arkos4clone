@@ -131,6 +131,7 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   cp -f ./replace_file/choose_drastic_ver.sh "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
   cp -f ./replace_file/choose_ons_ver.sh "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
   cp -f ./replace_file/onscripter.sh "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
+  cp -f ./replace_file/freej2me.sh "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
   cp -f ./replace_file/mediaplayer.sh "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
 
   echo "== 注入 es-service 服务 =="
@@ -168,6 +169,10 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   echo "== 添加 onscripter-sa =="
   mkdir -p "$PAYLOAD_ROOT/opt/onscripter"
   cp -a ./replace_file/onscripter/. "$PAYLOAD_ROOT/opt/onscripter/" 2>/dev/null || true
+
+  echo "== 添加 freej2me-sa =="
+  mkdir -p "$PAYLOAD_ROOT/opt/freej2mesa"
+  cp -a ./replace_file/freej2mesa/. "$PAYLOAD_ROOT/opt/freej2mesa/" 2>/dev/null || true
 
   echo "== 改用自适应分辨率 Retroarch 1.22.2 =="
   mkdir -p "$PAYLOAD_ROOT/opt/retroarch/bin/"
@@ -248,7 +253,7 @@ EOF
   meta_add "0777" "1000:1000" "/usr/lib/firmware/aic8800DC/*"
   meta_add "0777" "1000:1000" "/opt/351Files"
   meta_add "0777" "1000:1000" "/opt/351Files/*"
-  for f in darkos4atomiswave.sh darkos4dreamcast.sh darkos4naomi.sh darkos4saturn.sh darkos4n64.sh darkos4pico8.sh darkos4get_last_played.sh drastic.sh drastic_kk.sh choose_drastic_ver.sh mediaplayer.sh onscripter.sh choose_ons_ver.sh; do
+  for f in darkos4atomiswave.sh darkos4dreamcast.sh darkos4naomi.sh darkos4saturn.sh darkos4n64.sh darkos4pico8.sh darkos4get_last_played.sh drastic.sh drastic_kk.sh choose_drastic_ver.sh mediaplayer.sh onscripter.sh freej2me.sh choose_ons_ver.sh; do
     meta_add "0777" "1000:1000" "/usr/local/bin/$f"
   done
   meta_add "0777" "1000:1000" "/usr/local/bin/es-status-daemon.sh"
@@ -266,6 +271,8 @@ EOF
   meta_add "0777" "1000:1000" "/opt/drastic-kk/*"
   meta_add "0777" "1000:1000" "/opt/onscripter"
   meta_add "0777" "1000:1000" "/opt/onscripter/*"
+  meta_add "0777" "1000:1000" "/opt/freej2mesa"
+  meta_add "0777" "1000:1000" "/opt/freej2mesa/*"
   meta_add "0777" "1000:1000" "/opt/retroarch/bin/"
   meta_add "0777" "1000:1000" "/opt/retroarch/bin/*"
   meta_add "0777" "1000:1000" "/opt/flycastsa"

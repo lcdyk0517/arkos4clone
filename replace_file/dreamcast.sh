@@ -41,14 +41,18 @@ elif [[ $1 == "retrorun*" ]]; then
   fi
   if [[ $1 == "retrorun" ]]; then
     RETRORUN_BIN="/usr/local/bin/retrorun"
+    CORE=""
   elif [[ $1 == "retrorun32" ]]; then
     RETRORUN_BIN="/usr/local/bin/retrorun32"
+    CORE="32"
   elif [[ $1 == "retrorunsdl" ]]; then
     RETRORUN_BIN="/usr/local/bin/retrorunsdl"
+    CORE=""
   else
     RETRORUN_BIN="/usr/local/bin/retrorunsdl32"
+    CORE="32"
   fi
-  $ESUDO $RETRORUN_BIN -c /home/ark/.config/retrorun.cfg --triggers -s /$directory/dreamcast -d /$directory/bios /home/ark/.config/retroarch/cores/"$2"_libretro.so "$3"
+  $ESUDO $RETRORUN_BIN -c /home/ark/.config/retrorun.cfg --triggers -s /$directory/atomiswave -d /$directory/bios /home/ark/.config/retroarch$CORE/cores/"$2"_libretro.so "$3"
   printf "\033c" >> /dev/tty1
 else
   directory=$(dirname "$3" | cut -d "/" -f2)

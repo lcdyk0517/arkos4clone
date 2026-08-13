@@ -15,7 +15,9 @@ if  [[ ! -d "/${directory}/nds/slot2" ]]; then
   mkdir /${directory}/nds/slot2
 fi
 
-sudo /usr/local/bin/drastickeydemon.py &
+if [[ -x /usr/local/bin/drastickeydemon.py ]]; then
+    sudo /usr/local/bin/drastickeydemon.py &
+fi
 
 cd /opt/drastic-kk
 

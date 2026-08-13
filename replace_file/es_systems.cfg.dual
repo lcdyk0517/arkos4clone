@@ -4670,7 +4670,6 @@
 			<emulator name="retroarch32">
 				<cores>
 					<core>pcsx_rearmed_neon</core>
-					<core>pcsx_rearmed_neon</core>
 					<core>pcsx_rearmed_rumble</core>
 					<core>pcsx_rearmed</core>
 					<core>pcsx_rearmed_unai</core>
@@ -4683,6 +4682,7 @@
 					<core>swanstation</core>
 					<core>pcsx_rearmed_unai</core>
 					<core>pcsx_rearmed_peops</core>
+					<core>pcsx_rearmed_neon</core>
 				</cores>
 			</emulator>
 			<emulator name="standalone-duckstation">

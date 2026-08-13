@@ -27,7 +27,7 @@ if [[ $1 == *"standalone"* ]]; then
   directory=$(dirname "$2" | cut -d "/" -f2)
   if [[ $1 == *"pi4"* ]]; then
     YABA_BIN="./yabasanshiro-pi4"
-    if [[ ! -d "/$directory/saturn/yabasanshiro" ]]; then
+    if [[ ! -d "/$directory/saturn/yabasanshiro-pi4" ]]; then
       mkdir /$directory/saturn/yabasanshiro-pi4
     fi
   elif [[ $1 == *"2412"* ]]; then

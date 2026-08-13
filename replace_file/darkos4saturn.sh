@@ -17,7 +17,7 @@ if [[ $1 == *"standalone"* ]]; then
   fi
   if [[ $1 == *"pi4"* ]]; then
     YABA_BIN="./yabasanshiro-pi4"
-    if [[ ! -d "/$directory/saturn/yabasanshiro" ]]; then
+    if [[ ! -d "/$directory/saturn/yabasanshiro-pi4" ]]; then
       mkdir /$directory/saturn/yabasanshiro-pi4
     fi
   elif [[ $1 == *"2412"* ]]; then
@@ -41,10 +41,10 @@ if [[ $1 == *"standalone"* ]]; then
       sleep 10
       printf "\033[0m" >> /dev/tty1
     else
-      LD_LIBRARY_PATH=/home/arkos/.quirks/libs/yabasanshiro_libs/ $YABA_BIN -r 3 -i "$2" -b /$directory/bios/saturn_bios.bin
+      LD_LIBRARY_PATH=/home/ark/.quirks/libs/yabasanshiro_libs/ $YABA_BIN -r 3 -i "$2" -b /$directory/bios/saturn_bios.bin
     fi
   else
-    LD_LIBRARY_PATH=/home/arkos/.quirks/libs/yabasanshiro_libs/ $YABA_BIN -r 3 -i "$2"
+    LD_LIBRARY_PATH=/home/ark/.quirks/libs/yabasanshiro_libs/ $YABA_BIN -r 3 -i "$2"
   fi
   sudo systemctl stop killer_daemon.service
   sudo systemctl restart ogage &

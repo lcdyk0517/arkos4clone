@@ -63,6 +63,10 @@ if [[ ! -x "/${directory}/j2me/jdk/bin/j2me" ]]; then
   sudo chmod 777 /${directory}/j2me/jdk/bin/*
 fi
 
+if [[ ! -z "$(tr -d '\0' < /proc/device-tree/compatible | grep rk3326)" ]] && [[ $(tty) != *"pts"* ]]; then
+  cp /home/ark/.asoundrcbak /home/ark/.asoundrc
+fi
+
 export PATH=/${directory}/j2me/jdk/bin:$PATH
 export JAVA_HOME=/${directory}/j2me/jdk
 if [ ! -d "/$directory/j2me/rms" ]; then

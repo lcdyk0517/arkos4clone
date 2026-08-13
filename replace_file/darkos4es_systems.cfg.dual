@@ -438,12 +438,13 @@
 		<extension>.7z .7Z .ist .IST .zip .ZIP .bin .BIN</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/atomiswave.sh %EMULATOR% %CORE% %ROM%; sudo perfnorm</command>
 		<emulators>
+			<emulator name="standalone-r7">
+			  </emulator>
+			<emulator name="standalone-2022">
+			  </emulator>
+			<emulator name="standalone">
+			  </emulator>
 			<emulator name="retroarch">
-				<cores>
-					<core>flycast</core>
-				</cores>
-			</emulator>
-			<emulator name="retrorun">
 				<cores>
 					<core>flycast</core>
 				</cores>
@@ -455,19 +456,28 @@
 					<core>reicast_xtreme</core>
 				</cores>
 			</emulator>
+			<emulator name="retrorun">
+				<cores>
+					<core>flycast</core>
+				</cores>
+			</emulator>
 			<emulator name="retrorun32">
 				<cores>
 					<core>flycast32_rumble</core>
 					<core>flycast_xtreme</core>
-					<core>reicast_xtreme</core>
 				</cores>
 			</emulator>
-			<emulator name="standalone">
-			  </emulator>
-			<emulator name="standalone-2022">
-			  </emulator>
-			  <emulator name="standalone-r7">
-			  </emulator>
+			<emulator name="retrorunsdl">
+				<cores>
+					<core>flycast</core>
+				</cores>
+			</emulator>
+			<emulator name="retrorunsdl32">
+				<cores>
+					<core>flycast32_rumble</core>
+					<core>flycast_xtreme</core>
+				</cores>
+			</emulator>
 		</emulators>
 		<platform>atomiswave</platform>
 		<theme>atomiswave</theme>
@@ -482,12 +492,13 @@
 		<extension>.7z .7Z .ist .IST .zip .ZIP .bin .BIN .dat .DAT</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/naomi.sh %EMULATOR% %CORE% %ROM%; sudo perfnorm</command>
 		<emulators>
+			<emulator name="standalone-r7">
+			  </emulator>
+			<emulator name="standalone-2022">
+			  </emulator>
+			<emulator name="standalone">
+			  </emulator>
 			<emulator name="retroarch">
-				<cores>
-					<core>flycast</core>
-				</cores>
-			</emulator>
-			<emulator name="retrorun">
 				<cores>
 					<core>flycast</core>
 				</cores>
@@ -499,19 +510,28 @@
 					<core>reicast_xtreme</core>
 				</cores>
 			</emulator>
+			<emulator name="retrorun">
+				<cores>
+					<core>flycast</core>
+				</cores>
+			</emulator>
 			<emulator name="retrorun32">
 				<cores>
 					<core>flycast32_rumble</core>
 					<core>flycast_xtreme</core>
-					<core>reicast_xtreme</core>
 				</cores>
 			</emulator>
-			<emulator name="standalone">
-			  </emulator>
-			<emulator name="standalone-2022">
-			  </emulator>
-			  <emulator name="standalone-r7">
-			  </emulator>
+			<emulator name="retrorunsdl">
+				<cores>
+					<core>flycast</core>
+				</cores>
+			</emulator>
+			<emulator name="retrorunsdl32">
+				<cores>
+					<core>flycast32_rumble</core>
+					<core>flycast_xtreme</core>
+				</cores>
+			</emulator>
 		</emulators>
 		<platform>naomi</platform>
 		<theme>naomi</theme>
@@ -1592,11 +1612,6 @@
 					<core>yabause</core>
 				</cores>
 			</emulator>
-			<emulator name="retrorun32">
-				<cores>
-					<core>yabasanshiro</core>
-				</cores>
-			</emulator>
 			<emulator name="retroarch">
 				<cores>
 					<core>yabause</core>
@@ -1604,6 +1619,21 @@
 				</cores>
 			</emulator>
 			<emulator name="retrorun">
+				<cores>
+					<core>yabasanshiro</core>
+				</cores>
+			</emulator>
+			<emulator name="retrorun32">
+				<cores>
+					<core>yabasanshiro</core>
+				</cores>
+			</emulator>
+			<emulator name="retrorunsdl">
+				<cores>
+					<core>yabasanshiro</core>
+				</cores>
+			</emulator>
+			<emulator name="retrorunsdl32">
 				<cores>
 					<core>yabasanshiro</core>
 				</cores>
@@ -1622,6 +1652,12 @@
 		<extension>.7z .7Z .gdi .GDI .cdi .CDI .cue .CUE .chd .CHD .m3u .M3U</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/dreamcast.sh %EMULATOR% %CORE% %ROM%; sudo perfnorm</command>
 		<emulators>
+			<emulator name="standalone-r7">
+			  </emulator>
+			<emulator name="standalone-2022">
+			  </emulator>
+			<emulator name="standalone">
+			  </emulator>
 			<emulator name="retroarch32">
 				<cores>
 					<core>flycast32_rumble</core>
@@ -1639,7 +1675,6 @@
 				<cores>
 					<core>flycast32_rumble</core>
 					<core>flycast_xtreme</core>
-					<core>reicast_xtreme</core>
 				</cores>
 			</emulator>
 			<emulator name="retrorun">
@@ -1648,11 +1683,17 @@
 					<core>flycast</core>
 				</cores>
 			</emulator>
-			<emulator name="standalone">
+			<emulator name="retrorunsdl32">
+				<cores>
+					<core>flycast32_rumble</core>
+					<core>flycast_xtreme</core>
+				</cores>
 			  </emulator>
-			<emulator name="standalone-2022">
-			  </emulator>
-			  <emulator name="standalone-r7">
+			<emulator name="retrorunsdl">
+				<cores>
+					<core>flycast_rumble</core>
+					<core>flycast</core>
+				</cores>
 			  </emulator>
 		</emulators>
 		<platform>dreamcast</platform>
@@ -1850,7 +1891,6 @@
 			<emulator name="retroarch32">
 				<cores>
 					<core>pcsx_rearmed_neon</core>
-					<core>pcsx_rearmed_neon</core>
 					<core>pcsx_rearmed_rumble</core>
 					<core>pcsx_rearmed</core>
 					<core>pcsx_rearmed_unai</core>
@@ -1859,6 +1899,7 @@
 			</emulator>
 			<emulator name="retroarch">
 				<cores>
+					<core>pcsx_rearmed_neon</core>
 					<core>duckstation</core>
 					<core>swanstation</core>
 					<core>pcsx_rearmed_unai</core>
@@ -2450,6 +2491,11 @@
 		<extension>.jar .JAR</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/freej2me.sh %EMULATOR% %CORE% %ROM%; sudo perfnorm</command>
 		<emulators>
+			<emulator name="freej2me-sa">
+				<cores>
+					<core>freej2me</core>
+				</cores>
+			</emulator>
 			<emulator name="retroarch">
 				<cores>
 					<core>freej2me</core>
@@ -3116,12 +3162,13 @@
 		<extension>.7z .7Z .ist .IST .zip .ZIP .bin .BIN</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/atomiswave.sh %EMULATOR% %CORE% %ROM%; sudo perfnorm</command>
 		<emulators>
+			<emulator name="standalone-r7">
+			  </emulator>
+			<emulator name="standalone-2022">
+			  </emulator>
+			<emulator name="standalone">
+			  </emulator>
 			<emulator name="retroarch">
-				<cores>
-					<core>flycast</core>
-				</cores>
-			</emulator>
-			<emulator name="retrorun">
 				<cores>
 					<core>flycast</core>
 				</cores>
@@ -3133,18 +3180,27 @@
 					<core>reicast_xtreme</core>
 				</cores>
 			</emulator>
+			<emulator name="retrorun">
+				<cores>
+					<core>flycast</core>
+				</cores>
+			</emulator>
 			<emulator name="retrorun32">
 				<cores>
 					<core>flycast32_rumble</core>
 					<core>flycast_xtreme</core>
-					<core>reicast_xtreme</core>
 				</cores>
 			</emulator>
-			<emulator name="standalone">
-			  </emulator>
-			<emulator name="standalone-2022">
-			  </emulator>
-			  <emulator name="standalone-r7">
+			<emulator name="retrorunsdl">
+				<cores>
+					<core>flycast</core>
+				</cores>
+			</emulator>
+			<emulator name="retrorunsdl32">
+				<cores>
+					<core>flycast32_rumble</core>
+					<core>flycast_xtreme</core>
+				</cores>
 			  </emulator>
 		</emulators>
 		<platform>atomiswave</platform>
@@ -3160,12 +3216,13 @@
 		<extension>.7z .7Z .ist .IST .zip .ZIP .bin .BIN .dat .DAT</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/naomi.sh %EMULATOR% %CORE% %ROM%; sudo perfnorm</command>
 		<emulators>
+			<emulator name="standalone-r7">
+			  </emulator>
+			<emulator name="standalone-2022">
+			  </emulator>
+			<emulator name="standalone">
+			  </emulator>
 			<emulator name="retroarch">
-				<cores>
-					<core>flycast</core>
-				</cores>
-			</emulator>
-			<emulator name="retrorun">
 				<cores>
 					<core>flycast</core>
 				</cores>
@@ -3177,18 +3234,27 @@
 					<core>reicast_xtreme</core>
 				</cores>
 			</emulator>
+			<emulator name="retrorun">
+				<cores>
+					<core>flycast</core>
+				</cores>
+			</emulator>
 			<emulator name="retrorun32">
 				<cores>
 					<core>flycast32_rumble</core>
 					<core>flycast_xtreme</core>
-					<core>reicast_xtreme</core>
 				</cores>
 			</emulator>
-			<emulator name="standalone">
-			  </emulator>
-			<emulator name="standalone-2022">
-			  </emulator>
-			  <emulator name="standalone-r7">
+			<emulator name="retrorunsdl">
+				<cores>
+					<core>flycast</core>
+				</cores>
+			</emulator>
+			<emulator name="retrorunsdl32">
+				<cores>
+					<core>flycast32_rumble</core>
+					<core>flycast_xtreme</core>
+				</cores>
 			  </emulator>
 		</emulators>
 		<platform>naomi</platform>
@@ -3991,6 +4057,7 @@
 		<emulators>
 			<emulator name="retroarch">
 				<cores>
+					<core>gpsp_ezode_mod</core>
 					<core>mgba_rumble</core>
 					<core>mgba</core>
 					<core>vbam</core>
@@ -4000,6 +4067,7 @@
 			</emulator>
 			<emulator name="retroarch32">
 				<cores>
+					<core>gpsp_ezode_mod</core>
 					<core>gpsp</core>
 				</cores>
 			</emulator>
@@ -4268,18 +4336,28 @@
 					<core>yabause</core>
 				</cores>
 			</emulator>
-			<emulator name="retrorun32">
-				<cores>
-					<core>yabasanshiro</core>
-				</cores>
-			</emulator>
 			<emulator name="retroarch">
 				<cores>
 					<core>yabause</core>
 					<core>yabasanshiro</core>
 				</cores>
 			</emulator>
+			<emulator name="retrorun32">
+				<cores>
+					<core>yabasanshiro</core>
+				</cores>
+			</emulator>
 			<emulator name="retrorun">
+				<cores>
+					<core>yabasanshiro</core>
+				</cores>
+			</emulator>
+			<emulator name="retrorunsdl32">
+				<cores>
+					<core>yabasanshiro</core>
+				</cores>
+			</emulator>
+			<emulator name="retrorunsdl">
 				<cores>
 					<core>yabasanshiro</core>
 				</cores>
@@ -4298,6 +4376,12 @@
 		<extension>.7z .7Z .gdi .GDI .cdi .CDI .cue .CUE .chd .CHD .m3u .M3U</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/dreamcast.sh %EMULATOR% %CORE% %ROM%; sudo perfnorm</command>
 		<emulators>
+			<emulator name="standalone-r7">
+			  </emulator>
+			<emulator name="standalone-2022">
+			  </emulator>
+			<emulator name="standalone">
+			  </emulator>
 			<emulator name="retroarch32">
 				<cores>
 					<core>flycast32_rumble</core>
@@ -4315,7 +4399,6 @@
 				<cores>
 					<core>flycast32_rumble</core>
 					<core>flycast_xtreme</core>
-					<core>reicast_xtreme</core>
 				</cores>
 			</emulator>
 			<emulator name="retrorun">
@@ -4324,11 +4407,17 @@
 					<core>flycast</core>
 				</cores>
 			</emulator>
-			<emulator name="standalone">
+			<emulator name="retrorunsdl32">
+				<cores>
+					<core>flycast32_rumble</core>
+					<core>flycast_xtreme</core>
+				</cores>
 			  </emulator>
-			<emulator name="standalone-2022">
-			  </emulator>
-			  <emulator name="standalone-r7">
+			<emulator name="retrorunsdl">
+				<cores>
+					<core>flycast_rumble</core>
+					<core>flycast</core>
+				</cores>
 			  </emulator>
 		</emulators>
 		<platform>dreamcast</platform>
@@ -4525,11 +4614,11 @@
 		<emulators>
 			<emulator name="retroarch32">
 				<cores>
+					<core>pcsx_rearmed_neon</core>
 					<core>pcsx_rearmed_rumble</core>
 					<core>pcsx_rearmed</core>
 					<core>pcsx_rearmed_unai</core>
 					<core>pcsx_rearmed_peops</core>
-					<core>pcsx_rearmed_neon</core>
 				</cores>
 			</emulator>
 			<emulator name="retroarch">
@@ -5126,6 +5215,11 @@
 		<extension>.jar .JAR</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/freej2me.sh %EMULATOR% %CORE% %ROM%; sudo perfnorm</command>
 		<emulators>
+			<emulator name="freej2me-sa">
+				<cores>
+					<core>freej2me</core>
+				</cores>
+			</emulator>
 			<emulator name="retroarch">
 				<cores>
 					<core>freej2me</core>
