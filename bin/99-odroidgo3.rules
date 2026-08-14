@@ -1,5 +1,20 @@
-# Create our custom symlink
-SUBSYSTEM=="input", ATTRS{name}=="GO-Super Gamepad", SYMLINK+="input/by-path/platform-odroidgo3-joypad-event-joystick"
+# ============================================================
+# 解决 GO-Super Gamepad 手柄映射固定及系统卡死问题
+# ============================================================
 
-# Delete the default USB by-path symlink after it's created
-SUBSYSTEM=="input", ATTRS{name}=="GO-Super Gamepad", RUN+="/bin/rm -f /dev/input/by-path/platform-ff300000.usb-usb-0:1.2:1.0-event-joystick"
+# 规则1：创建固定链接，并尝试阻止特定默认链接（如果 udev 版本支持）
+# 此为第一道防线，SYMLINK-= 在部分环境中可直接生效，阻止生成指定路径
+SUBSYSTEM=="input", ATTRS{name}=="GO-Super Gamepad", ACTION=="add", \
+    SYMLINK+="input/by-path/platform-odroidgo3-joypad-event-joystick", \
+    SYMLINK-="input/by-path/platform-ff300000.usb-usb-0:1.2:1.0-event-joystick"
+
+# 规则2（第二道防线）：删除所有以 "platform-ff300000" 开头的系统生成链接
+# 涵盖 usb-usb、usb-usbv2 等所有变体，作为 SYMLINK-= 的补充
+# 使用通配符 * 一次性清除，避免因路径差异导致残留
+# 删除软链接不会触发 uevent，因此绝对安全，不会导致系统卡死
+SUBSYSTEM=="input", ATTRS{name}=="GO-Super Gamepad", ACTION=="add", \
+    RUN+="/bin/sh -c 'rm -f /dev/input/by-path/platform-ff300000*'"
+
+# 规则3（防御性）：禁止非 add 事件执行任何操作，避免意外触发
+SUBSYSTEM=="input", ATTRS{name}=="GO-Super Gamepad", ACTION!="add", \
+    OPTIONS="ignore_device"
