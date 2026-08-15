@@ -585,6 +585,11 @@ else
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/flycastsa/" 2>/dev/null
   safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/flycastsa/" 2>/dev/null
 
+  echo "== 更新 duckstation =="
+  safe sudo cp -a ./replace_file/duckstation/. "$MOUNT_DIR/root/opt/duckstation/" 2>/dev/null
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/duckstation/" 2>/dev/null
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/duckstation/" 2>/dev/null
+
   echo "== 添加 gametank-sa  =="
   safe sudo mkdir -p "$MOUNT_DIR/root/opt/gametank" 2>/dev/null
   safe sudo cp -a ./replace_file/gametank/. "$MOUNT_DIR/root/opt/gametank/" 2>/dev/null

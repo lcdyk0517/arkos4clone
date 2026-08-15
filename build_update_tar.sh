@@ -433,6 +433,10 @@ else
   mkdir -p "$PAYLOAD_ROOT/opt/flycastsa"
   cp -a ./replace_file/flycastsa/. "$PAYLOAD_ROOT/opt/flycastsa/" 2>/dev/null || true
 
+  echo "== 更新 duckstation =="
+  mkdir -p "$PAYLOAD_ROOT/opt/duckstation"
+  cp -a ./replace_file/duckstation/. "$PAYLOAD_ROOT/opt/duckstation/" 2>/dev/null || true
+
   echo "== 添加 rufflesa =="
   mkdir -p "$PAYLOAD_ROOT/opt/rufflesa"
   cp -a ./replace_file/rufflesa/. "$PAYLOAD_ROOT/opt/rufflesa/" 2>/dev/null || true
@@ -542,6 +546,8 @@ EOF
   meta_add "0777" "1002:1002" "/opt/scummvm/*"
   meta_add "0777" "1002:1002" "/opt/flycastsa"
   meta_add "0777" "1002:1002" "/opt/flycastsa/*"
+  meta_add "0777" "1002:1002" "/opt/duckstation"
+  meta_add "0777" "1002:1002" "/opt/duckstation/*"
   meta_add "0777" "1002:1002" "/opt/yabasanshiro"
   meta_add "0777" "1002:1002" "/opt/yabasanshiro/*"
   meta_add "0777" "1002:1002" "/opt/krkr2"
