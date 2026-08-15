@@ -63,14 +63,14 @@ msgstr "초기화"
 msgid "SHOW FOLDERS"
 msgstr "폴더 표시"
 
-msgid "ARE YOU SURE YOU WANT TO CONFIGURE INPUT?"
+msgid "THIS OPTION IS FOR CONFIGURING EXTERNAL CONTROLLERS, NOT REMAPPING THE BUILT-IN CONTROLS.\n\nIF YOU WANT TO REMAP THE BUILT-IN INPUT, PLEASE VISIT:\nhttp://lcdyk0517.github.io/tools/dtb-tools.html\n\nDO YOU WANT TO CONTINUE?"
+msgstr "이 옵션은 내장 컨트롤러가 아닌 외부 컨트롤러를 구성하기 위한 것입니다.\n\n내장 입력을 다시 매핑하려면 다음을 방문하세요:\nhttp://lcdyk0517.github.io/tools/dtb-tools.html\n\n계속하시겠습니까?"
+
 msgid "JOYPAD TEST"
 msgstr "게임패드 테스트"
 
 msgid "ARE YOU SURE YOU WANT TO TEST JOYPAD?"
 msgstr "게임패드를 테스트하시겠습니까?"
-
-msgstr "입력 설정을 진행하시겠습니까?"
 
 msgid "LOG LEVEL"
 msgstr "로그 레벨"
@@ -1054,6 +1054,15 @@ msgstr "환영합니다"
 
 msgid "CONFIGURE INPUT"
 msgstr "입력 설정"
+
+msgid "THIS OPTION IS FOR CONFIGURING EXTERNAL CONTROLLERS"
+msgstr "이 옵션은 외부 컨트롤러 설정용입니다"
+
+msgid "NOT REMAPPING THE BUILT-IN CONTROLS"
+msgstr "내장 컨트롤러 리매핑이 아닙니다"
+
+msgid "DO YOU WANT TO CONTINUE?"
+msgstr "계속하시겠습니까?"
 
 msgid "%i GAMEPAD DETECTED"
 msgid_plural "%i GAMEPADS DETECTED"
@@ -2058,3 +2067,54 @@ msgstr "프록시 포트"
 
 msgid "NO PROXY"
 msgstr "프록시 제외"
+
+msgid "STEP 1: KEEP BOTH STICKS COMPLETELY STILL"
+msgstr "步骤1：양쪽 스틱을 완전히 고정하세요"
+
+msgid "STEP 2: ROTATE BOTH STICKS FULL RANGE SLOWLY"
+msgstr "步骤2：양쪽 스틱을 천천히 최대 범위까지 회전하세요"
+
+msgid "PRESS OK TO START"
+msgstr "OK를 눌러 시작"
+
+msgid "PRESS OK TO START RANGE CALIBRATION"
+msgstr "OK를 눌러 범위 캘리브레이션 시작"
+
+msgid "CENTER SAMPLING COMPLETE!"
+msgstr "중심 샘플링 완료！"
+
+msgid "TIME: 5 SECONDS"
+msgstr "시간：5秒"
+
+msgid "CALIBRATION COMPLETE!"
+msgstr "캘리브레이션 완료！"
+
+msgid "JOYSTICK CALIBRATION"
+msgstr "조이스틱 캘리브레이션"
+
+msgid "JOYSTICK SETTINGS"
+msgstr "조이스틱 설정"
+
+msgid "PRESS ANY BUTTON TO SET AS EMULATION SWITCH\n\nPRESS BACK TO CANCEL"
+msgstr "에뮬레이션 전환 버튼으로 설정할 버튼을 누르세요\n\n뒤로를 눌러 취소"
+
+msgid "EMULATION BUTTON SET TO"
+msgstr "에뮬레이션 버튼 설정됨"
+
+msgid "CANCELLED"
+msgstr "취소됨"
+
+msgid "ANALOG STICK EMULATION"
+msgstr "아날로그 스틱 에뮬레이션"
+
+msgid "CHANGE EMULATION BUTTON"
+msgstr "에뮬레이션 버튼 변경"
+
+msgid "CHANGE THE BUTTON FOR ANALOG STICK EMULATION?"
+msgstr "아날로그 스틱 에뮬레이션 버튼을 변경하시겠습니까？"
+
+msgid "PRESS THE BUTTON TO MAP"
+msgstr "매핑할 버튼을 누르세요"
+
+msgid "BUTTON"
+msgstr "버튼"

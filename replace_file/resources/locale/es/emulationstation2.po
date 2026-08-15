@@ -1620,6 +1620,16 @@ msgstr "BIENVENIDO"
 
 #: 
 msgid "CONFIGURE INPUT"
+msgstr "CONFIGURAR MANDO"
+
+msgid "THIS OPTION IS FOR CONFIGURING EXTERNAL CONTROLLERS"
+msgstr "Esta opción es para controladores externos"
+
+msgid "NOT REMAPPING THE BUILT-IN CONTROLS"
+msgstr "No para reasignar los controles integrados"
+
+msgid "DO YOU WANT TO CONTINUE?"
+msgstr "¿Desea continuar?"
 
 msgid "JOYPAD TEST"
 msgstr "Prueba de mando"
@@ -2788,3 +2798,54 @@ msgstr "Proxy Port"
 
 msgid "NO PROXY"
 msgstr "No Proxy"
+
+msgid "STEP 1: KEEP BOTH STICKS COMPLETELY STILL"
+msgstr "Paso 1: Mantenga ambos sticks completamente quietos"
+
+msgid "STEP 2: ROTATE BOTH STICKS FULL RANGE SLOWLY"
+msgstr "Paso 2: Gire lentamente ambos sticks en todo el rango"
+
+msgid "PRESS OK TO START"
+msgstr "Presione OK para iniciar"
+
+msgid "PRESS OK TO START RANGE CALIBRATION"
+msgstr "Presione OK para la calibración del rango"
+
+msgid "CENTER SAMPLING COMPLETE!"
+msgstr "Muestreo del centro completo！"
+
+msgid "TIME: 5 SECONDS"
+msgstr "Tiempo：5秒"
+
+msgid "CALIBRATION COMPLETE!"
+msgstr "Calibración completa！"
+
+msgid "JOYSTICK CALIBRATION"
+msgstr "Calibración del joystick"
+
+msgid "JOYSTICK SETTINGS"
+msgstr "Ajustes del joystick"
+
+msgid "PRESS ANY BUTTON TO SET AS EMULATION SWITCH\n\nPRESS BACK TO CANCEL"
+msgstr "Presione cualquier botón para conmutación de emulación\n\nAtrás para cancelar"
+
+msgid "EMULATION BUTTON SET TO"
+msgstr "Botón de emulación establecido en"
+
+msgid "CANCELLED"
+msgstr "Cancelado"
+
+msgid "ANALOG STICK EMULATION"
+msgstr "Emulación del stick analógico"
+
+msgid "CHANGE EMULATION BUTTON"
+msgstr "Cambiar botón de emulación"
+
+msgid "CHANGE THE BUTTON FOR ANALOG STICK EMULATION?"
+msgstr "¿Cambiar el botón para la emulación del stick analógico？"
+
+msgid "PRESS THE BUTTON TO MAP"
+msgstr "Presione el botón para asignar"
+
+msgid "BUTTON"
+msgstr "Botón"

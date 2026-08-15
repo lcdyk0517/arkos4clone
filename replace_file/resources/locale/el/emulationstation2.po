@@ -1152,6 +1152,16 @@ msgstr "ΚΑΛΩΣ ΗΡΘΑΤΕ"
 
 #: 
 msgid "CONFIGURE INPUT"
+msgstr "ΔΙΑΜΟΡΦΩΣΗ ΕΝΤΟΛΗΣ"
+
+msgid "THIS OPTION IS FOR CONFIGURING EXTERNAL CONTROLLERS"
+msgstr "Αυτή η επιλογή είναι για εξωτερικούς ελεγκτές"
+
+msgid "NOT REMAPPING THE BUILT-IN CONTROLS"
+msgstr "Όχι για επαναφορά ενσωματωμένων κουμπιών"
+
+msgid "DO YOU WANT TO CONTINUE?"
+msgstr "Θέλετε να συνεχίσετε?"
 
 msgid "JOYPAD TEST"
 msgstr "Δοκιμή χειριστηρίου"
@@ -2320,3 +2330,54 @@ msgstr "Proxy Port"
 
 msgid "NO PROXY"
 msgstr "No Proxy"
+
+msgid "STEP 1: KEEP BOTH STICKS COMPLETELY STILL"
+msgstr "Βήμα 1: Κρατήστε και τα δύο ραβδάκια εντελώς ακίνητα"
+
+msgid "STEP 2: ROTATE BOTH STICKS FULL RANGE SLOWLY"
+msgstr "Βήμα 2: Περιστρέψτε αργά και τα δύο ραβδάκια σε όλο το εύρος"
+
+msgid "PRESS OK TO START"
+msgstr "Πατήστε OK για έναρξη"
+
+msgid "PRESS OK TO START RANGE CALIBRATION"
+msgstr "Πατήστε OK για βαθμονόμηση εύρους"
+
+msgid "CENTER SAMPLING COMPLETE!"
+msgstr "Δειγματοληψία κέντρου ολοκληρώθηκε！"
+
+msgid "TIME: 5 SECONDS"
+msgstr "Χρόνος：5秒"
+
+msgid "CALIBRATION COMPLETE!"
+msgstr "Βαθμονόμηση ολοκληρώθηκε！"
+
+msgid "JOYSTICK CALIBRATION"
+msgstr "Βαθμονόμηση joystick"
+
+msgid "JOYSTICK SETTINGS"
+msgstr "Ρυθμίσεις joystick"
+
+msgid "PRESS ANY BUTTON TO SET AS EMULATION SWITCH\n\nPRESS BACK TO CANCEL"
+msgstr "Πατήστε οποιοδήποτε κουμπί για εναλλαγή εξομοίωσης\n\nΠίσω για ακύρωση"
+
+msgid "EMULATION BUTTON SET TO"
+msgstr "Κουμπί εξομοίωσης ορίστηκε σε"
+
+msgid "CANCELLED"
+msgstr "Ακυρώθηκε"
+
+msgid "ANALOG STICK EMULATION"
+msgstr "Εξομοίωση αναλογικού ραβδιού"
+
+msgid "CHANGE EMULATION BUTTON"
+msgstr "Αλλαγή κουμπιού εξομοίωσης"
+
+msgid "CHANGE THE BUTTON FOR ANALOG STICK EMULATION?"
+msgstr "Αλλαγή κουμπιού για εξομοίωση αναλογικού ραβδιού；"
+
+msgid "PRESS THE BUTTON TO MAP"
+msgstr "Πατήστε το κουμπί για αντιστοίχιση"
+
+msgid "BUTTON"
+msgstr "Κουμπί"

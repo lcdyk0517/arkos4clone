@@ -312,6 +312,15 @@ msgstr "PARAMÈTRES DE L'INTERFACE UTILISATEUR"
 msgid "CONFIGURE INPUT"
 msgstr "CONFIGURER LES TOUCHES"
 
+msgid "THIS OPTION IS FOR CONFIGURING EXTERNAL CONTROLLERS"
+msgstr "Cette option est pour les contrôleurs externes"
+
+msgid "NOT REMAPPING THE BUILT-IN CONTROLS"
+msgstr "Pas pour reassigner les boutons intégrés"
+
+msgid "DO YOU WANT TO CONTINUE?"
+msgstr "Voulez-vous continuer?"
+
 #:
 msgid "SOUND SETTINGS"
 msgstr "PARAMÈTRES DU SON"
@@ -837,14 +846,14 @@ msgid "OPTIONAL RUMBLE MOTOR"
 msgstr "OPTION DU VIBREUR"
 
 #:
-msgid "ARE YOU SURE YOU WANT TO CONFIGURE INPUT?"
+msgid "THIS OPTION IS FOR CONFIGURING EXTERNAL CONTROLLERS, NOT REMAPPING THE BUILT-IN CONTROLS.\n\nIF YOU WANT TO REMAP THE BUILT-IN INPUT, PLEASE VISIT:\nhttp://lcdyk0517.github.io/tools/dtb-tools.html\n\nDO YOU WANT TO CONTINUE?"
+msgstr "CETTE OPTION EST DESTINÉE À CONFIGURER DES MANETTES EXTERNES, PAS À RECONFIGURER LES CONTRÔLES INTÉGRÉS.\n\nSI VOUS SOUHAITEZ RECONFIGURER L'ENTRÉE INTÉGRÉE, VEUILLEZ VISITER :\nhttp://lcdyk0517.github.io/tools/dtb-tools.html\n\nVOULEZ-VOUS CONTINUER ?"
+
 msgid "JOYPAD TEST"
 msgstr "Test de manette"
 
 msgid "ARE YOU SURE YOU WANT TO TEST JOYPAD?"
 msgstr "Êtes-vous sûr de vouloir tester la manette?"
-
-msgstr "VOULEZ-VOUS MODIFIER LA CONFIGURATION DES TOUCHES ?"
 
 #:
 msgid "REALLY RESTART?"
@@ -1808,3 +1817,54 @@ msgstr "Proxy Port"
 
 msgid "NO PROXY"
 msgstr "No Proxy"
+
+msgid "STEP 1: KEEP BOTH STICKS COMPLETELY STILL"
+msgstr "Étape 1 : Gardez les deux joysticks complètement immobiles"
+
+msgid "STEP 2: ROTATE BOTH STICKS FULL RANGE SLOWLY"
+msgstr "Étape 2 : Tournez lentement les deux joysticks sur toute la plage"
+
+msgid "PRESS OK TO START"
+msgstr "Appuyez sur OK pour commencer"
+
+msgid "PRESS OK TO START RANGE CALIBRATION"
+msgstr "Appuyez sur OK pour la calibration de la plage"
+
+msgid "CENTER SAMPLING COMPLETE!"
+msgstr "Échantillonnage du centre terminé !"
+
+msgid "TIME: 5 SECONDS"
+msgstr "Temps : 5秒"
+
+msgid "CALIBRATION COMPLETE!"
+msgstr "Calibration terminée !"
+
+msgid "JOYSTICK CALIBRATION"
+msgstr "Calibration du joystick"
+
+msgid "JOYSTICK SETTINGS"
+msgstr "Paramètres du joystick"
+
+msgid "PRESS ANY BUTTON TO SET AS EMULATION SWITCH\n\nPRESS BACK TO CANCEL"
+msgstr "Appuyez sur un bouton pour la commutation d'émulation\n\nRetour pour annuler"
+
+msgid "EMULATION BUTTON SET TO"
+msgstr "Bouton d'émulation défini sur"
+
+msgid "CANCELLED"
+msgstr "Annulé"
+
+msgid "ANALOG STICK EMULATION"
+msgstr "Émulation du stick analogique"
+
+msgid "CHANGE EMULATION BUTTON"
+msgstr "Changer le bouton d'émulation"
+
+msgid "CHANGE THE BUTTON FOR ANALOG STICK EMULATION?"
+msgstr "Changer le bouton pour l'émulation du stick analogique？"
+
+msgid "PRESS THE BUTTON TO MAP"
+msgstr "Appuyez sur le bouton à assigner"
+
+msgid "BUTTON"
+msgstr "Bouton"

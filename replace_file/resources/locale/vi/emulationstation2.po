@@ -1021,6 +1021,16 @@ msgid "WELCOME"
 msgstr "CHÀO MỪNG"
 
 msgid "CONFIGURE INPUT"
+msgstr "CẤU HÌNH ĐẦU VÀO"
+
+msgid "THIS OPTION IS FOR CONFIGURING EXTERNAL CONTROLLERS"
+msgstr "Tùy chọn này dùng cho bộ điều khiển bên ngoài"
+
+msgid "NOT REMAPPING THE BUILT-IN CONTROLS"
+msgstr "Không phải ánh xạ lại nút tích hợp"
+
+msgid "DO YOU WANT TO CONTINUE?"
+msgstr "Bạn có muốn tiếp tục?"
 
 msgid "JOYPAD TEST"
 msgstr "Kiểm tra tay cầm"
@@ -1917,3 +1927,54 @@ msgstr "Proxy Port"
 
 msgid "NO PROXY"
 msgstr "No Proxy"
+
+msgid "STEP 1: KEEP BOTH STICKS COMPLETELY STILL"
+msgstr "Bước 1: Giữ cả hai cần hoàn toàn bất động"
+
+msgid "STEP 2: ROTATE BOTH STICKS FULL RANGE SLOWLY"
+msgstr "Bước 2: Xoay chậm cả hai cần trong toàn bộ phạm vi"
+
+msgid "PRESS OK TO START"
+msgstr "Nhấn OK để bắt đầu"
+
+msgid "PRESS OK TO START RANGE CALIBRATION"
+msgstr "Nhấn OK để hiệu chuẩn phạm vi"
+
+msgid "CENTER SAMPLING COMPLETE!"
+msgstr "Lấy mẫu trung tâm hoàn tất！"
+
+msgid "TIME: 5 SECONDS"
+msgstr "Thời gian：5秒"
+
+msgid "CALIBRATION COMPLETE!"
+msgstr "Hiệu chuẩn hoàn tất！"
+
+msgid "JOYSTICK CALIBRATION"
+msgstr "Hiệu chuẩn joystick"
+
+msgid "JOYSTICK SETTINGS"
+msgstr "Cài đặt joystick"
+
+msgid "PRESS ANY BUTTON TO SET AS EMULATION SWITCH\n\nPRESS BACK TO CANCEL"
+msgstr "Nhấn bất kỳ nút nào để đặt làm nút chuyển đổi mô phỏng\n\nNhấn Quay lại để hủy"
+
+msgid "EMULATION BUTTON SET TO"
+msgstr "Nút mô phỏng đã được đặt thành"
+
+msgid "CANCELLED"
+msgstr "Đã hủy"
+
+msgid "ANALOG STICK EMULATION"
+msgstr "Mô phỏng cần analog"
+
+msgid "CHANGE EMULATION BUTTON"
+msgstr "Thay đổi nút mô phỏng"
+
+msgid "CHANGE THE BUTTON FOR ANALOG STICK EMULATION?"
+msgstr "Thay đổi nút cho mô phỏng cần analog？"
+
+msgid "PRESS THE BUTTON TO MAP"
+msgstr "Nhấn nút để gán"
+
+msgid "BUTTON"
+msgstr "Nút"

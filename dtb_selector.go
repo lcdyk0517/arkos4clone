@@ -522,6 +522,13 @@ var Consoles = []ConsoleConfig{
 		ExtraSources: []string{"logo/768P/"},
 	},
 	{
+		RealName: "rf45h",
+		BrandEntries: []BrandEntry{
+			{Brand: "XiFan HandHelds", DisplayName: "XiFan RF45H"},
+		},
+		ExtraSources: []string{"logo/768P/"},
+	},
+	{
 		RealName: "rf55h",
 		BrandEntries: []BrandEntry{
 			{Brand: "XiFan HandHelds", DisplayName: "XiFan RF55H"},

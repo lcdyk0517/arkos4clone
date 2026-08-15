@@ -788,6 +788,15 @@ msgstr "網路設定"
 msgid "CONFIGURE INPUT"
 msgstr "按鍵配置"
 
+msgid "THIS OPTION IS FOR CONFIGURING EXTERNAL CONTROLLERS"
+msgstr "此選項用於配置外部控制器"
+
+msgid "NOT REMAPPING THE BUILT-IN CONTROLS"
+msgstr "不是重新映射內置按鍵"
+
+msgid "DO YOU WANT TO CONTINUE?"
+msgstr "是否繼續？"
+
 msgid "EMULATOR SETTINGS"
 msgstr "模擬器設定"
 
@@ -1053,14 +1062,14 @@ msgstr "使用者名稱"
 msgid "PASSWORD"
 msgstr "密碼"
 
-msgid "ARE YOU SURE YOU WANT TO CONFIGURE INPUT?"
+msgid "THIS OPTION IS FOR CONFIGURING EXTERNAL CONTROLLERS, NOT REMAPPING THE BUILT-IN CONTROLS.\n\nIF YOU WANT TO REMAP THE BUILT-IN INPUT, PLEASE VISIT:\nhttp://lcdyk0517.github.io/tools/dtb-tools.html\n\nDO YOU WANT TO CONTINUE?"
+msgstr "此選項用於配置外接控制器，而不是重新映射本機控制。\n\n如果您想重新映射本機輸入，請訪問：\nhttp://lcdyk0517.github.io/tools/dtb-tools.html\n\n是否繼續？"
+
 msgid "JOYPAD TEST"
 msgstr "手柄測試"
 
 msgid "ARE YOU SURE YOU WANT TO TEST JOYPAD?"
 msgstr "您確定要測試手柄嗎？"
-
-msgstr "您確定要配置按鍵嗎？"
 
 msgid "CHOOSE"
 msgstr "選擇"
@@ -3838,3 +3847,54 @@ msgstr "代理端口"
 
 msgid "NO PROXY"
 msgstr "不使用代理"
+
+msgid "STEP 1: KEEP BOTH STICKS COMPLETELY STILL"
+msgstr "步驟1：保持兩個搖桿完全靜止"
+
+msgid "STEP 2: ROTATE BOTH STICKS FULL RANGE SLOWLY"
+msgstr "步驟2：緩慢旋轉兩個搖桿到最大範圍"
+
+msgid "PRESS OK TO START"
+msgstr "按OK開始"
+
+msgid "PRESS OK TO START RANGE CALIBRATION"
+msgstr "按OK開始範圍校準"
+
+msgid "CENTER SAMPLING COMPLETE!"
+msgstr "中心採樣完成！"
+
+msgid "TIME: 5 SECONDS"
+msgstr "時間：5秒"
+
+msgid "CALIBRATION COMPLETE!"
+msgstr "校準完成！"
+
+msgid "JOYSTICK CALIBRATION"
+msgstr "搖桿校準"
+
+msgid "JOYSTICK SETTINGS"
+msgstr "搖桿設置"
+
+msgid "PRESS ANY BUTTON TO SET AS EMULATION SWITCH\n\nPRESS BACK TO CANCEL"
+msgstr "按下任意按鍵設為模擬切換鍵\n\n按返回鍵取消"
+
+msgid "EMULATION BUTTON SET TO"
+msgstr "模擬切換鍵已設為"
+
+msgid "CANCELLED"
+msgstr "已取消"
+
+msgid "ANALOG STICK EMULATION"
+msgstr "模擬右搖桿"
+
+msgid "CHANGE EMULATION BUTTON"
+msgstr "更改模擬按鍵"
+
+msgid "CHANGE THE BUTTON FOR ANALOG STICK EMULATION?"
+msgstr "更改模擬右搖桿的切換按鍵？"
+
+msgid "PRESS THE BUTTON TO MAP"
+msgstr "請按下要映射的按鍵"
+
+msgid "BUTTON"
+msgstr "按鍵"

@@ -783,6 +783,15 @@ msgstr "НАЛАШТУВАННЯ МЕРЕЖІ"
 msgid "CONFIGURE INPUT"
 msgstr "НАЛАШТУВАННЯ УПРАВЛІННЯ"
 
+msgid "THIS OPTION IS FOR CONFIGURING EXTERNAL CONTROLLERS"
+msgstr "Ця опція для налаштування зовнішніх контролерів"
+
+msgid "NOT REMAPPING THE BUILT-IN CONTROLS"
+msgstr "Не для перепризначення вбудованих кнопок"
+
+msgid "DO YOU WANT TO CONTINUE?"
+msgstr "Продовжити?"
+
 msgid "EMULATOR SETTINGS"
 msgstr "НАЛАШТУВАННЯ ЕМУЛЯТОРА"
 
@@ -1011,14 +1020,14 @@ msgstr "ІМ'Я КОРИСТУВАЧА"
 msgid "PASSWORD"
 msgstr "ПАРОЛЬ"
 
-msgid "ARE YOU SURE YOU WANT TO CONFIGURE INPUT?"
+msgid "THIS OPTION IS FOR CONFIGURING EXTERNAL CONTROLLERS, NOT REMAPPING THE BUILT-IN CONTROLS.\n\nIF YOU WANT TO REMAP THE BUILT-IN INPUT, PLEASE VISIT:\nhttp://lcdyk0517.github.io/tools/dtb-tools.html\n\nDO YOU WANT TO CONTINUE?"
+msgstr "ЦЯ ОПЦІЯ ПРИЗНАЧЕНА ДЛЯ НАЛАШТУВАННЯ ЗОВНІШНІХ КОНТРОЛЕРІВ, А НЕ ДЛЯ ПЕРЕНАЗНАЧЕННЯ ВСТАНОВЛЕНИХ ЕЛЕМЕНТІВ КЕРУВАННЯ.\n\nЯКЩО ВИ ХОЧЕТЕ ПЕРЕНАЗНАЧИТИ ВСТАНОВЛЕНИЙ ВВІД, БУДЬ ЛАСКА, ВІДВІДАЙТЕ:\nhttp://lcdyk0517.github.io/tools/dtb-tools.html\n\nВИ ХОЧЕТЕ ПРОДОВЖИТИ?"
+
 msgid "JOYPAD TEST"
 msgstr "Тест геймпада"
 
 msgid "ARE YOU SURE YOU WANT TO TEST JOYPAD?"
 msgstr "Ви впевнені, що хочете протестувати геймпад?"
-
-msgstr "ВИ ВПЕВНЕНІ, ЩО ХОЧЕТЕ НАСТРОЇТИ УПРАВЛІННЯ?"
 
 msgid "CHOOSE"
 msgstr "ГОРТАТИ"
@@ -3966,3 +3975,54 @@ msgstr "Proxy Port"
 
 msgid "NO PROXY"
 msgstr "No Proxy"
+
+msgid "STEP 1: KEEP BOTH STICKS COMPLETELY STILL"
+msgstr "Крок 1: Тримайте обидва стіки повністю нерухомо"
+
+msgid "STEP 2: ROTATE BOTH STICKS FULL RANGE SLOWLY"
+msgstr "Крок 2: Повільно поверніть обидва стіки на повний діапазон"
+
+msgid "PRESS OK TO START"
+msgstr "Натисніть OK для початку"
+
+msgid "PRESS OK TO START RANGE CALIBRATION"
+msgstr "Натисніть OK для калібрування діапазону"
+
+msgid "CENTER SAMPLING COMPLETE!"
+msgstr "Вибірка центру завершена！"
+
+msgid "TIME: 5 SECONDS"
+msgstr "Час：5秒"
+
+msgid "CALIBRATION COMPLETE!"
+msgstr "Калібрування завершено！"
+
+msgid "JOYSTICK CALIBRATION"
+msgstr "Калібрування джойстика"
+
+msgid "JOYSTICK SETTINGS"
+msgstr "Налаштування джойстика"
+
+msgid "PRESS ANY BUTTON TO SET AS EMULATION SWITCH\n\nPRESS BACK TO CANCEL"
+msgstr "Натисніть будь-яку кнопку для емуляції\n\nНазад для скасування"
+
+msgid "EMULATION BUTTON SET TO"
+msgstr "Кнопку емуляції встановлено"
+
+msgid "CANCELLED"
+msgstr "Скасовано"
+
+msgid "ANALOG STICK EMULATION"
+msgstr "Емуляція аналогового стіка"
+
+msgid "CHANGE EMULATION BUTTON"
+msgstr "Змінити кнопку емуляції"
+
+msgid "CHANGE THE BUTTON FOR ANALOG STICK EMULATION?"
+msgstr "Змінити кнопку емуляції аналогового стіка？"
+
+msgid "PRESS THE BUTTON TO MAP"
+msgstr "Натисніть кнопку для призначення"
+
+msgid "BUTTON"
+msgstr "Кнопка"

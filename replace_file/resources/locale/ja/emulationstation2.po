@@ -312,6 +312,15 @@ msgstr "UI設定"
 msgid "CONFIGURE INPUT"
 msgstr "入力設定"
 
+msgid "THIS OPTION IS FOR CONFIGURING EXTERNAL CONTROLLERS"
+msgstr "このオプションは外部コントローラーの設定用です"
+
+msgid "NOT REMAPPING THE BUILT-IN CONTROLS"
+msgstr "内蔵コントローラーの再マッピングではありません"
+
+msgid "DO YOU WANT TO CONTINUE?"
+msgstr "続行しますか？"
+
 #:
 msgid "SOUND SETTINGS"
 msgstr "サウンド設定"
@@ -837,14 +846,14 @@ msgid "OPTIONAL RUMBLE MOTOR"
 msgstr "追加の振動モーター"
 
 #:
-msgid "ARE YOU SURE YOU WANT TO CONFIGURE INPUT?"
+msgid "THIS OPTION IS FOR CONFIGURING EXTERNAL CONTROLLERS, NOT REMAPPING THE BUILT-IN CONTROLS.\n\nIF YOU WANT TO REMAP THE BUILT-IN INPUT, PLEASE VISIT:\nhttp://lcdyk0517.github.io/tools/dtb-tools.html\n\nDO YOU WANT TO CONTINUE?"
+msgstr "このオプションは内蔵コントローラーではなく、外部コントローラーを設定するためのものです。\n\n内蔵入力を再マッピングしたい場合は、以下にアクセスしてください：\nhttp://lcdyk0517.github.io/tools/dtb-tools.html\n\n続行しますか？"
+
 msgid "JOYPAD TEST"
 msgstr "ゲームパッドテスト"
 
 msgid "ARE YOU SURE YOU WANT TO TEST JOYPAD?"
 msgstr "ゲームパッドをテストしますか？"
-
-msgstr "本当に入力を設定しますか？"
 
 #:
 msgid "REALLY RESTART?"
@@ -1684,3 +1693,54 @@ msgstr "プロキシポート"
 
 msgid "NO PROXY"
 msgstr "プロキシ除外"
+
+msgid "STEP 1: KEEP BOTH STICKS COMPLETELY STILL"
+msgstr "ステップ1：両スティックを完全に静止させてください"
+
+msgid "STEP 2: ROTATE BOTH STICKS FULL RANGE SLOWLY"
+msgstr "ステップ2：両スティックをゆっくり最大範囲まで回転させてください"
+
+msgid "PRESS OK TO START"
+msgstr "OKを押して開始"
+
+msgid "PRESS OK TO START RANGE CALIBRATION"
+msgstr "OKを押して範囲キャリブレーション開始"
+
+msgid "CENTER SAMPLING COMPLETE!"
+msgstr "センターサンプリング完了！"
+
+msgid "TIME: 5 SECONDS"
+msgstr "時間：5秒"
+
+msgid "CALIBRATION COMPLETE!"
+msgstr "キャリブレーション完了！"
+
+msgid "JOYSTICK CALIBRATION"
+msgstr "ジョイスティックキャリブレーション"
+
+msgid "JOYSTICK SETTINGS"
+msgstr "ジョイスティック設定"
+
+msgid "PRESS ANY BUTTON TO SET AS EMULATION SWITCH\n\nPRESS BACK TO CANCEL"
+msgstr "任意のボタンを押してエミュレーション切替に設定\n\n戻るでキャンセル"
+
+msgid "EMULATION BUTTON SET TO"
+msgstr "エミュレーションボタン設定先"
+
+msgid "CANCELLED"
+msgstr "キャンセル済み"
+
+msgid "ANALOG STICK EMULATION"
+msgstr "アナログスティックエミュレーション"
+
+msgid "CHANGE EMULATION BUTTON"
+msgstr "エミュレーションボタン変更"
+
+msgid "CHANGE THE BUTTON FOR ANALOG STICK EMULATION?"
+msgstr "アナログスティックエミュレーションのボタンを変更しますか？"
+
+msgid "PRESS THE BUTTON TO MAP"
+msgstr "マッピングするボタンを押してください"
+
+msgid "BUTTON"
+msgstr "ボタン"

@@ -250,6 +250,15 @@ msgstr "INSTÄLLNINGAR FÖR GRÄNSSNITT"
 msgid "CONFIGURE INPUT"
 msgstr "KONFIGURERA INMATNING"
 
+msgid "THIS OPTION IS FOR CONFIGURING EXTERNAL CONTROLLERS"
+msgstr "Detta alternativ är för externa kontroller"
+
+msgid "NOT REMAPPING THE BUILT-IN CONTROLS"
+msgstr "Inte för att omdefiniera inbyggda knappar"
+
+msgid "DO YOU WANT TO CONTINUE?"
+msgstr "Vill du fortsätta?"
+
 msgid "SOUND SETTINGS"
 msgstr "LJUDINSTÄLLNINGAR"
 
@@ -645,14 +654,14 @@ msgstr "LOGGNIVÅ"
 msgid "OPTIONAL RUMBLE MOTOR"
 msgstr "RUMLANDE MOTOR SOM TILLVAL"
 
-msgid "ARE YOU SURE YOU WANT TO CONFIGURE INPUT?"
+msgid "THIS OPTION IS FOR CONFIGURING EXTERNAL CONTROLLERS, NOT REMAPPING THE BUILT-IN CONTROLS.\n\nIF YOU WANT TO REMAP THE BUILT-IN INPUT, PLEASE VISIT:\nhttp://lcdyk0517.github.io/tools/dtb-tools.html\n\nDO YOU WANT TO CONTINUE?"
+msgstr "DET HÄR ALTERNATIVET ÄR FÖR ATT KONFIGURERA EXTERNA KONTROLLER, INTE FÖR ATT OMKNYTA DE INTEGRERADE KONTROLLERNA.\n\nOM DU VILL OMKNYTA DEN INTEGRERADE INMATNINGEN, VÄNLIGEN BESÖK:\nhttp://lcdyk0517.github.io/tools/dtb-tools.html\n\nVILL DU FORTSÄTTA?"
+
 msgid "JOYPAD TEST"
 msgstr "Handkontrolltest"
 
 msgid "ARE YOU SURE YOU WANT TO TEST JOYPAD?"
 msgstr "Är du säker på att du vill testa handkontrollen?"
-
-msgstr "ÄR DU SÄKER PÅ ATT DU VILL KONFIGURERA INMATNINGEN?"
 
 msgid "REALLY RESTART?"
 msgstr "VERKLIGEN STARTA OM?"
@@ -3595,3 +3604,54 @@ msgstr "Proxy Port"
 
 msgid "NO PROXY"
 msgstr "No Proxy"
+
+msgid "STEP 1: KEEP BOTH STICKS COMPLETELY STILL"
+msgstr "Steg 1: Håll båda styrspakarna helt stilla"
+
+msgid "STEP 2: ROTATE BOTH STICKS FULL RANGE SLOWLY"
+msgstr "Steg 2: Rotera långsamt båda styrspakarna i hela intervallet"
+
+msgid "PRESS OK TO START"
+msgstr "Tryck OK för att starta"
+
+msgid "PRESS OK TO START RANGE CALIBRATION"
+msgstr "Tryck OK för intervalkalibrering"
+
+msgid "CENTER SAMPLING COMPLETE!"
+msgstr "Centrumsamplig klar！"
+
+msgid "TIME: 5 SECONDS"
+msgstr "Tid：5秒"
+
+msgid "CALIBRATION COMPLETE!"
+msgstr "Kalibrering klar！"
+
+msgid "JOYSTICK CALIBRATION"
+msgstr "Joystickkalibrering"
+
+msgid "JOYSTICK SETTINGS"
+msgstr "Joystickinställningar"
+
+msgid "PRESS ANY BUTTON TO SET AS EMULATION SWITCH\n\nPRESS BACK TO CANCEL"
+msgstr "Tryck valfri knapp för emuleringsväxling\n\nTillbaka för att avbryta"
+
+msgid "EMULATION BUTTON SET TO"
+msgstr "Emuleringsknapp satt till"
+
+msgid "CANCELLED"
+msgstr "Avbruten"
+
+msgid "ANALOG STICK EMULATION"
+msgstr "Analog-stick-emulering"
+
+msgid "CHANGE EMULATION BUTTON"
+msgstr "Ändra emuleringsknapp"
+
+msgid "CHANGE THE BUTTON FOR ANALOG STICK EMULATION?"
+msgstr "Ändra knapp för analog-stick-emulering？"
+
+msgid "PRESS THE BUTTON TO MAP"
+msgstr "Tryck knappen för att tilldela"
+
+msgid "BUTTON"
+msgstr "Knapp"

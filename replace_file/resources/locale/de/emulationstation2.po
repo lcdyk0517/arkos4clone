@@ -97,14 +97,14 @@ msgid "SHOW FOLDERS"
 msgstr "VERZEICHNISSE ANZEIGEN"
 
 #:
-msgid "ARE YOU SURE YOU WANT TO CONFIGURE INPUT?"
+msgid "THIS OPTION IS FOR CONFIGURING EXTERNAL CONTROLLERS, NOT REMAPPING THE BUILT-IN CONTROLS.\n\nIF YOU WANT TO REMAP THE BUILT-IN INPUT, PLEASE VISIT:\nhttp://lcdyk0517.github.io/tools/dtb-tools.html\n\nDO YOU WANT TO CONTINUE?"
+msgstr "Diese Option dient zur Konfiguration externer Controller, nicht zur Neuzuweisung der integrierten Steuerung.\n\nWenn Sie die integrierte Eingabe neu zuweisen möchten, besuchen Sie bitte:\nhttp://lcdyk0517.github.io/tools/dtb-tools.html\n\nMöchten Sie fortfahren?"
+
 msgid "JOYPAD TEST"
 msgstr "Gamepad-Test"
 
 msgid "ARE YOU SURE YOU WANT TO TEST JOYPAD?"
 msgstr "Sind Sie sicher, dass Sie das Gamepad testen möchten?"
-
-msgstr "BIST DU SICHER, DASS DU DEN EINGANG KONFIGURIEREN WILLST?"
 
 #:
 msgid "disabled"
@@ -1467,6 +1467,15 @@ msgstr "WILLKOMMEN"
 msgid "CONFIGURE INPUT"
 msgstr "EINGABE KONFIGURIEREN"
 
+msgid "THIS OPTION IS FOR CONFIGURING EXTERNAL CONTROLLERS"
+msgstr "Diese Option ist für externe Controller"
+
+msgid "NOT REMAPPING THE BUILT-IN CONTROLS"
+msgstr "Nicht zum Umbelegen der integrierten Tasten"
+
+msgid "DO YOU WANT TO CONTINUE?"
+msgstr "Möchten Sie fortfahren?"
+
 #: 
 msgid "%i GAMEPAD DETECTED"
 msgid_plural "%i GAMEPADS DETECTED"
@@ -2620,3 +2629,54 @@ msgstr "Proxy Port"
 
 msgid "NO PROXY"
 msgstr "No Proxy"
+
+msgid "STEP 1: KEEP BOTH STICKS COMPLETELY STILL"
+msgstr "Schritt 1: Halten Sie beide Sticks vollständig still"
+
+msgid "STEP 2: ROTATE BOTH STICKS FULL RANGE SLOWLY"
+msgstr "Schritt 2: Drehen Sie beide Sticks langsam über den gesamten Bereich"
+
+msgid "PRESS OK TO START"
+msgstr "Drücken Sie OK zum Starten"
+
+msgid "PRESS OK TO START RANGE CALIBRATION"
+msgstr "Drücken Sie OK für die Bereichskalibrierung"
+
+msgid "CENTER SAMPLING COMPLETE!"
+msgstr "Zentrumsabtastung abgeschlossen！"
+
+msgid "TIME: 5 SECONDS"
+msgstr "Zeit：5秒"
+
+msgid "CALIBRATION COMPLETE!"
+msgstr "Kalibrierung abgeschlossen！"
+
+msgid "JOYSTICK CALIBRATION"
+msgstr "Joystick-Kalibrierung"
+
+msgid "JOYSTICK SETTINGS"
+msgstr "Joystick-Einstellungen"
+
+msgid "PRESS ANY BUTTON TO SET AS EMULATION SWITCH\n\nPRESS BACK TO CANCEL"
+msgstr "Beliebige Taste für Emulations-Umschaltung drücken\n\nZurück zum Abbrechen"
+
+msgid "EMULATION BUTTON SET TO"
+msgstr "Emulations-Taste gesetzt auf"
+
+msgid "CANCELLED"
+msgstr "Abgebrochen"
+
+msgid "ANALOG STICK EMULATION"
+msgstr "Analog-Stick-Emulation"
+
+msgid "CHANGE EMULATION BUTTON"
+msgstr "Emulations-Taste ändern"
+
+msgid "CHANGE THE BUTTON FOR ANALOG STICK EMULATION?"
+msgstr "Taste für Analog-Stick-Emulation ändern？"
+
+msgid "PRESS THE BUTTON TO MAP"
+msgstr "Drücken Sie die Taste zum Zuweisen"
+
+msgid "BUTTON"
+msgstr "Taste"
