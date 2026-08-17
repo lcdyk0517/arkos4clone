@@ -2381,3 +2381,28 @@ msgstr "Πατήστε το κουμπί για αντιστοίχιση"
 
 msgid "BUTTON"
 msgstr "Κουμπί"
+
+msgid "JOYSTICK DEAD ZONE"
+msgstr ""
+
+
+msgid "DEAD ZONE VALUE"
+msgstr ""
+
+msgid "CUSTOM DEAD ZONE"
+msgstr ""
+
+msgid "ENTER DEAD ZONE VALUE (10-1800)"
+msgstr ""
+
+msgid "DEAD ZONE SET TO"
+msgstr ""
+
+msgid "VALUE OUT OF RANGE"
+msgstr ""
+
+msgid "INVALID VALUE"
+msgstr ""
+
+msgid "CUSTOM"
+msgstr ""

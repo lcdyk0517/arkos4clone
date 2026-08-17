@@ -1744,3 +1744,27 @@ msgstr "マッピングするボタンを押してください"
 
 msgid "BUTTON"
 msgstr "ボタン"
+
+msgid "JOYSTICK DEAD ZONE"
+msgstr "ジョイスティックデッドゾーン"
+
+msgid "DEAD ZONE VALUE"
+msgstr "デッドゾーン値"
+
+msgid "CUSTOM DEAD ZONE"
+msgstr "カスタムデッドゾーン"
+
+msgid "ENTER DEAD ZONE VALUE (10-1800)"
+msgstr "デッドゾーン値を入力 (10-1800)"
+
+msgid "DEAD ZONE SET TO"
+msgstr "デッドゾーンを設定"
+
+msgid "VALUE OUT OF RANGE"
+msgstr "値が範囲外です"
+
+msgid "INVALID VALUE"
+msgstr "無効な値"
+
+msgid "CUSTOM"
+msgstr "カスタム"

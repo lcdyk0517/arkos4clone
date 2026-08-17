@@ -3898,3 +3898,27 @@ msgstr "請按下要映射的按鍵"
 
 msgid "BUTTON"
 msgstr "按鍵"
+
+msgid "JOYSTICK DEAD ZONE"
+msgstr "搖桿死區"
+
+msgid "DEAD ZONE VALUE"
+msgstr "死區值"
+
+msgid "CUSTOM DEAD ZONE"
+msgstr "自定義死區"
+
+msgid "ENTER DEAD ZONE VALUE (10-1800)"
+msgstr "輸入死區值 (10-1800)"
+
+msgid "DEAD ZONE SET TO"
+msgstr "死區已設為"
+
+msgid "VALUE OUT OF RANGE"
+msgstr "數值超出範圍"
+
+msgid "INVALID VALUE"
+msgstr "無效數值"
+
+msgid "CUSTOM"
+msgstr "自定義"
