@@ -575,6 +575,16 @@ else
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/ppsspp/" 2>/dev/null
   safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/ppsspp/" 2>/dev/null
 
+  echo "== 替换 PPSSPP-2021 =="
+  safe sudo cp -a ./replace_file/ppsspp-2021/* "$MOUNT_DIR/root/opt/ppsspp-2021/" 2>/dev/null
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/ppsspp-2021/" 2>/dev/null
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/ppsspp-2021/" 2>/dev/null
+
+  echo "== 更新 mupen64plus =="
+  safe sudo cp -a ./replace_file/mupen64plus/* "$MOUNT_DIR/root/opt/mupen64plus/" 2>/dev/null
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/mupen64plus/" 2>/dev/null
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/mupen64plus/" 2>/dev/null
+
   echo "== 更新 ScummVM v2026.3.0 =="
   safe sudo cp -a ./replace_file/scummvm/* "$MOUNT_DIR/root/opt/scummvm/" 2>/dev/null
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/scummvm/" 2>/dev/null

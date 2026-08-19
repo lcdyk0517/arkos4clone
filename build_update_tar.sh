@@ -425,6 +425,14 @@ else
   mkdir -p "$PAYLOAD_ROOT/opt/ppsspp"
   cp -a ./replace_file/ppsspp/. "$PAYLOAD_ROOT/opt/ppsspp/" 2>/dev/null || true
 
+  echo "== 替换 PPSSPP-2021 =="
+  mkdir -p "$PAYLOAD_ROOT/opt/ppsspp-2021"
+  cp -a ./replace_file/ppsspp-2021/. "$PAYLOAD_ROOT/opt/ppsspp-2021/" 2>/dev/null || true
+
+  echo "== 更新 mupen64plus =="
+  mkdir -p "$PAYLOAD_ROOT/opt/mupen64plus"
+  cp -a ./replace_file/mupen64plus/. "$PAYLOAD_ROOT/opt/mupen64plus/" 2>/dev/null || true
+
   echo "== 更新 ScummVM v2026.3.0 =="
   mkdir -p "$PAYLOAD_ROOT/opt/scummvm"
   cp -a ./replace_file/scummvm/. "$PAYLOAD_ROOT/opt/scummvm/" 2>/dev/null || true
@@ -542,6 +550,10 @@ EOF
   meta_add "0777" "1002:1002" "/opt/retroarch/bin/*"
   meta_add "0777" "1002:1002" "/opt/ppsspp"
   meta_add "0777" "1002:1002" "/opt/ppsspp/*"
+  meta_add "0777" "1002:1002" "/opt/ppsspp-2021"
+  meta_add "0777" "1002:1002" "/opt/ppsspp-2021/*"
+  meta_add "0777" "1002:1002" "/opt/mupen64plus"
+  meta_add "0777" "1002:1002" "/opt/mupen64plus/*"
   meta_add "0777" "1002:1002" "/opt/scummvm"
   meta_add "0777" "1002:1002" "/opt/scummvm/*"
   meta_add "0777" "1002:1002" "/opt/flycastsa"
