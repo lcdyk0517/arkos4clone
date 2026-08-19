@@ -70,6 +70,7 @@ kernel/drivers/net/wireless/rtl8821cu/8821cu.ko:
 kernel/drivers/net/wireless/ew-7611ulb/8723bu.ko:
 kernel/drivers/net/wireless/esp8089/esp8089.ko:
 kernel/drivers/net/wireless/swt6621s_wifi/swt6621s_wifi.ko:
+kernel/drivers/net/wireless/rtl8192eu/8192eu.ko:
 kernel/drivers/net/usb/rtl8150.ko:
 kernel/drivers/net/usb/r8152.ko:
 kernel/drivers/net/usb/lan78xx.ko:

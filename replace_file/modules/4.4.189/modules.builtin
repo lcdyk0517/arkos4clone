@@ -133,6 +133,7 @@ kernel/drivers/hid/uhid.ko
 kernel/drivers/hid/hid-generic.ko
 kernel/drivers/hid/hid-kensington.ko
 kernel/drivers/hid/hid-multitouch.ko
+kernel/drivers/hid/hid-oshpb.ko
 kernel/drivers/hid/i2c-hid/i2c-hid.ko
 kernel/drivers/hid/usbhid/usbhid.ko
 kernel/drivers/hwmon/hwmon.ko

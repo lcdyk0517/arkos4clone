@@ -12,6 +12,10 @@ alias crypto-authenc authenc
 alias authenc authenc
 alias crypto-authencesn authencesn
 alias authencesn authencesn
+alias usb:v3607p6160d*dc*dsc*dp*ic*isc*ip*in* skw_usb_lite
+alias usb:v3607p6621d*dc*dsc*dp*ic*isc*ip*in* skw_usb_lite
+alias usb:v3607p6316d*dc*dsc*dp*ic*isc*ip*in* skw_usb_lite
+alias usb:v3607p*d*dc*dsc*dp*ic02isc02ip00in* skw_usb_lite
 alias spi:spidev spidev
 alias of:N*T*Crockchip,spidev* spidev
 alias of:N*T*Clineartechnology,ltc2488* spidev
@@ -1037,6 +1041,11 @@ alias usb:v0BDApB82Bd*dc*dsc*dp*icFFiscFFipFFin* 8821cu
 alias usb:v7392pA611d*dc*dsc*dp*icFFiscFFipFFin* 8723bu
 alias usb:v0BDApB720d*dc*dsc*dp*icFFiscFFipFFin* 8723bu
 alias sdio:c*v6666d1111* esp8089
+alias usb:v2357p0109d*dc*dsc*dp*ic*isc*ip*in* 8192eu
+alias usb:v2357p0108d*dc*dsc*dp*ic*isc*ip*in* 8192eu
+alias usb:v2357p0107d*dc*dsc*dp*ic*isc*ip*in* 8192eu
+alias usb:v0BDAp818Cd*dc*dsc*dp*icFFiscFFipFFin* 8192eu
+alias usb:v0BDAp818Bd*dc*dsc*dp*icFFiscFFipFFin* 8192eu
 alias usb:v0586p401Ad*dc*dsc*dp*ic*isc*ip*in* rtl8150
 alias usb:v1557p8150d*dc*dsc*dp*ic*isc*ip*in* rtl8150
 alias usb:v07B8p401Ad*dc*dsc*dp*ic*isc*ip*in* rtl8150
