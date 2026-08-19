@@ -570,6 +570,11 @@ else
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/retroarch/bin/" 2>/dev/null
   safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/retroarch/bin/" 2>/dev/null
 
+  echo "== 更新 Fake08-sa =="
+  safe sudo cp -a ./replace_file/fake08/* "$MOUNT_DIR/root/opt/fake08/" 2>/dev/null
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/fake08/" 2>/dev/null
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/fake08/" 2>/dev/null
+
   echo "== 更新 PPSSPP 1.20.4 =="
   safe sudo cp -a ./replace_file/ppsspp/* "$MOUNT_DIR/root/opt/ppsspp/" 2>/dev/null
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/ppsspp/" 2>/dev/null

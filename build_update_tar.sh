@@ -421,6 +421,10 @@ else
   mkdir -p "$PAYLOAD_ROOT/usr/lib/aarch64-linux-gnu/"
   cp -f ./bin/json-c3/* "$PAYLOAD_ROOT/usr/lib/aarch64-linux-gnu/" 2>/dev/null || true
 
+  echo "== 更新 Fake08-sa =="
+  mkdir -p "$PAYLOAD_ROOT/opt/fake08"
+  cp -a ./replace_file/fake08/. "$PAYLOAD_ROOT/opt/fake08/" 2>/dev/null || true
+
   echo "== 更新 PPSSPP 1.20.4 =="
   mkdir -p "$PAYLOAD_ROOT/opt/ppsspp"
   cp -a ./replace_file/ppsspp/. "$PAYLOAD_ROOT/opt/ppsspp/" 2>/dev/null || true
@@ -548,6 +552,8 @@ EOF
   meta_add "0777" "1002:1002" "/opt/freej2mesa/*"
   meta_add "0777" "1002:1002" "/opt/retroarch/bin/"
   meta_add "0777" "1002:1002" "/opt/retroarch/bin/*"
+  meta_add "0777" "1002:1002" "/opt/fake08"
+  meta_add "0777" "1002:1002" "/opt/fake08/*"
   meta_add "0777" "1002:1002" "/opt/ppsspp"
   meta_add "0777" "1002:1002" "/opt/ppsspp/*"
   meta_add "0777" "1002:1002" "/opt/ppsspp-2021"
