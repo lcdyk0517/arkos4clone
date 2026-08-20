@@ -587,6 +587,13 @@ var Consoles = []ConsoleConfig{
 		ExtraSources: []string{"logo/480P/"},
 	},
 	{
+		RealName: "rg36pro",
+		BrandEntries: []BrandEntry{
+			{Brand: "Other", DisplayName: "GameConsole RG36Pro"},
+		},
+		ExtraSources: []string{"logo/480P/"},
+	},
+	{
 		RealName: "r40s",
 		BrandEntries: []BrandEntry{
 			{Brand: "Other", DisplayName: "GameConsole R40S (RK3326 Without L2/R2)"},
