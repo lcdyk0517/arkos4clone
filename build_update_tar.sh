@@ -357,6 +357,8 @@ else
   cp -f ./replace_file/naomi.sh "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
   cp -f ./replace_file/saturn.sh "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
   cp -f ./replace_file/n64.sh "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
+  cp -f ./replace_file/easyrpg.sh "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
+  cp -f ./replace_file/mvem.sh "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
   cp -f ./replace_file/gametank.sh "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
   cp -f ./replace_file/gametankkeydemon.py "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
   cp -f ./replace_file/flash.sh "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
@@ -530,7 +532,7 @@ EOF
   meta_add "0777" "1002:1002" "/usr/lib/firmware/aic8800DC/*"
   meta_add "0777" "1002:1002" "/opt/351Files"
   meta_add "0777" "1002:1002" "/opt/351Files/*"
-  for f in atomiswave.sh dreamcast.sh naomi.sh saturn.sh n64.sh gametank.sh flash.sh gametankkeydemon.py pico8.sh drastic.sh drastic_kk.sh choose_drastic_ver.sh mediaplayer.sh get_last_played.sh choose_ons_ver.sh onscripter.sh freej2me.sh; do
+  for f in atomiswave.sh dreamcast.sh naomi.sh saturn.sh n64.sh mvem.sh easyrpg.sh gametank.sh flash.sh gametankkeydemon.py pico8.sh drastic.sh drastic_kk.sh choose_drastic_ver.sh mediaplayer.sh get_last_played.sh choose_ons_ver.sh onscripter.sh freej2me.sh; do
     meta_add "0777" "1002:1002" "/usr/local/bin/$f"
   done
   meta_add "0777" "1002:1002" "/usr/local/bin/es-status-daemon.sh"

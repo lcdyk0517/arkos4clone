@@ -39,24 +39,23 @@ fi
 
 sudo ./drastic_hotkeys -c /opt/drastic-kk/drastic.gptk  &
 
-if [[ -f /boot/.console ]]; then
-  CUR_VAL="$(tr -d '\r\n' < "/boot/.console" || true)"
-  case "$CUR_VAL" in
-    u8|dr28s|r50s)
-      LD_PRELOAD=./libs/libSDL2-2.0.so.0.3200.10.rotate270
+
+angle=$(/usr/local/bin/console_detect -o)
+case "$angle" in
+  90)
+    LD_PRELOAD=./libs/libSDL2-2.0.so.0.3200.10.rotate90
     ;;
-    a10miniv4)
-      LD_PRELOAD=./libs/libSDL2-2.0.so.0.3200.10.rotate180
+  180)
+    LD_PRELOAD=./libs/libSDL2-2.0.so.0.3200.10.rotate180
     ;;
-    xf28)
-      LD_PRELOAD=./libs/libSDL2-2.0.so.0.3200.10.rotate90
+  270)
+    LD_PRELOAD=./libs/libSDL2-2.0.so.0.3200.10.rotate270
     ;;
-    *)
-      LD_PRELOAD=./libs/libSDL2-2.0.so.0.3200.10
+  *)
+    LD_PRELOAD=./libs/libSDL2-2.0.so.0.3200.10
     ;;
-  esac
-  LD_PRELOAD="$LD_PRELOAD" ./drastic "$1"
-fi
+esac
+LD_PRELOAD="$LD_PRELOAD" ./drastic "$1"
 
 GPTOKEYB_PID="$(pidof drastic_hotkeys 2>/dev/null || true)"
 if [[ -n "$GPTOKEYB_PID" ]]; then

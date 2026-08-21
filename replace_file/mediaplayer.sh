@@ -9,8 +9,9 @@
 #set_kill set "mpv"
 sudo systemctl start mpv
 
-xres="$(cat /sys/class/graphics/fb0/modes | grep -o -P '(?<=:).*(?=p-)' | cut -dx -f1)"
-yres="$(cat /sys/class/graphics/fb0/modes | grep -o -P '(?<=:).*(?=p-)' | cut -dx -f2)"
+output=$(/usr/local/bin/console_detect -r)
+xres=$(echo "$output" | cut -d'x' -f1)
+yres=$(echo "$output" | cut -d'x' -f2)
 
 sudo /usr/bin/mpv --fullscreen --geometry=${xres}x${yres} --hwdec=auto --vo=drm --input-ipc-server=/tmp/mpvsocket --config-dir=~/.config/mpv "${1}"
 
