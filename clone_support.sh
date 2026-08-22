@@ -161,6 +161,18 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   safe sudo chmod 777 "$MOUNT_DIR/root/etc/systemd/system/zram-swap.service" 2>/dev/null
   safe sudo chmod 777 "$MOUNT_DIR/root/etc/zram.conf" 2>/dev/null
 
+  echo "== 注入 batteryplus 服务脚本 =="
+  safe sudo cp -f ./bin/batteryplus-service/batteryplus "$MOUNT_DIR/root/usr/local/bin/"
+  safe sudo cp -f ./bin/batteryplus-service/batteryplus.service "$MOUNT_DIR/root/etc/systemd/system/"
+  sudo mkdir -p "$MOUNT_DIR/root/etc/batteryplus/"
+  safe sudo cp -f ./bin/batteryplus-service/batteryplus.conf "$MOUNT_DIR/root/etc/batteryplus/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/batteryplus" 2>/dev/null
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/systemd/system/batteryplus.service" 2>/dev/null
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/batteryplus/batteryplus.conf" 2>/dev/null
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/batteryplus" 2>/dev/null
+  safe sudo chmod 777 "$MOUNT_DIR/root/etc/systemd/system/batteryplus.service" 2>/dev/null
+  safe sudo chmod 777 "$MOUNT_DIR/root/etc/batteryplus/batteryplus.conf" 2>/dev/null
+
   echo "== 注入核心 =="
   safe sudo cp -f ./mod_so/64/* "$MOUNT_DIR/root/home/ark/.config/retroarch/cores/"
   safe sudo cp -f ./mod_so/32/* "$MOUNT_DIR/root/home/ark/.config/retroarch32/cores/"
@@ -513,6 +525,18 @@ else
   safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/zram-setup.sh" 2>/dev/null
   safe sudo chmod 777 "$MOUNT_DIR/root/etc/systemd/system/zram-swap.service" 2>/dev/null
   safe sudo chmod 777 "$MOUNT_DIR/root/etc/zram.conf" 2>/dev/null
+
+  echo "== 注入 batteryplus 服务脚本 =="
+  safe sudo cp -f ./bin/batteryplus-service/batteryplus "$MOUNT_DIR/root/usr/local/bin/"
+  safe sudo cp -f ./bin/batteryplus-service/batteryplus.service "$MOUNT_DIR/root/etc/systemd/system/"
+  sudo mkdir -p "$MOUNT_DIR/root/etc/batteryplus/"
+  safe sudo cp -f ./bin/batteryplus-service/batteryplus.conf "$MOUNT_DIR/root/etc/batteryplus/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/batteryplus" 2>/dev/null
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/systemd/system/batteryplus.service" 2>/dev/null
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/batteryplus/batteryplus.conf" 2>/dev/null
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/batteryplus" 2>/dev/null
+  safe sudo chmod 777 "$MOUNT_DIR/root/etc/systemd/system/batteryplus.service" 2>/dev/null
+  safe sudo chmod 777 "$MOUNT_DIR/root/etc/batteryplus/batteryplus.conf" 2>/dev/null
 
   echo "== 注入核心 =="
   safe sudo cp -f ./mod_so/64/* "$MOUNT_DIR/root/home/ark/.config/retroarch/cores/"

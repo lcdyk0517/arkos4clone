@@ -1,1770 +1,2255 @@
-msgid ""
-msgstr ""
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: POEditor.com\n"
-"Project-Id-Version: recalbox-emulationstation\n"
-"Language:ja\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#:
 msgid "QUICK SEARCH"
 msgstr "クイックサーチ"
 
 #:
+
 msgid "GO TO LETTER"
 msgstr "レターに移動"
 
 #:
+
 msgid "COLLECTIONS"
 msgstr "コレクション"
 
 #:
+
 msgid "GO TO MANUFACTURER"
 msgstr "メーカーに移動"
 
 #:
+
 msgid "GO TO HARDWARE"
 msgstr "ハードウェアに移動"
 
 #:
+
 msgid "GO TO DECADE"
 msgstr "10年移動"
 
 #:
+
 msgid "Unknown"
 msgstr "不明"
 
 #:
+
 msgid "CONFIGURATION"
 msgstr "コンフィグレーション"
 
 #:
+
 msgid "CHOOSE"
 msgstr "選択"
 
 #:
+
 msgid "SELECT"
 msgstr "セレクト"
 
 #:
+
 msgid "RANDOM"
 msgstr "ランダム"
 
 #:
+
 msgid "SEARCH"
 msgstr "検索"
 
 #:
+
 msgid "LAUNCH SCREENSAVER"
 msgstr "スクリーンセーバーを起動"
 
 #:
+
 msgid "Preloading UI"
 msgstr "UIのプリローディング"
 
 #:
+
 msgid "Loading theme..."
 msgstr "テーマの読込中..."
 
 #:
+
 msgid "Loading..."
 msgstr "ローディング..."
 
 #:
+
 msgid "MENU"
 msgstr "メニュー"
 
 #:
+
 msgid "Rating"
 msgstr "レーティング"
 
 #:
+
 msgid "Released"
 msgstr "リリース日"
 
 #:
+
 msgid "Developer"
 msgstr "開発元"
 
 #:
+
 msgid "Publisher"
 msgstr "販売元"
 
 #:
+
 msgid "Genre"
 msgstr "ジャンル"
 
 #:
+
 msgid "Players"
 msgstr "プレイヤー数"
 
 #:
+
 msgid "Last played"
 msgstr "最後にプレイ"
 
 #:
+
 msgid "Times played"
 msgstr "遊んだ時間"
 
 #:
+
 msgid "No Entries Found"
 msgstr "何も見つかりません"
 
 #:
+
 msgid "SYSTEM"
 msgstr "システム"
 
 #:
+
 msgid "LAUNCH"
 msgstr "起動"
 
 #:
+
 msgid "BACK"
 msgstr "戻る"
 
 #:
+
 msgid "OPTIONS"
 msgstr "オプション"
 
 #:
+
 msgid "FAVORITE"
 msgstr "お気に入り"
 
 #:
+
 msgid "FILENAME, ASCENDING"
 msgstr "ファイルネーム 昇順"
 
 #:
+
 msgid "FILENAME, DESCENDING"
 msgstr "ファイルネーム 降順"
 
 #:
+
 msgid "RATING, ASCENDING"
 msgstr "レーティング 昇順"
 
 #:
+
 msgid "RATING, DESCENDING"
 msgstr "レーティング 降順"
 
 #:
+
 msgid "TIMES PLAYED, ASCENDING"
 msgstr "プレイ時間 昇順"
 
 #:
+
 msgid "TIMES PLAYED, DESCENDING"
 msgstr "プレイ時間 降順"
 
 #:
+
 msgid "LAST PLAYED, ASCENDING"
 msgstr "最後に遊んだ 昇順"
 
 #:
+
 msgid "LAST PLAYED, DESCENDING"
 msgstr "最後に遊んだ 降順"
 
 #:
+
 msgid "NUMBER PLAYERS, ASCENDING"
 msgstr "プレイ人数 昇順"
 
 #:
+
 msgid "NUMBER PLAYERS, DESCENDING"
 msgstr "プレイ人数 降順"
 
 #:
+
 msgid "RELEASE DATE, ASCENDING"
 msgstr "リリース日 昇順"
 
 #:
+
 msgid "RELEASE DATE, DESCENDING"
 msgstr "リリース日 降順"
 
 #:
+
 msgid "GENRE, ASCENDING"
 msgstr "ジャンル 昇順"
 
 #:
+
 msgid "GENRE, DESCENDING"
 msgstr "ジャンル 降順"
 
 #:
+
 msgid "DEVELOPER, ASCENDING"
 msgstr "開発元 昇順"
 
 #:
+
 msgid "DEVELOPER, DESCENDING"
 msgstr "開発元 降順"
 
 #:
+
 msgid "PUBLISHER, ASCENDING"
 msgstr "販売元 昇順"
 
 #:
+
 msgid "PUBLISHER, DESCENDING"
 msgstr "販売元 降順"
 
 #:
+
 msgid "SYSTEM, ASCENDING"
 msgstr "システム 昇順"
 
 #:
+
 msgid "SYSTEM, DESCENDING"
 msgstr "システム 降順"
 
 #:
+
 msgid "A,AN,THE"
 msgstr ""
 
 #:
+
 msgid "Editing the '%s' Collection. Add/remove games with Y."
 msgstr "'%s'コレクションの編集、Yでゲームを追加/削除する"
 
 #:
+
 msgid "Finished editing the '%s' Collection."
 msgstr "'%s' コレクションの編集を終了しました。"
 
 #:
+
 msgid "Added '%s' to '%s'"
 msgstr "'%s' へ '%s'を追加しました"
 
 #:
+
 msgid "Removed '%s' from '%s'"
 msgstr "'%s' から '%s'を削除しました"
 
 #:
+
 msgid "This collection is empty."
 msgstr "このコレクションは空です。"
 
 #:
+
 msgid "None"
 msgstr "なし"
 
 #:
+
 msgid "Various"
 msgstr "様々な"
 
 #:
+
 msgid "among other titles."
 msgstr "その他のタイトルもある。"
 
 #:
+
 msgid "This collection contains"
 msgstr "このコレクションには以下が含まれている。"
 
 #:
+
 msgid "games, including"
 msgstr "以下のゲームを含む"
 
 #:
+
 msgid "DOWNLOADING"
 msgstr "ダウンロード中"
 
 #:
+
 msgid "THEME INSTALLED SUCCESSFULLY"
 msgstr "テーマのインストールに成功しました"
 
 #:
+
 msgid "AN ERROR OCCURED"
 msgstr "エラーが発生しました"
 
 #:
+
 msgid "UPDATE AVAILABLE"
 msgstr "アップデートが存在します"
 
 #:
+
 msgid "SCRAPING"
 msgstr "スクレイピング"
 
 #:
+
 msgid "Searching"
 msgstr "検索中"
 
 #:
+
 msgid "SCRAPE FAILED"
 msgstr "スクレイプに失敗しました"
 
 #:
+
 msgid "Downloading"
 msgstr "ダウンロード中"
 
 #:
+
 msgid "SCRAPING FINISHED. REFRESH UPDATE GAMES LISTS TO APPLY CHANGES."
 msgstr "スクレイピングが終了しました。ゲームリストを更新して変更を適用します。"
 
 #:
+
 msgid "MAIN MENU"
 msgstr "メインメニュー"
 
 #:
+
 msgid "KODI MEDIA CENTER"
 msgstr "KODIメディアセンター"
 
 #:
+
 msgid "DISPLAY SETTINGS AND INFO"
 msgstr "ディスプレイ設定と情報"
 
 #:
+
 msgid "UI SETTINGS"
 msgstr "UI設定"
 
 #:
+
 msgid "CONFIGURE INPUT"
 msgstr "入力設定"
+
 
 msgid "THIS OPTION IS FOR CONFIGURING EXTERNAL CONTROLLERS"
 msgstr "このオプションは外部コントローラーの設定用です"
 
+
 msgid "NOT REMAPPING THE BUILT-IN CONTROLS"
 msgstr "内蔵コントローラーの再マッピングではありません"
+
 
 msgid "DO YOU WANT TO CONTINUE?"
 msgstr "続行しますか？"
 
 #:
+
 msgid "SOUND SETTINGS"
 msgstr "サウンド設定"
 
 #:
+
 msgid "GAME COLLECTION SETTINGS"
 msgstr "ゲームコレクションの設定"
 
 #:
+
 msgid "EMULATOR SETTINGS"
 msgstr "エミュレーターの設定"
 
 #:
+
 msgid "SCRAPER"
 msgstr "スクレーパー"
 
 #:
+
 msgid "DOWNLOADS AND UPDATES"
 msgstr "ダウンロードとアップデート"
 
 #:
+
 msgid "ADVANCED SETTINGS"
 msgstr "アドバンス設定"
 
 #:
+
 msgid "QUIT"
 msgstr "終了"
 
 #:
+
 msgid "BAT"
 msgstr "電池"
 
 #:
+
 msgid "SND"
 msgstr "音量"
 
 #:
+
 msgid "BRT"
 msgstr "輝度"
 
 #:
+
 msgid "BT"
 msgstr ""
 
 #:
+
 msgid "WIFI"
 msgstr ""
 
 #:
-msgid "SSID"
-msgstr ""
 
-#:
 msgid "Distro Version"
 msgstr ""
 
 #:
-msgid "IP"
-msgstr ""
 
-#:
 msgid "DISPLAY"
 msgstr "ディスプレイ"
 
 #:
-msgid "BRIGHTNESS"
-msgstr "ブライトネス"
 
-#:
 msgid "SHOW OVERLAY WHEN BRIGHTNESS CHANGES"
 msgstr "明るさが変わったらオーバーレイを表示する"
 
 #:
+
 msgid "PANEL BRIGHTNESS"
 msgstr "パネルの明るさ"
 
 #:
+
 msgid "PANEL CONTRAST"
 msgstr "パネルのコントラスト"
 
 #:
+
 msgid "PANEL SATURATION"
 msgstr "パネルの彩度"
 
 #:
+
 msgid "PANEL HUE"
 msgstr "パネルの色相"
 
 #:
+
 msgid ""), false, [this] {  });
 msgstr ""
 
 #:
+
 msgid "PANEL ID"
 msgstr "パネルID"
 
 #:
+
 msgid "SCRAPE FROM"
 msgstr "スクレイプ先"
 
 #:
+
 msgid "IMAGE SOURCE"
 msgstr "画像のソース"
 
 #:
+
 msgid "NONE"
 msgstr "なし"
 
 #:
+
 msgid "SCREENSHOT"
 msgstr "スクリーンショット"
 
 #:
+
 msgid "TITLE SCREENSHOT"
 msgstr "タイトルスクリーンショット"
 
 #:
+
 msgid "MIX V1"
 msgstr ""
 
 #:
+
 msgid "MIX V2"
 msgstr ""
 
 #:
+
 msgid "BOX 2D"
 msgstr ""
 
 #:
+
 msgid "BOX 3D"
 msgstr ""
 
 #:
+
 msgid "BOX SOURCE"
 msgstr "ボックスソース"
 
 #:
+
 msgid "LOGO SOURCE"
 msgstr "ロゴソース"
 
 #:
+
 msgid "WHEEL"
 msgstr "ホイール"
 
 #:
+
 msgid "MARQUEE"
 msgstr "マーキー"
 
 #:
+
 msgid "SCRAPE RATINGS"
 msgstr "スクレイプレーティング"
 
 #:
+
 msgid "SCRAPE VIDEOS"
 msgstr "ビデオをスクレイプ"
 
 #:
+
 msgid "USERNAME"
 msgstr "ユーザーネーム"
 
 #:
+
 msgid "PASSWORD"
 msgstr "パスワード"
 
 #:
+
 msgid "SCRAPING IS RUNNING. DO YOU WANT TO STOP IT ?"
 msgstr "スクレイピングが進行中です。中止しますか？"
 
 #:
+
 msgid "YES"
 msgstr "はい"
 
 #:
+
 msgid "NO"
 msgstr "いいえ"
 
 #:
+
 msgid "SCRAPE NOW"
 msgstr "スクレイプ開始"
 
 #:
+
 msgid "SYSTEM VOLUME"
 msgstr "システムボリューム"
 
 #:
+
 msgid "AUDIO CARD"
 msgstr "オーディオカード"
 
 #:
+
 msgid "AUDIO DEVICE"
 msgstr "オーディオデバイス"
 
 #:
+
 msgid "SHOW OVERLAY WHEN VOLUME CHANGES"
 msgstr "音量を変更したらオーバーレイを表示する"
 
 #:
+
 msgid "FLIP VOLUME BUTTONS"
 msgstr "ボリュームボタンを反転させる"
 
 #:
+
 msgid "FRONTEND MUSIC"
 msgstr "フロントエンドの音楽"
 
 #:
+
 msgid "DISPLAY SONG TITLES"
 msgstr "音楽タイトルを表示する"
 
 #:
+
 msgid "ONLY PLAY SYSTEM-SPECIFIC MUSIC FOLDER"
 msgstr "システム固有の音楽フォルダーのみ再生"
 
 #:
+
 msgid "PLAY THEME MUSICS"
 msgstr "テーマの音楽を再生する"
 
 #:
+
 msgid "ENABLE NAVIGATION SOUNDS"
 msgstr "ナビゲーション音を再生する"
 
 #:
+
 msgid "ENABLE VIDEO AUDIO"
 msgstr "ビデオの音声を有効にする"
 
 #:
+
 msgid "LOWER MUSIC WHEN PLAYING VIDEO"
 msgstr "動画再生時に音量を下げる"
 
 #:
+
 msgid "Verbal BATTERY Voice"
 msgstr "バッテリー警告時の音声"
 
 #:
+
 msgid "MALE 1"
 msgstr "男性1"
 
 #:
+
 msgid "MALE 2"
 msgstr "男性2"
 
 #:
+
 msgid "FEMALE"
 msgstr "女性"
 
 #:
+
 msgid "VERBAL BATTERY VOICE"
 msgstr "バッテリー警告時の音声"
 
 #:
+
 msgid "Verbal BATTERY Warning"
 msgstr "音声でのバッテリー残量警告"
 
 #:
+
 msgid "OFF"
 msgstr "オフ"
 
 #:
+
 msgid "ON"
 msgstr "オン"
 
 #:
+
 msgid "VERBAL BATTERY WARNING"
 msgstr "音声でのバッテリー残量警告"
 
 #:
+
 msgid "YOU MUST APPLY THE THEME BEFORE EDIT CONFIGURATION"
 msgstr "設定を編集する前に、テーマを適用する必要があります。"
 
 #:
+
 msgid "OK"
 msgstr ""
 
 #:
+
 msgid "THEME CONFIGURATION"
 msgstr "テーマ設定"
 
 #:
+
 msgid "VIEW CUSTOMISATION"
 msgstr "カスタマイズを見る"
 
 #:
+
 msgid "GAMELIST VIEW STYLE"
 msgstr "ゲームリストビュースタイル"
 
 #:
+
 msgid "automatic"
 msgstr "自動"
 
 #:
+
 msgid "basic"
 msgstr "基本"
 
 #:
+
 msgid "detailed"
 msgstr "詳細"
 
 #:
+
 msgid "DEFAULT GRID SIZE"
 msgstr "デフォルトグリッドサイズ"
 
 #:
+
 msgid "DEFAULT"
 msgstr "デフォルト"
 
 #:
+
 msgid "RESET GAMELIST CUSTOMISATIONS"
 msgstr "ゲームリストのカスタマイズをリセットする"
 
 #:
+
 msgid "THEME"
 msgstr "テーマ"
 
 #:
+
 msgid "video"
 msgstr "ビデオ"
 
 #:
+
 msgid "grid"
 msgstr "グリッド"
 
 #:
+
 msgid "SCREENSAVER SETTINGS"
 msgstr "スクリーンセーバーの設定"
 
 #:
+
 msgid "UI MODE"
 msgstr "UIモード"
 
 #:
+
 msgid "LANGUAGE"
 msgstr "言語"
 
 #:
+
 msgid "TRANSITION STYLE"
 msgstr "遷移方法"
 
 #:
+
 msgid "GAME LAUNCH TRANSITION"
 msgstr "ゲーム起動時の遷移方法"
 
 #:
+
 msgid "START ON SYSTEM"
 msgstr "特定のシステムで起動"
 
 #:
+
 msgid "VISIBLE SYSTEMS"
 msgstr "システムを可視化"
 
 #:
+
 msgid "BOOT ON GAMELIST"
 msgstr "起動時にゲームリストを表示"
 
 #:
+
 msgid "HIDE SYSTEM VIEW"
 msgstr "システム表示を隠す"
 
 #:
+
 msgid "HIDE WHEN RUNNING GAME"
 msgstr "ゲーム実行中に隠す"
 
 #:
+
 msgid "QUICK SYSTEM SELECT"
 msgstr "クイックシステムセレクト"
 
 #:
+
 msgid "CAROUSEL TRANSITIONS"
 msgstr "カルーセルトランジション"
 
 #:
+
 msgid "SHOW CLOCK"
 msgstr "時計を表示."
 
 #:
+
 msgid "ON-SCREEN HELP"
 msgstr "ヘルプのオンスクリーン"
 
 #:
+
 msgid "SHOW BATTERY STATUS"
 msgstr "バッテリー情報を表示"
 
 #:
+
 msgid "ICON"
 msgstr "アイコン"
 
 #:
+
 msgid "ICON AND TEXT"
 msgstr "アイコンとテキスト"
 
 #:
+
 msgid "SHOW FILENAMES IN LISTS"
 msgstr "ファイルネームをリストに表示"
 
 #:
+
 msgid "IGNORE LEADING ARTICLES WHEN SORTING"
 msgstr "並べ替え時に先頭の項目を無視する"
 
 #:
+
 msgid "ENABLE FILTERS"
 msgstr "フィルターを有効にする"
 
 #:
+
 msgid "Scan Ports folder on boot"
 msgstr "ポートフォルダーを起動時にスキャンする"
 
 #:
+
 msgid "Show Kodi in Start Menu"
 msgstr "スタートメニューにKODIを表示する"
 
 #:
+
 msgid "EMULATOR"
 msgstr "エミュレーター"
 
 #:
+
 msgid "CORE"
 msgstr "コア"
 
 #:
+
 msgid "AUTO"
 msgstr "自動"
 
 #:
+
 msgid "GOVERNOR"
 msgstr "ガバナー"
 
 #:
+
 msgid "WIFI ENABLED"
 msgstr "WiFi 有効"
 
 #:
+
 msgid "THEME INSTALLER"
 msgstr "テーマインストーラー"
 
 #:
+
 msgid "AUTO UPDATES"
 msgstr "自動アップデート"
 
 #:
+
 msgid "APPLY UPDATE"
 msgstr "アップデートを適応する"
 
 #:
+
 msgid "START UPDATE"
 msgstr "アップデートをスタートする"
 
 #:
+
 msgid "NO UPDATE AVAILABLE"
 msgstr "アップデートはありません"
 
 #:
+
 msgid "UPDATE IS ALREADY RUNNING"
 msgstr "アップデートは既に実行中です"
 
 #:
+
 msgid "TIMEZONE"
 msgstr "タイムゾーン"
 
 #:
+
 msgid "SHOW CLOCK IN 12-HOUR FORMAT"
 msgstr "時計を12時間形式で表示する"
 
 #:
+
 msgid "SWITCH A/B BUTTONS IN EMULATIONSTATION"
 msgstr "ES上でのA/Bボタンの機能を切替える"
 
 #:
+
 msgid "SWITCH POWER BUTTON TAP TO OFF"
 msgstr "電源ボタンをタップでオフに切替える"
 
 #:
+
 msgid "POWER SAVER MODES"
 msgstr "パワーセーバーモード"
 
 #:
+
 msgid "VRAM LIMIT"
 msgstr "VRAM 制限"
 
 #:
+
 msgid "SAVE METADATA ON EXIT"
 msgstr "メタデータをセーブして終了する"
 
 #:
+
 msgid "PARSE GAMESLISTS ONLY"
 msgstr "ゲームリストのみを解析する"
 
 #:
+
 msgid "SEARCH FOR LOCAL ART"
 msgstr "ローカルアートを検索"
 
 #:
+
 msgid "PRELOAD UI"
 msgstr "UIのプリロード"
 
 #:
+
 msgid "OPTIMIZE IMAGES VRAM USE"
 msgstr "画像のVRAM使用を最適化する"
 
 #:
+
 msgid "VSYNC"
 msgstr "垂直同期"
 
 #:
+
 msgid "SHOW FRAMERATE"
 msgstr "フレームレートの表示"
 
 #:
+
 msgid "THREADED LOADING"
 msgstr "スレッドローディング"
 
 #:
+
 msgid "Default Emulator Governor"
 msgstr "デフォルトのエミュレーターガバナー"
 
 #:
+
 msgid "COMPLETE QUIT MENU"
 msgstr "完了してメニューから出る"
 
 #:
+
 msgid "LOG LEVEL"
 msgstr "ログレベル"
 
 #:
+
 msgid "OPTIONAL RUMBLE MOTOR"
 msgstr "追加の振動モーター"
 
 #:
+
 msgid "THIS OPTION IS FOR CONFIGURING EXTERNAL CONTROLLERS, NOT REMAPPING THE BUILT-IN CONTROLS.\n\nIF YOU WANT TO REMAP THE BUILT-IN INPUT, PLEASE VISIT:\nhttp://lcdyk0517.github.io/tools/dtb-tools.html\n\nDO YOU WANT TO CONTINUE?"
 msgstr "このオプションは内蔵コントローラーではなく、外部コントローラーを設定するためのものです。\n\n内蔵入力を再マッピングしたい場合は、以下にアクセスしてください：\nhttp://lcdyk0517.github.io/tools/dtb-tools.html\n\n続行しますか？"
 
+
 msgid "JOYPAD TEST"
 msgstr "ゲームパッドテスト"
+
 
 msgid "ARE YOU SURE YOU WANT TO TEST JOYPAD?"
 msgstr "ゲームパッドをテストしますか？"
 
 #:
+
 msgid "REALLY RESTART?"
 msgstr "本当に再起動しますか？"
 
 #:
+
 msgid "RESTART EMULATIONSTATION"
 msgstr "EMULATIONSTATIONを再起動する"
 
 #:
+
 msgid "REALLY QUIT?"
 msgstr "本当に終了しますか？"
 
 #:
+
 msgid "QUIT EMULATIONSTATION"
 msgstr "EMULATIONSTATIONを終了"
 
 #:
+
 msgid "RESTART SYSTEM"
 msgstr "システム再起動"
 
 #:
+
 msgid "REALLY SHUTDOWN?"
 msgstr "本当にシャットダウンしますか？"
 
 #:
+
 msgid "SHUTDOWN SYSTEM"
 msgstr "システムのシャットダウン"
 
 #:
+
 msgid "THIS FUNCTION IS DISABLED WHEN SCRAPING IS RUNNING"
 msgstr "この機能はスクレイピング中には無効になります。"
 
 #:
+
 msgid "CLOSE"
 msgstr "閉じる"
 
 #:
+
 msgid "SWAP VIDEO AFTER (SECS)"
 msgstr "(秒)後にビデオを更新"
 
 #:
+
 msgid "USE OMX PLAYER FOR SCREENSAVER"
 msgstr "OMXプレイヤーをスクリーンセーバーとして使用"
 
 #:
+
 msgid "VIDEO SCREENSAVER"
 msgstr "ビデオ スクリーンセーバー"
 
 #:
+
 msgid "SHOW GAME INFO"
 msgstr "ゲーム情報を見る"
 
 #:
+
 msgid "SHOW GAME INFO ON SCREENSAVER"
 msgstr "ゲーム情報を見る"
 
 #:
+
 msgid "USE MARQUEE AS GAME INFO"
 msgstr "マーキーをゲーム情報で使用する"
 
 #:
+
 msgid "USE RANDOM DECORATION"
 msgstr "ランダムな装飾を使用する"
 
 #:
+
 msgid "STRETCH VIDEO ON SCREENSAVER"
 msgstr "スクリーンセーバーでビデオを伸長する"
 
 #:
+
 msgid "FILTER GAMELIST BY"
 msgstr "ゲームリストをフィルタリングする"
 
 #:
+
 msgid "RESET ALL FILTERS"
 msgstr "すべてのフィルターをリセットする"
 
 #:
+
 msgid "SCRAPE THESE GAMES"
 msgstr "これらのゲームでスクレイプする"
 
 #:
+
 msgid "All Games"
 msgstr "すべてのゲーム"
 
 #:
+
 msgid "Only missing medias"
 msgstr "見つからないメディアのみ"
 
 #:
+
 msgid "FILTER"
 msgstr "フィルター"
 
 #:
+
 msgid "SCRAPE THESE SYSTEMS"
 msgstr "これらのシステムをスクレイプ"
 
 #:
+
 msgid "SYSTEMS"
 msgstr "システム"
 
 #:
+
 msgid "USER DECIDES ON CONFLICTS"
 msgstr "ユーザーが競合を判断"
 
 #:
+
 msgid "START"
 msgstr "スタート"
 
 #:
+
 msgid "NO GAMES FIT THAT CRITERIA."
 msgstr "その条件に当てはまるゲームはありません。"
 
 #:
+
 msgid "INPUT"
 msgstr "インプット"
 
 #:
+
 msgid "search"
 msgstr "検索"
 
 #:
+
 msgid "CANCEL"
 msgstr "キャンセル"
 
 #:
+
 msgid "GROUPED SYSTEMS"
 msgstr "グループ化されたシステム"
 
 #:
+
 msgid "CREATE NEW CUSTOM COLLECTION FROM THEME"
 msgstr "テーマから新しいカスタムコレクションを作成する"
 
 #:
+
 msgid "SELECT THEME FOLDER"
 msgstr "テーマフォルダーを選択"
 
 #:
+
 msgid "CREATE NEW CUSTOM COLLECTION"
 msgstr "新しいカスタムコレクションを作成"
 
 #:
+
 msgid "New Collection Name"
 msgstr "新しいコラボレーション名"
 
 #:
+
 msgid "GROUP UNTHEMED CUSTOM COLLECTIONS"
 msgstr "テーマのないカスタムコレクション"
 
 #:
+
 msgid "SORT COLLECTIONS AND SYSTEMS"
 msgstr "コレクションとシステムの選別"
 
 #:
+
 msgid "ALPHABETICALLY"
 msgstr "アルファベット順"
 
 #:
+
 msgid "BY MANUFACTURER"
 msgstr "メーカー別"
 
 #:
+
 msgid "BY HARDWARE TYPE"
 msgstr "ハードウェア別"
 
 #:
+
 msgid "BY RELEASE YEAR"
 msgstr "リリース年度別"
 
 #:
+
 msgid "SORT SYSTEMS"
 msgstr "システムの選別"
 
 #:
+
 msgid "SHOW SYSTEM NAME IN COLLECTIONS"
 msgstr "コレクションのシステム名を表示する"
 
 #:
+
 msgid "FINISH EDITING COLLECTION"
 msgstr "コレクションの編集を終了する"
 
 #:
+
 msgid "SELECT COLLECTIONS"
 msgstr "コレクションの選択"
 
 #:
+
 msgid "ARCADE SYSTEMS"
 msgstr "アーケードシステム"
 
 #:
+
 msgid "AUTOMATIC GAME COLLECTIONS"
 msgstr "自動ゲームコレクション"
 
 #:
+
 msgid "CUSTOM GAME COLLECTIONS"
 msgstr "カスタムゲームコレクション"
 
 #:
+
 msgid "SCREENSAVER AFTER"
 msgstr "スクリーンセーバーの時間"
 
 #:
+
 msgid "SCREENSAVER BEHAVIOR"
 msgstr "スクリーンセーバーの動作"
 
 #:
+
 msgid "THE \"
 msgstr ""
 
 #:
+
 msgid "VIDEO SCREENSAVER SETTINGS"
 msgstr "ビデオスクリーンセーバーの設定"
 
 #:
+
 msgid "SLIDESHOW SCREENSAVER SETTINGS"
 msgstr "スライドショースクリーンセーバーの設定"
 
 #:
+
 msgid "SCREENSAVER CONTROLS"
 msgstr "スクリーンセーバー コントロール"
 
 #:
+
 msgid "SLIDESHOW SCREENSAVER"
 msgstr "スライドショースクリーンセーバー"
 
 #:
+
 msgid "EDIT METADATA"
 msgstr "メタデータの編集"
 
 #:
+
 msgid "SCRAPE"
 msgstr "スクレイプ"
 
 #:
+
 msgid "SAVE"
 msgstr "セーブ"
 
 #:
+
 msgid "THIS WILL DELETE THE ACTUAL GAME FILE(S)!\nARE YOU SURE?"
 msgstr "このゲームファイルは消えてしまいます！\nよろしいですか？"
 
 #:
+
 msgid "DELETE"
 msgstr "削除"
 
 #:
+
 msgid "SAVE CHANGES ?"
 msgstr "変更をセーブしますか？"
 
 #:
+
 msgid "SWAP IMAGE AFTER (SECS)"
 msgstr "(秒)後に画像を更新"
 
 #:
+
 msgid "STRETCH IMAGES"
 msgstr "イメージを伸長する"
 
 #:
+
 msgid "USE CUSTOM IMAGES"
 msgstr "カスタム画像の使用"
 
 #:
+
 msgid "CUSTOM IMAGE DIR"
 msgstr "画像のディレクトリ"
 
 #:
+
 msgid "CUSTOM IMAGE DIR RECURSIVE"
 msgstr "画像の再帰的なディレクトリ"
 
 #:
+
 msgid "CUSTOM IMAGE FILTER"
 msgstr "カスタム画像のフィルタ"
 
 #:
+
 msgid "go back"
 msgstr "戻る"
 
 #:
+
 msgid "JUMP TO..."
 msgstr "ジャンプ..."
 
 #:
+
 msgid "UPDATE GAMES LISTS"
 msgstr "ゲームリストのアップデート"
 
 #:
+
 msgid "REALLY UPDATE GAMES LISTS ?"
 msgstr "本当にゲームリストをアップデートしますか？"
 
 #:
+
 msgid "SORT GAMES BY"
 msgstr "ゲームを並べ替える"
 
 #:
+
 msgid "GRID SIZE"
 msgstr "グリッドサイズ"
 
 #:
+
 msgid "APPLY FILTER"
 msgstr "フィルターを適応"
 
 #:
+
 msgid "SHOW FAVORITES ON TOP"
 msgstr "お気に入りをトップに表示"
 
 #:
+
 msgid "SHOW HIDDEN FILES"
 msgstr "隠しファイルを表示"
 
 #:
+
 msgid "SHOW FOLDERS"
 msgstr "フォルダーを表示"
 
 #:
+
 msgid "ADD/REMOVE GAMES TO THIS GAME COLLECTION"
 msgstr "このゲームコレクションにゲームを追加/削除する"
 
 #:
+
 msgid "FINISH EDITING"
 msgstr "編集を終了する"
 
 #:
+
 msgid "COLLECTION"
 msgstr "コレクション"
 
 #:
+
 msgid "EDIT THIS GAME'S METADATA"
 msgstr "このゲームのメタデーターを編集する"
 
 #:
+
 msgid "FILTER GAMES BY TEXT"
 msgstr "テキストでゲームを絞り込む"
 
 #:
+
 msgid "SELECT THEME TO INSTALL"
 msgstr "テーマを選択してインストール"
 
 #:
+
 msgid "ADDED TO DOWNLOAD QUEUE"
 msgstr "ダウンロードキューに追加"
 
 #:
+
 msgid "Favorites"
 msgstr "お気に入り"
 
 #:
+
 msgid "EMULATIONSTATION"
 msgstr "EMULATIONSTATION"
 
 #:
+
 msgid "UPDATE IS READY"
 msgstr "アップデートの準備完了"
 
 #:
+
 msgid "RESTART EMULATIONSTATION TO APPLY"
 msgstr "適応するにはEMULATIONSTATIONを再起動します"
 
 #:
+
 msgid "Extracting"
 msgstr "抽出中"
 
 #:
+
 msgid "Starting UI"
 msgstr "UI開始中"
 
 #:
+
 msgid "SAVING DATA. PLEASE WAIT..."
 msgstr "データをセーブ中 お待ちください..."
 
 #:
+
 msgid "FINISH"
 msgstr "終了"
 
 #:
+
 msgid "NO GAMES FOUND - SKIP"
 msgstr "ゲームが見つかりません スキップします"
 
 #:
+
 msgid "AN ERROR HAS OCCURED"
 msgstr "エラーが発生しました"
 
 #:
+
 msgid "RETRY"
 msgstr "リトライ"
 
 #:
+
 msgid "SKIP"
 msgstr "スキップ"
 
 #:
+
 msgid "SEARCHING"
 msgstr "検索中"
 
 #:
+
 msgid "accept result"
 msgstr "結果を承認"
 
 #:
+
 msgid "discard changes"
 msgstr "変更を破棄"
 
 #:
+
 msgid "WELCOME"
 msgstr "ようこそ"
 
 #:
+
 msgid "NO GAMEPADS DETECTED"
 msgstr "ゲームパッドが検出されません"
 
 #:
+
 msgid "HOLD A BUTTON ON YOUR DEVICE TO CONFIGURE IT."
 msgstr "ボタンを長押しして設定"
 
 #:
+
 msgid "PRESS F4 TO QUIT AT ANY TIME."
 msgstr "F4を押していつでも終了できます。"
 
 #:
+
 msgid "PRESS ESC TO CANCEL."
 msgstr "ESCを押してキャンセル"
 
 #:
+
 msgid "SHIFTS FOR UPPER,LOWER, AND SPECIAL"
 msgstr "大文字、小文字、特殊記号のためのシフト"
 
 #:
+
 msgid "ALT GR"
 msgstr ""
 
 #:
+
 msgid "RESET"
 msgstr "リセット"
 
 #:
+
 msgid "SHIFT"
 msgstr "シフト"
 
 #:
+
 msgid "SPACE"
 msgstr "スペース"
 
 #:
+
 msgid "accept"
 msgstr "承諾"
 
 #:
+
 msgid "SELECT ALL"
 msgstr "すべてを選択"
 
 #:
+
 msgid "SELECT NONE"
 msgstr "選択なし"
 
 #:
+
 msgid "never"
 msgstr "決して"
 
 #:
+
 msgid "unknown"
 msgstr "不明"
 
 #:
+
 msgid "WORKING..."
 msgstr "動作中..."
 
 #:
+
 msgid "MOVE CURSOR"
 msgstr "カーソルの移動"
 
 #:
+
 msgid "STOP EDITING"
 msgstr "編集の中止"
 
 #:
+
 msgid "EDIT"
 msgstr "編集"
 
 #:
+
 msgid "CHANGE"
 msgstr "変更"
+
 
 msgid "ARKOS4CLONE SETTINGS"
 msgstr "ArkOS4Clone 設定"
 
+
 msgid "WIFI SETTINGS"
 msgstr "Wi-Fi 設定"
+
 
 msgid "CURRENT NETWORK"
 msgstr "現在のネットワーク"
 
+
 msgid "REMOTE SERVICES"
 msgstr "リモートサービス"
+
 
 msgid "SCAN WIFI NETWORKS"
 msgstr "Wi-Fi ネットワークをスキャン"
 
+
 msgid "ACTIVATE EXISTING CONNECTION"
 msgstr "保存済み接続を有効化"
+
 
 msgid "DELETE EXISTING CONNECTIONS"
 msgstr "保存済み接続を削除"
 
+
 msgid "NETWORK INFO"
 msgstr "ネットワーク情報"
+
 
 msgid "SHOW STATUS ICONS"
 msgstr "ステータスアイコンを表示"
 
+
 msgid "SCANNING WIFI NETWORKS"
 msgstr "Wi-Fi ネットワークをスキャン中"
+
 
 msgid "SELECT WIFI NETWORK"
 msgstr "Wi-Fi ネットワークを選択"
 
+
 msgid "NO SAVED CONNECTIONS"
 msgstr "保存済み接続なし"
+
 
 msgid "SELECT CONNECTION"
 msgstr "接続を選択"
 
+
 msgid "CONNECTING..."
 msgstr "接続中..."
+
 
 msgid "CONNECTED TO"
 msgstr "接続先"
 
+
 msgid "CONNECTION FAILED"
 msgstr "接続失敗"
+
 
 msgid "DELETE CONNECTION"
 msgstr "接続を削除"
 
+
 msgid "DELETED"
 msgstr "削除済み"
+
 
 msgid "SSID"
 msgstr "SSID"
 
+
 msgid "IP"
 msgstr "IPアドレス"
+
 
 msgid "GATEWAY"
 msgstr "ゲートウェイ"
 
+
 msgid "DNS"
 msgstr "DNS"
+
 
 msgid "PASSWORD FOR"
 msgstr "パスワード"
 
+
 msgid "CONNECT"
 msgstr "接続"
+
 
 msgid "CONNECTING TO"
 msgstr "接続中"
 
+
 msgid "INVALID PASSWORD"
 msgstr "パスワードが正しくありません"
+
 
 msgid "NETWORK NOT FOUND"
 msgstr "ネットワークが見つかりません"
 
+
 msgid "JOYSTICK LED"
 msgstr "ジョイスティック LED"
+
 
 msgid "UNSUPPORTED DEVICE"
 msgstr "非対応デバイス"
 
+
 msgid "Joystick LED is not supported on this device."
 msgstr "このデバイスではジョイスティック LED に対応していません。"
+
 
 msgid "LED MODE"
 msgstr "LED モード"
 
+
 msgid "TURN OFF LED"
 msgstr "LED をオフ"
+
 
 msgid "SOLID RED"
 msgstr "赤（点灯）"
 
+
 msgid "SOLID GREEN"
 msgstr "緑（点灯）"
+
 
 msgid "SOLID BLUE"
 msgstr "青（点灯）"
 
+
 msgid "SOLID ORANGE"
 msgstr "オレンジ（点灯）"
+
 
 msgid "SOLID PURPLE"
 msgstr "紫（点灯）"
 
+
 msgid "SOLID CYAN"
 msgstr "シアン（点灯）"
+
 
 msgid "SOLID WHITE"
 msgstr "白（点灯）"
 
+
 msgid "SOLID YELLOW"
 msgstr "黄（点灯）"
+
 
 msgid "SOLID MAGENTA"
 msgstr "マゼンタ（点灯）"
 
+
 msgid "BREATHING RED"
 msgstr "赤（呼吸）"
+
 
 msgid "BREATHING GREEN"
 msgstr "緑（呼吸）"
 
+
 msgid "BREATHING BLUE"
 msgstr "青（呼吸）"
+
 
 msgid "BREATHING ORANGE"
 msgstr "オレンジ（呼吸）"
 
+
 msgid "BREATHING PURPLE"
 msgstr "紫（呼吸）"
+
 
 msgid "BREATHING CYAN"
 msgstr "シアン（呼吸）"
 
+
 msgid "BREATHING WHITE"
 msgstr "白（呼吸）"
+
 
 msgid "BREATHING"
 msgstr "呼吸"
 
+
 msgid "BREATHING RGB"
 msgstr "RGB（呼吸）"
+
 
 msgid "BREATHING YELLOW"
 msgstr "黄（呼吸）"
 
+
 msgid "BREATHING MAGENTA"
 msgstr "マゼンタ（呼吸）"
+
 
 msgid "FLOW EFFECT"
 msgstr "フローエフェクト"
 
+
 msgid "SCROLLING EFFECT"
 msgstr "スクロールエフェクト"
+
 
 msgid "LEFT JOYSTICK LED"
 msgstr "左ジョイスティックLED"
 
+
 msgid "RIGHT JOYSTICK LED"
 msgstr "右ジョイスティックLED"
+
 
 msgid "BRIGHTNESS"
 msgstr "明るさ"
 
+
 msgid "HIGH"
 msgstr "高"
+
 
 msgid "MEDIUM"
 msgstr "中"
 
+
 msgid "LOW"
 msgstr "低"
+
 msgid "USB SWITCH"
 msgstr "USB 切り替え"
+
 
 msgid "INTERNAL USB"
 msgstr "内部 USB"
 
+
 msgid "INTERNAL USB FOR BUILT-IN STORAGE"
 msgstr "内部ストレージ用内部 USB"
+
 
 msgid "EXTERNAL USB FOR OTG DEVICES"
 msgstr "OTG デバイス用外部 USB"
 
+
 msgid "USB MODE"
 msgstr "USB モード"
+
 
 msgid "INTERNAL USB (BUILT-IN STORAGE)"
 msgstr "内部 USB (内蔵ストレージ)"
 
+
 msgid "EXTERNAL USB (OTG DEVICE)"
 msgstr "外部 USB (OTG デバイス)"
+
 
 msgid "DATE & TIME"
 msgstr "日付と時刻"
 
+
 msgid "CURRENT"
 msgstr "現在"
+
 
 msgid "DATE"
 msgstr "日付"
 
+
 msgid "TIME"
 msgstr "時刻"
+
 
 msgid "SYNC WITH NETWORK"
 msgstr "ネットワークと同期"
 
+
 msgid "TIME SET SUCCESSFULLY"
 msgstr "時刻を設定しました"
+
 
 msgid "TIME SYNCED SUCCESSFULLY"
 msgstr "時刻を同期しました"
 
+
 msgid "NO NETWORK CONNECTION"
 msgstr "ネットワーク接続なし"
+
 
 msgid "POWER LED"
 msgstr "電源LED"
 
+
 msgid "RED LED"
 msgstr "赤色LED"
+
 
 msgid "BLUE LED"
 msgstr "青色LED"
 
+
 msgid "BELOW"
 msgstr "以下"
+
 
 msgid "ABOVE"
 msgstr "以上"
 
+
 msgid "BLUE"
 msgstr "青"
+
 
 msgid "RED"
 msgstr "赤"
 
+
 msgid "ARKOS4CLONE TOOLS"
 msgstr "ArkOS4Cloneツール"
+
 
 msgid "CPU SETTINGS"
 msgstr "CPU設定"
 
+
 msgid "CPU CORES"
 msgstr "CPUコア"
+
 
 msgid "CPU GOVERNOR"
 msgstr "CPUガバナー"
 
+
 msgid "CPU MAX FREQ"
 msgstr "CPU最大周波数"
+
 
 msgid "GPU SETTINGS"
 msgstr "GPU設定"
 
+
 msgid "GPU MAX FREQ"
 msgstr "GPU最大周波数"
+
 
 msgid "DMC SETTINGS"
 msgstr "DMC設定"
 
+
 msgid "DMC MAX FREQ"
 msgstr "DMC最大周波数"
+
 
 msgid "ZRAM SETTINGS"
 msgstr "ZRAM設定"
 
+
 msgid "ZRAM ENABLE"
 msgstr "ZRAM有効"
+
 
 msgid "ZRAM SIZE"
 msgstr "ZRAMサイズ"
 
+
 msgid "ZRAM COMP ALGO"
 msgstr "ZRAM 圧縮アルゴリズム"
+
 
 msgid "ZRAM AUTO START"
 msgstr "ZRAM 自動起動"
 
+
 msgid "MAX FREQ"
 msgstr "最大周波数"
+
 
 msgid "DAY"
 msgstr "日"
 
+
 msgid "HOUR"
 msgstr "時"
+
 
 msgid "MINUTE"
 msgstr "分"
 
+
 msgid "MONTH"
 msgstr "月"
+
 
 msgid "YEAR"
 msgstr "年"
 
+
 msgid "SIZE"
 msgstr "サイズ"
+
 
 msgid "INTERFACE"
 msgstr "インターフェース"
 
+
 msgid "EXTERNAL USB"
 msgstr "外部USB"
+
 
 msgid "REMOTE SERVICES AUTO-START"
 msgstr "リモートサービス自動起動"
 
+
 msgid "R36Ultra V1"
 msgstr "R36Ultra V1"
+
 
 msgid "R36Ultra V2"
 msgstr "R36Ultra V2"
 
+
 msgid "OTA UPGRADE DETECTED.\nWOULD YOU LIKE TO RESTORE YOUR PREVIOUS CONFIGURATION?"
 msgstr "OTAアップグレードが検出されました。\n以前の設定を復元しますか？"
+
 
 msgid "BEST"
 msgstr "最高"
 
+
 msgid "GOOD"
 msgstr "良好"
+
 
 msgid "POOR"
 msgstr "劣る"
 
+
 msgid "STANDARD"
 msgstr "標準"
+
 
 msgid "AVERAGE"
 msgstr "普通"
 
+
 msgid "PROXY SETTINGS"
 msgstr "プロキシ設定"
+
 
 msgid "ENABLE PROXY"
 msgstr "プロキシを有効にする"
 
+
 msgid "PROXY TYPE"
 msgstr "プロキシタイプ"
+
 
 msgid "PROXY HOST"
 msgstr "プロキシホスト"
 
+
 msgid "PROXY PORT"
 msgstr "プロキシポート"
+
 
 msgid "NO PROXY"
 msgstr "プロキシ除外"
 
+
 msgid "STEP 1: KEEP BOTH STICKS COMPLETELY STILL"
 msgstr "ステップ1：両スティックを完全に静止させてください"
+
 
 msgid "STEP 2: ROTATE BOTH STICKS FULL RANGE SLOWLY"
 msgstr "ステップ2：両スティックをゆっくり最大範囲まで回転させてください"
 
+
 msgid "PRESS OK TO START"
 msgstr "OKを押して開始"
+
 
 msgid "PRESS OK TO START RANGE CALIBRATION"
 msgstr "OKを押して範囲キャリブレーション開始"
 
+
 msgid "CENTER SAMPLING COMPLETE!"
 msgstr "センターサンプリング完了！"
+
 
 msgid "TIME: 5 SECONDS"
 msgstr "時間：5秒"
 
+
 msgid "CALIBRATION COMPLETE!"
 msgstr "キャリブレーション完了！"
+
 
 msgid "JOYSTICK CALIBRATION"
 msgstr "ジョイスティックキャリブレーション"
 
+
 msgid "JOYSTICK SETTINGS"
 msgstr "ジョイスティック設定"
+
 
 msgid "PRESS ANY BUTTON TO SET AS EMULATION SWITCH\n\nPRESS BACK TO CANCEL"
 msgstr "任意のボタンを押してエミュレーション切替に設定\n\n戻るでキャンセル"
 
+
 msgid "EMULATION BUTTON SET TO"
 msgstr "エミュレーションボタン設定先"
+
 
 msgid "CANCELLED"
 msgstr "キャンセル済み"
 
+
 msgid "ANALOG STICK EMULATION"
 msgstr "アナログスティックエミュレーション"
+
 
 msgid "CHANGE EMULATION BUTTON"
 msgstr "エミュレーションボタン変更"
 
+
 msgid "CHANGE THE BUTTON FOR ANALOG STICK EMULATION?"
 msgstr "アナログスティックエミュレーションのボタンを変更しますか？"
+
 
 msgid "PRESS THE BUTTON TO MAP"
 msgstr "マッピングするボタンを押してください"
 
+
 msgid "BUTTON"
 msgstr "ボタン"
+
 
 msgid "JOYSTICK DEAD ZONE"
 msgstr "ジョイスティックデッドゾーン"
 
+
 msgid "DEAD ZONE VALUE"
 msgstr "デッドゾーン値"
+
 
 msgid "CUSTOM DEAD ZONE"
 msgstr "カスタムデッドゾーン"
 
+
 msgid "ENTER DEAD ZONE VALUE (10-1800)"
 msgstr "デッドゾーン値を入力 (10-1800)"
+
 
 msgid "DEAD ZONE SET TO"
 msgstr "デッドゾーンを設定"
 
+
 msgid "VALUE OUT OF RANGE"
 msgstr "値が範囲外です"
+
 
 msgid "INVALID VALUE"
 msgstr "無効な値"
 
+
 msgid "CUSTOM"
 msgstr "カスタム"
+
+
+msgid "BATTERYPLUS"
+msgstr "BATTERYPLUS"
+
+msgid "BATTERY INFO"
+msgstr "バッテリー情報"
+
+msgid "ENABLE BATTERYPLUS"
+msgstr "BATTERYPLUSを有効にする"
+
+msgid "BATTERY MODE"
+msgstr "バッテリーモード"
+
+msgid "VOLTAGE MODE"
+msgstr "Voltage Mode"
+
+msgid "PMIC MODE"
+msgstr "PMIC Mode"
+
+msgid "VOLTAGE MODE DESC"
+msgstr "Derive battery percentage from voltage. Use when PMIC reports inaccurate."
+
+msgid "PMIC MODE DESC"
+msgstr "Read battery percentage from PMIC directly. Use when PMIC reports accurately."
+
+msgid "DELETE USAGE RECORDS"
+msgstr "使用記録を削除"
+
+msgid "DELETE ALL BATTERY USAGE RECORDS? THIS WILL RESET CALIBRATION."
+msgstr "Delete all battery usage records? This will reset calibration."
+
+msgid "RECORDS DELETED. SERVICE RESTARTED."
+msgstr "Records deleted. Service restarted."

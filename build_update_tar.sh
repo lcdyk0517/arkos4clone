@@ -145,6 +145,13 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   cp -f ./bin/zram-service/zram.conf "$PAYLOAD_ROOT/etc/" 2>/dev/null || true
   cp -f ./bin/zram-service/zram-swap.service "$PAYLOAD_ROOT/etc/systemd/system/" 2>/dev/null || true
 
+  echo "== 注入 batteryplus 服务 =="
+  mkdir -p "$PAYLOAD_ROOT/etc/systemd/system"
+  mkdir -p "$PAYLOAD_ROOT/etc/batteryplus/"
+  cp -f ./bin/batteryplus-service/batteryplus "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
+  cp -f ./bin/batteryplus-service/batteryplus.conf "$PAYLOAD_ROOT/etc/batteryplus/" 2>/dev/null || true
+  cp -f ./bin/batteryplus-service/batteryplus.service "$PAYLOAD_ROOT/etc/systemd/system/" 2>/dev/null || true
+
   echo "== 注入核心与 EmulationStation 文件 =="
   mkdir -p "$PAYLOAD_ROOT/home/ark/.config/retroarch/cores" \
            "$PAYLOAD_ROOT/home/ark/.config/retroarch32/cores" \
@@ -261,6 +268,9 @@ EOF
   meta_add "0777" "1000:1000" "/etc/zram.conf"
   meta_add "0777" "1000:1000" "/usr/local/bin/zram-setup.sh"
   meta_add "0777" "1000:1000" "/etc/systemd/system/zram-swap.service"
+  meta_add "0777" "1000:1000" "/etc/batteryplus/batteryplus.conf"
+  meta_add "0777" "1000:1000" "/usr/local/bin/batteryplus"
+  meta_add "0777" "1000:1000" "/etc/systemd/system/batteryplus.service"
   meta_add "0777" "1000:1000" "/home/ark/.config/retroarch/cores/*"
   meta_add "0777" "1000:1000" "/home/ark/.config/retroarch32/cores/*"
   meta_add "0777" "1000:1000" "/etc/emulationstation/darkos4es_systems.cfg"
@@ -382,6 +392,13 @@ else
   cp -f ./bin/zram-service/zram-setup.sh "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
   cp -f ./bin/zram-service/zram.conf "$PAYLOAD_ROOT/etc/" 2>/dev/null || true
   cp -f ./bin/zram-service/zram-swap.service "$PAYLOAD_ROOT/etc/systemd/system/" 2>/dev/null || true
+
+  echo "== 注入 batteryplus 服务 =="
+  mkdir -p "$PAYLOAD_ROOT/etc/systemd/system"
+  mkdir -p "$PAYLOAD_ROOT/etc/batteryplus/"
+  cp -f ./bin/batteryplus-service/batteryplus "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
+  cp -f ./bin/batteryplus-service/batteryplus.conf "$PAYLOAD_ROOT/etc/batteryplus/" 2>/dev/null || true
+  cp -f ./bin/batteryplus-service/batteryplus.service "$PAYLOAD_ROOT/etc/systemd/system/" 2>/dev/null || true
 
   echo "== 注入核心与 EmulationStation 文件 =="
   mkdir -p "$PAYLOAD_ROOT/home/ark/.config/retroarch/cores" \
@@ -540,6 +557,9 @@ EOF
   meta_add "0777" "1002:1002" "/etc/zram.conf"
   meta_add "0777" "1002:1002" "/usr/local/bin/zram-setup.sh"
   meta_add "0777" "1002:1002" "/etc/systemd/system/zram-swap.service"
+  meta_add "0777" "1002:1002" "/etc/batteryplus/batteryplus.conf"
+  meta_add "0777" "1002:1002" "/usr/local/bin/batteryplus"
+  meta_add "0777" "1002:1002" "/etc/systemd/system/batteryplus.service"
   meta_add "0777" "1002:1002" "/home/ark/.config/retroarch/cores/*"
   meta_add "0777" "1002:1002" "/home/ark/.config/retroarch32/cores/*"
   meta_add "0777" "1002:1002" "/etc/emulationstation/es_systems.cfg"
@@ -697,7 +717,7 @@ else
 fi
 
 log "=== Step 1: Stop conflicting services ==="
-for s in zram-swap.service es-status-daemon.service batt_led.service ddtbcheck.service 351mp.service mpv.service oga_events; do
+for s in zram-swap.service batteryplus.service es-status-daemon.service batt_led.service ddtbcheck.service 351mp.service mpv.service oga_events; do
   if [[ -e "/etc/systemd/system/$s" || -e "/lib/systemd/system/$s" ]]; then
     svc_stop_disable "$s"
   fi

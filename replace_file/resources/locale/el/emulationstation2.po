@@ -9,50 +9,57 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: 
-msgid "Loading..."
-msgstr "Φόρτωση..."
 
-#: 
 msgid "Preloading UI"
 msgstr "Διεπαφή χρήστη πριν τη φόρτωση"
 
 #: 
+
 msgid "GRID SIZE"
 msgstr "ΜΕΓΕΘΟΣ ΠΛΕΓΜΑΤΟΣ"
 
 #: 
+
 msgid "DEFAULT GRID SIZE"
 msgstr "ΠΡΟΕΠΙΛΟΓΗΜΕΝΟ ΜΕΓΕΘΟΣ ΠΛΕΓΜΑΤΟΣ"
 
 #: 
+
 msgid "UI MODE"
 msgstr "ΛΕΙΤΟΥΡΓΙΑ INTERFACE"
 
 #: 
+
 msgid "PRELOAD UI"
 msgstr "ΠΡΟΦΟΡΤΩΣΗ UI"
 
 #: 
+
 msgid "VSYNC"
 msgstr "VSYNC"
 
 #: 
+
 msgid "DISPLAY FAVORITES FIRST IN GAMELIST"
 msgstr "ΔΕΙΞΕ ΠΡΩΤΑ ΤΑ ΑΓΑΠΗΜΕΝΑ ΠΑΙΧΝΙΔΙΑ"
 
 #: 
+
 msgid "OPTIMIZE IMAGES VRAM USE"
 msgstr "ΒΕΛΤΙΣΤΟΠΟΙΗΣΗ ΧΡΗΣΗΣ VRMAM ΜΕ ΕΙΚΟΝΕΣ"
 
 #: 
+
 msgid "Full"
 msgstr "Πλήρης"
 
 #: 
+
 msgid "Kiosk"
 msgstr "Περίπτερο"
 
 #: 
+
 msgid "Kid"
 msgstr "Παιδί"
 
@@ -65,210 +72,262 @@ msgstr "CANCEL"
 msgstr "ΑΚΥΡΩΣΗ"
 
 #:
+
 msgid "automatic"
 msgstr "αυτόματο"
 
 #: 
+
 msgid "basic"
 msgstr "βασικός"
 
 #: 
+
 msgid "detailed"
 msgstr "λεπτομερής"
 
 #: 
+
 msgid "grid"
 msgstr "πλέγμα"
 
 #: 
+
 msgid "fade"
 msgstr "ξεθώριασμα"
 
 #: 
+
 msgid "instant"
 msgstr "απευθείας"
 
 #: 
+
 msgid "slide"
 msgstr "ολίσθηση"
 
 #: 
+
 msgid "gridex"
 msgstr "λεπτομερές πλέγμα"
 
 #: 
+
 msgid "ENABLE NAVIGATION SOUNDS"
 msgstr "ΕΝΕΡΓΟΠΟΙΗΣΤΕ ΤΟΥΣ ΗΧΟΥΣ ΠΛΟΗΓΗΣΗΣ"
 
 #: 
+
 msgid "ENABLE VIDEO AUDIO"
 msgstr "ΕΝΕΡΓΟΠΟΙΗΣΗ ΗΧΟΥ ΒΙΝΤΕΟ"
 
 #: 
+
 msgid "APPLY FILTER"
 msgstr "ΕΦΑΡΜΟΓΗ ΤΟΥ ΦΙΛΤΡΟΥ"
 
 #: 
+
 msgid "AUTOMATIC GAME COLLECTIONS"
 msgstr "ΑΥΤΟΜΑΤΗ ΣΥΛΛΟΓΗ ΠΑΙΧΝΙΔΙΩΝ"
 
 #: 
+
 msgid "SELECT COLLECTIONS"
 msgstr "ΕΠΙΛΕΞΤΕ ΣΥΛΛΟΓΕΣ"
 
 #: 
+
 msgid "CUSTOM GAME COLLECTIONS"
 msgstr "ΠΡΟΣΑΡΜΟΣΜΕΝΕΣ ΣΥΛΛΟΓΕΣ"
 
 #: 
+
 msgid "CREATE NEW CUSTOM COLLECTION FROM THEME"
 msgstr "ΔΗΜΙΟΥΡΓΗΣΤΕ ΜΙΑ ΠΡΟΣΑΡΜΟΣΜΕΝΗ ΣΥΛΛΟΓΗ ΑΠΟ ΤΟ ΘΕΜΑ"
 
 #: 
+
 msgid "GAME COLLECTION SETTINGS"
 msgstr "ΕΠΙΛΟΓΕΣ ΛΙΣΤΑΣ ΠΑΙΧΝΙΔΙΩΝ"
 
 #: 
+
 msgid "SELECT THEME FOLDER"
 msgstr "ΕΠΙΛΕΞΤΕ ΦΑΚΕΛΟ ΘΕΜΑΤΟΣ"
 
 #: 
+
 msgid "CREATE NEW CUSTOM COLLECTION"
 msgstr "ΔΗΜΙΟΥΡΓΗΣΤΕ ΝΕΑ ΠΡΟΣΑΡΜΟΣΜΕΝΗ ΣΥΛΛΟΓΗ"
 
 #: 
+
 msgid "New Collection Name"
 msgstr "Όνομα νέας συλλογής"
 
 #: 
+
 msgid "Loading..."
 msgstr "Φόρτωση..."
 
 #: 
+
 msgid "GROUP UNTHEMED CUSTOM COLLECTIONS"
 msgstr "ΟΜΑΔΑ ΠΡΟΣΑΡΜΟΣΜΕΝΩΝ ΣΥΛΛΟΓΩΝ ΧΩΡΙΣ ΘΕΜΑ"
 
 #: 
+
 msgid "SORT CUSTOM COLLECTIONS AND SYSTEMS"
 msgstr "ΟΡΓΑΝΩΣΤΕ ΠΡΟΣΑΡΜΟΣΜΕΝΕΣ ΣΥΛΛΟΓΕΣ ΚΑΙ ΣΥΣΤΗΜΑΤΑ"
 
 #: 
+
 msgid "FINISH EDITING COLLECTION"
 msgstr "ΤΕΛΕΙΩΣΤΕ ΤΗΝ ΕΠΕΞΕΡΓΑΣΙΑ ΤΗΣ ΣΥΛΛΟΓΗΣ"
 
 #: 
+
 msgid "PARSE GAMESLISTS ONLY"
 msgstr "ΜΟΝΟ XML ΛΙΣΤΑ ΠΑΙΧΝΙΔΙΩΝ"
 
 #: 
+
 msgid "POWER SAVER MODES"
 msgstr "ΛΕΙΤΟΥΡΓΙΑ ΕΞΟΙΚΟΝΟΜΗΣΗΣ ΕΝΕΡΓΕΙΑΣ"
 
 #: 
+
 msgid "SAVE METADATA ON EXIT"
 msgstr "ΑΠΟΘΗΚΕΥΣΗ ΔΕΔΟΜΕΝΩΝ ΚΑΤΑ ΤΗΝ ΕΞΟΔΟ"
 
 #: 
+
 msgid "SHOW HIDDEN FILES"
 msgstr "ΕΜΦΑΝΙΣΗ ΚΡΥΦΩΝ ΑΡΧΕΙΩΝ"
 
 #: 
+
 msgid "VRAM LIMIT"
 msgstr "ΜΕΓΙΣΤΟ ΟΡΙΟ VRAM"
 
 #: 
+
 msgid "RESET ALL FILTERS"
 msgstr "ΕΠΑΝΑΦΟΡΑ ΟΛΩΝ ΤΩΝ ΦΙΛΤΡΩΝ"
 
 #: 
+
 msgid "GAMELIST VIEW STYLE"
 msgstr "ΣΤΥΛ ΠΡΟΒΟΛΗΣ ΛΙΣΤΑΣ ΠΑΙΧΝΙΔΙΩΝ"
 
 #: 
+
 msgid "GAME LAUNCH TRANSITION"
 msgstr "ΜΕΤΑΒΑΣΗ ΚΑΤΑ ΤΗΝ ΕΚΚΙΝΗΣΗ ΤΟΥ ΠΑΙΧΝΙΔΙΟΥ"
 
 #: 
+
 msgid "RANDOM"
 msgstr "ΤΥΧΑΙΟ"
 
 #: 
+
 msgid "Rating"
 msgstr "ΑΞΙΟΛΟΓΗΣΗ"
 
 #: 
+
 msgid "Released"
 msgstr "Δημοσίευση"
 
 #: 
+
 msgid "Developer"
 msgstr "Προγραμματιστής"
 
 #: 
+
 msgid "Publisher"
 msgstr "Δημιουργός"
 
 #: 
+
 msgid "Genre"
 msgstr "Είδος"
 
 #: 
+
 msgid "Players"
 msgstr "Παίκτες"
 
 #: 
+
 msgid "NO GAMES FOUND - SKIP"
 msgstr "ΔΕΝ ΒΡΕΘΗΚΑΝ ΠΑΙΧΝΙΔΙΑ - ΠΑΡΑΒΛΕΨΗ"
 
 #: 
+
 msgid "RETRY"
 msgstr "ΠΡΟΣΠΑΘΗΣΤΕ ΞΑΝΑ"
 
 #: 
+
 msgid "SKIP"
 msgstr "ΠΑΡΑΒΛΕΨΗ"
 
 #: 
+
 msgid "SEARCH FOR"
 msgstr "ΑΝΑΖΗΤΗΣΗ ΓΙΑ:"
 
 #: 
+
 msgid "SEARCH"
 msgstr "ΑΝΑΖΗΤΗΣΗ"
 
 #: 
+
 msgid "SCRAPING IN PROGRESS"
 msgstr "ΣΑΡΩΣΗ ΣΕ ΕΞΕΛΙΞΗ"
 
 #: 
+
 msgid "SYSTEM"
 msgstr "ΣΥΣΤΗΜΑ"
 
 #: 
+
 msgid "subtitle text"
 msgstr "ΚΕΙΜΕΝΟ ΥΠΟΤΙΤΛΩΝ"
 
 #: 
+
 msgid "INPUT"
 msgstr "ΕΙΣΑΓΩΓΗ"
 
 #: 
+
 msgid "search"
 msgstr "ΑΝΑΖΗΤΗΣΗ"
 
 #: 
+
 msgid "STOP"
 msgstr "ΔΙΑΚΟΠΗ"
 
 #: 
+
 msgid "stop (progress saved)"
 msgstr "διακοπή η πρόοδος αποθηκεύτηκε"
 
 #: 
+
 msgid "GAME %i OF %i"
 msgstr "ΠΑΙΧΝΙΔΙ %i ΤΟΥ %i"
 
 #: 
+
 msgid "WE CAN'T FIND ANY SYSTEMS!\n"
 "CHECK THAT YOUR PATHS ARE CORRECT IN THE SYSTEMS CONFIGURATION FILE, AND YOUR GAME DIRECTORY HAS AT LEAST ONE GAME WITH THE CORRECT EXTENSION.\n"
 "\n"
@@ -279,940 +338,1169 @@ msgstr "ΔΕΝ ΒΡΕΘΗΚΕ ΚΑΝΕΝΑ ΣΥΣΤΗΜΑ!\n"
 ""
 
 #: 
+
 msgid "%i GAME SUCCESSFULLY SCRAPED!"
 msgid_plural "%i GAMES SUCCESSFULLY SCRAPED!"
 msgstr[0] "%i ΤΟ ΠΑΙΧΝΙΔΙ ΣΑΡΩΘΗΚΕ"
 msgstr[1] "%i ΤΑ ΠΑΙΧΝΙΔΙΑ ΣΑΡΩΘΗΑΚΑΝ"
 
 #: 
+
 msgid "%i GAME SKIPPED."
 msgid_plural "%i GAMES SKIPPED."
 msgstr[0] "%i ΕΓΙΝΕ ΠΑΡΑΛΕΙΨΗ  ΤΟΥ ΠΑΙΧΝΙΔΙΟΥ"
 msgstr[1] "%i ΕΓΙΝΕ ΠΑΡΑΛΕΙΨΗ ΤΩΝ ΠΑΙΧΝΙΔΙΩΝ"
 
 #: 
+
 msgid "OK"
 msgstr "OK"
 
 #: 
+
 msgid "EDIT METADATA"
 msgstr "ΕΠΕΞΕΡΓΑΣΙΑ ΤΩΝ ΔΕΔΟΜΕΝΩΝ"
 
 #: 
+
 msgid "SCRAPE"
 msgstr "ΣΑΡΩΣΗ"
 
 #: 
+
 msgid "ΑΠΟΘΗΚΕΥΣΗ"
 msgstr "GUARDAR"
 
 #: 
+
 msgid "THIS WILL DELETE A FILE!\n"
 "ARE YOU SURE?"
 msgstr "ΑΥΤΟ ΘΑ ΔΙΑΓΡΑΨΕΙ ΕΝΑ ΑΡΧΕΙΟ! \n"
 "ΕΙΣΤΕ ΣΙΓΟΥΡΟΙ;"
 
 #: 
+
 msgid "YES"
 msgstr "ΝΑΙ"
 
 #: 
+
 msgid "NO"
 msgstr "ΟΧΙ"
 
 #: 
+
 msgid "DELETE"
 msgstr "ΔΙΑΓΡΑΦΗ"
 
 #: 
+
 msgid "SAVE CHANGES?"
 msgstr "ΑΠΟΘΗΚΕΥΣΗ ΑΛΛΑΓΩΝ"
 
 #: 
+
 msgid "BACK"
 msgstr "ΠΙΣΩ"
 
 #: 
+
 msgid "CLOSE"
 msgstr "ΚΛΕΙΣΙΜΟ"
 
 #: 
+
 msgid "MAIN MENU"
 msgstr "ΚΕΝΤΡΙΚΟ ΜΕΝΟΥ"
 
 #: 
+
 msgid "KODI MEDIA CENTER"
 msgstr "KODI"
 
 #: 
+
 msgid "SYSTEM SETTINGS"
 msgstr "ΡΥΘΜΙΣΕΙΣ ΣΥΣΤΗΜΑΤΟΣ"
 
 #: 
+
 msgid "VERSION"
 msgstr "ΕΚΔΟΣΗ"
 
 #: 
+
 msgid "DISK USAGE"
 msgstr "ΧΡΗΣΗ ΔΙΣΚΟΥ"
 
 #: 
+
 msgid "STORAGE DEVICE"
 msgstr "ΣΥΣΚΕΥΗ ΑΠΟΘΗΚΕΥΣΗΣ"
 
 #: 
+
 msgid "LANGUAGE"
 msgstr "ΓΛΩΣΣΑ"
 
 #: 
+
 msgid "OVERCLOCK"
 msgstr "ΜΕΓΙΣΤΕΣ ΤΑΧΥΤΗΤΕΣ ΕΠΕΞΕΡΓΑΣΤΗ"
 
 #: 
+
 msgid "EXTREM (1100Mhz)"
 msgstr "ΜΕΓΙΣΤΟ (1100Mhz)"
 
 #: 
+
 msgid "TURBO (1000Mhz)"
 msgstr "TURBO (1000Mhz)"
 
 #: 
+
 msgid "HIGH (950Mhz)"
 msgstr "ΥΨΗΛΟ (950Mhz)"
 
 #: 
+
 msgid "NONE (700Mhz)"
 msgstr "ΚΑΝΕΝΑ (900Mhz)"
 
 #: 
+
 msgid "TURBO (1050Mhz)+"
 msgstr "TURBO (1050Mhz)+"
 
 #: 
+
 msgid "HIGH (1050Mhz)"
 msgstr "ΥΨΗΛΟ (1050Mhz)"
 
 #: 
+
 msgid "NONE (900Mhz)"
 msgstr "ΚΑΝΕΝΑ (900Mhz)"
 
 #: 
+
 msgid "NONE (1200Mhz)"
 msgstr "ΚΑΝΕΝΑ (1200Mhz)"
 
 #: 
+
 msgid "NONE"
 msgstr "ΚΑΝΕΝΑ"
 
 #. NEW SETTINGS ORGANIZATION
 #: 
+
 msgid "UPDATES"
 msgstr "ΕΝΗΜΕΡΩΣΕΙΣ"
 
 #: 
+
 msgid "AUTO UPDATES"
 msgstr "ΑΥΤΟΜΑΤΕΣ ΕΝΗΜΕΡΩΣΕΙΣ"
 
 #: 
+
 msgid "START UPDATE"
 msgstr "ΕΝΑΡΞΗ ΕΝΗΜΕΡΩΣΗΣ"
 
 #: 
+
 msgid "KODI SETTINGS"
 msgstr "ΡΥΘΜΙΣΕΙΣ KODI"
 
 #: 
+
 msgid "ENABLE KODI"
 msgstr "ΕΝΑΡΞΗ KODI"
 
 #: 
+
 msgid "KODI AT START"
 msgstr "ΕΝΑΡΞΗ ΤΟΥ KODI ΚΑΤΑ ΤΗΝ ΕΚΚΙΝΗΣΗ"
 
 #: 
+
 msgid "START KODI WITH X"
 msgstr "ΕΝΑΡΞΗ ΤΟΥ KODI ΜΕ ΤΟ X"
 
 #: 
+
 msgid "SECURITY"
 msgstr "ΑΣΦΑΛΕΙΑ"
 
 #: 
+
 msgid "ENFORCE SECURITY"
 msgstr "ΕΝΙΣΧΥΣΗ ΤΗΣ ΑΣΦΑΛΕΙΑΣ"
 
 #: 
+
 msgid "ROOT PASSWORD"
 msgstr "ΚΩΔΙΚΟΣ ΠΡΟΣΒΑΣΗΣ ROOT"
 
 #: 
+
 msgid "THE SYSTEM WILL NOW REBOOT"
 msgstr "ΘΑ ΓΙΝΕΙ ΕΠΑΝΕΚΚΙΝΗΣΗ ΤΟΥ ΣΥΣΤΗΜΑΤΟΣ"
 
 #: 
+
 msgid "GAMES SETTINGS"
 msgstr "ΡΥΘΜΙΣΕΙΣ ΠΑΙΧΝΙΔΙΩΝ"
 
 #: 
+
 msgid "GAME RATIO"
 msgstr "ΜΟΡΦΗ ΠΑΙΧΝΙΔΙΟΥ"
 
 #: 
+
 msgid "SMOOTH GAMES"
 msgstr "ΟΜΑΛΗ ΛΕΙΤΟΥΡΓΙΑ ΠΑΙΧΝΙΔΙΩΝ"
 
 #: 
+
 msgid "REWIND"
 msgstr "ΠΙΣΩ"
 
 #: 
+
 msgid "AUTO SAVE/LOAD"
 msgstr "ΑΥΤΟΜΑΤΗ ΑΠΟΘΗΚΕΥΣΗ/ΦΟΡΤΩΣΗ"
 
 #: 
+
 msgid "SHADERS SET"
 msgstr "ΡΥΘΜΙΣΕΙΣ ΣΚΙΑΣΗΣ"
 
 #: 
+
 msgid "SCANLINES"
 msgstr "ΣΑΡΩΣΗ ΓΡΑΜΜΩΝ"
 
 #: 
+
 msgid "RETRO"
 msgstr "RETRO"
 
 #: 
+
 msgid "RETROACHIEVEMENTS SETTINGS"
 msgstr "ΡΥΘΜΙΣΕΙΣ RETROACHEIVMENTS"
 
 #: 
+
 msgid "RETROACHIEVEMENTS"
 msgstr "RETROACHIEVEMENTS"
 
 #: 
+
 msgid "HARDCORE MODE"
 msgstr "ΛΕΙΤΟΥΡΓΙΑ ΣΚΛΗΡΟΥ ΠΥΡΗΝΑ"
 
 #: 
+
 msgid "USERNAME"
 msgstr "ΟΝΟΜΑ ΧΡΗΣΤΗ"
 
 #: 
+
 msgid "PASSWORD"
 msgstr "ΚΩΔΙΚΟΣ ΠΡΟΣΒΑΣΗΣ"
 
 #: 
+
 msgid "ADVANCED"
 msgstr "ΠΡΟΧΩΡΗΜΕΝΟ"
 
 #: 
+
 msgid "REALLY UPDATE GAMES LISTS ?"
 msgstr "ΝΑ ΓΙΝΕΙ ΕΝΗΜΕΡΩΣΗ ΤΩΝ ΛΙΣΤΩΝ ΠΑΙΧΝΙΔΙΩΝ;"
 
 #: 
+
 msgid "UPDATE GAMES LISTS"
 msgstr "ΕΝΗΜΕΡΩΣΗ ΤΩΝ ΛΙΣΤΩΝ ΠΑΙΧΝΙΔΙΩΝ"
 
 #: 
+
 msgid "CONTROLLERS SETTINGS"
 msgstr "ΡΥΘΜΙΣΕΙΣ ΠΛΗΚΤΡΩΝ ΕΛΕΓΧΟΥ"
 
 #:
+
 msgid "SWITCH A/B BUTTONS IN EMULATIONSTATION"
 msgstr "ΑΛΛΑΓΗ ΠΛΗΚΤΡΩΝ A/B ΣΤΟ EMULATIONSTATION"
 
 #: 
+
 msgid "UI SETTINGS"
 msgstr "ΡΥΘΜΙΣΕΙΣ UI"
 
 #: 
+
 msgid "OVERSCAN"
 msgstr "ΥΠΕΡΣΑΡΩΣΗ"
 
 #:
+
 msgid "LAUNCH SCREENSAVER"
 msgstr "ΕΚΚΙΝΗΣΗ ΠΡΟΣΤΑΣΙΑΣ ΟΘΟΝΗΣ"
 
 #: 
+
 msgid "SCREENSAVER SETTINGS"
 msgstr "ΡΥΘΜΙΣΕΙΣ ΠΡΟΣΤΑΣΙΑΣ ΟΘΟΝΗΣ"
 
 #: 
+
 msgid "SCREENSAVER AFTER"
 msgstr "ΠΡΟΣΤΑΣΙΑΣ ΟΘΟΝΗΣ ΜΕΤΑ ΑΠΟ"
 
 #: 
+
 msgid "TRANSITION STYLE"
 msgstr "ΣΤΥΛ ΜΕΤΑΒΑΣΗΣ "
 
 #: 
+
 msgid "SCREENSAVER BEHAVIOR"
 msgstr "ΣΥΜΠΕΡΙΦΟΡΑ ΠΡΟΣΤΑΣΙΑΣ ΟΘΟΝΗΣ"
 
 #: 
+
 msgid "SHOW FRAMERATE"
 msgstr "ΕΜΦΑΝΙΣΗ ΡΥΘΜΟΥ ΕΜΦΑΝΙΣΗΣ"
 
 #: 
+
 msgid "ON-SCREEN HELP"
 msgstr "ΒΟΗΘΕΙΑ ΣΤΗΝ ΟΘΟΝΗ"
 
 #: 
+
 msgid "HIDE WHEN RUNNING GAME"
 msgstr "ΑΠΟΚΡΥΨΗ ΚΑΤΑ ΤΗΝ ΕΚΤΕΛΕΣΗ ΤΟΥ ΠΑΙΧΝΙΔΙΟΥ"
 
 #: 
+
 msgid "QUICK SYSTEM SELECT"
 msgstr "ΓΡΗΓΟΡΗ ΕΠΙΛΟΓΗ ΣΥΣΤΗΜΑΤΟΣ"
 
 #: 
+
 msgid "THEME"
 msgstr "ΘΕΜΑ"
 
 #: 
+
 msgid "SOUND SETTINGS"
 msgstr "ΡΥΘΜΙΣΕΙΣ ΗΧΟΥ"
 
 #: 
+
 msgid "SYSTEM VOLUME"
 msgstr "ΕΝΤΑΣΗ ΗΧΟΥ ΣΥΣΤΗΜΑΤΟΣ"
 
 #: 
+
 msgid "FRONTEND MUSIC"
 msgstr "ΜΟΥΣΙΚΗ ΥΠΟΚΡΟΥΣΗ"
 
 #: 
+
 msgid "OUTPUT DEVICE"
 msgstr "ΣΥΣΚΕΥΗ ΕΞΟΔΟΥ"
 
 #: 
+
 msgid "HDMI"
 msgstr "HDMI"
 
 #: 
+
 msgid "JACK"
 msgstr "JACK"
 
 #: 
+
 msgid "AUTO"
 msgstr "ΑΥΤΟΜΑΤΟ"
 
 #: 
+
 msgid "NETWORK SETTINGS"
 msgstr "ΡΥΘΜΙΣΕΙΣ ΔΙΚΤΥΟΥ"
 
 #: 
+
 msgid "CONNECTED"
 msgstr "ΣΥΝΔΕΔΕΜΕΝΟ"
 
 #: 
+
 msgid "NOT CONNECTED"
 msgstr "ΔΕΝ ΕΧΕΙ ΣΥΝΔΕΘΕΙ"
 
 #: 
+
 msgid "STATUS"
 msgstr "ΚΑΤΑΣΤΑΣΗ"
 
 #: 
+
 msgid "IP ADDRESS"
 msgstr "ΔΙΕΥΘΥΝΣΗ IP"
 
+
 msgid "REMOTE SERVICES"
 msgstr "Υπηρεσίες απομακρυσμένης πρόσβασης"
+
 
 msgid "HOSTNAME"
 msgstr "ΟΝΟΜΑ HOST"
 
 #: 
+
 msgid "ENABLE WIFI"
 msgstr "ΕΝΕΡΓΟΠΟΙΗΣΗ WI-FI"
 
 #: 
+
 msgid "WIFI SSID"
 msgstr "WIFI SSID"
 
 #: 
+
 msgid "WIFI KEY"
 msgstr "ΚΩΔΙΚΟΣ WIFI"
 
 #: 
+
 msgid "WIFI ENABLED"
 msgstr "ΤΟ WIFI ΕΝΕΡΓΟΠΟΙΗΘΗΚΕ"
 
 #: 
+
 msgid "WIFI CONFIGURATION ERROR"
 msgstr "ΣΦΑΛΜΑ ΡΥΘΜΙΣΗΣ WIFI"
 
 #: 
+
 msgid "SCRAPER"
 msgstr "ΣΑΡΩΣΗ"
 
 #: 
+
 msgid "SCRAPE FROM"
 msgstr "ΣΑΡΩΣΗ ΑΠΟ:"
 
 #: 
+
 msgid "SCRAPE RATINGS"
 msgstr "ΒΑΘΜΟΛΟΓΙΑ ΣΑΡΩΣΗΣ"
 
 #: 
+
 msgid "SCRAPE NOW"
 msgstr "ΣΑΡΩΣΗ ΤΩΡΑ"
 
 #: 
+
 msgid "QUIT"
 msgstr "ΕΞΟΔΟ"
 
 #: 
+
 msgid "REALLY RESTART?"
 msgstr "ΘΕΛΕΤΕ ΝΑ ΓΙΝΕΙ ΕΠΑΝΕΚΚΙΝΗΣΗ;"
 
 #: 
+
 msgid "RESTART SYSTEM"
 msgstr "ΕΠΑΝΕΚΚΙΝΗΣΗ ΣΥΣΤΗΜΑΤΟΣ"
 
 #: 
+
 msgid "REALLY SHUTDOWN?"
 msgstr "ΘΕΛΕΤΕ ΝΑ ΓΙΝΕΙ ΑΠΕΝΕΡΓΟΠΟΙΗΣΗ;"
 
 #: 
+
 msgid "SHUTDOWN SYSTEM"
 msgstr "ΑΠΕΝΕΡΓΟΠΟΙΗΣΗ"
 
 #: 
+
 msgid "Emulator"
 msgstr "Εξομοιωτής"
 
 #: 
+
 msgid "Core"
 msgstr "Πυρήνας"
 
 #: 
+
 msgid "YOU ARE GOING TO CONFIGURE A CONTROLLER. IF YOU HAVE ONLY ONE JOYSTICK, CONFIGURE THE DIRECTIONS KEYS AND SKIP JOYSTICK CONFIG BY HOLDING A BUTTON. IF YOU DO NOT HAVE A SPECIAL KEY FOR HOTKEY, CHOOSE THE SELECT BUTTON. SKIP ALL BUTTONS YOU DO NOT HAVE BY HOLDING A KEY. BUTTONS NAMES ARE BASED ON THE SNES CONTROLLER."
 msgstr "ΠΡΟΚΕΙΤΑΙ ΝΑ ΔΙΑΜΟΡΦΩΣΕΤΕ ΕΝΑ ΧΕΙΡΙΣΤΗΡΙΟ. ΕΑΝ ΕΧΕΤΕ ΜΟΝΟ ΕΝΑ JOYSTICK, ΔΙΑΜΟΡΦΩΣΤΕ ΤΑ ΠΛΗΚΤΡΑ ΚΑΤΕΥΘΥΝΣΕΩΝ ΚΑΙ ΠΑΡΑΒΛΕΨΤΕ ΤΗ ΔΙΑΜΟΡΦΩΣΗ ΤΟΥ JOYSTICK ΚΡΑΤΩΝΤΑΣ ΠΑΤΗΜΕΝΟ ΕΝΑ ΠΛΗΚΤΡΟ. ΕΑΝ ΔΕΝ ΔΙΑΘΕΤΕΤΕ ΕΙΔΙΚΟ ΠΛΗΚΤΡΟ ΓΙΑ HOTKEY ΠΡΟΣΒΑΣΗΣ, ΕΠΙΛΕΞΤΕ ΤΟ ΚΟΥΜΠΙ ΕΠΙΛΟΓΗΣ (SELECT). ΠΑΡΑΛΕΙΨΤΕ ΟΛΑ ΤΑ ΚΟΥΜΠΙΑ ΠΟΥ ΔΕΝ ΕΧΕΤΕ ΚΡΑΤΑΟΝΤΑΣ ΠΑΤΗΜΕΝΟ ΕΝΑ ΠΛΗΚΤΡΟ. ΤΑ ΟΝΟΜΑΤΑ ΚΟΥΜΠΙΩΝ ΒΑΣΙΖΟΝΤΑΙ ΣΤΟ ΧΕΙΡΙΣΤΗΡΙΟ NINTENDO."
 
 #. GUIMENU
 #: 
+
 msgid "CONFIGURE A CONTROLLER"
 msgstr "ΔΙΑΜΟΡΦΩΣΗ ΧΕΙΡΙΣΤΗΡΙΟΥ"
 
 #. Bluetooth
 #: 
+
 msgid "CONTROLLER PAIRED"
 msgstr "ΤΟ ΧΕΙΡΙΣΤΗΡΙΟ ΣΥΝΔΕΘΗΚΕ"
 
 #: 
+
 msgid "UNABLE TO PAIR CONTROLLER"
 msgstr "ΑΔΥΝΑΜΙΑ ΣΥΖΕΥΞΗΣ ΧΕΙΡΙΣΤΗΡΙΟΥ"
 
 #: 
+
 msgid "AN ERROR OCCURED"
 msgstr "ΠΑΡΟΥΣΙΑΣΤΗΚΕ ΣΦΑΛΜΑ
 
 #: 
+
 msgid "NO CONTROLLERS FOUND"
 msgstr "ΔΕΝ ΒΡΕΘΗΚΕ ΧΕΙΡΙΣΤΗΡΙΟ"
 
 #: 
+
 msgid "PAIR A BLUETOOTH CONTROLLER"
 msgstr "ΣΥΝΔΕΕΣΤΕ ΕΝΑ ΧΕΙΡΙΣΤΗΡΙΟ BLUETOOTH"
 
 #: 
+
 msgid "CONTROLLERS LINKS HAVE BEEN DELETED."
 msgstr "Η ΣΥΖΕΥΞΗ ΤΟΥ ΧΕΙΡΙΣΤΗΡΙΟΥ ΔΙΑΓΡΑΦΗΚΕ."
 
 #: 
+
 msgid "FORGET BLUETOOTH CONTROLLERS"
 msgstr "ΔΙΕΓΡΑΨΕ ΤΟ ΧΕΙΡΙΣΤΗΡΙΟ BLUETOOTH"
 
 #: 
+
 msgid "INPUT P%i"
 msgstr "ΕΙΣΑΓΩΓΗ %i"
 
 #: 
+
 msgid "CHOOSE"
 msgstr "ΕΠΙΛΟΓΗ"
 
 #: 
+
 msgid "SELECT"
 msgstr "ΕΠΕΛΕΞΕ"
 
 #: 
+
 msgid "OPTIONS"
 msgstr "ΡΥΘΜΙΣΕΙΣ"
 
 #: 
+
 msgid "JUMP TO LETTER"
 msgstr "ΜΕΤΑΒΑΣΗ ΣΤΟ ΣΤΟΙΧΕΙΟ"
 
 #: 
+
 msgid "SORT GAMES BY"
 msgstr "ΤΑΞΙΝΟΜΗΣΗ ΠΑΙΧΝΙΔΙΩΝ ΑΝΑ:"
 
 #. FAVORITES
 #: 
+
 msgid "FAVORITES ONLY"
 msgstr "ΑΓΑΠΠΗΜΕΝΑ"
 
 #: 
+
 msgid "EDIT THIS GAME'S METADATA"
 msgstr "ΕΠΕΞΕΡΓΑΣΙΑ ΔΕΔΟΜΕΝΩΝ ΑΥΤΟΥ ΤΟΥ ΠΑΙΧΝΙΔΙΟΥ"
 
 #: 
+
 msgid "SCRAPE THESE GAMES"
 msgstr "ΣΑΡΩΣΤE ΑΥΤΑ ΤΑ ΠΑΙΧΝΙΔΙΑ"
 
 #: 
+
 msgid "All Games"
 msgstr "ΟΛΑ  ΤΑ ΠΑΙΧΝΙΔΙΑ"
 
 #. MISSING SCRAPPER TRANSLATIONS
 #: 
+
 msgid "Only missing image"
 msgstr "ΜΟΝΟ ΕΛΛΕΙΠΗΣ ΕΙΚΟΝΕΣ"
 
 #: 
+
 msgid "FILTER"
 msgstr "ΦΙΛΤΡΟ"
 
 #: 
+
 msgid "SCRAPE THESE SYSTEMS"
 msgstr "ΣΑΡΩΣΤΕ ΑΥΤΑ ΤΑ ΣΥΣΤΗΜΑΤΑ"
 
 #: 
+
 msgid "SYSTEMS"
 msgstr "ΣΥΣΤΗΜΑΤΑ"
 
 #: 
+
 msgid "USER DECIDES ON CONFLICTS"
 msgstr "ΝΑ ΑΠΟΦΑΣΙΣΕΙ Ο ΧΡΗΣΤΗΣ ΓΙΑ ΤΙΣ ΔΙΑΦΟΡΕΣ "
 
 #: 
+
 msgid "START"
 msgstr "ΕΝΑΡΞΗ"
 
 #: 
+
 msgid "WARNING: SOME OF YOUR SELECTED SYSTEMS DO NOT HAVE A PLATFORM SET. RESULTS MAY BE EVEN MORE INACCURATE THAN USUAL!\n"
 "CONTINUE ANYWAY?"
 msgstr "ΠΡΟΕΙΔΟΠΟΙΗΣΗ: ΜΕΡΙΚΑ ΑΠΟ ΤΑ ΕΠΙΛΕΓΜΕΝΑ ΣΑΣ ΣΥΣΤΗΜΑΤΑ ΔΕΝ ΕΧΟΥΝ ΡΥΘΜΙΣΜΕΝΗ ΚΑΠΟΙΑ ΠΛΑΤΦΟΡΜΑ. ΤΑ ΑΠΟΤΕΛΕΣΜΑΤΑ ΜΠΟΡΕΙ ΝΑ ΕΙΝΑΙ ΑΚΟΜΑ ΠΙΟ ΑΝΑΚΡΙΒΗ ΑΠΟ ΤΑ ΣΥΝΗΘΙΣΜΕΝΑ!\n"
 "ΣΙΓΟΥΡΑ ΘΕΛΕΤΕ ΝΑ ΣΥΝΕΧΙΣΕΤΕ;"
 
 #: 
+
 msgid "NO GAMES FIT THAT CRITERIA."
 msgstr "ΔΕΝΥΠΑΡΧΟΥΝ ΠΑΙΧΝΙΔΙΑ ΜΕ ΑΥΤΑ ΤΑ ΚΡΙΤΗΡΙΑ."
 
 #: 
+
 msgid "REALLY UPDATE?"
 msgstr "ΝΑ ΓΙΝΕΙ ΑΝΑΒΑΘΜΙΣΗ ΤΟΥ ΣΥΣΤΗΜΑΤΟΣ;"
 
 #: 
+
 msgid "NETWORK CONNECTION NEEDED"
 msgstr "ΧΡΕΙΑΖΕΤΑΙ ΣΥΝΔΕΣΗ ΔΙΚΤΥΟΥ"
 
 #: 
+
 msgid "UPDATE DOWNLOADED, THE SYSTEM WILL NOW REBOOT"
 msgstr "ΕΓΙΝΕ Η ΛΗΨΗ ΤΗΣ ΕΝΗΜΕΡΩΣΗΣ, ΘΑ ΓΙΝΕΙ ΕΠΑΝΕΚΚΙΝΗΣΗ ΣΥΣΤΗΜΑΤΟΣ"
 
 #: 
+
 msgid "UPDATE FAILED, THE SYSTEM WILL NOW REBOOT"
 msgstr "ΣΦΑΛΜΑ ΛΗΨΗΣ ΤΗΣ ΕΝΗΜΕΡΩΣΗΣ, ΘΑ ΓΙΝΕΙ ΕΠΑΝΕΚΚΙΝΗΣΗ ΣΥΣΤΗΜΑΤΟΣ"
 
 #: 
+
 msgid "NO UPDATE AVAILABLE"
 msgstr "ΔΕΝ ΥΠΑΡΧΕΙ ΔΙΑΘΕΣΙΜΗ ΕΝΗΜΕΡΩΣΗ"
 
 #: 
+
 msgid "enter emulator"
 msgstr "εισάγετε τον εξομοιωτή"
 
 #: 
+
 msgid "enter core"
 msgstr "εισάγετε τον πυρήνα"
 
 #: 
+
 msgid "Ratio"
 msgstr "Αναλογία"
 
 #: 
+
 msgid "enter ratio"
 msgstr "εισαγάγετε αναλογία"
 
 #: 
+
 msgid "Name"
 msgstr "Ονομα"
 
 #: 
+
 msgid "enter game name"
 msgstr "εισάγετε το όνομα του παιχνιδιού"
 
 #: 
+
 msgid "Description"
 msgstr "Περιγραφή"
 
 #: 
+
 msgid "enter description"
 msgstr "εισάγετε περιγραφή"
 
 #: 
+
 msgid "Image"
 msgstr "Εικόνα"
 
 #: 
+
 msgid "enter path to image"
 msgstr "εισάγετε τη διαδρομή εικόνας"
 
 #: 
+
 msgid "Thumbnail"
 msgstr "Μικρογραφία"
 
 #: 
+
 msgid "enter path to thumbnail"
 msgstr "εισάγετε τη διαδρομή της μικρογραφίας"
 
 #: 
+
 msgid "enter rating"
 msgstr "εισάγετε βαθμολογία"
 
 #: 
+
 msgid "Release date"
 msgstr "Ημερομηνία κυκλοφορίας"
 
 #: 
+
 msgid "enter release date"
 msgstr "εισάγετε την ημερομηνία κυκλοφορίας"
 
 #: 
+
 msgid "enter game developer"
 msgstr "εισαγάγετε τον προγραμματιστή του παιχνιδιού"
 
 #: 
+
 msgid "enter game publisher"
 msgstr "εισαγάγετε τον εκδότη του παιχνιδιού"
 
 #: 
+
 msgid "enter game genre"
 msgstr "εισάγετε το είδος του παιχνιδιού"
 
 #: 
+
 msgid "enter number of players"
 msgstr "εισάγετε τον αριθμό των παικτών"
 
 #: 
+
 msgid "Favorite"
 msgstr "Αγαπημένα"
 
 #: 
+
 msgid "entrer le favori"
 msgstr "προσθήκη στα αγαπημένα"
 
 #: 
+
 msgid "Region"
 msgstr "Περιοχή"
 
 #: 
+
 msgid "enter region"
 msgstr "εισαγάγετε την περιοχή"
 
 #: 
+
 msgid "Romtype"
 msgstr "Τύπος rom"
 
 #: 
+
 msgid "enter romtype"
 msgstr "εισάγετε τον τύπο της rom"
 
 #: 
+
 msgid "Hidden"
 msgstr "Κρυφό"
 
 #: 
+
 msgid "HIDDEN"
 msgstr "Κρυφό"
 
 #: 
+
 msgid "NAME"
 msgstr "ΟΝΟΜΑ"
 
 #: 
+
 msgid "EMULATOR"
 msgstr "Εξομοιωτής"
 
 #: 
+
 msgid "FAVORITE"
 msgstr "ΑΓΑΠΗΜΕΝΑ"
 
 #: 
+
 msgid "set hidden"
 msgstr "επισημάνετε ως κρυφό"
 
 #: 
+
 msgid "Play count"
 msgstr "φορές που παίχτηκε"
 
 #: 
+
 msgid "enter number of times played"
 msgstr "εισάγετε τον αριθμό των φορών που παίχτηκαν"
 
 #: 
+
 msgid "Last played"
 msgstr "Αυτά που παίξατε τελευταία φορά "
 
 #: 
+
 msgid "enter last played date"
 msgstr "εισάγετε την τελευταία φορά που παίξατε το παιχνίδι"
 
 #: 
+
 msgid "GAMES AVAILABLE"
 msgstr "ΔΙΑΘΕΣΙΜΑ ΠΑΙΧΝΙΔΙΑ"
 
 #: 
+
 msgid "%i FAVORITE"
 msgid_plural "%i FAVORITES"
 msgstr[0] "%i ΑΓΑΠΗΜΕΝΟ"
 msgstr[1] "%i ΑΓΑΠΗΜΕΝΑ"
 
 #: 
+
 msgid "SCROLL"
 msgstr "ΟΛΙΣΘΗΣΗ"
 
 #: 
+
 msgid "LAUNCH"
 msgstr "ΕΚΚΙΝΗΣΗ"
 
 #: 
+
 msgid "Times played"
 msgstr "Φορές που παίχτηκε"
 
 #: 
+
 msgid "MENU"
 msgstr "ΜΕΝΟΥ"
 
 #: 
+
 msgid "FILENAME, ASCENDING"
 msgstr "ΟΝΟΜΑ ΑΡΧΕΙΟΥ, ΑΥΞΟΥΣΑ"
 
 #: 
+
 msgid "FILENAME, DESCENDING"
 msgstr "ΟΝΟΜΑ ΑΡΧΕΙΟΥ, ΦΘΙΝΟΥΣΑ"
 
 #: 
+
 msgid "RATING, ASCENDING"
 msgstr "ΒΑΘΜΟΛΟΓΙΑ, ΑΥΞΟΥΣΑ"
 
 #: 
+
 msgid "RATING, DESCENDING"
 msgstr "ΒΑΘΜΟΛΟΓΙΑ, ΦΘΙΝΟΥΣΑ"
 
 #: 
+
 msgid "TIMES PLAYED, ASCENDING"
 msgstr "ΦΟΡΕΣ ΠΟΥ ΕΠΑΙΞΕ, ΑΥΞΟΥΣΑ"
 
 #: 
+
 msgid "TIMES PLAYED, DESCENDING"
 msgstr "ΦΟΡΕΣ ΠΟΥ ΕΠΑΙΞΕ, ΦΘΙΝΟΥΣΑ"
 
 #: 
+
 msgid "LAST PLAYED, ASCENDING"
 msgstr "ΤΕΛΕΥΤΑΙΑ ΦΟΡΑ ΠΟΥ ΕΠΑΙΞΕ, ΑΥΞΟΥΣΑ"
 
 #: 
+
 msgid "LAST PLAYED, DESCENDING"
 msgstr "ΤΕΛΕΥΤΑΙΑ ΦΟΡΑ ΠΟΥ ΕΠΑΙΞΕ, ΦΘΙΝΟΥΣΑ"
 
 #: 
+
 msgid "WORKING..."
 msgstr "ΔΟΥΛΕΥΕΙ..."
 
 #: 
+
 msgid "CHANGE"
 msgstr "ΑΛΛΑΓΗ"
 
 #: 
+
 msgid "never"
 msgstr "ποτέ"
 
 #: 
+
 msgid "just now"
 msgstr "τώρα"
 
 #: 
+
 msgid "%i sec ago"
 msgid_plural "%i secs ago"
 msgstr[0] "hace %i δευτερόλεπτα"
 msgstr[1] "hace %i δευτερόλεπτα"
 
 #: 
+
 msgid "%i min ago"
 msgid_plural "%i mins ago"
 msgstr[0] "hace %i πριν από λεπτά"
 msgstr[1] "hace %i πριν από λεπτά"
 
 #: 
+
 msgid "%i hour ago"
 msgid_plural "%i hours ago"
 msgstr[0] "hace %i ώρες πριν"
 msgstr[1] "hace %i ώρες πριν"
 
 #: 
+
 msgid "%i day ago"
 msgid_plural "%i days ago"
 msgstr[0] "hace %i ημέρες πριν"
 msgstr[1] "hace %i ημέρες πριν"
 
 #: 
+
 msgid "unknown"
 msgstr "άγνωστο"
 
 #: 
+
 msgid "SELECT ALL"
 msgstr "ΕΠΙΛΟΓΗ ΟΛΩΝ"
 
 #: 
+
 msgid "SELECT NONE"
 msgstr "ΚΑΜΙΑ ΕΠΙΛΟΓΗ"
 
 #: 
+
 msgid "%i SELECTED"
 msgid_plural "%i SELECTED"
 msgstr[0] "%i ΕΠΙΛΕΓΜΕΝΟ"
 msgstr[1] "%i ΕΠΙΛΕΓΜΕΝΟ"
 
 #: 
+
 msgid "UP"
 msgstr "ΠΑΝΩ"
 
 #: 
+
 msgid "DOWN"
 msgstr "ΚΑΤΩ"
 
 #: 
+
 msgid "LEFT"
 msgstr "ΑΡΙΣΤΕΡΑ"
 
 #: 
+
 msgid "RIGHT"
 msgstr "ΔΕΞΙΑ"
 
 #: 
+
 msgid "JOYSTICK 1 UP"
 msgstr "JOYSTICK 1 ΠΑΝΩ"
 
 #: 
+
 msgid "JOYSTICK 1 LEFT"
 msgstr "JOYSTICK 1 ΑΡΙΣΤΕΡΑ"
 
 #: 
+
 msgid "JOYSTICK 2 UP"
 msgstr "JOYSTICK 2 ΠΑΝΩ"
 
 #: 
+
 msgid "JOYSTICK 2 LEFT"
 msgstr "JOYSTICK 2 ΑΡΙΣΤΕΡΑ"
 
 #: 
+
 msgid "PAGE UP"
 msgstr "L1 (ΣΕΛΙΔΑ ΠΑΝΩ)"
 
 #: 
+
 msgid "PAGE DOWN"
 msgstr "R1 (ΣΕΛΙΔΑ ΚΑΤΩ)"
 
 #: 
+
 msgid "HOTKEY"
 msgstr "HOTKEY"
 
 #: 
+
 msgid "CONFIGURING"
 msgstr "ΔΙΑΜΟΡΦΩΣΗ"
 
 #: 
+
 msgid "KEYBOARD"
 msgstr "ΠΛΗΚΤΡΟΛΟΓΙΟ"
 
 #: 
+
 msgid "GAMEPAD %i"
 msgstr "ΧΕΙΡΙΣΤΗΡΙΟ %i"
 
 #. Config controllers missing translation
 #: 
+
 msgid "PRESS ANYTHING"
 msgstr "ΠΑΤΗΣΤΕ ΟΠΟΙΟΔΗΠΟΤΕ ΚΟΥΜΠΙ"
 
 #: 
+
 msgid "ALREADY TAKEN"
 msgstr "ΗΔΗ ΠΙΑΣΜΕΝΟ"
 
 #: 
+
 msgid "DISCARD CHANGES"
 msgstr "ΑΠΟΡΡΙΨΤΕ ΤΙΣ ΑΛΛΑΓΕΣ"
 
 #: 
+
 msgid "WELCOME"
 msgstr "ΚΑΛΩΣ ΗΡΘΑΤΕ"
 
 #: 
+
 msgid "CONFIGURE INPUT"
 msgstr "ΔΙΑΜΟΡΦΩΣΗ ΕΝΤΟΛΗΣ"
+
 
 msgid "THIS OPTION IS FOR CONFIGURING EXTERNAL CONTROLLERS"
 msgstr "Αυτή η επιλογή είναι για εξωτερικούς ελεγκτές"
 
+
 msgid "NOT REMAPPING THE BUILT-IN CONTROLS"
 msgstr "Όχι για επαναφορά ενσωματωμένων κουμπιών"
+
 
 msgid "DO YOU WANT TO CONTINUE?"
 msgstr "Θέλετε να συνεχίσετε?"
 
+
 msgid "JOYPAD TEST"
 msgstr "Δοκιμή χειριστηρίου"
+
 
 msgid "ARE YOU SURE YOU WANT TO TEST JOYPAD?"
 msgstr "Είστε βέβαιοι ότι θέλετε να δοκιμάσετε το χειριστήριο;"
 msgstr "ΔΙΑΜΟΡΦΩΣΗ ΕΝΤΟΛΗΣ"
 
 #: 
+
 msgid "%i GAMEPAD DETECTED"
 msgid_plural "%i GAMEPADS DETECTED"
 msgstr[0] "%i ΑΝΙΧΝΕΥΤΗΚΕ ΧΕΙΡΙΣΤΗΡΙΟ"
 msgstr[1] "%i ΑΝΙΧΝΕΥΤΗΚΑΝ ΧΕΙΡΙΣΤΗΡΙΑ"
 
 #: 
+
 msgid "NO GAMEPADS DETECTED"
 msgstr "ΔΕΝ ΕΝΤΟΠΙΣΤΗΚΑΝ ΧΕΙΡΙΣΤΗΡΙΑ"
 
 #: 
+
 msgid "HOLD A BUTTON ON YOUR DEVICE TO CONFIGURE IT."
 msgstr "ΚΡΑΤΗΣΤΕ ΠΙΕΣΜΕΝΟ ΕΝΑ ΠΛΗΚΤΡΟ ΓΙΑ ΝΑ ΡΥΘΜΙΣΕΤΕ ΤΟ ΤΗΛΕΧΕΙΡΙΣΤΗΡΙΟ"
 
 #: 
+
 msgid "PRESS F4 TO QUIT AT ANY TIME."
 msgstr "ΠΙΕΣΤΕ ΤΟ ΠΛΗΚΤΡΟ F4 ΓΙΑ ΕΞΟΔΟ ΑΝΑ ΠΑΣΑ ΣΤΙΓΜΗ"
 
 #: 
+
 msgid "PRESS ESC OR THE HOTKEY TO CANCEL."
 msgstr "ΠΙΕΣΤΕ ΤΟ ΠΛΗΚΤΡΟ ESC Ή ΚΑΠΟΙΑ HOTKEY ΓΙΑ ΑΚΥΡΩΣΗ"
 
 #: 
+
 msgid "DO YOU WANT TO START KODI MEDIA CENTER ?"
 msgstr "ΘΕΛΕΤΕ ΝΑ ΕΚΚΙΝΗΣΕΤΕ ΤΟ KODI;"
 
 #: 
+
 msgid "LOADING..."
 msgstr "ΦΟΡΤΩΣΗ..."
 
 #: 
+
 msgid "PLEASE WAIT..."
 msgstr "ΠΑΡΑΚΑΛΩ ΠΕΡΙΜΕΝΕΤΕ..."
 
 #: 
+
 msgid "REALLY SHUTDOWN WITHOUT SAVING METADATAS?"
 msgstr "ΣΙΓΟΥΡΑ ΑΠΕΝΕΡΓΟΠΟΙΗΣΗ ΧΩΡΙΣ ΑΠΟΘΗΚΕΥΣΗ ΔΕΔΟΜΕΝΩΝ;"
 
 #: 
+
 msgid "FAST SHUTDOWN SYSTEM"
 msgstr "ΓΡΗΓΟΡΗ ΑΠΕΝΕΡΓΟΠΟΙΗΣΗ ΣΥΣΤΗΜΑΤΟΣ"
 
 #: 
+
 msgid "WE CAN'T FIND ANY SYSTEMS!\n"
 "CHECK THAT YOUR PATHS ARE CORRECT IN THE SYSTEMS CONFIGURATION FILE, AND YOUR GAME DIRECTORY HAS AT LEAST ONE GAME WITH THE CORRECT EXTENSION.\n"
 "\n"
@@ -1222,195 +1510,242 @@ msgstr "ΔΕΝ ΜΠΟΡΟΥΜΕ ΝΑ ΒΡΟΥΜΕ ΚΑΠΟΙΟ ΣΥΣΤΗΜΑ!\n
 "ΕΠΙΣΚΕΦΤΕΙΤΕ ΤΟ EMULATIONSTATION.ORG ΓΙΑ ΠΕΡΙΣΣΟΤΕΡΕΣ ΠΛΗΡΟΦΟΡΙΕΣ."
 
 #: 
+
 msgid "ON SCREEN KEYBOARD"
 msgstr "ΠΛΗΚΤΡΟΛΟΓΙΟ ΟΘΟΝΗΣ"
 
 #: 
+
 msgid "SHIFTS FOR UPPER,LOWER, AND SPECIAL"
 msgstr "ΠΑΤΗΣΤΕ ΤΟ ΠΛΗΚΤΡΟ SHIFT ΓΙΑ ΑΛΛΑΓΗ"
 
 #: 
+
 msgid "SPACE"
 msgstr "ΚΕΝΟ"
 
 #: 
+
 msgid "DELETE A CHAR"
 msgstr "ΔΙΑΓΡΑΨΤΕ ΕΝΑΝ ΧΑΡΑΚΤΗΡΑ"
 
 #: 
+
 msgid "SHIFT"
 msgstr "ΑΛΛΑΓΗ"
 
 #: 
+
 msgid "STOP EDITING"
 msgstr "ΣΤΑΜΑΤΗΣΤΕ ΤΗΝ ΕΠΕΞΕΡΓΑΣΙΑ"
 
 #: 
+
 msgid "MOVE CURSOR"
 msgstr "ΚΙΝΗΣΤΕ ΤΟΝ ΔΡΟΜΕΑ"
 
 #: 
+
 msgid "EDIT"
 msgstr "ΕΠΕΞΕΡΓΑΣΙΑ"
 
 #: 
+
 msgid "ACCEPT RESULT"
 msgstr "ΑΠΟΔΕΧΤΕΙΤΕ ΤΟ ΑΠΟΤΕΛΕΣΜΑ"
 
 #: 
+
 msgid "FILENAME"
 msgstr "ΟΝΟΜΑ ΑΡΧΕΙΟΥ
 
 #: 
+
 msgid "RATING"
 msgstr "ΑΞΙΟΛΟΓΗΣΗ"
 
 #: 
+
 msgid "PLAYED GAMES"
 msgstr "ΠΑΙΧΝΙΔΙΑ ΠΟΥ ΠΑΙΧΘΗΚΑΝ"
 
 #: 
+
 msgid "LAST PLAYED"
 msgstr "ΠΑΙΧΘΗΚΑΝ ΤΕΛΕΥΤΑΙΑ ΦΟΡΑ"
 
 #: 
+
 msgid "NUMBER OF PLAYERS"
 msgstr "ΑΡΙΘΜΟΣ ΠΑΙΚΤΩΝ"
 
 #: 
+
 msgid "DEVELOPER"
 msgstr "ΠΡΟΓΡΑΜΜΑΤΙΣΤΗΣ"
 
 #: 
+
 msgid "GENRE"
 msgstr "ΓΕΝΟΣ
 
 #: 
+
 msgid "SHOW HIDDEN"
 msgstr "ΕΜΦΑΝΙΣΗ ΚΡΥΦΩΝ"
 
 #: 
+
 msgid "EXTREM (1400Mhz)"
 msgstr "ΜΕΓΙΣΤΟ (1400MHz)"
 
 #: 
+
 msgid "TURBO (1350Mhz)"
 msgstr "ΤΟΥΡΜΠΟ (1350MHz)"
 
 #: 
+
 msgid "HIGH (1300Mhz)"
 msgstr "ΥΨΗΛΟ (1300MHz)"
 
 #: 
+
 msgid "TURBO AND EXTREM OVERCLOCK PRESETS MAY CAUSE SYSTEM UNSTABILITIES, SO USE THEM AT YOUR OWN RISK.\n"
 "IF YOU CONTINUE, THE SYSTEM WILL REBOOT NOW."
 msgstr "ΤΟ TURBO ΚΑΙ ΤΟ EXTREME ΜΠΟΡΕΙ ΝΑ ΠΡΟΚΑΛΟΥΝ ΑΣΤΑΘΕΙΑ ΤΟΥ ΣΥΣΤΗΜΑΤΟΣ ΛΟΓΩ ΥΠΕΡΦΟΡΤΙΣΗΣ, ΟΠΟΤΕ ΧΡΗΣΙΜΟΠΟΙΗΣΤΕ ΤΑ ΜΕ ΔΙΚΗ ΣΑΣ ΕΥΘΥΝΗ.\n"
 "ΑΝ ΣΥΝΕΧΙΣΕΤΕ, ΤΟ ΣΥΣΤΗΜΑ ΘΑ ΕΠΑΝΕΚΚΙΝΗΘΕΙ ΤΩΡΑ."
 
 #: 
+
 msgid "%i GAME HIDDEN"
 msgid_plural "%i GAMES HIDDEN"
 msgstr[0] "%i ΚΡΥΦΟ ΠΑΙΧΝΙΔΙ"
 msgstr[1] "%i ΚΡΥΦΑ ΠΑΙΧΝΙΔΙΑ"
 
 #: 
+
 msgid "Start kodi media player."
 msgstr "ΕΚΚΙΝΗΣΗ ΤΟΥ KODI"
 
 #: 
+
 msgid "Select the language for your recalbox, select an external drive to store your games and configurations, check your current version and the free space on your drive"
 msgstr "Επιλέξτε τη γλώσσα για το recallbox σας, επιλέξτε μια εξωτερική μονάδα δίσκου για να αποθηκεύσετε τα παιχνίδια και τις ρυθμίσεις σας, ελέγξτε την τρέχουσα έκδοση και τον ελεύθερο χώρο στη μονάδα δίσκου σας"
 
 #:
+
 msgid "Configure games display, ratio, filters (shaders), auto save and load and retroachievement account."
 msgstr "Ρυθμίστε την οθόνη του παιχνιδιού, την αναλογία διαστάσεων, τα φίλτρα (shaders), την αυτόματη αποθήκευση και τον λογαριασμο retroachievement"
 
 #: 
+
 msgid "The game ratio is the ratio between image width and image height. Use AUTO to let the emulator choose the original game ratio, that will give you the best retrogaming experience."
 msgstr "Η αναλογία διαστάσεων του παιχνιδιού είναι η αναλογία μεταξύ του πλάτους της εικόνας και του ύψους της εικόνας. Χρησιμοποιήστε το AUTO για να αφήσετε τον εξομοιωτή να επιλέξει την αναλογία διαστάσεων του αρχικού παιχνιδιού, που θα σας προσφέρει την καλύτερη εμπειρία retrogaming."
 
 #: 
+
 msgid "Smooth the game image. This option makes the image smoother, using bilinear filtering."
 msgstr "Ομαλή εικόνα παιχνιδιού. Αυτή η επιλογή κάνει την εικόνα πιο ομαλή, χρησιμοποιώντας ένα διγραμμικό φίλτρο."
 
 #: 
+
 msgid "This option allows you to rewind the game if you get killed by a monster, or if you make any other mistake. Use the HOTKEY + LEFT command within the game to rewind."
 msgstr "Αυτή η επιλογή σάς επιτρέπει να επαναφέρετε το παιχνίδι εάν σκοτωθείτε από ένα τέρας ή εάν κάνετε κάποιο άλλο λάθος. Χρησιμοποιήστε την εντολή HOTKEY + LEFT μέσα στο παιχνίδι για επαναφορά."
 
 #: 
+
 msgid "Auto save the state when you quit a game, and auto load last saved state when you start a game."
 msgstr "Αυτόματη αποθήκευση κατάστασης κατά την έξοδο από ένα παιχνίδι και αυτόματη φόρτωση της τελευταίας αποθηκευμένης κατάστασης κατά την εκκίνηση ενός παιχνιδιού."
 
 #: 
+
 msgid "Integer scaling is scaling by a factor of a whole number, such as 2x, 3x, 4x, etc. This option scales the image up to the greatest integer scale below the set resolution. So for instance, if you set your fullscreen resolution to 1920x1080 and enable integer scaling, it will only scale a 320x240 image up to 1280x960, and leave black borders all around. This is to maintain a 1:1 pixel ratio with the original source image, so that pixels are not unevenly duplicated."
 msgstr "Η κλιμάκωση ακέραιου αριθμού είναι η κλιμάκωση με έναν παράγοντα ακέραιου αριθμού, όπως 2x, 3x, 4x κ.λπ. Αυτή η επιλογή κλιμακώνει την εικόνα στη μεγαλύτερη ακέραια κλίμακα κάτω από την καθορισμένη ανάλυση. Για παράδειγμα, εάν ορίσετε την ανάλυση πλήρους οθόνης σε 1920x1080 και ενεργοποιήσετε την κλιμάκωση ακέραιου αριθμού, θα κλιμακώσει μια εικόνα 320x240 μόνο σε 1280x960, αφήνοντας μαύρα περιγράμματα γύρω της. Αυτό γίνεται για να διατηρηθεί μια αναλογία εικονοστοιχείων 1:1 με την αρχική εικόνα προέλευσης, έτσι ώστε τα εικονοστοιχεία να μην αναπαράγονται άνισα."
 
 #: 
+
 msgid "Shaders are like filters for the game rendering. You can select a shader set here, which is a collection of shaders selected for each system. You can also change the shader within the game with HOTKEY + L2 or HOTKEY + R2."
 msgstr "Τα Shaders είναι σαν φίλτρα για την απόδοση του παιχνιδιού. Μπορείτε να επιλέξετε ένα σύνολο shaders εδώ, υπάρχει μια συλλογή shaders για να επιλέξετε σε κάθε σύστημα. Μπορείτε επίσης να αλλάξετε το shader στο παιχνίδι με το HOTKEY + L2 ή το HOTKEY + R2"
 
 #: 
+
 msgid "Enable or disable RetroAchievements in games."
 msgstr "Ενεργοποιήστε ή απενεργοποιήστε τα RetroAchievements σε παιχνίδια."
 
 #: 
+
 msgid "Hardcore mode disables *all* savestate and rewind functions within the emulator: you will not be able to save and reload at any time. You will have to complete the game and get the achievements first time, just like on the original console. In reward for this, you will earn both the standard and the hardcore achievement, in effect earning double points! A regular game worth 400 points, is now worth 800 if you complete it on hardcore! For example: if you complete the game for 400 points, you then have the opportunity to earn another 400 on hardcore."
 msgstr "Η λειτουργία σκληρού πυρήνα απενεργοποιεί *όλες* τις λειτουργίες αποθήκευσης κατάστασης και επαναφοράς εντός του εξομοιωτή - δεν θα μπορείτε να αποθηκεύσετε ή να φορτώσετε ξανά οποιαδήποτε στιγμή. Θα χρειαστεί να ολοκληρώσετε το παιχνίδι και να κερδίσετε τα επιτεύγματα για πρώτη φορά, όπως και στην αρχική κονσόλα. Ως ανταμοιβή για αυτό, θα λάβετε τόσο το τυπικό επίτευγμα όσο και το επίτευγμα σκληροπυρηνικών, πράγμα που θα σας διπλασιάσει τους πόντους! Ένα κανονικό παιχνίδι αξίας 400 πόντων αξίζει τώρα 800 αν το ολοκληρώσετε σε σκληροπυρηνικό επίπεδο!Η λειτουργία σκληρού πυρήνα απενεργοποιεί *όλα* τις λειτουργίες αποθήκευσης κατάστασης και επαναφοράς εντός του εξομοιωτή - δεν θα μπορείτε να αποθηκεύσετε ή να φορτώσετε ξανά οποιαδήποτε στιγμή. Θα χρειαστεί να ολοκληρώσετε το παιχνίδι και να κερδίσετε τα επιτεύγματα για πρώτη φορά, όπως και στην αρχική κονσόλα. Ως ανταμοιβή για αυτό, θα λάβετε τόσο το τυπικό επίτευγμα όσο και το επίτευγμα σκληροπυρηνικών, πράγμα που θα σας διπλασιάσει τους πόντους! Ένα κανονικό παιχνίδι αξίας 400 πόντων αξίζει τώρα 800 αν το ολοκληρώσετε σε σκληροπυρηνικό επίπεδο!\n"
 "Για παράδειγμα: αν ολοκληρώσετε το παιχνίδι για 400 πόντους, τότε έχετε την ευκαιρία να κερδίσετε άλλους 400 σε hardcore."
 
 #: 
+
 msgid "The website retroachievements.org proposes challenges/achievements/trophies on platforms like NES, SNES, GB, GBC, GBA, Genesis/Megadrive, TurboGrafx16/PCEngine and more! Create your account on retroachievements.org and start your quest for achievements!"
 msgstr "Ο ιστότοπος retroachievements.org προτείνει προκλήσεις / επιτεύγματα / τρόπαια σε πλατφόρμες όπως NES, SNES, GB, GBC, GBA, Genesis / Megadrive, TurboGrafx16 / PCEngine και άλλα! Δημιουργήστε τον λογαριασμό σας στο retroachievements.org και ξεκινήστε την αναζήτηση επιτευγμάτων!"
 
 #: 
+
 msgid "Add and configure up to 5 controllers."
 msgstr "Προσθέστε και διαμορφώστε έως και 5 τηλεχειριστήρια."
 
 #: 
+
 msgid "Start the screensaver after N minutes."
 msgstr "Ξεκινήστε την προφύλαξη οθόνης μετά από N λεπτά."
 
 #: 
+
 msgid "Set the screensaver behavior. DIM will reduce the screen light, and BLACK will turn the screen black."
 msgstr "Ρυθμίστε τη συμπεριφορά της προφύλαξης οθόνης. Το DIM θα μειώσει τη φωτεινότητα της οθόνης και το BLACK θα κάνει την οθόνη μαύρη."
 
 #: 
+
 msgid "Shows a help at the bottom of the screen which displays commands you can use."
 msgstr "Εμφανίζει ενα εργαλείο βοήθειας στο κάτω μέρος της οθόνης που δείχνει τις εντολές που μπορείτε να χρησιμοποιήσετε."
 
 #: 
+
 msgid "When enabled, you can switch between systems while browsing a gamelist by pressing LEFT or RIGHT."
 msgstr "Όταν είναι ενεργοποιημένο, μπορείτε να κάνετε εναλλαγή μεταξύ συστημάτων κατά την περιήγηση σε μια λίστα παιχνιδιών πατώντας το πλήκτρο ΑΡΙΣΤΕΡΑ ή ΔΕΞΙΑ."
 
 #: 
+
 msgid "Updates the gamelists, if you added games since the last boot."
 msgstr "Ανανεώνει τις λίστες παιχνιδιών, εάν προσθέσατε παιχνίδια από την τελευταία εκκίνηση."
 
 #: 
+
 msgid "Set the volume of the sound output for the frontend and the games."
 msgstr "Ρυθμίστε την ένταση του ήχου εξόδου για τη διεπαφή και τα παιχνίδια."
 
 #: 
+
 msgid "Get informations and visual for your games. The scraper downloads metadata and visuals for your games from different servers and enhances the user experience in EmulationStation completely."
 msgstr "Λάβετε πληροφορίες και εικόνες για τα παιχνίδια σας. Ο σαρωτής κατεβάζει δεδομένα και εικόνες για τα παιχνίδια σας από διαφορετικούς διακομιστές βελτιώνοντας πλήρως την εμπειρία χρήστη στο EmulationStation."
 
 #: 
+
 msgid "Select a server to scrape from. The SCREENSCRAPER server is recommended and is based on www.screenscraper.fr and scrapes game data in your language, if available."
 msgstr "Επιλέξτε έναν διακομιστή για σάρωση. Ο διακομιστής SCREENSCRAPER συνιστάται και βασίζεται στο www.screenscraper.fr και σαρώνει δεδομένα παιχνιδιού στη γλώσσα σας, εάν είναι διαθέσιμη."
 
 #: 
+
 msgid "Begin the scrape process with the configuration shown below."
 msgstr "Ξεκινήστε τη διαδικασία σάρωσης με τις ρυθμίσεις που φαίνονται παρακάτω."
 
 #: 
+
 msgid "Scrape and display game ratings."
 msgstr "Σάρωση και εμφάνιση βαθμολογιών των παιχνιδιών."
 
 #: 
+
 msgid "Advanced settings. Please make sure you really know what you're doing, before changing any values in this menu."
 msgstr "Προχωρημένες ρυθμίσεις. Βεβαιωθείτε ότι γνωρίζετε πραγματικά τι κάνετε πριν αλλάξετε οποιαδήποτε τιμή σε αυτό το μενού."
 
 #: 
+
 msgid "Overclock your board to increase the performance.\n"
 "Overclock settings are tested and validated by the community. Keep in mind that overclocking your board can void your warranty."
 msgstr "Υπερσυγχρονίστε τη μητρική σας για να αυξήσετε την απόδοση.\ n"
@@ -1418,991 +1753,1305 @@ msgstr "Υπερσυγχρονίστε τη μητρική σας για να α
 "Λάβετε υπόψη ότι το overclocking της πλακέτας σας μπορεί να ακυρώσει την εγγύησή σας."
 
 #: 
+
 msgid "Only show games contained in the gamelist.xml file (located in your roms directories).\n"
 "This option highly speeds up boot time, but new games will not be detected."
 msgstr "Εμφανίζει μόνο τα παιχνίδια που περιέχονται στο αρχείο gamelist.xml (που βρίσκεται στους καταλόγους της roms σας).\n"
 "Αυτή η επιλογή επιταχύνει πολύ τον χρόνο εκκίνησης, αλλά δεν θα εντοπιστούν νέα παιχνίδια."
 
 #: 
+
 msgid "This option allows you to set the selected system to fixed mode. With this option activated, the user cannot access other systems."
 msgstr "Αυτή η επιλογή σάς επιτρέπει να ρυθμίσετε το επιλεγμένο σύστημα σε σταθερή λειτουργία.\n"
 "Με αυτή την επιλογή ενεργοποιημένη, ο χρήστης δεν μπορεί να έχει πρόσβαση σε άλλα συστήματα."
 
 #: 
+
 msgid "Always display the basic gamelist view, even if you have scraped your games."
 msgstr "Να εμφανίζεται πάντα η βασική προβολή της λίστας παιχνιδιών, ακόμα κι αν έχετε σαρώσει τα παιχνίδια σας."
 
 #: 
+
 msgid "Enable or disable Kodi, customize the Kodi startup, enable the X button to start Kodi"
 msgstr "Ενεργοποιήστε ή απενεργοποιήστε το Kodi, προσαρμόστε την εκκίνηση του Kodi, ενεργοποιήστε το κουμπί X για εκκίνηση του Kodi."
 
 #: 
+
 msgid "Enable or disable Kodi. If kodi is disabled, you won't be able to start it with the X button, or start it automatically at boot. The menu entry will be removed as well."
 msgstr "Ενεργοποιήστε ή απενεργοποιήστε το Kodi. Εάν το Kodi είναι απενεργοποιημένο, δεν θα μπορείτε να το ξεκινήσετε με το κουμπί X ή να το ξεκινήσετε αυτόματα κατά την εκκίνηση. Η καταχώρηση μενού θα αφαιρεθεί."
 
 #: 
+
 msgid "Use the X button to start Kodi."
 msgstr "Χρησιμοποιήστε το κουμπί X για να εκκινήσετε το Kodi."
 
 #: 
+
 msgid "Automatically start into Kodi on boot."
 msgstr "Αυτόματη εκκίνηση του Kodi κατά την εκκίνηση."
 
 #: 
+
 msgid "Show the framerate in EmulationStation and in game."
 msgstr "Εμφάνιση ρυθμού καρέ στο EmulationStation εντός του παιχνιδιού."
 
 #: 
+
 msgid "Select which emulator to use when you start a game for this system."
 msgstr "Επιλέξτε τον εξομοιωτή που χρησιμοποιείται οταν το παιχνίδι εκκινηθεί για αυτό το σύστημα."
 
 #: 
+
 msgid "Select which core to use for the selected emulator. For example, the LIBRETRO emulator has many cores to run Super Nintendo games. The default core you choose here can also be overridden in game specific settings."
 msgstr "Επιλέξτε ποιος πυρήνας θα χρησιμοποιηθεί για τον επιλεγμένο εξομοιωτή. Για παράδειγμα, ο εξομοιωτής LIBRETRO έχει πολλούς πυρήνες για την εκτέλεση παιχνιδιών Super Nintendo. Ο προεπιλεγμένος πυρήνας που επιλέγετε εδώ μπορεί επίσης να παρακαμφθεί σε ρυθμίσεις ειδικά για το παιχνίδι."
 
 #: 
+
 msgid "USE COMPOSED VISUALS"
 msgstr "ΧΡΗΣΙΜΟΠΟΙΗΣΤΕ ΣΥΝΘΕΤΑ ΟΠΤΙΚΑ"
 
 #: 
+
 msgid "CHECK UPDATES"
 msgstr "ΕΛΕΓΞΤΕ ΓΙΑ ΕΝΗΜΕΡΩΣΕΙΣ"
 
 #: 
+
 msgid "UPDATE TYPE"
 msgstr "ΤΥΠΟΣ ΕΝΗΜΕΡΩΣΗΣ"
 
 #: 
+
 msgid "INTEGER SCALE (PIXEL PERFECT)"
 msgstr "ΚΛΙΜΑΚΑ ΑΚΕΡΑΙΩΝ (PIXEL PERFECT)"
 
 #: 
+
 msgid "ADVANCED SETTINGS"
 msgstr "ΠΡΟΧΩΡΗΜΕΝΕΣ ΡΥΘΜΙΣΕΙΣ"
 
 #: 
+
 msgid "BOOT SETTINGS"
 msgstr "ΡΥΘΜΙΣΕΙΣ ΕΚΚΙΝΗΣΗΣ"
 
 #: 
+
 msgid "GAMELIST ONLY"
 msgstr "ΜΟΝΟ ΛΙΣΤΑ ΠΑΙΧΝΙΔΙΩΝ"
 
 #: 
+
 msgid "START ON SYSTEM"
 msgstr "ΕΚΚΙΝΗΣΗ ΤΟ ΣΥΣΤΗΜΑΤΟΣ"
 
 #: 
+
 msgid "BOOT ON GAMELIST"
 msgstr "ΞΕΚΙΝΗΣΤΕ ΣΤΗ ΛΙΣΤΑ ΠΑΙΧΝΙΔΙΩΝ"
 
 #: 
+
 msgid "HIDE SYSTEM VIEW"
 msgstr "ΑΠΟΚΡΥΨΗ ΠΡΟΒΟΛΗ ΣΥΣΤΗΜΑΤΟΣ"
 
 #: 
+
 msgid "EMULATOR ADVANCED CONFIGURATION"
 msgstr "ΠΡΟΧΩΡΗΜΕΝΕΣ ΡΥΘΜΙΣΕΙΣ ΕΞΟΜΟΙΩΤΗ"
 
 #: 
+
 msgid "ADVANCED EMULATOR CONFIGURATION"
 msgstr "ΠΡΟΧΩΡΗΜΕΝΕΣ ΡΥΘΜΙΣΕΙΣ ΕΞΟΜΟΙΩΤΗ"
 
 #: 
+
 msgid "HELP"
 msgstr "ΒΟΗΘΕΙΑ"
 
 #: 
+
 msgid "THE SYSTEM IS UP TO DATE"
 msgstr "ΤΟ ΣΥΣΤΗΜΑ ΕΙΝΑΙ ΕΝΗΜΕΡΩΜΕΝΟ"
 
 #: 
+
 msgid "FORCE BASIC GAMELIST VIEW"
 msgstr "ΔΥΝΑΜΙΚΗ ΒΑΣΙΚΗ ΠΡΟΒΟΛΗ GAMELIST"
 
 #: 
+
 msgid "DOWNLOADED"
 msgstr "ΕΓΙΝΕ ΛΗΨΗ"
 
 #: 
+
 msgid "UPDATE VERSION:"
 msgstr "ΑΝΑΒΑΘΜΙΣΜΕΝΗ ΕΚΔΟΣΗ:"
 
 #: 
+
 msgid "UPDATE CHANGELOG:"
 msgstr "ΕΝΗΜΕΡΩΣΕ ΤΙΣ ΑΛΛΑΓΕΣ:"
 
 #: 
+
 msgid "MORE DETAILS"
 msgstr "ΠΕΡΙΣΣΟΤΕΡΕΣ ΛΕΠΤΟΜΕΡΕΙΕΣ"
 
 #: 
+
 msgid "CAROUSEL TRANSITIONS"
 msgstr "ΜΕΤΑΒΑΣΕΙΣ ΚΑΡΟΥΖΕΛ"
 
 #: 
+
 msgid "ENABLE FILTERS"
 msgstr "ΕΝΕΡΓΟΠΟΙΗΣΗ ΦΙΛΤΡΩΝ"
 
 #: 
+
 msgid "THEME CONFIGURATION"
 msgstr "ΡΥΘΜΙΣΕΙΣ ΘΕΜΑΤΟΣ"
 
 #: 
+
 msgid "THEME COLORSET"
 msgstr "ΧΡΩΜΑΤΙΣΜΟΣ ΘΕΜΑΤΟΣ"
 
 #: 
+
 msgid "THEME ICONSET"
 msgstr "ΡΥΘΜΙΣΗ ΕΙΚΟΝΙΔΙΩΝ ΘΕΜΑΤΟΣ"
 
 #: 
+
 msgid "THEME MENU"
 msgstr "ΜΕΝΟΥ ΘΕΜΑΤΟΣ"
 
 #: 
+
 msgid "THEME SYSTEMVIEW"
 msgstr "ΘΕΜΑ ΕΜΦΑΝΙΣΗΣ ΣΥΣΤΗΜΑΤΟΣ"
 
 #: 
+
 msgid "THEME GAMELISTVIEW"
 msgstr "ΘΕΜΑ ΕΜΦΑΝΙΣΗΣ ΛΙΣΤΑΣ ΠΑΙΧΝΙΔΙΩΝ"
 
 #: 
+
 msgid "THEME REGION"
 msgstr "ΘΕΜΑ ΠΕΡΙΟΧΗΣ"
 
 #: 
+
 msgid "THIS THEME HAS NO OPTION"
 msgstr "ΑΥΤΟ ΤΟ ΘΕΜΑ ΔΕΝ ΕΧΕΙ ΕΠΙΛΟΓΕΣ"
 
 #: 
+
 msgid "MANUAL INPUT"
 msgstr "ΧΕΙΡΟΚΙΝΗΤΗ ΕΙΣΑΓΩΓΗ"
 
 #: 
+
 msgid "AN ERROR OCCURED - DOWNLOADED"
 msgstr "ΠΡΟΕΚΥΨΕ ΣΦΑΛΜΑ - ΕΓΙΝΕ ΛΗΨΗ"
 
 #: 
+
 msgid "START KODI"
 msgstr "ΕΚΚΙΝΗΣΗ KODI"
 
 #: 
+
 msgid "Montre les versions disponibles."
 msgstr "Εμφανίζει την τρέχουσα διαθέσιμη έκδοση ενημέρωσης."
 
 #: 
+
 msgid "Shows the current available update changelog."
 msgstr "Εμφανίζει το τρέχον αρχείο καταγραφής αλλαγών."
 
 #: 
+
 msgid "Configure an associated command. Your remote must be previously paired / plugged in."
 msgstr "Διαμορφώστε μια σχετική εντολή. Το τηλεχειριστήριό σας πρέπει να είναι προηγουμένως συζευγμένο / συνδεδεμένο."
 
 #: 
+
 msgid "Choose if carousel will be animated or not during transitions"
 msgstr "Επιλέξτε εάν το καρουσέλ θα κινείται ή όχι κατά τις μεταβάσεις."
 
 #: 
+
 msgid "Select the type of transition that occurs when you start a game. INSTANT will do nothing, FADE will fade to dark, and SLIDE will zoom on the game cover (or name if there is no scrape information)"
 msgstr "Επιλέξτε τον τύπο μετάβασης που θα συμβεί όταν ξεκινάτε ένα παιχνίδι. Το INSTANT δεν θα κάνει τίποτα, το FADE θα εξασθενίσει και το ANIMATE θα μεγεθύνει το εξώφυλλο του παιχνιδιού (ή το όνομα εάν δεν υπάρχουν πληροφορίες σάρωσης)."
 
 #: 
+
 msgid "Select exisiting colorset options for this theme."
 msgstr "Επιλέξτε τις υπάρχουσες επιλογές χρωμάτων για αυτό το θέμα"
 
 #: 
+
 msgid "Select exisiting iconset options for this theme."
 msgstr "Επιλέξτε τις υπάρχουσες επιλογές εικονιδίων για αυτό το θέμα"
 
 #: 
+
 msgid "Select exisiting menu style options for this theme."
 msgstr "Επιλέξτε τις υπάρχουσες επιλογές στυλ του μενού για αυτό το θέμα"
 
 #: 
+
 msgid "Select exisiting system view options for this theme."
 msgstr "Επιλέξτε τις υπάρχουσες επιλογές προβολής συστήματος για αυτό το θέμα"
 
 #: 
+
 msgid "Select exisiting gamelist view options for this theme."
 msgstr "Επιλέξτε τις υπάρχουσες επιλογές της προβολής λίστας παιχνιδιών για αυτό το θέμα"
 
 #: 
+
 msgid "Configure theme options if available."
 msgstr "Διαμορφώστε τις επιλογές θέματος εάν είναι διαθέσιμες"
 
 #: 
+
 msgid "Select Region of logos, pictures for system that are different for some countries. E.g. Megadrive in EU / Genesis in US"
 msgstr "Επιλέξτε Περιοχή λογότυπων, εικόνων για το σύστημα που διαφέρουν για ορισμένες χώρες. Π.χ. Megadrive στην ΕΕ / Genesis στις ΗΠΑ"
 
 #: 
+
 msgid "Type the name of your SSID if it is hidden or not listed"
 msgstr "Πληκτρολογήστε το όνομα SSID σας εάν είναι κρυφό ή δεν εμφανίζεται στη λίστα"
 
 #: 
+
 msgid "Select a letter and the listing will go directly on the first game starting with this letter."
 msgstr "Επιλέξτε ένα γράμμα και η λίστα θα πάει απευθείας στο πρώτο παιχνίδι που ξεκινά με αυτό το γράμμα."
 
 #: 
+
 msgid "Select the way the game list is sortered (alphabetically, by notation...)."
 msgstr "Επιλέξτε τον τρόπο ταξινόμησης της λίστας παιχνιδιών (αλφαβητικά, με συμβολισμό...)."
 
 #: 
+
 msgid "Switch between seing or not only the favorites games. To add a game in the favorite list, select the game and toggle its state using 'Y'."
 msgstr "Εναλλαγή μεταξύ προβολής ή όχι μόνο αγαπημένων παιχνιδιών. Για να προσθέσετε ένα παιχνίδι στη λίστα αγαπημένων, επιλέξτε το παιχνίδι και αλλάξτε την κατάστασή του χρησιμοποιώντας το 'Y'."
 
 #: 
+
 msgid "Switch between seing or not the hidden games. To hide a game, edit its data and select 'Hide'."
 msgstr "Αλλάξτε εάν θέλετε να βλέπετε κρυφά παιχνίδια. Για να αποκρύψετε ένα παιχνίδι, επεξεργαστείτε τα στοιχεία του και επιλέξτε «Απόκρυψη»."
 
 #: 
+
 msgid "This option display a menu which allows to change game data and many others options."
 msgstr "Αυτή η επιλογή εμφανίζει ένα μενού που σας επιτρέπει να αλλάξετε τα δεδομένα παιχνιδιού και πολλές άλλες επιλογές."
 
 #: 
+
 msgid "AVAILABLE UPDATE"
 msgstr "ΔΙΑΘΕΣΙΜΗ ΕΝΗΜΕΡΩΣΗ"
 
 #: 
+
 msgid "UPDATE CHANGELOG"
 msgstr "ΕΝΗΜΕΡΩΣΗ ΑΡΧΕΙΟΥ ΑΛΛΑΓΩΝ"
 
 #: 
+
 msgid "CLOCK IN MENU"
 msgstr "ΡΟΛΟΙ ΣΤΟ ΜΕΝΟΥ"
 
 #: 
+
 msgid "Now playing"
 msgstr "Παίζει τώρα "
 
 #: 
+
 msgid "DEFAULT (%1%)"
 msgstr "ΠΡΟΚΑΘΟΡΙΣΜΕΝΟ (%1%)"
 
 #: 
+
 msgid "INPUT REQUIRED"
 msgstr "ΑΠΑΙΤΕΙΤΑΙ ΕΙΣΟΔΟΣ"
 
 #: 
+
 msgid "(skipped)"
 msgstr "(παραλείπεται)"
 
 #: 
+
 msgid "UP/DOWN TO SKIP"
 msgstr "ΠΑΝΩ/ΚΑΤΩ ΓΙΑ ΠΑΡΑΛΕΙΨΗ"
 
 #: 
+
 msgid "A TO UNSET"
 msgstr "A ΓΙΑ ΑΠΕΝΕΡΓΟΠΟΙΗΣΗ"
 
 #: 
+
 msgid "DOWN TO SKIP AND KEEP [%1%]"
 msgstr "ΚΑΤΩ ΓΙΑ SKIP KAI KEEP  [%1%]"
 
 #: 
+
 msgid "UP/DOWN TO SKIP AND KEEP [%1%]"
 msgstr "ΠΑΝΩ/ΚΑΤΩ ΓΙΑ SKIP KAI KEEP [%1%]"
 
 #: 
+
 msgid "Set duration of help popups, 0 means no popup."
 msgstr "Ορίστε τη διάρκεια των αναδυόμενων παραθύρων βοήθειας, το 0 σημαίνει ότι δεν υπάρχουν αναδυόμενα παράθυρα."
 
 #: 
+
 msgid "HELP POPUP DURATION"
 msgstr "ΔΙΑΡΚΕΙΑ ΑΝΑΔΙΟΜΕΝΟΥ ΠΑΡΑΘΥΡΟΥ ΒΟΗΘΕΙΑΣ"
 
 #: 
+
 msgid "Set duration of music popups, 0 means no popup."
 msgstr "Ορίστε τη διάρκεια των αναδυόμενων παραθύρων μουσικής, το 0 σημαίνει ότι δεν υπάρχουν αναδυόμενα παράθυρα."
 
 #: 
+
 msgid "MUSIC POPUP DURATION"
 msgstr "ΔΙΑΡΚΕΙΑ ΑΝΑΔΙΟΜΕΝΟΥ ΠΑΡΑΘΥΡΟΥ ΜΟΥΣΙΚΗΣ"
 
 #: 
+
 msgid "POPUP SETTINGS"
 msgstr "ΡΥΘΜΙΣΕΙΣ ΑΝΑΔΙΩΜΕΝΟΥ ΠΑΡΑΘΥΡΟΥ"
 
 #: 
+
 msgid "POPUP POSITION"
 msgstr "ΘΕΣΗ ΑΝΑΔΙΟΜΕΝΟΥ ΠΑΡΑΘΥΡΟΥ"
 
 #: 
+
 msgid "Select the position of popups on screen."
 msgstr "Επιλέξτε τη θέση των αναδυόμενων παραθύρων στην οθόνη"
 
 #: 
+
 msgid "Set position and duration of popups."
 msgstr "Ορίστε τη θέση και τη διάρκεια των αναδυόμενων παραθύρων"
 
 #: 
+
 msgid "TOP/RIGHT"
 msgstr "ΠΑΝΩ/ΔΕΞΙΑ"
 
 #: 
+
 msgid "BAS/DROITE"
 msgstr "ΚΑΤΩ/ΔΕΞΙΑ"
 
 #: 
+
 msgid "BOTTOM/LEFT"
 msgstr "ΚΑΤΩ/ΑΡΙΣΤΕΡΑ"
 
 #: 
+
 msgid "TOP/LEFT"
 msgstr "ΠΑΝΩ/ΑΡΙΣΤΕΡΑ"
 
 #: 
+
 msgid "SHOW FOLDERS CONTENT"
 msgstr "ΕΜΦΑΝΙΣΗ ΠΕΡΙΕΧΟΜΕΝΟΥ ΦΑΚΕΛΟΥ"
 
 #: 
+
 msgid "Switch between seeing the folders structure and seeing all games in a flatten top level."
 msgstr "Κάντε εναλλαγή μεταξύ της προβολής της δομής του φακέλου και της προβολής όλων των παιχνιδιών σε υψηλότερο επίπεδο."
 
 #: 
+
 msgid "NETPLAY"
 msgstr "ΠΑΙΧΝΙΔΙ ΔΙΚΤΥΟΥ"
 
 #: 
+
 msgid "NETPLAY SETTINGS"
 msgstr "ΡΥΘΜΙΣΕΙΣ ΠΑΙΧΝΙΔΙΟΥ ΔΙΚΤΥΟΥ"
 
 #: 
+
 msgid "NETPLAY LOBBY"
 msgstr "ΛΟΜΠΙ ΠΑΙΧΝΙΔΙΟΥ ΔΙΚΤΥΟΥ"
 
 #: 
+
 msgid "Enable or disable Netplay in games."
 msgstr "Ενεργοποίηση ή απενεργοποίηση του παιχνιδιού δικτύου."
 
 #: 
+
 msgid "PORT"
 msgstr "ΠΟΡΤΑ"
 
 #: 
+
 msgid "NICKNAME"
 msgstr "ΨΕΥΔΟΝΥΜΟ"
 
 #: 
+
 msgid "RELAY SERVER"
 msgstr "ΔΙΑΚΟΜΙΣΤΗΣ ΑΝΑΜΕΤΑΔΟΣΗΣ"
 
 #: 
+
 msgid "Enable or disable connections throught relay servers."
 msgstr "Ενεργοποιήστε ή απενεργοποιήστε τις συνδέσεις μέσω διακομιστών αναμετάδοσης."
 
 #: 
+
 msgid "KODI/NETPLAY"
 msgstr "KODI/ΠΑΙΧΝΙΔΙ ΔΙΚΤΥΟΥ"
 
 #: 
+
 msgid "NO GAMES OR NO CONNECTION"
 msgstr "ΔΕΝ ΒΡΕΘΗΚΑΝ ΠΑΙΧΝΙΔΙΑ Ή ΣΥΝΔΕΣΕΙΣ"
 
 #: 
+
 msgid "HASH NOW"
 msgstr "HASH ΤΩΡΑ"
 
 #: 
+
 msgid "HASH THESE SYSTEMS"
 msgstr "ΔΗΜΙΟΥΡΓΗΣΤΕ HASH ΓΙΑ ΑΥΤΑ ΤΑ ΣΥΣΤΗΜΑΤΑ"
 
 #: 
+
 msgid "Add hash of roms in your gamelists to have more accurate results in Netplay."
 msgstr "Προσθέστε hash roms στην λίστα παιχνιδιων σας για πιο ακριβή αποτελέσματα στην αναπαραγωγή δικτΠροσθέστε hashes rom στις λίστες αναπαραγωγής σας για πιο ακριβή αποτελέσματα στην αναπαραγωγή δικτύου."
 
 #: 
+
 msgid "HASH ROMS"
 msgstr "HASH ROMS"
 
 #: 
+
 msgid "Only missing hashs"
 msgstr "Μόνο hash που λείπουν"
 
 #: 
+
 msgid "Username"
 msgstr "Όνομα Χρήστη"
 
 #: 
+
 msgid "Country"
 msgstr "Χώρα"
 
 #: 
+
 msgid "Latency"
 msgstr "Αδράνεια"
 
 #: 
+
 msgid "Host arch."
 msgstr "Host arch"
 
 #: 
+
 msgid "Core ver."
 msgstr "Έκδοση Πυρήνα"
 
 #: 
+
 msgid "RA ver."
 msgstr "Έκδοση RA."
 
 #: 
+
 msgid "Can join"
 msgstr "Μπορεί να συμμετάσχει"
 
 #: 
+
 msgid "Rom and core match"
 msgstr "Ταίριασμα rom και πυρήνα"
 
 #: 
+
 msgid "Rom found"
 msgstr "Βρέθηκε ROM"
 
 #: 
+
 msgid "No rom match"
 msgstr "Δεν ταιριάζει η Rom"
 
 #: 
+
 msgid "Match"
 msgstr "Ταιριάζει"
 
 #: 
+
 msgid "No Match"
 msgstr "Δεν ταιριάζει."
 
 #: 
+
 msgid "Rom file"
 msgstr "Aρχείο Rom"
 
 #: 
+
 msgid "Rom hash"
 msgstr "Rom Hash"
 
 #: 
+
 msgid "THIS COULD TAKE A WHILE, CONFIRM?"
 msgstr "ΑΥΤΟ ΘΑ ΔΙΑΡΚΕΣΕΙ ΛΙΓΟ, ΕΠΙΒΕΒΑΙΩΣΗ;"
 
 #: 
+
 msgid "bueno"
 msgstr "Καλό"
 
 #: 
+
 msgid "bad"
 msgstr "Κακό"
 
 #: 
+
 msgid "medium"
 msgstr "Μέτριο"
 
 #: 
+
 msgid "NETPLAY POPUP DURATION"
 msgstr "ΔΙΑΡΚΕΙΑ ΑΝΑΔΙΟΜΕΝΟΥ ΠΑΡΑΘΥΡΟΥ ΠΑΙΧΝΙΔΙΟΥ ΔΙΚΤΥΟΥ"
 
 #: 
+
 msgid "Set duration of netplay popups, 0 means no popup."
 msgstr "Ορίστε τη διάρκεια των αναδυόμενων παραθύρων δικτύου παιχνιδιού, 0 σημαίνει ότι δεν υπάρχουν αναδυόμενα παράθυρα."
 
 #: 
+
 msgid "Player"
 msgstr "Παίκτης"
 
 #: 
+
 msgid "Game"
 msgstr "Παιχνιδι"
 
 #: 
+
 msgid "Play online games running on Retroarch like NES, SNES, FBA, Genesis/Megadrive and more!"
 msgstr "Παίξτε online παιχνίδια Retroarch όπως NES, SNES, FBA, Megadrive και άλλα!"
 
 #: 
+
 msgid "Rom, hash and core match"
 msgstr "Rom, hash και πυρήνας ταιριάζουν"
 
 #: 
+
 msgid "No core match"
 msgstr "Δεν ταιριάζει κανένας πυρήνας"
 
 #: 
+
 msgid "Add a clock in the main menu."
 msgstr "Προσθέστε ένα ρολόι στο κύριο μενού"
 
 #:
+
 msgid "UPGRADING"
 msgstr "ΕΝΗΜΕΡΩΣΗ"
 
 #:
+
 msgid "PREPARING"
 msgstr "ΠΡΟΕΤΟΙΜΑΣΙΑ"
 
 #:
+
 msgid "Starting UI"
 msgstr "Έναρξη διεπαφής χρήστη"
 
 #:
+
 msgid "VERIFYING"
 msgstr "ΕΠΑΛΗΘΕΥΣΗ"
 
 #:
+
 msgid "EMPTY LIST"
 msgstr "ΚΕΝΗ ΛΙΣΤΑ"
 
 
 #: Retroarch ratio
+
 msgid "Auto"
 msgstr "Αυτόματο"
 
-msgid "Square pixel"
-msgstr "Τετράγωνο εικονοστοιχείο"
 
 msgid "Square pixel"
 msgstr "Τετράγωνο εικονοστοιχείο"
+
 
 msgid "Retroarch Config"
 msgstr "Ρύθμιση του Retroarch"
 
+
 msgid "Retroarch Custom"
 msgstr "Διαμόρφωση Retroarch"
 
+
 msgid "Core provided"
 msgstr "Παρέχεται πυρήνας"
+
 
 msgid "Do not set"
 msgstr "Μην ρυθμίσετε"
 
 #:
+
 msgid "QUICK SEARCH"
 msgstr "ΓΡΗΓΟΡΗ ΑΝΑΖΗΤΗΣΗ"
+
 
 msgid "ARKOS4CLONE SETTINGS"
 msgstr "Ρυθμίσεις ArkOS4Clone"
 
+
 msgid "WIFI SETTINGS"
 msgstr "Ρυθμίσεις Wi-Fi"
+
 
 msgid "CURRENT NETWORK"
 msgstr "Τρέχον δίκτυο"
 
+
 msgid "SCAN WIFI NETWORKS"
 msgstr "Σάρωση δικτύων Wi-Fi"
+
 
 msgid "ACTIVATE EXISTING CONNECTION"
 msgstr "Ενεργοποίηση αποθηκευμένης σύνδεσης"
 
+
 msgid "DELETE EXISTING CONNECTIONS"
 msgstr "Διαγραφή αποθηκευμένων συνδέσεων"
+
 
 msgid "NETWORK INFO"
 msgstr "Πληροφορίες δικτύου"
 
+
 msgid "SHOW STATUS ICONS"
 msgstr "Εμφάνιση εικονιδίων κατάστασης"
+
 
 msgid "SCANNING WIFI NETWORKS"
 msgstr "Σάρωση δικτύων Wi-Fi"
 
+
 msgid "SELECT WIFI NETWORK"
 msgstr "Επιλογή δικτύου Wi-Fi"
+
 
 msgid "NO SAVED CONNECTIONS"
 msgstr "Δεν υπάρχουν αποθηκευμένες συνδέσεις"
 
+
 msgid "SELECT CONNECTION"
 msgstr "Επιλογή σύνδεσης"
+
 
 msgid "CONNECTING..."
 msgstr "Σύνδεση..."
 
+
 msgid "CONNECTED TO"
 msgstr "Συνδέθηκε με"
+
 
 msgid "CONNECTION FAILED"
 msgstr "Η σύνδεση απέτυχε"
 
+
 msgid "DELETE CONNECTION"
 msgstr "Διαγραφή σύνδεσης"
+
 
 msgid "DELETED"
 msgstr "Διαγράφηκε"
 
+
 msgid "SSID"
 msgstr "SSID"
+
 
 msgid "IP"
 msgstr "Διεύθυνση IP"
 
+
 msgid "GATEWAY"
 msgstr "Πύλη"
+
 
 msgid "DNS"
 msgstr "DNS"
 
+
 msgid "PASSWORD FOR"
 msgstr "Κωδικός για"
+
 
 msgid "CONNECT"
 msgstr "Σύνδεση"
 
+
 msgid "CONNECTING TO"
 msgstr "Σύνδεση με"
+
 
 msgid "INVALID PASSWORD"
 msgstr "Λάθος κωδικός"
 
+
 msgid "NETWORK NOT FOUND"
 msgstr "Το δίκτυο δεν βρέθηκε"
+
 
 msgid "JOYSTICK LED"
 msgstr "LED ΧΕΙΡΙΣΤΗΡΙΟΥ"
 
+
 msgid "UNSUPPORTED DEVICE"
 msgstr "ΜΗ ΥΠΟΣΤΗΡΙΖΟΜΕΝΗ ΣΥΣΚΕΥΗ"
+
 
 msgid "Joystick LED is not supported on this device."
 msgstr "Το LED χειριστηρίου δεν υποστηρίζεται σε αυτή τη συσκευή."
 
+
 msgid "LED MODE"
 msgstr "ΛΕΙΤΟΥΡΓΙΑ LED"
+
 
 msgid "TURN OFF LED"
 msgstr "ΑΠΕΝΕΡΓΟΠΟΙΗΣΗ LED"
 
+
 msgid "SOLID RED"
 msgstr "ΚΟΚΚΙΝΟ ΣΤΑΘΕΡΟ"
+
 
 msgid "SOLID GREEN"
 msgstr "ΠΡΑΣΙΝΟ ΣΤΑΘΕΡΟ"
 
+
 msgid "SOLID BLUE"
 msgstr "ΜΠΛΕ ΣΤΑΘΕΡΟ"
+
 
 msgid "SOLID ORANGE"
 msgstr "ΠΟΡΤΟΚΑΛΙ ΣΤΑΘΕΡΟ"
 
+
 msgid "SOLID PURPLE"
 msgstr "ΜΩΒ ΣΤΑΘΕΡΟ"
+
 
 msgid "SOLID CYAN"
 msgstr "ΚΥΑΝΟ ΣΤΑΘΕΡΟ"
 
+
 msgid "SOLID WHITE"
 msgstr "ΛΕΥΚΟ ΣΤΑΘΕΡΟ"
+
 
 msgid "SOLID YELLOW"
 msgstr "ΚΙΤΡΙΝΟ ΣΤΑΘΕΡΟ"
 
+
 msgid "SOLID MAGENTA"
 msgstr "ΜΑΤΖΕΝΤΑ ΣΤΑΘΕΡΟ"
+
 
 msgid "BREATHING RED"
 msgstr "ΚΟΚΚΙΝΟ ΑΝΑΠΝΟΗ"
 
+
 msgid "BREATHING GREEN"
 msgstr "ΠΡΑΣΙΝΟ ΑΝΑΠΝΟΗ"
+
 
 msgid "BREATHING BLUE"
 msgstr "ΜΠΛΕ ΑΝΑΠΝΟΗ"
 
+
 msgid "BREATHING ORANGE"
 msgstr "ΠΟΡΤΟΚΑΛΙ ΑΝΑΠΝΟΗ"
+
 
 msgid "BREATHING PURPLE"
 msgstr "ΜΩΒ ΑΝΑΠΝΟΗ"
 
+
 msgid "BREATHING CYAN"
 msgstr "ΚΥΑΝΟ ΑΝΑΠΝΟΗ"
+
 
 msgid "BREATHING WHITE"
 msgstr "ΛΕΥΚΟ ΑΝΑΠΝΟΗ"
 
+
 msgid "BREATHING"
 msgstr "ΑΝΑΠΝΟΗ"
+
 
 msgid "BREATHING RGB"
 msgstr "RGB ΑΝΑΠΝΟΗ"
 
+
 msgid "BREATHING YELLOW"
 msgstr "ΚΙΤΡΙΝΟ ΑΝΑΠΝΟΗ"
+
 
 msgid "BREATHING MAGENTA"
 msgstr "ΜΑΤΖΕΝΤΑ ΑΝΑΠΝΟΗ"
 
+
 msgid "FLOW EFFECT"
 msgstr "ΕΦΕ ΡΟΗΣ"
+
 
 msgid "SCROLLING EFFECT"
 msgstr "ΕΦΕ ΚΥΛΙΣΗΣ"
 
+
 msgid "LEFT JOYSTICK LED"
 msgstr "LED αριστερού joystick"
+
 
 msgid "RIGHT JOYSTICK LED"
 msgstr "LED δεξιού joystick"
 
+
 msgid "BRIGHTNESS"
 msgstr "Φωτεινότητα"
+
 
 msgid "HIGH"
 msgstr "Υψηλή"
 
+
 msgid "MEDIUM"
 msgstr "Μεσαία"
+
 
 msgid "LOW"
 msgstr "Χαμηλή"
 
+
 msgid "USB SWITCH"
 msgstr "Διακόπτης USB"
+
 
 msgid "INTERNAL USB"
 msgstr "Εσωτερικό USB"
 
+
 msgid "INTERNAL USB FOR BUILT-IN STORAGE"
 msgstr "Εσωτερικό USB για ενσωματωμένο αποθηκευτικό χώρο"
+
 
 msgid "EXTERNAL USB FOR OTG DEVICES"
 msgstr "Εξωτερικό USB για συσκευές OTG"
 
+
 msgid "USB MODE"
 msgstr "Λειτουργία USB"
+
 
 msgid "INTERNAL USB (BUILT-IN STORAGE)"
 msgstr "Εσωτερικό USB (ενσωματωμένος αποθηκευτικός χώρος)"
 
+
 msgid "EXTERNAL USB (OTG DEVICE)"
 msgstr "Εξωτερικό USB (συσκευή OTG)"
+
 
 msgid "DATE & TIME"
 msgstr "Date & Time"
 
+
 msgid "CURRENT"
 msgstr "Current"
+
 
 msgid "DATE"
 msgstr "Date"
 
+
 msgid "TIME"
 msgstr "Time"
+
 
 msgid "SYNC WITH NETWORK"
 msgstr "Sync with Network"
 
+
 msgid "TIME SET SUCCESSFULLY"
 msgstr "Time Set Successfully"
+
 
 msgid "TIME SYNCED SUCCESSFULLY"
 msgstr "Time Synced Successfully"
 
+
 msgid "NO NETWORK CONNECTION"
 msgstr "Χωρίς σύνδεση δικτύου"
+
 
 msgid "POWER LED"
 msgstr "LED ισχύος"
 
+
 msgid "RED LED"
 msgstr "Κόκκινο LED"
+
 
 msgid "BLUE LED"
 msgstr "Μπλε LED"
 
+
 msgid "BELOW"
 msgstr "Κάτω από"
+
 
 msgid "ABOVE"
 msgstr "Πάνω από"
 
+
 msgid "BLUE"
 msgstr "Μπλε"
+
 
 msgid "RED"
 msgstr "Κόκκινο"
 
+
 msgid "ARKOS4CLONE TOOLS"
 msgstr "Εργαλεία ArkOS4Clone"
+
 
 msgid "CPU SETTINGS"
 msgstr "Ρυθμίσεις CPU"
 
+
 msgid "CPU CORES"
 msgstr "Πυρήνες CPU"
+
 
 msgid "CPU GOVERNOR"
 msgstr "Κυβερνήτης CPU"
 
+
 msgid "CPU MAX FREQ"
 msgstr "Μέγιστη Συχνότητα CPU"
+
 
 msgid "GPU SETTINGS"
 msgstr "Ρυθμίσεις GPU"
 
+
 msgid "GPU MAX FREQ"
 msgstr "Μέγιστη Συχνότητα GPU"
+
 
 msgid "DMC SETTINGS"
 msgstr "Ρυθμίσεις DMC"
 
+
 msgid "DMC MAX FREQ"
 msgstr "Μέγιστη Συχνότητα DMC"
+
 
 msgid "ZRAM SETTINGS"
 msgstr "Ρυθμίσεις ZRAM"
 
+
 msgid "ZRAM ENABLE"
 msgstr "Ενεργοποίηση ZRAM"
+
 
 msgid "ZRAM SIZE"
 msgstr "Μέγεθος ZRAM"
 
+
 msgid "ZRAM COMP ALGO"
 msgstr "Αλγόριθμος συμπίεσης ZRAM"
+
 
 msgid "ZRAM AUTO START"
 msgstr "Αυτόματη εκκίνηση ZRAM"
 
+
 msgid "MAX FREQ"
 msgstr "Μέγιστη Συχνότητα"
+
 
 msgid "GOVERNOR"
 msgstr "Κυβερνήτης"
 
+
 msgid "DAY"
 msgstr "Ημέρα"
+
 
 msgid "HOUR"
 msgstr "Ώρα"
 
+
 msgid "MINUTE"
 msgstr "Λεπτό"
+
 
 msgid "MONTH"
 msgstr "Μήνας"
 
+
 msgid "YEAR"
 msgstr "Έτος"
+
 
 msgid "SIZE"
 msgstr "Μέγεθος"
 
+
 msgid "INTERFACE"
 msgstr "Διεπαφή"
+
 
 msgid "EXTERNAL USB"
 msgstr "Εξωτερικό USB"
 
+
 msgid "REMOTE SERVICES AUTO-START"
 msgstr "Αυτόματη Εκκίνηση Απομακρυσμένων Υπηρεσιών"
+
 
 msgid "R36Ultra V1"
 msgstr "R36Ultra V1"
 
+
 msgid "R36Ultra V2"
 msgstr "R36Ultra V2"
+
 
 msgid "OTA UPGRADE DETECTED.\nWOULD YOU LIKE TO RESTORE YOUR PREVIOUS CONFIGURATION?"
 msgstr "OTA UPGRADE DETECTED.\nWOULD YOU LIKE TO RESTORE YOUR PREVIOUS CONFIGURATION?"
 
+
 msgid "BEST"
 msgstr "Best"
+
 
 msgid "GOOD"
 msgstr "Good"
 
+
 msgid "POOR"
 msgstr "Poor"
+
 
 msgid "STANDARD"
 msgstr "Standard"
 
+
 msgid "AVERAGE"
 msgstr "Average"
+
 
 msgid "PROXY SETTINGS"
 msgstr "Proxy Settings"
 
+
 msgid "ENABLE PROXY"
 msgstr "Enable Proxy"
+
 
 msgid "PROXY TYPE"
 msgstr "Proxy Type"
 
+
 msgid "PROXY HOST"
 msgstr "Proxy Host"
+
 
 msgid "PROXY PORT"
 msgstr "Proxy Port"
 
+
 msgid "NO PROXY"
 msgstr "No Proxy"
+
 
 msgid "STEP 1: KEEP BOTH STICKS COMPLETELY STILL"
 msgstr "Βήμα 1: Κρατήστε και τα δύο ραβδάκια εντελώς ακίνητα"
 
+
 msgid "STEP 2: ROTATE BOTH STICKS FULL RANGE SLOWLY"
 msgstr "Βήμα 2: Περιστρέψτε αργά και τα δύο ραβδάκια σε όλο το εύρος"
+
 
 msgid "PRESS OK TO START"
 msgstr "Πατήστε OK για έναρξη"
 
+
 msgid "PRESS OK TO START RANGE CALIBRATION"
 msgstr "Πατήστε OK για βαθμονόμηση εύρους"
+
 
 msgid "CENTER SAMPLING COMPLETE!"
 msgstr "Δειγματοληψία κέντρου ολοκληρώθηκε！"
 
+
 msgid "TIME: 5 SECONDS"
 msgstr "Χρόνος：5秒"
+
 
 msgid "CALIBRATION COMPLETE!"
 msgstr "Βαθμονόμηση ολοκληρώθηκε！"
 
+
 msgid "JOYSTICK CALIBRATION"
 msgstr "Βαθμονόμηση joystick"
+
 
 msgid "JOYSTICK SETTINGS"
 msgstr "Ρυθμίσεις joystick"
 
+
 msgid "PRESS ANY BUTTON TO SET AS EMULATION SWITCH\n\nPRESS BACK TO CANCEL"
 msgstr "Πατήστε οποιοδήποτε κουμπί για εναλλαγή εξομοίωσης\n\nΠίσω για ακύρωση"
+
 
 msgid "EMULATION BUTTON SET TO"
 msgstr "Κουμπί εξομοίωσης ορίστηκε σε"
 
+
 msgid "CANCELLED"
 msgstr "Ακυρώθηκε"
+
 
 msgid "ANALOG STICK EMULATION"
 msgstr "Εξομοίωση αναλογικού ραβδιού"
 
+
 msgid "CHANGE EMULATION BUTTON"
 msgstr "Αλλαγή κουμπιού εξομοίωσης"
+
 
 msgid "CHANGE THE BUTTON FOR ANALOG STICK EMULATION?"
 msgstr "Αλλαγή κουμπιού για εξομοίωση αναλογικού ραβδιού；"
 
+
 msgid "PRESS THE BUTTON TO MAP"
 msgstr "Πατήστε το κουμπί για αντιστοίχιση"
 
+
 msgid "BUTTON"
 msgstr "Κουμπί"
+
 
 msgid "JOYSTICK DEAD ZONE"
 msgstr ""
 
 
+
 msgid "DEAD ZONE VALUE"
 msgstr ""
+
 
 msgid "CUSTOM DEAD ZONE"
 msgstr ""
 
+
 msgid "ENTER DEAD ZONE VALUE (10-1800)"
 msgstr ""
+
 
 msgid "DEAD ZONE SET TO"
 msgstr ""
 
+
 msgid "VALUE OUT OF RANGE"
 msgstr ""
+
 
 msgid "INVALID VALUE"
 msgstr ""
 
+
 msgid "CUSTOM"
 msgstr ""
+
+
+msgid "BATTERYPLUS"
+msgstr "BATTERYPLUS"
+
+msgid "BATTERY INFO"
+msgstr "Battery Info"
+
+msgid "ENABLE BATTERYPLUS"
+msgstr "Enable BATTERYPLUS"
+
+msgid "BATTERY MODE"
+msgstr "Battery Mode"
+
+msgid "VOLTAGE MODE"
+msgstr "Voltage Mode"
+
+msgid "PMIC MODE"
+msgstr "PMIC Mode"
+
+msgid "VOLTAGE MODE DESC"
+msgstr "Derive battery percentage from voltage. Use when PMIC reports inaccurate."
+
+msgid "PMIC MODE DESC"
+msgstr "Read battery percentage from PMIC directly. Use when PMIC reports accurately."
+
+msgid "DELETE USAGE RECORDS"
+msgstr "Delete Usage Records"
+
+msgid "DELETE ALL BATTERY USAGE RECORDS? THIS WILL RESET CALIBRATION."
+msgstr "Delete all battery usage records? This will reset calibration."
+
+msgid "RECORDS DELETED. SERVICE RESTARTED."
+msgstr "Records deleted. Service restarted."

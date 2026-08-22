@@ -1,1924 +1,2445 @@
-msgid ""
-msgstr ""
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: POEditor.com\n"
-"Project-Id-Version: recalbox-emulationstation\n"
-"Language: PT Traduzido por lauren7ino, original trasnlation by Jonasbeavis\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#:
 msgid "QUICK SEARCH"
 msgstr "PESQUISA RÁPIDA"
 
 #:
+
 msgid "GO TO LETTER"
 msgstr "IR PARA A LETRA"
 
 #:
+
 msgid "COLLECTIONS"
 msgstr "COLEÇÕES"
 
 #:
+
 msgid "GO TO MANUFACTURER"
 msgstr "IR PARA FABRICANTE"
 
 #:
+
 msgid "GO TO HARDWARE"
 msgstr "IR PARA SISTEMA"
 
 #:
+
 msgid "GO TO DECADE"
 msgstr "IR PARA DÉCADA"
 
 #:
+
 msgid "Unknown"
 msgstr "Desconhecido"
 
 #:
+
 msgid "CONFIGURATION"
 msgstr "CONFIGURAÇÃO"
 
 #:
+
 msgid "CHOOSE"
 msgstr "ESCOLHA"
 
 #:
+
 msgid "SELECT"
 msgstr "SELECIONAR"
 
 #:
+
 msgid "RANDOM"
 msgstr "ALEATÓRIO"
 
 #:
+
 msgid "SEARCH"
 msgstr "PESQUISAR"
 
 #:
+
 msgid "LAUNCH SCREENSAVER"
 msgstr "INICIAR PROTETOR DE ECRÃ"
 
 #:
+
 msgid "Preloading UI"
 msgstr "Pré-carregando o Interface"
 
 #:
+
 msgid "Loading theme..."
 msgstr "Carregando o tema..."
 
 #:
+
 msgid "Loading..."
 msgstr "Carregando..."
 
 #:
+
 msgid "MENU"
 msgstr "MENU"
 
 #:
+
 msgid "Rating"
 msgstr "Classificação"
 
 #:
+
 msgid "Released"
 msgstr "Lançado"
 
 #:
+
 msgid "Developer"
 msgstr "Desenvolvedor"
 
 #:
+
 msgid "Publisher"
 msgstr "Editor"
 
 #:
+
 msgid "Genre"
 msgstr "Género"
 
 #:
+
 msgid "Players"
 msgstr "Jogadores"
 
 #:
+
 msgid "Last played"
 msgstr "Últimos jogado"
 
 #:
+
 msgid "Times played"
 msgstr "Vezes jogado"
 
 #:
+
 msgid "No Entries Found"
 msgstr "Nenhum Resultado Encontrado"
 
 #:
+
 msgid "SYSTEM"
 msgstr "SISTEMA"
 
 #:
+
 msgid "LAUNCH"
 msgstr "LANÇAR"
 
 #:
+
 msgid "BACK"
 msgstr "VOLTAR"
 
 #:
+
 msgid "OPTIONS"
 msgstr "OPÇÕES"
 
 #:
+
 msgid "FAVORITE"
 msgstr "FAVORITO"
 
 #:
+
 msgid "FILENAME, ASCENDING"
 msgstr "NOME DO FICHEIRO, ASCENDENTE"
 
 #:
+
 msgid "FILENAME, DESCENDING"
 msgstr "NOME DO FICHEIRO, DESCENDENTE"
 
 #:
+
 msgid "RATING, ASCENDING"
 msgstr "CLASSIFICAÇÃO, ASCENDENTE"
 
 #:
+
 msgid "RATING, DESCENDING"
 msgstr "CLASSIFICAÇÃO, DESCENDENTE"
 
 #:
+
 msgid "TIMES PLAYED, ASCENDING"
 msgstr "VEZES JOGADO, ASCENDENTE"
 
 #:
+
 msgid "TIMES PLAYED, DESCENDING"
 msgstr "VEZES JOGADO, DESCENDENTE"
 
 #:
+
 msgid "LAST PLAYED, ASCENDING"
 msgstr "ÚLTIMOS JOGADO, ASCENDENTE"
 
 #:
+
 msgid "LAST PLAYED, DESCENDING"
 msgstr "ÚLTIMOS JOGADO, DESCENDENTE"
 
 #:
+
 msgid "NUMBER PLAYERS, ASCENDING"
 msgstr "NÚMERO DE JOGADORES, ASCENDENTE"
 
 #:
+
 msgid "NUMBER PLAYERS, DESCENDING"
 msgstr "NÚMERO DE JOGADORES DESCENDENTE"
 
 #:
+
 msgid "RELEASE DATE, ASCENDING"
 msgstr "DATA DE LANÇAMENTO, ASCENDENTE"
 
 #:
+
 msgid "RELEASE DATE, DESCENDING"
 msgstr "DATA DE LANÇAMENTO, DESCENDENTE"
 
 #:
+
 msgid "GENRE, ASCENDING"
 msgstr "GÉNERO, ASCENDENTE"
 
 #:
+
 msgid "GENRE, DESCENDING"
 msgstr "GÉNERO, DESCENDENTE"
 
 #:
+
 msgid "DEVELOPER, ASCENDING"
 msgstr "DESENVOLVEDOR, ASCENDENTE"
 
 #:
+
 msgid "DEVELOPER, DESCENDING"
 msgstr "DESENVOLVEDOR, DESCENDENTE"
 
 #:
+
 msgid "PUBLISHER, ASCENDING"
 msgstr "EDITOR, ASCENDENTE"
 
 #:
+
 msgid "PUBLISHER, DESCENDING"
 msgstr "EDITOR, DESCENDENTE"
 
 #:
+
 msgid "SYSTEM, ASCENDING"
 msgstr "SISTEMA, ASCENDENTE"
 
 #:
+
 msgid "SYSTEM, DESCENDING"
 msgstr "SISTEMA, DESCENDENTE"
 
 #:
-msgid "A,AN,THE"
+
 msgid "A,AN,THE"
 
 #:
+
 msgid "Editing the '%s' Collection. Add/remove games with Y."
 msgstr "Editando a Coleção '%s'. Adicione/remova jogos com Y."
 
 #:
+
 msgid "Finished editing the '%s' Collection."
 msgstr "Edição da Coleção '%s' concluída."
 
 #:
+
 msgid "Added '%s' to '%s'"
 msgstr "Adicionado '%s' a '%s'"
 
 #:
+
 msgid "Removed '%s' from '%s'"
 msgstr "Removido '%s' de '%s'"
 
 #:
+
 msgid "This collection is empty."
 msgstr "Esta coleção está vazia."
 
 #:
+
 msgid "None"
 msgstr "Nenhum"
 
 #:
+
 msgid "Various"
 msgstr "Vários"
 
 #:
+
 msgid "among other titles."
 msgstr "entre outros títulos."
 
 #:
+
 msgid "This collection contains"
 msgstr "Esta coleção contém"
 
 #:
+
 msgid "games, including"
 msgstr "jogos, incluindo"
 
 #:
+
 msgid "DOWNLOADING"
 msgstr "DESCARREGANDO"
 
 #:
+
 msgid "THEME INSTALLED SUCCESSFULLY"
 msgstr "TEMA INSTALADO COM SUCESSO"
 
 #:
+
 msgid "AN ERROR OCCURED"
 msgstr "OCORREU UM ERRO"
 
 #:
+
 msgid "UPDATE AVAILABLE"
 msgstr "ATUALIZAÇÃO DISPONÍVEL"
 
 #:
+
 msgid "SCRAPING"
 msgstr "EXTRAINDO"
 
 #:
+
 msgid "Searching"
 msgstr "Pesquisando"
 
 #:
+
 msgid "SCRAPE FAILED"
 msgstr "EXTRAÇÃO FALHOU"
 
 #:
+
 msgid "Downloading"
 msgstr "Descarregando"
 
 #:
+
 msgid "SCRAPING FINISHED. REFRESH UPDATE GAMES LISTS TO APPLY CHANGES."
 msgstr "EXTRAÇÃO CONCLUÍDA. ATUALIZE AS LISTAS DE JOGOS PARA APLICAR AS ALTERAÇÕES."
 
 #:
+
 msgid "MAIN MENU"
 msgstr "MENU PRINCIPAL"
 
 #:
+
 msgid "KODI MEDIA CENTER"
 msgstr "KODI MEDIA CENTER"
 
 #:
+
 msgid "DISPLAY SETTINGS AND INFO"
 msgstr "CONFIGURAÇÕES DE EXIBIÇÃO E INFORMAÇÂO"
 
 #:
+
 msgid "UI SETTINGS"
 msgstr "CONFIGURAÇÕES DO INTERFACE"
 
 #:
+
 msgid "CONFIGURE INPUT"
 msgstr "CONFIGURAR A ENTRADA"
+
 
 msgid "THIS OPTION IS FOR CONFIGURING EXTERNAL CONTROLLERS"
 msgstr "Esta opção é para controladores externos"
 
+
 msgid "NOT REMAPPING THE BUILT-IN CONTROLS"
 msgstr "Não para reatribuir os controles integrados"
+
 
 msgid "DO YOU WANT TO CONTINUE?"
 msgstr "Deseja continuar?"
 
 #:
+
 msgid "SOUND SETTINGS"
 msgstr "CONFIGURAÇÕES DE SOM"
 
 #:
+
 msgid "GAME COLLECTION SETTINGS"
 msgstr "CONFIGURAÇÕES DE COLEÇÕES DE JOGOS"
 
 #:
+
 msgid "EMULATOR SETTINGS"
 msgstr "CONFIGURAÇÕES DO EMULADOR"
 
 #:
+
 msgid "SCRAPER"
 msgstr "EXTRATOR"
 
 #:
+
 msgid "DOWNLOADS AND UPDATES"
 msgstr "DESCARGAS E ATUALIZAÇÕES"
 
 #:
+
 msgid "ADVANCED SETTINGS"
 msgstr "CONFIGURAÇÕES AVANÇADAS"
 
 #:
+
 msgid "QUIT"
 msgstr "SAIR"
 
 #:
+
 msgid "BAT"
 msgstr "BAT"
 
 #:
+
 msgid "SND"
 msgstr "VOL"
 
 #:
+
 msgid "BRT"
 msgstr "BRI"
 
 #:
+
 msgid "BT"
 msgstr "BT"
 
 #:
+
 msgid "WIFI"
 msgstr "WIFI"
 
 #:
-msgid "SSID"
-msgstr "SSID"
 
-#:
 msgid "Distro Version"
 msgstr "Versão da Distr."
 
 #:
-msgid "IP"
-msgstr "IP"
 
-#:
 msgid "DISPLAY"
 msgstr "PAINEL"
 
 #:
-msgid "BRIGHTNESS"
-msgstr "BRILHO"
 
-#:
 msgid "SHOW OVERLAY WHEN BRIGHTNESS CHANGES"
 msgstr "MOSTRAR INFO QUANDO O BRILHO MUDA"
 
 #:
+
 msgid "PANEL BRIGHTNESS"
 msgstr "BRILHO DO PAINEL"
 
 #:
+
 msgid "PANEL CONTRAST"
 msgstr "CONTRASTE DO PAINEL"
 
 #:
+
 msgid "PANEL SATURATION"
 msgstr "SATURAÇÃO DO PAINEL"
 
 #:
+
 msgid "PANEL HUE"
 msgstr "MATIZ DO PAINEL"
 
 #:
+
 msgid ""), false, [this] {  });
 msgstr ""
 
 #:
+
 msgid "PANEL ID"
 msgstr "ID DO PAINEL"
 
 #:
+
 msgid "SCRAPE FROM"
 msgstr "EXTRAIR DE"
 
 #:
+
 msgid "IMAGE SOURCE"
 msgstr "ORIGEM DA IMAGEM"
 
 #:
+
 msgid "NONE"
 msgstr "NENHUM"
 
 #:
+
 msgid "SCREENSHOT"
 msgstr "CAPTURA DE ECRÃ"
 
 #:
+
 msgid "TITLE SCREENSHOT"
 msgstr "CAPTURA DE ECRÃ DE TÍTULO"
 
 #:
+
 msgid "MIX V1"
 msgstr "MISTURA V1"
 
 #:
+
 msgid "MIX V2"
 msgstr "MISTURA V2"
 
 #:
+
 msgid "BOX 2D"
 msgstr "CAIXA 2D"
 
 #:
+
 msgid "BOX 3D"
 msgstr "CAIXA 3D"
 
 #:
+
 msgid "BOX SOURCE"
 msgstr "CAIXA DE ORIGEM"
 
 #:
+
 msgid "LOGO SOURCE"
 msgstr "LOGO DE ORIGEM"
 
 #:
+
 msgid "WHEEL"
 msgstr "RODA"
 
 #:
+
 msgid "MARQUEE"
 msgstr "TEXTO ROLANTE"
 
 #:
+
 msgid "SCRAPE RATINGS"
 msgstr "EXTRAIR CLASSIFICAÇÕES"
 
 #:
+
 msgid "SCRAPE VIDEOS"
 msgstr "EXTRAIR VÍDEOS"
 
 #:
+
 msgid "USERNAME"
 msgstr "UTILIZADOR"
 
 #:
+
 msgid "PASSWORD"
 msgstr "PALAVRA PASSE"
 
 #:
+
 msgid "SCRAPING IS RUNNING. DO YOU WANT TO STOP IT ?"
 msgstr "A EXTRAÇÃO ESTÁ EM EXECUÇÃO. DESEJA PARAR ?"
 
 #:
+
 msgid "YES"
 msgstr "SIM"
 
 #:
+
 msgid "NO"
 msgstr "NÃO"
 
 #:
+
 msgid "SCRAPE NOW"
 msgstr "EXTRAIR AGORA"
 
 #:
+
 msgid "SYSTEM VOLUME"
 msgstr "VOLUME DO SISTEMA"
 
 #:
+
 msgid "AUDIO CARD"
 msgstr "PLACA DE ÁUDIO"
 
 #:
+
 msgid "AUDIO DEVICE"
 msgstr "DISPOSITIVO DE ÁUDIO"
 
 #:
+
 msgid "SHOW OVERLAY WHEN VOLUME CHANGES"
 msgstr "MOSTRAR INFO QUANDO O VOLUME MUDA"
 
 #:
+
 msgid "FLIP VOLUME BUTTONS"
 msgstr "INVERTER BOTÕES DE VOLUME"
 
 #:
+
 msgid "FRONTEND MUSIC"
 msgstr "MÚSICA DO INTERFACE"
 
 #:
+
 msgid "DISPLAY SONG TITLES"
 msgstr "EXIBIR NOMES DAS MÚSICAS"
 
 #:
+
 msgid "ONLY PLAY SYSTEM-SPECIFIC MUSIC FOLDER"
 msgstr "REPRODUZIR APENAS DA PASTA DE MÚSICA DO SISTEMA"
 
 #:
+
 msgid "PLAY THEME MUSICS"
 msgstr "REPRODUZIR MÚSICAS DO TEMA"
 
 #:
+
 msgid "ENABLE NAVIGATION SOUNDS"
 msgstr "ATIVAR SONS DE NAVEGAÇÃO"
 
 #:
+
 msgid "ENABLE VIDEO AUDIO"
 msgstr "ATIVAR ÁUDIO DOS VÍDEOS"
 
 #:
+
 msgid "LOWER MUSIC WHEN PLAYING VIDEO"
 msgstr "REDUZIR A MÚSICA AO REPRODUZIR VÍDEO"
 
 #:
+
 msgid "Verbal BATTERY Voice"
 msgstr "Voz da BATERIA"
 
 #:
+
 msgid "MALE 1"
 msgstr "MASCULINO 1"
 
 #:
+
 msgid "MALE 2"
 msgstr "MASCULINO 2"
 
 #:
+
 msgid "FEMALE"
 msgstr "FEMININO"
 
 #:
+
 msgid "VERBAL BATTERY VOICE"
 msgstr "TIPO DE VOZ DA BATERIA"
 
 #:
+
 msgid "Verbal BATTERY Warning"
 msgstr "Aviso Verbal de BATERIA"
 
 #:
+
 msgid "OFF"
 msgstr "DESLIGADO"
 
 #:
+
 msgid "ON"
 msgstr "LIGADO"
 
 #:
+
 msgid "VERBAL BATTERY WARNING"
 msgstr "AVISO VERBAL DE BATERIA"
 
 #:
+
 msgid "YOU MUST APPLY THE THEME BEFORE EDIT CONFIGURATION"
 msgstr "TEM DE APLICAR O TEMA ANTES DE EDITAR A CONFIGURAÇÃO"
 
 #:
+
 msgid "OK"
 msgstr "OK"
 
 #:
+
 msgid "THEME CONFIGURATION"
 msgstr "CONFIGURAÇÃO DO TEMA"
 
 #:
+
 msgid "VIEW CUSTOMISATION"
 msgstr "VER PERSONALIZAÇÃO"
 
 #:
+
 msgid "GAMELIST VIEW STYLE"
 msgstr "ESTILO DA LISTA DE JOGOS"
 
 #:
+
 msgid "automatic"
 msgstr "automático"
 
 #:
+
 msgid "basic"
 msgstr "básico"
 
 #:
+
 msgid "detailed"
 msgstr "detalhado"
 
 #:
+
 msgid "DEFAULT GRID SIZE"
 msgstr "TAMANHO DE GRELHA PADRÃO"
 
 #:
+
 msgid "DEFAULT"
 msgstr "PADRÃO"
 
 #:
+
 msgid "RESET GAMELIST CUSTOMISATIONS"
 msgstr "REINICIAR PERSONALIZAÇÕES DA LISTA DE JOGOS"
 
 #:
+
 msgid "THEME"
 msgstr "TEMA"
 
 #:
+
 msgid "video"
 msgstr "vídeo"
 
 #:
+
 msgid "grid"
 msgstr "grelha"
 
 #:
+
 msgid "SCREENSAVER SETTINGS"
 msgstr "CONFIGURAÇÕES DO PROTETOR DE ECRÃ"
 
 #:
+
 msgid "UI MODE"
 msgstr "MODO DE INTERFACE"
 
 #:
+
 msgid "LANGUAGE"
 msgstr "LÍNGUA"
 
 #:
+
 msgid "TRANSITION STYLE"
 msgstr "ESTILO DE TRANSIÇÃO"
 
 #:
+
 msgid "GAME LAUNCH TRANSITION"
 msgstr "TRANSIÇÃO AO ABRIR JOGO"
 
 #:
+
 msgid "START ON SYSTEM"
 msgstr "INICIAR NO SISTEMA"
 
 #:
+
 msgid "VISIBLE SYSTEMS"
 msgstr "SISTEMAS VISÍVEIS"
 
 #:
+
 msgid "BOOT ON GAMELIST"
 msgstr "INICIAR NA LISTA DE JOGOS"
 
 #:
+
 msgid "HIDE SYSTEM VIEW"
 msgstr "OCULTAR VISUALIZAÇÃO DO SISTEMA"
 
 #:
+
 msgid "HIDE WHEN RUNNING GAME"
 msgstr "OCULTAR AO CORRER UM JOGO"
 
 #:
+
 msgid "QUICK SYSTEM SELECT"
 msgstr "SELEÇÃO RÁPIDA DO SISTEMA"
 
 #:
+
 msgid "CAROUSEL TRANSITIONS"
 msgstr "TRANSIÇÕES DO CARROSSEL"
 
 #:
+
 msgid "SHOW CLOCK"
 msgstr "MOSTRAR RELÓGIO"
 
 #:
+
 msgid "ON-SCREEN HELP"
 msgstr "AJUDA NO ECRÃ"
 
 #:
+
 msgid "SHOW BATTERY STATUS"
 msgstr "MOSTRAR ESTADO DA BATERIA"
 
 #:
+
 msgid "ICON"
 msgstr "ÍCONE"
 
 #:
+
 msgid "ICON AND TEXT"
 msgstr "ÍCONE E TEXTO"
 
 #:
+
 msgid "SHOW FILENAMES IN LISTS"
 msgstr "MOSTRAR NOMES DE FICHEIROS NAS LISTAS"
 
 #:
+
 msgid "IGNORE LEADING ARTICLES WHEN SORTING"
 msgstr "IGNORAR PRONOMES AO ORDENAR"
 
 #:
+
 msgid "ENABLE FILTERS"
 msgstr "ATIVAR FILTROS"
 
 #:
+
 msgid "Scan Ports folder on boot"
 msgstr "Varrer pasta de Ports no arranque"
 
 #:
+
 msgid "Show Kodi in Start Menu"
 msgstr "Mostrar Kodi no Menu Inicial"
 
 #:
+
 msgid "EMULATOR"
 msgstr "EMULADOR"
 
 #:
+
 msgid "CORE"
 msgstr "NÚCLEO"
 
 #:
+
 msgid "AUTO"
 msgstr "AUTOMÁTICO"
 
 #:
+
 msgid "GOVERNOR"
 msgstr "GOVERNADOR"
 
 #:
+
 msgid "WIFI ENABLED"
 msgstr "WiFi ativado"
 
 #:
+
 msgid "THEME INSTALLER"
 msgstr "INSTALADOR DE TEMAS"
 
 #:
+
 msgid "AUTO UPDATES"
 msgstr "ATUALIZAÇÕES AUTOMÁTICAS"
 
 #:
+
 msgid "APPLY UPDATE"
 msgstr "APLICAR ATUALIZAÇÃO"
 
 #:
+
 msgid "START UPDATE"
 msgstr "INICIAR ATUALIZAÇÃO"
 
 #:
+
 msgid "NO UPDATE AVAILABLE"
 msgstr "NENHUMA ATUALIZAÇÃO DISPONÍVEL"
 
 #:
+
 msgid "UPDATE IS ALREADY RUNNING"
 msgstr "A ATUALIZAÇÃO JÁ ESTÁ A CORRER"
 
 #:
+
 msgid "TIMEZONE"
 msgstr "FUSO HORÁRIO"
 
 #:
+
 msgid "SHOW CLOCK IN 12-HOUR FORMAT"
 msgstr "MOSTRAR RELÓGIO NO FORMATO 12 HORAS"
 
 #:
+
 msgid "SWITCH A/B BUTTONS IN EMULATIONSTATION"
 msgstr "TROCAR BOTÕES A/B NO EMULATIONSTATION"
 
 #:
+
 msgid "SWITCH POWER BUTTON TAP TO OFF"
 msgstr "TOCAR NO BOTÃO DE LIGAR PARA DESLIGAR"
 
 #:
+
 msgid "POWER SAVER MODES"
 msgstr "MODOS DE ECONOMIA DE ENERGIA"
 
 #:
+
 msgid "VRAM LIMIT"
 msgstr "LIMITE DE VRAM"
 
 #:
+
 msgid "SAVE METADATA ON EXIT"
 msgstr "GUARDAR METADADOS AO SAIR"
 
 #:
+
 msgid "PARSE GAMESLISTS ONLY"
 msgstr "ANALISAR APENAS LISTAS DE JOGOS"
 
 #:
+
 msgid "SEARCH FOR LOCAL ART"
 msgstr "PESQUISAR POR ARTE LOCAL"
 
 #:
+
 msgid "PRELOAD UI"
 msgstr "PRÉ-CARREGAR O INTERFACE"
 
 #:
+
 msgid "OPTIMIZE IMAGES VRAM USE"
 msgstr "OTIMIZAR USO DE VRAM NAS IMAGENS"
 
 #:
+
 msgid "VSYNC"
 msgstr "SINCRONIZAÇÃO VERTICAL"
 
 #:
+
 msgid "SHOW FRAMERATE"
 msgstr "MOSTRAR FPS"
 
 #:
+
 msgid "THREADED LOADING"
 msgstr "CARREGAMENTO PARALELO"
 
 #:
+
 msgid "Default Emulator Governor"
 msgstr "Governador Padrão do Emulador"
 
 #:
+
 msgid "COMPLETE QUIT MENU"
 msgstr "MENU SAIR COMPLETO"
 
 #:
+
 msgid "LOG LEVEL"
 msgstr "NÍVEL DE REGISTO"
 
 #:
+
 msgid "OPTIONAL RUMBLE MOTOR"
 msgstr "MOTOR DE RUMBLE OPCIONAL"
 
 #:
+
 msgid "THIS OPTION IS FOR CONFIGURING EXTERNAL CONTROLLERS, NOT REMAPPING THE BUILT-IN CONTROLS.\n\nIF YOU WANT TO REMAP THE BUILT-IN INPUT, PLEASE VISIT:\nhttp://lcdyk0517.github.io/tools/dtb-tools.html\n\nDO YOU WANT TO CONTINUE?"
 msgstr "ESTA OPÇÃO É PARA CONFIGURAR CONTROLOS EXTERNOS, NÃO PARA REATRIBUIR OS CONTROLOS INTEGRADOS.\n\nSE DESEJA REATRIBUIR A ENTRADA INTEGRADA, POR FAVOR VISITE:\nhttp://lcdyk0517.github.io/tools/dtb-tools.html\n\nDESEJA CONTINUAR?"
 
+
 msgid "JOYPAD TEST"
 msgstr "Teste de Comando"
+
 
 msgid "ARE YOU SURE YOU WANT TO TEST JOYPAD?"
 msgstr "Tem a certeza de que deseja testar o comando?"
 
 #:
+
 msgid "REALLY RESTART?"
 msgstr "CONFIRMA REINICIAR?"
 
 #:
+
 msgid "RESTART EMULATIONSTATION"
 msgstr "REINICIAR O EMULATIONSTATION"
 
 #:
+
 msgid "REALLY QUIT?"
 msgstr "CONFIRMA SAIR?"
 
 #:
+
 msgid "QUIT EMULATIONSTATION"
 msgstr "SAIR DO EMULATIONSTATION"
 
 #:
+
 msgid "RESTART SYSTEM"
 msgstr "REINICIAR O SISTEMA"
 
 #:
+
 msgid "REALLY SHUTDOWN?"
 msgstr "CONFIRMA DESLIGAR?"
 
 #:
+
 msgid "SHUTDOWN SYSTEM"
 msgstr "DESLIGAR O SISTEMA"
 
 #:
+
 msgid "THIS FUNCTION IS DISABLED WHEN SCRAPING IS RUNNING"
 msgstr "ESTA FUNÇÃO ESTÁ DESATIVADA QUANDO A EXTRAÇÃO ESTÁ A DECORRER"
 
 #:
+
 msgid "CLOSE"
 msgstr "FECHAR"
 
 #:
+
 msgid "SWAP VIDEO AFTER (SECS)"
 msgstr "TROCAR VÍDEO APÓS (SEGS)"
 
 #:
+
 msgid "USE OMX PLAYER FOR SCREENSAVER"
 msgstr "USAR O OMX PLAYER PARA PROTETOR DE ECRÃ"
 
 #:
+
 msgid "VIDEO SCREENSAVER"
 msgstr "PROTETOR DE ECRÃ VÍDEO"
 
 #:
+
 msgid "SHOW GAME INFO"
 msgstr "MOSTRAR INFORMAÇÃO DO JOGO"
 
 #:
+
 msgid "SHOW GAME INFO ON SCREENSAVER"
 msgstr "MOSTRAR INFORMAÇÃO DO JOGO NO PROTETOR DE ECRÃ"
 
 #:
+
 msgid "USE MARQUEE AS GAME INFO"
 msgstr "USAR TEXTO ROLANTE PARA INFORMAÇÃO DO JOGO"
 
 #:
+
 msgid "USE RANDOM DECORATION"
 msgstr "USAR DECORAÇÃO ALEATÓRIA"
 
 #:
+
 msgid "STRETCH VIDEO ON SCREENSAVER"
 msgstr "ESTICAR VÍDEO NO PROTETOR DE ECRÃ"
 
 #:
+
 msgid "FILTER GAMELIST BY"
 msgstr "FILTAR LISTA DE JOGOS POR"
 
 #:
+
 msgid "RESET ALL FILTERS"
 msgstr "REMOVER TODOS OS FILTROS"
 
 #:
+
 msgid "SCRAPE THESE GAMES"
 msgstr "EXTRAIR PARA ESTES JOGOS"
 
 #:
+
 msgid "All Games"
 msgstr "Todos os Jogos"
 
 #:
+
 msgid "Only missing medias"
 msgstr "Apenas media em falta"
 
 #:
+
 msgid "FILTER"
 msgstr "FILTRO"
 
 #:
+
 msgid "SCRAPE THESE SYSTEMS"
 msgstr "EXTRAIR ESTES SISTEMAS"
 
 #:
+
 msgid "SYSTEMS"
 msgstr "SISTEMAS"
 
 #:
+
 msgid "USER DECIDES ON CONFLICTS"
 msgstr "O UTILIZADOR DECIDE SOBRE CONFLITOS"
 
 #:
+
 msgid "START"
 msgstr "INICIAR"
 
 #:
+
 msgid "NO GAMES FIT THAT CRITERIA."
 msgstr "NENHUM JOGO ENCONTRADO NESTE CRITÉRIO."
 
 #:
+
 msgid "INPUT"
 msgstr "ENTRADA"
 
 #:
+
 msgid "search"
 msgstr "pesquisar"
 
 #:
+
 msgid "CANCEL"
 msgstr "CANCELAR"
 
 #:
+
 msgid "GROUPED SYSTEMS"
 msgstr "SISTEMAS AGRUPADOS"
 
 #:
+
 msgid "CREATE NEW CUSTOM COLLECTION FROM THEME"
 msgstr "CRIAR NOVA COLEÇÃO PERSONALIZADA DO TEMA"
 
 #:
+
 msgid "SELECT THEME FOLDER"
 msgstr "SELECIONAR PASTA DE TEMAS"
 
 #:
+
 msgid "CREATE NEW CUSTOM COLLECTION"
 msgstr "CRIAR NOVA COLEÇÃO PERSONALIZADA"
 
 #:
+
 msgid "New Collection Name"
 msgstr "Nome da Nova Coleção"
 
 #:
+
 msgid "GROUP UNTHEMED CUSTOM COLLECTIONS"
 msgstr "AGRUPAR COLEÇÕES PERSONALIZADAS SEM TEMA"
 
 #:
+
 msgid "SORT COLLECTIONS AND SYSTEMS"
 msgstr "ORDENAR COLEÇÕES E SISTEMAS"
 
 #:
+
 msgid "ALPHABETICALLY"
 msgstr "ALFABETICAMENTE"
 
 #:
+
 msgid "BY MANUFACTURER"
 msgstr "POR FABRICANTE"
 
 #:
+
 msgid "BY HARDWARE TYPE"
 msgstr "POR TIPO DE DISPOSITIVO"
 
 #:
+
 msgid "BY RELEASE YEAR"
 msgstr "POR ANO DE LANÇAMENTO"
 
 #:
+
 msgid "SORT SYSTEMS"
 msgstr "ORDENAR SISTEMAS"
 
 #:
+
 msgid "SHOW SYSTEM NAME IN COLLECTIONS"
 msgstr "MOSTRAR NOME DO SISTEMA NAS COLEÇÕES"
 
 #:
+
 msgid "FINISH EDITING COLLECTION"
 msgstr "FINALIZAR A EDIÇÃO DA COLEÇÃO"
 
 #:
+
 msgid "SELECT COLLECTIONS"
 msgstr "SELECIONAR COLEÇÕES"
 
 #:
+
 msgid "ARCADE SYSTEMS"
 msgstr "SISTEMAS DE ARCADA"
 
 #:
+
 msgid "AUTOMATIC GAME COLLECTIONS"
 msgstr "COLEÇÕES AUTOMÁTICAS DE JOGOS"
 
 #:
+
 msgid "CUSTOM GAME COLLECTIONS"
 msgstr "COLEÇÕES PERSONALIZADAS DE JOGOS"
 
 #:
+
 msgid "SCREENSAVER AFTER"
 msgstr "PROTETOR DE ECRÃ APÓS"
 
 #:
+
 msgid "SCREENSAVER BEHAVIOR"
 msgstr "COMPORTAMENTO DO PROTETOR DE ECRÃ"
 
 #:
+
 msgid "THE \"
+
 msgid "O \"
 
 #:
+
 msgid "VIDEO SCREENSAVER SETTINGS"
 msgstr "CONFIGURAÇÕES DO PROTETOR DE ECRÃ DE VÍDEO"
 
 #:
+
 msgid "SLIDESHOW SCREENSAVER SETTINGS"
 msgstr "CONFIGURAÇÕES DO PROTETOR DE ECRÃ DE SLIDES"
 
 #:
+
 msgid "SCREENSAVER CONTROLS"
 msgstr "CONTROLOS DE PROTEÇÃO DE ECRÃ"
 
 #:
+
 msgid "SLIDESHOW SCREENSAVER"
 msgstr "PROTEÇÃO DE ECRÃ DE SLIDES"
 
 #:
+
 msgid "EDIT METADATA"
 msgstr "EDITAR METADADOS"
 
 #:
+
 msgid "SCRAPE"
 msgstr "EXTRAIR"
 
 #:
+
 msgid "SAVE"
 msgstr "GUARDAR"
 
 #:
+
 msgid "THIS WILL DELETE THE ACTUAL GAME FILE(S)!\nARE YOU SURE?"
 msgstr "ISTO VAI REMOVER O(S) FICHEIRO(S) REAIS DO JOGO!\nTEM A CERTEZA?"
 
 #:
+
 msgid "DELETE"
 msgstr "REMOVER"
 
 #:
+
 msgid "SAVE CHANGES ?"
 msgstr "GUARDAR MODIFICAÇÕES ?"
 
 #:
+
 msgid "SWAP IMAGE AFTER (SECS)"
 msgstr "TROCAR DE IMAGEM APÓS (SEGS)"
 
 #:
+
 msgid "STRETCH IMAGES"
 msgstr "ESTICAR IMAGENS"
 
 #:
+
 msgid "USE CUSTOM IMAGES"
 msgstr "USAR IMAGENS PERSONALIZADAS"
 
 #:
+
 msgid "CUSTOM IMAGE DIR"
 msgstr "PASTA DA IMAGEM PERSONALIZADA"
 
 #:
+
 msgid "CUSTOM IMAGE DIR RECURSIVE"
 msgstr "PASTA DA IMAGEM PERSONALIZADA RECURSIVA"
 
 #:
+
 msgid "CUSTOM IMAGE FILTER"
 msgstr "FILTRO DE IMAGEM PERSONALIZADO"
 
 #:
+
 msgid "go back"
 msgstr "voltar"
 
 #:
+
 msgid "JUMP TO..."
 msgstr "IR PARA..."
 
 #:
+
 msgid "UPDATE GAMES LISTS"
 msgstr "ATUALIZAR LISTAS DE JOGOS"
 
 #:
+
 msgid "REALLY UPDATE GAMES LISTS ?"
 msgstr "DESEJA REALMENTE ATUALIZAR AS LISTAS DE JOGOS ?"
 
 #:
+
 msgid "SORT GAMES BY"
 msgstr "ORDENAR JOGOS POR"
 
 #:
+
 msgid "GRID SIZE"
 msgstr "TAMANHO DA GRELHA"
 
 #:
+
 msgid "APPLY FILTER"
 msgstr "APLICAR FILTRO"
 
 #:
+
 msgid "SHOW FAVORITES ON TOP"
 msgstr "MOSTRAR FAVORITOS NO TOPO"
 
 #:
+
 msgid "SHOW HIDDEN FILES"
 msgstr "MOSTRAR FICHEIROS OCULTOS"
 
 #:
+
 msgid "SHOW FOLDERS"
 msgstr "MOSTRAR PASTAS"
 
 #:
+
 msgid "ADD/REMOVE GAMES TO THIS GAME COLLECTION"
 msgstr "ADICIONAR/REMOVER JOGOS DESTA COLEÇÃO"
 
 #:
+
 msgid "FINISH EDITING"
 msgstr "TERMINAR EDIÇÃO"
 
 #:
+
 msgid "COLLECTION"
 msgstr "COLEÇÃO"
 
 #:
+
 msgid "EDIT THIS GAME'S METADATA"
 msgstr "EDITAR OS METADADOS DESTE JOGO"
 
 #:
+
 msgid "FILTER GAMES BY TEXT"
 msgstr "FILTRAR JOGOS POR TEXTO"
 
 #:
+
 msgid "SELECT THEME TO INSTALL"
 msgstr "SELECIONE O TEMA A INSTALAR"
 
 #:
+
 msgid "ADDED TO DOWNLOAD QUEUE"
 msgstr "ADICIONADO À FILA DE DESCARGAS"
 
 #:
+
 msgid "Favorites"
 msgstr "Favoritos"
 
 #:
-msgid "EMULATIONSTATION"
+
 msgid "EMULATIONSTATION"
 
 #:
+
 msgid "UPDATE IS READY"
 msgstr "A ATUALIZAÇÃO ESTÁ CONCLUÍDA"
 
 #:
+
 msgid "RESTART EMULATIONSTATION TO APPLY"
 msgstr "REINICIE O EMULATIONSTATION PARA APLICAR"
 
 #:
+
 msgid "Extracting"
 msgstr "Extraindo"
 
 #:
+
 msgid "Starting UI"
 msgstr "Iniciando o Interface"
 
 #:
+
 msgid "SAVING DATA. PLEASE WAIT..."
 msgstr "A GUARDAR DADOS. AGUARDE..."
 
 #:
+
 msgid "FINISH"
 msgstr "FINALIZADO"
 
 #:
+
 msgid "NO GAMES FOUND - SKIP"
 msgstr "NENHUM JOGO ENCONTRADO - PASSAR Á FRENTE"
 
 #:
+
 msgid "AN ERROR HAS OCCURED"
 msgstr "OCORREU UM ERRO"
 
 #:
+
 msgid "RETRY"
 msgstr "VOLTAR A TENTAR"
 
 #:
+
 msgid "SKIP"
 msgstr "PASSAR Á FRENTE"
 
 #:
+
 msgid "SEARCHING"
 msgstr "PESQUISANDO"
 
 #:
+
 msgid "accept result"
 msgstr "aceitar o resultado"
 
 #:
+
 msgid "discard changes"
 msgstr "descartar alterações"
 
 #:
+
 msgid "WELCOME"
 msgstr "BEM-VINDO"
 
 #:
+
 msgid "NO GAMEPADS DETECTED"
 msgstr "NENHUM CONTROLADOR DETECTADO"
 
 #:
+
 msgid "HOLD A BUTTON ON YOUR DEVICE TO CONFIGURE IT."
 msgstr "PRIMA UM BOTÃO NO SEU CONTROLADOR PARA CONFIGURÁ-LO."
 
 #:
+
 msgid "PRESS F4 TO QUIT AT ANY TIME."
 msgstr "PRIMA F4 PARA SAIR A QUALQUER MOMENTO."
 
 #:
+
 msgid "PRESS ESC TO CANCEL."
 msgstr "PRIMA ESC PARA CANCELAR."
 
 #:
+
 msgid "SHIFTS FOR UPPER,LOWER, AND SPECIAL"
 msgstr "ALTERNAR ENTRE MAIÚSCULAS, MINÚSCULAS E ESPECIAIS"
 
 #:
+
 msgid "ALT GR"
 msgstr "ALT GR"
 
 #:
+
 msgid "RESET"
 msgstr "REINICIAR"
 
 #:
+
 msgid "SHIFT"
 msgstr "SHIFT"
 
 #:
+
 msgid "SPACE"
 msgstr "ESPAÇO"
 
 #:
+
 msgid "accept"
 msgstr "aceitar"
 
 #:
+
 msgid "SELECT ALL"
 msgstr "SELECIONAR TUDO"
 
 #:
+
 msgid "SELECT NONE"
 msgstr "LIMPAR SELEÇÃO"
 
 #:
+
 msgid "never"
 msgstr "nunca"
 
 #:
+
 msgid "unknown"
 msgstr "desconhecido"
 
 #:
+
 msgid "WORKING..."
 msgstr "A TRABALHAR..."
 
 #:
+
 msgid "MOVE CURSOR"
 msgstr "MOVER CURSOR"
 
 #:
+
 msgid "STOP EDITING"
 msgstr "PARAR EDIÇÃO"
 
 #:
+
 msgid "EDIT"
 msgstr "EDITAR"
 
 #:
+
 msgid "CHANGE"
 msgstr "ALTERAR"
 
 #:
+
 msgid "THEME FONT SIZE"
 msgstr "TAMANHO DA FONTE DO TEMA"
 
 #:
+
 msgid "THEME BACKGROUND"
 msgstr "FUNDO DO TEMA"
 
 #:
+
 msgid "RESET GAMELIST CUSTOMIZATIONS"
 msgstr "REDEFINIR PERSONALIZAÇÕES DA LISTA DE JOGOS"
 
 #:
+
 msgid "dim"
 msgstr "escurecer"
 
 #:
+
 msgid "black"
 msgstr "negro"
 
 #:
+
 msgid "random video"
 msgstr "vídeo aleatório"
 
 #:
+
 msgid "slideshow"
 msgstr "apresentação de slides"
 
 #:
+
 msgid "always"
 msgstr "sempre"
 
 #:
+
 msgid "start & end"
 msgstr "inicio e fim"
 
 #:
+
 msgid "Full"
 msgstr "Completo"
 
 #:
+
 msgid "Kiosk"
 msgstr "Quiosque"
 
 #:
+
 msgid "Kid"
 msgstr "Infantil"
 
 #:
+
 msgid "fade"
 msgstr "gradual"
 
 #:
+
 msgid "slide"
 msgstr "deslize"
 
 #:
+
 msgid "instant"
 msgstr "instantâneo"
 
 #:
+
 msgid "GAME LOADING IMAGE MODE"
 msgstr "MODO DE IMAGEM DE CARREGAMENTO DO JOGO"
 
 #:
+
 msgid "PIC"
 msgstr "IMAGEM"
 
 #:
+
 msgid "ASCII"
 msgstr "ASCII"
 
 #:
+
 msgid "GAME LOADING IMAGE"
 msgstr "IMAGEM DE CARREGAMENTO DO JOGO""
 
 #:
+
 msgid "THUMB"
 msgstr "MINIATURA"
 
 #
+
 msgid "%i SELECTED"
 msgid_plural "%i SELECIONADOS"
 msgstr[0] "%i SELECIONADO"
 msgstr[1] "%i SELECIONADOS"
 
 #:
+
 msgid "%i GAME AVAILABLE"
 msgid_plural "%i GAMES AVAILABLE"
 msgstr[0] "%i JEU DISPONIBLE"
 msgstr[1] "%i JEUX DISPONIBLES"
 
 #:
+
 msgid "speaker"
 msgstr "altifalante"
 
 #:
+
 msgid "master"
 msgstr "principal"
 
 #:
+
 msgid "digital"
 msgstr "digital"
 
 #:
+
 msgid "ANALOGUE"
 msgstr "ANALÓGICO"
 
 #:
+
 msgid "disabled"
 msgstr "desativado"
 
 #:
+
 msgid "default"
 msgstr "predefinição"
 
 #:
+
 msgid "enhanced"
 msgstr "aprimorado"
 
 #:
+
 msgid "PERFORMANCE"
 msgstr "DESEMPENHO"
 
 #:
+
 msgid "ONDEMAND"
 msgstr "SOB DEMANDA"
 
 #:
+
 msgid "POWERSAVE"
 msgstr "ECONOMIA"
 
 #:
+
 msgid "auto suspend timeout (mins)"
 msgstr "suspensão automática (min)"
 
 #:
+
 msgid "off"
 msgstr "desligado"
 
 #
+
 msgid "warning"
 msgstr "aviso"
 
 #
+
 msgid "error"
 msgstr "erro"
 
 #
+
 msgid "Please restart Emulationstation for your changes to take effect"
 msgstr "Reinicie o Emulationstation para que as alterações tenham efeito"
+
 
 msgid "ARKOS4CLONE SETTINGS"
 msgstr "Configurações ArkOS4Clone"
 
+
 msgid "WIFI SETTINGS"
 msgstr "Configurações Wi-Fi"
+
 
 msgid "CURRENT NETWORK"
 msgstr "Rede atual"
 
+
 msgid "REMOTE SERVICES"
 msgstr "Serviços remotos"
+
 
 msgid "SCAN WIFI NETWORKS"
 msgstr "Procurar redes Wi-Fi"
 
+
 msgid "ACTIVATE EXISTING CONNECTION"
 msgstr "Ativar conexão guardada"
+
 
 msgid "DELETE EXISTING CONNECTIONS"
 msgstr "Apagar conexões guardadas"
 
+
 msgid "NETWORK INFO"
 msgstr "Informação de rede"
+
 
 msgid "SHOW STATUS ICONS"
 msgstr "Mostrar ícones de status"
 
+
 msgid "SCANNING WIFI NETWORKS"
 msgstr "A procurar redes Wi-Fi"
+
 
 msgid "SELECT WIFI NETWORK"
 msgstr "Selecionar rede Wi-Fi"
 
+
 msgid "NO SAVED CONNECTIONS"
 msgstr "Sem conexões guardadas"
+
 
 msgid "SELECT CONNECTION"
 msgstr "Selecionar conexão"
 
+
 msgid "CONNECTING..."
 msgstr "A conectar..."
+
 
 msgid "CONNECTED TO"
 msgstr "Ligado a"
 
+
 msgid "CONNECTION FAILED"
 msgstr "Falha na conexão"
+
 
 msgid "DELETE CONNECTION"
 msgstr "Apagar conexão"
 
+
 msgid "DELETED"
 msgstr "Apagado"
+
 
 msgid "SSID"
 msgstr "SSID"
 
+
 msgid "IP"
 msgstr "Endereço IP"
+
 
 msgid "GATEWAY"
 msgstr "Gateway"
 
+
 msgid "DNS"
 msgstr "DNS"
+
 
 msgid "PASSWORD FOR"
 msgstr "Palavra-passe para"
 
+
 msgid "CONNECT"
 msgstr "Ligar"
+
 
 msgid "CONNECTING TO"
 msgstr "A ligar a"
 
+
 msgid "INVALID PASSWORD"
 msgstr "Palavra-passe incorreta"
+
 
 msgid "NETWORK NOT FOUND"
 msgstr "Rede não encontrada"
 
+
 msgid "JOYSTICK LED"
 msgstr "LED DO JOYSTICK"
+
 
 msgid "UNSUPPORTED DEVICE"
 msgstr "DISPOSITIVO NÃO SUPORTADO"
 
+
 msgid "Joystick LED is not supported on this device."
 msgstr "O LED do joystick não é suportado neste dispositivo."
+
 
 msgid "LED MODE"
 msgstr "MODO LED"
 
+
 msgid "TURN OFF LED"
 msgstr "DESLIGAR LED"
+
 
 msgid "SOLID RED"
 msgstr "VERMELHO SÓLIDO"
 
+
 msgid "SOLID GREEN"
 msgstr "VERDE SÓLIDO"
+
 
 msgid "SOLID BLUE"
 msgstr "AZUL SÓLIDO"
 
+
 msgid "SOLID ORANGE"
 msgstr "LARANJA SÓLIDO"
+
 
 msgid "SOLID PURPLE"
 msgstr "ROXO SÓLIDO"
 
+
 msgid "SOLID CYAN"
 msgstr "CIANO SÓLIDO"
+
 
 msgid "SOLID WHITE"
 msgstr "BRANCO SÓLIDO"
 
+
 msgid "SOLID YELLOW"
 msgstr "AMARELO SÓLIDO"
+
 
 msgid "SOLID MAGENTA"
 msgstr "MAGENTA SÓLIDO"
 
+
 msgid "BREATHING RED"
 msgstr "VERMELHO RESPIRANTE"
+
 
 msgid "BREATHING GREEN"
 msgstr "VERDE RESPIRANTE"
 
+
 msgid "BREATHING BLUE"
 msgstr "AZUL RESPIRANTE"
+
 
 msgid "BREATHING ORANGE"
 msgstr "LARANJA RESPIRANTE"
 
+
 msgid "BREATHING PURPLE"
 msgstr "ROXO RESPIRANTE"
+
 
 msgid "BREATHING CYAN"
 msgstr "CIANO RESPIRANTE"
 
+
 msgid "BREATHING WHITE"
 msgstr "BRANCO RESPIRANTE"
+
 
 msgid "BREATHING"
 msgstr "RESPIRANTE"
 
+
 msgid "BREATHING RGB"
 msgstr "RGB RESPIRANTE"
+
 
 msgid "BREATHING YELLOW"
 msgstr "AMARELO RESPIRANTE"
 
+
 msgid "BREATHING MAGENTA"
 msgstr "MAGENTA RESPIRANTE"
+
 
 msgid "FLOW EFFECT"
 msgstr "EFEITO FLUXO"
 
+
 msgid "SCROLLING EFFECT"
 msgstr "EFEITO ROLAGEM"
+
 
 msgid "LEFT JOYSTICK LED"
 msgstr "LED do joystick esquerdo"
 
+
 msgid "RIGHT JOYSTICK LED"
 msgstr "LED do joystick direito"
+
 
 msgid "BRIGHTNESS"
 msgstr "Brilho"
 
+
 msgid "HIGH"
 msgstr "Alto"
+
 
 msgid "MEDIUM"
 msgstr "Médio"
 
+
 msgid "LOW"
 msgstr "Baixo"
+
 
 msgid "USB SWITCH"
 msgstr "Comutador USB"
 
+
 msgid "INTERNAL USB"
 msgstr "USB Interno"
+
 
 msgid "INTERNAL USB FOR BUILT-IN STORAGE"
 msgstr "USB interno para armazenamento integrado"
 
+
 msgid "EXTERNAL USB FOR OTG DEVICES"
 msgstr "USB externo para dispositivos OTG"
+
 
 msgid "USB MODE"
 msgstr "Modo USB"
 
+
 msgid "INTERNAL USB (BUILT-IN STORAGE)"
 msgstr "USB Interno (armazenamento integrado)"
+
 
 msgid "EXTERNAL USB (OTG DEVICE)"
 msgstr "USB Externo (dispositivo OTG)"
 
+
 msgid "DATE & TIME"
 msgstr "Data e hora"
+
 
 msgid "CURRENT"
 msgstr "Atual"
 
+
 msgid "DATE"
 msgstr "Data"
+
 
 msgid "TIME"
 msgstr "Hora"
 
+
 msgid "SYNC WITH NETWORK"
 msgstr "Sincronizar com rede"
+
 
 msgid "TIME SET SUCCESSFULLY"
 msgstr "Hora definida com sucesso"
 
+
 msgid "TIME SYNCED SUCCESSFULLY"
 msgstr "Hora sincronizada com sucesso"
+
 
 msgid "NO NETWORK CONNECTION"
 msgstr "Sem conexão de rede"
 
+
 msgid "POWER LED"
 msgstr "LED de energia"
+
 
 msgid "RED LED"
 msgstr "LED vermelho"
 
+
 msgid "BLUE LED"
 msgstr "LED azul"
+
 
 msgid "BELOW"
 msgstr "Abaixo de"
 
+
 msgid "ABOVE"
 msgstr "Acima de"
+
 
 msgid "BLUE"
 msgstr "Azul"
 
+
 msgid "RED"
 msgstr "Vermelho"
+
 
 msgid "ARKOS4CLONE TOOLS"
 msgstr "Ferramentas ArkOS4Clone"
 
+
 msgid "CPU SETTINGS"
 msgstr "Configurações CPU"
+
 
 msgid "CPU CORES"
 msgstr "Núcleos CPU"
 
+
 msgid "CPU GOVERNOR"
 msgstr "Governador CPU"
+
 
 msgid "CPU MAX FREQ"
 msgstr "Freq Máx CPU"
 
+
 msgid "GPU SETTINGS"
 msgstr "Configurações GPU"
+
 
 msgid "GPU MAX FREQ"
 msgstr "Freq Máx GPU"
 
+
 msgid "DMC SETTINGS"
 msgstr "Configurações DMC"
+
 
 msgid "DMC MAX FREQ"
 msgstr "Freq Máx DMC"
 
+
 msgid "ZRAM SETTINGS"
 msgstr "Configurações ZRAM"
+
 
 msgid "ZRAM ENABLE"
 msgstr "Ativar ZRAM"
 
+
 msgid "ZRAM SIZE"
 msgstr "Tamanho ZRAM"
+
 
 msgid "ZRAM COMP ALGO"
 msgstr "Algoritmo de compactação ZRAM"
 
+
 msgid "ZRAM AUTO START"
 msgstr "Início automático ZRAM"
+
 
 msgid "MAX FREQ"
 msgstr "Freq Máx"
 
+
 msgid "DAY"
 msgstr "Dia"
+
 
 msgid "HOUR"
 msgstr "Hora"
 
+
 msgid "MINUTE"
 msgstr "Minuto"
+
 
 msgid "MONTH"
 msgstr "Mês"
 
+
 msgid "YEAR"
 msgstr "Ano"
+
 
 msgid "SIZE"
 msgstr "Tamanho"
 
+
 msgid "INTERFACE"
 msgstr "Interface"
+
 
 msgid "EXTERNAL USB"
 msgstr "USB Externo"
 
+
 msgid "REMOTE SERVICES AUTO-START"
 msgstr "Início Auto Serviços Remotos"
+
 
 msgid "R36Ultra V1"
 msgstr "R36Ultra V1"
 
+
 msgid "R36Ultra V2"
 msgstr "R36Ultra V2"
+
 
 msgid "OTA UPGRADE DETECTED.\nWOULD YOU LIKE TO RESTORE YOUR PREVIOUS CONFIGURATION?"
 msgstr "ATUALIZAÇÃO OTA DETECTADA.\nDESEJA RESTAURAR SUA CONFIGURAÇÃO ANTERIOR?"
 
+
 msgid "BEST"
 msgstr "Melhor"
+
 
 msgid "GOOD"
 msgstr "Bom"
 
+
 msgid "POOR"
 msgstr "Fraco"
+
 
 msgid "STANDARD"
 msgstr "Padrão"
 
+
 msgid "AVERAGE"
 msgstr "Médio"
+
 
 msgid "PROXY SETTINGS"
 msgstr "Proxy Settings"
 
+
 msgid "ENABLE PROXY"
 msgstr "Enable Proxy"
+
 
 msgid "PROXY TYPE"
 msgstr "Proxy Type"
 
+
 msgid "PROXY HOST"
 msgstr "Proxy Host"
+
 
 msgid "PROXY PORT"
 msgstr "Proxy Port"
 
+
 msgid "NO PROXY"
 msgstr "No Proxy"
+
 
 msgid "STEP 1: KEEP BOTH STICKS COMPLETELY STILL"
 msgstr "Passo 1: Mantenha ambos os sticks completamente parados"
 
+
 msgid "STEP 2: ROTATE BOTH STICKS FULL RANGE SLOWLY"
 msgstr "Passo 2: Gire lentamente ambos os sticks em toda a faixa"
+
 
 msgid "PRESS OK TO START"
 msgstr "Pressione OK para iniciar"
 
+
 msgid "PRESS OK TO START RANGE CALIBRATION"
 msgstr "Pressione OK para a calibração da faixa"
+
 
 msgid "CENTER SAMPLING COMPLETE!"
 msgstr "Amostragem do centro concluída！"
 
+
 msgid "TIME: 5 SECONDS"
 msgstr "Tempo：5秒"
+
 
 msgid "CALIBRATION COMPLETE!"
 msgstr "Calibração concluída！"
 
+
 msgid "JOYSTICK CALIBRATION"
 msgstr "Calibração do joystick"
+
 
 msgid "JOYSTICK SETTINGS"
 msgstr "Configurações do joystick"
 
+
 msgid "PRESS ANY BUTTON TO SET AS EMULATION SWITCH\n\nPRESS BACK TO CANCEL"
 msgstr "Pressione qualquer botão para comutação de emulação\n\nVoltar para cancelar"
+
 
 msgid "EMULATION BUTTON SET TO"
 msgstr "Botão de emulação definido como"
 
+
 msgid "CANCELLED"
 msgstr "Cancelado"
+
 
 msgid "ANALOG STICK EMULATION"
 msgstr "Emulação do stick analógico"
 
+
 msgid "CHANGE EMULATION BUTTON"
 msgstr "Alterar botão de emulação"
+
 
 msgid "CHANGE THE BUTTON FOR ANALOG STICK EMULATION?"
 msgstr "Alterar o botão para emulação do stick analógico？"
 
+
 msgid "PRESS THE BUTTON TO MAP"
 msgstr "Pressione o botão para atribuir"
 
+
 msgid "BUTTON"
 msgstr "Botão"
+
 
 msgid "JOYSTICK DEAD ZONE"
 msgstr ""
 
 
+
 msgid "DEAD ZONE VALUE"
 msgstr ""
+
 
 msgid "CUSTOM DEAD ZONE"
 msgstr ""
 
+
 msgid "ENTER DEAD ZONE VALUE (10-1800)"
 msgstr ""
+
 
 msgid "DEAD ZONE SET TO"
 msgstr ""
 
+
 msgid "VALUE OUT OF RANGE"
 msgstr ""
+
 
 msgid "INVALID VALUE"
 msgstr ""
 
+
 msgid "CUSTOM"
 msgstr ""
+
+
+msgid "BATTERYPLUS"
+msgstr "BATTERYPLUS"
+
+msgid "BATTERY INFO"
+msgstr "Battery Info"
+
+msgid "ENABLE BATTERYPLUS"
+msgstr "Enable BATTERYPLUS"
+
+msgid "BATTERY MODE"
+msgstr "Battery Mode"
+
+msgid "VOLTAGE MODE"
+msgstr "Voltage Mode"
+
+msgid "PMIC MODE"
+msgstr "PMIC Mode"
+
+msgid "VOLTAGE MODE DESC"
+msgstr "Derive battery percentage from voltage. Use when PMIC reports inaccurate."
+
+msgid "PMIC MODE DESC"
+msgstr "Read battery percentage from PMIC directly. Use when PMIC reports accurately."
+
+msgid "DELETE USAGE RECORDS"
+msgstr "Delete Usage Records"
+
+msgid "DELETE ALL BATTERY USAGE RECORDS? THIS WILL RESET CALIBRATION."
+msgstr "Delete all battery usage records? This will reset calibration."
+
+msgid "RECORDS DELETED. SERVICE RESTARTED."
+msgstr "Records deleted. Service restarted."
