@@ -3379,12 +3379,6 @@ msgid "DEAD ZONE SET TO"
 msgstr ""
 
 
-msgid "VALUE OUT OF RANGE"
-msgstr ""
-
-
-msgid "INVALID VALUE"
-msgstr ""
 
 
 msgid "CUSTOM"
@@ -3409,11 +3403,7 @@ msgstr "Voltage Mode"
 msgid "PMIC MODE"
 msgstr "PMIC Mode"
 
-msgid "VOLTAGE MODE DESC"
-msgstr "Derive battery percentage from voltage. Use when PMIC reports inaccurate."
 
-msgid "PMIC MODE DESC"
-msgstr "Read battery percentage from PMIC directly. Use when PMIC reports accurately."
 
 msgid "DELETE USAGE RECORDS"
 msgstr "Delete Usage Records"
@@ -3423,3 +3413,49 @@ msgstr "Delete all battery usage records? This will reset calibration."
 
 msgid "RECORDS DELETED. SERVICE RESTARTED."
 msgstr "Records deleted. Service restarted."
+
+
+msgid "GAMMA SETTINGS"
+msgstr "Gamma-Einstellungen"
+
+msgid "GAMMA CURRENT"
+msgstr "Aktueller Gamma"
+
+msgid "GAMMA SET ALL"
+msgstr "Alle Kanäle setzen"
+
+msgid "GAMMA SET R"
+msgstr "Rotkanal setzen"
+
+msgid "GAMMA SET G"
+msgstr "Grünenkanal setzen"
+
+msgid "GAMMA SET B"
+msgstr "Blaukanal setzen"
+
+msgid "GAMMA RESET"
+msgstr "Gamma zurücksetzen"
+
+msgid "ENTER GAMMA VALUE (0.30-2.00)"
+msgstr "Gamma-Wert eingeben (0.30-2.00)"
+
+msgid "ENTER RED GAMMA (0.30-2.00)"
+msgstr "Rot-Gamma eingeben (0.30-2.00)"
+
+msgid "ENTER GREEN GAMMA (0.30-2.00)"
+msgstr "Grün-Gamma eingeben (0.30-2.00)"
+
+msgid "ENTER BLUE GAMMA (0.30-2.00)"
+msgstr "Blau-Gamma eingeben (0.30-2.00)"
+
+msgid "GAMMA SET TO"
+msgstr "Gamma gesetzt auf"
+
+msgid "GAMMA RESET TO"
+msgstr "Gamma zurückgesetzt auf"
+
+msgid "VALUE OUT OF RANGE"
+msgstr "Wert außerhalb des Bereichs"
+
+msgid "INVALID VALUE"
+msgstr "Ungültiger Wert"

@@ -5119,13 +5119,52 @@ msgid "RECORDS DELETED. SERVICE RESTARTED."
 msgstr "記錄已刪除，服務已重啟。"
 
 msgid "VOLTAGE MODE"
-msgstr "電壓模式"
+msgstr "BatteryPlus模式"
 
 msgid "PMIC MODE"
-msgstr "PMIC 模式"
+msgstr "硬體讀取模式"
 
-msgid "VOLTAGE MODE DESC"
-msgstr "從電壓推算電量，PMIC上報不準時使用"
+msgid "GAMMA SETTINGS"
+msgstr "伽瑪設定"
 
-msgid "PMIC MODE DESC"
-msgstr "直接讀取PMIC電量，PMIC上報準確時使用"
+msgid "GAMMA CURRENT"
+msgstr "當前伽瑪"
+
+msgid "GAMMA SET ALL"
+msgstr "設定統一值"
+
+msgid "GAMMA SET R"
+msgstr "設定紅色通道"
+
+msgid "GAMMA SET G"
+msgstr "設定綠色通道"
+
+msgid "GAMMA SET B"
+msgstr "設定藍色通道"
+
+msgid "GAMMA RESET"
+msgstr "重設伽瑪"
+
+msgid "ENTER GAMMA VALUE (0.30-2.00)"
+msgstr "輸入伽瑪值 (0.30-2.00)"
+
+msgid "ENTER RED GAMMA (0.30-2.00)"
+msgstr "輸入紅色伽瑪 (0.30-2.00)"
+
+msgid "ENTER GREEN GAMMA (0.30-2.00)"
+msgstr "輸入綠色伽瑪 (0.30-2.00)"
+
+msgid "ENTER BLUE GAMMA (0.30-2.00)"
+msgstr "輸入藍色伽瑪 (0.30-2.00)"
+
+msgid "GAMMA SET TO"
+msgstr "伽瑪已設定為"
+
+msgid "GAMMA RESET TO"
+msgstr "伽瑪已重設為"
+
+msgid "VALUE OUT OF RANGE"
+msgstr "數值超出範圍"
+
+msgid "INVALID VALUE"
+msgstr "無效數值"

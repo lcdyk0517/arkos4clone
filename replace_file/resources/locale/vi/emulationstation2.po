@@ -2647,12 +2647,6 @@ msgid "DEAD ZONE SET TO"
 msgstr ""
 
 
-msgid "VALUE OUT OF RANGE"
-msgstr ""
-
-
-msgid "INVALID VALUE"
-msgstr ""
 
 
 msgid "CUSTOM"
@@ -2677,11 +2671,7 @@ msgstr "Voltage Mode"
 msgid "PMIC MODE"
 msgstr "PMIC Mode"
 
-msgid "VOLTAGE MODE DESC"
-msgstr "Derive battery percentage from voltage. Use when PMIC reports inaccurate."
 
-msgid "PMIC MODE DESC"
-msgstr "Read battery percentage from PMIC directly. Use when PMIC reports accurately."
 
 msgid "DELETE USAGE RECORDS"
 msgstr "Delete Usage Records"
@@ -2691,3 +2681,49 @@ msgstr "Delete all battery usage records? This will reset calibration."
 
 msgid "RECORDS DELETED. SERVICE RESTARTED."
 msgstr "Records deleted. Service restarted."
+
+
+msgid "GAMMA SETTINGS"
+msgstr "Cài đặt Gamma"
+
+msgid "GAMMA CURRENT"
+msgstr "Gamma hiện tại"
+
+msgid "GAMMA SET ALL"
+msgstr "Đặt tất cả kênh"
+
+msgid "GAMMA SET R"
+msgstr "Đặt kênh đỏ"
+
+msgid "GAMMA SET G"
+msgstr "Đặt kênh xanh lá"
+
+msgid "GAMMA SET B"
+msgstr "Đặt kênh xanh dương"
+
+msgid "GAMMA RESET"
+msgstr "Đặt lại Gamma"
+
+msgid "ENTER GAMMA VALUE (0.30-2.00)"
+msgstr "Nhập giá trị Gamma (0.30-2.00)"
+
+msgid "ENTER RED GAMMA (0.30-2.00)"
+msgstr "Nhập Gamma đỏ (0.30-2.00)"
+
+msgid "ENTER GREEN GAMMA (0.30-2.00)"
+msgstr "Nhập Gamma xanh lá (0.30-2.00)"
+
+msgid "ENTER BLUE GAMMA (0.30-2.00)"
+msgstr "Nhập Gamma xanh dương (0.30-2.00)"
+
+msgid "GAMMA SET TO"
+msgstr "Gamma đã đặt thành"
+
+msgid "GAMMA RESET TO"
+msgstr "Gamma đã đặt lại thành"
+
+msgid "VALUE OUT OF RANGE"
+msgstr "Giá trị ngoài phạm vi"
+
+msgid "INVALID VALUE"
+msgstr "Giá trị không hợp lệ"

@@ -2209,12 +2209,6 @@ msgid "DEAD ZONE SET TO"
 msgstr "デッドゾーンを設定"
 
 
-msgid "VALUE OUT OF RANGE"
-msgstr "値が範囲外です"
-
-
-msgid "INVALID VALUE"
-msgstr "無効な値"
 
 
 msgid "CUSTOM"
@@ -2239,11 +2233,7 @@ msgstr "Voltage Mode"
 msgid "PMIC MODE"
 msgstr "PMIC Mode"
 
-msgid "VOLTAGE MODE DESC"
-msgstr "Derive battery percentage from voltage. Use when PMIC reports inaccurate."
 
-msgid "PMIC MODE DESC"
-msgstr "Read battery percentage from PMIC directly. Use when PMIC reports accurately."
 
 msgid "DELETE USAGE RECORDS"
 msgstr "使用記録を削除"
@@ -2253,3 +2243,49 @@ msgstr "Delete all battery usage records? This will reset calibration."
 
 msgid "RECORDS DELETED. SERVICE RESTARTED."
 msgstr "Records deleted. Service restarted."
+
+
+msgid "GAMMA SETTINGS"
+msgstr "ガンマ設定"
+
+msgid "GAMMA CURRENT"
+msgstr "現在のガンマ"
+
+msgid "GAMMA SET ALL"
+msgstr "全チャンネル設定"
+
+msgid "GAMMA SET R"
+msgstr "赤チャンネル設定"
+
+msgid "GAMMA SET G"
+msgstr "緑チャンネル設定"
+
+msgid "GAMMA SET B"
+msgstr "青チャンネル設定"
+
+msgid "GAMMA RESET"
+msgstr "ガンマルセット"
+
+msgid "ENTER GAMMA VALUE (0.30-2.00)"
+msgstr "ガンマ値を入力 (0.30-2.00)"
+
+msgid "ENTER RED GAMMA (0.30-2.00)"
+msgstr "赤ガンマを入力 (0.30-2.00)"
+
+msgid "ENTER GREEN GAMMA (0.30-2.00)"
+msgstr "緑ガンマを入力 (0.30-2.00)"
+
+msgid "ENTER BLUE GAMMA (0.30-2.00)"
+msgstr "青ガンマを入力 (0.30-2.00)"
+
+msgid "GAMMA SET TO"
+msgstr "ガンマを設定しました"
+
+msgid "GAMMA RESET TO"
+msgstr "ガンマをリセットしました"
+
+msgid "VALUE OUT OF RANGE"
+msgstr "値が範囲外です"
+
+msgid "INVALID VALUE"
+msgstr "無効な値です"

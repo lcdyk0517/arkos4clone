@@ -2815,12 +2815,6 @@ msgid "DEAD ZONE SET TO"
 msgstr ""
 
 
-msgid "VALUE OUT OF RANGE"
-msgstr ""
-
-
-msgid "INVALID VALUE"
-msgstr ""
 
 
 msgid "CUSTOM"
@@ -2845,11 +2839,7 @@ msgstr "Voltage Mode"
 msgid "PMIC MODE"
 msgstr "PMIC Mode"
 
-msgid "VOLTAGE MODE DESC"
-msgstr "Derive battery percentage from voltage. Use when PMIC reports inaccurate."
 
-msgid "PMIC MODE DESC"
-msgstr "Read battery percentage from PMIC directly. Use when PMIC reports accurately."
 
 msgid "DELETE USAGE RECORDS"
 msgstr "사용 기록 삭제"
@@ -2859,3 +2849,49 @@ msgstr "Delete all battery usage records? This will reset calibration."
 
 msgid "RECORDS DELETED. SERVICE RESTARTED."
 msgstr "Records deleted. Service restarted."
+
+
+msgid "GAMMA SETTINGS"
+msgstr "감마 설정"
+
+msgid "GAMMA CURRENT"
+msgstr "현재 감마"
+
+msgid "GAMMA SET ALL"
+msgstr "모든 채널 설정"
+
+msgid "GAMMA SET R"
+msgstr "빨간색 채널 설정"
+
+msgid "GAMMA SET G"
+msgstr "초록색 채널 설정"
+
+msgid "GAMMA SET B"
+msgstr "파란색 채널 설정"
+
+msgid "GAMMA RESET"
+msgstr "감마 초기화"
+
+msgid "ENTER GAMMA VALUE (0.30-2.00)"
+msgstr "감마 값 입력 (0.30-2.00)"
+
+msgid "ENTER RED GAMMA (0.30-2.00)"
+msgstr "빨간색 감마 입력 (0.30-2.00)"
+
+msgid "ENTER GREEN GAMMA (0.30-2.00)"
+msgstr "초록색 감마 입력 (0.30-2.00)"
+
+msgid "ENTER BLUE GAMMA (0.30-2.00)"
+msgstr "파란색 감마 입력 (0.30-2.00)"
+
+msgid "GAMMA SET TO"
+msgstr "감마 설정됨"
+
+msgid "GAMMA RESET TO"
+msgstr "감마 초기화됨"
+
+msgid "VALUE OUT OF RANGE"
+msgstr "값이 범위를 벗어남"
+
+msgid "INVALID VALUE"
+msgstr "잘못된 값"

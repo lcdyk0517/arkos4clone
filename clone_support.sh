@@ -173,6 +173,16 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   safe sudo chmod 777 "$MOUNT_DIR/root/etc/systemd/system/batteryplus.service" 2>/dev/null
   safe sudo chmod 777 "$MOUNT_DIR/root/etc/batteryplus/batteryplus.conf" 2>/dev/null
 
+  echo "== 添加 Gamma =="
+  safe sudo cp -a ./replace_file/gamma/gamma "$MOUNT_DIR/usr/local/bin/" 2>/dev/null
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/usr/local/bin/gamma" 2>/dev/null
+  safe sudo chmod -R 777 "$MOUNT_DIR/usr/local/bin/gamma" 2>/dev/null
+
+  echo "== 添加 Gamma =="
+  safe sudo cp -a ./replace_file/gamma/gamma "$MOUNT_DIR/usr/local/bin/" 2>/dev/null
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/usr/local/bin/gamma" 2>/dev/null
+  safe sudo chmod -R 777 "$MOUNT_DIR/usr/local/bin/gamma" 2>/dev/null
+
   echo "== 注入核心 =="
   safe sudo cp -f ./mod_so/64/* "$MOUNT_DIR/root/home/ark/.config/retroarch/cores/"
   safe sudo cp -f ./mod_so/32/* "$MOUNT_DIR/root/home/ark/.config/retroarch32/cores/"

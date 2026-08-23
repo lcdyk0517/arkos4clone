@@ -152,6 +152,10 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   cp -f ./bin/batteryplus-service/batteryplus.conf "$PAYLOAD_ROOT/etc/batteryplus/" 2>/dev/null || true
   cp -f ./bin/batteryplus-service/batteryplus.service "$PAYLOAD_ROOT/etc/systemd/system/" 2>/dev/null || true
 
+  echo "== 添加 Gamma =="
+  mkdir -p "$PAYLOAD_ROOT/usr/local/bin"
+  cp -f ./replace_file/gamma/gamma "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
+
   echo "== 注入核心与 EmulationStation 文件 =="
   mkdir -p "$PAYLOAD_ROOT/home/ark/.config/retroarch/cores" \
            "$PAYLOAD_ROOT/home/ark/.config/retroarch32/cores" \
@@ -260,7 +264,7 @@ EOF
   meta_add "0777" "1000:1000" "/usr/lib/firmware/aic8800DC/*"
   meta_add "0777" "1000:1000" "/opt/351Files"
   meta_add "0777" "1000:1000" "/opt/351Files/*"
-  for f in darkos4atomiswave.sh darkos4dreamcast.sh darkos4naomi.sh darkos4saturn.sh darkos4n64.sh darkos4pico8.sh darkos4get_last_played.sh drastic.sh drastic_kk.sh choose_drastic_ver.sh mediaplayer.sh onscripter.sh freej2me.sh choose_ons_ver.sh; do
+  for f in darkos4atomiswave.sh darkos4dreamcast.sh darkos4naomi.sh darkos4saturn.sh darkos4n64.sh darkos4pico8.sh darkos4get_last_played.sh drastic.sh drastic_kk.sh choose_drastic_ver.sh mediaplayer.sh onscripter.sh freej2me.sh choose_ons_ver.sh gamma; do
     meta_add "0777" "1000:1000" "/usr/local/bin/$f"
   done
   meta_add "0777" "1000:1000" "/usr/local/bin/es-status-daemon.sh"
@@ -399,6 +403,10 @@ else
   cp -f ./bin/batteryplus-service/batteryplus "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
   cp -f ./bin/batteryplus-service/batteryplus.conf "$PAYLOAD_ROOT/etc/batteryplus/" 2>/dev/null || true
   cp -f ./bin/batteryplus-service/batteryplus.service "$PAYLOAD_ROOT/etc/systemd/system/" 2>/dev/null || true
+
+  echo "== 添加 Gamma =="
+  mkdir -p "$PAYLOAD_ROOT/usr/local/bin"
+  cp -f ./replace_file/gamma/gamma "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
 
   echo "== 注入核心与 EmulationStation 文件 =="
   mkdir -p "$PAYLOAD_ROOT/home/ark/.config/retroarch/cores" \
@@ -549,7 +557,7 @@ EOF
   meta_add "0777" "1002:1002" "/usr/lib/firmware/aic8800DC/*"
   meta_add "0777" "1002:1002" "/opt/351Files"
   meta_add "0777" "1002:1002" "/opt/351Files/*"
-  for f in atomiswave.sh dreamcast.sh naomi.sh saturn.sh n64.sh mvem.sh easyrpg.sh gametank.sh flash.sh gametankkeydemon.py pico8.sh drastic.sh drastic_kk.sh choose_drastic_ver.sh mediaplayer.sh get_last_played.sh choose_ons_ver.sh onscripter.sh freej2me.sh; do
+  for f in atomiswave.sh dreamcast.sh naomi.sh saturn.sh n64.sh mvem.sh easyrpg.sh gametank.sh flash.sh gametankkeydemon.py pico8.sh drastic.sh drastic_kk.sh choose_drastic_ver.sh mediaplayer.sh get_last_played.sh choose_ons_ver.sh onscripter.sh freej2me.sh gamma; do
     meta_add "0777" "1002:1002" "/usr/local/bin/$f"
   done
   meta_add "0777" "1002:1002" "/usr/local/bin/es-status-daemon.sh"

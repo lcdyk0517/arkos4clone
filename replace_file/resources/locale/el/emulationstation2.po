@@ -3011,12 +3011,6 @@ msgid "DEAD ZONE SET TO"
 msgstr ""
 
 
-msgid "VALUE OUT OF RANGE"
-msgstr ""
-
-
-msgid "INVALID VALUE"
-msgstr ""
 
 
 msgid "CUSTOM"
@@ -3041,11 +3035,7 @@ msgstr "Voltage Mode"
 msgid "PMIC MODE"
 msgstr "PMIC Mode"
 
-msgid "VOLTAGE MODE DESC"
-msgstr "Derive battery percentage from voltage. Use when PMIC reports inaccurate."
 
-msgid "PMIC MODE DESC"
-msgstr "Read battery percentage from PMIC directly. Use when PMIC reports accurately."
 
 msgid "DELETE USAGE RECORDS"
 msgstr "Delete Usage Records"
@@ -3055,3 +3045,49 @@ msgstr "Delete all battery usage records? This will reset calibration."
 
 msgid "RECORDS DELETED. SERVICE RESTARTED."
 msgstr "Records deleted. Service restarted."
+
+
+msgid "GAMMA SETTINGS"
+msgstr "Ρυθμίσεις Gamma"
+
+msgid "GAMMA CURRENT"
+msgstr "Τρέχουσα Gamma"
+
+msgid "GAMMA SET ALL"
+msgstr "Ορισμός όλων των καναλιών"
+
+msgid "GAMMA SET R"
+msgstr "Ορισμός κόκκινου καναλιού"
+
+msgid "GAMMA SET G"
+msgstr "Ορισμός πράσινου καναλιού"
+
+msgid "GAMMA SET B"
+msgstr "Ορισμός μπλε καναλιού"
+
+msgid "GAMMA RESET"
+msgstr "Επαναφορά Gamma"
+
+msgid "ENTER GAMMA VALUE (0.30-2.00)"
+msgstr "Εισάγετε τιμή Gamma (0.30-2.00)"
+
+msgid "ENTER RED GAMMA (0.30-2.00)"
+msgstr "Εισάγετε κόκκινη Gamma (0.30-2.00)"
+
+msgid "ENTER GREEN GAMMA (0.30-2.00)"
+msgstr "Εισάγετε πράσινη Gamma (0.30-2.00)"
+
+msgid "ENTER BLUE GAMMA (0.30-2.00)"
+msgstr "Εισάγετε μπλε Gamma (0.30-2.00)"
+
+msgid "GAMMA SET TO"
+msgstr "Η Gamma ορίστηκε σε"
+
+msgid "GAMMA RESET TO"
+msgstr "Η Gamma επαναφέρθηκε σε"
+
+msgid "VALUE OUT OF RANGE"
+msgstr "Τιμή εκτός εύρους"
+
+msgid "INVALID VALUE"
+msgstr "Μη έγκυρη τιμή"
