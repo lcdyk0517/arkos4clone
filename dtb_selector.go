@@ -817,8 +817,8 @@ var english = Language{
 		CopyingExtra:           "Copying extra resources...",
 		CopyingFmt:             "  Copying: %s\n",
 		SelectBatteryVersion:   "Select battery driver version:",
-		BatteryVersionOriginal: "1. Original battery driver",
-		BatteryVersionFix:      "2. arkos4clone_fix battery driver",
+		BatteryVersionOriginal: "1. arkos original driver (this driver must be used together with batteryplus; otherwise, the battery level will display abnormally during charging).",
+		BatteryVersionFix:      "2. arkos4clone battery driver (capable of correctly displaying battery level during both charging and discharging, and featuring an aging‑adaptive function)",
 	},
 	Cleanup: LanguageCleanup{
 		OperationCompleted:   "  ✅  Operation completed!",
@@ -906,8 +906,8 @@ var chinese = Language{
 		CopyingExtra:           "正在复制额外资源...",
 		CopyingFmt:             "  开始复制: %s\n",
 		SelectBatteryVersion:   "请选择电池驱动版本:",
-		BatteryVersionOriginal: "1. 原版电池驱动",
-		BatteryVersionFix:      "2. arkos4clone_fix 电池驱动",
+		BatteryVersionOriginal: "1. arkos 原始驱动（该驱动需要搭配batteryplus来使用否则会在充电时电量显示异常）",
+		BatteryVersionFix:      "2. arkos4clone 电池驱动（该版本驱动能够在充电和用电时正确显示电池电量，并且具备老化自适应功能）",
 	},
 	Cleanup: LanguageCleanup{
 		OperationCompleted:   "  ✅  操作完成！",
@@ -995,8 +995,8 @@ var korean = Language{
 		CopyingExtra:           "기타 리소스 복사중...",
 		CopyingFmt:             "  복사중: %s\n",
 		SelectBatteryVersion:   "배터리 드라이버 버전을 선택하세요:",
-		BatteryVersionOriginal: "1. 원본 배터리 드라이버",
-		BatteryVersionFix:      "2. arkos4clone_fix 배터리 드라이버",
+		BatteryVersionOriginal: "1. arkos 오리지널 드라이버 (이 드라이버는 batteryplus와 함께 사용해야 하며, 그렇지 않으면 충전 시 배터리 잔량이 비정상적으로 표시됩니다.)",
+		BatteryVersionFix:      "2. arkos4clone 배터리 드라이버 (충전 및 사용 중에 배터리 잔량을 정확하게 표시할 수 있으며, 노화 적응 기능을 갖추고 있습니다.)",
 	},
 	Cleanup: LanguageCleanup{
 		OperationCompleted:   "  ✅  성공!",
