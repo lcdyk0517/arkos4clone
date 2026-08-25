@@ -5118,11 +5118,11 @@ msgstr "刪除所有電池使用記錄？這將重置校準資料。"
 msgid "RECORDS DELETED. SERVICE RESTARTED."
 msgstr "記錄已刪除，服務已重啟。"
 
-msgid "VOLTAGE MODE"
+msgid "BatteryPlus Mode"
 msgstr "BatteryPlus模式"
 
-msgid "PMIC MODE"
-msgstr "硬體讀取模式"
+msgid "Driver Mode"
+msgstr "驅動模式"
 
 msgid "GAMMA SETTINGS"
 msgstr "伽瑪設定"

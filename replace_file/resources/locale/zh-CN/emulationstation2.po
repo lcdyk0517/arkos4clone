@@ -5153,11 +5153,11 @@ msgstr "删除所有电池使用记录？这将重置校准数据。"
 msgid "RECORDS DELETED. SERVICE RESTARTED."
 msgstr "记录已删除，服务已重启。"
 
-msgid "VOLTAGE MODE"
+msgid "BatteryPlus Mode"
 msgstr "BatteryPlus模式"
 
-msgid "PMIC MODE"
-msgstr "硬件读取模式"
+msgid "Driver Mode"
+msgstr "驱动模式"
 
 msgid "GAMMA SETTINGS"
 msgstr "伽马设置"

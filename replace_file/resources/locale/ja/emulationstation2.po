@@ -2227,10 +2227,10 @@ msgstr "BATTERYPLUSを有効にする"
 msgid "BATTERY MODE"
 msgstr "バッテリーモード"
 
-msgid "VOLTAGE MODE"
+msgid "BatteryPlus Mode"
 msgstr "Voltage Mode"
 
-msgid "PMIC MODE"
+msgid "Driver Mode"
 msgstr "PMIC Mode"
 
 

@@ -5081,10 +5081,10 @@ msgstr "Enable BATTERYPLUS"
 msgid "BATTERY MODE"
 msgstr "Battery Mode"
 
-msgid "VOLTAGE MODE"
+msgid "BatteryPlus Mode"
 msgstr "Voltage Mode"
 
-msgid "PMIC MODE"
+msgid "Driver Mode"
 msgstr "PMIC Mode"
 
 

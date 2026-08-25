@@ -2833,10 +2833,10 @@ msgstr "BATTERYPLUS 활성화"
 msgid "BATTERY MODE"
 msgstr "배터리 모드"
 
-msgid "VOLTAGE MODE"
+msgid "BatteryPlus Mode"
 msgstr "Voltage Mode"
 
-msgid "PMIC MODE"
+msgid "Driver Mode"
 msgstr "PMIC Mode"
 
 
