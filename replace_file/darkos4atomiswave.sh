@@ -28,7 +28,7 @@ elif [[ $1 == *"standalone"* ]]; then
   fi
   sudo systemctl stop killer_daemon.service
   sudo systemctl restart ogage &
-elif [[ $1 == "retrorun*" ]]; then
+elif [[ $1 == "retrorun"* ]]; then
   directory=$(dirname "$3" | cut -d "/" -f2)
   CURDIRECTORYSET="$(grep "retrorun_screenshot_folder = " /home/ark/.config/retrorun.cfg | cut -d "/" -f2-3)"
   if [[ "${CURDIRECTORYSET}" != "${directory}/atomiswave" ]]; then

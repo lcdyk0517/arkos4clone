@@ -73,7 +73,7 @@ elif  [[ $1 == "retroarch" ]]; then
   /usr/local/bin/"$1" -L /home/ark/.config/"$1"/cores/"$2"_libretro.so "$3"
 elif [[ $1 == "retroarch32" ]]; then
   /usr/local/bin/"$1" -L /home/ark/.config/"$1"/cores/"$2"_libretro.so "$3"
-elif [[ $1 == "retrorun*" ]]; then
+elif [[ $1 == "retrorun"* ]]; then
   directory=$(dirname "$3" | cut -d "/" -f2)
   if [[ ! -f "/$directory/bios/saturn_bios.bin" ]]; then
     printf "\033c" >> /dev/tty1

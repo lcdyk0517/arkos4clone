@@ -33,7 +33,7 @@ elif [[ $1 == *"standalone"* ]]; then
   fi
   sudo killall python3
   sudo systemctl restart oga_events &
-elif [[ $1 == "retrorun*" ]]; then
+elif [[ $1 == "retrorun"* ]]; then
   directory=$(dirname "$3" | cut -d "/" -f2)
   CURDIRECTORYSET="$(grep "retrorun_screenshot_folder = " /home/ark/.config/retrorun.cfg | cut -d "/" -f2-3)"
   if [[ "${CURDIRECTORYSET}" != "${directory}/dreamcast" ]]; then

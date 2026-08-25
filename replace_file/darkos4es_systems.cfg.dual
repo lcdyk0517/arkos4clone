@@ -458,22 +458,26 @@
 			</emulator>
 			<emulator name="retrorun">
 				<cores>
+					<core>flycast2022</core>
 					<core>flycast</core>
 				</cores>
 			</emulator>
 			<emulator name="retrorun32">
 				<cores>
+					<core>flycast2022</core>
 					<core>flycast32_rumble</core>
 					<core>flycast_xtreme</core>
 				</cores>
 			</emulator>
 			<emulator name="retrorunsdl">
 				<cores>
+					<core>flycast2022</core>
 					<core>flycast</core>
 				</cores>
 			</emulator>
 			<emulator name="retrorunsdl32">
 				<cores>
+					<core>flycast2022</core>
 					<core>flycast32_rumble</core>
 					<core>flycast_xtreme</core>
 				</cores>
@@ -512,22 +516,26 @@
 			</emulator>
 			<emulator name="retrorun">
 				<cores>
+					<core>flycast2022</core>
 					<core>flycast</core>
 				</cores>
 			</emulator>
 			<emulator name="retrorun32">
 				<cores>
+					<core>flycast2022</core>
 					<core>flycast32_rumble</core>
 					<core>flycast_xtreme</core>
 				</cores>
 			</emulator>
 			<emulator name="retrorunsdl">
 				<cores>
+					<core>flycast2022</core>
 					<core>flycast</core>
 				</cores>
 			</emulator>
 			<emulator name="retrorunsdl32">
 				<cores>
+					<core>flycast2022</core>
 					<core>flycast32_rumble</core>
 					<core>flycast_xtreme</core>
 				</cores>
@@ -1673,24 +1681,28 @@
 			</emulator>
 			<emulator name="retrorun32">
 				<cores>
+					<core>flycast2022</core>
 					<core>flycast32_rumble</core>
 					<core>flycast_xtreme</core>
 				</cores>
 			</emulator>
 			<emulator name="retrorun">
 				<cores>
+					<core>flycast2022</core>
 					<core>flycast_rumble</core>
 					<core>flycast</core>
 				</cores>
 			</emulator>
 			<emulator name="retrorunsdl32">
 				<cores>
+					<core>flycast2022</core>
 					<core>flycast32_rumble</core>
 					<core>flycast_xtreme</core>
 				</cores>
 			  </emulator>
 			<emulator name="retrorunsdl">
 				<cores>
+					<core>flycast2022</core>
 					<core>flycast_rumble</core>
 					<core>flycast</core>
 				</cores>
@@ -3182,22 +3194,26 @@
 			</emulator>
 			<emulator name="retrorun">
 				<cores>
+					<core>flycast2022</core>
 					<core>flycast</core>
 				</cores>
 			</emulator>
 			<emulator name="retrorun32">
 				<cores>
+					<core>flycast2022</core>
 					<core>flycast32_rumble</core>
 					<core>flycast_xtreme</core>
 				</cores>
 			</emulator>
 			<emulator name="retrorunsdl">
 				<cores>
+					<core>flycast2022</core>
 					<core>flycast</core>
 				</cores>
 			</emulator>
 			<emulator name="retrorunsdl32">
 				<cores>
+					<core>flycast2022</core>
 					<core>flycast32_rumble</core>
 					<core>flycast_xtreme</core>
 				</cores>
@@ -3236,22 +3252,26 @@
 			</emulator>
 			<emulator name="retrorun">
 				<cores>
+					<core>flycast2022</core>
 					<core>flycast</core>
 				</cores>
 			</emulator>
 			<emulator name="retrorun32">
 				<cores>
+					<core>flycast2022</core>
 					<core>flycast32_rumble</core>
 					<core>flycast_xtreme</core>
 				</cores>
 			</emulator>
 			<emulator name="retrorunsdl">
 				<cores>
+					<core>flycast2022</core>
 					<core>flycast</core>
 				</cores>
 			</emulator>
 			<emulator name="retrorunsdl32">
 				<cores>
+					<core>flycast2022</core>
 					<core>flycast32_rumble</core>
 					<core>flycast_xtreme</core>
 				</cores>
@@ -4397,24 +4417,28 @@
 			</emulator>
 			<emulator name="retrorun32">
 				<cores>
+					<core>flycast2022</core>
 					<core>flycast32_rumble</core>
 					<core>flycast_xtreme</core>
 				</cores>
 			</emulator>
 			<emulator name="retrorun">
 				<cores>
+					<core>flycast2022</core>
 					<core>flycast_rumble</core>
 					<core>flycast</core>
 				</cores>
 			</emulator>
 			<emulator name="retrorunsdl32">
 				<cores>
+					<core>flycast2022</core>
 					<core>flycast32_rumble</core>
 					<core>flycast_xtreme</core>
 				</cores>
 			  </emulator>
 			<emulator name="retrorunsdl">
 				<cores>
+					<core>flycast2022</core>
 					<core>flycast_rumble</core>
 					<core>flycast</core>
 				</cores>
