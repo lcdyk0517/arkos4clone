@@ -214,7 +214,7 @@ var Consoles = []ConsoleConfig{
 		BrandEntries: []BrandEntry{
 			{Brand: "Clone R36s", DisplayName: "Clone Type 1 Without Amplifier"},
 		},
-		ExtraSources: []string{"logo/480p/"},
+		ExtraSources: []string{"logo/480P/"},
 	},
 	{
 		RealName: "clone type1 invert",
@@ -271,42 +271,42 @@ var Consoles = []ConsoleConfig{
 		BrandEntries: []BrandEntry{
 			{Brand: "GameConsole", DisplayName: "GameConsole R46H"},
 		},
-		ExtraSources: []string{"logo/768p/"},
+		ExtraSources: []string{"logo/768P/"},
 	},
 	{
 		RealName: "r40xxpromax",
 		BrandEntries: []BrandEntry{
 			{Brand: "GameConsole", DisplayName: "GameConsole R40XX ProMax"},
 		},
-		ExtraSources: []string{"logo/768p/"},
+		ExtraSources: []string{"logo/768P/"},
 	},
 	{
 		RealName: "r40xx",
 		BrandEntries: []BrandEntry{
 			{Brand: "GameConsole", DisplayName: "GameConsole R40XX"},
 		},
-		ExtraSources: []string{"logo/768p/"},
+		ExtraSources: []string{"logo/768P/"},
 	},
 	{
 		RealName: "r36hpromax",
 		BrandEntries: []BrandEntry{
 			{Brand: "GameConsole", DisplayName: "GameConsole R36H ProMax"},
 		},
-		ExtraSources: []string{"logo/768p/"},
+		ExtraSources: []string{"logo/768P/"},
 	},
 	{
 		RealName: "r45h",
 		BrandEntries: []BrandEntry{
 			{Brand: "GameConsole", DisplayName: "GameConsole R45H"},
 		},
-		ExtraSources: []string{"logo/768p/"},
+		ExtraSources: []string{"logo/768P/"},
 	},
 	{
 		RealName: "r36splus",
 		BrandEntries: []BrandEntry{
 			{Brand: "GameConsole", DisplayName: "GameConsole R36sPlus"},
 		},
-		ExtraSources: []string{"logo/720p/"},
+		ExtraSources: []string{"logo/720P/"},
 	},
 	{
 		RealName: "r33s",
@@ -466,21 +466,21 @@ var Consoles = []ConsoleConfig{
 		ExtraSources: []string{"logo/720P/"},
 	},
 	{
-		RealName: "r36max tyep1",
+		RealName: "r36max type1",
 		BrandEntries: []BrandEntry{
 			{Brand: "XiFan HandHelds", DisplayName: "XiFan R36Max Type 1"},
 		},
 		ExtraSources: []string{"logo/720P/"},
 	},
 	{
-		RealName: "r36max tyep2",
+		RealName: "r36max type2",
 		BrandEntries: []BrandEntry{
 			{Brand: "XiFan HandHelds", DisplayName: "XiFan R36Max Type 2"},
 		},
 		ExtraSources: []string{"logo/720P/"},
 	},
 	{
-		RealName: "r36max tyep3",
+		RealName: "r36max type3",
 		BrandEntries: []BrandEntry{
 			{Brand: "XiFan HandHelds", DisplayName: "XiFan R36Max Type 3[thanks Pandryl]"},
 		},
@@ -597,14 +597,14 @@ var Consoles = []ConsoleConfig{
 		BrandEntries: []BrandEntry{
 			{Brand: "Other", DisplayName: "GameConsole HG36 (HG3506)"},
 		},
-		ExtraSources: []string{"logo/480p/"},
+		ExtraSources: []string{"logo/480P/"},
 	},
 	{
 		RealName: "rx6h",
 		BrandEntries: []BrandEntry{
 			{Brand: "Other", DisplayName: "GameConsole RX6H"},
 		},
-		ExtraSources: []string{"logo/480p/"},
+		ExtraSources: []string{"logo/480P/"},
 	},
 	{
 		RealName: "xgb36",
