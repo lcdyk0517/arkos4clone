@@ -64,6 +64,12 @@ var Consoles = []ConsoleConfig{
 		RealName: "k36s",
 		BrandEntries: []BrandEntry{
 			{Brand: "AISLPC", DisplayName: "GameConsole K36S"},
+		},
+		ExtraSources: []string{"logo/480P/"},
+	},
+	{
+		RealName: "r36t",
+		BrandEntries: []BrandEntry{
 			{Brand: "AISLPC", DisplayName: "GameConsole R36T"},
 		},
 		ExtraSources: []string{"logo/480P/"},
@@ -75,12 +81,19 @@ var Consoles = []ConsoleConfig{
 		},
 		ExtraSources: []string{"logo/720P/"},
 	},
-	//==================  Lenovo & GUSGU  ===================================
+	//==================  GUSGU  ===================================
 	{
 		RealName: "h7",
 		BrandEntries: []BrandEntry{
-			{Brand: "Lenovo", DisplayName: "Lenovo GO2"},
 			{Brand: "GUSGU", DisplayName: "GUSGU H7"},
+		},
+		ExtraSources: []string{"logo/768P/"},
+	},
+	//==================  Lenovo  ===================================
+	{
+		RealName: "go2",
+		BrandEntries: []BrandEntry{
+			{Brand: "Lenovo", DisplayName: "Lenovo GO2"},
 		},
 		ExtraSources: []string{"logo/768P/"},
 	},
@@ -105,7 +118,6 @@ var Consoles = []ConsoleConfig{
 		RealName: "k36",
 		BrandEntries: []BrandEntry{
 			{Brand: "Kinhank", DisplayName: "K36 Origin Panel"},
-			{Brand: "Clone R36s", DisplayName: "Clone Type 1 Without Amplifier And Invert Right Joystick"},
 		},
 		ExtraSources: []string{"logo/480P/"},
 	},
@@ -125,14 +137,14 @@ var Consoles = []ConsoleConfig{
 		ExtraSources: []string{"logo/320P/"},
 	},
 	{
-		RealName: "rg351v",
+		RealName: "rg351v panel1",
 		BrandEntries: []BrandEntry{
 			{Brand: "Anbernic", DisplayName: "RG351V Panel 1"},
 		},
 		ExtraSources: []string{"logo/480P/"},
 	},
 	{
-		RealName: "rg351v-v2",
+		RealName: "rg351v panel2",
 		BrandEntries: []BrandEntry{
 			{Brand: "Anbernic", DisplayName: "RG351V Panel 2"},
 		},
@@ -191,6 +203,27 @@ var Consoles = []ConsoleConfig{
 	},
 	//==================  Clone R36s  ===================================
 	{
+		RealName: "clone type1 amp",
+		BrandEntries: []BrandEntry{
+			{Brand: "Clone R36s", DisplayName: "Clone Type 1 With Amplifier"},
+		},
+		ExtraSources: []string{"logo/480P/"},
+	},
+		{
+		RealName: "clone type1",
+		BrandEntries: []BrandEntry{
+			{Brand: "Clone R36s", DisplayName: "Clone Type 1 Without Amplifier"},
+		},
+		ExtraSources: []string{"logo/480p/"},
+	},
+	{
+		RealName: "clone type1 invert",
+		BrandEntries: []BrandEntry{
+			{Brand: "Clone R36s", DisplayName: "Clone Type 1 Without Amplifier And Invert Right Joystick"},
+		},
+		ExtraSources: []string{"logo/480P/"},
+	},
+	{
 		RealName: "clone type2",
 		BrandEntries: []BrandEntry{
 			{Brand: "Clone R36s", DisplayName: "Clone Type 2 Without Amplifier"},
@@ -219,9 +252,9 @@ var Consoles = []ConsoleConfig{
 		ExtraSources: []string{"logo/480P/"},
 	},
 	{
-		RealName: "clone type4",
+		RealName: "clone type3 panel3",
 		BrandEntries: []BrandEntry{
-			{Brand: "Clone R36s", DisplayName: "Clone Type 4"},
+			{Brand: "Clone R36s", DisplayName: "Clone Type 3 Panel 3[The previous version was called Clone Type4]"},
 		},
 		ExtraSources: []string{"logo/480P/"},
 	},
@@ -237,6 +270,12 @@ var Consoles = []ConsoleConfig{
 		RealName: "r46h",
 		BrandEntries: []BrandEntry{
 			{Brand: "GameConsole", DisplayName: "GameConsole R46H"},
+		},
+		ExtraSources: []string{"logo/768p/"},
+	},
+	{
+		RealName: "r40xxpromax",
+		BrandEntries: []BrandEntry{
 			{Brand: "GameConsole", DisplayName: "GameConsole R40XX ProMax"},
 		},
 		ExtraSources: []string{"logo/768p/"},
@@ -249,10 +288,16 @@ var Consoles = []ConsoleConfig{
 		ExtraSources: []string{"logo/768p/"},
 	},
 	{
+		RealName: "r36hpromax",
+		BrandEntries: []BrandEntry{
+			{Brand: "GameConsole", DisplayName: "GameConsole R36H ProMax"},
+		},
+		ExtraSources: []string{"logo/768p/"},
+	},
+	{
 		RealName: "r45h",
 		BrandEntries: []BrandEntry{
 			{Brand: "GameConsole", DisplayName: "GameConsole R45H"},
-			{Brand: "GameConsole", DisplayName: "GameConsole R36H ProMax"},
 		},
 		ExtraSources: []string{"logo/768p/"},
 	},
@@ -299,9 +344,16 @@ var Consoles = []ConsoleConfig{
 		ExtraSources: []string{"logo/480P/"},
 	},
 	{
-		RealName: "origin panel4",
+		RealName: "origin panel4 type1",
 		BrandEntries: []BrandEntry{
-			{Brand: "GameConsole", DisplayName: "GameConsole R36s Panel 4"},
+			{Brand: "GameConsole", DisplayName: "GameConsole R36s Panel 4 Type 1"},
+		},
+		ExtraSources: []string{"logo/480P/"},
+	},
+	{
+		RealName: "origin panel4 type2",
+		BrandEntries: []BrandEntry{
+			{Brand: "GameConsole", DisplayName: "GameConsole R36s Panel 4 Type 2"},
 		},
 		ExtraSources: []string{"logo/480P/"},
 	},
@@ -313,23 +365,16 @@ var Consoles = []ConsoleConfig{
 		ExtraSources: []string{"logo/480P/"},
 	},
 	{
-		RealName: "v22 panel4",
-		BrandEntries: []BrandEntry{
-			{Brand: "GameConsole", DisplayName: "GameConsole R36s V22"},
-		},
-		ExtraSources: []string{"logo/480P/"},
-	},
-	{
-		RealName: "v30 panel4",
-		BrandEntries: []BrandEntry{
-			{Brand: "GameConsole", DisplayName: "GameConsole R36s V30"},
-		},
-		ExtraSources: []string{"logo/480P/"},
-	},
-	{
-		RealName: "origin panel4",
+		RealName: "r36xx",
 		BrandEntries: []BrandEntry{
 			{Brand: "GameConsole", DisplayName: "GameConsole R36XX"},
+		},
+		ExtraSources: []string{"logo/480P/"},
+	},
+	{
+		RealName: "o30s",
+		BrandEntries: []BrandEntry{
+			{Brand: "GameConsole", DisplayName: "GameConsole O30S"},
 		},
 		ExtraSources: []string{"logo/480P/"},
 	},
@@ -337,7 +382,6 @@ var Consoles = []ConsoleConfig{
 		RealName: "r36h",
 		BrandEntries: []BrandEntry{
 			{Brand: "GameConsole", DisplayName: "GameConsole R36H"},
-			{Brand: "GameConsole", DisplayName: "GameConsole O30S"},
 		},
 		ExtraSources: []string{"logo/480P/"},
 	},
@@ -446,7 +490,6 @@ var Consoles = []ConsoleConfig{
 		RealName: "r36pro",
 		BrandEntries: []BrandEntry{
 			{Brand: "XiFan HandHelds", DisplayName: "XiFan R36Pro"},
-			{Brand: "Clone R36s", DisplayName: "Clone Type 1 With Amplifier"},
 		},
 		ExtraSources: []string{"logo/480P/"},
 	},
@@ -488,8 +531,14 @@ var Consoles = []ConsoleConfig{
 	{
 		RealName: "dc40v",
 		BrandEntries: []BrandEntry{
-			{Brand: "XiFan HandHelds", DisplayName: "XiFan XF40V"},
 			{Brand: "XiFan HandHelds", DisplayName: "XiFan DC40V"},
+		},
+		ExtraSources: []string{"logo/720P/"},
+	},
+	{
+		RealName: "xf40v",
+		BrandEntries: []BrandEntry{
+			{Brand: "XiFan HandHelds", DisplayName: "XiFan XF40V"},
 		},
 		ExtraSources: []string{"logo/720P/"},
 	},
@@ -547,7 +596,6 @@ var Consoles = []ConsoleConfig{
 		RealName: "hg36",
 		BrandEntries: []BrandEntry{
 			{Brand: "Other", DisplayName: "GameConsole HG36 (HG3506)"},
-			{Brand: "Clone R36s", DisplayName: "Clone Type 1 Without Amplifier"},
 		},
 		ExtraSources: []string{"logo/480p/"},
 	},
@@ -573,16 +621,16 @@ var Consoles = []ConsoleConfig{
 		ExtraSources: []string{"logo/720P/"},
 	},
 	{
-		RealName: "u8",
+		RealName: "u8 panel1",
 		BrandEntries: []BrandEntry{
-			{Brand: "Other", DisplayName: "GameConsole U8"},
+			{Brand: "Other", DisplayName: "GameConsole U8 Panel 1"},
 		},
 		ExtraSources: []string{"logo/480P5-3/"},
 	},
 	{
-		RealName: "u8-v2",
+		RealName: "u8 panel2",
 		BrandEntries: []BrandEntry{
-			{Brand: "Other", DisplayName: "GameConsole U8 V2"},
+			{Brand: "Other", DisplayName: "GameConsole U8 Panel 2"},
 		},
 		ExtraSources: []string{"logo/480P5-3/"},
 	},
