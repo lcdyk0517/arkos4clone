@@ -5168,3 +5168,18 @@ msgstr "數值超出範圍"
 
 msgid "INVALID VALUE"
 msgstr "無效數值"
+
+msgid "SCREEN SETTINGS"
+msgstr "螢幕設定"
+
+msgid "REFRESH RATE"
+msgstr "更新率"
+
+msgid "NO REFRESH RATES FOUND"
+msgstr "未找到更新率"
+
+msgid "REFRESH RATE CHANGED"
+msgstr "更新率已切換"
+
+msgid "APPLY ON STARTUP"
+msgstr "開機自動套用"

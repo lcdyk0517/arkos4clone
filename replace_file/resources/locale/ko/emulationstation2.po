@@ -2895,3 +2895,18 @@ msgstr "값이 범위를 벗어남"
 
 msgid "INVALID VALUE"
 msgstr "잘못된 값"
+
+msgid "SCREEN SETTINGS"
+msgstr "화면 설정"
+
+msgid "REFRESH RATE"
+msgstr "주사율"
+
+msgid "NO REFRESH RATES FOUND"
+msgstr "주사율을 찾을 수 없음"
+
+msgid "REFRESH RATE CHANGED"
+msgstr "주사율이 변경되었습니다"
+
+msgid "APPLY ON STARTUP"
+msgstr "시작 시 자동 적용"

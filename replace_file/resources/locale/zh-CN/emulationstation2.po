@@ -5203,3 +5203,18 @@ msgstr "数值超出范围"
 
 msgid "INVALID VALUE"
 msgstr "无效数值"
+
+msgid "SCREEN SETTINGS"
+msgstr "屏幕设置"
+
+msgid "REFRESH RATE"
+msgstr "刷新率"
+
+msgid "NO REFRESH RATES FOUND"
+msgstr "未找到刷新率"
+
+msgid "REFRESH RATE CHANGED"
+msgstr "刷新率已切换"
+
+msgid "APPLY ON STARTUP"
+msgstr "开机自动应用"

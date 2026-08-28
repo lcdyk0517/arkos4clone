@@ -3091,3 +3091,18 @@ msgstr "Τιμή εκτός εύρους"
 
 msgid "INVALID VALUE"
 msgstr "Μη έγκυρη τιμή"
+
+msgid "SCREEN SETTINGS"
+msgstr "ΡΥΘΜΙΣΕΙΣ ΟΘΟΝΗΣ"
+
+msgid "REFRESH RATE"
+msgstr "ΡΥΘΜΟΣ ΑΝΑΝΕΩΣΗΣ"
+
+msgid "NO REFRESH RATES FOUND"
+msgstr "ΔΕΝ ΒΡΕΘΗΚΑΝ ΡΥΘΜΟΙ ΑΝΑΝΕΩΣΗΣ"
+
+msgid "REFRESH RATE CHANGED"
+msgstr "Ο ΡΥΘΜΟΣ ΑΝΑΝΕΩΣΗΣ ΑΛΛΑΞΕ"
+
+msgid "APPLY ON STARTUP"
+msgstr "ΕΦΑΡΜΟΓΗ ΚΑΤΑ ΤΗΝ ΕΚΚΙΝΗΣΗ"

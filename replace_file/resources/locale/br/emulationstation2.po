@@ -3339,3 +3339,18 @@ msgstr "Valor fora do intervalo"
 
 msgid "INVALID VALUE"
 msgstr "Valor inválido"
+
+msgid "SCREEN SETTINGS"
+msgstr "CONFIGURAÇÕES DE TELA"
+
+msgid "REFRESH RATE"
+msgstr "TAXA DE ATUALIZAÇÃO"
+
+msgid "NO REFRESH RATES FOUND"
+msgstr "NENHUMA TAXA DE ATUALIZAÇÃO ENCONTRADA"
+
+msgid "REFRESH RATE CHANGED"
+msgstr "TAXA DE ATUALIZAÇÃO ALTERADA"
+
+msgid "APPLY ON STARTUP"
+msgstr "APLICAR NA INICIALIZAÇÃO"

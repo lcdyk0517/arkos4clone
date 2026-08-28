@@ -4219,3 +4219,18 @@ msgstr "Värde utanför intervallet"
 
 msgid "INVALID VALUE"
 msgstr "Ogiltigt värde"
+
+msgid "SCREEN SETTINGS"
+msgstr "SKÄRMINSTÄLLNINGAR"
+
+msgid "REFRESH RATE"
+msgstr "UPPDATERINGSFREKVENS"
+
+msgid "NO REFRESH RATES FOUND"
+msgstr "INGA UPPDATERINGSFREKVENSER HITTADES"
+
+msgid "REFRESH RATE CHANGED"
+msgstr "UPPDATERINGSFREKVENS ÄNDRAD"
+
+msgid "APPLY ON STARTUP"
+msgstr "TILLÄMPA VID START"

@@ -3651,3 +3651,18 @@ msgstr "Valor fuera de rango"
 
 msgid "INVALID VALUE"
 msgstr "Valor inválido"
+
+msgid "SCREEN SETTINGS"
+msgstr "AJUSTES DE PANTALLA"
+
+msgid "REFRESH RATE"
+msgstr "TASA DE REFRESCO"
+
+msgid "NO REFRESH RATES FOUND"
+msgstr "NO SE ENCONTRARON TASAS DE REFRESCO"
+
+msgid "REFRESH RATE CHANGED"
+msgstr "TASA DE REFRESCO CAMBIADA"
+
+msgid "APPLY ON STARTUP"
+msgstr "APLICAR AL INICIAR"

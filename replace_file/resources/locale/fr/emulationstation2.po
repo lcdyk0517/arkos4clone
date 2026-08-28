@@ -2450,3 +2450,18 @@ msgstr "Valeur hors limites"
 
 msgid "INVALID VALUE"
 msgstr "Valeur invalide"
+
+msgid "SCREEN SETTINGS"
+msgstr "PARAMÈTRES D'ÉCRAN"
+
+msgid "REFRESH RATE"
+msgstr "TAUX DE RAFRAÎCHISSEMENT"
+
+msgid "NO REFRESH RATES FOUND"
+msgstr "AUCUN TAUX DE RAFRAÎCHISSEMENT TROUVÉ"
+
+msgid "REFRESH RATE CHANGED"
+msgstr "TAUX DE RAFRAÎCHISSEMENT MODIFIÉ"
+
+msgid "APPLY ON STARTUP"
+msgstr "APPLIQUER AU DÉMARRAGE"

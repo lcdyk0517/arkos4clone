@@ -5143,3 +5143,18 @@ msgstr "Значение вне диапазона"
 
 msgid "INVALID VALUE"
 msgstr "Недопустимое значение"
+
+msgid "SCREEN SETTINGS"
+msgstr "НАСТРОЙКИ ЭКРАНА"
+
+msgid "REFRESH RATE"
+msgstr "ЧАСТОТА ОБНОВЛЕНИЯ"
+
+msgid "NO REFRESH RATES FOUND"
+msgstr "ЧАСТОТЫ ОБНОВЛЕНИЯ НЕ НАЙДЕНЫ"
+
+msgid "REFRESH RATE CHANGED"
+msgstr "ЧАСТОТА ОБНОВЛЕНИЯ ИЗМЕНЕНА"
+
+msgid "APPLY ON STARTUP"
+msgstr "ПРИМЕНЯТЬ ПРИ ЗАПУСКЕ"

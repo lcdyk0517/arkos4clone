@@ -3991,3 +3991,18 @@ msgstr "Wartość poza zakresem"
 
 msgid "INVALID VALUE"
 msgstr "Nieprawidłowa wartość"
+
+msgid "SCREEN SETTINGS"
+msgstr "USTAWIENIA EKRANU"
+
+msgid "REFRESH RATE"
+msgstr "CZĘSTOTLIWOŚĆ ODŚWIEŻANIA"
+
+msgid "NO REFRESH RATES FOUND"
+msgstr "NIE ZNALEZIONO CZĘSTOTLIWOŚCI ODŚWIEŻANIA"
+
+msgid "REFRESH RATE CHANGED"
+msgstr "CZĘSTOTLIWOŚĆ ODŚWIEŻANIA ZMIENIONA"
+
+msgid "APPLY ON STARTUP"
+msgstr "ZASTOSUJ PRZY URUCHOMIENIU"

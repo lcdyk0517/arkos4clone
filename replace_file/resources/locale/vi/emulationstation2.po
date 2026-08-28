@@ -2727,3 +2727,18 @@ msgstr "Giá trị ngoài phạm vi"
 
 msgid "INVALID VALUE"
 msgstr "Giá trị không hợp lệ"
+
+msgid "SCREEN SETTINGS"
+msgstr "CÀI ĐẶT MÀN HÌNH"
+
+msgid "REFRESH RATE"
+msgstr "TỐC ĐỘ LÀM MỚI"
+
+msgid "NO REFRESH RATES FOUND"
+msgstr "KHÔNG TÌM THẤY TỐC ĐỘ LÀM MỚI"
+
+msgid "REFRESH RATE CHANGED"
+msgstr "TỐC ĐỘ LÀM MỚI ĐÃ THAY ĐỔI"
+
+msgid "APPLY ON STARTUP"
+msgstr "ÁP DỤNG KHI KHỞI ĐỘNG"

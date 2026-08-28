@@ -5252,3 +5252,18 @@ msgstr "Value out of range"
 
 msgid "INVALID VALUE"
 msgstr "Invalid value"
+
+msgid "SCREEN SETTINGS"
+msgstr "НАЛАШТУВАННЯ ЕКРАНА"
+
+msgid "REFRESH RATE"
+msgstr "ЧАСТОТА ОНОВЛЕННЯ"
+
+msgid "NO REFRESH RATES FOUND"
+msgstr "ЧАСТОТИ ОНОВЛЕННЯ НЕ ЗНАЙДЕНО"
+
+msgid "REFRESH RATE CHANGED"
+msgstr "ЧАСТОТА ОНОВЛЕННЯ ЗМІНЕНА"
+
+msgid "APPLY ON STARTUP"
+msgstr "ЗАСТОСОВУВАТИ ПРИ ЗАПУСКУ"
