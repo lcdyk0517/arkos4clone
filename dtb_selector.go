@@ -20,6 +20,7 @@ type ConsoleConfig struct {
 	RealName     string
 	BrandEntries []BrandEntry
 	ExtraSources []string
+	Keywords     []string
 }
 
 type BrandEntry struct {
@@ -209,7 +210,7 @@ var Consoles = []ConsoleConfig{
 		},
 		ExtraSources: []string{"logo/480P/"},
 	},
-		{
+	{
 		RealName: "clone type1",
 		BrandEntries: []BrandEntry{
 			{Brand: "Clone R36s", DisplayName: "Clone Type 1 Without Amplifier"},
@@ -719,6 +720,11 @@ type LanguageMenu1 struct {
 
 type LanguageMenu2 struct {
 	PleaseSelectBrand string
+	SearchOption      string
+	SearchPrompt      string
+	SearchResultsFmt  string
+	SearchNoResults   string
+	SearchHint        string
 }
 
 type LanguageMenu3 struct {
@@ -857,6 +863,11 @@ var english = Language{
 	},
 	Menu2: LanguageMenu2{
 		PleaseSelectBrand: "│ Please select a brand",
+		SearchOption:      "Search by model keyword",
+		SearchPrompt:      "Enter model keyword (e.g. r36s, rgb10max, 35h). Empty = back: ",
+		SearchResultsFmt:  "Search results for: \"%s\"",
+		SearchNoResults:   "No matching consoles found. Try a different keyword.",
+		SearchHint:        "Tip: Don't know which brand your device is? Choose Search and just type the model name.",
 	},
 	Menu3: LanguageMenu3{
 		AvailableConsolesFor:   "Available consoles for: ",
@@ -946,6 +957,11 @@ var chinese = Language{
 	},
 	Menu2: LanguageMenu2{
 		PleaseSelectBrand: "│ 请选择品牌",
+		SearchOption:      "按型号关键字搜索",
+		SearchPrompt:      "输入型号关键字 (例如 r36s、rgb10max、35h)，直接回车返回: ",
+		SearchResultsFmt:  "搜索 \"%s\" 的结果: ",
+		SearchNoResults:   "没有找到匹配的机型，请换个关键字试试.",
+		SearchHint:        "提示：不知道设备属于哪个品牌？选择搜索，直接输入型号即可。",
 	},
 	Menu3: LanguageMenu3{
 		AvailableConsolesFor:   "该品牌可用机型: ",
@@ -1035,6 +1051,11 @@ var korean = Language{
 	},
 	Menu2: LanguageMenu2{
 		PleaseSelectBrand: "│ 브랜드를 선택하세요",
+		SearchOption:      "모델 키워드로 검색",
+		SearchPrompt:      "모델 키워드를 입력하세요 (예: r36s, rgb10max, 35h). 빈 입력 = 뒤로: ",
+		SearchResultsFmt:  "\"%s\" 검색 결과: ",
+		SearchNoResults:   "일치하는 기기를 찾을 수 없어요. 다른 키워드로 시도해 보세요.",
+		SearchHint:        "팁: 브랜드를 모르겠나요? 검색을 선택하고 모델명을 입력하세요.",
 	},
 	Menu3: LanguageMenu3{
 		AvailableConsolesFor:   "선택 가능한 기기: ",
@@ -1347,6 +1368,113 @@ type SelectedConsole struct {
 	DisplayName string
 }
 
+type consoleOption struct {
+	config      *ConsoleConfig
+	brand       string
+	displayName string
+}
+
+const searchEntry = "__search__"
+
+func normalizeKeyword(s string) string {
+	var b strings.Builder
+	for _, r := range strings.ToLower(s) {
+		switch r {
+		case ' ', '\t', '-', '_', '+':
+			continue
+		}
+		b.WriteRune(r)
+	}
+	return b.String()
+}
+
+func matchField(normField, normQuery string) bool {
+	if normField == "" {
+		return false
+	}
+	if strings.Contains(normField, normQuery) {
+		return true
+	}
+	return strings.HasPrefix(normQuery, normField)
+}
+
+func consoleMatchesKeyword(c *ConsoleConfig, normQuery string) bool {
+	if normQuery == "" {
+		return false
+	}
+	if matchField(normalizeKeyword(c.RealName), normQuery) {
+		return true
+	}
+	for _, entry := range c.BrandEntries {
+		if matchField(normalizeKeyword(entry.Brand), normQuery) ||
+			matchField(normalizeKeyword(entry.DisplayName), normQuery) {
+			return true
+		}
+	}
+	for _, kw := range c.Keywords {
+		if matchField(normalizeKeyword(kw), normQuery) {
+			return true
+		}
+	}
+	return false
+}
+
+func brandConsoleCount(brand string) int {
+	count := 0
+	for i := range Consoles {
+		for _, entry := range Consoles[i].BrandEntries {
+			if entry.Brand == brand {
+				count++
+			}
+		}
+	}
+	return count
+}
+
+func buildBrandOptions(brand string) []consoleOption {
+	var options []consoleOption
+	for i := range Consoles {
+		console := &Consoles[i]
+		for _, entry := range console.BrandEntries {
+			if entry.Brand == brand {
+				options = append(options, consoleOption{
+					config:      console,
+					brand:       entry.Brand,
+					displayName: entry.DisplayName,
+				})
+			}
+		}
+	}
+	return options
+}
+
+func pickConsoleOption(lang *Language, options []consoleOption, showBrand bool) (*consoleOption, error) {
+	for i, opt := range options {
+		if showBrand {
+			fmt.Printf("  %d. %s%s\n", i+1, colorWrap("["+opt.brand+"] ", ansiBlue), opt.displayName)
+		} else {
+			fmt.Printf("  %d. %s\n", i+1, opt.displayName)
+		}
+	}
+	fmt.Printf("  %d. %s\n", 0, lang.Common.Back)
+
+	for {
+		choice, err := readIntChoice(lang, lang.Common.SelectNumber)
+		if err != nil {
+			return nil, err
+		}
+		if choice == 0 {
+			return nil, nil
+		}
+		if choice > 0 && choice <= len(options) {
+			selected := options[choice-1]
+			fmt.Printf("Selected: %s\n", selected.displayName)
+			return &selected, nil
+		}
+		fmt.Println(colorWrap(lang.Common.InvalidSelection, ansiRed))
+	}
+}
+
 func selectBrand(lang *Language) (string, error) {
 	clearScreen()
 	fmt.Println()
@@ -1354,10 +1482,14 @@ func selectBrand(lang *Language) (string, error) {
 	fmt.Println(colorWrap(lang.Menu2.PleaseSelectBrand, ansiBold+ansiGreen))
 	fmt.Println(colorWrap("└────────────────────────────────────────┘", ansiCyan))
 	for i, brand := range Brands {
-		fmt.Printf("  %d. %s\n", i+1, brand)
+		fmt.Printf("  %2d. %-18s (%d)\n", i+1, brand, brandConsoleCount(brand))
 	}
-	fmt.Printf("  %d. %s\n", 0, lang.Common.Exit)
+	fmt.Printf("  %2d. %s\n", len(Brands)+1, colorWrap(lang.Menu2.SearchOption, ansiCyan))
+	fmt.Printf("  %2d. %s\n", 0, lang.Common.Exit)
+	fmt.Println()
+	fmt.Println(colorWrap(lang.Menu2.SearchHint, NOTE))
 
+	searchChoice := len(Brands) + 1
 	for {
 		choice, err := readIntChoice(lang, lang.Common.SelectNumber)
 		if err != nil {
@@ -1366,67 +1498,89 @@ func selectBrand(lang *Language) (string, error) {
 		if choice == 0 {
 			return "", nil
 		}
-		if choice > 0 && choice <= len(Brands) {
+		if choice == searchChoice {
+			return searchEntry, nil
+		}
+		if choice > 0 && choice < searchChoice {
 			return Brands[choice-1], nil
 		}
 		fmt.Println(colorWrap(lang.Common.InvalidSelection, ansiRed))
 	}
 }
 
-func selectConsole(lang *Language, brand string) (*ConsoleConfig, string, error) {
+func searchConsoles(lang *Language) (*SelectedConsole, error) {
+	for {
+		clearScreen()
+		fmt.Println()
+		fmt.Println(colorWrap("┌────────────────────────────────────────┐", ansiCyan))
+		fmt.Printf("│ %s\n", colorWrap(lang.Menu2.SearchOption, ansiBold+ansiGreen))
+		fmt.Println(colorWrap("└────────────────────────────────────────┘", ansiCyan))
+
+		query, err := prompt(lang.Menu2.SearchPrompt)
+		if err != nil {
+			return nil, err
+		}
+		normQuery := normalizeKeyword(query)
+		if normQuery == "" {
+			return nil, nil
+		}
+
+		var options []consoleOption
+		for i := range Consoles {
+			console := &Consoles[i]
+			if !consoleMatchesKeyword(console, normQuery) {
+				continue
+			}
+			for _, entry := range console.BrandEntries {
+				options = append(options, consoleOption{
+					config:      console,
+					brand:       entry.Brand,
+					displayName: entry.DisplayName,
+				})
+			}
+		}
+
+		fmt.Println()
+		fmt.Println(colorWrap(fmt.Sprintf(lang.Menu2.SearchResultsFmt, strings.TrimSpace(query)), ansiBold+ansiGreen))
+		if len(options) == 0 {
+			fmt.Println(colorWrap(lang.Menu2.SearchNoResults, ansiRed))
+			_, _ = prompt(lang.Common.PressEnterToContinue)
+			continue
+		}
+
+		opt, err := pickConsoleOption(lang, options, true)
+		if err != nil {
+			return nil, err
+		}
+		if opt == nil {
+			return nil, nil
+		}
+		return &SelectedConsole{Config: opt.config, DisplayName: opt.displayName}, nil
+	}
+}
+
+func selectConsole(lang *Language, brand string) (*SelectedConsole, error) {
 	clearScreen()
 	fmt.Println()
 	fmt.Println(colorWrap("┌────────────────────────────────────────┐", ansiCyan))
 	fmt.Printf("│ %s\n", colorWrap(lang.Menu3.AvailableConsolesFor+brand, ansiBold+ansiGreen))
 	fmt.Println(colorWrap("└────────────────────────────────────────┘", ansiCyan))
 
-	// 重新组织数据结构，每个显示名称对应一个配置
-	type consoleOption struct {
-		config      *ConsoleConfig
-		displayName string
-	}
-	var consoleOptions []consoleOption
-
-	// 查找属于当前品牌的所有设备，每个显示名称都作为独立选项
-	for i := range Consoles {
-		console := &Consoles[i]
-		for _, entry := range console.BrandEntries {
-			if entry.Brand == brand {
-				consoleOptions = append(consoleOptions, consoleOption{
-					config:      console,
-					displayName: entry.DisplayName,
-				})
-			}
-		}
-	}
-
-	if len(consoleOptions) == 0 {
+	options := buildBrandOptions(brand)
+	if len(options) == 0 {
 		fmt.Println(colorWrap(lang.Menu3.NoConsolesFound, ansiRed))
 		_, _ = prompt(lang.Common.PressEnterToContinue)
-		return nil, "", nil
+		return nil, nil
 	}
 
-	// 显示菜单 - 每个选项单独一行
-	for i, option := range consoleOptions {
-		fmt.Printf("  %d. %s\n", i+1, option.displayName)
+	opt, err := pickConsoleOption(lang, options, false)
+	if err != nil {
+		return nil, err
 	}
-	fmt.Printf("  %d. %s\n", 0, lang.Common.Back)
-
-	for {
-		choice, err := readIntChoice(lang, lang.Common.SelectNumber)
-		if err != nil {
-			return nil, "", err
-		}
-		if choice == 0 {
-			return nil, "", nil
-		}
-		if choice > 0 && choice <= len(consoleOptions) {
-			selected := consoleOptions[choice-1]
-			fmt.Printf("Selected: %s\n", selected.displayName)
-			return selected.config, selected.displayName, nil
-		}
-		fmt.Println(colorWrap(lang.Common.InvalidSelection, ansiRed))
+	if opt == nil {
+		return nil, nil
 	}
+	return &SelectedConsole{Config: opt.config, DisplayName: opt.displayName}, nil
 }
 
 func showMenu(lang *Language) (*SelectedConsole, error) {
@@ -1438,12 +1592,19 @@ func showMenu(lang *Language) (*SelectedConsole, error) {
 		if brand == "" {
 			return nil, nil
 		}
-		console, displayName, err := selectConsole(lang, brand)
+		if brand == searchEntry {
+			selected, err := searchConsoles(lang)
+			if err != nil || selected != nil {
+				return selected, err
+			}
+			continue
+		}
+		selected, err := selectConsole(lang, brand)
 		if err != nil {
 			return nil, err
 		}
-		if console != nil {
-			return &SelectedConsole{Config: console, DisplayName: displayName}, nil
+		if selected != nil {
+			return selected, nil
 		}
 	}
 }
