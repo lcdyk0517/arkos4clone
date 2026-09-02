@@ -5267,3 +5267,6 @@ msgstr "ЧАСТОТА ОНОВЛЕННЯ ЗМІНЕНА"
 
 msgid "APPLY ON STARTUP"
 msgstr "ЗАСТОСОВУВАТИ ПРИ ЗАПУСКУ"
+
+msgid "PERFORMANCE SETTINGS"
+msgstr "Налаштування швидкодії"

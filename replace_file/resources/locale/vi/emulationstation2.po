@@ -2742,3 +2742,6 @@ msgstr "TỐC ĐỘ LÀM MỚI ĐÃ THAY ĐỔI"
 
 msgid "APPLY ON STARTUP"
 msgstr "ÁP DỤNG KHI KHỞI ĐỘNG"
+
+msgid "PERFORMANCE SETTINGS"
+msgstr "Cài đặt hiệu năng"

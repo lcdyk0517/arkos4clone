@@ -3106,3 +3106,6 @@ msgstr "Ο ΡΥΘΜΟΣ ΑΝΑΝΕΩΣΗΣ ΑΛΛΑΞΕ"
 
 msgid "APPLY ON STARTUP"
 msgstr "ΕΦΑΡΜΟΓΗ ΚΑΤΑ ΤΗΝ ΕΚΚΙΝΗΣΗ"
+
+msgid "PERFORMANCE SETTINGS"
+msgstr "Ρυθμίσεις απόδοσης"

@@ -4006,3 +4006,6 @@ msgstr "CZĘSTOTLIWOŚĆ ODŚWIEŻANIA ZMIENIONA"
 
 msgid "APPLY ON STARTUP"
 msgstr "ZASTOSUJ PRZY URUCHOMIENIU"
+
+msgid "PERFORMANCE SETTINGS"
+msgstr "Ustawienia wydajności"

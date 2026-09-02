@@ -5183,3 +5183,6 @@ msgstr "更新率已切換"
 
 msgid "APPLY ON STARTUP"
 msgstr "開機自動套用"
+
+msgid "PERFORMANCE SETTINGS"
+msgstr "效能設定"

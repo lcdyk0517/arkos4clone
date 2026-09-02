@@ -5218,3 +5218,6 @@ msgstr "刷新率已切换"
 
 msgid "APPLY ON STARTUP"
 msgstr "开机自动应用"
+
+msgid "PERFORMANCE SETTINGS"
+msgstr "性能设置"

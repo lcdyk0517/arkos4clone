@@ -2910,3 +2910,6 @@ msgstr "주사율이 변경되었습니다"
 
 msgid "APPLY ON STARTUP"
 msgstr "시작 시 자동 적용"
+
+msgid "PERFORMANCE SETTINGS"
+msgstr "성능 설정"

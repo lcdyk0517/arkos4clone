@@ -3474,3 +3474,6 @@ msgstr "BILDSCHIRMWIEDERHOLRATE GEÄNDERT"
 
 msgid "APPLY ON STARTUP"
 msgstr "BEIM START ANWENDEN"
+
+msgid "PERFORMANCE SETTINGS"
+msgstr "Leistungseinstellungen"

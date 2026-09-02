@@ -4234,3 +4234,6 @@ msgstr "UPPDATERINGSFREKVENS ÄNDRAD"
 
 msgid "APPLY ON STARTUP"
 msgstr "TILLÄMPA VID START"
+
+msgid "PERFORMANCE SETTINGS"
+msgstr "Prestandainställningar"

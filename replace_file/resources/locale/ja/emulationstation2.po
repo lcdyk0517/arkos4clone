@@ -2304,3 +2304,6 @@ msgstr "リフレッシュレートを変更しました"
 
 msgid "APPLY ON STARTUP"
 msgstr "起動時に適用"
+
+msgid "PERFORMANCE SETTINGS"
+msgstr "パフォーマンス設定"

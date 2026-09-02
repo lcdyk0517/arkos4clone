@@ -3354,3 +3354,6 @@ msgstr "TAXA DE ATUALIZAÇÃO ALTERADA"
 
 msgid "APPLY ON STARTUP"
 msgstr "APLICAR NA INICIALIZAÇÃO"
+
+msgid "PERFORMANCE SETTINGS"
+msgstr "Configurações de Desempenho"

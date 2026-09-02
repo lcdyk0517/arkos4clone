@@ -5158,3 +5158,6 @@ msgstr "ЧАСТОТА ОБНОВЛЕНИЯ ИЗМЕНЕНА"
 
 msgid "APPLY ON STARTUP"
 msgstr "ПРИМЕНЯТЬ ПРИ ЗАПУСКЕ"
+
+msgid "PERFORMANCE SETTINGS"
+msgstr "Настройки производительности"

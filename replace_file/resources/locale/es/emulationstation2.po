@@ -3666,3 +3666,6 @@ msgstr "TASA DE REFRESCO CAMBIADA"
 
 msgid "APPLY ON STARTUP"
 msgstr "APLICAR AL INICIAR"
+
+msgid "PERFORMANCE SETTINGS"
+msgstr "Configuración de rendimiento"
