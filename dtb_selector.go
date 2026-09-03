@@ -114,6 +114,14 @@ var Consoles = []ConsoleConfig{
 		},
 		ExtraSources: []string{"logo/480P/"},
 	},
+	//==================  CoolBoy  ===================================
+	{
+		RealName: "rs16",
+		BrandEntries: []BrandEntry{
+			{Brand: "CoolBoy", DisplayName: "CoolBoy RS16"},
+		},
+		ExtraSources: []string{"logo/480P/"},
+	},
 	//==================  Kinhank  ===================================
 	{
 		RealName: "k36",
@@ -668,6 +676,7 @@ var Brands = []string{
 	"Lenovo",
 	"MagicX",
 	"Batlexp",
+	"CoolBoy",
 	"Kinhank",
 	"Anbernic",
 	"RetroBox",
