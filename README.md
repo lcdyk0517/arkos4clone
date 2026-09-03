@@ -10,17 +10,9 @@ Bringing **(d)ArkOS 4.4 kernel** porting to unsupported devices. Contributions v
 
 ---
 
-## ArkOS4Clone Ports Fixed Plan
-
-If you encounter Ports crashes, you can submit issues in this repository, but please do not rush. If you have successfully fixed a Port and got it running on ArkOS4Clone, you can submit a PR to this repository. The PR should specify the corresponding game name and the archive or sh file. Please keep the folder structure consistent with the official Ports original game structure.
-
-This repository does not contain any game data, only adjustments to make Ports run on ArkOS4Clone.
-
-Repository: https://github.com/lcdyk0517/ArkOS4Clone_Ports_Fixed
-
----
-
 ## Support the Project
+
+![devices](https://r36s.dpdns.org/devices.jpg)
 
 If you find (d)ArkOS4Clone helpful and want to support future development:
 
