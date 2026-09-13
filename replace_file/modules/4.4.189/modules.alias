@@ -167,6 +167,8 @@ alias usb:v0BDApB85Ad*dc*dsc*dp*icFFiscFFipFFin* 8852bu
 alias usb:v0BDApB852d*dc*dsc*dp*icFFiscFFipFFin* 8852bu
 alias usb:v0BDApB83Ad*dc*dsc*dp*icFFiscFFipFFin* 8852bu
 alias usb:v0BDApB832d*dc*dsc*dp*icFFiscFFipFFin* 8852bu
+alias usb:v0BDAp2005d*dc*dsc*dp*icFFiscFFipFFin* 8188gu
+alias usb:v0BDApB711d*dc*dsc*dp*icFFiscFFipFFin* 8188gu
 alias usb:v03EBp7615d*dc*dsc*dp*ic*isc*ip*in* at76c50x_usb
 alias usb:v1557p0002d*dc*dsc*dp*ic*isc*ip*in* at76c50x_usb
 alias usb:v1690p0701d*dc*dsc*dp*ic*isc*ip*in* at76c50x_usb

@@ -26,6 +26,7 @@ kernel/drivers/net/wireless/rockchip_wlan/rk915/rk915.ko
 kernel/drivers/net/wireless/rockchip_wlan/aic8800-usb/aic_load_fw/aic_load_fw_usb.ko
 kernel/drivers/net/wireless/rockchip_wlan/aic8800-usb/aic8800_fdrv/aic8800_fdrv_usb.ko
 kernel/drivers/net/wireless/rockchip_wlan/rtl8852bu/8852bu.ko
+kernel/drivers/net/wireless/rockchip_wlan/rtl8188gu/8188gu.ko
 kernel/drivers/net/wireless/at76c50x-usb.ko
 kernel/drivers/net/wireless/hostap/hostap.ko
 kernel/drivers/net/wireless/b43/b43.ko
