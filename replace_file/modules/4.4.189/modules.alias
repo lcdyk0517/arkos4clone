@@ -86,6 +86,9 @@ alias usb:v07B8p8179d*dc*dsc*dp*ic*isc*ip*in* 8188eu
 alias usb:v0BDApF179d*dc*dsc*dp*ic*isc*ip*in* 8188eu
 alias usb:v0BDAp0179d*dc*dsc*dp*ic*isc*ip*in* 8188eu
 alias usb:v0BDAp8179d*dc*dsc*dp*ic*isc*ip*in* 8188eu
+alias usb:v0BDApB720d*dc*dsc*dp*icFFiscFFipFFin* 8723bu
+alias usb:v7392pD611d*dc*dsc*dp*icFFiscFFipFFin* 8723du
+alias usb:v0BDApD723d*dc*dsc*dp*icFFiscFFipFFin* 8723du
 alias usb:v7392pA822d*dc*dsc*dp*ic*isc*ip*in* 8812au
 alias usb:v2604p0012d*dc*dsc*dp*ic*isc*ip*in* 8812au
 alias usb:v2357p0122d*dc*dsc*dp*ic*isc*ip*in* 8812au
@@ -1040,8 +1043,6 @@ alias usb:v0BDApC820d*dc*dsc*dp*icFFiscFFipFFin* 8821cu
 alias usb:v0BDApC821d*dc*dsc*dp*icFFiscFFipFFin* 8821cu
 alias usb:v0BDApB820d*dc*dsc*dp*icFFiscFFipFFin* 8821cu
 alias usb:v0BDApB82Bd*dc*dsc*dp*icFFiscFFipFFin* 8821cu
-alias usb:v7392pA611d*dc*dsc*dp*icFFiscFFipFFin* 8723bu
-alias usb:v0BDApB720d*dc*dsc*dp*icFFiscFFipFFin* 8723bu
 alias sdio:c*v6666d1111* esp8089
 alias usb:v2357p0109d*dc*dsc*dp*ic*isc*ip*in* 8192eu
 alias usb:v2357p0108d*dc*dsc*dp*ic*isc*ip*in* 8192eu

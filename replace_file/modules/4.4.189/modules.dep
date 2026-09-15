@@ -19,6 +19,8 @@ kernel/drivers/net/wireless/ti/wl12xx/wl12xx.ko: kernel/drivers/net/wireless/ti/
 kernel/drivers/net/wireless/ti/wl1251/wl1251.ko:
 kernel/drivers/net/wireless/ti/wl18xx/wl18xx.ko: kernel/drivers/net/wireless/ti/wlcore/wlcore.ko
 kernel/drivers/net/wireless/rockchip_wlan/rtl8188eu/8188eu.ko:
+kernel/drivers/net/wireless/rockchip_wlan/rtl8723bu/8723bu.ko:
+kernel/drivers/net/wireless/rockchip_wlan/rtl8723du/8723du.ko:
 kernel/drivers/net/wireless/rockchip_wlan/rtl8812au/8812au.ko:
 kernel/drivers/net/wireless/rockchip_wlan/rtl8814au/8814au.ko:
 kernel/drivers/net/wireless/rockchip_wlan/rk915/rk915.ko:
@@ -68,7 +70,6 @@ kernel/drivers/net/wireless/rtl8812au/rtl8812au.ko:
 kernel/drivers/net/wireless/rtl8192cu/8192cu.ko:
 kernel/drivers/net/wireless/rtl88x2bu/88x2bu.ko:
 kernel/drivers/net/wireless/rtl8821cu/8821cu.ko:
-kernel/drivers/net/wireless/ew-7611ulb/8723bu.ko:
 kernel/drivers/net/wireless/esp8089/esp8089.ko:
 kernel/drivers/net/wireless/swt6621s_wifi/swt6621s_wifi.ko:
 kernel/drivers/net/wireless/rtl8192eu/8192eu.ko:
