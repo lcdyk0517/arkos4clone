@@ -1405,6 +1405,8 @@
 		      </emulator>
 			<emulator name="drastic-kk">
 		      </emulator>
+			<emulator name="dsperate">
+			  </emulator>
 		</emulators>
 		<platform>nds</platform>
 		<theme>nds</theme>
@@ -4141,6 +4143,8 @@
 		      </emulator>
 			<emulator name="drastic-kk">
 		      </emulator>
+			<emulator name="dsperate">
+			  </emulator>
 		</emulators>
 		<platform>nds</platform>
 		<theme>nds</theme>

@@ -3,7 +3,7 @@
 	<system>
 		<name>advision</name>
 		<fullname>Adventure Vision</fullname>
-		<path>/roms/advision/</path>
+		<path>/roms2/advision/</path>
 		<extension>.zip .ZIP .bin .BIN .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/mess_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>advision</platform>
@@ -15,7 +15,7 @@
 	<system>
 		<name>amiga</name>
 		<fullname>Amiga</fullname>
-		<path>/roms/amiga</path>
+		<path>/roms2/amiga</path>
 		<extension>.adf .ADF .hdf .HDF .ipf .IPF .lha .LHA .m3u .M3U .zip .ZIP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/amiga.sh %EMULATOR% %CORE% %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -43,7 +43,7 @@
 	<system>
 		<name>amigacd32</name>
 		<fullname>Amiga CD32</fullname>
-		<path>/roms/amigacd32/</path>
+		<path>/roms2/amigacd32/</path>
 		<extension>.ccd .CCD .chd .CHD .cue .CUE .iso .ISO .lha .LHA .m3u .M3U .mds .MDS .nrg .NRG</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/amiga.sh %EMULATOR% %CORE% %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -71,7 +71,7 @@
 	<system>
 		<name>amstradcpc</name>
 		<fullname>CPC</fullname>
-		<path>/roms/amstradcpc</path>
+		<path>/roms2/amstradcpc</path>
 		<extension>.cpc .CPC .dsk .DSK .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -91,7 +91,7 @@
 	<system>
 		<name>apple2</name>
 		<fullname>Apple II</fullname>
-		<path>/roms/apple2/</path>
+		<path>/roms2/apple2/</path>
 		<extension>.apple2 .APPLE2 .do .DO .dsk .DSK .hdv .HDV .po .PO .sh .SH .zip .ZIP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/apple2.sh %EMULATOR% %CORE% %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -119,7 +119,7 @@
 	<system>
 		<name>bbcmicro</name>
 		<fullname>BBC Micro</fullname>
-		<path>/roms/bbcmicro/</path>
+		<path>/roms2/bbcmicro/</path>
 		<extension>.dsd .DSD .ssd .SSD</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/b2.sh %EMULATOR% %CORE% %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -138,7 +138,7 @@
 	<system>
 		<name>cavestory</name>
 		<fullname>Cave Story</fullname>
-		<path>/roms/cavestory/</path>
+		<path>/roms2/cavestory/</path>
 		<extension>.dll .DLL .exe .EXE .so .SO</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -157,7 +157,7 @@
 	<system>
 		<name>macintosh</name>
 		<fullname>Macintosh</fullname>
-		<path>/roms/vmac/</path>
+		<path>/roms2/vmac/</path>
 		<extension>.cmd .CMD .dsk .DSK .hvf .HVF .img .IMG .zip .ZIP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/minivmac_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>macintosh</platform>
@@ -169,7 +169,7 @@
 	<system>
 		<name>gx4000</name>
 		<fullname>GX4000</fullname>
-		<path>/roms/gx4000</path>
+		<path>/roms2/gx4000</path>
 		<extension>.cpr .CPR .dsk .DSK .zip .ZIP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/gx4000.sh %EMULATOR% %CORE% %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -188,7 +188,7 @@
 	<system>
 		<name>hbmame</name>
 		<fullname>Homebrew Mame</fullname>
-		<path>/roms/hbmame/</path>
+		<path>/roms2/hbmame/</path>
 		<extension>.zip .ZIP .7z .7Z .cue .CUE</extension>
 		<command>sudo perfmax %EMULATOR% %CORE%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		   <emulators>
@@ -211,7 +211,7 @@
 	<system>
 		<name>arcade</name>
 		<fullname>Arcade</fullname>
-		<path>/roms/arcade/</path>
+		<path>/roms2/arcade/</path>
 		<extension>.zip .ZIP .7z .7Z .cue .CUE</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -244,7 +244,7 @@
 	<system>
 		<name>astrocade</name>
 		<fullname>Astrocade</fullname>
-		<path>/roms/astrocde/</path>
+		<path>/roms2/astrocde/</path>
 		<extension>.zip .ZIP .bin .BIN .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/mess_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>astrocade</platform>
@@ -256,7 +256,7 @@
 	<system>
 		<name>channelf</name>
 		<fullname>ChannelF</fullname>
-		<path>/roms/channelf/</path>
+		<path>/roms2/channelf/</path>
 		<extension>.bin .BIN .rom .ROM .chf .CHF .zip .ZIP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/freechaf_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>channelf</platform>
@@ -268,7 +268,7 @@
 	<system>
 		<name>cps1</name>
 		<fullname>Capcom System I</fullname>
-		<path>/roms/cps1/</path>
+		<path>/roms2/cps1/</path>
 		<extension>.zip .ZIP .7z .7Z .cue .CUE</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -296,7 +296,7 @@
 	<system>
 		<name>cps2</name>
 		<fullname>Capcom System II</fullname>
-		<path>/roms/cps2/</path>
+		<path>/roms2/cps2/</path>
 		<extension>.zip .ZIP .7z .7Z .cue .CUE</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -324,7 +324,7 @@
 	<system>
 		<name>cps3</name>
 		<fullname>Capcom System III</fullname>
-		<path>/roms/cps3/</path>
+		<path>/roms2/cps3/</path>
 		<extension>.zip .ZIP .7z .7Z .cue .CUE</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -352,7 +352,7 @@
 	<system>
 		<name>megaduck</name>
 		<fullname>Mega Duck</fullname>
-		<path>/roms/megaduck/</path>
+		<path>/roms2/megaduck/</path>
 		<extension>.bin .BIN .zip .ZIP .7z .7Z .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -372,7 +372,7 @@
 	<system>
 		<name>Daphne</name>
 		<fullname>Daphne</fullname>
-		<path>/roms/daphne/</path>
+		<path>/roms2/daphne/</path>
 		<extension>.daphne .DAPHNE</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/daphne.sh standalone %ROM%; sudo perfnorm</command>
 		<platform>daphne</platform>
@@ -384,7 +384,7 @@
 	<system>
 		<name>alg</name>
 		<fullname>American Laser Games</fullname>
-		<path>/roms/alg/</path>
+		<path>/roms2/alg/</path>
 		<extension>.alg .ALG</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/singe.sh %ROM%; sudo perfnorm</command>
 		<platform>alg</platform>
@@ -396,7 +396,7 @@
 	<system>
 		<name>mame2003</name>
 		<fullname>MAME2003</fullname>
-		<path>/roms/mame2003/</path>
+		<path>/roms2/mame2003/</path>
 		<extension>.zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -422,7 +422,7 @@
 	<system>
 		<name>mame2010</name>
 		<fullname>MAME2010</fullname>
-		<path>/roms/mame/</path>
+		<path>/roms2/mame/</path>
 		<extension>.zip .ZIP .7z .7Z .chd .CHD</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/mame2010_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>arcade</platform>
@@ -434,7 +434,7 @@
 	<system>
 		<name>Sega Atomiswave</name>
 		<fullname>Atomiswave</fullname>
-		<path>/roms/atomiswave/</path>
+		<path>/roms2/atomiswave/</path>
 		<extension>.7z .7Z .ist .IST .zip .ZIP .bin .BIN</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/atomiswave.sh %EMULATOR% %CORE% %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -492,7 +492,7 @@
 	<system>
 		<name>naomi</name>
 		<fullname>Naomi</fullname>
-		<path>/roms/naomi/</path>
+		<path>/roms2/naomi/</path>
 		<extension>.7z .7Z .ist .IST .zip .ZIP .bin .BIN .dat .DAT</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/naomi.sh %EMULATOR% %CORE% %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -550,7 +550,7 @@
 	<system>
 		<name>3do</name>
 		<fullname>3DO</fullname>
-		<path>/roms/3do/</path>
+		<path>/roms2/3do/</path>
 		<extension>.iso .ISO .bin .BIN .chd .CHD .cue .CUE</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/opera_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>3do</platform>
@@ -562,7 +562,7 @@
 	<system>
 		<name>pokemonmini</name>
 		<fullname>Pokemon Mini</fullname>
-		<path>/roms/pokemonmini/</path>
+		<path>/roms2/pokemonmini/</path>
 		<extension>.7z .7Z .min .MIN .zip .ZIP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/pokemini_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>pokemini</platform>
@@ -574,7 +574,7 @@
 	<system>
 		<name>atari800</name>
 		<fullname>Atari 800</fullname>
-		<path>/roms/atari800/</path>
+		<path>/roms2/atari800/</path>
 		<extension>.atr .ATR .rom .ROM .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch --config /home/ark/.config/retroarch/config/Atari800/retroarch_A800.cfg -L /home/ark/.config/retroarch/cores/atari800_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>atari800</platform>
@@ -586,7 +586,7 @@
 	<system>
 		<name>atari2600</name>
 		<fullname>Atari 2600</fullname>
-		<path>/roms/atari2600/</path>
+		<path>/roms2/atari2600/</path>
 		<extension>.a26 .A26 .bin .BIN .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -606,7 +606,7 @@
 	<system>
 		<name>atari5200</name>
 		<fullname>Atari 5200</fullname>
-		<path>/roms/atari5200/</path>
+		<path>/roms2/atari5200/</path>
 		<extension>.a52 .A52 .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -626,7 +626,7 @@
 	<system>
 		<name>atari7800</name>
 		<fullname>Atari 7800</fullname>
-		<path>/roms/atari7800/</path>
+		<path>/roms2/atari7800/</path>
 		<extension>.a78 .A78 .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/prosystem_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>atari7800</platform>
@@ -638,7 +638,7 @@
 	<system>
 		<name>atarist</name>
 		<fullname>Atari ST</fullname>
-		<path>/roms/atarist/</path>
+		<path>/roms2/atarist/</path>
 		<extension>.st .ST .msa .MSA .stx .STX .dim .DIM .ipf .IPF .zip .ZIP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -658,8 +658,8 @@
 	<system>
 		<name>atarixegs</name>
 		<fullname>Atari XEGS</fullname>
-		<path>/roms/atarixegs/</path>
-		<extension>.car .CAR .xex .XEX .atx .ATX .bin .BIN .atr .ATR .rom .ROM .zip .ZIP .7z .7Z</extension>
+		<path>/roms2/atarixegs/</path>
+		<extension>.rom .ROM .bin .BIN .xex .XEX .zip .ZIP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch --config /home/ark/.config/retroarch/config/Atari800/retroarch_XEGS.cfg -L /home/ark/.config/retroarch/cores/atari800_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>atarixe</platform>
 		<theme>atarixegs</theme>
@@ -670,9 +670,9 @@
 	<system>
 		<name>jaguar</name>
 		<fullname>Atari Jaguar</fullname>
-		<path>/roms/atarijaguar/</path>
+		<path>/roms2/atarijaguar/</path>
 		<extension>.j64 .J64 .jag .JAG .rom .ROM .abs .ABS .cof .COF .bin .BIN .prg .PRG</extension>
-		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/bigpemu.sh %ROM%; sudo perfnorm</command>
+		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/virtualjaguar_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>atarijaguar</platform>
 		<theme>atarijaguar</theme>
 		<manufacturer>Atari</manufacturer>
@@ -682,7 +682,7 @@
 	<system>
 		<name>atarilynx</name>
 		<fullname>Atari Lynx</fullname>
-		<path>/roms/atarilynx/</path>
+		<path>/roms2/atarilynx/</path>
 		<extension>.lnx .LNX .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -715,7 +715,7 @@
 	<system>
 		<name>wonderswan</name>
 		<fullname>WonderSwan</fullname>
-		<path>/roms/wonderswan/</path>
+		<path>/roms2/wonderswan/</path>
 		<extension>.ws .WS .wsc .WSC .pc2 .PC2 .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -742,7 +742,7 @@
 	<system>
 		<name>wonderswancolor</name>
 		<fullname>WonderSwan Color</fullname>
-		<path>/roms/wonderswancolor/</path>
+		<path>/roms2/wonderswancolor/</path>
 		<extension>.ws .WS .wsc .WSC .pc2 .PC2 .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -769,7 +769,7 @@
 	<system>
 		<name>odyssey2</name>
 		<fullname>Odyssey2</fullname>
-		<path>/roms/odyssey2/</path>
+		<path>/roms2/odyssey2/</path>
 		<extension>.bin .BIN</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/o2em_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>odyssey2</platform>
@@ -781,7 +781,7 @@
 	<system>
 		<name>pcengine</name>
 		<fullname>PC Engine</fullname>
-		<path>/roms/pcengine/</path>
+		<path>/roms2/pcengine/</path>
 		<extension>.pce .PCE .bin .BIN .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -810,7 +810,7 @@
 	<system>
 		<name>pcenginecd</name>
 		<fullname>PC Engine CD</fullname>
-		<path>/roms/pcenginecd/</path>
+		<path>/roms2/pcenginecd/</path>
 		<extension>.pce .PCE .ccd .CCD .iso .ISO .img .IMG .chd .CHD .cue .CUE .m3u .M3U</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -839,7 +839,7 @@
 	<system>
 		<name>turbografx16</name>
 		<fullname>Turbografx 16</fullname>
-		<path>/roms/turbografx</path>
+		<path>/roms2/turbografx</path>
 		<extension>.pce .PCE .chd .CHD .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -868,7 +868,7 @@
 	<system>
 		<name>turbografxcd</name>
 		<fullname>Turbografx CD</fullname>
-		<path>/roms/turbografxcd</path>
+		<path>/roms2/turbografxcd</path>
 		<extension>.pce .PCE .ccd .CCD .iso .ISO .img .IMG .chd .CHD .zip .ZIP .cue .CUE .m3u .M3U</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -897,7 +897,7 @@
 	<system>
 		<name>supergrafx</name>
 		<fullname>Super Grafx</fullname>
-		<path>/roms/supergrafx/</path>
+		<path>/roms2/supergrafx/</path>
 		<extension>.pce .PCE .sgx .SGX .cue .CUE .ccd .CCD .chd .CHD .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -925,7 +925,7 @@
 	<system>
 		<name>famicom</name>
 		<fullname>Famicom</fullname>
-		<path>/roms/famicom/</path>
+		<path>/roms2/famicom/</path>
 		<extension>.nes .NES .unif .UNIF .unf .UNF .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -946,7 +946,7 @@
 	<system>
 		<name>famicom disk system</name>
 		<fullname>Famicom Disk System</fullname>
-		<path>/roms/fds/</path>
+		<path>/roms2/fds/</path>
 		<extension>.nes .NES .unif .UNIF .unf .UNF .fds .FDS .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -976,13 +976,14 @@
 	<system>
 		<name>sfc</name>
 		<fullname>Super Famicom</fullname>
-		<path>/roms/sfc/</path>
+		<path>/roms2/sfc/</path>
 		<extension>.sfc .SFC .smc .SMC .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
 			<emulator name="retroarch">
 				<cores>
 					<core>snes9x</core>
+					<core>snes9x2002</core>
 					<core>snes9x2005</core>
 					<core>snes9x2010</core>
 					<core>chimerasnes</core>
@@ -991,8 +992,10 @@
 			</emulator>
 			<emulator name="retroarch32">
 				<cores>
+					<core>snes9x</core>
 					<core>snes9x2002</core>
 					<core>snes9x2005</core>
+					<core>snes9x2010</core>
 				</cores>
 			</emulator>
 			<emulator name="mednafen">
@@ -1013,7 +1016,7 @@
 	<system>
 		<name>nes</name>
 		<fullname>NES</fullname>
-		<path>/roms/nes/</path>
+		<path>/roms2/nes/</path>
 		<extension>.nes .NES .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -1043,7 +1046,7 @@
 	<system>
 		<name>snes</name>
 		<fullname>SuFami Turbo</fullname>
-		<path>/roms/sufami/</path>
+		<path>/roms2/sufami/</path>
 		<extension>.smc .SMC .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -1053,13 +1056,16 @@
 					<core>chimerasnes</core>
 					<core>mednafen_supafaust</core>
 					<core>snes9x</core>
+					<core>snes9x2002</core>
 					<core>snes9x2005</core>
 				</cores>
 			</emulator>
 			<emulator name="retroarch32">
 				<cores>
+					<core>snes9x</core>
 					<core>snes9x2002</core>
 					<core>snes9x2005</core>
+					<core>snes9x2010</core>
 				</cores>
 			</emulator>
 		</emulators>
@@ -1072,7 +1078,7 @@
 	<system>
 		<name>satellaview</name>
 		<fullname>Satellaview</fullname>
-		<path>/roms/satellaview/</path>
+		<path>/roms2/satellaview/</path>
 		<extension>.smc .SMC .sfc .SFC .bs .BS .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/snes9x_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>satellaview</platform>
@@ -1084,13 +1090,14 @@
 	<system>
 		<name>snes</name>
 		<fullname>Super NES</fullname>
-		<path>/roms/snes/</path>
+		<path>/roms2/snes/</path>
 		<extension>.smc .SMC .sfc .SFC .fig .FIG .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
 			<emulator name="retroarch">
 				<cores>
 					<core>snes9x</core>
+					<core>snes9x2002</core>
 					<core>snes9x2005</core>
 					<core>snes9x2010</core>
 					<core>chimerasnes</core>
@@ -1099,8 +1106,10 @@
 			</emulator>
 			<emulator name="retroarch32">
 				<cores>
+					<core>snes9x</core>
 					<core>snes9x2002</core>
 					<core>snes9x2005</core>
+					<core>snes9x2010</core>
 				</cores>
 			</emulator>
 			<emulator name="mednafen">
@@ -1121,7 +1130,7 @@
 	<system>
 		<name>snesmsu</name>
 		<fullname>Super NES CD</fullname>
-		<path>/roms/snesmsu1/</path>
+		<path>/roms2/snesmsu1/</path>
 		<extension>.smc .SMC .sfc .SFC .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/snes9x_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>snes</platform>
@@ -1133,13 +1142,14 @@
 	<system>
 		<name>snes-hacks</name>
 		<fullname>Super NES Hacks</fullname>
-		<path>/roms/snes-hacks/</path>
+		<path>/roms2/snes-hacks/</path>
 		<extension>.smc .SMC .fig .FIG .bs .BS .st .ST .sfc .SFC .gd3 .GD3 .gd7 .GD7 .dx2 .DX2 .bsx .BSX .swc .SWC .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
 			<emulator name="retroarch">
 				<cores>
 					<core>snes9x</core>
+					<core>snes9x2002</core>
 					<core>snes9x2005</core>
 					<core>snes9x2010</core>
 					<core>chimerasnes</core>
@@ -1148,8 +1158,10 @@
 			</emulator>
 			<emulator name="retroarch32">
 				<cores>
+					<core>snes9x</core>
 					<core>snes9x2002</core>
 					<core>snes9x2005</core>
+					<core>snes9x2010</core>
 				</cores>
 			</emulator>
 			<emulator name="mednafen">
@@ -1170,7 +1182,7 @@
 	<system>
 		<name>n64</name>
 		<fullname>N64</fullname>
-		<path>/roms/n64/</path>
+		<path>/roms2/n64/</path>
 		<extension>.7z .7Z .n64 .N64 .v64 .V64 .z64 .Z64 .zip .ZIP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/n64.sh %EMULATOR% %CORE% %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -1203,7 +1215,7 @@
 	<system>
 		<name>n64dd</name>
 		<fullname>N64DD</fullname>
-		<path>/roms/n64dd/</path>
+		<path>/roms2/n64dd/</path>
 		<extension>.d64 .D64 .n64dd .N64DD .ndd .NDD .n64 .N64 .z64 .Z64</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -1230,7 +1242,7 @@
 	<system>
 		<name>love2d</name>
 		<fullname>Love2d</fullname>
-		<path>/roms/love2d</path>
+		<path>/roms2/love2d</path>
 		<extension>.love .LOVE</extension>
 		<command>love.sh %ROM%</command>
 		<platform>love2d</platform>
@@ -1242,7 +1254,7 @@
 	<system>
 		<name>virtualboy</name>
 		<fullname>Virtualboy</fullname>
-		<path>/roms/virtualboy/</path>
+		<path>/roms2/virtualboy/</path>
 		<extension>.vb .VB .vboy .VBOY .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -1269,7 +1281,7 @@
 	<system>
 		<name>gb</name>
 		<fullname>Game Boy</fullname>
-		<path>/roms/gb/</path>
+		<path>/roms2/gb/</path>
 		<extension>.gb .GB .gbc .GBC .dmg .DMG .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -1302,7 +1314,7 @@
 	<system>
 		<name>gbc</name>
 		<fullname>Game Boy Color</fullname>
-		<path>/roms/gbc/</path>
+		<path>/roms2/gbc/</path>
 		<extension>.gb .GB .gbc .GBC .dmg .DMG .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -1335,7 +1347,7 @@
 	<system>
 		<name>gba</name>
 		<fullname>Game Boy Advance</fullname>
-		<path>/roms/gba/</path>
+		<path>/roms2/gba/</path>
 		<extension>.gb .GB .gbc .GBC .gba .GBA .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -1373,7 +1385,7 @@
 	<system>
 		<name>gameandwatch</name>
 		<fullname>Game and Watch</fullname>
-		<path>/roms/gameandwatch</path>
+		<path>/roms2/gameandwatch</path>
 		<extension>.mgw .MGW</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/gw_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>gameandwatch</platform>
@@ -1385,7 +1397,7 @@
 	<system>
 		<name>sgb</name>
 		<fullname>Super Game Boy</fullname>
-		<path>/roms/sgb/</path>
+		<path>/roms2/sgb/</path>
 		<extension>.gb .GB .gbc .GBC .dmg .DMG .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/mgba_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>sgb</platform>
@@ -1397,7 +1409,7 @@
 	<system>
 		<name>nds</name>
 		<fullname>NDS</fullname>
-		<path>/roms/nds/</path>
+		<path>/roms2/nds/</path>
 		<extension>.7z .7Z .nds .NDS .zip .ZIP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/choose_drastic_ver.sh %EMULATOR% %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -1417,7 +1429,7 @@
 	<system>
 		<name>sg-1000</name>
 		<fullname>SG-1000</fullname>
-		<path>/roms/sg-1000/</path>
+		<path>/roms2/sg-1000/</path>
 		<extension>.mdx .MDX .md .MD .smd .SMD .gen .GEN .bin .BIN .cue .CUE .iso .ISO .sms .SMS .gg .GG .sg .SG .sgd .SGD .68k .68K .chd .CHD .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/genesis_plus_gx_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>sg1000</platform>
@@ -1429,7 +1441,7 @@
 	<system>
 		<name>mastersystem</name>
 		<fullname>Master System</fullname>
-		<path>/roms/mastersystem/</path>
+		<path>/roms2/mastersystem/</path>
 		<extension>.mdx .MDX .md .MD .smd .SMD .gen .GEN .bin .BIN .cue .CUE .iso .ISO .sms .SMS .gg .GG .sg .SG .sgd .SGD .68k .68K .chd .CHD .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -1466,7 +1478,7 @@
 	<system>
 		<name>megadrive</name>
 		<fullname>Megadrive</fullname>
-		<path>/roms/megadrive/</path>
+		<path>/roms2/megadrive/</path>
 		<extension>.mdx .MDX .md .MD .smd .SMD .gen .GEN .bin .BIN .cue .CUE .iso .ISO .sms .SMS .gg .GG .sg .SG .sgd .SGD .68k .68K .chd .CHD .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -1502,7 +1514,7 @@
 	<system>
 		<name>megadrivemsu</name>
 		<fullname>Megadrive MSU</fullname>
-		<path>/roms/msumd/</path>
+		<path>/roms2/msumd/</path>
 		<extension>.md .MD</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/genesis_plus_gx_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>megadrive</platform>
@@ -1514,7 +1526,7 @@
 	<system>
 		<name>genesis</name>
 		<fullname>Genesis</fullname>
-		<path>/roms/genesis/</path>
+		<path>/roms2/genesis/</path>
 		<extension>.mdx .MDX .md .MD .smd .SMD .gen .GEN .bin .BIN .cue .CUE .iso .ISO .sms .SMS .gg .GG .sg .SG .sgd .SGD .68k .68K .chd .CHD .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -1550,7 +1562,7 @@
 	<system>
 		<name>segacd</name>
 		<fullname>Sega CD</fullname>
-		<path>/roms/segacd/</path>
+		<path>/roms2/segacd/</path>
 		<extension>.mdx .MDX .md .MD .smd .SMD .gen .GEN .cue .CUE .iso .ISO .sms .SMS .gg .GG .sg .SG .68k .68K .chd .CHD .zip .ZIP .7z .7Z .m3u .M3U</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -1577,7 +1589,7 @@
 	<system>
 		<name>sega32x</name>
 		<fullname>Sega 32X</fullname>
-		<path>/roms/sega32x/</path>
+		<path>/roms2/sega32x/</path>
 		<extension>.32x .32X .smd .SMD .bin .BIN .chd .CHD .md .MD .gen .GEN .cue .CUE .iso .ISO .sms .SMS .68k .68K .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -1601,7 +1613,7 @@
 	<system>
 		<name>saturn</name>
 		<fullname>Saturn</fullname>
-		<path>/roms/saturn/</path>
+		<path>/roms2/saturn/</path>
 		<extension>.img .IMG .cue .CUE .chd .CHD .iso .ISO .m3u .M3U</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/saturn.sh %EMULATOR% %CORE% %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -1659,7 +1671,7 @@
 	<system>
 		<name>dreamcast</name>
 		<fullname>Dreamcast</fullname>
-		<path>/roms/dreamcast/</path>
+		<path>/roms2/dreamcast/</path>
 		<extension>.7z .7Z .gdi .GDI .cdi .CDI .cue .CUE .chd .CHD .m3u .M3U</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/dreamcast.sh %EMULATOR% %CORE% %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -1709,7 +1721,7 @@
 					<core>flycast_rumble</core>
 					<core>flycast</core>
 				</cores>
-			  </emulator>
+			</emulator>
 		</emulators>
 		<platform>dreamcast</platform>
 		<theme>dreamcast</theme>
@@ -1720,7 +1732,7 @@
 	<system>
 		<name>vmu</name>
 		<fullname>Dreamcast VMU</fullname>
-		<path>/roms/vmu/</path>
+		<path>/roms2/vmu/</path>
 		<extension>.vms .VMS .bin .BIN</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/vemulator_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>vmu</platform>
@@ -1732,7 +1744,7 @@
 	<system>
 		<name>gamegear</name>
 		<fullname>Game Gear</fullname>
-		<path>/roms/gamegear/</path>
+		<path>/roms2/gamegear/</path>
 		<extension>.bin .BIN .gg .GG .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -1763,7 +1775,7 @@
 	<system>
 		<name>pico</name>
 		<fullname>Pico</fullname>
-		<path>/roms/pico</path>
+		<path>/roms2/pico</path>
 		<extension>.mdx .MDX .md .MD .smd .SMD .gen .GEN .bin .BIN .cue .CUE .iso .ISO .sms .SMS .gg .GG .sg .SG .sgd .SGD .68k .68K .chd .CHD .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -1787,7 +1799,7 @@
 	<system>
 		<name>neogeo</name>
 		<fullname>Neo Geo</fullname>
-		<path>/roms/neogeo/</path>
+		<path>/roms2/neogeo/</path>
 		<extension>.7z .7Z .cue .CUE .neo .NEO .zip .ZIP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -1810,7 +1822,7 @@
 	<system>
 		<name>neogeocd</name>
 		<fullname>Neo Geo CD</fullname>
-		<path>/roms/neogeocd/</path>
+		<path>/roms2/neogeocd/</path>
 		<extension>.cue .CUE .chd .CHD .m3u .M3U</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/neogeocd.sh %EMULATOR% %CORE% %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -1831,7 +1843,7 @@
 	<system>
 		<name>ngp</name>
 		<fullname>Neo Geo Pocket</fullname>
-		<path>/roms/ngp/</path>
+		<path>/roms2/ngp/</path>
 		<extension>.ngp .NGP .ngc .NGC .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -1859,7 +1871,7 @@
 	<system>
 		<name>ngpc</name>
 		<fullname>Neo Geo Pocket Color</fullname>
-		<path>/roms/ngpc/</path>
+		<path>/roms2/ngpc/</path>
 		<extension>.ngp .NGP .ngc .NGC .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -1887,9 +1899,15 @@
 	<system>
 		<name>openbor</name>
 		<fullname>OpenBOR</fullname>
-		<path>/roms/openbor/</path>
+		<path>/roms2/openbor/</path>
 		<extension>.pak .PAK</extension>
-		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /opt/OpenBor/OpenBor.sh %ROM%; sudo perfnorm</command>
+		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /opt/OpenBor/OpenBor.sh %EMULATOR% %ROM%; sudo perfnorm</command>
+		<emulators>
+			<emulator name="OpenBor">
+			</emulator>
+			<emulator name="OpenBorFF">
+			</emulator>
+		</emulators>
 		<platform>openbor</platform>
 		<theme>openbor</theme>
 		<manufacturer>Various</manufacturer>
@@ -1899,7 +1917,7 @@
 	<system>
 		<name>psx</name>
 		<fullname>PlayStation</fullname>
-		<path>/roms/psx/</path>
+		<path>/roms2/psx/</path>
 		<extension>.cue .CUE .img .IMG .mdf .MDF .pbp .PBP .toc .TOC .cbn .CBN .m3u .M3U .ccd .CCD .chd .CHD .zip .ZIP .7z .7Z .iso .ISO</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -1933,15 +1951,15 @@
 	<system>
 		<name>ppsspp</name>
 		<fullname>PlayStation Portable</fullname>
-		<path>/roms/psp/</path>
+		<path>/roms2/psp/</path>
 		<extension>.chd .CHD .cso .CSO .iso .ISO .pbp .PBP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/ppsspp.sh %EMULATOR% %ROM%; sudo perfnorm</command>
 		<emulators>
+			<emulator name="standalone-2021">
+		      </emulator>
 			<emulator name="standalone">
 		      </emulator>
 			<emulator name="retroarch">
-		      </emulator>
-			<emulator name="standalone-2021">
 		      </emulator>
 		</emulators>
 		<platform>psp</platform>
@@ -1953,7 +1971,7 @@
 	<system>
 		<name>pspminis</name>
 		<fullname>Playstation Portable Minis</fullname>
-		<path>/roms/pspminis/</path>
+		<path>/roms2/pspminis/</path>
 		<extension>.chd .CHD .cso .CSO .iso .ISO .pbp .PBP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/ppsspp.sh %EMULATOR% %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -1971,7 +1989,7 @@
 	<system>
 		<name>intellivision</name>
 		<fullname>Intellivision</fullname>
-		<path>/roms/intellivision/</path>
+		<path>/roms2/intellivision/</path>
 		<extension>.bin .BIN .int .INT .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch32 -L /home/ark/.config/retroarch32/cores/freeintv_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>intellivision</platform>
@@ -1983,7 +2001,7 @@
 	<system>
 		<name>coleco</name>
 		<fullname>ColecoVision</fullname>
-		<path>/roms/coleco/</path>
+		<path>/roms2/coleco/</path>
 		<extension>.rom .ROM .ri .RI .mx1 .MX1 .mx2 .MX2 .col .COL .dsk .DSK .cas .CAS .sg .SG .sc .SC .m3u .M3U .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -2008,7 +2026,7 @@
 	<system>
 		<name>tic-80</name>
 		<fullname>Tic-80</fullname>
-		<path>/roms/tic80/</path>
+		<path>/roms2/tic80/</path>
 		<extension>.tic .TIC</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/tic80_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>tic80</platform>
@@ -2020,7 +2038,7 @@
 	<system>
 		<name>vectrex</name>
 		<fullname>Vectrex</fullname>
-		<path>/roms/vectrex/</path>
+		<path>/roms2/vectrex/</path>
 		<extension>.vec .VEC .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/vecx_libretro.so --fullscreen %ROM%; sudo perfnorm</command>
 		<platform>vectrex</platform>
@@ -2032,7 +2050,7 @@
 	<system>
 		<name>msx</name>
 		<fullname>MSX</fullname>
-		<path>/roms/msx/</path>
+		<path>/roms2/msx/</path>
 		<extension>.cas .CAS .dsk .DSK .mx1 .MX1 .mx2 .MX2 .rom .ROM .zip .ZIP .m3u .M3U .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -2054,7 +2072,7 @@
 	<system>
 		<name>msx2</name>
 		<fullname>MSX 2</fullname>
-		<path>/roms/msx2/</path>
+		<path>/roms2/msx2/</path>
 		<extension>.cas .CAS .dsk .DSK .mx1 .MX1 .mx2 .MX2 .rom .ROM .zip .ZIP .m3u .M3U .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -2076,7 +2094,7 @@
 	<system>
 		<name>zx81</name>
 		<fullname>ZX81</fullname>
-		<path>/roms/zx81/</path>
+		<path>/roms2/zx81/</path>
 		<extension>.p .P .tzx .TZX .zip .ZIP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/81_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>zx81</platform>
@@ -2088,7 +2106,7 @@
 	<system>
 		<name>zxspectrum</name>
 		<fullname>ZX Spectrum</fullname>
-		<path>/roms/zxspectrum/</path>
+		<path>/roms2/zxspectrum/</path>
 		<extension>.sna .SNA .szx .SZX .z80 .Z80 .tap .TAP .tzx .TZX .gz .GZ .udi .UDI .mgt .MGT .img .IMG .trd .TRD .scl .SCL .dsk .DSK .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/fuse_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>zxspectrum</platform>
@@ -2100,7 +2118,7 @@
 	<system>
 		<name>x1</name>
 		<fullname>Sharp X1</fullname>
-		<path>/roms/x1/</path>
+		<path>/roms2/x1/</path>
 		<extension>.dx1 .DX1 .zip .ZIP .2d .2D .2hd .2HD .tfd .TFD .d88 .D88 .88d .88D .hdm .HDM .xdf .XDF .dup .DUP .cmd .CMD</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/x1_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>x1</platform>
@@ -2112,7 +2130,7 @@
 	<system>
 		<name>x68000</name>
 		<fullname>Sharp x68000</fullname>
-		<path>/roms/x68000/</path>
+		<path>/roms2/x68000/</path>
 		<extension>.dim .DIM .zip .ZIP .2hd .2HD .d88 .D88 .88d .88D .hdm .HDM .hdf .HDF .xdf .XDF .dup .DUP .cmd .CMD .m3u .M3U .img .IMG</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/px68k_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>x68000</platform>
@@ -2124,7 +2142,7 @@
 	<system>
 		<name>c16</name>
 		<fullname>C16</fullname>
-		<path>/roms/c16/</path>
+		<path>/roms2/c16/</path>
 		<extension>.7z .7Z .bin .BIN .cmd .CMD .crt .CRT .d2m .D2M .d4m .D4M .d64 .D64 .d6z .D6Z .d71 .D71 .d7z .D7Z .d80 .D80 .d81 .D81 .d82 .D82 .d8z .D8Z .g41 .G41 .g4z .G4Z .g64 .G64 .g6z .G6Z .gz .GZ .m3u .M3U .nbz .NBZ .nib .NIB .p00 .P00 .prg .PRG .t64 .T64 .tap .TAP .tcrt .TCRT .vfl .VFL .vsf .VSF .x64 .X64 .x6z .X6Z .zip .ZIP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/vice_xplus4_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>c16</platform>
@@ -2136,7 +2154,7 @@
 	<system>
 		<name>c64</name>
 		<fullname>C64</fullname>
-		<path>/roms/c64/</path>
+		<path>/roms2/c64/</path>
 		<extension>.7z .7Z .bin .BIN .cmd .CMD .crt .CRT .d2m .D2M .d4m .D4M .d64 .D64 .d6z .D6Z .d71 .D71 .d71 .D71 .d7z .D7Z .d80 .D80 .d81 .D81 .d81 .D81 .d82 .D82 .d8z .D8Z .g41 .G41 .g4z .G4Z .g64 .G64 .g6z .G6Z .gz .GZ .m3u .M3U .nbz .NBZ .nib .NIB .p00 .P00 .prg .PRG .t64 .T64 .tap .TAP .tcrt .TCRT .vfl .VFL .vsf .VSF .vsf .VSF .x64 .X64 .x6z .X6Z .zip .ZIP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/vice_x64_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>c64</platform>
@@ -2148,7 +2166,7 @@
 	<system>
 		<name>c128</name>
 		<fullname>C128</fullname>
-		<path>/roms/c128/</path>
+		<path>/roms2/c128/</path>
 		<extension>.7z .7Z .bin .BIN .cmd .CMD .crt .CRT .d2m .D2M .d4m .D4M .d64 .D64 .d6z .D6Z .d71 .D71 .d7z .D7Z .d80 .D80 .d81 .D81 .d82 .D82 .d8z .D8Z .g41 .G41 .g4z .G4Z .g64 .G64 .g6z .G6Z .gz .GZ .m3u .M3U .nbz .NBZ .nib .NIB .p00 .P00 .prg .PRG .t64 .T64 .tap .TAP .tcrt .TCRT .vfl .VFL .vsf .VSF .x64 .X64 .x6z .X6Z .zip .ZIP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/vice_x128_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>c128</platform>
@@ -2160,7 +2178,7 @@
 	<system>
 		<name>vic20</name>
 		<fullname>VIC-20</fullname>
-		<path>/roms/vic20</path>
+		<path>/roms2/vic20</path>
 		<extension>.20 .40 .60 .7z .7Z .a0 .A0 .b0 .B0 .bin .BIN .cmd .CMD .crt .CRT .d2m .D2M .d4m .D4M .d64 .D64 .d6z .D6Z .d71 .D71 .d7z .D7Z .d80 .D80 .d81 .D81 .d82 .D82 .d8z .D8Z .g41 .G41 .g4z .G4Z .g64 .G64 .g6z .G6Z .gz .GZ .m3u .M3U .nbz .NBZ .nib .NIB .p00 .P00 .prg .PRG .rom .ROM .t64 .T64 .tap .TAP .tcrt .TCRT .vfl .VFL .vsf .VSF .x64 .X64 .x6z .X6Z .zip .ZIP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/vice_xvic_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>vic20</platform>
@@ -2172,7 +2190,7 @@
 	<system>
 		<name>videopac</name>
 		<fullname>Videopac G7000</fullname>
-		<path>/roms/videopac</path>
+		<path>/roms2/videopac</path>
 		<extension>.bin .BIN .zip .ZIP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/o2em_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>videopac</platform>
@@ -2184,7 +2202,7 @@
 	<system>
 		<name>pc98</name>
 		<fullname>PC98</fullname>
-		<path>/roms/pc98/</path>
+		<path>/roms2/pc98/</path>
 		<extension>.cmd .CMD .d88 .D88 .fdi .FDI .hdi .HDI .zip .ZIP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -2204,7 +2222,7 @@
 	<system>
 		<name>pcfx</name>
 		<fullname>PC-FX</fullname>
-		<path>/roms/pcfx/</path>
+		<path>/roms2/pcfx/</path>
 		<extension>.chd .CHD .zip .ZIP .cue .CUE .ccd .CCD .toc .TOC</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/mednafen_pcfx_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>pcfx</platform>
@@ -2216,7 +2234,7 @@
 	<system>
 		<name>msdos</name>
 		<fullname>DOS</fullname>
-		<path>/roms/dos/</path>
+		<path>/roms2/dos/</path>
 		<extension>.exe .EXE .com .COM .bat .BAT .conf .CONF .cue .CUE .iso .ISO .zip .ZIP .m3u .M3U .dosz .DOSZ</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -2236,7 +2254,7 @@
 	<system>
 		<name>ti99</name>
 		<fullname>TI99</fullname>
-		<path>/roms/ti99/</path>
+		<path>/roms2/ti99/</path>
 		<extension>.ctg .CTG</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/ti99.sh %ROM%; sudo perfnorm</command>
 		<platform>ti99</platform>
@@ -2248,7 +2266,7 @@
 	<system>
 		<name>supervision</name>
 		<fullname>Supervision</fullname>
-		<path>/roms/supervision/</path>
+		<path>/roms2/supervision/</path>
 		<extension>.bin .BIN .zip .ZIP .7z .7Z</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/potator_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>supervision</platform>
@@ -2260,7 +2278,7 @@
 	<system>
 		<name>doom</name>
 		<fullname>Doom</fullname>
-		<path>/roms/doom/</path>
+		<path>/roms2/doom/</path>
 		<extension>.wad .WAD .sh .SH .doom .DOOM</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/doom.sh %EMULATOR% %CORE% %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -2283,7 +2301,7 @@
 	<system>
 		<name>wolf</name>
 		<fullname>Wolfenstein</fullname>
-		<path>/roms/wolf/</path>
+		<path>/roms2/wolf/</path>
 		<extension>.wolf .WOLF .ecwolf .ECWOLF</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/ecwolf.sh %EMULATOR% %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -2304,7 +2322,7 @@
 	<system>
 		<name>arduboy</name>
 		<fullname>Arduboy</fullname>
-		<path>/roms/arduboy/</path>
+		<path>/roms2/arduboy/</path>
 		<extension>.hex .HEX</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -2324,7 +2342,7 @@
 	<system>
 		<name>easyrpg</name>
 		<fullname>EasyRPG</fullname>
-		<path>/roms/easyrpg/</path>
+		<path>/roms2/easyrpg/</path>
 		<extension>.easyrpg .EASYRPG .zip .ZIP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/easyrpg.sh %ROM%; sudo perfnorm</command>
 		<platform>easyrpg</platform>
@@ -2336,7 +2354,7 @@
 	<system>
 		<name>scv</name>
 		<fullname>Super Cassette Vision</fullname>
-		<path>/roms/scv/</path>
+		<path>/roms2/scv/</path>
 		<extension>.0 .bin .BIN .cart .CART .rom .ROM .zip .ZIP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/emuscv_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>scv</platform>
@@ -2348,7 +2366,7 @@
 	<system>
 		<name>microvision</name>
 		<fullname>Microvision</fullname>
-		<path>/roms/mv</path>
+		<path>/roms2/mv</path>
 		<extension>.bin .BIN</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/mvem.sh %ROM%; sudo perfnorm</command>
 		<platform>microvision</platform>
@@ -2360,7 +2378,7 @@
 	<system>
 		<name>onscripter</name>
 		<fullname>ONScripter</fullname>
-		<path>/roms/onscripter/</path>
+		<path>/roms2/onscripter/</path>
 		<extension>.dat .DAT .txt .TXT</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 nice -n -19 /usr/local/bin/choose_ons_ver.sh %EMULATOR% %CORE%_libretro.so %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -2382,7 +2400,7 @@
 	<system>
 		<name>native32</name>
 		<fullname>native32</fullname>
-		<path>/roms/native32/</path>
+		<path>/roms2/native32/</path>
 		<extension>.smf .sgm .ssl .zip</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/native32emu_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>native32</platform>
@@ -2394,7 +2412,7 @@
 	<system>
 		<name>spmp8000</name>
 		<fullname>spmp8000</fullname>
-		<path>/roms/spmp8000/</path>
+		<path>/roms2/spmp8000/</path>
 		<extension>.bin .BIN</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/spmp8000emu_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>spmp8000</platform>
@@ -2406,7 +2424,7 @@
 	<system>
 		<name>flash</name>
 		<fullname>flash</fullname>
-		<path>/roms/flash/</path>
+		<path>/roms2/flash/</path>
 		<extension>.swf .SWF</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/flash.sh %ROM%; sudo perfnorm</command>
 		<platform>flash</platform>
@@ -2416,9 +2434,21 @@
 		<hardware>game engine</hardware>
 	</system>
 	<system>
+		<name>krkr2</name>
+		<fullname>krkr2</fullname>
+		<path>/roms2/krkr2/</path>
+		<extension>.xp3 .XP3</extension>
+		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /opt/krkr2/start_krkr.sh %ROM%; sudo perfnorm</command>
+		<platform>krkr2</platform>
+		<theme>krkr2</theme>
+		<manufacturer>krkr2</manufacturer>
+		<release>1996</release>
+		<hardware>game engine</hardware>
+	</system>
+	<system>
 		<name>bbk</name>
 		<fullname>BBK</fullname>
-		<path>/roms/bbk/</path>
+		<path>/roms2/bbk/</path>
 		<extension>.gam .GAM</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/bbkemu_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>bbk</platform>
@@ -2430,7 +2460,7 @@
 	<system>
 		<name>pymo</name>
 		<fullname>pymo</fullname>
-		<path>/roms/pymo/</path>
+		<path>/roms2/pymo/</path>
 		<extension>.pymo</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/pymo.sh %ROM%; sudo perfnorm</command>
 		<platform>pymo</platform>
@@ -2442,7 +2472,7 @@
 	<system>
 		<name>pico-8</name>
 		<fullname>PICO-8</fullname>
-		<path>/roms/pico-8/carts/</path>
+		<path>/roms2/pico-8/carts/</path>
 		<extension>.png .PNG .p8 .P8</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; sudo systemctl start pico8hotkey; nice -n -19 /usr/local/bin/pico8.sh %EMULATOR% %ROM%; sudo systemctl stop pico8hotkey; sudo perfnorm</command>
 		<emulators>
@@ -2466,7 +2496,7 @@
 	<system>
 		<name>palm</name>
 		<fullname>Palm</fullname>
-		<path>/roms/palm/</path>
+		<path>/roms2/palm/</path>
 		<extension>.img .IMG .prc .PRC</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/mu_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>palm</platform>
@@ -2478,7 +2508,7 @@
 	<system>
 		<name>piece</name>
 		<fullname>P/ECE</fullname>
-		<path>/roms/piece/</path>
+		<path>/roms2/piece/</path>
 		<extension>.pex .pfi .PEX .PFI</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/piemu_run.sh %ROM%; sudo perfnorm</command>
 		<platform>piece</platform>
@@ -2490,7 +2520,7 @@
 	<system>
 		<name>puzzlescript</name>
 		<fullname>PuzzleScript</fullname>
-		<path>/roms/puzzlescript/</path>
+		<path>/roms2/puzzlescript/</path>
 		<extension>.pz .PZ .pzp .PZP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/puzzlescript_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>puzzlescript</platform>
@@ -2502,7 +2532,7 @@
 	<system>
 		<name>j2me</name>
 		<fullname>J2ME</fullname>
-		<path>/roms/j2me/</path>
+		<path>/roms2/j2me/</path>
 		<extension>.jar .JAR</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/freej2me.sh %EMULATOR% %CORE% %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -2527,7 +2557,7 @@
 	<system>
 		<name>enterprise</name>
 		<fullname>Enterprise 64/128</fullname>
-		<path>/roms/enterprise/</path>
+		<path>/roms2/enterprise/</path>
 		<extension>.128 .bas .BAS .com .COM .dsk .DSK .dtf .DTF .img .IMG .tap .TAP .trn .TRN</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/ep128emu_core_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>ep128</platform>
@@ -2539,7 +2569,7 @@
 	<system>
 		<name>videoton</name>
 		<fullname>TV-Computer</fullname>
-		<path>/roms/tvc/</path>
+		<path>/roms2/tvc/</path>
 		<extension>.cas .CAS</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/ep128emu_core_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>tvc</platform>
@@ -2551,7 +2581,7 @@
 	<system>
 		<name>vircon32</name>
 		<fullname>Vircon32</fullname>
-		<path>/roms/vircon32/</path>
+		<path>/roms2/vircon32/</path>
 		<extension>.v32 .V32</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/vircon32_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>vircon32</platform>
@@ -2563,7 +2593,7 @@
 	<system>
 		<name>thomson</name>
 		<fullname>Theodore Thomson</fullname>
-		<path>/roms/thomson/</path>
+		<path>/roms2/thomson/</path>
 		<extension>.fd .FD .k7 .K7 .m5 .M5 .m7 .M7 .rom .ROM .sap .SAP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/theodore_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>thomson</platform>
@@ -2575,7 +2605,7 @@
 	<system>
 		<name>dragon32</name>
 		<fullname>Dragon 32/64</fullname>
-		<path>/roms/dragon32/</path>
+		<path>/roms2/dragon32/</path>
 		<extension>.bin .BIN .cas .CAS .ccc .CCC .dsk .DSK .rom .ROM .wav .WAV .zip .ZIP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/dragon.sh %EMULATOR% %CORE% %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -2595,7 +2625,7 @@
 	<system>
 		<name>coco</name>
 		<fullname>Color Computer 3</fullname>
-		<path>/roms/coco3/</path>
+		<path>/roms2/coco3/</path>
 		<extension>.bin .BIN .cas .CAS .ccc .CCC .dsk .DSK .rom .ROM .wav .WAV .zip .ZIP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/coco.sh %EMULATOR% %CORE% %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -2620,7 +2650,7 @@
 	<system>
 		<name>gametank</name>
 		<fullname>GameTank</fullname>
-		<path>/roms/gametank/</path>
+		<path>/roms2/gametank/</path>
 		<extension>.7z .7Z .gtr .GTR .zip .ZIP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/gametank.sh %EMULATOR% %CORE% %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -2641,7 +2671,7 @@
 	<system>
 		<name>wasm-4</name>
 		<fullname>WASM-4</fullname>
-		<path>/roms/wasm4/</path>
+		<path>/roms2/wasm4/</path>
 		<extension>.wasm .WASM</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/wasm4_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>wasm4</platform>
@@ -2653,7 +2683,7 @@
 	<system>
 		<name>lowresnx</name>
 		<fullname>LowRes NX</fullname>
-		<path>/roms/lowresnx/</path>
+		<path>/roms2/lowresnx/</path>
 		<extension>.nx .NX</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/lowresnx_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>lowresnx</platform>
@@ -2665,7 +2695,7 @@
 	<system>
 		<name>solarus</name>
 		<fullname>Solarus</fullname>
-		<path>/roms/solarus/</path>
+		<path>/roms2/solarus/</path>
 		<extension>.solarus .SOLARUS .zip .ZIP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/solarus.sh %ROM%; sudo perfnorm</command>
 		<platform>solarus</platform>
@@ -2677,18 +2707,16 @@
 	<system>
 		<name>ports</name>
 		<fullname>Ports</fullname>
-		<path>/roms/ports/</path>
+		<path>/roms2/ports/</path>
 		<extension>.sh .SH</extension>
-		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 %ROM%; sudo perfnorm</command>
+		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/AltSDL.sh %ROM%; sudo perfnorm</command>
 		<platform>pc</platform>
 		<theme>ports</theme>
-		<manufacturer>Various</manufacturer>
-		<release>unknown</release>
 	</system>
 	<system>
 		<name>scummvm</name>
 		<fullname>SCUMM Virtual Machine</fullname>
-		<path>/roms/scummvm/</path>
+		<path>/roms2/scummvm/</path>
 		<extension>.scummvm .SCUMMVM</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/scummvm.sh %EMULATOR% %CORE% %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -2709,7 +2737,7 @@
 	<system>
 		<name>uzebox</name>
 		<fullname>Uzebox</fullname>
-		<path>/roms/uzebox/</path>
+		<path>/roms2/uzebox/</path>
 		<extension>.uze .UZE</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/uzem_libretro.so %ROM%; sudo perfnorm</command>
 		<platform>uzebox</platform>
@@ -2721,13 +2749,20 @@
 	<system>
 		<name>videos</name>
 		<fullname>Movies</fullname>
-		<path>/roms/movies/</path>
+		<path>/roms2/movies/</path>
 		<extension>.mp4 .MP4 .avi .AVI .mpeg .MPEG .mkv .MKV .mov .MOV</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; /usr/local/bin/mediaplayer.sh %ROM%; sudo perfnorm</command>
 		<platform>videos</platform>
 		<theme>vhs</theme>
-		<manufacturer>Various</manufacturer>
-		<release>unknown</release>
+	</system>
+	<system>
+		<name>options</name>
+		<fullname>Options</fullname>
+		<path>/opt/system/</path>
+		<extension>.sh .SH</extension>
+        <command>sudo chmod 666 /dev/tty1; %ROM% 2>&1 > /dev/tty1; printf "\033c" >> /dev/tty1</command>
+		<platform>ignore</platform>
+		<theme>retropie</theme>
 	</system>
 	<system>
 		<name>retroarch</name>

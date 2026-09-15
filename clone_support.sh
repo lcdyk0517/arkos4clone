@@ -589,6 +589,12 @@ else
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/lib/aarch64-linux-gnu/libjson-c.so"* 2>/dev/null
   safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/lib/aarch64-linux-gnu/libjson-c.so"* 2>/dev/null
 
+  echo "== 添加 DSperate-sa =="
+  safe sudo mkdir -p "$MOUNT_DIR/root/opt/DSperate" 2>/dev/null
+  safe sudo cp -a ./replace_file/DSperate/. "$MOUNT_DIR/root/opt/DSperate/" 2>/dev/null
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/DSperate" 2>/dev/null
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/DSperate" 2>/dev/null
+
   echo "== 添加 onscripter-sa =="
   safe sudo mkdir -p "$MOUNT_DIR/root/opt/onscripter" 2>/dev/null
   safe sudo cp -a ./replace_file/onscripter/. "$MOUNT_DIR/root/opt/onscripter/" 2>/dev/null

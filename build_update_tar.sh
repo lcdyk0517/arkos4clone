@@ -432,6 +432,10 @@ else
   mkdir -p "$PAYLOAD_ROOT/opt/drastic-kk"
   cp -a ./replace_file/drastic-kk/. "$PAYLOAD_ROOT/opt/drastic-kk/" 2>/dev/null || true
 
+  echo "== 注入 DSperate-sa =="
+  mkdir -p "$PAYLOAD_ROOT/opt/DSperate"
+  cp -a ./replace_file/DSperate/. "$PAYLOAD_ROOT/opt/DSperate/" 2>/dev/null || true
+
   echo "== 添加 onscripter-sa =="
   mkdir -p "$PAYLOAD_ROOT/opt/onscripter"
   cp -a ./replace_file/onscripter/. "$PAYLOAD_ROOT/opt/onscripter/" 2>/dev/null || true
@@ -576,6 +580,8 @@ EOF
   meta_add "0777" "1002:1002" "/opt/drastic/*"
   meta_add "0777" "1002:1002" "/opt/drastic-kk"
   meta_add "0777" "1002:1002" "/opt/drastic-kk/*"
+  meta_add "0777" "1002:1002" "/opt/DSperate"
+  meta_add "0777" "1002:1002" "/opt/DSperate/*"
   meta_add "0777" "1002:1002" "/opt/onscripter"
   meta_add "0777" "1002:1002" "/opt/onscripter/*"
   meta_add "0777" "1002:1002" "/opt/freej2mesa"
