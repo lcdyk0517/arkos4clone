@@ -2492,3 +2492,63 @@ msgstr "APPLIQUER AU DÉMARRAGE"
 
 msgid "PERFORMANCE SETTINGS"
 msgstr "Paramètres de performance"
+
+msgid "ROMS SD CARD"
+msgstr "CARTE SD DES ROMS"
+
+msgid "CURRENT MODE"
+msgstr "Mode actuel"
+
+msgid "MOUNTED"
+msgstr "Montée"
+
+msgid "NOT MOUNTED"
+msgstr "Non montée"
+
+msgid "NOT DETECTED"
+msgstr "Non détectée"
+
+msgid "DETECTED"
+msgstr "Détectée"
+
+msgid "MODE ALREADY ACTIVE"
+msgstr "Mode déjà actif"
+
+msgid "EMULATIONSTATION WILL RELOAD"
+msgstr "EmulationStation va se recharger"
+
+msgid "USE MAIN SD CARD (SD1)"
+msgstr "Utiliser la carte SD principale (SD1)"
+
+msgid "USE SD2 CARD ONLY"
+msgstr "Utiliser uniquement la carte SD2"
+
+msgid "READ SD1 AND SD2 (DUAL)"
+msgstr "Lire SD1 et SD2 (double)"
+
+msgid "SD1 + SD2 (DUAL)"
+msgstr "SD1 + SD2 (double)"
+
+msgid "MAIN SD (SD1)"
+msgstr "SD principale (SD1)"
+
+msgid "SD2 ONLY"
+msgstr "SD2 uniquement"
+
+msgid "ARE YOU SURE YOU WANT TO SWITCH THE ROMS SOURCE?"
+msgstr "Voulez-vous vraiment changer la source des ROMS ?"
+
+msgid "SD2 CARD NOT DETECTED"
+msgstr "Carte SD2 non détectée"
+
+msgid "MOUNTING SD2 CARD..."
+msgstr "Montage de la carte SD2..."
+
+msgid "COULD NOT MOUNT SD2 CARD"
+msgstr "Impossible de monter la carte SD2"
+
+msgid "SD2 CARD IS EMPTY"
+msgstr "La carte SD2 est vide"
+
+msgid "FAILED TO APPLY SYSTEM CONFIG"
+msgstr "Échec de l'application de la configuration système"

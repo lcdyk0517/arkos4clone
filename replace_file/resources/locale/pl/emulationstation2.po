@@ -4033,3 +4033,63 @@ msgstr "ZASTOSUJ PRZY URUCHOMIENIU"
 
 msgid "PERFORMANCE SETTINGS"
 msgstr "Ustawienia wydajności"
+
+msgid "ROMS SD CARD"
+msgstr "KARTA SD ROMS"
+
+msgid "CURRENT MODE"
+msgstr "Bieżący tryb"
+
+msgid "MOUNTED"
+msgstr "Zamontowana"
+
+msgid "NOT MOUNTED"
+msgstr "Nie zamontowana"
+
+msgid "NOT DETECTED"
+msgstr "Nie wykryto"
+
+msgid "DETECTED"
+msgstr "Wykryto"
+
+msgid "MODE ALREADY ACTIVE"
+msgstr "Tryb już aktywny"
+
+msgid "EMULATIONSTATION WILL RELOAD"
+msgstr "EmulationStation zostanie ponownie załadowany"
+
+msgid "USE MAIN SD CARD (SD1)"
+msgstr "Użyj głównej karty SD (SD1)"
+
+msgid "USE SD2 CARD ONLY"
+msgstr "Użyj tylko karty SD2"
+
+msgid "READ SD1 AND SD2 (DUAL)"
+msgstr "Czytaj SD1 i SD2 (dual)"
+
+msgid "SD1 + SD2 (DUAL)"
+msgstr "SD1 + SD2 (dual)"
+
+msgid "MAIN SD (SD1)"
+msgstr "Główna SD (SD1)"
+
+msgid "SD2 ONLY"
+msgstr "Tylko SD2"
+
+msgid "ARE YOU SURE YOU WANT TO SWITCH THE ROMS SOURCE?"
+msgstr "Czy na pewno chcesz zmienić źródło ROMS?"
+
+msgid "SD2 CARD NOT DETECTED"
+msgstr "Nie wykryto karty SD2"
+
+msgid "MOUNTING SD2 CARD..."
+msgstr "Montowanie karty SD2..."
+
+msgid "COULD NOT MOUNT SD2 CARD"
+msgstr "Nie można zamontować karty SD2"
+
+msgid "SD2 CARD IS EMPTY"
+msgstr "Karta SD2 jest pusta"
+
+msgid "FAILED TO APPLY SYSTEM CONFIG"
+msgstr "Nie udało się zastosować konfiguracji systemu"

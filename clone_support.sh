@@ -335,16 +335,16 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   safe sudo chmod 777 "$MOUNT_DIR/root/etc/systemd/system/351mp.service" 2>/dev/null
   safe sudo rm "$MOUNT_DIR/root/etc/systemd/system/batt_led.service" 2>/dev/null
   safe sudo cp -r "./replace_file/tools/Enable Quick Mode.sh" "$MOUNT_DIR/root/opt/system/Advanced/" 2>/dev/null
-  safe sudo cp -r "./replace_file/tools/Switch to SD2 for Roms.sh" "$MOUNT_DIR/root/opt/system/Advanced/" 2>/dev/null
+  # safe sudo cp -r "./replace_file/tools/Switch to SD2 for Roms.sh" "$MOUNT_DIR/root/opt/system/Advanced/" 2>/dev/null
   safe sudo cp -r "./replace_file/tools/Enable Quick Mode.sh" "$MOUNT_DIR/root/usr/local/bin/" 2>/dev/null
   safe sudo cp -r "./replace_file/tools/Disable Quick Mode.sh" "$MOUNT_DIR/root/usr/local/bin/" 2>/dev/null
-  safe sudo cp -r "./replace_file/tools/Switch to main SD for Roms.sh" "$MOUNT_DIR/root/usr/local/bin/" 2>/dev/null
-  safe sudo cp -r "./replace_file/tools/Switch to SD2 for Roms.sh" "$MOUNT_DIR/root/usr/local/bin/" 2>/dev/null
+  # safe sudo cp -r "./replace_file/tools/Switch to main SD for Roms.sh" "$MOUNT_DIR/root/usr/local/bin/" 2>/dev/null
+  # safe sudo cp -r "./replace_file/tools/Switch to SD2 for Roms.sh" "$MOUNT_DIR/root/usr/local/bin/" 2>/dev/null
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/system/Advanced/"*.sh 2>/dev/null
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/Enable Quick Mode.sh" 2>/dev/null
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/Disable Quick Mode.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/Switch to main SD for Roms.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/Switch to SD2 for Roms.sh" 2>/dev/null
+  # safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/Switch to main SD for Roms.sh" 2>/dev/null
+  # safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/Switch to SD2 for Roms.sh" 2>/dev/null
   safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/local/bin/"*.sh 2>/dev/null
 
   echo "== 删除不需要的文件 =="
@@ -752,16 +752,16 @@ else
   safe sudo rm "$MOUNT_DIR/root/etc/systemd/system/batt_led.service" 2>/dev/null
   safe sudo rm "$MOUNT_DIR/root/etc/systemd/system/ddtbcheck.service" 2>/dev/null
   safe sudo cp -r "./replace_file/tools/Enable Quick Mode.sh" "$MOUNT_DIR/root/opt/system/Advanced/" 2>/dev/null
-  safe sudo cp -r "./replace_file/tools/Switch to SD2 for Roms.sh" "$MOUNT_DIR/root/opt/system/Advanced/" 2>/dev/null
+  # safe sudo cp -r "./replace_file/tools/Switch to SD2 for Roms.sh" "$MOUNT_DIR/root/opt/system/Advanced/" 2>/dev/null
   safe sudo cp -r "./replace_file/tools/Enable Quick Mode.sh" "$MOUNT_DIR/root/usr/local/bin/" 2>/dev/null
   safe sudo cp -r "./replace_file/tools/Disable Quick Mode.sh" "$MOUNT_DIR/root/usr/local/bin/" 2>/dev/null
-  safe sudo cp -r "./replace_file/tools/Switch to main SD for Roms.sh" "$MOUNT_DIR/root/usr/local/bin/" 2>/dev/null
-  safe sudo cp -r "./replace_file/tools/Switch to SD2 for Roms.sh" "$MOUNT_DIR/root/usr/local/bin/" 2>/dev/null
+  # safe sudo cp -r "./replace_file/tools/Switch to main SD for Roms.sh" "$MOUNT_DIR/root/usr/local/bin/" 2>/dev/null
+  # safe sudo cp -r "./replace_file/tools/Switch to SD2 for Roms.sh" "$MOUNT_DIR/root/usr/local/bin/" 2>/dev/null
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/system/Advanced/"*.sh 2>/dev/null
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/Enable Quick Mode.sh" 2>/dev/null
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/Disable Quick Mode.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/Switch to main SD for Roms.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/Switch to SD2 for Roms.sh" 2>/dev/null
+  # safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/Switch to main SD for Roms.sh" 2>/dev/null
+  # safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/Switch to SD2 for Roms.sh" 2>/dev/null
   safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/local/bin/"*.sh 2>/dev/null
 
   echo "== 删除logo随机 =="
@@ -776,6 +776,13 @@ else
   safe sudo rm -rf "$MOUNT_DIR/root/opt/system/DeviceType" 2>/dev/null
   safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Change LED to Red.sh" 2>/dev/null
   safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Update.sh" 2>/dev/null
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Read from SD1 and SD2 for Roms" 2>/dev/null
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Read from SD1 and SD2 for Roms.sh" 2>/dev/null
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Switch to SD2 for Roms.sh" 2>/dev/null
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Switch to main SD for Roms.sh" 2>/dev/null
+  safe sudo rm -rf "$MOUNT_DIR/root/usr/local/bin/Read from SD1 and SD2 for Roms" 2>/dev/null
+  safe sudo rm -rf "$MOUNT_DIR/root/usr/local/bin/Switch to SD2 for Roms.sh" 2>/dev/null
+  safe sudo rm -rf "$MOUNT_DIR/root/usr/local/bin/Switch to main SD for Roms.sh" 2>/dev/null
   safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Wifi.sh" 2>/dev/null
   safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Network Info.sh" 2>/dev/null
   safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Enable Remote Services.sh" 2>/dev/null

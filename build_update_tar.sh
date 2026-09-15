@@ -164,6 +164,8 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   cp -f ./mod_so/64/* "$PAYLOAD_ROOT/home/ark/.config/retroarch/cores/" 2>/dev/null || true
   cp -f ./mod_so/32/* "$PAYLOAD_ROOT/home/ark/.config/retroarch32/cores/" 2>/dev/null || true
   cp -f ./replace_file/darkos4es_systems.cfg "$PAYLOAD_ROOT/etc/emulationstation/" 2>/dev/null || true
+  cp -f ./replace_file/darkos4es_systems.cfg.sd1 "$PAYLOAD_ROOT/etc/emulationstation/" 2>/dev/null || true
+  cp -f ./replace_file/darkos4es_systems.cfg.sd2 "$PAYLOAD_ROOT/etc/emulationstation/" 2>/dev/null || true
   cp -f ./replace_file/darkos4es_systems.cfg.dual "$PAYLOAD_ROOT/etc/emulationstation/" 2>/dev/null || true
   cp -rf ./replace_file/resources/* "$PAYLOAD_ROOT/usr/bin/emulationstation/resources/" 2>/dev/null || true
   mkdir -p "$PAYLOAD_ROOT/usr/bin/emulationstation"
@@ -223,11 +225,8 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
            "$PAYLOAD_ROOT/usr/local/bin"
   cp -r ./replace_file/services/351mp.service "$PAYLOAD_ROOT/etc/systemd/system/" 2>/dev/null || true
   cp -r "./replace_file/tools/Enable Quick Mode.sh" "$PAYLOAD_ROOT/opt/system/Advanced/" 2>/dev/null || true
-  cp -r "./replace_file/tools/Switch to SD2 for Roms.sh" "$PAYLOAD_ROOT/opt/system/Advanced/" 2>/dev/null || true
   cp -r "./replace_file/tools/Enable Quick Mode.sh" "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
   cp -r "./replace_file/tools/Disable Quick Mode.sh" "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
-  cp -r "./replace_file/tools/Switch to main SD for Roms.sh" "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
-  cp -r "./replace_file/tools/Switch to SD2 for Roms.sh" "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
   cp -r "./replace_file/tools/Ports Fix.sh" "$PAYLOAD_ROOT/opt/system/Tools/" 2>/dev/null || true
 
   echo "== 注入 modules =="
@@ -278,6 +277,8 @@ EOF
   meta_add "0777" "1000:1000" "/home/ark/.config/retroarch/cores/*"
   meta_add "0777" "1000:1000" "/home/ark/.config/retroarch32/cores/*"
   meta_add "0777" "1000:1000" "/etc/emulationstation/darkos4es_systems.cfg"
+  meta_add "0777" "1000:1000" "/etc/emulationstation/darkos4es_systems.cfg.sd1"
+  meta_add "0777" "1000:1000" "/etc/emulationstation/darkos4es_systems.cfg.sd2"
   meta_add "0777" "1000:1000" "/etc/emulationstation/darkos4es_systems.cfg.dual"
   meta_add "0777" "1000:1000" "/opt/drastic"
   meta_add "0777" "1000:1000" "/opt/drastic/*"
@@ -312,8 +313,6 @@ EOF
   meta_add "0777" "1000:1000" "/etc/systemd/system/351mp.service"
   meta_add "0777" "1000:1000" "/usr/local/bin/Enable Quick Mode.sh"
   meta_add "0777" "1000:1000" "/usr/local/bin/Disable Quick Mode.sh"
-  meta_add "0777" "1000:1000" "/usr/local/bin/Switch to main SD for Roms.sh"
-  meta_add "0777" "1000:1000" "/usr/local/bin/Switch to SD2 for Roms.sh"
   meta_add "0777" "1000:1000" "/usr/lib/modules"
   meta_finalize_dedupe
 
@@ -418,6 +417,8 @@ else
   cp -f ./mod_so/32/* "$PAYLOAD_ROOT/home/ark/.config/retroarch32/cores/" 2>/dev/null || true
   cp -f ./mod_so/arkos_32/* "$PAYLOAD_ROOT/home/ark/.config/retroarch32/cores/" 2>/dev/null || true
   cp -f ./replace_file/es_systems.cfg "$PAYLOAD_ROOT/etc/emulationstation/" 2>/dev/null || true
+  cp -f ./replace_file/es_systems.cfg.sd1 "$PAYLOAD_ROOT/etc/emulationstation/" 2>/dev/null || true
+  cp -f ./replace_file/es_systems.cfg.sd2 "$PAYLOAD_ROOT/etc/emulationstation/" 2>/dev/null || true
   cp -f ./replace_file/es_systems.cfg.dual "$PAYLOAD_ROOT/etc/emulationstation/" 2>/dev/null || true
   cp -rf ./replace_file/resources/* "$PAYLOAD_ROOT/usr/bin/emulationstation/resources/" 2>/dev/null || true
   mkdir -p "$PAYLOAD_ROOT/usr/bin/emulationstation"
@@ -517,11 +518,8 @@ else
            "$PAYLOAD_ROOT/usr/local/bin"
   cp -r ./replace_file/services/351mp.service "$PAYLOAD_ROOT/etc/systemd/system/" 2>/dev/null || true
   cp -r "./replace_file/tools/Enable Quick Mode.sh" "$PAYLOAD_ROOT/opt/system/Advanced/" 2>/dev/null || true
-  cp -r "./replace_file/tools/Switch to SD2 for Roms.sh" "$PAYLOAD_ROOT/opt/system/Advanced/" 2>/dev/null || true
   cp -r "./replace_file/tools/Enable Quick Mode.sh" "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
   cp -r "./replace_file/tools/Disable Quick Mode.sh" "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
-  cp -r "./replace_file/tools/Switch to main SD for Roms.sh" "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
-  cp -r "./replace_file/tools/Switch to SD2 for Roms.sh" "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
 
   echo "== 注入 modules =="
   if [[ -d "./replace_file/modules" ]]; then
@@ -571,6 +569,8 @@ EOF
   meta_add "0777" "1002:1002" "/home/ark/.config/retroarch/cores/*"
   meta_add "0777" "1002:1002" "/home/ark/.config/retroarch32/cores/*"
   meta_add "0777" "1002:1002" "/etc/emulationstation/es_systems.cfg"
+  meta_add "0777" "1002:1002" "/etc/emulationstation/es_systems.cfg.sd1"
+  meta_add "0777" "1002:1002" "/etc/emulationstation/es_systems.cfg.sd2"
   meta_add "0777" "1002:1002" "/etc/emulationstation/es_systems.cfg.dual"
   meta_add "0777" "1002:1002" "/opt/drastic"
   meta_add "0777" "1002:1002" "/opt/drastic/*"
@@ -626,8 +626,6 @@ EOF
   meta_add "0777" "1002:1002" "/lib/systemd/system/mpv.service"
   meta_add "0777" "1002:1002" "/usr/local/bin/Enable Quick Mode.sh"
   meta_add "0777" "1002:1002" "/usr/local/bin/Disable Quick Mode.sh"
-  meta_add "0777" "1002:1002" "/usr/local/bin/Switch to main SD for Roms.sh"
-  meta_add "0777" "1002:1002" "/usr/local/bin/Switch to SD2 for Roms.sh"
   meta_add "0777" "1002:1002" "/usr/lib/modules"
   meta_finalize_dedupe
 fi
@@ -861,6 +859,8 @@ if [[ -f "$BASE/VERSION" && -f "$PLYMOUTH_THEME" ]]; then
     mv "/usr/local/bin/darkos4pico8.sh" "/usr/local/bin/pico8.sh" 2>/dev/null || true
     mv "/usr/local/bin/darkos4get_last_played.sh" "/usr/local/bin/get_last_played.sh" 2>/dev/null || true
     mv "/etc/emulationstation/darkos4es_systems.cfg" "/etc/emulationstation/es_systems.cfg" 2>/dev/null || true
+    mv "/etc/emulationstation/darkos4es_systems.cfg.sd1" "/etc/emulationstation/es_systems.cfg.sd1" 2>/dev/null || true
+    mv "/etc/emulationstation/darkos4es_systems.cfg.sd2" "/etc/emulationstation/es_systems.cfg.sd2" 2>/dev/null || true
     mv "/etc/emulationstation/darkos4es_systems.cfg.dual" "/etc/emulationstation/es_systems.cfg.dual" 2>/dev/null || true
   else
     sed -i "/^title=/c\title=ArkOS4Clone (${UPDATE_DATE})(${MODDER})" "$PLYMOUTH_THEME" 2>/dev/null || true
@@ -874,6 +874,8 @@ if [[ -f "$BASE/VERSION" && -f "$PLYMOUTH_THEME" ]]; then
     rm "/usr/local/bin/darkos4pico8.sh" 2>/dev/null || true
     rm "/usr/local/bin/darkos4get_last_played.sh" 2>/dev/null || true
     rm "/etc/emulationstation/darkos4es_systems.cfg" 2>/dev/null || true
+    rm "/etc/emulationstation/darkos4es_systems.cfg.sd1" 2>/dev/null || true
+    rm "/etc/emulationstation/darkos4es_systems.cfg.sd2" 2>/dev/null || true
     rm "/etc/emulationstation/darkos4es_systems.cfg.dual" 2>/dev/null || true
   fi
 fi
@@ -882,6 +884,15 @@ log "=== Step 7: Cleanup old files ==="
 rm -f /etc/systemd/system/batt_led.service 2>/dev/null && log "Removed: batt_led.service" || true
 rm -f /etc/systemd/system/ddtbcheck.service 2>/dev/null && log "Removed: ddtbcheck.service" || true
 chmod 777 /lib/systemd/system/mpv.service 2>/dev/null && log "Fixed: mpv.service chmod 777" || true
+
+# Remove legacy SD switch scripts (replaced by ES ROMS SD CARD setting)
+rm -f "/usr/local/bin/Switch to SD2 for Roms.sh" 2>/dev/null && log "Removed: Switch to SD2 for Roms.sh (usr/local/bin)" || true
+rm -f "/usr/local/bin/Switch to main SD for Roms.sh" 2>/dev/null && log "Removed: Switch to main SD for Roms.sh (usr/local/bin)" || true
+rm -f "/usr/local/bin/Read from SD1 and SD2 for Roms" 2>/dev/null && log "Removed: Switch to main SD for Roms.sh (usr/local/bin)" || true
+rm -f "/opt/system/Advanced/Switch to SD2 for Roms.sh" 2>/dev/null && log "Removed: Switch to SD2 for Roms.sh (Advanced)" || true
+rm -f "/opt/system/Advanced/Switch to main SD for Roms.sh" 2>/dev/null && log "Removed: Switch to main SD for Roms.sh (Advanced)" || true
+rm -f "/opt/system/Advanced/Read from SD1 and SD2 for Roms.sh" 2>/dev/null && log "Removed: Read from SD1 and SD2 for Roms.sh" || true
+rm -f "/opt/system/Advanced/Read from SD1 and SD2 for Roms" 2>/dev/null && log "Removed: Read from SD1 and SD2 for Roms" || true
 
 rm -f /etc/emulationstation/es_input.cfg 2>/dev/null && log "Removed: es_input.cfg" || true
 

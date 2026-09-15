@@ -5210,3 +5210,63 @@ msgstr "開機自動套用"
 
 msgid "PERFORMANCE SETTINGS"
 msgstr "效能設定"
+
+msgid "ROMS SD CARD"
+msgstr "遊戲 SD 卡切換"
+
+msgid "CURRENT MODE"
+msgstr "目前模式"
+
+msgid "MOUNTED"
+msgstr "已掛載"
+
+msgid "NOT MOUNTED"
+msgstr "未掛載"
+
+msgid "NOT DETECTED"
+msgstr "未偵測到"
+
+msgid "DETECTED"
+msgstr "已偵測到"
+
+msgid "MODE ALREADY ACTIVE"
+msgstr "該模式已生效"
+
+msgid "EMULATIONSTATION WILL RELOAD"
+msgstr "EmulationStation 將會重新載入"
+
+msgid "USE MAIN SD CARD (SD1)"
+msgstr "僅使用主卡 (SD1)"
+
+msgid "USE SD2 CARD ONLY"
+msgstr "僅使用 SD2 卡"
+
+msgid "READ SD1 AND SD2 (DUAL)"
+msgstr "同時讀取 SD1 和 SD2 (雙卡)"
+
+msgid "SD1 + SD2 (DUAL)"
+msgstr "SD1 + SD2 (雙卡)"
+
+msgid "MAIN SD (SD1)"
+msgstr "主卡 (SD1)"
+
+msgid "SD2 ONLY"
+msgstr "僅 SD2"
+
+msgid "ARE YOU SURE YOU WANT TO SWITCH THE ROMS SOURCE?"
+msgstr "確定要切換遊戲來源嗎？"
+
+msgid "SD2 CARD NOT DETECTED"
+msgstr "未偵測到 SD2 卡"
+
+msgid "MOUNTING SD2 CARD..."
+msgstr "正在掛載 SD2 卡..."
+
+msgid "COULD NOT MOUNT SD2 CARD"
+msgstr "無法掛載 SD2 卡"
+
+msgid "SD2 CARD IS EMPTY"
+msgstr "SD2 卡為空"
+
+msgid "FAILED TO APPLY SYSTEM CONFIG"
+msgstr "套用系統設定失敗"

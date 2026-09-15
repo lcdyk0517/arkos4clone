@@ -5185,3 +5185,63 @@ msgstr "ПРИМЕНЯТЬ ПРИ ЗАПУСКЕ"
 
 msgid "PERFORMANCE SETTINGS"
 msgstr "Настройки производительности"
+
+msgid "ROMS SD CARD"
+msgstr "SD-КАРТА ROMS"
+
+msgid "CURRENT MODE"
+msgstr "Текущий режим"
+
+msgid "MOUNTED"
+msgstr "Смонтирована"
+
+msgid "NOT MOUNTED"
+msgstr "Не смонтирована"
+
+msgid "NOT DETECTED"
+msgstr "Не обнаружена"
+
+msgid "DETECTED"
+msgstr "Обнаружена"
+
+msgid "MODE ALREADY ACTIVE"
+msgstr "Режим уже активен"
+
+msgid "EMULATIONSTATION WILL RELOAD"
+msgstr "EmulationStation будет перезагружен"
+
+msgid "USE MAIN SD CARD (SD1)"
+msgstr "Использовать основную SD-карту (SD1)"
+
+msgid "USE SD2 CARD ONLY"
+msgstr "Использовать только SD2"
+
+msgid "READ SD1 AND SD2 (DUAL)"
+msgstr "Читать SD1 и SD2 (двойной режим)"
+
+msgid "SD1 + SD2 (DUAL)"
+msgstr "SD1 + SD2 (двойной режим)"
+
+msgid "MAIN SD (SD1)"
+msgstr "Основная SD (SD1)"
+
+msgid "SD2 ONLY"
+msgstr "Только SD2"
+
+msgid "ARE YOU SURE YOU WANT TO SWITCH THE ROMS SOURCE?"
+msgstr "Вы уверены, что хотите сменить источник ROMS?"
+
+msgid "SD2 CARD NOT DETECTED"
+msgstr "SD2-карта не обнаружена"
+
+msgid "MOUNTING SD2 CARD..."
+msgstr "Монтирование SD2..."
+
+msgid "COULD NOT MOUNT SD2 CARD"
+msgstr "Не удалось смонтировать SD2"
+
+msgid "SD2 CARD IS EMPTY"
+msgstr "SD2 пуста"
+
+msgid "FAILED TO APPLY SYSTEM CONFIG"
+msgstr "Не удалось применить системную конфигурацию"

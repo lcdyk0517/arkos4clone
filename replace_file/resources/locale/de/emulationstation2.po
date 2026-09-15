@@ -3501,3 +3501,63 @@ msgstr "BEIM START ANWENDEN"
 
 msgid "PERFORMANCE SETTINGS"
 msgstr "Leistungseinstellungen"
+
+msgid "ROMS SD CARD"
+msgstr "SPIELE-SD-KARTE"
+
+msgid "CURRENT MODE"
+msgstr "Aktueller Modus"
+
+msgid "MOUNTED"
+msgstr "Eingebunden"
+
+msgid "NOT MOUNTED"
+msgstr "Nicht eingebunden"
+
+msgid "NOT DETECTED"
+msgstr "Nicht erkannt"
+
+msgid "DETECTED"
+msgstr "Erkannt"
+
+msgid "MODE ALREADY ACTIVE"
+msgstr "Modus bereits aktiv"
+
+msgid "EMULATIONSTATION WILL RELOAD"
+msgstr "EmulationStation wird neu geladen"
+
+msgid "USE MAIN SD CARD (SD1)"
+msgstr "Haupt-SD-Karte verwenden (SD1)"
+
+msgid "USE SD2 CARD ONLY"
+msgstr "Nur SD2-Karte verwenden"
+
+msgid "READ SD1 AND SD2 (DUAL)"
+msgstr "SD1 und SD2 lesen (Dual)"
+
+msgid "SD1 + SD2 (DUAL)"
+msgstr "SD1 + SD2 (Dual)"
+
+msgid "MAIN SD (SD1)"
+msgstr "Haupt-SD (SD1)"
+
+msgid "SD2 ONLY"
+msgstr "Nur SD2"
+
+msgid "ARE YOU SURE YOU WANT TO SWITCH THE ROMS SOURCE?"
+msgstr "ROMS-Quelle wirklich wechseln?"
+
+msgid "SD2 CARD NOT DETECTED"
+msgstr "SD2-Karte nicht erkannt"
+
+msgid "MOUNTING SD2 CARD..."
+msgstr "SD2-Karte wird eingebunden..."
+
+msgid "COULD NOT MOUNT SD2 CARD"
+msgstr "SD2-Karte konnte nicht eingebunden werden"
+
+msgid "SD2 CARD IS EMPTY"
+msgstr "SD2-Karte ist leer"
+
+msgid "FAILED TO APPLY SYSTEM CONFIG"
+msgstr "Systemkonfiguration konnte nicht angewendet werden"

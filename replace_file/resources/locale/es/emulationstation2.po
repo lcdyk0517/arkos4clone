@@ -3693,3 +3693,63 @@ msgstr "APLICAR AL INICIAR"
 
 msgid "PERFORMANCE SETTINGS"
 msgstr "Configuración de rendimiento"
+
+msgid "ROMS SD CARD"
+msgstr "TARJETA SD DE ROMS"
+
+msgid "CURRENT MODE"
+msgstr "Modo actual"
+
+msgid "MOUNTED"
+msgstr "Montada"
+
+msgid "NOT MOUNTED"
+msgstr "No montada"
+
+msgid "NOT DETECTED"
+msgstr "No detectada"
+
+msgid "DETECTED"
+msgstr "Detectada"
+
+msgid "MODE ALREADY ACTIVE"
+msgstr "Modo ya activo"
+
+msgid "EMULATIONSTATION WILL RELOAD"
+msgstr "EmulationStation se recargará"
+
+msgid "USE MAIN SD CARD (SD1)"
+msgstr "Usar tarjeta SD principal (SD1)"
+
+msgid "USE SD2 CARD ONLY"
+msgstr "Usar solo tarjeta SD2"
+
+msgid "READ SD1 AND SD2 (DUAL)"
+msgstr "Leer SD1 y SD2 (dual)"
+
+msgid "SD1 + SD2 (DUAL)"
+msgstr "SD1 + SD2 (dual)"
+
+msgid "MAIN SD (SD1)"
+msgstr "SD principal (SD1)"
+
+msgid "SD2 ONLY"
+msgstr "Solo SD2"
+
+msgid "ARE YOU SURE YOU WANT TO SWITCH THE ROMS SOURCE?"
+msgstr "¿Seguro que quieres cambiar la fuente de las ROMS?"
+
+msgid "SD2 CARD NOT DETECTED"
+msgstr "Tarjeta SD2 no detectada"
+
+msgid "MOUNTING SD2 CARD..."
+msgstr "Montando tarjeta SD2..."
+
+msgid "COULD NOT MOUNT SD2 CARD"
+msgstr "No se pudo montar la tarjeta SD2"
+
+msgid "SD2 CARD IS EMPTY"
+msgstr "La tarjeta SD2 está vacía"
+
+msgid "FAILED TO APPLY SYSTEM CONFIG"
+msgstr "Error al aplicar la configuración del sistema"

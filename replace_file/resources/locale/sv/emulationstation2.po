@@ -4261,3 +4261,63 @@ msgstr "TILLÄMPA VID START"
 
 msgid "PERFORMANCE SETTINGS"
 msgstr "Prestandainställningar"
+
+msgid "ROMS SD CARD"
+msgstr "ROMS SD-KORT"
+
+msgid "CURRENT MODE"
+msgstr "Aktuellt läge"
+
+msgid "MOUNTED"
+msgstr "Monterad"
+
+msgid "NOT MOUNTED"
+msgstr "Ej monterad"
+
+msgid "NOT DETECTED"
+msgstr "Hittades inte"
+
+msgid "DETECTED"
+msgstr "Hittad"
+
+msgid "MODE ALREADY ACTIVE"
+msgstr "Läget är redan aktivt"
+
+msgid "EMULATIONSTATION WILL RELOAD"
+msgstr "EmulationStation laddas om"
+
+msgid "USE MAIN SD CARD (SD1)"
+msgstr "Använd huvud-SD-kortet (SD1)"
+
+msgid "USE SD2 CARD ONLY"
+msgstr "Använd endast SD2-kortet"
+
+msgid "READ SD1 AND SD2 (DUAL)"
+msgstr "Läs SD1 och SD2 (dual)"
+
+msgid "SD1 + SD2 (DUAL)"
+msgstr "SD1 + SD2 (dual)"
+
+msgid "MAIN SD (SD1)"
+msgstr "Huvud-SD (SD1)"
+
+msgid "SD2 ONLY"
+msgstr "Endast SD2"
+
+msgid "ARE YOU SURE YOU WANT TO SWITCH THE ROMS SOURCE?"
+msgstr "Vill du verkligen byta ROMS-källa?"
+
+msgid "SD2 CARD NOT DETECTED"
+msgstr "SD2-kortet hittades inte"
+
+msgid "MOUNTING SD2 CARD..."
+msgstr "Monterar SD2-kortet..."
+
+msgid "COULD NOT MOUNT SD2 CARD"
+msgstr "Kunde inte montera SD2-kortet"
+
+msgid "SD2 CARD IS EMPTY"
+msgstr "SD2-kortet är tomt"
+
+msgid "FAILED TO APPLY SYSTEM CONFIG"
+msgstr "Kunde inte tillämpa systemkonfigurationen"

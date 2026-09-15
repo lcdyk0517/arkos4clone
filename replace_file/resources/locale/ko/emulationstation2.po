@@ -2937,3 +2937,63 @@ msgstr "시작 시 자동 적용"
 
 msgid "PERFORMANCE SETTINGS"
 msgstr "성능 설정"
+
+msgid "ROMS SD CARD"
+msgstr "게임 SD 카드 전환"
+
+msgid "CURRENT MODE"
+msgstr "현재 모드"
+
+msgid "MOUNTED"
+msgstr "마운트됨"
+
+msgid "NOT MOUNTED"
+msgstr "마운트 안 됨"
+
+msgid "NOT DETECTED"
+msgstr "감지되지 않음"
+
+msgid "DETECTED"
+msgstr "감지됨"
+
+msgid "MODE ALREADY ACTIVE"
+msgstr "이미 이 모드입니다"
+
+msgid "EMULATIONSTATION WILL RELOAD"
+msgstr "EmulationStation이 다시 로드됩니다"
+
+msgid "USE MAIN SD CARD (SD1)"
+msgstr "메인 SD 카드만 사용 (SD1)"
+
+msgid "USE SD2 CARD ONLY"
+msgstr "SD2 카드만 사용"
+
+msgid "READ SD1 AND SD2 (DUAL)"
+msgstr "SD1 + SD2 동시 읽기 (듀얼)"
+
+msgid "SD1 + SD2 (DUAL)"
+msgstr "SD1 + SD2 (듀얼)"
+
+msgid "MAIN SD (SD1)"
+msgstr "메인 SD (SD1)"
+
+msgid "SD2 ONLY"
+msgstr "SD2만"
+
+msgid "ARE YOU SURE YOU WANT TO SWITCH THE ROMS SOURCE?"
+msgstr "ROMS 소스를 전환하시겠습니까?"
+
+msgid "SD2 CARD NOT DETECTED"
+msgstr "SD2 카드가 감지되지 않습니다"
+
+msgid "MOUNTING SD2 CARD..."
+msgstr "SD2 카드 마운트 중..."
+
+msgid "COULD NOT MOUNT SD2 CARD"
+msgstr "SD2 카드를 마운트할 수 없습니다"
+
+msgid "SD2 CARD IS EMPTY"
+msgstr "SD2 카드가 비어 있습니다"
+
+msgid "FAILED TO APPLY SYSTEM CONFIG"
+msgstr "시스템 설정 적용 실패"

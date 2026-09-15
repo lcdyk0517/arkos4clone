@@ -2331,3 +2331,63 @@ msgstr "起動時に適用"
 
 msgid "PERFORMANCE SETTINGS"
 msgstr "パフォーマンス設定"
+
+msgid "ROMS SD CARD"
+msgstr "ゲームSDカード切替"
+
+msgid "CURRENT MODE"
+msgstr "現在のモード"
+
+msgid "MOUNTED"
+msgstr "マウント済み"
+
+msgid "NOT MOUNTED"
+msgstr "未マウント"
+
+msgid "NOT DETECTED"
+msgstr "未検出"
+
+msgid "DETECTED"
+msgstr "検出済み"
+
+msgid "MODE ALREADY ACTIVE"
+msgstr "すでにこのモードです"
+
+msgid "EMULATIONSTATION WILL RELOAD"
+msgstr "EmulationStationを再読み込みします"
+
+msgid "USE MAIN SD CARD (SD1)"
+msgstr "メインSDカードのみ使用 (SD1)"
+
+msgid "USE SD2 CARD ONLY"
+msgstr "SD2カードのみ使用"
+
+msgid "READ SD1 AND SD2 (DUAL)"
+msgstr "SD1とSD2を両方読み込む (デュアル)"
+
+msgid "SD1 + SD2 (DUAL)"
+msgstr "SD1 + SD2 (デュアル)"
+
+msgid "MAIN SD (SD1)"
+msgstr "メインSD (SD1)"
+
+msgid "SD2 ONLY"
+msgstr "SD2のみ"
+
+msgid "ARE YOU SURE YOU WANT TO SWITCH THE ROMS SOURCE?"
+msgstr "ROMSの読み込み元を変更しますか？"
+
+msgid "SD2 CARD NOT DETECTED"
+msgstr "SD2カードが検出されません"
+
+msgid "MOUNTING SD2 CARD..."
+msgstr "SD2カードをマウント中..."
+
+msgid "COULD NOT MOUNT SD2 CARD"
+msgstr "SD2カードをマウントできません"
+
+msgid "SD2 CARD IS EMPTY"
+msgstr "SD2カードが空です"
+
+msgid "FAILED TO APPLY SYSTEM CONFIG"
+msgstr "システム設定の適用に失敗しました"

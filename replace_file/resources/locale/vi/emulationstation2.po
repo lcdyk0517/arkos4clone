@@ -2769,3 +2769,63 @@ msgstr "ÁP DỤNG KHI KHỞI ĐỘNG"
 
 msgid "PERFORMANCE SETTINGS"
 msgstr "Cài đặt hiệu năng"
+
+msgid "ROMS SD CARD"
+msgstr "THẺ SD ROMS"
+
+msgid "CURRENT MODE"
+msgstr "Chế độ hiện tại"
+
+msgid "MOUNTED"
+msgstr "Đã gắn kết"
+
+msgid "NOT MOUNTED"
+msgstr "Chưa gắn kết"
+
+msgid "NOT DETECTED"
+msgstr "Không phát hiện"
+
+msgid "DETECTED"
+msgstr "Đã phát hiện"
+
+msgid "MODE ALREADY ACTIVE"
+msgstr "Chế độ đã hoạt động"
+
+msgid "EMULATIONSTATION WILL RELOAD"
+msgstr "EmulationStation sẽ tải lại"
+
+msgid "USE MAIN SD CARD (SD1)"
+msgstr "Dùng thẻ SD chính (SD1)"
+
+msgid "USE SD2 CARD ONLY"
+msgstr "Chỉ dùng thẻ SD2"
+
+msgid "READ SD1 AND SD2 (DUAL)"
+msgstr "Đọc cả SD1 và SD2 (kép)"
+
+msgid "SD1 + SD2 (DUAL)"
+msgstr "SD1 + SD2 (kép)"
+
+msgid "MAIN SD (SD1)"
+msgstr "SD chính (SD1)"
+
+msgid "SD2 ONLY"
+msgstr "Chỉ SD2"
+
+msgid "ARE YOU SURE YOU WANT TO SWITCH THE ROMS SOURCE?"
+msgstr "Bạn có chắc muốn đổi nguồn ROMS không?"
+
+msgid "SD2 CARD NOT DETECTED"
+msgstr "Không phát hiện thẻ SD2"
+
+msgid "MOUNTING SD2 CARD..."
+msgstr "Đang gắn kết thẻ SD2..."
+
+msgid "COULD NOT MOUNT SD2 CARD"
+msgstr "Không thể gắn kết thẻ SD2"
+
+msgid "SD2 CARD IS EMPTY"
+msgstr "Thẻ SD2 đang trống"
+
+msgid "FAILED TO APPLY SYSTEM CONFIG"
+msgstr "Không thể áp dụng cấu hình hệ thống"

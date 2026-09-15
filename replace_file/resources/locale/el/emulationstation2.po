@@ -3133,3 +3133,63 @@ msgstr "ΕΦΑΡΜΟΓΗ ΚΑΤΑ ΤΗΝ ΕΚΚΙΝΗΣΗ"
 
 msgid "PERFORMANCE SETTINGS"
 msgstr "Ρυθμίσεις απόδοσης"
+
+msgid "ROMS SD CARD"
+msgstr "ΚΑΡΤΑ SD ROMS"
+
+msgid "CURRENT MODE"
+msgstr "Τρέχουσα λειτουργία"
+
+msgid "MOUNTED"
+msgstr "Προσαρτημένη"
+
+msgid "NOT MOUNTED"
+msgstr "Μη προσαρτημένη"
+
+msgid "NOT DETECTED"
+msgstr "Δεν εντοπίστηκε"
+
+msgid "DETECTED"
+msgstr "Εντοπίστηκε"
+
+msgid "MODE ALREADY ACTIVE"
+msgstr "Η λειτουργία είναι ήδη ενεργή"
+
+msgid "EMULATIONSTATION WILL RELOAD"
+msgstr "Το EmulationStation θα επαναφορτωθεί"
+
+msgid "USE MAIN SD CARD (SD1)"
+msgstr "Χρήση κύριας κάρτας SD (SD1)"
+
+msgid "USE SD2 CARD ONLY"
+msgstr "Χρήση μόνο κάρτας SD2"
+
+msgid "READ SD1 AND SD2 (DUAL)"
+msgstr "Ανάγνωση SD1 και SD2 (διπλή)"
+
+msgid "SD1 + SD2 (DUAL)"
+msgstr "SD1 + SD2 (διπλή)"
+
+msgid "MAIN SD (SD1)"
+msgstr "Κύρια SD (SD1)"
+
+msgid "SD2 ONLY"
+msgstr "Μόνο SD2"
+
+msgid "ARE YOU SURE YOU WANT TO SWITCH THE ROMS SOURCE?"
+msgstr "Είστε βέβαιοι ότι θέλετε να αλλάξετε την πηγή ROMS;"
+
+msgid "SD2 CARD NOT DETECTED"
+msgstr "Δεν εντοπίστηκε κάρτα SD2"
+
+msgid "MOUNTING SD2 CARD..."
+msgstr "Προσάρτηση κάρτας SD2..."
+
+msgid "COULD NOT MOUNT SD2 CARD"
+msgstr "Αδύνατη η προσάρτηση της κάρτας SD2"
+
+msgid "SD2 CARD IS EMPTY"
+msgstr "Η κάρτα SD2 είναι κενή"
+
+msgid "FAILED TO APPLY SYSTEM CONFIG"
+msgstr "Αποτυχία εφαρμογής της διαμόρφωσης συστήματος"
