@@ -8,6 +8,8 @@ Bringing **(d)ArkOS 4.4 kernel** porting to unsupported devices. Contributions v
 
 > ⚠️ Please make sure to read the [Wiki](https://github.com/lcdyk0517/arkos4clone/wiki) thoroughly before use.
 
+> 📝 **[View Changelog](Changelog.md)**
+
 ---
 
 ## Support the Project
