@@ -193,10 +193,16 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
 
   echo "== 注入 dArkOS 主题配置 =="
   safe sudo cp -f ./replace_file/darkos4es_systems.cfg "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg"
+  safe sudo cp -f ./replace_file/darkos4es_systems.cfg.sd1 "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.sd1"
+  safe sudo cp -f ./replace_file/darkos4es_systems.cfg.sd2 "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.sd2"
   safe sudo cp -f ./replace_file/darkos4es_systems.cfg.dual "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.dual"
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg" 2>/dev/null
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.sd1" 2>/dev/null
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.sd2" 2>/dev/null
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.dual" 2>/dev/null
   safe sudo chmod 777 "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg" 2>/dev/null
+  safe sudo chmod 777 "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.sd1" 2>/dev/null
+  safe sudo chmod 777 "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.sd2" 2>/dev/null
   safe sudo chmod 777 "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.dual" 2>/dev/null
   safe sudo cp -rf ./replace_file/resources/* "$MOUNT_DIR/root/usr/bin/emulationstation/resources/"
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/bin/emulationstation/resources"
@@ -560,10 +566,16 @@ else
 
   echo "== 注入 ArkOS 主题配置 =="
   safe sudo cp -f ./replace_file/es_systems.cfg "$MOUNT_DIR/root/etc/emulationstation/"
+  safe sudo cp -f ./replace_file/es_systems.cfg.sd1 "$MOUNT_DIR/root/etc/emulationstation/"
+  safe sudo cp -f ./replace_file/es_systems.cfg.sd2 "$MOUNT_DIR/root/etc/emulationstation/"
   safe sudo cp -f ./replace_file/es_systems.cfg.dual "$MOUNT_DIR/root/etc/emulationstation/"
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg" 2>/dev/null
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.sd1" 2>/dev/null
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.sd2" 2>/dev/null
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.dual" 2>/dev/null
   safe sudo chmod 777 "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg" 2>/dev/null
+  safe sudo chmod 777 "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.sd1" 2>/dev/null
+  safe sudo chmod 777 "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.sd2" 2>/dev/null
   safe sudo chmod 777 "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.dual" 2>/dev/null
   safe sudo cp -rf ./replace_file/resources/* "$MOUNT_DIR/root/usr/bin/emulationstation/resources/"
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/bin/emulationstation/resources"
