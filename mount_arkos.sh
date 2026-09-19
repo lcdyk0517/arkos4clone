@@ -9,7 +9,8 @@ set -euo pipefail
 # Mount points will be created under: ./mnt/{boot,root,roms}
 # State (loop device) is stored in:   ./.arkos_loop
 
-BASE_MNT="${ARKOS_MNT:-/home/lcdyk/arkos/mnt}"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BASE_MNT="${ARKOS_MNT:-$SCRIPT_DIR/mnt}"
 STATE_FILE="$BASE_MNT/.arkos_loop"
 BOOT_MNT="$BASE_MNT/boot"
 ROOT_MNT="$BASE_MNT/root"
@@ -32,6 +33,7 @@ ensure_tools() {
 }
 
 write_state() {
+  mkdir -p "$BASE_MNT"
   echo "$1" > "$STATE_FILE"
 }
 
@@ -75,6 +77,7 @@ do_mount() {
   local loop
   loop="$(losetup -fP --show "$img")"   # e.g. /dev/loop7
   echo "Loop device: $loop"
+  trap 'for m in "$ROMS_MNT" "$ROOT_MNT" "$BOOT_MNT"; do mountpoint -q "$m" && umount "$m" 2>/dev/null || true; done; losetup -d "$loop" 2>/dev/null || true' ERR
   write_state "$loop"
 
   # wait for kernel to create loopXp{1,2,3}
@@ -125,6 +128,7 @@ do_mount() {
   echo "  BOOT -> $BOOT_MNT"
   echo "  ROOT -> $ROOT_MNT"
   echo "  ROMS -> $ROMS_MNT"
+  trap - ERR
 }
 
 do_unmount() {
