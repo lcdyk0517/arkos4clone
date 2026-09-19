@@ -154,6 +154,11 @@ check_pm_libs() {
     mkdir -p "$pm_libs_dir"
   fi
 
+  # 目录可能由 root 创建，确保以原用户身份下载/解压时有写权限
+  if [[ -n "${SUDO_USER:-}" ]]; then
+    chown -R "$SUDO_USER" "$pm_libs_dir"
+  fi
+
   # 检查缺少的文件
   local missing=0
   for f in "${required_files[@]}"; do
