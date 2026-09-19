@@ -114,8 +114,7 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
 
   echo "== 注入 351Files 资源 =="
   mkdir -p "$PAYLOAD_ROOT/opt/351Files/res"
-  cp -r ./res/* "$PAYLOAD_ROOT/opt/351Files/res/" 2>/dev/null || true
-  cp -r ./replace_file/351Files "$PAYLOAD_ROOT/opt/351Files/" 2>/dev/null || true
+  cp -r ./replace_file/351Files/. "$PAYLOAD_ROOT/opt/351Files/" 2>/dev/null || true
 
   echo "== 注入 dArkOS 启动脚本 =="
   mkdir -p "$PAYLOAD_ROOT/usr/local/bin"
@@ -225,6 +224,7 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
            "$PAYLOAD_ROOT/usr/local/bin"
   cp -r ./replace_file/services/351mp.service "$PAYLOAD_ROOT/etc/systemd/system/" 2>/dev/null || true
   cp -r "./replace_file/tools/Enable Quick Mode.sh" "$PAYLOAD_ROOT/opt/system/Advanced/" 2>/dev/null || true
+  cp -r "./replace_file/tools/351Files.sh" "$PAYLOAD_ROOT/opt/system/" 2>/dev/null || true
   cp -r "./replace_file/tools/Enable Quick Mode.sh" "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
   cp -r "./replace_file/tools/Disable Quick Mode.sh" "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
   cp -r "./replace_file/tools/Ports Fix.sh" "$PAYLOAD_ROOT/opt/system/Tools/" 2>/dev/null || true
@@ -311,6 +311,7 @@ EOF
   meta_add "0777" "1000:1000" "/usr/local/bin/ogage"
   meta_add "0777" "1000:1000" "/home/ark/.quirks/ogage"
   meta_add "0777" "1000:1000" "/etc/systemd/system/351mp.service"
+  meta_add "0777" "1000:1000" "/opt/system/351Files.sh"
   meta_add "0777" "1000:1000" "/usr/local/bin/Enable Quick Mode.sh"
   meta_add "0777" "1000:1000" "/usr/local/bin/Disable Quick Mode.sh"
   meta_add "0777" "1000:1000" "/usr/lib/modules"
@@ -360,8 +361,7 @@ else
 
   echo "== 注入 351Files 资源 =="
   mkdir -p "$PAYLOAD_ROOT/opt/351Files/res"
-  cp -r ./res/* "$PAYLOAD_ROOT/opt/351Files/res/" 2>/dev/null || true
-  cp -r ./replace_file/351Files "$PAYLOAD_ROOT/opt/351Files/" 2>/dev/null || true
+  cp -r ./replace_file/351Files/. "$PAYLOAD_ROOT/opt/351Files/" 2>/dev/null || true
 
   echo "== 注入 ArkOS 启动脚本 =="
   mkdir -p "$PAYLOAD_ROOT/usr/local/bin"
@@ -522,6 +522,7 @@ else
            "$PAYLOAD_ROOT/usr/local/bin"
   cp -r ./replace_file/services/351mp.service "$PAYLOAD_ROOT/etc/systemd/system/" 2>/dev/null || true
   cp -r "./replace_file/tools/Enable Quick Mode.sh" "$PAYLOAD_ROOT/opt/system/Advanced/" 2>/dev/null || true
+  cp -r "./replace_file/tools/351Files.sh" "$PAYLOAD_ROOT/opt/system/" 2>/dev/null || true
   cp -r "./replace_file/tools/Enable Quick Mode.sh" "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
   cp -r "./replace_file/tools/Disable Quick Mode.sh" "$PAYLOAD_ROOT/usr/local/bin/" 2>/dev/null || true
 
@@ -631,6 +632,7 @@ EOF
   meta_add "0777" "1002:1002" "/etc/systemd/system/351mp.service"
   meta_add "0777" "1002:1002" "/lib/systemd/system/mpv.service"
   meta_add "0777" "1002:1002" "/usr/local/bin/Enable Quick Mode.sh"
+  meta_add "0777" "1002:1002" "/opt/system/351Files.sh"
   meta_add "0777" "1002:1002" "/usr/local/bin/Disable Quick Mode.sh"
   meta_add "0777" "1002:1002" "/usr/lib/modules"
   meta_finalize_dedupe
