@@ -432,6 +432,13 @@ else
   mkdir -p "$PAYLOAD_ROOT/opt/drastic-kk"
   cp -a ./replace_file/drastic-kk/. "$PAYLOAD_ROOT/opt/drastic-kk/" 2>/dev/null || true
 
+  echo "== 注入 添加 glibc242 =="
+  mkdir -p "$PAYLOAD_ROOT/opt/glibc-2.42"
+  cp -a ./replace_file/glibc-2.42/. "$PAYLOAD_ROOT/opt/glibc-2.42/" 2>/dev/null || true
+  mkdir -p "$PAYLOAD_ROOT/usr/local/bin"
+  cp -a ./replace_file/glibc242 "$PAYLOAD_ROOT/usr/local/bin/glibc242" 2>/dev/null || true
+  cp -a ./replace_file/retroarch.sh "$PAYLOAD_ROOT/usr/local/bin/retroarch" 2>/dev/null || true
+
   echo "== 注入 DSperate-sa =="
   mkdir -p "$PAYLOAD_ROOT/opt/DSperate"
   cp -a ./replace_file/DSperate/. "$PAYLOAD_ROOT/opt/DSperate/" 2>/dev/null || true
@@ -560,7 +567,7 @@ EOF
   meta_add "0777" "1002:1002" "/usr/lib/firmware/aic8800DC/*"
   meta_add "0777" "1002:1002" "/opt/351Files"
   meta_add "0777" "1002:1002" "/opt/351Files/*"
-  for f in atomiswave.sh dreamcast.sh naomi.sh saturn.sh n64.sh mvem.sh easyrpg.sh gametank.sh flash.sh gametankkeydemon.py pico8.sh drastic.sh drastic_kk.sh choose_drastic_ver.sh mediaplayer.sh get_last_played.sh choose_ons_ver.sh onscripter.sh freej2me.sh gamma; do
+  for f in atomiswave.sh dreamcast.sh glibc242 retroarch naomi.sh saturn.sh n64.sh mvem.sh easyrpg.sh gametank.sh flash.sh gametankkeydemon.py pico8.sh drastic.sh drastic_kk.sh choose_drastic_ver.sh mediaplayer.sh get_last_played.sh choose_ons_ver.sh onscripter.sh freej2me.sh gamma; do
     meta_add "0777" "1002:1002" "/usr/local/bin/$f"
   done
   meta_add "0777" "1002:1002" "/usr/local/bin/es-status-daemon.sh"
@@ -587,6 +594,8 @@ EOF
   meta_add "0777" "1002:1002" "/opt/onscripter/*"
   meta_add "0777" "1002:1002" "/opt/freej2mesa"
   meta_add "0777" "1002:1002" "/opt/freej2mesa/*"
+  meta_add "0777" "1002:1002" "/opt/glibc-2.42"
+  meta_add "0777" "1002:1002" "/opt/glibc-2.42/*"
   meta_add "0777" "1002:1002" "/opt/retroarch/bin/"
   meta_add "0777" "1002:1002" "/opt/retroarch/bin/*"
   meta_add "0777" "1002:1002" "/opt/fake08"

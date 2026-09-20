@@ -5,7 +5,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 MOUNT_DIR="${ARKOS_MNT:-/home/lcdyk/arkos/mnt}"
 WORK_DIR="${ARKOS_WORK_DIR:-/home/lcdyk/arkos}"
 ARKOS_IMAGE_NAME="${ARKOS_IMAGE_NAME:-}"
-UPDATE_DATE="$(TZ=Asia/Shanghai date +%m%d%Y)"
+UPDATE_DATE="$(TZ=Asia/Shanghai date +%Y%m%d)"
 MODDER="kk&lcdyk"
 
 RSYNC_BOOT_OPTS="-rltD --no-owner --no-group --no-perms --omit-dir-times"
@@ -55,14 +55,14 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   else
     echo "[warn] $SRC not found, skip modules update"
   fi
-  safe sudo depmod -a -b "$MOUNT_DIR/root" 4.4.189 2>/dev/null
+  safe sudo depmod -a -b "$MOUNT_DIR/root" 4.4.189
 
   echo "== 添加 dArkOS 固件 =="
   FIRMWARE_SRC="$SCRIPT_DIR/replace_file/firmware"
   FIRMWARE_DST="$MOUNT_DIR/root/usr/lib/firmware"
   if [[ -d "$FIRMWARE_SRC" ]]; then
     safe sudo mkdir -p "$FIRMWARE_DST"
-    safe sudo find "$FIRMWARE_DST" -type l -xtype l -delete 2>/dev/null
+    safe sudo find "$FIRMWARE_DST" -type l -xtype l -delete
     safe sudo cp -rf "$FIRMWARE_SRC/." "$FIRMWARE_DST/"
     safe sudo chown -R root:root "$FIRMWARE_DST"
     safe sudo chmod -R 755 "$FIRMWARE_DST"
@@ -73,29 +73,29 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   fi
 
   echo "== 注入 915 固件 =="
-  safe sudo cp -f ./bin/rk915/* "$MOUNT_DIR/root/usr/lib/firmware/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/lib/firmware/"rk915_*.bin 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/lib/firmware/"rk915_*.bin 2>/dev/null
+  safe sudo cp -f ./bin/rk915/* "$MOUNT_DIR/root/usr/lib/firmware/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/lib/firmware/"rk915_*.bin
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/lib/firmware/"rk915_*.bin
 
   echo "== 注入 swt6621s 固件 =="
-  safe sudo cp -f ./bin/swt6621s/* "$MOUNT_DIR/root/usr/lib/firmware/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/lib/firmware/"SWT6621S_*.bin 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/lib/firmware/"SWT6621S_*.bin 2>/dev/null
+  safe sudo cp -f ./bin/swt6621s/* "$MOUNT_DIR/root/usr/lib/firmware/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/lib/firmware/"SWT6621S_*.bin
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/lib/firmware/"SWT6621S_*.bin
 
   echo "== 注入 aic8800DC 固件 =="
   safe sudo mkdir -p "$MOUNT_DIR/root/usr/lib/firmware/aic8800DC"
-  safe sudo cp -f ./bin/aic8800DC/* "$MOUNT_DIR/root/usr/lib/firmware/aic8800DC/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/lib/firmware/aic8800DC" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/lib/firmware/aic8800DC" 2>/dev/null
+  safe sudo cp -f ./bin/aic8800DC/* "$MOUNT_DIR/root/usr/lib/firmware/aic8800DC/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/lib/firmware/aic8800DC"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/lib/firmware/aic8800DC"
 
   echo "== 注入 351 系列手柄伪装规则  =="
-  safe sudo cp -f ./bin/99-odroidgo3.rules "$MOUNT_DIR/root/etc/udev/rules.d" 2>/dev/null
+  safe sudo cp -f ./bin/99-odroidgo3.rules "$MOUNT_DIR/root/etc/udev/rules.d"
 
   echo "== 注入 351Files 自适应 =="
   safe sudo mkdir -p "$MOUNT_DIR/root/opt/351Files/res"
-  safe sudo cp -r ./replace_file/351Files/. "$MOUNT_DIR/root/opt/351Files/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/351Files/" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/351Files/" 2>/dev/null
+  safe sudo cp -r ./replace_file/351Files/. "$MOUNT_DIR/root/opt/351Files/" 
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/351Files/"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/351Files/"
 
   echo "== 注入 dArkOS 启动脚本 =="
   safe sudo cp -f ./replace_file/darkos4atomiswave.sh "$MOUNT_DIR/root/usr/local/bin/atomiswave.sh"
@@ -112,70 +112,70 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   safe sudo cp -f ./replace_file/onscripter.sh "$MOUNT_DIR/root/usr/local/bin/"
   safe sudo cp -f ./replace_file/freej2me.sh "$MOUNT_DIR/root/usr/local/bin/"
   safe sudo cp -f ./replace_file/darkos4get_last_played.sh "$MOUNT_DIR/root/usr/local/bin/get_last_played.sh"
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/atomiswave.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/dreamcast.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/naomi.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/saturn.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/n64.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/flash.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/pico8.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/drastic.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/drastic_kk.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/choose_drastic_ver.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/choose_ons_ver.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/onscripter.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/freej2me.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/get_last_played.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/atomiswave.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/dreamcast.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/naomi.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/saturn.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/n64.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/flash.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/pico8.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/drastic.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/drastic_kk.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/choose_drastic_ver.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/choose_ons_ver.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/onscripter.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/freej2me.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/get_last_played.sh" 2>/dev/null
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/atomiswave.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/dreamcast.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/naomi.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/saturn.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/n64.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/flash.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/pico8.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/drastic.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/drastic_kk.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/choose_drastic_ver.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/choose_ons_ver.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/onscripter.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/freej2me.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/get_last_played.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/atomiswave.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/dreamcast.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/naomi.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/saturn.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/n64.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/flash.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/pico8.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/drastic.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/drastic_kk.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/choose_drastic_ver.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/choose_ons_ver.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/onscripter.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/freej2me.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/get_last_played.sh"
 
   echo "== 注入 es-service 服务脚本 =="
   safe sudo cp -f ./bin/es-service/es-status-daemon.sh "$MOUNT_DIR/root/usr/local/bin/"
   safe sudo cp -f ./bin/es-service/es-status-daemon.service "$MOUNT_DIR/root/etc/systemd/system/"
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/es-status-daemon.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/systemd/system/es-status-daemon.service" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/es-status-daemon.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/etc/systemd/system/es-status-daemon.service" 2>/dev/null
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/es-status-daemon.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/systemd/system/es-status-daemon.service"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/es-status-daemon.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/etc/systemd/system/es-status-daemon.service"
 
   echo "== 注入 zram 服务脚本 =="
   safe sudo cp -f ./bin/zram-service/zram-setup.sh "$MOUNT_DIR/root/usr/local/bin/"
   safe sudo cp -f ./bin/zram-service/zram-swap.service "$MOUNT_DIR/root/etc/systemd/system/"
   safe sudo cp -f ./bin/zram-service/zram.conf "$MOUNT_DIR/root/etc/"
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/zram-setup.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/systemd/system/zram-swap.service" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/zram.conf" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/zram-setup.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/etc/systemd/system/zram-swap.service" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/etc/zram.conf" 2>/dev/null
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/zram-setup.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/systemd/system/zram-swap.service"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/zram.conf"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/zram-setup.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/etc/systemd/system/zram-swap.service"
+  safe sudo chmod 777 "$MOUNT_DIR/root/etc/zram.conf"
 
   echo "== 注入 batteryplus 服务脚本 =="
   safe sudo cp -f ./bin/batteryplus-service/batteryplus "$MOUNT_DIR/root/usr/local/bin/"
   safe sudo cp -f ./bin/batteryplus-service/batteryplus.service "$MOUNT_DIR/root/etc/systemd/system/"
   sudo mkdir -p "$MOUNT_DIR/root/etc/batteryplus/"
   safe sudo cp -f ./bin/batteryplus-service/batteryplus.conf "$MOUNT_DIR/root/etc/batteryplus/"
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/batteryplus" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/systemd/system/batteryplus.service" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/batteryplus/batteryplus.conf" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/batteryplus" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/etc/systemd/system/batteryplus.service" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/etc/batteryplus/batteryplus.conf" 2>/dev/null
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/batteryplus"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/systemd/system/batteryplus.service"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/batteryplus/batteryplus.conf"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/batteryplus"
+  safe sudo chmod 777 "$MOUNT_DIR/root/etc/systemd/system/batteryplus.service"
+  safe sudo chmod 777 "$MOUNT_DIR/root/etc/batteryplus/batteryplus.conf"
 
   echo "== 添加 Gamma =="
-  safe sudo cp -a ./replace_file/gamma/gamma "$MOUNT_DIR/root/usr/local/bin/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/gamma" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/local/bin/gamma" 2>/dev/null
+  safe sudo cp -a ./replace_file/gamma/gamma "$MOUNT_DIR/root/usr/local/bin/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/gamma"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/local/bin/gamma"
 
   echo "== 注入核心 =="
   safe sudo cp -f ./mod_so/64/* "$MOUNT_DIR/root/home/ark/.config/retroarch/cores/"
@@ -190,71 +190,71 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   safe sudo cp -f ./replace_file/darkos4es_systems.cfg.sd1 "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.sd1"
   safe sudo cp -f ./replace_file/darkos4es_systems.cfg.sd2 "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.sd2"
   safe sudo cp -f ./replace_file/darkos4es_systems.cfg.dual "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.dual"
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.sd1" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.sd2" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.dual" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.sd1" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.sd2" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.dual" 2>/dev/null
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.sd1"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.sd2"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.dual"
+  safe sudo chmod 777 "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg"
+  safe sudo chmod 777 "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.sd1"
+  safe sudo chmod 777 "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.sd2"
+  safe sudo chmod 777 "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.dual"
   safe sudo cp -rf ./replace_file/resources/* "$MOUNT_DIR/root/usr/bin/emulationstation/resources/"
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/bin/emulationstation/resources"
   safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/bin/emulationstation/resources"
-  safe sudo rm -rf "$MOUNT_DIR/root/etc/emulationstation/es_input.cfg" 2>/dev/null
+  safe sudo rm -rf "$MOUNT_DIR/root/etc/emulationstation/es_input.cfg"
   safe sudo cp -r ./replace_file/emulationstation "$MOUNT_DIR/root/usr/bin/emulationstation/emulationstation"
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/bin/emulationstation/emulationstation"
   safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/bin/emulationstation/emulationstation"
 
   echo "== 还原 drastic =="
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/drastic" 2>/dev/null
-  safe sudo mkdir -p "$MOUNT_DIR/root/opt/drastic" 2>/dev/null
-  safe sudo cp -a ./replace_file/drastic/. "$MOUNT_DIR/root/opt/drastic/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/drastic" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/drastic" 2>/dev/null
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/drastic"
+  safe sudo mkdir -p "$MOUNT_DIR/root/opt/drastic"
+  safe sudo cp -a ./replace_file/drastic/. "$MOUNT_DIR/root/opt/drastic/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/drastic"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/drastic"
 
   echo "== 添加 drastic-kk =="
-  safe sudo mkdir -p "$MOUNT_DIR/root/opt/drastic-kk" 2>/dev/null
-  safe sudo cp -a ./replace_file/drastic-kk/. "$MOUNT_DIR/root/opt/drastic-kk/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/drastic-kk" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/drastic-kk" 2>/dev/null
+  safe sudo mkdir -p "$MOUNT_DIR/root/opt/drastic-kk"
+  safe sudo cp -a ./replace_file/drastic-kk/. "$MOUNT_DIR/root/opt/drastic-kk/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/drastic-kk"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/drastic-kk"
   safe sudo cp -f ./bin/json-c3/* "$MOUNT_DIR/root/usr/lib/aarch64-linux-gnu/"
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/lib/aarch64-linux-gnu/libjson-c.so"* 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/lib/aarch64-linux-gnu/libjson-c.so"* 2>/dev/null
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/lib/aarch64-linux-gnu/libjson-c.so"*
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/lib/aarch64-linux-gnu/libjson-c.so"*
 
   echo "== 添加 onscripter-sa =="
-  safe sudo mkdir -p "$MOUNT_DIR/root/opt/onscripter" 2>/dev/null
-  safe sudo cp -a ./replace_file/onscripter/. "$MOUNT_DIR/root/opt/onscripter/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/onscripter" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/onscripter" 2>/dev/null
+  safe sudo mkdir -p "$MOUNT_DIR/root/opt/onscripter"
+  safe sudo cp -a ./replace_file/onscripter/. "$MOUNT_DIR/root/opt/onscripter/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/onscripter"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/onscripter"
 
   echo "== 添加 freej2me-sa =="
-  safe sudo mkdir -p "$MOUNT_DIR/root/opt/freej2mesa" 2>/dev/null
-  safe sudo cp -a ./replace_file/freej2mesa/. "$MOUNT_DIR/root/opt/freej2mesa/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/freej2mesa" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/freej2mesa" 2>/dev/null
+  safe sudo mkdir -p "$MOUNT_DIR/root/opt/freej2mesa"
+  safe sudo cp -a ./replace_file/freej2mesa/. "$MOUNT_DIR/root/opt/freej2mesa/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/freej2mesa"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/freej2mesa"
 
   echo "== 改用自适应分辨率 Retroarch 1.22.2 =="
-  safe sudo cp -a ./replace_file/retroarch/retroarch "$MOUNT_DIR/root/opt/retroarch/bin/" 2>/dev/null
-  safe sudo cp -a ./replace_file/retroarch/retroarch32 "$MOUNT_DIR/root/opt/retroarch/bin/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/retroarch/bin/" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/retroarch/bin/" 2>/dev/null
+  safe sudo cp -a ./replace_file/retroarch/retroarch "$MOUNT_DIR/root/opt/retroarch/bin/"
+  safe sudo cp -a ./replace_file/retroarch/retroarch32 "$MOUNT_DIR/root/opt/retroarch/bin/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/retroarch/bin/"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/retroarch/bin/"
 
   echo "== 更新和添加 flycastsa =="
-  safe sudo cp -a ./replace_file/flycastsa/. "$MOUNT_DIR/root/opt/flycastsa/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/flycastsa/" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/flycastsa/" 2>/dev/null
+  safe sudo cp -a ./replace_file/flycastsa/. "$MOUNT_DIR/root/opt/flycastsa/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/flycastsa/"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/flycastsa/"
 
   echo "== 添加 ruffle-sa  =="
-  safe sudo mkdir -p "$MOUNT_DIR/root/opt/rufflesa" 2>/dev/null
-  safe sudo cp -a ./replace_file/rufflesa/. "$MOUNT_DIR/root/opt/rufflesa/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/rufflesa" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/rufflesa" 2>/dev/null
+  safe sudo mkdir -p "$MOUNT_DIR/root/opt/rufflesa"
+  safe sudo cp -a ./replace_file/rufflesa/. "$MOUNT_DIR/root/opt/rufflesa/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/rufflesa"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/rufflesa"
 
   echo "== 更新和添加 yabasanshiro-sa =="
-  safe sudo cp -a ./replace_file/yabasanshiro/. "$MOUNT_DIR/root/opt/yabasanshiro/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/yabasanshiro/" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/yabasanshiro/" 2>/dev/null
+  safe sudo cp -a ./replace_file/yabasanshiro/. "$MOUNT_DIR/root/opt/yabasanshiro/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/yabasanshiro/"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/yabasanshiro/"
 
   echo "== 处理 roms.tar =="
   if [ "$(stat -c%s $MOUNT_DIR/root/roms.tar 2>/dev/null || echo 0)" -le $((100*1024*1024)) ]; then
@@ -330,44 +330,44 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   safe sudo chmod -R 777 "$MOUNT_DIR/root/home/ark/.quirks/ogage"
 
   echo "== service的调整 =="
-  safe sudo cp -r ./replace_file/services/351mp.service "$MOUNT_DIR/root/etc/systemd/system/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/systemd/system/351mp.service" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/etc/systemd/system/351mp.service" 2>/dev/null
-  safe sudo rm "$MOUNT_DIR/root/etc/systemd/system/batt_led.service" 2>/dev/null
-  safe sudo cp -r "./replace_file/tools/Enable Quick Mode.sh" "$MOUNT_DIR/root/opt/system/Advanced/" 2>/dev/null
-  safe sudo cp -r "./replace_file/tools/Enable Quick Mode.sh" "$MOUNT_DIR/root/opt/system/Advanced/" 2>/dev/null
-  safe sudo cp -r "./replace_file/tools/351Files.sh" "$MOUNT_DIR/root/opt/system/" 2>/dev/null
-  safe sudo cp -r "./replace_file/tools/Disable Quick Mode.sh" "$MOUNT_DIR/root/usr/local/bin/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/system/"*.sh 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/Enable Quick Mode.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/Disable Quick Mode.sh" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/local/bin/"*.sh 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/system/"*.sh 2>/dev/null
+  safe sudo cp -r ./replace_file/services/351mp.service "$MOUNT_DIR/root/etc/systemd/system/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/systemd/system/351mp.service"
+  safe sudo chmod 777 "$MOUNT_DIR/root/etc/systemd/system/351mp.service"
+  safe sudo rm "$MOUNT_DIR/root/etc/systemd/system/batt_led.service"
+  safe sudo cp -r "./replace_file/tools/Enable Quick Mode.sh" "$MOUNT_DIR/root/opt/system/Advanced/"
+  safe sudo cp -r "./replace_file/tools/Enable Quick Mode.sh" "$MOUNT_DIR/root/opt/system/Advanced/"
+  safe sudo cp -r "./replace_file/tools/351Files.sh" "$MOUNT_DIR/root/opt/system/"
+  safe sudo cp -r "./replace_file/tools/Disable Quick Mode.sh" "$MOUNT_DIR/root/usr/local/bin/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/system/"*.sh
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/Enable Quick Mode.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/Disable Quick Mode.sh"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/local/bin/"*.sh
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/system/"*.sh
 
   echo "== 删除不需要的文件 =="
-  safe sudo rm -rf "$MOUNT_DIR/boot/BMPs" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/boot/ScreenFiles" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/boot/boot.ini" $MOUNT_DIR/boot/*.dtb $MOUNT_DIR/boot/*.orig $MOUNT_DIR/boot/*.tony $MOUNT_DIR/boot/Image $MOUNT_DIR/boot/*.bmp $MOUNT_DIR/boot/WHERE_ARE_MY_ROMS.txt 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/boot/DTB Change Tool.exe" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/DeviceType" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Change LED to Red.sh" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Update.sh" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Wifi.sh" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Network Info.sh" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Enable Remote Services.sh" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Disable Remote Services.sh" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Change Time.sh" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/NDS Overlays" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Change Ports SDL.sh" 2>/dev/null
-  safe find "$MOUNT_DIR/root/opt/system/Advanced" -name 'Restore*.sh' ! -name 'Restore ArkOS Settings.sh' -exec rm -f {} + 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Screen - Switch to Original Screen Timings.sh" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Reset EmulationStation Controls.sh" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Fix Global Hotkeys.sh" 2>/dev/null
+  safe sudo rm -rf "$MOUNT_DIR/boot/BMPs"
+  safe sudo rm -rf "$MOUNT_DIR/boot/ScreenFiles"
+  safe sudo rm -rf "$MOUNT_DIR/boot/boot.ini" $MOUNT_DIR/boot/*.dtb $MOUNT_DIR/boot/*.orig $MOUNT_DIR/boot/*.tony $MOUNT_DIR/boot/Image $MOUNT_DIR/boot/*.bmp $MOUNT_DIR/boot/WHERE_ARE_MY_ROMS.txt
+  safe sudo rm -rf "$MOUNT_DIR/boot/DTB Change Tool.exe"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/DeviceType"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Change LED to Red.sh"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Update.sh"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Wifi.sh"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Network Info.sh"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Enable Remote Services.sh"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Disable Remote Services.sh"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Change Time.sh"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/NDS Overlays"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Change Ports SDL.sh"
+  safe find "$MOUNT_DIR/root/opt/system/Advanced" -name 'Restore*.sh' ! -name 'Restore ArkOS Settings.sh' -exec rm -f {} +
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Screen - Switch to Original Screen Timings.sh"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Reset EmulationStation Controls.sh"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Fix Global Hotkeys.sh"
 
   echo "== 注入 dArkOS 工具 =="
   safe sudo mkdir -p "$MOUNT_DIR/root/opt/system/Tools/"
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Backup dArkOS Settings" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Tools/Install.PortMaster.sh" 2>/dev/null
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Backup dArkOS Settings"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Tools/Install.PortMaster.sh"
   safe sudo cp -r "./Jason3_Scripte/wifi-toggle/Wifi-toggle.sh" "$MOUNT_DIR/root/opt/system/Wifi-Toggle.sh"
   safe sudo cp -r "./Jason3_Scripte/InfoSystem/InfoSystem.sh" "$MOUNT_DIR/root/opt/system/Tools/System Info.sh"
   safe sudo cp -r "./Jason3_Scripte/GhostLoader/GhostLoader.sh" "$MOUNT_DIR/root/opt/system/Tools/Ghost Loader.sh"
@@ -424,35 +424,35 @@ else
   else
     echo "[warn] $SRC not found, skip modules update"
   fi
-  safe sudo depmod -a -b "$MOUNT_DIR/root" 4.4.189 2>/dev/null
+  safe sudo depmod -a -b "$MOUNT_DIR/root" 4.4.189
 
   echo "== 注入 915 固件 =="
-  safe sudo cp -f ./bin/rk915/rk915_*.bin "$MOUNT_DIR/root/usr/lib/firmware/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/lib/firmware/"rk915_*.bin 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/lib/firmware/"rk915_*.bin 2>/dev/null
+  safe sudo cp -f ./bin/rk915/rk915_*.bin "$MOUNT_DIR/root/usr/lib/firmware/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/lib/firmware/"rk915_*.bin
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/lib/firmware/"rk915_*.bin
 
   echo "== 注入 swt6621s 固件 =="
-  safe sudo cp -f ./bin/swt6621s/* "$MOUNT_DIR/root/usr/lib/firmware/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/lib/firmware/"SWT6621S_*.bin 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/lib/firmware/"SWT6621S_*.bin 2>/dev/null
+  safe sudo cp -f ./bin/swt6621s/* "$MOUNT_DIR/root/usr/lib/firmware/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/lib/firmware/"SWT6621S_*.bin
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/lib/firmware/"SWT6621S_*.bin
 
   echo "== 注入 aic8800DC 固件 =="
   safe sudo mkdir -p "$MOUNT_DIR/root/usr/lib/firmware/aic8800DC"
-  safe sudo cp -f ./bin/aic8800DC/* "$MOUNT_DIR/root/usr/lib/firmware/aic8800DC/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/lib/firmware/aic8800DC" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/lib/firmware/aic8800DC" 2>/dev/null
+  safe sudo cp -f ./bin/aic8800DC/* "$MOUNT_DIR/root/usr/lib/firmware/aic8800DC/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/lib/firmware/aic8800DC"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/lib/firmware/aic8800DC"
 
   echo "== 注入 351 系列手柄伪装规则  =="
-  safe sudo cp -f ./bin/99-odroidgo3.rules "$MOUNT_DIR/root/etc/udev/rules.d" 2>/dev/null
+  safe sudo cp -f ./bin/99-odroidgo3.rules "$MOUNT_DIR/root/etc/udev/rules.d"
 
   echo "== 注入 351Files 自适应 =="
   safe sudo mkdir -p "$MOUNT_DIR/root/opt/351Files/res"
-  safe sudo cp -r ./replace_file/351Files/. "$MOUNT_DIR/root/opt/351Files/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/351Files/" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/351Files/" 2>/dev/null
+  safe sudo cp -r ./replace_file/351Files/. "$MOUNT_DIR/root/opt/351Files/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/351Files/"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/351Files/"
 
   echo "== 更新 usb-modeswitch-data =="
-  safe sudo cp -a ./bin/usb-modeswitch-data/* "$MOUNT_DIR/root/" 2>/dev/null
+  safe sudo cp -a ./bin/usb-modeswitch-data/* "$MOUNT_DIR/root/"
 
   echo "== 注入 ArkOS 启动脚本 =="
   safe sudo cp -f ./replace_file/atomiswave.sh "$MOUNT_DIR/root/usr/local/bin/"
@@ -474,80 +474,80 @@ else
   safe sudo cp -f ./replace_file/freej2me.sh "$MOUNT_DIR/root/usr/local/bin/"
   safe sudo cp -f ./replace_file/mediaplayer.sh "$MOUNT_DIR/root/usr/local/bin/"
   safe sudo cp -f ./replace_file/get_last_played.sh "$MOUNT_DIR/root/usr/local/bin/"
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/atomiswave.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/dreamcast.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/naomi.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/saturn.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/n64.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/mvem.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/gametank.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/easyrpg.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/gametankkeydemon.py" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/flash.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/pico8.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/drastic.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/drastic_kk.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/choose_drastic_ver.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/choose_ons_ver.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/onscripter.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/freej2me.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/mediaplayer.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/get_last_played.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/atomiswave.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/dreamcast.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/naomi.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/saturn.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/n64.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/mvem.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/gametank.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/easyrpg.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/gametankkeydemon.py" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/flash.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/pico8.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/drastic.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/drastic_kk.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/choose_drastic_ver.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/choose_ons_ver.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/onscripter.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/freej2me.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/mediaplayer.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/get_last_played.sh" 2>/dev/null
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/atomiswave.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/dreamcast.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/naomi.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/saturn.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/n64.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/mvem.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/gametank.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/easyrpg.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/gametankkeydemon.py"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/flash.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/pico8.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/drastic.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/drastic_kk.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/choose_drastic_ver.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/choose_ons_ver.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/onscripter.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/freej2me.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/mediaplayer.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/get_last_played.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/atomiswave.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/dreamcast.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/naomi.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/saturn.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/n64.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/mvem.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/gametank.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/easyrpg.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/gametankkeydemon.py"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/flash.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/pico8.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/drastic.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/drastic_kk.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/choose_drastic_ver.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/choose_ons_ver.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/onscripter.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/freej2me.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/mediaplayer.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/get_last_played.sh"
 
   echo "== 注入 es-service 服务脚本 =="
   safe sudo cp -f ./bin/es-service/es-status-daemon.sh "$MOUNT_DIR/root/usr/local/bin/"
   safe sudo cp -f ./bin/es-service/es-status-daemon.service "$MOUNT_DIR/root/etc/systemd/system/"
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/es-status-daemon.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/systemd/system/es-status-daemon.service" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/es-status-daemon.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/etc/systemd/system/es-status-daemon.service" 2>/dev/null
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/es-status-daemon.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/systemd/system/es-status-daemon.service"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/es-status-daemon.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/etc/systemd/system/es-status-daemon.service"
 
   echo "== 注入 zram 服务脚本 =="
   safe sudo cp -f ./bin/zram-service/zram-setup.sh "$MOUNT_DIR/root/usr/local/bin/"
   safe sudo cp -f ./bin/zram-service/zram-swap.service "$MOUNT_DIR/root/etc/systemd/system/"
   safe sudo cp -f ./bin/zram-service/zram.conf "$MOUNT_DIR/root/etc/"
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/zram-setup.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/systemd/system/zram-swap.service" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/zram.conf" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/zram-setup.sh" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/etc/systemd/system/zram-swap.service" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/etc/zram.conf" 2>/dev/null
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/zram-setup.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/systemd/system/zram-swap.service"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/zram.conf"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/zram-setup.sh"
+  safe sudo chmod 777 "$MOUNT_DIR/root/etc/systemd/system/zram-swap.service"
+  safe sudo chmod 777 "$MOUNT_DIR/root/etc/zram.conf"
 
   echo "== 注入 batteryplus 服务脚本 =="
   safe sudo cp -f ./bin/batteryplus-service/batteryplus "$MOUNT_DIR/root/usr/local/bin/"
   safe sudo cp -f ./bin/batteryplus-service/batteryplus.service "$MOUNT_DIR/root/etc/systemd/system/"
   sudo mkdir -p "$MOUNT_DIR/root/etc/batteryplus/"
   safe sudo cp -f ./bin/batteryplus-service/batteryplus.conf "$MOUNT_DIR/root/etc/batteryplus/"
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/batteryplus" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/systemd/system/batteryplus.service" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/batteryplus/batteryplus.conf" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/batteryplus" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/etc/systemd/system/batteryplus.service" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/etc/batteryplus/batteryplus.conf" 2>/dev/null
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/batteryplus"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/systemd/system/batteryplus.service"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/batteryplus/batteryplus.conf"
+  safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/batteryplus"
+  safe sudo chmod 777 "$MOUNT_DIR/root/etc/systemd/system/batteryplus.service"
+  safe sudo chmod 777 "$MOUNT_DIR/root/etc/batteryplus/batteryplus.conf"
 
   echo "== 添加 Gamma =="
-  safe sudo cp -a ./replace_file/gamma/gamma "$MOUNT_DIR/root/usr/local/bin/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/gamma" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/local/bin/gamma" 2>/dev/null
+  safe sudo cp -a ./replace_file/gamma/gamma "$MOUNT_DIR/root/usr/local/bin/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/gamma"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/local/bin/gamma"
 
   echo "== 注入核心 =="
   safe sudo cp -f ./mod_so/64/* "$MOUNT_DIR/root/home/ark/.config/retroarch/cores/"
@@ -564,127 +564,139 @@ else
   safe sudo cp -f ./replace_file/es_systems.cfg.sd1 "$MOUNT_DIR/root/etc/emulationstation/"
   safe sudo cp -f ./replace_file/es_systems.cfg.sd2 "$MOUNT_DIR/root/etc/emulationstation/"
   safe sudo cp -f ./replace_file/es_systems.cfg.dual "$MOUNT_DIR/root/etc/emulationstation/"
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.sd1" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.sd2" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.dual" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.sd1" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.sd2" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.dual" 2>/dev/null
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.sd1"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.sd2"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.dual"
+  safe sudo chmod 777 "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg"
+  safe sudo chmod 777 "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.sd1"
+  safe sudo chmod 777 "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.sd2"
+  safe sudo chmod 777 "$MOUNT_DIR/root/etc/emulationstation/es_systems.cfg.dual"
   safe sudo cp -rf ./replace_file/resources/* "$MOUNT_DIR/root/usr/bin/emulationstation/resources/"
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/bin/emulationstation/resources"
   safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/bin/emulationstation/resources"
-  safe sudo rm -rf "$MOUNT_DIR/root/etc/emulationstation/es_input.cfg" 2>/dev/null
+  safe sudo rm -rf "$MOUNT_DIR/root/etc/emulationstation/es_input.cfg"
   safe sudo cp -r ./replace_file/emulationstation "$MOUNT_DIR/root/usr/bin/emulationstation/emulationstation"
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/bin/emulationstation/emulationstation"
   safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/bin/emulationstation/emulationstation"
 
   echo "== 还原 drastic =="
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/drastic" 2>/dev/null
-  safe sudo mkdir -p "$MOUNT_DIR/root/opt/drastic" 2>/dev/null
-  safe sudo cp -a ./replace_file/drastic/. "$MOUNT_DIR/root/opt/drastic/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/drastic" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/drastic" 2>/dev/null
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/drastic"
+  safe sudo mkdir -p "$MOUNT_DIR/root/opt/drastic"
+  safe sudo cp -a ./replace_file/drastic/. "$MOUNT_DIR/root/opt/drastic/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/drastic"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/drastic"
 
   echo "== 添加 drastic-kk =="
-  safe sudo mkdir -p "$MOUNT_DIR/root/opt/drastic-kk" 2>/dev/null
-  safe sudo cp -a ./replace_file/drastic-kk/. "$MOUNT_DIR/root/opt/drastic-kk/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/drastic-kk" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/drastic-kk" 2>/dev/null
+  safe sudo mkdir -p "$MOUNT_DIR/root/opt/drastic-kk"
+  safe sudo cp -a ./replace_file/drastic-kk/. "$MOUNT_DIR/root/opt/drastic-kk/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/drastic-kk"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/drastic-kk"
   safe sudo cp -f ./bin/json-c3/* "$MOUNT_DIR/root/usr/lib/aarch64-linux-gnu/"
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/lib/aarch64-linux-gnu/libjson-c.so"* 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/lib/aarch64-linux-gnu/libjson-c.so"* 2>/dev/null
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/lib/aarch64-linux-gnu/libjson-c.so"*
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/lib/aarch64-linux-gnu/libjson-c.so"*
 
   echo "== 添加 DSperate-sa =="
-  safe sudo mkdir -p "$MOUNT_DIR/root/opt/DSperate" 2>/dev/null
-  safe sudo cp -a ./replace_file/DSperate/. "$MOUNT_DIR/root/opt/DSperate/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/DSperate" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/DSperate" 2>/dev/null
+  safe sudo mkdir -p "$MOUNT_DIR/root/opt/DSperate"
+  safe sudo cp -a ./replace_file/DSperate/. "$MOUNT_DIR/root/opt/DSperate/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/DSperate"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/DSperate"
+
+  echo "== 添加 glibc242 =="
+  safe sudo mkdir -p "$MOUNT_DIR/root/opt/glibc-2.42"
+  safe sudo cp -a ./replace_file/glibc-2.42/. "$MOUNT_DIR/root/opt/glibc-2.42/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/glibc-2.42"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/glibc-2.42"
+  safe sudo cp -a ./replace_file/glibc242 "$MOUNT_DIR/root/usr/local/bin/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/glibc242"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/local/bin/glibc242"
+  safe sudo cp -a ./replace_file/retroarch.sh "$MOUNT_DIR/root/usr/local/bin/retroarch"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/retroarch"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/local/bin/retroarch"
 
   echo "== 添加 onscripter-sa =="
-  safe sudo mkdir -p "$MOUNT_DIR/root/opt/onscripter" 2>/dev/null
-  safe sudo cp -a ./replace_file/onscripter/. "$MOUNT_DIR/root/opt/onscripter/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/onscripter" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/onscripter" 2>/dev/null
+  safe sudo mkdir -p "$MOUNT_DIR/root/opt/onscripter"
+  safe sudo cp -a ./replace_file/onscripter/. "$MOUNT_DIR/root/opt/onscripter/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/onscripter"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/onscripter"
 
   echo "== 添加 freej2me-sa =="
-  safe sudo mkdir -p "$MOUNT_DIR/root/opt/freej2mesa" 2>/dev/null
-  safe sudo cp -a ./replace_file/freej2mesa/. "$MOUNT_DIR/root/opt/freej2mesa/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/freej2mesa" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/freej2mesa" 2>/dev/null
+  safe sudo mkdir -p "$MOUNT_DIR/root/opt/freej2mesa"
+  safe sudo cp -a ./replace_file/freej2mesa/. "$MOUNT_DIR/root/opt/freej2mesa/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/freej2mesa"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/freej2mesa"
 
   echo "== 改用自适应分辨率 Retroarch 1.22.2 =="
-  safe sudo cp -a ./replace_file/retroarch/retroarch "$MOUNT_DIR/root/opt/retroarch/bin/" 2>/dev/null
-  safe sudo cp -a ./replace_file/retroarch/retroarch32 "$MOUNT_DIR/root/opt/retroarch/bin/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/retroarch/bin/" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/retroarch/bin/" 2>/dev/null
+  safe sudo cp -a ./replace_file/retroarch/retroarch "$MOUNT_DIR/root/opt/retroarch/bin/"
+  safe sudo cp -a ./replace_file/retroarch/retroarch32 "$MOUNT_DIR/root/opt/retroarch/bin/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/retroarch/bin/"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/retroarch/bin/"
 
   echo "== 更新 Fake08-sa =="
-  safe sudo cp -a ./replace_file/fake08/* "$MOUNT_DIR/root/opt/fake08/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/fake08/" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/fake08/" 2>/dev/null
+  safe sudo cp -a ./replace_file/fake08/* "$MOUNT_DIR/root/opt/fake08/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/fake08/"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/fake08/"
 
   echo "== 更新 PPSSPP 1.20.4 =="
-  safe sudo cp -a ./replace_file/ppsspp/* "$MOUNT_DIR/root/opt/ppsspp/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/ppsspp/" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/ppsspp/" 2>/dev/null
+  safe sudo cp -a ./replace_file/ppsspp/* "$MOUNT_DIR/root/opt/ppsspp/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/ppsspp/"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/ppsspp/"
 
   echo "== 替换 PPSSPP-2021 =="
-  safe sudo cp -a ./replace_file/ppsspp-2021/* "$MOUNT_DIR/root/opt/ppsspp-2021/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/ppsspp-2021/" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/ppsspp-2021/" 2>/dev/null
+  safe sudo cp -a ./replace_file/ppsspp-2021/* "$MOUNT_DIR/root/opt/ppsspp-2021/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/ppsspp-2021/"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/ppsspp-2021/"
 
   echo "== 更新 mupen64plus =="
-  safe sudo cp -a ./replace_file/mupen64plus/* "$MOUNT_DIR/root/opt/mupen64plus/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/mupen64plus/" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/mupen64plus/" 2>/dev/null
+  safe sudo cp -a ./replace_file/mupen64plus/* "$MOUNT_DIR/root/opt/mupen64plus/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/mupen64plus/"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/mupen64plus/"
 
   echo "== 更新 ScummVM v2026.3.0 =="
-  safe sudo cp -a ./replace_file/scummvm/* "$MOUNT_DIR/root/opt/scummvm/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/scummvm/" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/scummvm/" 2>/dev/null
+  safe sudo cp -a ./replace_file/scummvm/* "$MOUNT_DIR/root/opt/scummvm/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/scummvm/"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/scummvm/"
 
   echo "== 更新和添加 flycastsa =="
-  safe sudo cp -a ./replace_file/flycastsa/. "$MOUNT_DIR/root/opt/flycastsa/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/flycastsa/" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/flycastsa/" 2>/dev/null
+  safe sudo cp -a ./replace_file/flycastsa/. "$MOUNT_DIR/root/opt/flycastsa/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/flycastsa/"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/flycastsa/"
 
   echo "== 更新 duckstation =="
-  safe sudo cp -a ./replace_file/duckstation/. "$MOUNT_DIR/root/opt/duckstation/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/duckstation/" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/duckstation/" 2>/dev/null
+  safe sudo cp -a ./replace_file/duckstation/. "$MOUNT_DIR/root/opt/duckstation/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/duckstation/"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/duckstation/"
 
   echo "== 添加 gametank-sa  =="
-  safe sudo mkdir -p "$MOUNT_DIR/root/opt/gametank" 2>/dev/null
-  safe sudo cp -a ./replace_file/gametank/. "$MOUNT_DIR/root/opt/gametank/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/gametank" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/gametank" 2>/dev/null
+  safe sudo mkdir -p "$MOUNT_DIR/root/opt/gametank"
+  safe sudo cp -a ./replace_file/gametank/. "$MOUNT_DIR/root/opt/gametank/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/gametank"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/gametank"
 
   echo "== 添加 ruffle-sa  =="
-  safe sudo mkdir -p "$MOUNT_DIR/root/opt/rufflesa" 2>/dev/null
-  safe sudo cp -a ./replace_file/rufflesa/. "$MOUNT_DIR/root/opt/rufflesa/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/rufflesa" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/rufflesa" 2>/dev/null
+  safe sudo mkdir -p "$MOUNT_DIR/root/opt/rufflesa"
+  safe sudo cp -a ./replace_file/rufflesa/. "$MOUNT_DIR/root/opt/rufflesa/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/rufflesa"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/rufflesa"
 
   echo "== 更新和添加 yabasanshiro-sa =="
-  safe sudo cp -a ./replace_file/yabasanshiro/. "$MOUNT_DIR/root/opt/yabasanshiro/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/yabasanshiro/" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/yabasanshiro/" 2>/dev/null
+  safe sudo cp -a ./replace_file/yabasanshiro/. "$MOUNT_DIR/root/opt/yabasanshiro/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/yabasanshiro/"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/yabasanshiro/"
 
   echo "== 更新 OpenborFF =="
-  safe sudo cp -a ./replace_file/OpenBor/. "$MOUNT_DIR/root/opt/OpenBor/" 2>/dev/null
-  safe sudo mkdir -p "$MOUNT_DIR/root/opt/OpenBorFF" 2>/dev/null
-  safe sudo cp -a ./replace_file/OpenBorFF/. "$MOUNT_DIR/root/opt/OpenBorFF/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/OpenBorFF/" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/OpenBorFF/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/OpenBor/" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/OpenBor/" 2>/dev/null
+  safe sudo cp -a ./replace_file/OpenBor/. "$MOUNT_DIR/root/opt/OpenBor/"
+  safe sudo mkdir -p "$MOUNT_DIR/root/opt/OpenBorFF"
+  safe sudo cp -a ./replace_file/OpenBorFF/. "$MOUNT_DIR/root/opt/OpenBorFF/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/OpenBorFF/"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/OpenBorFF/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/OpenBor/"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/OpenBor/"
 
   echo "== 添加 krkr2 =="
-  safe sudo cp -a ./replace_file/krkr2/. "$MOUNT_DIR/root/opt/krkr2/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/krkr2/" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/krkr2/" 2>/dev/null
+  safe sudo cp -a ./replace_file/krkr2/. "$MOUNT_DIR/root/opt/krkr2/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/krkr2/"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/krkr2/"
 
   echo "== 处理 roms.tar =="
   if [ "$(stat -c%s $MOUNT_DIR/root/roms.tar 2>/dev/null || echo 0)" -le $((100*1024*1024)) ]; then
@@ -757,53 +769,53 @@ else
   safe sudo chmod -R 777 "$MOUNT_DIR/root/home/ark/.quirks/ogage"
 
   echo "== service的调整 =="
-  safe sudo cp -r ./replace_file/services/351mp.service "$MOUNT_DIR/root/etc/systemd/system/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/systemd/system/351mp.service" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/lib/systemd/system/mpv.service" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/etc/systemd/system/351mp.service" 2>/dev/null
-  safe sudo chmod 777 "$MOUNT_DIR/root/lib/systemd/system/mpv.service" 2>/dev/null
-  safe sudo rm "$MOUNT_DIR/root/etc/systemd/system/batt_led.service" 2>/dev/null
-  safe sudo rm "$MOUNT_DIR/root/etc/systemd/system/ddtbcheck.service" 2>/dev/null
-  safe sudo cp -r "./replace_file/tools/Enable Quick Mode.sh" "$MOUNT_DIR/root/opt/system/Advanced/" 2>/dev/null
-  safe sudo cp -r "./replace_file/tools/351Files.sh" "$MOUNT_DIR/root/opt/system/" 2>/dev/null
-  safe sudo cp -r "./replace_file/tools/Enable Quick Mode.sh" "$MOUNT_DIR/root/usr/local/bin/" 2>/dev/null
-  safe sudo cp -r "./replace_file/tools/Disable Quick Mode.sh" "$MOUNT_DIR/root/usr/local/bin/" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/system/"*.sh 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/Enable Quick Mode.sh" 2>/dev/null
-  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/Disable Quick Mode.sh" 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/local/bin/"*.sh 2>/dev/null
-  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/system/"*.sh 2>/dev/null
+  safe sudo cp -r ./replace_file/services/351mp.service "$MOUNT_DIR/root/etc/systemd/system/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/systemd/system/351mp.service"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/lib/systemd/system/mpv.service"
+  safe sudo chmod 777 "$MOUNT_DIR/root/etc/systemd/system/351mp.service"
+  safe sudo chmod 777 "$MOUNT_DIR/root/lib/systemd/system/mpv.service"
+  safe sudo rm "$MOUNT_DIR/root/etc/systemd/system/batt_led.service"
+  safe sudo rm "$MOUNT_DIR/root/etc/systemd/system/ddtbcheck.service"
+  safe sudo cp -r "./replace_file/tools/Enable Quick Mode.sh" "$MOUNT_DIR/root/opt/system/Advanced/"
+  safe sudo cp -r "./replace_file/tools/351Files.sh" "$MOUNT_DIR/root/opt/system/"
+  safe sudo cp -r "./replace_file/tools/Enable Quick Mode.sh" "$MOUNT_DIR/root/usr/local/bin/"
+  safe sudo cp -r "./replace_file/tools/Disable Quick Mode.sh" "$MOUNT_DIR/root/usr/local/bin/"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/system/"*.sh
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/Enable Quick Mode.sh"
+  safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/Disable Quick Mode.sh"
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/local/bin/"*.sh
+  safe sudo chmod -R 777 "$MOUNT_DIR/root/opt/system/"*.sh
 
   echo "== 删除logo随机 =="
-  safe sudo sed -i '/imageshift\.sh/d' "$MOUNT_DIR/root/var/spool/cron/crontabs/root" 2>/dev/null
-  safe sudo rm "$MOUNT_DIR/root/home/ark/.config/imageshift.sh" 2>/dev/null
+  safe sudo sed -i '/imageshift\.sh/d' "$MOUNT_DIR/root/var/spool/cron/crontabs/root"
+  safe sudo rm "$MOUNT_DIR/root/home/ark/.config/imageshift.sh"
 
   echo "== 删除不需要的文件 =="
-  safe sudo rm -rf "$MOUNT_DIR/boot/BMPs" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/boot/ScreenFiles" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/boot/boot.ini" $MOUNT_DIR/boot/*.dtb $MOUNT_DIR/boot/*.orig $MOUNT_DIR/boot/*.tony $MOUNT_DIR/boot/Image $MOUNT_DIR/boot/*.bmp $MOUNT_DIR/boot/WHERE_ARE_MY_ROMS.txt 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/boot/DTB Change Tool.exe" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/DeviceType" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Change LED to Red.sh" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Update.sh" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Read from SD1 and SD2 for Roms" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Read from SD1 and SD2 for Roms.sh" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Switch to SD2 for Roms.sh" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Switch to main SD for Roms.sh" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/usr/local/bin/Read from SD1 and SD2 for Roms" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/usr/local/bin/Switch to SD2 for Roms.sh" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/usr/local/bin/Switch to main SD for Roms.sh" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Wifi.sh" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Network Info.sh" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Enable Remote Services.sh" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Disable Remote Services.sh" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Change Time.sh" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/NDS Overlays" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Change Ports SDL.sh" 2>/dev/null
-  safe find "$MOUNT_DIR/root/opt/system/Advanced" -name 'Restore*.sh' ! -name 'Restore ArkOS Settings.sh' -exec rm -f {} + 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Screen - Switch to Original Screen Timings.sh" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Reset EmulationStation Controls.sh" 2>/dev/null
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Fix Global Hotkeys.sh" 2>/dev/null
+  safe sudo rm -rf "$MOUNT_DIR/boot/BMPs"
+  safe sudo rm -rf "$MOUNT_DIR/boot/ScreenFiles"
+  safe sudo rm -rf "$MOUNT_DIR/boot/boot.ini" $MOUNT_DIR/boot/*.dtb $MOUNT_DIR/boot/*.orig $MOUNT_DIR/boot/*.tony $MOUNT_DIR/boot/Image $MOUNT_DIR/boot/*.bmp $MOUNT_DIR/boot/WHERE_ARE_MY_ROMS.txt
+  safe sudo rm -rf "$MOUNT_DIR/boot/DTB Change Tool.exe"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/DeviceType"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Change LED to Red.sh"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Update.sh"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Read from SD1 and SD2 for Roms"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Read from SD1 and SD2 for Roms.sh"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Switch to SD2 for Roms.sh"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Switch to main SD for Roms.sh"
+  safe sudo rm -rf "$MOUNT_DIR/root/usr/local/bin/Read from SD1 and SD2 for Roms"
+  safe sudo rm -rf "$MOUNT_DIR/root/usr/local/bin/Switch to SD2 for Roms.sh"
+  safe sudo rm -rf "$MOUNT_DIR/root/usr/local/bin/Switch to main SD for Roms.sh"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Wifi.sh"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Network Info.sh"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Enable Remote Services.sh"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Disable Remote Services.sh"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Change Time.sh"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/NDS Overlays"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Change Ports SDL.sh"
+  safe find "$MOUNT_DIR/root/opt/system/Advanced" -name 'Restore*.sh' ! -name 'Restore ArkOS Settings.sh' -exec rm -f {} +
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Screen - Switch to Original Screen Timings.sh"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Reset EmulationStation Controls.sh"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Fix Global Hotkeys.sh"
 
   echo "== 注入工具 =="
   safe sudo cp -r "./Jason3_Scripte/wifi-toggle/Wifi-toggle.sh" "$MOUNT_DIR/root/opt/system/Wifi-Toggle.sh"
@@ -822,6 +834,6 @@ else
   safe sudo sed -i "/title\=/c\title\=ArkOS4Clone ($UPDATE_DATE)($MODDER)" "$MOUNT_DIR/root/usr/share/plymouth/themes/text.plymouth"
 fi
 
-safe sudo touch $MOUNT_DIR/boot/"USE_DTB_SELECT_TO_SELECT_DEVICE" 2>/dev/null
+safe sudo touch $MOUNT_DIR/boot/"USE_DTB_SELECT_TO_SELECT_DEVICE"
 cat $MOUNT_DIR/root/usr/share/plymouth/themes/text.plymouth
 echo "== 完成 =="
