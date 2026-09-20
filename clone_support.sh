@@ -10,7 +10,48 @@ MODDER="kk&lcdyk"
 
 RSYNC_BOOT_OPTS="-rltD --no-owner --no-group --no-perms --omit-dir-times"
 
-safe() { "$@" 2>/dev/null || echo "[WARN] 失败: $*"; }
+# safe: 尽力而为的操作，失败保留现场并在结尾判定构建失败
+FAIL_COUNT=0
+safe() {
+  if ! "$@"; then
+    echo "[WARN] 失败: $*"
+    FAIL_COUNT=$((FAIL_COUNT + 1))
+  fi
+}
+
+# fatal: 关键写入 (镜像内容注入)，失败立即中止构建，避免产出损坏镜像
+fatal() {
+  if ! "$@"; then
+    echo "[ERROR] 致命失败: $*"
+    exit 1
+  fi
+}
+
+# require_space_mb: 镜像 root 分区剩余空间 (MB) 不足 need 时直接报错退出
+require_space_mb() {
+  local need="$1" avail
+  avail="$(df -Pm "$MOUNT_DIR/root" 2>/dev/null | awk 'NR==2{print $4}')"
+  if [[ -z "$avail" ]] || (( avail < need )); then
+    echo "[ERROR] 镜像 root 分区空间不足: 需要 ${need}MB，实际剩余 ${avail:-未知}MB"
+    exit 1
+  fi
+}
+
+echo "== 注入前镜像 root 分区剩余空间 =="
+df -h "$MOUNT_DIR/root" || true
+
+echo "== 解压大型核心 (如有) =="
+# 超过 GitHub 100MB 限制的核心以 .so.xz 入库，复制核心前先解压 (已解压过则跳过)
+for CORE_DIR in ./mod_so/64 ./mod_so/32 ./mod_so/arkos_64 ./mod_so/arkos_32; do
+  for CORE_XZ in "$CORE_DIR"/*.so.xz; do
+    [[ -e "$CORE_XZ" ]] || continue
+    CORE_SO="${CORE_XZ%.xz}"
+    if [[ ! -f "$CORE_SO" ]]; then
+      echo "解压 $CORE_XZ"
+      fatal xz -dk -T0 "$CORE_XZ"
+    fi
+  done
+done
 
 if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   # ============================================================
@@ -259,7 +300,7 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   echo "== 处理 roms.tar =="
   if [ "$(stat -c%s $MOUNT_DIR/root/roms.tar 2>/dev/null || echo 0)" -le $((100*1024*1024)) ]; then
     echo "== 复制 roms.tar 出来操作 =="
-    safe sudo cp "$MOUNT_DIR/root/roms.tar" "$WORK_DIR/"
+    fatal sudo cp "$MOUNT_DIR/root/roms.tar" "$WORK_DIR/"
     safe sudo mkdir -p "$WORK_DIR/tmproms"
     tar -xf "$WORK_DIR/roms.tar" -C "$WORK_DIR/tmproms"
     safe sudo mkdir -p "$WORK_DIR/tmproms/roms/hbmame"
@@ -289,13 +330,16 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
     safe sudo cp -r ./replace_file/pymo/pymo/* "$WORK_DIR/tmproms/roms/themes/es-theme-nes-box/pymo"
     safe sudo chown -R root:root "$WORK_DIR/tmproms/roms/themes/es-theme-nes-box/pymo"
     safe sudo chmod -R 777 "$WORK_DIR/tmproms/roms/themes/es-theme-nes-box/pymo"
-    safe sudo rm "$WORK_DIR/tmproms/roms/tools/Install.PortMaster.sh"
+    safe sudo rm -f "$WORK_DIR/tmproms/roms/tools/Install.PortMaster.sh"
     safe sudo cp -rf ./replace_file/pymo/Scan_for_new_games.pymo "$WORK_DIR/tmproms/roms/pymo/"
     safe sudo chown -R $CHOWN_USER "$WORK_DIR/tmproms/roms/pymo/Scan_for_new_games.pymo"
     safe sudo chmod -R 777 "$WORK_DIR/tmproms/roms/pymo/Scan_for_new_games.pymo"
     sudo tar -cf "$WORK_DIR/roms.tar" -C "$WORK_DIR/tmproms" .
     safe sudo rm -rf "$WORK_DIR/tmproms"
-    safe sudo cp "$WORK_DIR/roms.tar" "$MOUNT_DIR/root/"
+    # 回拷前确认 p2 放得下 (roms.tar 大小 + 200MB 余量)，放不下直接中止
+    TAR_MB=$(( $(stat -c%s "$WORK_DIR/roms.tar" 2>/dev/null || echo 0) / 1024 / 1024 ))
+    require_space_mb $(( TAR_MB + 200 ))
+    fatal sudo cp "$WORK_DIR/roms.tar" "$MOUNT_DIR/root/"
     safe sudo chmod -R 777 $MOUNT_DIR/root/roms.tar
     safe sudo rm -rf "$WORK_DIR/roms.tar"
   else
@@ -303,7 +347,7 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   fi
 
   echo "== 调整retrorun =="
-  safe sudo cp -r ./replace_file/retrorun/* "$MOUNT_DIR/root/usr/local/bin/"
+  fatal sudo cp -r ./replace_file/retrorun/* "$MOUNT_DIR/root/usr/local/bin/"
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/retrorun32"
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/retrorun"
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/retrorunsdl"
@@ -314,16 +358,16 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/local/bin/retrorunsdl"
 
   echo "== 注入pymo =="
-  safe sudo cp -r ./replace_file/pymo/cpymo "$MOUNT_DIR/root/usr/local/bin/"
-  safe sudo cp -r ./replace_file/pymo/pymo.sh "$MOUNT_DIR/root/usr/local/bin/"
+  fatal sudo cp -r ./replace_file/pymo/cpymo "$MOUNT_DIR/root/usr/local/bin/"
+  fatal sudo cp -r ./replace_file/pymo/pymo.sh "$MOUNT_DIR/root/usr/local/bin/"
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/cpymo"
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/pymo.sh"
   safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/cpymo"
   safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/pymo.sh"
 
   echo "== ogage快捷键复制 =="
-  safe sudo cp -r ./replace_file/ogage "$MOUNT_DIR/root/usr/local/bin/"
-  safe sudo cp -r ./replace_file/ogage "$MOUNT_DIR/root/home/ark/.quirks/"
+  fatal sudo cp -r ./replace_file/ogage "$MOUNT_DIR/root/usr/local/bin/"
+  fatal sudo cp -r ./replace_file/ogage "$MOUNT_DIR/root/home/ark/.quirks/"
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/ogage"
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/home/ark/.quirks/ogage"
   safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/local/bin/ogage"
@@ -333,7 +377,7 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   safe sudo cp -r ./replace_file/services/351mp.service "$MOUNT_DIR/root/etc/systemd/system/"
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/etc/systemd/system/351mp.service"
   safe sudo chmod 777 "$MOUNT_DIR/root/etc/systemd/system/351mp.service"
-  safe sudo rm "$MOUNT_DIR/root/etc/systemd/system/batt_led.service"
+  safe sudo rm -f "$MOUNT_DIR/root/etc/systemd/system/batt_led.service"
   safe sudo cp -r "./replace_file/tools/Enable Quick Mode.sh" "$MOUNT_DIR/root/opt/system/Advanced/"
   safe sudo cp -r "./replace_file/tools/Enable Quick Mode.sh" "$MOUNT_DIR/root/opt/system/Advanced/"
   safe sudo cp -r "./replace_file/tools/351Files.sh" "$MOUNT_DIR/root/opt/system/"
@@ -368,11 +412,11 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   safe sudo mkdir -p "$MOUNT_DIR/root/opt/system/Tools/"
   safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Backup dArkOS Settings"
   safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Tools/Install.PortMaster.sh"
-  safe sudo cp -r "./Jason3_Scripte/wifi-toggle/Wifi-toggle.sh" "$MOUNT_DIR/root/opt/system/Wifi-Toggle.sh"
-  safe sudo cp -r "./Jason3_Scripte/InfoSystem/InfoSystem.sh" "$MOUNT_DIR/root/opt/system/Tools/System Info.sh"
-  safe sudo cp -r "./Jason3_Scripte/GhostLoader/GhostLoader.sh" "$MOUNT_DIR/root/opt/system/Tools/Ghost Loader.sh"
-  safe sudo cp -r "./Jason3_Scripte/Bluetooth-Manager/Bluetooth Manager.sh" "$MOUNT_DIR/root/opt/system/Tools/"
-  safe sudo cp -r "./Jason3_Scripte/Bluetooth-Manager/patch.pak" "$MOUNT_DIR/root/opt/system/Tools/"
+  fatal sudo cp -r "./Jason3_Scripte/wifi-toggle/Wifi-toggle.sh" "$MOUNT_DIR/root/opt/system/Wifi-Toggle.sh"
+  fatal sudo cp -r "./Jason3_Scripte/InfoSystem/InfoSystem.sh" "$MOUNT_DIR/root/opt/system/Tools/System Info.sh"
+  fatal sudo cp -r "./Jason3_Scripte/GhostLoader/GhostLoader.sh" "$MOUNT_DIR/root/opt/system/Tools/Ghost Loader.sh"
+  fatal sudo cp -r "./Jason3_Scripte/Bluetooth-Manager/Bluetooth Manager.sh" "$MOUNT_DIR/root/opt/system/Tools/"
+  fatal sudo cp -r "./Jason3_Scripte/Bluetooth-Manager/patch.pak" "$MOUNT_DIR/root/opt/system/Tools/"
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/system/"*.sh
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/system/Tools/"*.sh
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/system/Advanced/"*.sh
@@ -701,7 +745,7 @@ else
   echo "== 处理 roms.tar =="
   if [ "$(stat -c%s $MOUNT_DIR/root/roms.tar 2>/dev/null || echo 0)" -le $((100*1024*1024)) ]; then
     echo "== 复制 roms.tar 出来操作 =="
-    safe sudo cp "$MOUNT_DIR/root/roms.tar" "$WORK_DIR/"
+    fatal sudo cp "$MOUNT_DIR/root/roms.tar" "$WORK_DIR/"
     mkdir -p "$WORK_DIR/tmproms"
     tar -xf "$WORK_DIR/roms.tar" -C "$WORK_DIR/tmproms"
     safe sudo mkdir -p "$WORK_DIR/tmproms/roms/hbmame"
@@ -734,7 +778,10 @@ else
     safe sudo chmod -R 777 "$WORK_DIR/tmproms/roms/pymo/Scan_for_new_games.pymo"
     sudo tar -cf "$WORK_DIR/roms.tar" -C "$WORK_DIR/tmproms" .
     safe sudo rm -rf "$WORK_DIR/tmproms"
-    safe sudo cp "$WORK_DIR/roms.tar" "$MOUNT_DIR/root/"
+    # 回拷前确认 p2 放得下 (roms.tar 大小 + 200MB 余量)，放不下直接中止
+    TAR_MB=$(( $(stat -c%s "$WORK_DIR/roms.tar" 2>/dev/null || echo 0) / 1024 / 1024 ))
+    require_space_mb $(( TAR_MB + 200 ))
+    fatal sudo cp "$WORK_DIR/roms.tar" "$MOUNT_DIR/root/"
     safe sudo chmod -R 777 $MOUNT_DIR/root/roms.tar
     safe sudo rm -rf "$WORK_DIR/roms.tar"
   else
@@ -742,7 +789,7 @@ else
   fi
 
   echo "== 调整retrorun =="
-  safe sudo cp -r ./replace_file/retrorun/* "$MOUNT_DIR/root/usr/local/bin/"
+  fatal sudo cp -r ./replace_file/retrorun/* "$MOUNT_DIR/root/usr/local/bin/"
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/retrorun32"
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/retrorun"
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/retrorunsdl"
@@ -753,16 +800,16 @@ else
   safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/local/bin/retrorunsdl"
 
   echo "== 注入pymo =="
-  safe sudo cp -r ./replace_file/pymo/cpymo "$MOUNT_DIR/root/usr/local/bin/"
-  safe sudo cp -r ./replace_file/pymo/pymo.sh "$MOUNT_DIR/root/usr/local/bin/"
+  fatal sudo cp -r ./replace_file/pymo/cpymo "$MOUNT_DIR/root/usr/local/bin/"
+  fatal sudo cp -r ./replace_file/pymo/pymo.sh "$MOUNT_DIR/root/usr/local/bin/"
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/cpymo"
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/pymo.sh"
   safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/cpymo"
   safe sudo chmod 777 "$MOUNT_DIR/root/usr/local/bin/pymo.sh"
 
   echo "== ogage快捷键复制 =="
-  safe sudo cp -r ./replace_file/ogage "$MOUNT_DIR/root/usr/local/bin/"
-  safe sudo cp -r ./replace_file/ogage "$MOUNT_DIR/root/home/ark/.quirks/"
+  fatal sudo cp -r ./replace_file/ogage "$MOUNT_DIR/root/usr/local/bin/"
+  fatal sudo cp -r ./replace_file/ogage "$MOUNT_DIR/root/home/ark/.quirks/"
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/usr/local/bin/ogage"
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/home/ark/.quirks/ogage"
   safe sudo chmod -R 777 "$MOUNT_DIR/root/usr/local/bin/ogage"
@@ -774,8 +821,8 @@ else
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/lib/systemd/system/mpv.service"
   safe sudo chmod 777 "$MOUNT_DIR/root/etc/systemd/system/351mp.service"
   safe sudo chmod 777 "$MOUNT_DIR/root/lib/systemd/system/mpv.service"
-  safe sudo rm "$MOUNT_DIR/root/etc/systemd/system/batt_led.service"
-  safe sudo rm "$MOUNT_DIR/root/etc/systemd/system/ddtbcheck.service"
+  safe sudo rm -f "$MOUNT_DIR/root/etc/systemd/system/batt_led.service"
+  safe sudo rm -f "$MOUNT_DIR/root/etc/systemd/system/ddtbcheck.service"
   safe sudo cp -r "./replace_file/tools/Enable Quick Mode.sh" "$MOUNT_DIR/root/opt/system/Advanced/"
   safe sudo cp -r "./replace_file/tools/351Files.sh" "$MOUNT_DIR/root/opt/system/"
   safe sudo cp -r "./replace_file/tools/Enable Quick Mode.sh" "$MOUNT_DIR/root/usr/local/bin/"
@@ -788,7 +835,7 @@ else
 
   echo "== 删除logo随机 =="
   safe sudo sed -i '/imageshift\.sh/d' "$MOUNT_DIR/root/var/spool/cron/crontabs/root"
-  safe sudo rm "$MOUNT_DIR/root/home/ark/.config/imageshift.sh"
+  safe sudo rm -f "$MOUNT_DIR/root/home/ark/.config/imageshift.sh"
 
   echo "== 删除不需要的文件 =="
   safe sudo rm -rf "$MOUNT_DIR/boot/BMPs"
@@ -818,11 +865,11 @@ else
   safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Fix Global Hotkeys.sh"
 
   echo "== 注入工具 =="
-  safe sudo cp -r "./Jason3_Scripte/wifi-toggle/Wifi-toggle.sh" "$MOUNT_DIR/root/opt/system/Wifi-Toggle.sh"
-  safe sudo cp -r "./Jason3_Scripte/InfoSystem/InfoSystem.sh" "$MOUNT_DIR/root/opt/system/Tools/System Info.sh"
-  safe sudo cp -r "./Jason3_Scripte/GhostLoader/GhostLoader.sh" "$MOUNT_DIR/root/opt/system/Tools/Ghost Loader.sh"
-  safe sudo cp -r "./Jason3_Scripte/Bluetooth-Manager/Bluetooth Manager.sh" "$MOUNT_DIR/root/opt/system/Tools/"
-  safe sudo cp -r "./Jason3_Scripte/Bluetooth-Manager/patch.pak" "$MOUNT_DIR/root/opt/system/Tools/"
+  fatal sudo cp -r "./Jason3_Scripte/wifi-toggle/Wifi-toggle.sh" "$MOUNT_DIR/root/opt/system/Wifi-Toggle.sh"
+  fatal sudo cp -r "./Jason3_Scripte/InfoSystem/InfoSystem.sh" "$MOUNT_DIR/root/opt/system/Tools/System Info.sh"
+  fatal sudo cp -r "./Jason3_Scripte/GhostLoader/GhostLoader.sh" "$MOUNT_DIR/root/opt/system/Tools/Ghost Loader.sh"
+  fatal sudo cp -r "./Jason3_Scripte/Bluetooth-Manager/Bluetooth Manager.sh" "$MOUNT_DIR/root/opt/system/Tools/"
+  fatal sudo cp -r "./Jason3_Scripte/Bluetooth-Manager/patch.pak" "$MOUNT_DIR/root/opt/system/Tools/"
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/system/"*.sh
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/system/Tools/"*.sh
   safe sudo chown -R $CHOWN_USER "$MOUNT_DIR/root/opt/system/Advanced/"*.sh
@@ -835,5 +882,11 @@ else
 fi
 
 safe sudo touch $MOUNT_DIR/boot/"USE_DTB_SELECT_TO_SELECT_DEVICE"
+echo "== 注入后镜像 root 分区剩余空间 =="
+df -h "$MOUNT_DIR/root" || true
 cat $MOUNT_DIR/root/usr/share/plymouth/themes/text.plymouth
+if (( FAIL_COUNT > 0 )); then
+  echo "[ERROR] 注入过程中有 $FAIL_COUNT 个命令失败，镜像可能不完整，构建中止。"
+  exit 1
+fi
 echo "== 完成 =="

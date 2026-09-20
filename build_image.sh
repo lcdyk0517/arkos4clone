@@ -327,6 +327,7 @@ check_clone_dependencies() {
     "replace_file/pymo/Scan_for_new_games.pymo"
     "replace_file/retrorun/retrorun"
     "replace_file/retrorun/retrorun32"
+    "mod_so/arkos_64/mame_libretro.so.xz"
     "replace_file/services/351mp.service"
     "Jason3_Scripte/Bluetooth-Manager/Bluetooth Manager.sh"
     "Jason3_Scripte/Bluetooth-Manager/patch.pak"
