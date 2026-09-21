@@ -1,0 +1,193 @@
+v5.4.0
+- Add a feature to abort failing batch install
+- Fix looping check for updates scenario
+v5.3.0
+- Build a new image viewer
+- Change input control management
+- Fix glibc compatibility issues on ArkOS
+v5.2.0
+- Add support for Retroid Pocket 5
+- Add support for OGU on ROCKNIX
+- Fix joypad for ROCKNIX on x55
+v5.1.1
+- Fix updater
+v5.1.0
+- Fix image-viewer-legacy for 640x480 devices supported by ArkOS
+v5.0.0
+- Add support for themes not starting with es-theme in Gallery
+- Add rocknix-joypad controls
+- Set resolution at first startup
+- Implement workarounds for image viewer
+- Fix default DIALOGRC
+- Various improvments
+v4.11.1
+- Fix singleadc with rocknix
+- Fix paramcontrols
+v4.11.0
+- Add 720x720 gallery
+- Add preview on ROCKNIX
+v4.10.1
+- Fix dialog output on ArkOS
+- Minor code improvments
+v4.10.0
+- Add support for ROCKNIX
+- Add support for RG-ARC
+- Various code improvments
+v4.9.0
+- Add comm fallback function
+- Fix printf SGR errors
+- Fix temp debug files copy
+v4.8.1
+- Fix preview display on JELOS & NostixOS
+- Fix broken pipe when sorting long arrays
+- Fix wget error message
+v4.8.0
+- Add support for NostixOS
+- Reset cached data from advanced settings
+- Fix app update
+v4.7.0
+- Add support for XU10
+- Add manual configuration to tm-joypad
+- Ensure execute access on weston
+- Updates to debug mode
+- Minor improvements
+v4.6.1
+- Fix output log on weston
+v4.6.0
+- Adjust UI dialog boxes to screen size
+v4.5.0
+- Add support for OGU and RBGB10 Max 3
+v4.4.2
+- Fix looping update
+v4.4.1
+- Fix lauching on weston devices
+v4.4.0
+- Add support for PowKiddy X55
+v4.3.0
+- Add support for Weston on JELOS
+- Add support for UnofficialOS
+- Minor improvements
+v4.2.2
+- Append wget log file for debug
+- Fix updater
+v4.2.1
+- Add an option in Theme Gallery mode for unsupported resolutions
+- Fix updater and logo asset installation
+- Updates to debug mode
+- Minor improvements and fixes
+v4.2.0
+- All screen sizes from EmulationStation-OGA-Theme-Gallery are now managed
+- Themes in Theme Gallery are pre-filtered by resolution
+- Fix temporary files removal on exit
+- Fix tm-joypad termination on exit
+- Minor fixes and code improvements
+v4.1.0
+- Add support for RG552
+- Add support for JELOS
+- Manually added collections are no longer overwritten
+- Add unnecessary splashscreen :p
+- Various code improvements
+v4.0.3
+- Fix internet checking
+- Fix controls management loading order
+- Fix wget_result dialog
+v4.0.2
+- Check internet connection with ping instead of wget
+- Fix and update management of prerelease
+- Add farfenkugell to GitHub repository mode
+v4.0.1
+- Fix plymouth file search for RetroOZ
+- Fix Advanced Settings not being saved
+- Stop using dmesg in case buffer is purged
+v4.0.0
+- Allow for installation of several themes at once (set Install menus as a checklist)
+- Add an option to install all themes at once
+- Add an option to update all themes at once
+- Remove 'es-theme' from theme's name when displayed
+- Check for internet connection before installing dependencies (helper)
+- Implement a beta mode (based on prerelease versions)
+- Debug mode can now be set through settings
+- Fix removed themes not being deleted from outdated cache
+- Various code improvements
+v3.3.1
+- Display screenshot in fullscreen
+- Fix loading of image-viewer
+v3.3.0
+- Add support for Gameforce Chi
+v3.2.0
+- Add support for RetroOZ
+- Add support for OGS and RBGB10 Max
+- Merge controls in one binary
+- Improvements to debug mode
+v3.1.1
+- Display version changes after app update
+- Fix SSL error while retrieving Gallery updates from GitHub
+v3.1.0
+- Add a debug mode
+- Change ThemeMaster.cfg version management
+- Fix cached outdated themes not being updated
+- Various message updates and menu changes
+v3.0.1
+- Fix Select key not being properly managed (now exit the app)
+- Dynamic installation path (fix path on RG351V when using SD2)
+- Fix list of available updates when switching mode
+- Fix first theme of gallery.db being skipped
+v3.0.0
+- Add "Theme Gallery" mode with screenshot preview
+- Add controls support for RGB10 devices (and a bespoke controls file for Anbernic devices)
+- Add a local cache for outdated themes
+- Implement proper wget error management
+- Change theme's installation log file extension from .log to .version
+- Moved all app generated files within a new "data" subfolder
+- Various UI and navigation improvements
+v2.2.1
+- Fix app update management
+- Fix app settings initialisation
+- Fix theme update function (problem installing several updates in a row)
+- Very basic wget error management to cope with GitHub limit exceeded (to be improved later on)
+v2.2.0
+- Externalise ThemeMaster post-install updater
+- Remove unnecessary call to LoadInstalledTheme in SelectCollectionMenu
+- Code cleaning (remove unnecessary command substitutions)
+v2.1.1
+- Fix duplicate message on app update menu
+- Fix ThemMaster.cfg initialisation when OS not recognised
+- Code cleaning
+v2.1.0
+- Change name from AnberThemes to ThemeMaster (last time, this one is future proof)
+- Fix OS identification (used to initialise environment settings)
+v2.0.1
+- Activate force quit from oga_controls (press Select + Start)
+- Fix Update Menu and SubMenu in order to stop rechecking for updates after a theme is installed
+v2.0.0
+- Change name from ArkThemes to AmberThemes following added support for TheRA
+- Update to the latest version of oga_controls from AnberPorts 1.3.6
+- Add support for Anbernic RG351V devices
+- Allow for local environment configuration (export themes_location, temp_ram_folder and app_location variables to anberthemes.cfg)
+- Add few dialog infoboxes to detail ongoing operations
+v1.2.4
+- Change downloading dialog from gauge to progressbox in order to work with chunked transfer encoding
+v1.2.3
+- Fix infoboxes not being centered
+v1.2.2
+- Fix "Install a theme" menu to manage an exception when all themes from a collection have already been installed
+v1.2.1
+- Fix loader to set user's color scheme at startup
+v1.2.0
+- Add a gauge display while downloading theme's package
+- Add a function to customise UI color scheme (based on files with .dialogrc extension within ArkThemes folder)
+v1.1.0
+- Fix selection within radiolist and checklist menus (update oga_controls from AnberPorts)
+- Initialize arkthemes.cfg with default configuration (allows to manually edit collections list)
+- Add CodyV59 themes collection
+- Add ArkThemes changelog
+- Menu reorganisation
+- Fix theme changelog display when list empty
+v1.0.0
+Fork evolutions
+- Automatic theme collection management from GitHub repositories starting with "es-theme" (default collection set to GitHub owner Jetup13).
+- Themes update management based on latest commit.
+- Access theme description from install menu and latest commit message from update menu.
+- ArkThemes version management.
+- Advanced functions and settings (view theme change log, startup options, user defined themes collection)
+- Various code optimisation

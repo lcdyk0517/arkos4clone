@@ -1,0 +1,11 @@
+#!/bin/sh
+
+for i in $(seq 0.5 0.1 1.5); do
+   OUTFILE="Set Gamma $i.sh" 
+   cat << EOF > "$OUTFILE"
+#!/bin/sh 
+cd "\$(dirname "\$0")"
+../gamma -s "$i"
+EOF
+chmod +x "$OUTFILE"
+done

@@ -115,13 +115,21 @@ do_mount() {
     exit 1
   fi
   
-  # exfat utils differ; use 'exfat' fstype and safe options if available
-  if grep -qw exfat /proc/filesystems 2>/dev/null; then
-    mount_if_not "$p3" "$ROMS_MNT" exfat "rw,uid=0,gid=0,umask=000"
-  else
-    # fallback: kernel exfat may appear as 'fuseblk' via fuse-exfat, still ok
-    mount_if_not "$p3" "$ROMS_MNT"
-  fi
+  # p3 按实际文件系统类型挂载 (构建时原厂为 NTFS，首启转换后为 exFAT)
+  roms_fstype=$(blkid -o value -s TYPE "$p3")
+  case "$roms_fstype" in
+    exfat)
+      mount_if_not "$p3" "$ROMS_MNT" exfat "rw,uid=0,gid=0,umask=000"
+      ;;
+    ntfs|ntfs3)
+      mount_if_not "$p3" "$ROMS_MNT" ntfs-3g "iocharset=utf8,umask=000" 2>/dev/null ||
+        mount_if_not "$p3" "$ROMS_MNT" ntfs "iocharset=utf8,umask=000" 2>/dev/null ||
+        mount_if_not "$p3" "$ROMS_MNT"
+      ;;
+    *)
+      mount_if_not "$p3" "$ROMS_MNT"
+      ;;
+  esac
 
   echo
   echo "All set."

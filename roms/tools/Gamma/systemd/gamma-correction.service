@@ -1,0 +1,11 @@
+[Unit]
+Description=Adjust Display Gamma
+
+[Service]
+ExecStart=/opt/system/Tools/Gamma/apply-system-gamma
+Type=oneshot
+RemainAfterExit=no
+
+[Install]
+WantedBy=multi-user.target
+

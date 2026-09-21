@@ -84,8 +84,8 @@ jobs:
 
       - name: Build image
         run: |
-          chmod +x build_image.sh grow_p2_plus.sh mount_arkos.sh clone_support.sh build_dtb_selector.sh uboot/flash_uboot.sh
-          mkdir -p bin/pm_libs mnt
+          chmod +x build_image.sh repart_image.sh mount_arkos.sh clone_support.sh build_dtb_selector.sh uboot/flash_uboot.sh
+          mkdir -p mnt
           sudo -E ./build_image.sh $(ls *.img) . --ci
 
       - name: Create Release

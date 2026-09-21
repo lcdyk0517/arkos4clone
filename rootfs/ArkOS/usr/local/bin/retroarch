@@ -1,0 +1,170 @@
+#!/usr/bin/env bash
+
+sudo chmod 666 /dev/tty0
+printf "\033c" > /dev/tty0
+dialog --clear
+
+emulator=$(basename "$0")
+
+# 检测 core 是否需要比系统更新的 C/C++ 运行库
+SYS_LIBSTDCXX=/lib/aarch64-linux-gnu/libstdc++.so.6
+GLIBC242_LOADER=/opt/glibc-2.42/64/lib/ld-linux-aarch64.so.1
+GLIBC242_LIB=/opt/glibc-2.42/64/lib
+
+RUNNER=()
+
+if [ -x "$GLIBC242_LOADER" ]; then
+  # 一次读取系统支持的 GLIBCXX/CXXABI 版本
+  if [ -f "$SYS_LIBSTDCXX" ]; then
+    SYS_CXX_VERSIONS="$(
+      grep -aoE 'GLIBCXX_[0-9]+\.[0-9]+(\.[0-9]+)?|CXXABI_1\.[0-9]+(\.[0-9]+)?' \
+        "$SYS_LIBSTDCXX" 2>/dev/null
+    )"
+
+    SYS_GLIBCXX="$(
+      printf '%s\n' "$SYS_CXX_VERSIONS" |
+      grep '^GLIBCXX_' |
+      sed 's/GLIBCXX_//' |
+      sort -V |
+      tail -1
+    )"
+
+    SYS_CXXABI="$(
+      printf '%s\n' "$SYS_CXX_VERSIONS" |
+      grep '^CXXABI_' |
+      sed 's/CXXABI_//' |
+      sort -V |
+      tail -1
+    )"
+  else
+    SYS_GLIBCXX=""
+    SYS_CXXABI=""
+  fi
+
+  for a in "$@"; do
+    case "$a" in
+      *.so|*.so.*)
+        [ -f "$a" ] || continue
+
+        hit=""
+
+        # 检查 GLIBC 版本
+        need_glibc="$(
+          grep -aoE 'GLIBC_2\.[0-9]+' "$a" 2>/dev/null |
+          sed 's/GLIBC_//' |
+          sort -V |
+          tail -1
+        )"
+
+        if [ -n "$need_glibc" ]; then
+          if [ "$(printf '%s\n' '2.30' "$need_glibc" | sort -V | tail -1)" != "2.30" ]; then
+            hit=1
+          fi
+        fi
+
+        # 检查 GLIBCXX 版本
+        if [ -z "$hit" ] && [ -n "$SYS_GLIBCXX" ]; then
+          need_glibcxx="$(
+            grep -aoE 'GLIBCXX_[0-9]+\.[0-9]+(\.[0-9]+)?' "$a" 2>/dev/null |
+            sed 's/GLIBCXX_//' |
+            sort -V |
+            tail -1
+          )"
+
+          if [ -n "$need_glibcxx" ]; then
+            if [ "$(printf '%s\n' "$SYS_GLIBCXX" "$need_glibcxx" | sort -V | tail -1)" != "$SYS_GLIBCXX" ]; then
+              hit=1
+            fi
+          fi
+        fi
+
+        # 检查 CXXABI 版本
+        if [ -z "$hit" ] && [ -n "$SYS_CXXABI" ]; then
+          need_cxxabi="$(
+            grep -aoE 'CXXABI_1\.[0-9]+(\.[0-9]+)?' "$a" 2>/dev/null |
+            sed 's/CXXABI_//' |
+            sort -V |
+            tail -1
+          )"
+
+          if [ -n "$need_cxxabi" ]; then
+            if [ "$(printf '%s\n' "$SYS_CXXABI" "$need_cxxabi" | sort -V | tail -1)" != "$SYS_CXXABI" ]; then
+              hit=1
+            fi
+          fi
+        fi
+
+        # 如果 core 需要更新的 ABI，则使用 glibc 2.42
+        if [ -n "$hit" ]; then
+          RUNNER=(
+            "$GLIBC242_LOADER"
+            --library-path
+            "$GLIBC242_LIB:/usr/local/lib/aarch64-linux-gnu:/lib/aarch64-linux-gnu:/usr/lib/aarch64-linux-gnu"
+          )
+          break
+        fi
+        ;;
+    esac
+  done
+fi
+
+. /usr/local/bin/buttonmon.sh
+
+Test_Button_X
+if [ "$?" -eq "10" ]; then
+  core="$(echo "$@" | grep -o -P '(?<=cores\/).*(?=_libretro.so)')"
+  game="$(echo "$@" | grep -o -P '(?<=_libretro.so ).*(?=)')"
+  nonetplay=( "arduous" "atari800" "bluemsx" "coolcv" "dosbox" \
+              "duckstation" "easyrpg" "ecwolf" \
+              "fake08" "flycast" "flycast32_rumble" "flycast_rumble" \
+              "flycast_xtreme" "freechaf" "freeintv" "fuse" "gambatte" \
+              "gw" "hatari" "mgba" "mgba_rumble" "mupen64plus" \
+              "mupen64plus_next" "nekop2" "o2em" "onscripter" \
+              "parallel_n64" "pcsx_rearmed" "pcsx_rearmed_rumble" \
+              "pokemini" "ppsspp" "prosystem" "puae" "puae2021" \
+              "px68k" "reicast_xtreme" "same_cdi" "scummvm" "swanstation" \
+              "theodore" "uae4arm" "uzem" "vbam" "vba_next" "vecx" \
+              "vemulator" "vice_x128" "vice_x64" "vice_xplus4" \
+              "vice_xvic" "wasm4" "x1" )
+  if [ -n "$core" ] && [[ ${nonetplay[@]} =~ $core ]]; then
+    msgbox "The $core emulation core does not support netplay."
+    exit 0
+  fi
+  netplay.sh "$core" "$game" "$emulator"
+  results=$?
+  if [ "$results" -eq "250" ]; then
+    "${RUNNER[@]}" /opt/retroarch/bin/${emulator} -c /home/ark/.config/${emulator}/retroarch.cfg -H --nick=ArkOS_Host_"${core}"_Session_"$(cat /sys/class/net/wlan0/address | awk -F':' '{ print $4$5$6}')" "$@"
+  elif [ "$results" -eq "138" ]; then
+    "${RUNNER[@]}" /opt/retroarch/bin/${emulator} -c /home/ark/.config/${emulator}/retroarch.cfg --connect=192.168.1.1 --nick=ArkOS_Client_"${core}"_Session_"$(cat /sys/class/net/wlan0/address | awk -F':' '{ print $4$5$6}')" "$@"
+  elif [ "$results" -eq "139" ]; then
+    "${RUNNER[@]}" /opt/retroarch/bin/${emulator} -c /home/ark/.config/${emulator}/retroarch.cfg --connect=192.168.1.1 --nick=ArkOS_Spectator_"${core}"_Session_"$(cat /sys/class/net/wlan0/address | awk -F':' '{ print $4$5$6}')" --appendconfig=/home/ark/.config/${emulator}/retroarch.cfg.spectate "$@"
+  fi
+  
+  reset
+  sudo setfont /usr/share/consolefonts/Lat7-Terminus20x10.psf.gz
+
+  if [[ "$(iw dev wlan0 info | grep ssid | cut -c 7-30)" == *"ArkOS_"* ]] || [ -z "$(iw dev wlan0 info | grep ssid | cut -c 7-30)" ]; then
+    arkos_ap_mode.sh Disable
+  fi
+  if [ "$results" -ne "230" ]; then
+    exit 0
+  fi
+fi
+
+if [ -f "/boot/rk3566.dtb" ] || [ -f "/boot/rk3566-OC.dtb" ]; then
+  /usr/local/bin/controller_setup.sh
+
+  if [ "$(ls /dev/input/ | wc -l)" -gt "7" ]; then
+    testJoy=$(timeout 1 sdljoytest | grep Found)
+    testJoy=$(echo "$testJoy" | cut -d " " -f6)
+    if [ "$testJoy" -gt "1" ]; then
+      "${RUNNER[@]}" /opt/retroarch/bin/${emulator} -c /home/ark/.config/${emulator}/retroarch.cfg --appendconfig=/home/ark/.config/${emulator}/retroarch.cfg.ext "$@"
+    else
+      "${RUNNER[@]}" /opt/retroarch/bin/${emulator} -c /home/ark/.config/${emulator}/retroarch.cfg "$@"
+    fi
+  else
+    "${RUNNER[@]}" /opt/retroarch/bin/${emulator} -c /home/ark/.config/${emulator}/retroarch.cfg "$@"
+  fi
+else
+  "${RUNNER[@]}" /opt/retroarch/bin/${emulator} -c /home/ark/.config/${emulator}/retroarch.cfg "$@"
+fi

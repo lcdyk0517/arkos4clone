@@ -27,7 +27,7 @@ jobs:
 
       - name: Prepare firstboot.sh
         run: |
-          cp sh/clone.sh firstboot.sh
+          cp boot/dArkOS/clone.sh firstboot.sh
 
       - name: Create Release
         env:

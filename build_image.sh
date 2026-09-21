@@ -8,7 +8,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # 时间戳格式 (与 clone_support.sh 一致)
-BUILD_DATE="$(TZ=Asia/Shanghai date +%m%d%Y)"
+BUILD_DATE="$(TZ=Asia/Shanghai date +%Y%m%d)"
 OUTPUT_NAME="ArkOS4Clone-${BUILD_DATE}"
 
 # 颜色输出
@@ -44,7 +44,7 @@ check_image() {
 }
 
 check_tools() {
-  local tools=(losetup mount umount parted rsync dd xz)
+  local tools=(losetup mount umount parted rsync dd xz mkfs.exfat)
   for t in "${tools[@]}"; do
     if ! command -v "$t" >/dev/null 2>&1; then
       log_error "缺少工具: $t"
@@ -67,37 +67,52 @@ check_uboot_files() {
 }
 
 check_jdk_file() {
-  local jdk_file="zulu11.48.21-ca-jdk11.0.11-linux_aarch64.tar.gz"
+  local jdk_dir="$SCRIPT_DIR/roms/j2me/jdk"
+  local jdk_file="$SCRIPT_DIR/zulu11.48.21-ca-jdk11.0.11-linux_aarch64.tar.gz"
   local jdk_url="https://cdn.azul.com/zulu-embedded/bin/zulu11.48.21-ca-jdk11.0.11-linux_aarch64.tar.gz"
-  
-  if [[ -f "$SCRIPT_DIR/$jdk_file" ]]; then
-    log_ok "JDK 文件已存在: $jdk_file"
+
+  if [[ -d "$jdk_dir" ]]; then
+    log_ok "JDK 已存在: roms/j2me/jdk"
     return
   fi
-  
-  log_info "下载 JDK 文件..."
-  # 以原用户身份下载（避免权限问题）
-  if [[ -n "${SUDO_USER:-}" ]]; then
-    if sudo -u "$SUDO_USER" wget $WGET_OPTS -O "$SCRIPT_DIR/$jdk_file" "$jdk_url"; then
-      log_ok "JDK 下载完成: $jdk_file"
+
+  if [[ ! -f "$jdk_file" ]]; then
+    log_info "下载 JDK 文件..."
+    # 以原用户身份下载（避免权限问题）
+    if [[ -n "${SUDO_USER:-}" ]]; then
+      if sudo -u "$SUDO_USER" wget $WGET_OPTS -O "$jdk_file" "$jdk_url"; then
+        log_ok "JDK 下载完成"
+      else
+        log_error "JDK 下载失败"
+        sudo -u "$SUDO_USER" rm -f "$jdk_file" 2>/dev/null || true
+        exit 1
+      fi
     else
-      log_error "JDK 下载失败"
-      sudo -u "$SUDO_USER" rm -f "$SCRIPT_DIR/$jdk_file" 2>/dev/null || true
-      exit 1
+      if wget $WGET_OPTS -O "$jdk_file" "$jdk_url"; then
+        log_ok "JDK 下载完成"
+      else
+        log_error "JDK 下载失败"
+        rm -f "$jdk_file" 2>/dev/null || true
+        exit 1
+      fi
     fi
   else
-    if wget $WGET_OPTS -O "$SCRIPT_DIR/$jdk_file" "$jdk_url"; then
-      log_ok "JDK 下载完成: $jdk_file"
-    else
-      log_error "JDK 下载失败"
-      rm -f "$SCRIPT_DIR/$jdk_file" 2>/dev/null || true
-      exit 1
-    fi
+    log_ok "使用本地 JDK 缓存: $(basename "$jdk_file")"
   fi
+
+  log_info "解压 JDK 到 roms/j2me/jdk..."
+  mkdir -p "$SCRIPT_DIR/roms/j2me"
+  tar -xf "$jdk_file" -C "$SCRIPT_DIR/roms/j2me"
+  mv "$SCRIPT_DIR/roms/j2me/zulu11.48.21-ca-jdk11.0.11-linux_aarch64" "$jdk_dir"
+  rm -f "$jdk_file"
+  if [[ -n "${SUDO_USER:-}" ]]; then
+    chown -R "$SUDO_USER" "$SCRIPT_DIR/roms/j2me"
+  fi
+  log_ok "JDK 准备完成: roms/j2me/jdk"
 }
 
 check_pm_libs() {
-  local pm_libs_dir="$SCRIPT_DIR/bin/pm_libs"
+  local pm_libs_dir="$SCRIPT_DIR/roms/tools/PortMaster/libs"
   local runtimes_url="https://github.com/PortsMaster/PortMaster-New/releases/download/2026-09-02_1031/runtimes.all.aarch64.zip"
 
   # 需要的文件列表
@@ -150,16 +165,6 @@ check_pm_libs() {
     "zulu8.86.0.25-ca-jdk8.0.452-linux.squashfs"
   )
 
-  # 检查目录是否存在
-  if [[ ! -d "$pm_libs_dir" ]]; then
-    mkdir -p "$pm_libs_dir"
-  fi
-
-  # 目录可能由 root 创建，确保以原用户身份下载/解压时有写权限
-  if [[ -n "${SUDO_USER:-}" ]]; then
-    chown -R "$SUDO_USER" "$pm_libs_dir"
-  fi
-
   # 检查缺少的文件
   local missing=0
   for f in "${required_files[@]}"; do
@@ -170,11 +175,12 @@ check_pm_libs() {
   done
 
   if [[ $missing -eq 0 ]]; then
-    log_ok "pm_libs 文件完整"
+    log_ok "pm_libs 文件完整: roms/tools/PortMaster/libs"
     return
   fi
 
   log_info "下载 PortMaster runtimes (约 1.6GB)..."
+  mkdir -p "$pm_libs_dir"
   local zip_file="$pm_libs_dir/runtimes.zip"
 
   # 下载
@@ -204,7 +210,10 @@ check_pm_libs() {
     rm -f "$zip_file"
   fi
 
-  log_ok "pm_libs 文件准备完成"
+  if [[ -n "${SUDO_USER:-}" ]]; then
+    chown -R "$SUDO_USER" "$pm_libs_dir"
+  fi
+  log_ok "pm_libs 文件准备完成: roms/tools/PortMaster/libs"
 }
 
 check_work_dir() {
@@ -223,41 +232,52 @@ check_work_dir() {
 
 check_portmaster() {
   local pm_dir="$SCRIPT_DIR/PortMaster"
+  local pm_dst="$SCRIPT_DIR/roms/tools/PortMaster"
   local pm_url="https://github.com/PortsMaster/PortMaster-GUI/releases/download/2026.09.13-0343/PortMaster.zip"
 
-  if [[ -d "$pm_dir" && -f "$pm_dir/PortMaster.sh" ]]; then
-    log_ok "PortMaster 目录已存在"
+  if [[ -d "$pm_dst" && -f "$pm_dst/PortMaster.sh" ]]; then
+    log_ok "PortMaster 已存在: roms/tools/PortMaster"
     return
   fi
 
-  log_info "下载 PortMaster..."
-  local zip_file="$SCRIPT_DIR/PortMaster.zip"
+  if [[ ! -d "$pm_dir" || ! -f "$pm_dir/PortMaster.sh" ]]; then
+    log_info "下载 PortMaster..."
+    local zip_file="$SCRIPT_DIR/PortMaster.zip"
 
-  if [[ -n "${SUDO_USER:-}" ]]; then
-    if sudo -u "$SUDO_USER" wget $WGET_OPTS -O "$zip_file" "$pm_url"; then
-      log_ok "PortMaster 下载完成"
+    if [[ -n "${SUDO_USER:-}" ]]; then
+      if sudo -u "$SUDO_USER" wget $WGET_OPTS -O "$zip_file" "$pm_url"; then
+        log_ok "PortMaster 下载完成"
+      else
+        log_error "PortMaster 下载失败"
+        sudo -u "$SUDO_USER" rm -f "$zip_file" 2>/dev/null || true
+        exit 1
+      fi
+      log_info "解压 PortMaster..."
+      sudo -u "$SUDO_USER" unzip -q -o "$zip_file" -d "$SCRIPT_DIR"
+      sudo -u "$SUDO_USER" rm -f "$zip_file"
     else
-      log_error "PortMaster 下载失败"
-      sudo -u "$SUDO_USER" rm -f "$zip_file" 2>/dev/null || true
-      exit 1
+      if wget $WGET_OPTS -O "$zip_file" "$pm_url"; then
+        log_ok "PortMaster 下载完成"
+      else
+        log_error "PortMaster 下载失败"
+        rm -f "$zip_file" 2>/dev/null || true
+        exit 1
+      fi
+      log_info "解压 PortMaster..."
+      unzip -q -o "$zip_file" -d "$SCRIPT_DIR"
+      rm -f "$zip_file"
     fi
-    log_info "解压 PortMaster..."
-    sudo -u "$SUDO_USER" unzip -q -o "$zip_file" -d "$SCRIPT_DIR"
-    sudo -u "$SUDO_USER" rm -f "$zip_file"
   else
-    if wget $WGET_OPTS -O "$zip_file" "$pm_url"; then
-      log_ok "PortMaster 下载完成"
-    else
-      log_error "PortMaster 下载失败"
-      rm -f "$zip_file" 2>/dev/null || true
-      exit 1
-    fi
-    log_info "解压 PortMaster..."
-    unzip -q -o "$zip_file" -d "$SCRIPT_DIR"
-    rm -f "$zip_file"
+    log_ok "使用本地 PortMaster 缓存: ./PortMaster"
   fi
 
-  log_ok "PortMaster 准备完成"
+  mkdir -p "$pm_dst"
+  cp -rf "$pm_dir/." "$pm_dst/"
+  cp -f "$pm_dir/PortMaster.sh" "$SCRIPT_DIR/roms/tools/PortMaster.sh"
+  if [[ -n "${SUDO_USER:-}" ]]; then
+    chown -R "$SUDO_USER" "$SCRIPT_DIR/roms/tools"
+  fi
+  log_ok "PortMaster 准备完成: roms/tools/PortMaster"
 }
 
 check_clone_dependencies() {
@@ -267,73 +287,20 @@ check_clone_dependencies() {
 
   # 检查必需目录
   local dirs=(
-    "consoles"
-    "bin"
-    "bin/aic8800DC"
-    "bin/json-c3"
-    "mod_so/32"
-    "mod_so/64"
-    "replace_file"
-    "replace_file/drastic"
-    "replace_file/drastic-kk"
-    "replace_file/onscripter"
-    "replace_file/retroarch"
-    "replace_file/ppsspp"
-    "replace_file/flycastsa"
-    "replace_file/freej2mesa"
-    "replace_file/rufflesa"
-    "replace_file/gametank"
-    "replace_file/pymo"
-    "replace_file/resources"
-    "replace_file/retrorun"
-    "replace_file/scummvm"
-    "replace_file/services"
-    "replace_file/yabasanshiro"
-    "replace_file/tools"
-    "replace_file/351Files"
-    "sh"
-    "Jason3_Scripte"
-    "Jason3_Scripte/Bluetooth-Manager"
-    "Jason3_Scripte/GhostLoader"
-    "Jason3_Scripte/InfoSystem"
-    "Jason3_Scripte/wifi-toggle"
+    "boot/dArkOS"
+    "boot/ArkOS"
+    "rootfs/dArkOS"
+    "rootfs/ArkOS"
   )
-
-  for d in "${dirs[@]}"; do
-    if [[ ! -d "$SCRIPT_DIR/$d" ]]; then
-      missing=1
-      missing_list="$missing_list\n  缺少目录: $d"
-    fi
-  done
 
   # 检查必需文件
   local files=(
-    "dtb_selector_macos"
-    "dtb_selector_win32.exe"
-    "sh/clone.sh"
-    "sh/expandtoexfat.sh"
-    "sh/darkos-expandtoexfat.sh"
-    "bin/mcu_led"
-    "bin/ws2812"
-    "bin/sdljoymap"
-    "bin/sdljoytest"
-    "bin/console_detect"
-    "replace_file/351Files/351Files"
-    "replace_file/es_systems.cfg"
-    "replace_file/es_systems.cfg.dual"
-    "replace_file/emulationstation"
-    "replace_file/pymo/cpymo"
-    "replace_file/pymo/pymo.sh"
-    "replace_file/pymo/Scan_for_new_games.pymo"
-    "replace_file/retrorun/retrorun"
-    "replace_file/retrorun/retrorun32"
-    "mod_so/arkos_64/mame_libretro.so.xz"
-    "replace_file/services/351mp.service"
-    "Jason3_Scripte/Bluetooth-Manager/Bluetooth Manager.sh"
-    "Jason3_Scripte/Bluetooth-Manager/patch.pak"
-    "Jason3_Scripte/GhostLoader/GhostLoader.sh"
-    "Jason3_Scripte/InfoSystem/InfoSystem.sh"
-    "Jason3_Scripte/wifi-toggle/Wifi-toggle.sh"
+    "dtb_selector_linux32"
+    "boot/dArkOS/clone.sh"
+    "boot/dArkOS/expandtoexfat.sh"
+    "boot/ArkOS/expandtoexfat.sh"
+    "rootfs/dArkOS/opt/retrorun/retrorun"
+    "rootfs/ArkOS/home/ark/.config/retroarch/cores/mame_libretro.so.xz"
   )
 
   for f in "${files[@]}"; do
@@ -387,7 +354,7 @@ copy_image() {
 step_grow() {
   local img="$1"
   log_info "步骤 2/7: 扩容镜像分区..."
-  if "$SCRIPT_DIR/grow_p2_plus.sh" "$img"; then
+  if "$SCRIPT_DIR/repart_image.sh" "$img"; then
     log_ok "分区扩容完成"
   else
     log_error "分区扩容失败"
@@ -500,7 +467,7 @@ ArkOS4Clone 一键构建脚本
 执行步骤:
   0. 编译 dtb_selector 工具 (build_dtb_selector.sh)
   1. 复制源镜像到工作目录
-  2. 扩容镜像分区 (grow_p2_plus.sh)
+  2. 分区调整 (repart_image.sh): p2 扩到 11G, p3 按 roms/ 内容扩到刚好
   3. 写入 U-Boot (flash_uboot.sh)
   4. 挂载镜像 (mount_arkos.sh mount)
   5. 注入定制内容 (clone_support.sh)

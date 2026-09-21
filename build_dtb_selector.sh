@@ -20,28 +20,28 @@ PLATFORMS=(
 )
 
 platform_win32() {
-  EXE="${TARGET}_win32.exe"
+  EXE="boot/dArkOS/${TARGET}_win32.exe"
   echo "Building: Windows 32-bit"
   GOOS=windows GOARCH=386 $GO build "$FLAGS" -o "$EXE" "$SRC"
   echo "Generated: $EXE"
 }
 
 platform_win64() {
-  EXE="${TARGET}_win64.exe"
+  EXE="boot/dArkOS/${TARGET}_win64.exe"
   echo "Building: Windows 64-bit"
   GOOS=windows GOARCH=amd64 $GO build "$FLAGS" -o "$EXE" "$SRC"
   echo "Generated: $EXE"
 }
 
 platform_macos_intel() {
-  EXE="${TARGET}_macos_intel"
+  EXE="boot/dArkOS/${TARGET}_macos_intel"
   echo "Building: macOS Intel"
   GOOS=darwin GOARCH=amd64 $GO build "$FLAGS" -o "$EXE" "$SRC"
   echo "Generated: $EXE"
 }
 
 platform_macos_apple_silicon() {
-  EXE="${TARGET}_macos_apple"
+  EXE="boot/dArkOS/${TARGET}_macos_apple"
   echo "Building: macOS Apple Silicon"
   GOOS=darwin GOARCH=arm64 $GO build "$FLAGS" -o "$EXE" "$SRC"
   echo "Generated: $EXE"
@@ -55,7 +55,7 @@ platform_macos() {
     $GO install github.com/konoui/lipo@latest
   fi
 
-  EXE="${TARGET}_macos"
+  EXE="boot/dArkOS/${TARGET}_macos"
   echo "Building: macOS Universal"
 
   GOOS=darwin GOARCH=amd64 $GO build "$FLAGS" -o "${EXE}_amd64" "$SRC"
@@ -68,14 +68,14 @@ platform_macos() {
 }
 
 platform_linux32() {
-  EXE="${TARGET}_linux32"
+  EXE="boot/dArkOS/${TARGET}_linux32"
   echo "Building: Linux 32-Bit"
   GOOS=linux GOARCH=386 $GO build "$FLAGS" -o "$EXE" "$SRC"
   echo "Generated: $EXE"
 }
 
 platform_linux64() {
-  EXE="${TARGET}_linux64"
+  EXE="boot/dArkOS/${TARGET}_linux64"
   echo "Building: Linux 64-Bit"
   GOOS=linux GOARCH=amd64 $GO build "$FLAGS" -o "$EXE" "$SRC"
   echo "Generated: $EXE"
@@ -83,13 +83,13 @@ platform_linux64() {
 
 if [[ "$1" == "--clean" ]]
 then
-  rm -rf "${TARGET}_win32.exe"   \
-         "${TARGET}_win64.exe"   \
-         "${TARGET}_macos_intel" \
-         "${TARGET}_macos_apple" \
-         "${TARGET}_macos" \
-         "${TARGET}_linux32" \
-         "${TARGET}_linux64"
+  rm -rf "boot/dArkOS/${TARGET}_win32.exe"   \
+         "boot/dArkOS/${TARGET}_win64.exe"   \
+         "boot/dArkOS/${TARGET}_macos_intel" \
+         "boot/dArkOS/${TARGET}_macos_apple" \
+         "boot/dArkOS/${TARGET}_macos" \
+         "boot/dArkOS/${TARGET}_linux32" \
+         "boot/dArkOS/${TARGET}_linux64"
   exit
 fi
 
