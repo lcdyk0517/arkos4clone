@@ -209,6 +209,7 @@ BACKUP_ITEMS=(
   "/roms2/psp/ppsspp/PSP/SYSTEM"
   "/home/ark/.config/retroarch/retroarch.cfg"
   "/home/ark/.config/retroarch32/retroarch.cfg"
+  "/home/ark/.emulationstation/es_settings.cfg"
 )
 
 BACKUP_LIST=()

@@ -220,6 +220,13 @@ apply_input() {
   done
 }
 
+apply_es_setting() {
+  msg "apply_es_setting: CONSOLE_FILE=$CONSOLE_FILE"
+
+  # 复制 RA ES 的默认输入 
+  cp_if_exists "$QUIRKS_DIR/es_settings.cfg" "/home/ark/.emulationstation/es_settings.cfg" "yes" || true
+}
+
 apply_sdl_rotation() {
   local angle="$1"
   local sdl32="/usr/lib/arm-linux-gnueabihf/$SDL2_VERSION"
@@ -281,6 +288,8 @@ apply_all_quirks() {
     ls -la "$QUIRKS_DIR" 2>&1 | tee -a "$LOG_FILE" || true
     # ES RA 文件替换
     apply_input
+    # ES 配置重置
+    apply_es_setting
     # PPSSPP 快捷键映射
     apply_joy_conf
     # RA OGAGE 快捷键映射
