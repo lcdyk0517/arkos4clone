@@ -295,12 +295,12 @@ check_clone_dependencies() {
 
   # 检查必需文件
   local files=(
-    "dtb_selector_linux32"
+    "boot/dArkOS/dtb_selector_linux32"
+    "boot/dArkOS/dtb_selector_macos"
+    "boot/dArkOS/dtb_selector_win32.exe"
     "boot/dArkOS/clone.sh"
     "boot/dArkOS/expandtoexfat.sh"
     "boot/ArkOS/expandtoexfat.sh"
-    "rootfs/dArkOS/opt/retrorun/retrorun"
-    "rootfs/ArkOS/home/ark/.config/retroarch/cores/mame_libretro.so.xz"
   )
 
   for f in "${files[@]}"; do
@@ -320,7 +320,7 @@ check_clone_dependencies() {
 }
 
 step_build_dtb_selector() {
-  log_info "步骤 0: 编译 dtb_selector 工具..."
+  log_info "步骤 0/8: 编译 dtb_selector 工具..."
   if [[ -f "$SCRIPT_DIR/build_dtb_selector.sh" ]]; then
     cd "$SCRIPT_DIR"
     # 以原用户身份执行编译（保留 PATH 环境变量）
@@ -346,14 +346,14 @@ step_build_dtb_selector() {
 copy_image() {
   local src="$1"
   local dst="$2"
-  log_info "复制源镜像到工作目录..."
+  log_info "步骤 1/8: 复制源镜像到工作目录..."
   cp "$src" "$dst"
   log_ok "已创建工作副本: $dst"
 }
 
 step_grow() {
   local img="$1"
-  log_info "步骤 2/7: 扩容镜像分区..."
+  log_info "步骤 2/8: 扩容镜像分区..."
   if "$SCRIPT_DIR/repart_image.sh" "$img"; then
     log_ok "分区扩容完成"
   else
@@ -364,7 +364,7 @@ step_grow() {
 
 step_flash_uboot() {
   local img="$1"
-  log_info "步骤 3/7: 写入 U-Boot..."
+  log_info "步骤 3/8: 写入 U-Boot..."
   # 需要在 uboot 目录下执行，并使用绝对路径
   local abs_img
   if [[ "$img" = /* ]]; then
@@ -385,7 +385,7 @@ step_flash_uboot() {
 
 step_mount() {
   local img="$1"
-  log_info "步骤 4/7: 挂载镜像..."
+  log_info "步骤 4/8: 挂载镜像..."
   if "$SCRIPT_DIR/mount_arkos.sh" mount "$img"; then
     log_ok "镜像挂载完成"
   else
@@ -395,7 +395,7 @@ step_mount() {
 }
 
 step_inject() {
-  log_info "步骤 5/7: 注入定制内容..."
+  log_info "步骤 5/8: 注入定制内容..."
   if "$SCRIPT_DIR/clone_support.sh"; then
     log_ok "内容注入完成"
   else
@@ -407,7 +407,12 @@ step_inject() {
 }
 
 step_unmount() {
-  log_info "步骤 6/7: 卸载镜像..."
+  log_info "步骤 6/8: 卸载镜像..."
+  # 卸载前在线 trim: 自由块归零/打洞，xz 压缩提速且体积不涨
+  if mountpoint -q "${ARKOS_MNT}/root" && command -v fstrim >/dev/null 2>&1; then
+    log_info "对 root 分区执行 fstrim (空闲块归零)..."
+    fstrim -v "${ARKOS_MNT}/root" || log_warn "fstrim 失败 (设备不支持 discard)，跳过"
+  fi
   if "$SCRIPT_DIR/mount_arkos.sh" unmount; then
     log_ok "镜像卸载完成"
   else
@@ -416,10 +421,72 @@ step_unmount() {
   fi
 }
 
+step_verify_fs() {
+  log_info "步骤 7/8: 校验 p2 文件系统 ..."
+  local img="$1"
+  local loop="" rc=0 fstype=""
+
+  # 先声明 cleanup，再挂 trap；用 ${loop:-} 兼容 set -u
+  _verify_fs_cleanup() {
+    if [[ -n "${loop:-}" ]]; then
+      losetup -d "$loop" 2>/dev/null || true
+    fi
+    return 0
+  }
+  trap _verify_fs_cleanup RETURN
+
+  # 关键：先判断是否拿到 loop，再进入 trap 保护范围
+  if ! loop=$(losetup --find -P --show "$img"); then
+    loop=""
+    log_error "无法为 $img 创建 loop 设备"
+    return 1
+  fi
+
+  fstype=$(blkid -o value -s TYPE "${loop}p2" 2>/dev/null || true)
+
+  case "$fstype" in
+    ext2|ext3|ext4)
+      log_info "校验 p2 文件系统 (e2fsck, $fstype)..."
+      # -e 让 script 透传 e2fsck 的退出码；-y 自动应答修复
+      script -e -q -c "e2fsck -fvy '${loop}p2'" /dev/null
+      rc=$?
+      if (( rc > 2 )); then
+        log_error "p2 $fstype 文件系统存在未修复错误 (e2fsck rc=$rc)"
+        return 1
+      fi
+      ;;
+
+    btrfs)
+      log_info "校验 p2 文件系统 (btrfs check, $fstype)..."
+      if btrfs check --readonly "${loop}p2"; then
+        rc=0
+      else
+        rc=$?
+      fi
+      if (( rc != 0 )); then
+        log_error "p2 btrfs 文件系统存在错误 (btrfs check rc=$rc)"
+        return 1
+      fi
+      ;;
+
+    "")
+      log_error "无法识别 ${loop}p2 的文件系统类型 (blkid 返回空)"
+      return 1
+      ;;
+
+    *)
+      log_error "不支持的文件系统类型: $fstype"
+      return 1
+      ;;
+  esac
+
+  log_ok "p2 文件系统校验通过 ($fstype, rc=$rc)"
+}
+
 step_compress() {
   local img="$1"
   local xz_file="${img}.xz"
-  log_info "步骤 7/7: 压缩镜像 (xz -5)..."
+  log_info "步骤 8/8: 压缩镜像 (xz -5)..."
   
   # 压缩等级 5，多线程
   if xz -5 -T0 -v "$img"; then
@@ -472,8 +539,8 @@ ArkOS4Clone 一键构建脚本
   4. 挂载镜像 (mount_arkos.sh mount)
   5. 注入定制内容 (clone_support.sh)
   6. 卸载镜像 (mount_arkos.sh unmount)
-  7. 压缩为 xz 格式 (等级 5)
-  8. 移动输出文件到脚本目录
+  7. 校验 p2 文件系统 
+  8. 压缩镜像并移动输出文件到脚本目录
 
 输出:
   <脚本目录>/ArkOS4Clone-MMDDYYYY.img.xz
@@ -572,20 +639,25 @@ main() {
   # 步骤 1: 复制镜像
   echo ""
   copy_image "$source_image" "$work_image"
-
-  # 执行构建流程
+  # 步骤 2: 分区调整
   echo ""
   step_grow "$work_image"
+  # 步骤 3: 写入uboot
   echo ""
   step_flash_uboot "$work_image"
+  # 步骤 4: 挂载镜像
   echo ""
   step_mount "$work_image"
+  # 步骤 5: 注入定制内容
   echo ""
   step_inject
+  # 步骤 6: 卸载镜像
   echo ""
   step_unmount
-
-  # 压缩并移动
+  # 步骤 7: 校验 p2 文件系统 
+  echo ""
+  step_verify_fs "$work_image"
+  # 步骤 8: 压缩并移动
   echo ""
   step_compress "$work_image"
   move_to_script_dir "${work_image}.xz"

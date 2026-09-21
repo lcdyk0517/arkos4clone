@@ -65,12 +65,15 @@ mkdir -p "$PAYLOAD_BOOT" "$PAYLOAD_ROOT"
 echo "== 解压大型核心 (.so.xz -> .so，已解压则跳过) =="
 while IFS= read -r -d '' core_xz; do
   core_so="${core_xz%.xz}"
+  # 压缩包是 git 交付物，保留在原地不删；OTA payload 由 rsync --exclude 排除
   if [[ ! -f "$core_so" ]]; then
-    echo "解压 $core_xz (解压后删除压缩包)"
-    if ! xz -d -T0 "$core_xz"; then
+    echo "解压 $core_xz"
+    if ! xz -dk -T0 "$core_xz"; then
       echo "[ERROR] 解压失败: $core_xz"
       exit 1
     fi
+  else
+    echo "已解压过，跳过 $core_xz"
   fi
 done < <(find rootfs -name '*.so.xz' -print0)
 
@@ -93,7 +96,7 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   # OTA 不升级固件与 PortMaster:
   #  - usr/lib/firmware 固件与系统镜像强绑定，OTA 不动
   #  - opt/system/Tools 在设备上是 /roms/tools 的 bind 挂载点 (PortMaster 所在)，OTA 不写入
-  rsync -a --checksum --exclude=usr/lib/firmware --exclude=opt/system/Tools rootfs/dArkOS/ "$PAYLOAD_ROOT/"
+  rsync -a --checksum --exclude=usr/lib/firmware --exclude=opt/system/Tools --exclude='/home/ark/.config/retroarch*/cores/*.so.xz' rootfs/dArkOS/ "$PAYLOAD_ROOT/"
 
 
 else
@@ -113,8 +116,8 @@ else
 
   echo "== 构建 payload/root (sync rootfs/dArkOS + rootfs/ArkOS) =="
   # OTA 不升级固件与 PortMaster (Tools 为 /roms/tools 的 bind 挂载点，见上)
-  rsync -a --checksum --exclude=usr/lib/firmware --exclude=opt/system/Tools rootfs/dArkOS/ "$PAYLOAD_ROOT/"
-  rsync -a --checksum --exclude=usr/lib/firmware --exclude=opt/system/Tools rootfs/ArkOS/ "$PAYLOAD_ROOT/"
+  rsync -a --checksum --exclude=usr/lib/firmware --exclude=opt/system/Tools --exclude='/home/ark/.config/retroarch*/cores/*.so.xz' rootfs/dArkOS/ "$PAYLOAD_ROOT/"
+  rsync -a --checksum --exclude=usr/lib/firmware --exclude=opt/system/Tools --exclude='/home/ark/.config/retroarch*/cores/*.so.xz' rootfs/ArkOS/ "$PAYLOAD_ROOT/"
 
 fi
 

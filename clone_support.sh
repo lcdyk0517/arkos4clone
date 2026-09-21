@@ -48,9 +48,12 @@ RSYNC_ROOT_OPTS="-rlptcD --omit-dir-times"
 echo "== 解压大型核心 (.so.xz -> .so，已解压则跳过) =="
 while IFS= read -r -d '' core_xz; do
   core_so="${core_xz%.xz}"
+  # 压缩包是 git 交付物，保留在原地不删；镜像侧由 rsync --exclude 排除
   if [[ ! -f "$core_so" ]]; then
-    echo "解压 $core_xz (解压后删除压缩包)"
-    fatal xz -d -T0 "$core_xz"
+    echo "解压 $core_xz"
+    fatal xz -dk -T0 "$core_xz"
+  else
+    echo "已解压过，跳过 $core_xz"
   fi
 done < <(find rootfs -name '*.so.xz' -print0)
 
@@ -60,7 +63,7 @@ sync_boot() {
 
 sync_rootfs() {
   # $1: rootfs/ 子目录, $2: 属主 (如 1002:1002)
-  fatal sudo rsync $RSYNC_ROOT_OPTS --chown="$2" --chmod=D0777,F0777 "rootfs/$1/" "$MOUNT_DIR/root/"
+  fatal sudo rsync $RSYNC_ROOT_OPTS --exclude='/home/ark/.config/retroarch*/cores/*.so.xz' --chown="$2" --chmod=D0777,F0777 "rootfs/$1/" "$MOUNT_DIR/root/"
 }
 
 pack_roms_tar() {
@@ -200,9 +203,9 @@ else
   safe sudo rm -f "$MOUNT_DIR/root/opt/system/Advanced/Read from SD1 and SD2 for Roms.sh"
   safe sudo rm -f "$MOUNT_DIR/root/opt/system/Advanced/Switch to SD2 for Roms.sh"
   safe sudo rm -f "$MOUNT_DIR/root/opt/system/Advanced/Switch to main SD for Roms.sh"
-  safe sudo rm -f "$MOUNT_DIR/root/opt/system/Advanced/Video Boot/"
-  safe sudo rm -f "$MOUNT_DIR/root/opt/system/Tools/Gamma/"
-  safe sudo rm -f "$MOUNT_DIR/root/opt/system/Tools/ES-logo-changer/"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Video Boot/"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Tools/Gamma/"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Tools/ES-logo-changer/"
   safe sudo rm -f "$MOUNT_DIR/root/usr/local/bin/Read from SD1 and SD2 for Roms"
   safe sudo rm -f "$MOUNT_DIR/root/usr/local/bin/Switch to SD2 for Roms.sh"
   safe sudo rm -f "$MOUNT_DIR/root/usr/local/bin/Switch to main SD for Roms.sh"

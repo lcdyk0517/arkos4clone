@@ -1,0 +1,332 @@
+name: ArkOS4Clone 构建和发布
+
+on:
+  workflow_dispatch:
+    inputs:
+      arkos_image:
+        description: '构建 ArkOS4Clone 完整镜像'
+        required: false
+        type: boolean
+        default: true
+      darkos_image:
+        description: '构建 dArkOS4Clone 完整镜像'
+        required: false
+        type: boolean
+        default: false
+      arkos_ota:
+        description: '构建 ArkOS4Clone 升级包 (update-arkos.tar)'
+        required: false
+        type: boolean
+        default: true
+      darkos_ota:
+        description: '构建 dArkOS4Clone 升级包 (update-darkos.tar)'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: arkos4clone-release
+  cancel-in-progress: false
+
+jobs:
+  guard:
+    name: 检查构建目标并准备 Release
+    runs-on: ubuntu-24.04
+    outputs:
+      build_date: ${{ steps.date.outputs.build_date }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+
+      - name: 至少勾选一个目标
+        run: |
+          if [[ "${{ inputs.arkos_image }}" != "true" \
+             && "${{ inputs.darkos_image }}" != "true" \
+             && "${{ inputs.arkos_ota }}" != "true" \
+             && "${{ inputs.darkos_ota }}" != "true" ]]; then
+            echo "::error::未勾选任何构建目标"
+            exit 1
+          fi
+          echo "构建目标: 镜像 ArkOS=${{ inputs.arkos_image }} dArkOS=${{ inputs.darkos_image }} | 升级包 ArkOS=${{ inputs.arkos_ota }} dArkOS=${{ inputs.darkos_ota }}"
+
+      - name: 统一创建 draft Release
+        id: date
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BUILD_DATE=$(TZ=Asia/Shanghai date +%Y%m%d)
+          echo "build_date=$BUILD_DATE" >> "$GITHUB_OUTPUT"
+          # 当天重复触发时 release 已存在，跳过创建，后续直接 --clobber 上传
+          if gh release view "$BUILD_DATE" >/dev/null 2>&1; then
+              echo "Release $BUILD_DATE 已存在，复用"
+          else
+              gh release create "$BUILD_DATE" \
+                --title "ArkOS4Clone-$BUILD_DATE" \
+                --notes "ArkOS4Clone 构建产物 - $BUILD_DATE" \
+                --draft=true
+          fi
+
+  arkos-image:
+    name: ArkOS4Clone 完整镜像
+    if: inputs.arkos_image == true
+    needs: guard
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            parted \
+            rsync \
+            xz-utils \
+            wget \
+            unzip \
+            golang-go \
+            exfat-fuse \
+            exfatprogs \
+            e2fsprogs \
+            dosfstools \
+            btrfs-progs \
+            f2fs-tools \
+            p7zip-full
+
+      - name: Download & extract source image
+        run: |
+          BASE_URL="https://github.com/lcdyk0517/baidupan2release/releases/download/backup-r3xs/ArkOS_R35S-R36S_v2.0_11072025_MultiPanel.img.xz.7z"
+          FILENAME=$(basename "$BASE_URL")
+
+          echo "=== 下载分卷 ==="
+          for i in 001 002; do
+            echo "Downloading part $i ..."
+            wget --progress=bar:force:noscroll "${BASE_URL}.${i}" && echo "part $i done" || { echo "Failed to download part $i"; exit 1; }
+          done
+
+          echo "=== 解压 7z 分卷 ==="
+          7z x "${FILENAME}.001" -o. -y
+
+          echo "=== 查找并解压 xz ==="
+          ls -lh *.7z* *.xz 2>/dev/null || true
+          XZ_FILE=$(ls *.xz 2>/dev/null | head -1)
+          if [ -z "$XZ_FILE" ]; then
+            echo "ERROR: No .xz file found after 7z extraction"
+            exit 1
+          fi
+          echo "Extracting $XZ_FILE ..."
+          unxz "$XZ_FILE"
+
+          echo "=== 删除中间文件，释放空间 ==="
+          rm -f *.7z.001 *.7z.002
+
+          echo "=== 确认 img ==="
+          IMG_FILE=$(ls *.img 2>/dev/null | head -1)
+
+          if [ -z "$IMG_FILE" ]; then
+            echo "ERROR: No .img file found"
+            exit 1
+          fi
+
+          echo "Source image: $IMG_FILE ($(du -h "$IMG_FILE" | cut -f1))"
+
+      - name: Build image
+        run: |
+          chmod +x build_image.sh repart_image.sh mount_arkos.sh clone_support.sh build_dtb_selector.sh uboot/flash_uboot.sh
+          mkdir -p mnt
+          sudo ./build_image.sh $(ls *.img) . --ci
+
+      - name: Upload to release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BUILD_DATE: ${{ needs.guard.outputs.build_date }}
+        run: |
+          XZ_FILE=$(ls *.img.xz 2>/dev/null | head -1)
+          if [ -z "$XZ_FILE" ]; then
+            echo "ERROR: No .img.xz found"
+            exit 1
+          fi
+          FILE_SIZE=$(stat -c%s "$XZ_FILE")
+          LIMIT=$((1900 * 1024 * 1024))
+
+          if [ "$FILE_SIZE" -gt "$LIMIT" ]; then
+            echo "文件超过1900M，7z分卷压缩..."
+            7z a -v1900m -mx=0 "${XZ_FILE}.7z" "$XZ_FILE"
+            FILES=$(ls ${XZ_FILE}.7z.* | tr '\n' ' ')
+          else
+            FILES="$XZ_FILE"
+          fi
+
+          echo "上传文件: $FILES"
+          gh release upload "$BUILD_DATE" $FILES --clobber
+
+  darkos-image:
+    name: dArkOS4Clone 完整镜像
+    if: inputs.darkos_image == true
+    needs: guard
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            parted \
+            rsync \
+            xz-utils \
+            wget \
+            unzip \
+            golang-go \
+            exfat-fuse \
+            exfatprogs \
+            e2fsprogs \
+            dosfstools \
+            btrfs-progs \
+            f2fs-tools \
+            p7zip-full
+
+      - name: Download & extract source image
+        run: |
+          echo "=== 获取 dArkOS 最新 Release 信息 ==="
+          RELEASE_JSON=$(curl -fsSL https://api.github.com/repos/christianhaitian/dArkOS/releases/latest)
+          TAG_NAME=$(echo "$RELEASE_JSON" | python3 -c "import sys,json; print(json.load(sys.stdin)['tag_name'])")
+          echo "最新 Release tag: $TAG_NAME"
+
+          echo "=== 查找 G350 相关资源 ==="
+          ASSETS=$(echo "$RELEASE_JSON" | python3 -c "
+          import sys, json
+          data = json.load(sys.stdin)
+          assets = [a['browser_download_url'] for a in data.get('assets', []) if 'G350' in a['name'] and '.7z.' in a['name']]
+          assets.sort()
+          for a in assets:
+              print(a)
+          ")
+          echo "$ASSETS"
+
+          if [ -z "$ASSETS" ]; then
+            echo "ERROR: 未找到包含 G350 的资源"
+            exit 1
+          fi
+
+          echo "=== 下载分卷 ==="
+          for url in $ASSETS; do
+            echo "Downloading $(basename "$url") ..."
+            wget --progress=bar:force:noscroll "$url" || { echo "Failed to download $url"; exit 1; }
+          done
+
+          FIRST_PART=$(ls dArkOS_G350*.7z.001 2>/dev/null | head -1)
+          if [ -z "$FIRST_PART" ]; then
+            echo "ERROR: No .7z.001 file found"
+            exit 1
+          fi
+
+          echo "=== 解压 7z 分卷 ==="
+          7z x "$FIRST_PART" -o. -y
+
+          echo "=== 删除中间文件，释放空间 ==="
+          rm -f dArkOS_G350*.7z.*
+
+          echo "=== 确认 img ==="
+          IMG_FILE=$(ls *.img 2>/dev/null | head -1)
+          if [ -z "$IMG_FILE" ]; then
+            echo "ERROR: No .img file found"
+            exit 1
+          fi
+          echo "Source image: $IMG_FILE ($(du -h "$IMG_FILE" | cut -f1))"
+
+      - name: Build image
+        run: |
+          chmod +x build_image.sh repart_image.sh mount_arkos.sh clone_support.sh build_dtb_selector.sh uboot/flash_uboot.sh
+          mkdir -p mnt
+          sudo -E ./build_image.sh $(ls *.img) . --ci
+
+      - name: Upload to release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BUILD_DATE: ${{ needs.guard.outputs.build_date }}
+        run: |
+          XZ_FILE=$(ls *.img.xz 2>/dev/null | head -1)
+          if [ -z "$XZ_FILE" ]; then
+            echo "ERROR: No .img.xz found"
+            exit 1
+          fi
+          FILE_SIZE=$(stat -c%s "$XZ_FILE")
+          LIMIT=$((1900 * 1024 * 1024))
+
+          if [ "$FILE_SIZE" -gt "$LIMIT" ]; then
+            echo "文件超过1900M，7z分卷压缩..."
+            7z a -v1900m -mx=0 "${XZ_FILE}.7z" "$XZ_FILE"
+            FILES=$(ls ${XZ_FILE}.7z.* | tr '\n' ' ')
+          else
+            FILES="$XZ_FILE"
+          fi
+
+          echo "上传文件: $FILES"
+          gh release upload "$BUILD_DATE" $FILES --clobber
+
+  ota-arkos:
+    name: ArkOS4Clone 升级包
+    if: inputs.arkos_ota == true
+    needs: guard
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+
+      - name: Build update-arkos.tar
+        run: |
+          chmod +x build_update_tar.sh
+          sudo ./build_update_tar.sh
+
+      - name: Prepare firstboot.sh
+        run: |
+          cp boot/dArkOS/clone.sh firstboot.sh
+
+      - name: Upload to release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BUILD_DATE: ${{ needs.guard.outputs.build_date }}
+        run: |
+          [ -f update-arkos.tar ] || { echo "ERROR: update-arkos.tar 缺失"; exit 1; }
+          gh release upload "$BUILD_DATE" update-arkos.tar firstboot.sh --clobber
+
+  ota-darkos:
+    name: dArkOS4Clone 升级包
+    if: inputs.darkos_ota == true
+    needs: guard
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+
+      - name: Build update-darkos.tar
+        run: |
+          chmod +x build_update_tar.sh
+          sudo ./build_update_tar.sh -d
+      
+      - name: Prepare firstboot.sh
+        run: |
+          cp boot/dArkOS/clone.sh firstboot.sh
+
+      - name: Upload to release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BUILD_DATE: ${{ needs.guard.outputs.build_date }}
+        run: |
+          [ -f update-darkos.tar ] || { echo "ERROR: update-darkos.tar 缺失"; exit 1; }
+          gh release upload "$BUILD_DATE" update-darkos.tar firstboot.sh --clobber
