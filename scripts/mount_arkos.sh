@@ -9,7 +9,7 @@ set -euo pipefail
 # Mount points will be created under: ./mnt/{boot,root,roms}
 # State (loop device) is stored in:   ./.arkos_loop
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
 BASE_MNT="${ARKOS_MNT:-$SCRIPT_DIR/mnt}"
 STATE_FILE="$BASE_MNT/.arkos_loop"
 BOOT_MNT="$BASE_MNT/boot"

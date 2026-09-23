@@ -9,7 +9,7 @@ else
   RSYNC_PROGRESS="--info=progress2"
 fi
 P2_TARGET_MB=11264            # p2 (root) 目标容量: 11G，设备上不再变动
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
 # 临时目录优先使用 ARKOS_WORK_DIR，否则使用当前目录
 WORK_BASE="${ARKOS_WORK_DIR:-$(pwd)}"
 TMP_DIR="${WORK_BASE}/tmp"    # 备份/恢复目录；脚本会创建、用完后删除

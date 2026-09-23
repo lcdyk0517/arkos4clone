@@ -31,7 +31,7 @@ done
 UPDATE_DATE="$(TZ=Asia/Shanghai date +%Y%m%d)"
 MODDER="kk&lcdyk"
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$SCRIPT_DIR"
 WORKDIR="$SCRIPT_DIR"
 STAGE="${ARKOS_STAGE:-/tmp/_ota_stage}"

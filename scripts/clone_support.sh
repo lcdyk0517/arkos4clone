@@ -12,7 +12,7 @@ set -euo pipefail
 #   其他    : 先 sync dArkOS 再 sync ArkOS，权限 777 / 1002:1002
 # ============================================================
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$SCRIPT_DIR"
 MOUNT_DIR="${ARKOS_MNT:-/home/lcdyk/arkos/mnt}"
 UPDATE_DATE="$(TZ=Asia/Shanghai date +%Y%m%d)"
@@ -143,16 +143,6 @@ cleanup_stock() {
   # (fstab.exfat 保留在 boot 分区供首启使用；tempthemes 保留——首启搬进 /roms/themes)
 }
 
-
-# inject_dtb_selector() {
-#   echo "== 注入 dtb_selector 与启动标记 =="
-#   # linux32 由 build_dtb_selector.sh 在构建开始时编译，必须存在
-#   fatal sudo cp -f ./dtb_selector_linux32 "$MOUNT_DIR/boot/"
-#   # macos / win32 为桌面端可选工具，有就带上
-#   sudo cp -f ./dtb_selector_macos ./dtb_selector_win32.exe "$MOUNT_DIR/boot/" 2>/dev/null || true
-#   fatal sudo touch "$MOUNT_DIR/boot/USE_DTB_SELECT_TO_SELECT_DEVICE"
-# }
-
 if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   # ============================================================
   # dArkOS (UID=1000)
@@ -166,8 +156,6 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   echo "== sync rootfs/dArkOS =="
   sync_rootfs dArkOS 1000:1000
   pack_roms_tar
-
-  # inject_dtb_selector
 
   echo "== 清理 dArkOS 不需要的文件 =="
   cleanup_stock
@@ -192,8 +180,6 @@ else
   sync_rootfs dArkOS 1002:1002
   sync_rootfs ArkOS 1002:1002
   pack_roms_tar
-
-  # inject_dtb_selector
 
   echo "== 清理 ArkOS 不需要的文件 =="
   cleanup_stock

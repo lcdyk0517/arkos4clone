@@ -7,7 +7,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# 时间戳格式 (与 clone_support.sh 一致)
+# 时间戳格式 (与 scripts/clone_support.sh 一致)
 BUILD_DATE="$(TZ=Asia/Shanghai date +%Y%m%d)"
 OUTPUT_NAME="ArkOS4Clone-${BUILD_DATE}"
 
@@ -281,7 +281,7 @@ check_portmaster() {
 }
 
 check_clone_dependencies() {
-  log_info "检查 clone_support.sh 依赖..."
+  log_info "检查 scripts/clone_support.sh 依赖..."
   local missing=0
   local missing_list=""
 
@@ -311,27 +311,27 @@ check_clone_dependencies() {
   done
 
   if [[ $missing -eq 1 ]]; then
-    log_error "clone_support.sh 依赖检查失败"
+    log_error "scripts/clone_support.sh 依赖检查失败"
     echo -e "$missing_list"
     exit 1
   fi
 
-  log_ok "clone_support.sh 依赖检查通过"
+  log_ok "scripts/clone_support.sh 依赖检查通过"
 }
 
 step_build_dtb_selector() {
   log_info "步骤 0/8: 编译 dtb_selector 工具..."
-  if [[ -f "$SCRIPT_DIR/build_dtb_selector.sh" ]]; then
+  if [[ -f "$SCRIPT_DIR/scripts/build_dtb_selector.sh" ]]; then
     cd "$SCRIPT_DIR"
     # 以原用户身份执行编译（保留 PATH 环境变量）
     if [[ -n "${SUDO_USER:-}" ]]; then
-      if sudo -u "$SUDO_USER" env PATH="$PATH" ./build_dtb_selector.sh; then
+      if sudo -u "$SUDO_USER" env PATH="$PATH" ./scripts/build_dtb_selector.sh; then
         log_ok "dtb_selector 编译完成"
       else
         log_warn "dtb_selector 编译失败，跳过（可能已存在）"
       fi
     else
-      if ./build_dtb_selector.sh; then
+      if ./scripts/build_dtb_selector.sh; then
         log_ok "dtb_selector 编译完成"
       else
         log_warn "dtb_selector 编译失败，跳过（可能已存在）"
@@ -339,7 +339,7 @@ step_build_dtb_selector() {
     fi
     cd - > /dev/null
   else
-    log_warn "未找到 build_dtb_selector.sh，跳过"
+    log_warn "未找到 scripts/build_dtb_selector.sh，跳过"
   fi
 }
 
@@ -354,7 +354,7 @@ copy_image() {
 step_grow() {
   local img="$1"
   log_info "步骤 2/8: 扩容镜像分区..."
-  if "$SCRIPT_DIR/repart_image.sh" "$img"; then
+  if "$SCRIPT_DIR/scripts/repart_image.sh" "$img"; then
     log_ok "分区扩容完成"
   else
     log_error "分区扩容失败"
@@ -386,7 +386,7 @@ step_flash_uboot() {
 step_mount() {
   local img="$1"
   log_info "步骤 4/8: 挂载镜像..."
-  if "$SCRIPT_DIR/mount_arkos.sh" mount "$img"; then
+  if "$SCRIPT_DIR/scripts/mount_arkos.sh" mount "$img"; then
     log_ok "镜像挂载完成"
   else
     log_error "镜像挂载失败"
@@ -396,12 +396,12 @@ step_mount() {
 
 step_inject() {
   log_info "步骤 5/8: 注入定制内容..."
-  if "$SCRIPT_DIR/clone_support.sh"; then
+  if "$SCRIPT_DIR/scripts/clone_support.sh"; then
     log_ok "内容注入完成"
   else
     log_error "内容注入失败"
     # 尝试卸载
-    "$SCRIPT_DIR/mount_arkos.sh" unmount 2>/dev/null || true
+    "$SCRIPT_DIR/scripts/mount_arkos.sh" unmount 2>/dev/null || true
     exit 1
   fi
 }
@@ -413,7 +413,7 @@ step_unmount() {
     log_info "对 root 分区执行 fstrim (空闲块归零)..."
     fstrim -v "${ARKOS_MNT}/root" || log_warn "fstrim 失败 (设备不支持 discard)，跳过"
   fi
-  if "$SCRIPT_DIR/mount_arkos.sh" unmount; then
+  if "$SCRIPT_DIR/scripts/mount_arkos.sh" unmount; then
     log_ok "镜像卸载完成"
   else
     log_error "镜像卸载失败"
@@ -532,13 +532,13 @@ ArkOS4Clone 一键构建脚本
   sudo ./build_image.sh /mnt/e/ArkOS.img /home/lcdyk/arkos
 
 执行步骤:
-  0. 编译 dtb_selector 工具 (build_dtb_selector.sh)
+  0. 编译 dtb_selector 工具 (scripts/build_dtb_selector.sh)
   1. 复制源镜像到工作目录
-  2. 分区调整 (repart_image.sh): p2 扩到 11G, p3 按 roms/ 内容扩到刚好
+  2. 分区调整 (scripts/repart_image.sh): p2 扩到 11G, p3 按 roms/ 内容扩到刚好
   3. 写入 U-Boot (flash_uboot.sh)
-  4. 挂载镜像 (mount_arkos.sh mount)
-  5. 注入定制内容 (clone_support.sh)
-  6. 卸载镜像 (mount_arkos.sh unmount)
+  4. 挂载镜像 (scripts/mount_arkos.sh mount)
+  5. 注入定制内容 (scripts/clone_support.sh)
+  6. 卸载镜像 (scripts/mount_arkos.sh unmount)
   7. 校验 p2 文件系统 
   8. 压缩镜像并移动输出文件到脚本目录
 
