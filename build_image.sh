@@ -450,7 +450,7 @@ step_verify_fs() {
       # -e 让 script 透传 e2fsck 的退出码；-y 自动应答修复
       script -e -q -c "e2fsck -fvy '${loop}p2'" /dev/null
       rc=$?
-      if (( rc > 2 )); then
+      if (( rc > 3 )); then
         log_error "p2 $fstype 文件系统存在未修复错误 (e2fsck rc=$rc)"
         return 1
       fi

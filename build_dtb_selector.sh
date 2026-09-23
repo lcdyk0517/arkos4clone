@@ -4,46 +4,34 @@ set -e
 TARGET=dtb_selector
 GO=go
 FLAGS=(-ldflags="-s -w")
-SRC=dtb_selector.go
-
-# available platforms
-# - platform_win32
-# - platform_win64
-# - platform_macos_intel
-# - platform_macos_apple_silicon
-# - platform_macos (universal)
-# - platform_linux64
-PLATFORMS=(
-  platform_win32
-  platform_macos
-  platform_linux32
-)
+MODULE_DIR=dtbtools
+ROOT_DIR=$(pwd)
 
 platform_win32() {
   EXE="boot/dArkOS/${TARGET}_win32.exe"
   echo "Building: Windows 32-bit"
-  GOOS=windows GOARCH=386 $GO build "$FLAGS" -o "$EXE" "$SRC"
+  (cd "$MODULE_DIR" && GOOS=windows GOARCH=386 $GO build "$FLAGS" -o "$ROOT_DIR/$EXE" .)
   echo "Generated: $EXE"
 }
 
 platform_win64() {
   EXE="boot/dArkOS/${TARGET}_win64.exe"
   echo "Building: Windows 64-bit"
-  GOOS=windows GOARCH=amd64 $GO build "$FLAGS" -o "$EXE" "$SRC"
+  (cd "$MODULE_DIR" && GOOS=windows GOARCH=amd64 $GO build "$FLAGS" -o "$ROOT_DIR/$EXE" .)
   echo "Generated: $EXE"
 }
 
 platform_macos_intel() {
   EXE="boot/dArkOS/${TARGET}_macos_intel"
   echo "Building: macOS Intel"
-  GOOS=darwin GOARCH=amd64 $GO build "$FLAGS" -o "$EXE" "$SRC"
+  (cd "$MODULE_DIR" && GOOS=darwin GOARCH=amd64 $GO build "$FLAGS" -o "$ROOT_DIR/$EXE" .)
   echo "Generated: $EXE"
 }
 
 platform_macos_apple_silicon() {
   EXE="boot/dArkOS/${TARGET}_macos_apple"
   echo "Building: macOS Apple Silicon"
-  GOOS=darwin GOARCH=arm64 $GO build "$FLAGS" -o "$EXE" "$SRC"
+  (cd "$MODULE_DIR" && GOOS=darwin GOARCH=arm64 $GO build "$FLAGS" -o "$ROOT_DIR/$EXE" .)
   echo "Generated: $EXE"
 }
 
@@ -58,11 +46,11 @@ platform_macos() {
   EXE="boot/dArkOS/${TARGET}_macos"
   echo "Building: macOS Universal"
 
-  GOOS=darwin GOARCH=amd64 $GO build "$FLAGS" -o "${EXE}_amd64" "$SRC"
-  GOOS=darwin GOARCH=arm64 $GO build "$FLAGS" -o "${EXE}_arm64" "$SRC"
-  "$LIPO" -output "$EXE" -create "${EXE}_arm64" "${EXE}_amd64"
+  (cd "$MODULE_DIR" && GOOS=darwin GOARCH=amd64 $GO build "$FLAGS" -o "$ROOT_DIR/${EXE}_amd64" .)
+  (cd "$MODULE_DIR" && GOOS=darwin GOARCH=arm64 $GO build "$FLAGS" -o "$ROOT_DIR/${EXE}_arm64" .)
+  "$LIPO" -output "$ROOT_DIR/$EXE" -create "$ROOT_DIR/${EXE}_arm64" "$ROOT_DIR/${EXE}_amd64"
 
-  rm -f "${EXE}_amd64" "${EXE}_arm64"
+  rm -f "$ROOT_DIR/${EXE}_amd64" "$ROOT_DIR/${EXE}_arm64"
 
   echo "Generated: $EXE"
 }
@@ -70,14 +58,14 @@ platform_macos() {
 platform_linux32() {
   EXE="boot/dArkOS/${TARGET}_linux32"
   echo "Building: Linux 32-Bit"
-  GOOS=linux GOARCH=386 $GO build "$FLAGS" -o "$EXE" "$SRC"
+  (cd "$MODULE_DIR" && GOOS=linux GOARCH=386 $GO build "$FLAGS" -o "$ROOT_DIR/$EXE" .)
   echo "Generated: $EXE"
 }
 
 platform_linux64() {
   EXE="boot/dArkOS/${TARGET}_linux64"
   echo "Building: Linux 64-Bit"
-  GOOS=linux GOARCH=amd64 $GO build "$FLAGS" -o "$EXE" "$SRC"
+  (cd "$MODULE_DIR" && GOOS=linux GOARCH=amd64 $GO build "$FLAGS" -o "$ROOT_DIR/$EXE" .)
   echo "Generated: $EXE"
 }
 
@@ -92,6 +80,12 @@ then
          "boot/dArkOS/${TARGET}_linux64"
   exit
 fi
+
+PLATFORMS=(
+  platform_win32
+  platform_macos
+  platform_linux32
+)
 
 for platform in ${PLATFORMS[@]}
 do
