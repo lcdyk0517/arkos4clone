@@ -19,6 +19,7 @@ kernel/drivers/net/wireless/ti/wl12xx/wl12xx.ko
 kernel/drivers/net/wireless/ti/wl1251/wl1251.ko
 kernel/drivers/net/wireless/ti/wl18xx/wl18xx.ko
 kernel/drivers/net/wireless/rockchip_wlan/rtl8188eu/8188eu.ko
+kernel/drivers/net/wireless/rockchip_wlan/rtl8188fu/8188fu.ko
 kernel/drivers/net/wireless/rockchip_wlan/rtl8723bu/8723bu.ko
 kernel/drivers/net/wireless/rockchip_wlan/rtl8723du/8723du.ko
 kernel/drivers/net/wireless/rockchip_wlan/rtl8812au/8812au.ko

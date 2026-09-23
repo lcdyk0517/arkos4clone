@@ -2966,6 +2966,15 @@ msgstr "Είστε σίγουροι ότι θέλετε να ρυθμίσετε 
 msgid "VOLUME KEY ADC CALIBRATION"
 msgstr "Βαθμονόμηση ADC πλήκτρων έντασης"
 
+msgid "BUTTON LAYOUT ADJUSTMENT"
+msgstr "Ρύθμιση διάταξης κουμπιών"
+
+msgid "SWAP A/B"
+msgstr "Εναλλαγή A/B"
+
+msgid "SWAP X/Y"
+msgstr "Εναλλαγή X/Y"
+
 msgid "STEP 1: KEEP THE DEVICE STILL"
 msgstr "ΒΗΜΑ 1: ΚΡΑΤΗΣΤΕ ΤΗ ΣΥΣΚΕΥΗ ΑΚΙΝΗΤΗ"
 

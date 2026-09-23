@@ -2602,6 +2602,15 @@ msgstr "Bạn có chắc muốn cấu hình đầu vào không?"
 msgid "VOLUME KEY ADC CALIBRATION"
 msgstr "Hiệu chuẩn ADC phím âm lượng"
 
+msgid "BUTTON LAYOUT ADJUSTMENT"
+msgstr "Điều chỉnh bố cục nút bấm"
+
+msgid "SWAP A/B"
+msgstr "Hoán đổi A/B"
+
+msgid "SWAP X/Y"
+msgstr "Hoán đổi X/Y"
+
 msgid "STEP 1: KEEP THE DEVICE STILL"
 msgstr "BƯỚC 1: GIỮ THIẾT BỊ YÊN TĨNH"
 

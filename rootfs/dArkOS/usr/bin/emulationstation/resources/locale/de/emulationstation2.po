@@ -3334,6 +3334,15 @@ msgstr "Möchten Sie die Eingabe wirklich konfigurieren?"
 msgid "VOLUME KEY ADC CALIBRATION"
 msgstr "Lautstärketasten-ADC-Kalibrierung"
 
+msgid "BUTTON LAYOUT ADJUSTMENT"
+msgstr "Tastenlayout anpassen"
+
+msgid "SWAP A/B"
+msgstr "A/B tauschen"
+
+msgid "SWAP X/Y"
+msgstr "X/Y tauschen"
+
 msgid "STEP 1: KEEP THE DEVICE STILL"
 msgstr "SCHRITT 1: GERÄT RUHIG LASSEN"
 

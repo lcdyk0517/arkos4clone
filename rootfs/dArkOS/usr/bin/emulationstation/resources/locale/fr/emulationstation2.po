@@ -2325,6 +2325,15 @@ msgstr "Voulez-vous vraiment configurer les entrées ?"
 msgid "VOLUME KEY ADC CALIBRATION"
 msgstr "Calibration ADC des touches de volume"
 
+msgid "BUTTON LAYOUT ADJUSTMENT"
+msgstr "Disposition des boutons"
+
+msgid "SWAP A/B"
+msgstr "Inverser A/B"
+
+msgid "SWAP X/Y"
+msgstr "Inverser X/Y"
+
 msgid "STEP 1: KEEP THE DEVICE STILL"
 msgstr "ÉTAPE 1 : GARDEZ L'APPAREIL IMMOBILE"
 

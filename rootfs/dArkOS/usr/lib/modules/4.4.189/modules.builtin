@@ -185,7 +185,6 @@ kernel/drivers/mtd/devices/m25p80.ko
 kernel/drivers/mtd/spi-nor/spi-nor.ko
 kernel/drivers/net/phy/libphy.ko
 kernel/drivers/net/phy/rockchip.ko
-kernel/drivers/net/wireless/rockchip_wlan/rtl8188fu/8188fu.ko
 kernel/drivers/nvmem/nvmem_core.ko
 kernel/drivers/nvmem/nvmem-rockchip-otp.ko
 kernel/drivers/of/of_mdio.ko

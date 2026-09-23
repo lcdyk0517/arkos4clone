@@ -3866,6 +3866,15 @@ msgstr "Czy na pewno chcesz skonfigurować sterowanie?"
 msgid "VOLUME KEY ADC CALIBRATION"
 msgstr "Kalibracja ADC klawiszy głośności"
 
+msgid "BUTTON LAYOUT ADJUSTMENT"
+msgstr "Układ przycisków"
+
+msgid "SWAP A/B"
+msgstr "Zamień A/B"
+
+msgid "SWAP X/Y"
+msgstr "Zamień X/Y"
+
 msgid "STEP 1: KEEP THE DEVICE STILL"
 msgstr "KROK 1: NIE DOTYKAJ URZĄDZENIA"
 

@@ -2770,6 +2770,15 @@ msgstr "입력을 구성하시겠습니까?"
 msgid "VOLUME KEY ADC CALIBRATION"
 msgstr "음량 키 ADC 보정"
 
+msgid "BUTTON LAYOUT ADJUSTMENT"
+msgstr "버튼 배치 조정"
+
+msgid "SWAP A/B"
+msgstr "A/B 교환"
+
+msgid "SWAP X/Y"
+msgstr "X/Y 교환"
+
 msgid "STEP 1: KEEP THE DEVICE STILL"
 msgstr "1단계: 기기를 가만히 두세요"
 

@@ -83,9 +83,9 @@ alias usb:v2001p3310d*dc*dsc*dp*ic*isc*ip*in* 8188eu
 alias usb:v2001p330Fd*dc*dsc*dp*ic*isc*ip*in* 8188eu
 alias usb:v0DF6p0076d*dc*dsc*dp*ic*isc*ip*in* 8188eu
 alias usb:v07B8p8179d*dc*dsc*dp*ic*isc*ip*in* 8188eu
-alias usb:v0BDApF179d*dc*dsc*dp*ic*isc*ip*in* 8188eu
 alias usb:v0BDAp0179d*dc*dsc*dp*ic*isc*ip*in* 8188eu
 alias usb:v0BDAp8179d*dc*dsc*dp*ic*isc*ip*in* 8188eu
+alias usb:v0BDApF179d*dc*dsc*dp*icFFiscFFipFFin* 8188fu
 alias usb:v0BDApB720d*dc*dsc*dp*icFFiscFFipFFin* 8723bu
 alias usb:v7392pD611d*dc*dsc*dp*icFFiscFFipFFin* 8723du
 alias usb:v0BDApD723d*dc*dsc*dp*icFFiscFFipFFin* 8723du
@@ -1034,7 +1034,12 @@ alias usb:v2001p331Cd*dc*dsc*dp*icFFiscFFipFFin* 88x2bu
 alias usb:v13B1p0043d*dc*dsc*dp*icFFiscFFipFFin* 88x2bu
 alias usb:v0BDApB812d*dc*dsc*dp*icFFiscFFipFFin* 88x2bu
 alias usb:v0BDApB82Cd*dc*dsc*dp*icFFiscFFipFFin* 88x2bu
-alias usb:v2001p331Dd*dc*dsc*dp*ic*isc*ip*in* 8821cu
+alias usb:v2001p331Dd*dc*dsc*dp*icFFiscFFipFFin* 8821cu
+alias usb:v7392pD811d*dc*dsc*dp*icFFiscFFipFFin* 8821cu
+alias usb:v7392pC811d*dc*dsc*dp*icFFiscFFipFFin* 8821cu
+alias usb:v0BDApC80Cd*dc*dsc*dp*icFFiscFFipFFin* 8821cu
+alias usb:v0BDAp8731d*dc*dsc*dp*icFFiscFFipFFin* 8821cu
+alias usb:v0BDAp2006d*dc*dsc*dp*icFFiscFFipFFin* 8821cu
 alias usb:v0BDAp8811d*dc*dsc*dp*icFFiscFFipFFin* 8821cu
 alias usb:v0BDApC811d*dc*dsc*dp*icFFiscFFipFFin* 8821cu
 alias usb:v0BDApC82Bd*dc*dsc*dp*icFFiscFFipFFin* 8821cu

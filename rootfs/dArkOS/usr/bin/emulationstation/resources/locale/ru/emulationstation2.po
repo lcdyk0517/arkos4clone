@@ -5018,6 +5018,15 @@ msgstr "Вы уверены, что хотите настроить кнопки
 msgid "VOLUME KEY ADC CALIBRATION"
 msgstr "Калибровка ADC клавиш громкости"
 
+msgid "BUTTON LAYOUT ADJUSTMENT"
+msgstr "Настройка раскладки кнопок"
+
+msgid "SWAP A/B"
+msgstr "Поменять A/B"
+
+msgid "SWAP X/Y"
+msgstr "Поменять X/Y"
+
 msgid "STEP 1: KEEP THE DEVICE STILL"
 msgstr "ШАГ 1: НЕ ТРОГАЙТЕ УСТРОЙСТВО"
 

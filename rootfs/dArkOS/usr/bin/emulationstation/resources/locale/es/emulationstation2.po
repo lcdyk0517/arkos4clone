@@ -3526,6 +3526,15 @@ msgstr "¿Seguro que deseas configurar la entrada?"
 msgid "VOLUME KEY ADC CALIBRATION"
 msgstr "Calibración ADC de las teclas de volumen"
 
+msgid "BUTTON LAYOUT ADJUSTMENT"
+msgstr "Ajuste de la disposición de los botones"
+
+msgid "SWAP A/B"
+msgstr "Intercambiar A/B"
+
+msgid "SWAP X/Y"
+msgstr "Intercambiar X/Y"
+
 msgid "STEP 1: KEEP THE DEVICE STILL"
 msgstr "PASO 1: MANTÉN EL DISPOSITIVO QUIETO"
 

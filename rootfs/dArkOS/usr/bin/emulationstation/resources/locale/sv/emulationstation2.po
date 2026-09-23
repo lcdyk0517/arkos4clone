@@ -4094,6 +4094,15 @@ msgstr "Vill du verkligen konfigurera inmatningen?"
 msgid "VOLUME KEY ADC CALIBRATION"
 msgstr "ADC-kalibrering av volymknappar"
 
+msgid "BUTTON LAYOUT ADJUSTMENT"
+msgstr "Justering av knappordning"
+
+msgid "SWAP A/B"
+msgstr "Byt A/B"
+
+msgid "SWAP X/Y"
+msgstr "Byt X/Y"
+
 msgid "STEP 1: KEEP THE DEVICE STILL"
 msgstr "STEG 1: HÅLL ENHETEN STILLA"
 

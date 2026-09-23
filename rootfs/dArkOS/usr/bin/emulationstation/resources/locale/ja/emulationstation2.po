@@ -2165,6 +2165,15 @@ msgstr "入力設定を行いますか？"
 msgid "VOLUME KEY ADC CALIBRATION"
 msgstr "音量キーADCキャリブレーション"
 
+msgid "BUTTON LAYOUT ADJUSTMENT"
+msgstr "ボタン配置の調整"
+
+msgid "SWAP A/B"
+msgstr "A/Bを入れ替え"
+
+msgid "SWAP X/Y"
+msgstr "X/Yを入れ替え"
+
 msgid "STEP 1: KEEP THE DEVICE STILL"
 msgstr "ステップ1：デバイスを静止させてください"
 

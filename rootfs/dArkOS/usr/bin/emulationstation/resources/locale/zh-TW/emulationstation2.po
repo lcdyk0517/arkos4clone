@@ -5041,6 +5041,15 @@ msgstr "您確定要設定按鍵輸入嗎？"
 msgid "VOLUME KEY ADC CALIBRATION"
 msgstr "音量鍵ADC校正"
 
+msgid "BUTTON LAYOUT ADJUSTMENT"
+msgstr "按鍵佈局調整"
+
+msgid "SWAP A/B"
+msgstr "A/B鍵互換"
+
+msgid "SWAP X/Y"
+msgstr "X/Y鍵互換"
+
 msgid "STEP 1: KEEP THE DEVICE STILL"
 msgstr "步驟1：保持裝置靜止"
 
