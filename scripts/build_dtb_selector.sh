@@ -9,16 +9,16 @@ FLAGS=(-ldflags "-s -w")
 # --- 定位脚本目录和项目根目录 ---
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 
-if [[ -d "$SCRIPT_DIR/dtbtools" && -d "$SCRIPT_DIR/boot" ]]; then
+if [[ -d "$SCRIPT_DIR/dtbTools" && -d "$SCRIPT_DIR/boot" ]]; then
   ROOT_DIR="$SCRIPT_DIR"
-elif [[ -d "$SCRIPT_DIR/../dtbtools" && -d "$SCRIPT_DIR/../boot" ]]; then
+elif [[ -d "$SCRIPT_DIR/../dtbTools" && -d "$SCRIPT_DIR/../boot" ]]; then
   ROOT_DIR="$(cd -- "$SCRIPT_DIR/.." && pwd)"
 else
-  echo "[ERROR] 无法定位项目根目录（需要同时存在 dtbtools/ 和 boot/）" >&2
+  echo "[ERROR] 无法定位项目根目录（需要同时存在 dtbTools/ 和 boot/）" >&2
   exit 1
 fi
 
-MODULE_DIR="$ROOT_DIR/dtbtools"
+MODULE_DIR="$ROOT_DIR/dtbTools"
 OUT_DIR="$ROOT_DIR/boot/dArkOS"
 
 echo "ROOT_DIR   = $ROOT_DIR"

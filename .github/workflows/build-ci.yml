@@ -139,7 +139,7 @@ jobs:
 
       - name: Build image
         run: |
-          chmod +x build_image.sh repart_image.sh mount_arkos.sh clone_support.sh build_dtb_selector.sh uboot/flash_uboot.sh
+          chmod +x build_image.sh scripts/repart_image.sh scripts/mount_arkos.sh scripts/clone_support.sh scripts/build_dtb_selector.sh uboot/flash_uboot.sh
           mkdir -p mnt
           sudo ./build_image.sh $(ls *.img) . --ci
 
@@ -247,7 +247,7 @@ jobs:
 
       - name: Build image
         run: |
-          chmod +x build_image.sh repart_image.sh mount_arkos.sh clone_support.sh build_dtb_selector.sh uboot/flash_uboot.sh
+          chmod +x build_image.sh scripts/repart_image.sh scripts/mount_arkos.sh scripts/clone_support.sh scripts/build_dtb_selector.sh uboot/flash_uboot.sh
           mkdir -p mnt
           sudo -E ./build_image.sh $(ls *.img) . --ci
 
@@ -288,8 +288,8 @@ jobs:
 
       - name: Build update-arkos.tar
         run: |
-          chmod +x build_update_tar.sh
-          sudo ./build_update_tar.sh
+          chmod +x scripts/build_update_tar.sh
+          sudo ./scripts/build_update_tar.sh
 
       - name: Prepare firstboot.sh
         run: |
@@ -316,8 +316,8 @@ jobs:
 
       - name: Build update-darkos.tar
         run: |
-          chmod +x build_update_tar.sh
-          sudo ./build_update_tar.sh -d
+          chmod +x scripts/build_update_tar.sh
+          sudo ./scripts/build_update_tar.sh -d
       
       - name: Prepare firstboot.sh
         run: |
