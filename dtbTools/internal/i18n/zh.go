@@ -59,8 +59,8 @@ var Chinese = Language{
 	},
 	Menu4: Menu4Strings{
 		SelectLanguage:    "请选择语言:",
-		DefaultEnglish:    "  1. English (默认)",
-		Info1:             "输入序号或按 Enter 默认选择 English: ",
+		DefaultEnglish:    "  1. 英文 (默认)",
+		Info1:             "输入序号或按 Enter 默认选择 英文: ",
 		TagFileCreated:    "已创建中文语言标记文件. (.cn created)",
 		OperationComplete: "操作完成！已选择语言: ",
 	},
