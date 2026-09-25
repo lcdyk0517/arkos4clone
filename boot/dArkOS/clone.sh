@@ -317,8 +317,8 @@ apply_localization() {
   local lang="$1" es_lang ra_lang ppsspp_lang timezone
   # ES 语言 RA 语言 ppsspp语言 时区
   case "$lang" in
-    cn) es_lang="zh-CN"; ra_lang="12"; ppsspp_lang="zh_CN"; timezone="Asia/Shanghai" ;;
-    ko) es_lang="ko";    ra_lang="10"; ppsspp_lang="ko_KR"; timezone="Asia/Seoul" ;;
+    cn) es_lang="zh-CN"; ra_lang="12"; scummvm_lang="zh_Hans"; ppsspp_lang="zh_CN"; timezone="Asia/Shanghai" ;;
+    ko) es_lang="ko";    ra_lang="10"; scummvm_lang="ko"; ppsspp_lang="ko_KR"; timezone="Asia/Seoul" ;;
     *)  return 0 ;;
   esac
 
@@ -344,7 +344,10 @@ apply_localization() {
     done
   done
 
-  # RetroArch
+  # scummvm
+  sed -i "s/^gui_language=.*/gui_language=${scummvm_lang}/" "/home/ark/.config/scummvm/scummvm.ini" 2>/dev/null || true
+
+  # 
   for cfg in /home/ark/.config/retroarch/retroarch.cfg /home/ark/.config/retroarch32/retroarch.cfg; do
     sed -i "s/user_language = \"[^\"]*\"/user_language = \"$ra_lang\"/" "$cfg" 2>/dev/null || true
     sed -i "s/user_language = \"[^\"]*\"/user_language = \"$ra_lang\"/" "${cfg}.bak" 2>/dev/null || true
