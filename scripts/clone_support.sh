@@ -279,29 +279,12 @@ else
   sync_boot dArkOS
   sync_boot ArkOS
 
-  echo "== sync rootfs/dArkOS + rootfs/ArkOS =="
   # 腾出空间
+  echo "== 节约空间 =="
   prune_old_libs
-  sync_rootfs dArkOS 1002:1002
-  sync_rootfs ArkOS 1002:1002
-  pack_roms_tar
-
-  echo "== 清理 ArkOS 不需要的文件 =="
-  cleanup_stock
-  safe sudo rm -f "$MOUNT_DIR/root/etc/systemd/system/batt_led.service"
-  safe sudo rm -f "$MOUNT_DIR/root/etc/systemd/system/ddtbcheck.service"
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Read from SD1 and SD2 for Roms"
-  safe sudo rm -f "$MOUNT_DIR/root/opt/system/Advanced/Read from SD1 and SD2 for Roms.sh"
-  safe sudo rm -f "$MOUNT_DIR/root/opt/system/Advanced/Switch to SD2 for Roms.sh"
-  safe sudo rm -f "$MOUNT_DIR/root/opt/system/Advanced/Switch to main SD for Roms.sh"
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Video Boot/"
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Tools/Gamma/"
-  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Tools/ES-logo-changer/"
-  safe sudo rm -f "$MOUNT_DIR/root/usr/local/bin/Read from SD1 and SD2 for Roms"
-  safe sudo rm -f "$MOUNT_DIR/root/usr/local/bin/Switch to SD2 for Roms.sh"
-  safe sudo rm -f "$MOUNT_DIR/root/usr/local/bin/Switch to main SD for Roms.sh"
   safe sudo rm -rf "$MOUNT_DIR/root/usr/lib/gcc"
   safe sudo rm -rf "$MOUNT_DIR/root/opt/ppssppgo"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/hypseus"
   # 原厂构建/开发文件: 设备是消费终端, 无任何现场编译场景
   # 头文件 / 内核构建目录
   safe sudo rm -rf "$MOUNT_DIR/root/usr/include" "$MOUNT_DIR/root/usr/src"
@@ -320,6 +303,26 @@ else
     "$MOUNT_DIR/root"/usr/bin/c89-gcc "$MOUNT_DIR/root"/usr/bin/c99-gcc \
     "$MOUNT_DIR/root"/usr/bin/cmake "$MOUNT_DIR/root"/usr/bin/ccmake \
     "$MOUNT_DIR/root"/usr/bin/ctest "$MOUNT_DIR/root"/usr/bin/cpack
+
+  echo "== sync rootfs/dArkOS + rootfs/ArkOS =="
+  sync_rootfs dArkOS 1002:1002
+  sync_rootfs ArkOS 1002:1002
+  pack_roms_tar
+
+  echo "== 清理 ArkOS 不需要的文件 =="
+  cleanup_stock
+  safe sudo rm -f "$MOUNT_DIR/root/etc/systemd/system/batt_led.service"
+  safe sudo rm -f "$MOUNT_DIR/root/etc/systemd/system/ddtbcheck.service"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Read from SD1 and SD2 for Roms"
+  safe sudo rm -f "$MOUNT_DIR/root/opt/system/Advanced/Read from SD1 and SD2 for Roms.sh"
+  safe sudo rm -f "$MOUNT_DIR/root/opt/system/Advanced/Switch to SD2 for Roms.sh"
+  safe sudo rm -f "$MOUNT_DIR/root/opt/system/Advanced/Switch to main SD for Roms.sh"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Video Boot/"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Tools/Gamma/"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Tools/ES-logo-changer/"
+  safe sudo rm -f "$MOUNT_DIR/root/usr/local/bin/Read from SD1 and SD2 for Roms"
+  safe sudo rm -f "$MOUNT_DIR/root/usr/local/bin/Switch to SD2 for Roms.sh"
+  safe sudo rm -f "$MOUNT_DIR/root/usr/local/bin/Switch to main SD for Roms.sh"
 
   echo "== 删除logo随机 =="
   safe sudo sed -i '/imageshift\.sh/d' "$MOUNT_DIR/root/var/spool/cron/crontabs/root"
