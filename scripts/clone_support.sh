@@ -280,13 +280,14 @@ else
   sync_boot ArkOS
 
   echo "== sync rootfs/dArkOS + rootfs/ArkOS =="
+  # 腾出空间
+  prune_old_libs
   sync_rootfs dArkOS 1002:1002
   sync_rootfs ArkOS 1002:1002
   pack_roms_tar
 
   echo "== 清理 ArkOS 不需要的文件 =="
   cleanup_stock
-  prune_old_libs
   safe sudo rm -f "$MOUNT_DIR/root/etc/systemd/system/batt_led.service"
   safe sudo rm -f "$MOUNT_DIR/root/etc/systemd/system/ddtbcheck.service"
   safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Read from SD1 and SD2 for Roms"
