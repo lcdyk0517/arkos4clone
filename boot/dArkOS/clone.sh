@@ -37,6 +37,7 @@ LED_TYPE="unsupported"
 
 # ==================== 常量设置 ====================
 SDL2_VERSION="libSDL2-2.0.so.0.3200.10"
+SDL3_VERSION="libSDL3.so.0.4.10"
 
 detect_device() {
   if [[ -x "$CONSOLE_DETECT" ]]; then
@@ -229,50 +230,72 @@ apply_es_setting() {
 
 apply_sdl_rotation() {
   local angle="$1"
-  local sdl32="/usr/lib/arm-linux-gnueabihf/$SDL2_VERSION"
-  local sdl64="/usr/lib/aarch64-linux-gnu/$SDL2_VERSION"
+  local sdl2_32="/usr/lib/arm-linux-gnueabihf/$SDL2_VERSION"
+  local sdl2_64="/usr/lib/aarch64-linux-gnu/$SDL2_VERSION"
+  local sdl3_32="/usr/lib/arm-linux-gnueabihf/$SDL3_VERSION"
+  local sdl3_64="/usr/lib/aarch64-linux-gnu/$SDL3_VERSION"
   
   # 角度为 0 时使用 norotate 文件恢复原始库
   if [[ "$angle" == "0" ]]; then
     msg "Restoring original SDL (no rotation)"
-    local src32="$QUIRKS_DIR/rotate/sdl2/32/$SDL2_VERSION.norotate"
-    local src64="$QUIRKS_DIR/rotate/sdl2/64/$SDL2_VERSION.norotate"
+    local src2_32="$QUIRKS_DIR/rotate/sdl2/32/$SDL2_VERSION.norotate"
+    local src2_64="$QUIRKS_DIR/rotate/sdl2/64/$SDL2_VERSION.norotate"
+    local src3_32="$QUIRKS_DIR/rotate/sdl3/32/$SDL3_VERSION.norotate"
+    local src3_64="$QUIRKS_DIR/rotate/sdl3/64/$SDL3_VERSION.norotate"
     local ra_suffix="norotate"
   else
-    local src32="$QUIRKS_DIR/rotate/sdl2/32/$SDL2_VERSION.rotate${angle}"
-    local src64="$QUIRKS_DIR/rotate/sdl2/64/$SDL2_VERSION.rotate${angle}"
+    local src2_32="$QUIRKS_DIR/rotate/sdl2/32/$SDL2_VERSION.rotate${angle}"
+    local src2_64="$QUIRKS_DIR/rotate/sdl2/64/$SDL2_VERSION.rotate${angle}"
+    local src3_32="$QUIRKS_DIR/rotate/sdl3/32/$SDL3_VERSION.rotate${angle}"
+    local src3_64="$QUIRKS_DIR/rotate/sdl3/64/$SDL3_VERSION.rotate${angle}"
     local ra_suffix="$angle"
   fi
   
   # 检查源文件类型并记录
-  if [[ -L "$src64" ]]; then
-    msg "Source (64bit) is symlink: $src64 -> $(readlink "$src64")"
-  elif [[ -f "$src64" ]]; then
-    msg "Source (64bit) is regular file: $src64 ($(stat -c%s "$src64" 2>/dev/null || echo "unknown") bytes)"
+  if [[ -L "$src2_64" ]]; then
+    msg "Source (64bit) is symlink: $src2_64 -> $(readlink "$src2_64")"
+  elif [[ -f "$src2_64" ]]; then
+    msg "Source (64bit) is regular file: $src2_64 ($(stat -c%s "$src2_64" 2>/dev/null || echo "unknown") bytes)"
+  fi
+  if [[ -L "$src3_64" ]]; then
+    msg "Source (64bit) is symlink: $src3_64 -> $(readlink "$src3_64")"
+  elif [[ -f "$src3_64" ]]; then
+    msg "Source (64bit) is regular file: $src3_64 ($(stat -c%s "$src3_64" 2>/dev/null || echo "unknown") bytes)"
   fi
   
   # 删除目标位置的符号链接（如果存在）
-  rm -f "$sdl64" "$sdl32" 2>/dev/null || true
+  rm -f "$sdl2_64" "$sdl2_32" "$sdl3_64" "$sdl3_32" 2>/dev/null || true
   
   # 复制实际文件
-  cp_if_exists "$src64" "$sdl64" "yes" || true
-  cp_if_exists "$src32" "$sdl32" "yes" || true
+  cp_if_exists "$src2_64" "$sdl2_64" "yes" || true
+  cp_if_exists "$src2_32" "$sdl2_32" "yes" || true
+  cp_if_exists "$src3_64" "$sdl3_64" "yes" || true
+  cp_if_exists "$src3_32" "$sdl3_32" "yes" || true
   
   # 重建符号链接（正确的链接方向）
   # libSDL2.so -> libSDL2-2.0.so -> libSDL2-2.0.so.0 -> $SDL2_VERSION (实际文件)
+  # libSDL3.so -> libSDL3.so.0 -> $SDL3_VERSION (实际文件)
   msg "Rebuilding SDL2 symlinks..."
-  local sdl64_dir="${sdl64%/*}"
-  local sdl32_dir="${sdl32%/*}"
+  local sdl2_64_dir="${sdl2_64%/*}"
+  local sdl2_32_dir="${sdl2_32%/*}"
+  local sdl3_64_dir="${sdl3_64%/*}"
+  local sdl3_32_dir="${sdl3_32%/*}"
   
   # 64-bit links
-  ln -sf "$(basename $sdl64)" "$sdl64_dir/libSDL2-2.0.so.0" && msg "  Created: libSDL2-2.0.so.0 -> $(basename $sdl64)" || warn "  Failed: libSDL2-2.0.so.0"
-  ln -sf "libSDL2-2.0.so.0" "$sdl64_dir/libSDL2-2.0.so" && msg "  Created: libSDL2-2.0.so -> libSDL2-2.0.so.0" || warn "  Failed: libSDL2-2.0.so"
-  ln -sf "libSDL2-2.0.so" "$sdl64_dir/libSDL2.so" && msg "  Created: libSDL2.so -> libSDL2-2.0.so" || warn "  Failed: libSDL2.so"
+  ln -sf "$(basename $sdl2_64)" "$sdl2_64_dir/libSDL2-2.0.so.0" && msg "  Created: libSDL2-2.0.so.0 -> $(basename $sdl2_64)" || warn "  Failed: libSDL2-2.0.so.0"
+  ln -sf "libSDL2-2.0.so.0" "$sdl2_64_dir/libSDL2-2.0.so" && msg "  Created: libSDL2-2.0.so -> libSDL2-2.0.so.0" || warn "  Failed: libSDL2-2.0.so"
+  ln -sf "libSDL2-2.0.so" "$sdl2_64_dir/libSDL2.so" && msg "  Created: libSDL2.so -> libSDL2-2.0.so" || warn "  Failed: libSDL2.so"
+
+  ln -sf "$(basename $sdl3_64)" "$sdl3_64_dir/libSDL3.so.0" && msg "  Created: libSDL3.so.0 -> $(basename $sdl3_64)" || warn "  Failed: libSDL3.so.0"
+  ln -sf "libSDL3.so.0" "$sdl3_64_dir/libSDL3.so" && msg "  Created: libSDL3.so -> libSDL3.so.0" || warn "  Failed: libSDL3.so"
   
   # 32-bit links
-  ln -sf "$(basename $sdl32)" "$sdl32_dir/libSDL2-2.0.so.0" && msg "  Created: libSDL2-2.0.so.0 -> $(basename $sdl32)" || warn "  Failed: libSDL2-2.0.so.0 (32)"
-  ln -sf "libSDL2-2.0.so.0" "$sdl32_dir/libSDL2-2.0.so" && msg "  Created: libSDL2-2.0.so -> libSDL2-2.0.so.0 (32)" || warn "  Failed: libSDL2-2.0.so (32)"
-  ln -sf "libSDL2-2.0.so" "$sdl32_dir/libSDL2.so" && msg "  Created: libSDL2.so -> libSDL2-2.0.so (32)" || warn "  Failed: libSDL2.so (32)"
+  ln -sf "$(basename $sdl2_32)" "$sdl2_32_dir/libSDL2-2.0.so.0" && msg "  Created: libSDL2-2.0.so.0 -> $(basename $sdl2_32)" || warn "  Failed: libSDL2-2.0.so.0 (32)"
+  ln -sf "libSDL2-2.0.so.0" "$sdl2_32_dir/libSDL2-2.0.so" && msg "  Created: libSDL2-2.0.so -> libSDL2-2.0.so.0 (32)" || warn "  Failed: libSDL2-2.0.so (32)"
+  ln -sf "libSDL2-2.0.so" "$sdl2_32_dir/libSDL2.so" && msg "  Created: libSDL2.so -> libSDL2-2.0.so (32)" || warn "  Failed: libSDL2.so (32)"
+
+  ln -sf "$(basename $sdl3_32)" "$sdl3_32_dir/libSDL3.so.0" && msg "  Created: libSDL3.so.0 -> $(basename $sdl3_32)" || warn "  Failed: libSDL3.so.0 (32)"
+  ln -sf "libSDL3.so.0" "$sdl3_32_dir/libSDL3.so" && msg "  Created: libSDL3.so -> libSDL3.so.0 (32)" || warn "  Failed: libSDL3.so (32)"
 }
 
 apply_rotate_file() {
