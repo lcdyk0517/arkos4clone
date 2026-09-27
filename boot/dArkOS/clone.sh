@@ -37,7 +37,7 @@ LED_TYPE="unsupported"
 
 # ==================== 常量设置 ====================
 SDL2_VERSION="libSDL2-2.0.so.0.3200.10"
-SDL3_VERSION="libSDL3.so.0.4.10"
+SDL3_VERSION="libSDL3.so.0.4.16"
 
 detect_device() {
   if [[ -x "$CONSOLE_DETECT" ]]; then
