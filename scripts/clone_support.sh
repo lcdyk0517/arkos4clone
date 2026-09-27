@@ -15,6 +15,11 @@ set -euo pipefail
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$SCRIPT_DIR"
 MOUNT_DIR="${ARKOS_MNT:-/home/lcdyk/arkos/mnt}"
+# 守卫: MOUNT_DIR 为空或根路径时, 后续的 find/rm -rf 会扫到宿主文件系统
+if [[ -z "$MOUNT_DIR" || "$MOUNT_DIR" == "/" || ! -d "$MOUNT_DIR/root/usr/lib" ]]; then
+  echo "[ERROR] MOUNT_DIR 无效: '${MOUNT_DIR:-空}' (镜像未挂载?)"
+  exit 1
+fi
 UPDATE_DATE="$(TZ=Asia/Shanghai date +%Y%m%d)"
 MODDER="kk&lcdyk"
 
@@ -143,6 +148,104 @@ cleanup_stock() {
   # (fstab.exfat 保留在 boot 分区供首启使用；tempthemes 保留——首启搬进 /roms/themes)
 }
 
+prune_old_libs() {
+  # 清理原厂镜像里的冗余库 (仅镜像构建做；OTA 不动设备上的库)
+  local arch_dir dir f b newest real
+  local sdl2_keep=" libSDL2-2.0.so.0.3200.10 libSDL2-2.0.so.0.18.2 "
+  local lib_dirs=(
+    "$MOUNT_DIR/root/usr/lib/arm-linux-gnueabihf"
+    "$MOUNT_DIR/root/usr/lib/aarch64-linux-gnu"
+  )
+
+  # ---- 1) 库相关垃圾: 原厂遗留的 .bak/.zip/.last (flycast 备份 23M 等) ----
+  local junk_dirs=(
+    "${lib_dirs[@]}"
+    "$MOUNT_DIR/root/home/ark/.config/retroarch/cores"
+    "$MOUNT_DIR/root/home/ark/.config/retroarch32/cores"
+    "$MOUNT_DIR/root/opt/mupen64plus"
+  )
+  for dir in "${junk_dirs[@]}"; do
+    [[ -d "$dir" ]] || continue
+    while IFS= read -r -d '' f; do
+      safe sudo rm -f "$f"
+      echo "  删除垃圾库文件: ${f#$MOUNT_DIR/root}"
+    done < <(sudo find "$dir" -maxdepth 1 \( -name '*.bak' -o -name '*.zip' -o -name '*.last' \) -type f -print0 2>/dev/null)
+  done
+
+  # ---- 2) SDL2 历史版本: 每架构保留 0.18.2 (coco/mvem/dragon LD_PRELOAD)
+  #         与该目录里最新的一个版本 (64位=0.3200.10 主版本; 32位原厂无
+  #         0.3200.10, 保留其最新的 0.3000.10, 首启再由 quirks 换成 0.3200.10) ----
+  for arch_dir in "${lib_dirs[@]}"; do
+    [[ -d "$arch_dir" ]] || continue
+    local keep_newest
+    keep_newest=$(ls -1 "$arch_dir" 2>/dev/null | grep -E '^libSDL2-2\.0\.so\.0\.[0-9]+\.[0-9]+$' | sort -V | tail -1)
+    local keep=" libSDL2-2.0.so.0.18.2 ${keep_newest:+$keep_newest} "
+    for f in "$arch_dir"/libSDL2-2.0.so.0.*[0-9]; do
+      [[ -f "$f" && ! -L "$f" ]] || continue
+      b="$(basename "$f")"
+      [[ "$keep" == *" $b "* ]] && continue
+      safe sudo rm -f "$f"
+      echo "  删除多余 SDL2: $b"
+    done
+  done
+
+  # ---- 3) SDL2 soname/dev 链接修复: 原厂链接可能指向刚删除的版本,
+  #         重定向到各架构保留的最新版本 (32位=0.3000.10, 64位=0.3200.10) ----
+  for arch_dir in "${lib_dirs[@]}"; do
+    [[ -d "$arch_dir" ]] || continue
+    newest=$(ls -1 "$arch_dir" 2>/dev/null | grep -E '^libSDL2-2\.0\.so\.0\.[0-9]+\.[0-9]+$' | sort -V | tail -1)
+    [[ -n "$newest" ]] || continue
+    if [[ "$(readlink "$arch_dir/libSDL2-2.0.so.0" 2>/dev/null)" != "$newest" ]]; then
+      fatal sudo ln -sfn "$newest" "$arch_dir/libSDL2-2.0.so.0"
+      echo "  SDL2 soname 链接修复: libSDL2-2.0.so.0 -> $newest"
+    fi
+    if [[ "$(readlink "$arch_dir/libSDL2.so" 2>/dev/null)" != "libSDL2-2.0.so.0" ]]; then
+      fatal sudo ln -sfn "libSDL2-2.0.so.0" "$arch_dir/libSDL2.so"
+      echo "  SDL2 dev 链接修复: libSDL2.so -> libSDL2-2.0.so.0"
+    fi
+  done
+
+  # ---- 4) 同 base 完全相同的多份实体坍缩为链接链 ----
+  # 原厂把本该是符号链接的中间层拷成了实体 (Qt5 三连/solarus/linapple 等)。
+  # 仅当组内所有实体内容一致 (cmp 校验) 才转; 保留版本号最长的一份为实体。
+  local collapse_dirs=(
+    "${lib_dirs[@]}"
+    "$MOUNT_DIR/root/opt/solarus"
+    "$MOUNT_DIR/root/opt/linapple/libs"
+    "$MOUNT_DIR/root/opt/mupen64plus"
+  )
+  local -A seen_members=()
+  for dir in "${collapse_dirs[@]}"; do
+    [[ -d "$dir" ]] || continue
+    local -A groups=()
+    for f in "$dir"/*.so*; do
+      [[ -f "$f" && ! -L "$f" ]] || continue
+      b="${f##*/}"
+      b="${b%%.so*}.so"
+      groups["$b"]="${groups["$b"]:+${groups["$b"]}|}$f"
+    done
+    for b in "${!groups[@]}"; do
+      IFS='|' read -r -a real <<< "${groups[$b]}"
+      (( ${#real[@]} >= 2 )) || continue
+      newest=$(printf '%s\n' "${real[@]}" | sed "s|$dir/||" | sort -V | tail -1)
+      keep="$dir/$newest"
+      local ok=1
+      for f in "${real[@]}"; do
+        [[ "$f" == "$keep" ]] && continue
+        sudo cmp -s "$f" "$keep" || { ok=0; break; }
+      done
+      (( ok )) || continue
+      for f in "${real[@]}"; do
+        [[ "$f" == "$keep" ]] && continue
+        safe sudo rm -f "$f"
+        fatal sudo ln -sfn "$(basename "$keep")" "${f%/*}/${f##*/}"
+        echo "  实体转链接: ${f#$MOUNT_DIR/root} -> $(basename "$keep")"
+      done
+    done
+    unset groups
+  done
+}
+
 if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   # ============================================================
   # dArkOS (UID=1000)
@@ -183,6 +286,7 @@ else
 
   echo "== 清理 ArkOS 不需要的文件 =="
   cleanup_stock
+  prune_old_libs
   safe sudo rm -f "$MOUNT_DIR/root/etc/systemd/system/batt_led.service"
   safe sudo rm -f "$MOUNT_DIR/root/etc/systemd/system/ddtbcheck.service"
   safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Read from SD1 and SD2 for Roms"
@@ -195,6 +299,26 @@ else
   safe sudo rm -f "$MOUNT_DIR/root/usr/local/bin/Read from SD1 and SD2 for Roms"
   safe sudo rm -f "$MOUNT_DIR/root/usr/local/bin/Switch to SD2 for Roms.sh"
   safe sudo rm -f "$MOUNT_DIR/root/usr/local/bin/Switch to main SD for Roms.sh"
+  safe sudo rm -rf "$MOUNT_DIR/root/usr/lib/gcc"
+  safe sudo rm -rf "$MOUNT_DIR/root/opt/ppssppgo"
+  # 原厂构建/开发文件: 设备是消费终端, 无任何现场编译场景
+  # 头文件 / 内核构建目录
+  safe sudo rm -rf "$MOUNT_DIR/root/usr/include" "$MOUNT_DIR/root/usr/src"
+  # 静态库 .a (纯链接期产物 ~91M) 与 libtool .la
+  # -prune 跳过 modules/firmware 目录; -print0/-0 兼容特殊文件名
+  # 注: .pc 与 pkg-config 保留 -- 个别运行时会调用, 且总共 <100KB 无删的价值
+  safe sudo find "$MOUNT_DIR/root/usr/lib" "$MOUNT_DIR/root/usr/local/lib" \
+    \( -type d \( -name modules -o -name firmware \) \) -prune -o \
+    \( -name '*.a' -o -name '*.la' \) -type f -print0 2>/dev/null |
+    xargs -0 -r sudo rm -f
+  # cmake 开发元数据 (cmake 本体一并删除)
+  safe sudo rm -rf "$MOUNT_DIR/root"/usr/lib/*/cmake "$MOUNT_DIR/root"/usr/lib/cmake
+  # 交叉编译器/构建工具残留 (/usr/bin, ~25M); 保留原生 pkg-config
+  safe sudo rm -f "$MOUNT_DIR/root"/usr/bin/aarch64-linux-gnu-* \
+    "$MOUNT_DIR/root"/usr/bin/aarch64-unknown-* \
+    "$MOUNT_DIR/root"/usr/bin/c89-gcc "$MOUNT_DIR/root"/usr/bin/c99-gcc \
+    "$MOUNT_DIR/root"/usr/bin/cmake "$MOUNT_DIR/root"/usr/bin/ccmake \
+    "$MOUNT_DIR/root"/usr/bin/ctest "$MOUNT_DIR/root"/usr/bin/cpack
 
   echo "== 删除logo随机 =="
   safe sudo sed -i '/imageshift\.sh/d' "$MOUNT_DIR/root/var/spool/cron/crontabs/root"
