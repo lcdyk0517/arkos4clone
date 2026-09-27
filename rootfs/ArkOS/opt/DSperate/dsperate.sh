@@ -42,6 +42,10 @@ if [[ ! -s "/${directory}/nds/dsperate/dsperate.ini" ]]; then
     cp /opt/DSperate/config/dsperate.ini /${directory}/nds/dsperate/.
 fi
 
+if [[ -d /home/ark/.config/dsperate && ! -L /home/ark/.config/dsperate ]]; then
+    rm -rf /home/ark/.config/dsperate
+fi
+
 ln -sfn /${directory}/nds/dsperate /home/ark/.config/
 
 if [[ ! -d "/${directory}/nds/cheats" ]]; then
