@@ -95,9 +95,13 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   echo "== 构建 payload/root (sync rootfs/dArkOS) =="
   # OTA 不升级固件与 PortMaster:
   #  - usr/lib/firmware 固件与系统镜像强绑定，OTA 不动
-  #  - opt/system/Tools 在设备上是 /roms/tools 的 bind 挂载点 (PortMaster 所在)，OTA 不写入
-  rsync -a --checksum --exclude=usr/lib/firmware --exclude=opt/system/Tools --exclude='/home/ark/.config/retroarch*/cores/*.so.xz' rootfs/dArkOS/ "$PAYLOAD_ROOT/"
-
+  #  - opt/system/Tools 在设备上是 /roms/tools 的 bind 挂载点 (PortMaster 所在)，还要排除 mame 核心，太大了
+  rsync -a --checksum \
+    --exclude=usr/lib/firmware \
+    --exclude=opt/system/Tools \
+    --exclude='/home/ark/.config/retroarch*/cores/*.so.xz' \
+    --exclude='/home/ark/.config/retroarch*/cores/*mame*' \
+    rootfs/dArkOS/ "$PAYLOAD_ROOT/"
 
 else
   # ============================================================
@@ -115,9 +119,20 @@ else
   touch "$PAYLOAD_BOOT/USE_DTB_SELECT_TO_SELECT_DEVICE" 2>/dev/null || true
 
   echo "== 构建 payload/root (sync rootfs/dArkOS + rootfs/ArkOS) =="
-  # OTA 不升级固件与 PortMaster (Tools 为 /roms/tools 的 bind 挂载点，见上)
-  rsync -a --checksum --exclude=usr/lib/firmware --exclude=opt/system/Tools --exclude='/home/ark/.config/retroarch*/cores/*.so.xz' rootfs/dArkOS/ "$PAYLOAD_ROOT/"
-  rsync -a --checksum --exclude=usr/lib/firmware --exclude=opt/system/Tools --exclude='/home/ark/.config/retroarch*/cores/*.so.xz' rootfs/ArkOS/ "$PAYLOAD_ROOT/"
+  # OTA 不升级固件与 PortMaster (Tools 为 /roms/tools 的 bind 挂载点，见上) 还要排除 mame 核心，太大了
+  rsync -a --checksum \
+    --exclude=usr/lib/firmware \
+    --exclude=opt/system/Tools \
+    --exclude='/home/ark/.config/retroarch*/cores/*.so.xz' \
+    --exclude='/home/ark/.config/retroarch*/cores/*mame*' \
+    rootfs/dArkOS/ "$PAYLOAD_ROOT/"
+
+  rsync -a --checksum \
+    --exclude=usr/lib/firmware \
+    --exclude=opt/system/Tools \
+    --exclude='/home/ark/.config/retroarch*/cores/*.so.xz' \
+    --exclude='/home/ark/.config/retroarch*/cores/*mame*' \
+    rootfs/ArkOS/ "$PAYLOAD_ROOT/"
 
 fi
 
