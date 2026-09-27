@@ -1,3 +1,46 @@
+# ArkOS4Clone 20260927
+
+## 1. New Features
+
+1. Updated 351File
+   4.1 Support two-column folder display
+   4.2 Support Root and ark dual-user access
+   4.3 Support mounting NAS cloud drive protocols (webdav, nfs, ftp, ftps, smb)
+   4.4 Support Baidu Cloud Drive login
+2. Currently arkos4clone can directly open 64-bit RetroArch cores with glibc greater than 2.30
+3. If the corresponding binary file depends on glibc greater than 2.30, it can be run via glibc242 xxx
+4. Added support for SDL3.4.16
+
+
+## 2. Feature Adjustments
+
+1. In the current version, DuckStation's BIOS only needs to be stored in /roms/psx/duckstation_bios
+2. Refactored DTB Select to support more languages
+3. Added mame2000 mame2003 mame fbneo folders to store arcade games
+4. Added XBOX layout and Nintendo layout switching in ES, driver implementation, lower latency
+5. Updated hypseus-singe to version 3.0.2, which uses SDL3
+6. Updated DSperate to version 3.0.0 (requires nds_firmware.bin, nds_bios9.bin, nds_bios7.bin stored in bios)
+7. Updated four versions of Retrorun to the latest
+8. Added flycast2021 and flycast2022 cores required by Retrorun
+9. Updated MAME core to 0.281, core source is christianhaitian/retroarch-cores repository
+10. Added mame2015 mame2016 cores
+
+
+## 3. Bug Fixes
+
+1. Fixed the bug where RG36 and RG36Pro sound was particularly low
+2. Added missing gamma in arkos4clone
+3. Fixed the bug where switching to card 2 in ES caused ports to crash. (Note: ports dependencies are still stored on SD card 1)
+
+## 4. Finally
+
+This is the first build version after the repository adjustment  
+dArkOS4Clone will have fewer features than ArkOS4Clone  
+dArkOS4Clone has not undergone much testing; bugs encountered in dArkOS4Clone will be fixed as they come  
+dArkOS4Clone still does not support OTA updates for now  
+The biggest highlights of this version are the addition of SDL3 3.4.16 and the addition of glibc242 to load cores with glibc greater than 2.30.  
+That's all for now
+
 # ArkOS4Clone 20260915
 
 ## 1. New Features
