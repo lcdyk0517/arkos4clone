@@ -117,7 +117,7 @@ pack_roms_tar() {
   # -h 解引用符号链接: 设备 exFAT 不支持链接
   # --owner=0 --group=0: 归档属主归一化为 root (否则会把构建机的 uid 写进包里，
   # 设备端 exFAT 不支持 chown，解压时每个文件都会报 Operation not permitted)
-  fatal sudo tar -h --owner=0 --group=0 -cf "$MOUNT_DIR/root/roms.tar" -C "$stage" roms
+  fatal sudo tar -h --hard-dereference --owner=0 --group=0 -cf "$MOUNT_DIR/root/roms.tar" -C "$stage" roms
   fatal sudo chmod 777 "$MOUNT_DIR/root/roms.tar"
   safe sudo rm -rf "$stage"
 }
