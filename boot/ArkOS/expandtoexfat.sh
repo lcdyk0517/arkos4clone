@@ -98,6 +98,7 @@ fi
 log "=== Step 7: Move tempthemes ==="
 if [ -d /tempthemes ]; then
   log "Moving /tempthemes/* to /roms/themes..."
+  sudo mkdir -p /roms/themes
   sudo mv -f -v /tempthemes/* /roms/themes 2>&1 | tee -a "$LOG_FILE"
   sync
   sleep 1
