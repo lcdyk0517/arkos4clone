@@ -8,6 +8,7 @@ if [[ "${ARKOS_QUIET:-}" == "1" ]]; then
 else
   RSYNC_PROGRESS="--info=progress2"
 fi
+P1_TARGET_MB=256              # p1 (boot) 目标容量: 256MiB (原厂 112MiB)
 P2_TARGET_MB=11264            # p2 (root) 目标容量: 11G，设备上不再变动
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
 # 临时目录优先使用 ARKOS_WORK_DIR，否则使用当前目录
@@ -24,6 +25,8 @@ IMG="$1"
 [[ -f "$IMG" ]] || { echo "找不到镜像: $IMG"; exit 1; }
 
 # 运行期资源（挂载点等）
+P1_OLD_MNT="$(mktemp -d -t p1_old.XXXXXX)"
+P1_NEW_MNT="$(mktemp -d -t p1_new.XXXXXX)"
 P3_OLD_MNT="$(mktemp -d -t p3_old.XXXXXX)"
 P3_NEW_MNT="$(mktemp -d -t p3_new.XXXXXX)"
 LOOP=""
@@ -39,8 +42,12 @@ settle() {
 
 cleanup() {
   set +e
+  mountpoint -q "$P1_OLD_MNT" && sudo umount "$P1_OLD_MNT"
+  mountpoint -q "$P1_NEW_MNT" && sudo umount "$P1_NEW_MNT"
   mountpoint -q "$P3_OLD_MNT" && sudo umount "$P3_OLD_MNT"
   mountpoint -q "$P3_NEW_MNT" && sudo umount "$P3_NEW_MNT"
+  [[ -d "$P1_OLD_MNT" ]] && rmdir "$P1_OLD_MNT" || true
+  [[ -d "$P1_NEW_MNT" ]] && rmdir "$P1_NEW_MNT" || true
   [[ -d "$P3_OLD_MNT" ]] && rmdir "$P3_OLD_MNT" || true
   [[ -d "$P3_NEW_MNT" ]] && rmdir "$P3_NEW_MNT" || true
   # 清理 btrfs 临时挂载点
@@ -86,8 +93,13 @@ has_p3() {
   sudo parted -sm "$LOOP" unit s print | grep -qE '^3:'
 }
 
-# 读取 p2 / p3 当前大小，计算各自扩容量
+# 读取 p1 / p2 / p3 当前大小，计算各自扩容量
 PARTED_OUT="$(sudo parted -sm "$LOOP" unit s print)"
+P1_START="$(awk -F: '$1=="1"{gsub(/s/,"",$2); print $2}' <<< "$PARTED_OUT")"
+P1_END="$(awk -F: '$1=="1"{gsub(/s/,"",$3); print $3}' <<< "$PARTED_OUT")"
+[[ -n "${P1_START:-}" && -n "${P1_END:-}" ]] || { echo "未能读取到分区1信息，退出。"; exit 1; }
+P1_CUR_MB=$(( (P1_END - P1_START + 1) * SECTOR_SIZE / 1024 / 1024 ))
+
 CUR_START="$(awk -F: '$1=="2"{gsub(/s/,"",$2); print $2}' <<< "$PARTED_OUT")"
 CUR_END="$(awk -F: '$1=="2"{gsub(/s/,"",$3); print $3}' <<< "$PARTED_OUT")"
 [[ -n "${CUR_END:-}" ]] || { echo "未能读取到分区2信息，退出。"; exit 1; }
@@ -100,17 +112,23 @@ if has_p3; then
   P3_CUR_MB=$(( (P3_END - P3_START + 1) * SECTOR_SIZE / 1024 / 1024 ))
 fi
 
-# p2 扩到固定 11G；p3 保持原样 (出厂空盘)，roms/ 打包为 /roms.tar 由首启解包
+# p1 扩到固定 256MiB；p2 扩到固定 11G；p3 保持原样 (出厂空盘)
+# roms/ 打包为 /roms.tar 由首启解包
+BOOT_ADD_MB=$(( P1_TARGET_MB > P1_CUR_MB ? P1_TARGET_MB - P1_CUR_MB : 0 ))
 P2_DELTA=$(( P2_TARGET_MB > P2_CUR_MB ? P2_TARGET_MB - P2_CUR_MB : 0 ))
-ADD_SECTORS=$(( P2_DELTA * 1024 * 1024 / SECTOR_SIZE ))
 
-echo "当前 p2: ${P2_CUR_MB}MiB (End: $CUR_END), p3: ${P3_CUR_MB}MiB"
-echo "目标: p2 → ${P2_TARGET_MB}MiB (+${P2_DELTA}), p3 保持 ${P3_CUR_MB}MiB"
+echo "当前 p1: ${P1_CUR_MB}MiB, p2: ${P2_CUR_MB}MiB (End: $CUR_END), p3: ${P3_CUR_MB}MiB"
+echo "目标: p1 → ${P1_TARGET_MB}MiB (+${BOOT_ADD_MB}), p2 → ${P2_TARGET_MB}MiB (+${P2_DELTA}), p3 保持 ${P3_CUR_MB}MiB"
 
-# ======= 第一步：备份 p3 到 TMP_DIR（若存在） =======
+# p3 备份固定放 $TMP_DIR/p3data（与 p1 备份 $TMP_DIR/bootfs 区分，
+# 恢复时按 HAD_P3 标志判断，避免把 boot 备份误恢复进 p3）
+HAD_P3=0
+
+# ======= 第一步：备份 p3 到 TMP_DIR/p3data（若存在） =======
 if has_p3; then
-  echo "检测到 p3，准备备份到 $TMP_DIR"
-  mkdir -p "$TMP_DIR"
+  HAD_P3=1
+  echo "检测到 p3，准备备份到 $TMP_DIR/p3data"
+  mkdir -p "$TMP_DIR/p3data"
   P3_DEV="${LOOP}p3"
 
   # 沿用原厂: 按原类型重建 p3 (原厂镜像为 NTFS)
@@ -124,8 +142,8 @@ if has_p3; then
     sudo mount "$P3_DEV" "$P3_OLD_MNT"
   fi
 
-  echo "备份 p3 -> $TMP_DIR（rsync -aH --delete，保证 tmp 为“镜像一致”）"
-  sudo rsync -aH --delete $RSYNC_PROGRESS "$P3_OLD_MNT"/ "$TMP_DIR"/
+  echo "备份 p3 -> $TMP_DIR/p3data（rsync -aH --delete，保证目录为“镜像一致”）"
+  sudo rsync -aH --delete $RSYNC_PROGRESS "$P3_OLD_MNT"/ "$TMP_DIR/p3data"/
 
   echo "卸载旧 p3 挂载点"
   sudo umount "$P3_OLD_MNT"
@@ -152,30 +170,123 @@ if has_p3; then
   exit 1
 fi
 
-# ======= 第三步：扩展镜像文件并扩 p2 =======
-echo "== 扩大镜像 +${P2_DELTA}MiB (仅 p2; p3 保持不变) =="
-truncate -s +"${P2_DELTA}"M "$IMG"
+if (( BOOT_ADD_MB > 0 )); then
+  # ======= 第三步A：扩容 p1 (boot) =======
+  # p1 后面紧挨着 p2，扩 p1 必须把 p2 的原始数据整体右移：
+  # 备份 p1 内容 → 删除 p1/p2 分区表项 → 镜像文件内原始搬运 p2 数据 →
+  # 重建 256MiB 的 p1 (mkfs 后恢复内容) → 在新起点重建 p2
+  # (boot.ini 用 "load mmc 1:1" 按分区号引导，无 UUID 引用，重建 FAT 安全)
 
-echo "== 刷新 loop 大小 =="
-sudo losetup -d "$LOOP"
-LOOP="$(sudo losetup --find --show -P "$IMG")"
-settle
-echo "loop 已刷新: $LOOP"
+  NEW_P1_END=$(( P1_START + P1_TARGET_MB * 1024 * 1024 / SECTOR_SIZE - 1 ))
+  NEW_P2_START=$(( NEW_P1_END + 1 ))
+  SHIFT_SECTORS=$(( NEW_P2_START - CUR_START ))
+  SHIFT_BYTES=$(( SHIFT_SECTORS * SECTOR_SIZE ))
+  MOVE_SRC=$(( CUR_START * SECTOR_SIZE ))
+  MOVE_LEN=$(( (CUR_END - CUR_START + 1) * SECTOR_SIZE ))
 
-# 重新读取 p2 End（以防 parted/内核刷新导致边界变化）
-CUR_END="$(sudo parted -sm "$LOOP" unit s print | awk -F: '$1=="2"{gsub(/s/,"",$3); print $3}')"
-[[ -n "${CUR_END:-}" ]] || { echo "刷新后未能读取到分区2信息，退出。"; exit 1; }
-NEW_END=$(( CUR_END + ADD_SECTORS ))
-echo "将 p2 结束扇区扩到: $NEW_END"
+  # 安全断言：新 p2 起点 1MiB 对齐；搬运目的不越过当前文件尾
+  (( NEW_P2_START % (1024 * 1024 / SECTOR_SIZE) == 0 )) \
+    || { echo "错误：新 p2 起点 ${NEW_P2_START}s 未 1MiB 对齐，退出。"; exit 1; }
+  IMG_SIZE_BYTES="$(stat -c %s "$IMG")"
+  (( MOVE_SRC + MOVE_LEN + SHIFT_BYTES <= IMG_SIZE_BYTES )) \
+    || { echo "错误：p2 搬运目的区域越过镜像尾部，退出。"; exit 1; }
 
-echo "== 扩展 p2 到指定扇区（非100%） =="
-if [ "$P2_DELTA" -gt 0 ]; then
-  sudo parted -s "$LOOP" unit s "resizepart 2 ${NEW_END}s"
+  echo "== 备份 p1 (boot) 内容 -> $TMP_DIR/bootfs =="
+  mkdir -p "$TMP_DIR/bootfs"
+  ORIG_P1_LABEL="$(sudo blkid -s LABEL -o value "${LOOP}p1" 2>/dev/null || echo 'BOOT')"
+  echo "原 p1 卷标: $ORIG_P1_LABEL (重建后沿用)"
+  if ! sudo mount -o ro "${LOOP}p1" "$P1_OLD_MNT"; then
+    echo "只读挂载失败，尝试普通挂载"
+    sudo mount "${LOOP}p1" "$P1_OLD_MNT"
+  fi
+  sudo rsync -rltD --delete --no-owner --no-group --no-perms --omit-dir-times \
+    $RSYNC_PROGRESS "$P1_OLD_MNT"/ "$TMP_DIR/bootfs"/
+  sudo umount "$P1_OLD_MNT"
+
+  echo "== 删除旧分区 1/2 (p3 已删；p2 数据仍在镜像文件中) =="
+  sudo parted -s "$LOOP" rm 2
+  sudo parted -s "$LOOP" rm 1
+  sudo partprobe "$LOOP" || true
+
+  echo "== p2 原始数据右移 ${SHIFT_SECTORS} 扇区 (+${BOOT_ADD_MB}MiB), 共 ${P2_CUR_MB}MiB =="
+  # 解绑 loop，直接在镜像文件上搬运（避免 loop 缓存与文件写入不一致）
+  sudo losetup -d "$LOOP"
+  LOOP=""
+  # 反向分块搬运（块 < 位移量，从尾部往前搬，源/目的重叠也不会踩未读数据）
+  CHUNK=$(( 16 * 1024 * 1024 ))
+  remaining=$MOVE_LEN
+  src_off=$(( MOVE_SRC + MOVE_LEN ))
+  next_report=$(( 1024 * 1024 * 1024 ))
+  while (( remaining > 0 )); do
+    (( n = remaining < CHUNK ? remaining : CHUNK ))
+    src_off=$(( src_off - n ))
+    dd if="$IMG" of="$IMG" bs="$CHUNK" conv=notrunc status=none \
+      iflag=count_bytes,skip_bytes oflag=seek_bytes \
+      skip="$src_off" seek="$(( src_off + SHIFT_BYTES ))" count="$n"
+    remaining=$(( remaining - n ))
+    if [[ "${ARKOS_QUIET:-}" != "1" ]] && (( MOVE_LEN - remaining >= next_report )); then
+      echo "  已搬运 $(( (MOVE_LEN - remaining) / 1024 / 1024 )) / $(( MOVE_LEN / 1024 / 1024 )) MiB"
+      next_report=$(( next_report + 1024 * 1024 * 1024 ))
+    fi
+  done
+  sync
+
+  echo "== 扩大镜像 +$(( P2_DELTA + BOOT_ADD_MB ))MiB =="
+  truncate -s +"$(( P2_DELTA + BOOT_ADD_MB ))M" "$IMG"
+
+  echo "== 刷新 loop 大小 =="
+  LOOP="$(sudo losetup --find --show -P "$IMG")"
+  settle
+  echo "loop 已刷新: $LOOP"
+
+  echo "== 重建 p1: ${P1_TARGET_MB}MiB FAT32 (${P1_START}s - ${NEW_P1_END}s) =="
+  sudo parted -s "$LOOP" unit s "mkpart primary fat32 ${P1_START}s ${NEW_P1_END}s"
+  # 分区类型 0x0b 与原厂一致 (parted 默认给 0x0c)
+  sudo sfdisk --change-id "$LOOP" 1 b 2>/dev/null || true
+  sudo partprobe "$LOOP" || true
+  settle
+  sudo mkfs.vfat -F 32 -n "$ORIG_P1_LABEL" "${LOOP}p1"
+  echo "== 恢复 p1 内容 =="
+  sudo mount "${LOOP}p1" "$P1_NEW_MNT"
+  sudo rsync -rltD --no-owner --no-group --no-perms --omit-dir-times \
+    $RSYNC_PROGRESS "$TMP_DIR/bootfs"/ "$P1_NEW_MNT"/
+  sync
+  sudo umount "$P1_NEW_MNT"
+
+  echo "== 重建 p2: ${P2_TARGET_MB}MiB (${NEW_P2_START}s 起) =="
+  NEW_P2_END=$(( NEW_P2_START + P2_TARGET_MB * 1024 * 1024 / SECTOR_SIZE - 1 ))
+  sudo parted -s "$LOOP" unit s "mkpart primary ${NEW_P2_START}s ${NEW_P2_END}s"
+  sudo partprobe "$LOOP" || true
+  settle
 else
-  echo "p2 已达到目标容量，跳过"
+  # ======= 第三步B：p1 已达标，仅原地扩 p2 =======
+  echo "p1 已达到 ${P1_TARGET_MB}MiB，跳过 boot 扩容"
+
+  echo "== 扩大镜像 +${P2_DELTA}MiB (仅 p2; p3 保持不变) =="
+  truncate -s +"${P2_DELTA}"M "$IMG"
+
+  echo "== 刷新 loop 大小 =="
+  sudo losetup -d "$LOOP"
+  LOOP="$(sudo losetup --find --show -P "$IMG")"
+  settle
+  echo "loop 已刷新: $LOOP"
+
+  ADD_SECTORS=$(( P2_DELTA * 1024 * 1024 / SECTOR_SIZE ))
+  # 重新读取 p2 End（以防 parted/内核刷新导致边界变化）
+  CUR_END="$(sudo parted -sm "$LOOP" unit s print | awk -F: '$1=="2"{gsub(/s/,"",$3); print $3}')"
+  [[ -n "${CUR_END:-}" ]] || { echo "刷新后未能读取到分区2信息，退出。"; exit 1; }
+  NEW_END=$(( CUR_END + ADD_SECTORS ))
+  echo "将 p2 结束扇区扩到: $NEW_END"
+
+  echo "== 扩展 p2 到指定扇区（非100%） =="
+  if [ "$P2_DELTA" -gt 0 ]; then
+    sudo parted -s "$LOOP" unit s "resizepart 2 ${NEW_END}s"
+  else
+    echo "p2 已达到目标容量，跳过"
+  fi
+  sudo partprobe "$LOOP" || true
+  settle
 fi
-sudo partprobe "$LOOP" || true
-settle
 
 echo "== 扩展 p2 内文件系统（自动检测 ext4 / f2fs） =="
 P2_DEV="${LOOP}p2"
@@ -246,23 +357,23 @@ case "$ORIG_P3_FS" in
 esac
 
 # ======= 第五步：恢复数据（镜像一致） =======
-if [[ -d "$TMP_DIR" ]] && [[ -n "$(ls -A "$TMP_DIR" 2>/dev/null || true)" ]]; then
-  echo "== 恢复数据（镜像一致）：$TMP_DIR -> 新 p3 =="
+if (( HAD_P3 )); then
+  echo "== 恢复数据（镜像一致）：$TMP_DIR/p3data -> 新 p3 =="
   sudo mount "$P3_DEV" "$P3_NEW_MNT"
   # FAT32/exFAT 不支持 Unix 权限，使用 --no-perms --no-owner --no-group
   case "$ORIG_P3_FS" in
     vfat|fat32|fat16|exfat)
-      sudo rsync -rltD --no-perms --no-owner --no-group --delete $RSYNC_PROGRESS "$TMP_DIR"/ "$P3_NEW_MNT"/
+      sudo rsync -rltD --no-perms --no-owner --no-group --delete $RSYNC_PROGRESS "$TMP_DIR/p3data"/ "$P3_NEW_MNT"/
       ;;
     *)
-      sudo rsync -aH --delete $RSYNC_PROGRESS "$TMP_DIR"/ "$P3_NEW_MNT"/
+      sudo rsync -aH --delete $RSYNC_PROGRESS "$TMP_DIR/p3data"/ "$P3_NEW_MNT"/
       ;;
   esac
   sync
   sudo umount "$P3_NEW_MNT"
   echo "恢复完成。"
 else
-  echo "没有找到备份内容，跳过恢复。"
+  echo "原镜像没有 p3，跳过恢复。"
 fi
 
 # ======= 第六步：可选检查输出 =======
@@ -277,4 +388,4 @@ echo "== 解绑 loop 设备 =="
 sudo losetup -d "$LOOP" || true
 LOOP=""
 
-echo "✅ 完成：已按顺序【备份p3→删除p3→扩p2→重建p3→恢复→清理tmp→解绑loop】"
+echo "✅ 完成：【备份p1+p3 → 删p3 → 右移p2数据并重建p1(${P1_TARGET_MB}M) → 重建p2(${P2_TARGET_MB}M) → 重建p3 → 恢复 → 清理tmp → 解绑loop】"

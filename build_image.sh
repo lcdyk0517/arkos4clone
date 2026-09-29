@@ -562,7 +562,7 @@ ArkOS4Clone 一键构建脚本
 执行步骤:
   0. 编译 dtb_selector 工具 (scripts/build_dtb_selector.sh)
   1. 复制源镜像到工作目录
-  2. 分区调整 (scripts/repart_image.sh): p2 扩到 11G, p3 按 roms/ 内容扩到刚好
+  2. 分区调整 (scripts/repart_image.sh): p1 扩到 256M, p2 扩到 11G, p3 按原容量重建
   3. 写入 U-Boot (flash_uboot.sh)
   4. 挂载镜像 (scripts/mount_arkos.sh mount)
   5. 注入定制内容 (scripts/clone_support.sh)
