@@ -22,3 +22,4 @@ rootfs/ArkOS/home/ark/.config/retroarch/cores/mame_libretro.so
 rootfs/dArkOS/home/ark/.config/retroarch/cores/mame2015_libretro.so
 rootfs/dArkOS/home/ark/.config/retroarch/cores/mame2016_libretro.so
 rootfs/dArkOS/home/ark/.config/retroarch32/cores/mame2016_libretro.so
+roms/tools/Install.PortMaster.sh

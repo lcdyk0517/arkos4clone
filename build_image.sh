@@ -216,6 +216,34 @@ check_pm_libs() {
   log_ok "pm_libs 文件准备完成: roms/tools/PortMaster/libs"
 }
 
+check_install_portmaster() {
+  # 每次构建都拉取 PortMaster-GUI 最新 release 的 Install.PortMaster.sh,
+  # 放入 roms/tools/ (设备上经 bind 出现在 /opt/system/Tools)
+  local dst="$SCRIPT_DIR/roms/tools/Install.PortMaster.sh"
+  local url
+  log_info "获取最新 Install.PortMaster.sh 下载地址..."
+  url=$(curl -s https://api.github.com/repos/PortsMaster/PortMaster-GUI/releases/latest |
+    python3 -c "import sys,json; d=json.load(sys.stdin); print(next(a['browser_download_url'] for a in d['assets'] if a['name']=='Install.PortMaster.sh'))" 2>/dev/null)
+  if [[ -z "$url" ]]; then
+    log_error "获取 Install.PortMaster.sh 下载地址失败 (GitHub API)"
+    exit 1
+  fi
+  mkdir -p "$(dirname "$dst")"
+  log_info "下载 Install.PortMaster.sh ($url)..."
+  if [[ -n "${SUDO_USER:-}" ]]; then
+    sudo -u "$SUDO_USER" wget $WGET_OPTS -O "$dst" "$url"
+  else
+    wget $WGET_OPTS -O "$dst" "$url"
+  fi
+  if [[ ! -s "$dst" ]]; then
+    log_error "Install.PortMaster.sh 下载失败"
+    rm -f "$dst"
+    exit 1
+  fi
+  chmod +x "$dst"
+  log_ok "Install.PortMaster.sh 就绪: roms/tools/ ($(du -h "$dst" | cut -f1))"
+}
+
 check_work_dir() {
   local dir="$1"
   if [[ ! -d "$dir" ]]; then
@@ -629,6 +657,7 @@ main() {
   check_jdk_file
   check_portmaster
   check_pm_libs
+  check_install_portmaster
   check_clone_dependencies
 
   # 需要 root 的检查

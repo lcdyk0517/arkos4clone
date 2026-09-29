@@ -109,11 +109,19 @@ pack_roms_tar() {
     exit 1
   fi
   mkdir -p "$stage/roms"
-  fatal sudo rsync -a roms/ "$stage/roms"/
+  # 合并顺序: 原厂骨架先进, 项目增量后进 (项目覆盖原厂) --
+  # 否则原厂自带的老 PortMaster/PortMaster.sh 会覆盖构建时新下载的版本
   if [[ -d "$MOUNT_DIR/roms" ]]; then
     echo "== 合并原厂 roms 骨架 (仅入包，不落项目目录) =="
-    fatal sudo rsync -a --exclude 'System Volume Information' --exclude 'EUMONBMP.SYS' --exclude '*.CBM' "$MOUNT_DIR/roms/" "$stage/roms"/
+    # themes 排除: 原厂 p3 自带完整 es-theme-nes-box (19M), 首启由
+    # "删默认主题 + tempthemes 搬运" 机制提供, 打进 tar 会让 pymo 白走一趟删/补
+    fatal sudo rsync -a --checksum --exclude 'System Volume Information' --exclude 'EUMONBMP.SYS' --exclude '*.CBM' \
+      --exclude 'tools/Gamma' --exclude 'tools/ES-logo-changer' --exclude 'tools/PortMaster.sh' "$MOUNT_DIR/roms/" "$stage/roms"/
   fi
+  # --checksum: 项目必须无条件覆盖原厂 (防同尺寸同 mtime 漏覆盖, 同 logo 事件教训)
+  fatal sudo rsync -a --checksum roms/ "$stage/roms"/
+  # Gamma / ES-logo-changer 不再随包提供 (双保险: 即使经其他路径混入 stage 也删掉)
+  safe sudo rm -rf "$stage/roms/tools/Gamma" "$stage/roms/tools/ES-logo-changer" "$stage/roms/tools/PortMaster.sh"
   # -h 解引用符号链接: 设备 exFAT 不支持链接
   # --owner=0 --group=0: 归档属主归一化为 root (否则会把构建机的 uid 写进包里，
   # 设备端 exFAT 不支持 chown，解压时每个文件都会报 Operation not permitted)
