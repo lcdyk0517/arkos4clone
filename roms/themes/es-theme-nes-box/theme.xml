@@ -1,0 +1,41 @@
+<!--
+theme name:     NES BOX Theme
+creator:		Travis Wilson (Super Retropie and Retro Gaming)
+facebook:		www.facebook.com/groups/superretropie
+twitter:		www.twitter.com/superretropie
+email:			superretropieretrogaming@gmail.com
+version         1.9
+-->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<theme>
+   <formatVersion>7</formatVersion>
+   <include>./main.xml</include>
+    <variables>
+	 <fullscreenfixSubsetname>Emulationstation Screen Size</fullscreenfixSubsetname>
+	 <fontsize>Font Size</fontsize>
+     <colorSubsetname>Theme Color</colorSubsetname>
+   </variables>
+   
+	<subset name="Emulationstation Screen" displayName="${fullscreenfixSubsetname}">
+        <include name="ES Header" displayName="${ES Header}">./header.xml</include>
+        <include name="ES Fullscreen" displayName="${ES Fullscreen}">./fullscreen.xml</include>
+        <include name="1:1" displayName="${1:1}">./square.xml</include>
+		<include name="4:3" displayName="${4:3}">./fullscreenv.xml</include>
+		<include name="OGS" displayName="${OGS}">./ogs.xml</include>
+    </subset>
+   
+    <subset name="Color" displayName="${colorSubsetname}">
+        <include name="red" displayName="${red}">./red.xml</include>
+        <include name="blue" displayName="${blue}">./blue.xml</include>
+		<include name="green" displayName="${green}">./green.xml</include>
+		<include name="purple" displayName="${purple}">./purple.xml</include>
+    </subset>
+	
+	<subset name="Font Size" displayName="${fontsizeSubsetname}">
+        <include name="default" displayName="${default}">./_inc/xml/medium.xml</include>
+		<include name="large" displayName="${large}">./_inc/xml/large.xml</include>
+		<include name="small" displayName="${small}">./_inc/xml/small.xml</include>
+    </subset>
+
+</theme>

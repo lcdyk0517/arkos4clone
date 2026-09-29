@@ -81,6 +81,7 @@ pack_roms_tar() {
     return 0
   fi
   echo "== 打包 roms/ -> 镜像 /roms.tar =="
+
   # 首启需要的空 roms 目录与 pymo 扫描器 (源在 rootfs 树内)
   local d
   for d in hbmame native32 bbk flash gametank spmp8000 krkr2 pymo; do
@@ -89,15 +90,16 @@ pack_roms_tar() {
   if [[ ! -f roms/pymo/Scan_for_new_games.pymo && -f rootfs/dArkOS/opt/pymo/Scan_for_new_games.pymo ]]; then
     cp -f rootfs/dArkOS/opt/pymo/Scan_for_new_games.pymo roms/pymo/
   fi
-  # pymo 主题合入镜像 tempthemes (原厂机制: 首启把 tempthemes 搬进 /roms/themes)
-  if [[ -d "$MOUNT_DIR/root/tempthemes/es-theme-nes-box" && ! -d "$MOUNT_DIR/root/tempthemes/es-theme-nes-box/pymo" ]]; then
-    echo "== 合并 pymo 主题到镜像 tempthemes =="
-    if [[ -d roms/themes/es-theme-nes-box/pymo ]]; then
-      fatal sudo cp -r roms/themes/es-theme-nes-box/pymo "$MOUNT_DIR/root/tempthemes/es-theme-nes-box/pymo"
-    elif [[ -d rootfs/dArkOS/opt/pymo/pymo ]]; then
-      fatal sudo cp -r rootfs/dArkOS/opt/pymo/pymo "$MOUNT_DIR/root/tempthemes/es-theme-nes-box/pymo"
-    fi
+
+  # 合并主题: 以项目为准，整体替换 tempthemes 里的 es-theme-nes-box
+  # 原厂机制: 首启把 tempthemes 搬进 /roms/themes
+  if [[ -d roms/themes/es-theme-nes-box ]]; then
+    echo "== 替换 es-theme-nes-box 到镜像 tempthemes =="
+    fatal sudo rm -rf "$MOUNT_DIR/root/tempthemes/es-theme-nes-box"
+    fatal sudo mkdir -p "$MOUNT_DIR/root/tempthemes/es-theme-nes-box"
+    fatal sudo cp -a roms/themes/es-theme-nes-box/. "$MOUNT_DIR/root/tempthemes/es-theme-nes-box"/
   fi
+
   # 组装打包视图: 项目增量 + 原厂骨架 (首启会重格 p3，骨架必须随 tar 进包)
   # 内容放在 stage/roms/ 下，tar 成员即带 roms/ 前缀
   local stage need_mb avail_mb
@@ -109,19 +111,33 @@ pack_roms_tar() {
     exit 1
   fi
   mkdir -p "$stage/roms"
+
   # 合并顺序: 原厂骨架先进, 项目增量后进 (项目覆盖原厂) --
   # 否则原厂自带的老 PortMaster/PortMaster.sh 会覆盖构建时新下载的版本
   if [[ -d "$MOUNT_DIR/roms" ]]; then
     echo "== 合并原厂 roms 骨架 (仅入包，不落项目目录) =="
-    # themes 排除: 原厂 p3 自带完整 es-theme-nes-box (19M), 首启由
-    # "删默认主题 + tempthemes 搬运" 机制提供, 打进 tar 会让 pymo 白走一趟删/补
-    fatal sudo rsync -a --checksum --exclude 'System Volume Information' --exclude 'EUMONBMP.SYS' --exclude '*.CBM' \
-      --exclude 'tools/Gamma' --exclude 'tools/ES-logo-changer' --exclude 'tools/PortMaster.sh' "$MOUNT_DIR/roms/" "$stage/roms"/
+    # themes 排除: 原厂 p3 自带完整 es-theme-nes-box (19M)，首启由
+    # "删默认主题 + tempthemes 搬运" 机制提供，打进 tar 会让 pymo 白走一趟删/补
+    fatal sudo rsync -a --checksum \
+      --exclude 'System Volume Information' \
+      --exclude 'EUMONBMP.SYS' \
+      --exclude '*.CBM' \
+      --exclude 'tools/Gamma' \
+      --exclude 'tools/ES-logo-changer' \
+      --exclude 'tools/PortMaster.sh' \
+      --exclude 'themes/es-theme-nes-box' \
+      "$MOUNT_DIR/roms/" "$stage/roms"/
   fi
+
   # --checksum: 项目必须无条件覆盖原厂 (防同尺寸同 mtime 漏覆盖, 同 logo 事件教训)
-  fatal sudo rsync -a --checksum roms/ "$stage/roms"/
+  # 排除 themes/es-theme-nes-box: 该主题已通过 tempthemes 走首启搬运，不再入 tar
+  fatal sudo rsync -a --checksum \
+    --exclude 'themes/es-theme-nes-box' \
+    roms/ "$stage/roms"/
+
   # Gamma / ES-logo-changer 不再随包提供 (双保险: 即使经其他路径混入 stage 也删掉)
   safe sudo rm -rf "$stage/roms/tools/Gamma" "$stage/roms/tools/ES-logo-changer" "$stage/roms/tools/PortMaster.sh"
+
   # -h 解引用符号链接: 设备 exFAT 不支持链接
   # --owner=0 --group=0: 归档属主归一化为 root (否则会把构建机的 uid 写进包里，
   # 设备端 exFAT 不支持 chown，解压时每个文件都会报 Operation not permitted)

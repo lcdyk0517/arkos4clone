@@ -14,6 +14,7 @@ sh/firstboot.sh
 roms/tools/PortMaster/
 roms/j2me/jdk/
 boot/dArkOS/dtb_selector_*
+fetch.sh
 
 # 构建时下载/解压的产物，不入库
 roms/tools/PortMaster.sh

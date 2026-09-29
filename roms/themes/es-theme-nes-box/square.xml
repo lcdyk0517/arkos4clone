@@ -1,0 +1,41 @@
+<!--
+theme name:     NES BOX Theme
+creator:		Travis Wilson (Super Retropie and Retro Gaming)
+facebook:		www.facebook.com/groups/superretropie
+twitter:		www.twitter.com/superretropie
+email:			superretropieretrogaming@gmail.com
+version         1.9
+-->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<theme>
+   <formatVersion>7</formatVersion>
+ 
+   <view name="system">
+      <helpsystem name="help">
+         <fontSize>0.030</fontSize>     
+         <pos>0.02 0.955</pos>      
+      </helpsystem>
+	  
+	  <image name="background_icon" extra="true">
+         <origin>0 0</origin>
+         <pos>-0.25 0</pos>
+         <size>1.25 1</size>
+      </image>
+   </view>  
+
+   <view name="detailed,video,basic">
+      <helpsystem name="help">
+         <fontSize>0.030</fontSize>     
+         <pos>0.02 0.955</pos>      
+      </helpsystem>
+   </view>
+
+   <view name="screen">
+      <batteryIndicator name="batteryIndicator">
+         <pos>0.03 0.02</pos>     
+         <size>0.06 0.06</size>
+      </batteryIndicator>
+   </view>
+  
+</theme>
