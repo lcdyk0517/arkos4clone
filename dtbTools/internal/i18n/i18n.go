@@ -28,6 +28,7 @@ type CommonStrings struct {
 	SelectNumber         string
 	PressEnterToContinue string
 	GoodBye              string
+	UpdateAvailable      string
 }
 
 // Menu1Strings holds the welcome/intro strings.

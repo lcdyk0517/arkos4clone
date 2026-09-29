@@ -31,18 +31,18 @@ const (
 type Style string
 
 const (
-	StyleBold      Style = ANSIBold
-	StyleRed       Style = ANSIRed
-	StyleDeepRed   Style = ANSIDeepRed
+	StyleBold        Style = ANSIBold
+	StyleRed         Style = ANSIRed
+	StyleDeepRed     Style = ANSIDeepRed
 	StyleBoldDeepRed Style = ANSIBold + ANSIDeepRed
-	StyleGreen     Style = ANSIGreen
-	StyleBlue      Style = ANSIBlue
-	StyleCyan      Style = ANSICyan
-	StyleBoldRed   Style = ANSIBold + ANSIRed
-	StyleBoldGreen Style = ANSIBold + ANSIGreen
-	StyleBoldBlue  Style = ANSIBold + ANSIBlue
-	StyleBoldCyan  Style = ANSIBold + ANSICyan
-	StyleDim       Style = ""
+	StyleGreen       Style = ANSIGreen
+	StyleBlue        Style = ANSIBlue
+	StyleCyan        Style = ANSICyan
+	StyleBoldRed     Style = ANSIBold + ANSIRed
+	StyleBoldGreen   Style = ANSIBold + ANSIGreen
+	StyleBoldBlue    Style = ANSIBold + ANSIBlue
+	StyleBoldCyan    Style = ANSIBold + ANSICyan
+	StyleDim         Style = ""
 )
 
 func supportsANSI() bool {
@@ -80,6 +80,17 @@ func Print(s string) {
 }
 
 // ClearScreen clears the terminal screen.
+// AppVersion is injected at build time via -ldflags "-X ui.AppVersion=<date>".
+var AppVersion = "dev"
+
+// UpdateHint is set by main when a newer release exists on GitHub
+// (empty when offline / fetch failed / same version -> shown silently hidden).
+// Format: "⚠ 发现新版本: v20260928" (localized text + latest version).
+var UpdateHint = ""
+
+// UpdateURL is the project's releases page, shown on its own line under the hint.
+const UpdateURL = "https://github.com/lcdyk0517/arkos4clone/releases"
+
 func ClearScreen() {
 	if !isTerminal() {
 		return
@@ -93,6 +104,14 @@ func ClearScreen() {
 		cmd := exec.Command("clear")
 		cmd.Stdout = os.Stdout
 		_ = cmd.Run()
+	}
+	// 版本行: 版本号独立一行, 不与界面标题挤在一起;
+	// 有新版本时同行显示提示(含具体版本号), 换行显示 release 链接
+	if UpdateHint != "" {
+		Println(ColorWrap("v"+AppVersion, StyleDim) + "  " + ColorWrap(UpdateHint, StyleBoldRed))
+		Println(ColorWrap("  "+UpdateURL, StyleDim))
+	} else {
+		Println(ColorWrap("v"+AppVersion, StyleDim))
 	}
 }
 

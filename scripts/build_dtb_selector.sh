@@ -4,7 +4,9 @@ set -euo pipefail
 TARGET=dtb_selector
 GO="${GO:-go}"
 # 注意: FLAGS 里不要用 =，用空格
-FLAGS=(-ldflags "-s -w")
+VERSION="$(TZ=Asia/Shanghai date +%Y.%m.%d)"
+FLAGS=(-ldflags "-s -w -X main.Version=${VERSION}")
+echo "Version     = $VERSION"
 
 # --- 定位脚本目录和项目根目录 ---
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
@@ -20,6 +22,12 @@ fi
 
 MODULE_DIR="$ROOT_DIR/dtbTools"
 OUT_DIR="$ROOT_DIR/boot/dArkOS"
+
+# 源码复制到本地盘编译 (/mnt/d 等 drvfs/9p 上 Go 扫源极慢, 实测 12.7s -> 0.7s)
+BUILD_DIR="$(mktemp -d -t dtbsrc.XXXXXXX)"
+cp -r "$MODULE_DIR"/. "$BUILD_DIR"/
+trap 'rm -rf "$BUILD_DIR"' EXIT
+MODULE_DIR="$BUILD_DIR"
 
 echo "ROOT_DIR   = $ROOT_DIR"
 echo "MODULE_DIR = $MODULE_DIR"
@@ -61,7 +69,7 @@ build_macos() {
   lipo="$(go env GOPATH)/bin/lipo"
   if [[ ! -x "$lipo" ]]; then
     echo "Installing: lipo"
-    "$GO" install github.com/konoui/lipo@latest
+    "$GO" install github.com/konoui/lipo@v0.10.0
     lipo="$(go env GOPATH)/bin/lipo"
   fi
 
