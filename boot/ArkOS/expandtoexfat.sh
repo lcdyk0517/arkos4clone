@@ -92,30 +92,10 @@ else
   log "WARNING: /roms.tar not found!"
 fi
 sync
-
-# 删除默认主题
-if [ -d /roms/themes/es-theme-nes-box ]; then
-  log "Removing default theme es-theme-nes-box..."
-  sudo rm -rf -v /roms/themes/es-theme-nes-box/ 2>&1 | tee -a "$LOG_FILE"
-fi
-
-# ==================== Step 7: 移动主题 ====================
-log "=== Step 7: Move tempthemes ==="
-if [ -d /tempthemes ]; then
-  log "Moving /tempthemes/* to /roms/themes..."
-  sudo mkdir -p /roms/themes
-  sudo mv -f -v /tempthemes/* /roms/themes 2>&1 | tee -a "$LOG_FILE"
-  sync
-  sleep 1
-  sudo rm -rf -v /tempthemes 2>&1 | tee -a "$LOG_FILE"
-  log "tempthemes moved and cleaned"
-else
-  log "/tempthemes not found, skip"
-fi
 sleep 2
 
-# ==================== Step 8: 配置 fstab ====================
-log "=== Step 8: Configure fstab ==="
+# ==================== Step 7: 配置 fstab ====================
+log "=== Step 7: Configure fstab ==="
 if [ -f /boot/fstab.exfat ]; then
   sudo cp /boot/fstab.exfat /etc/fstab
   log "Copied /boot/fstab.exfat to /etc/fstab"
@@ -127,17 +107,21 @@ sync
 sudo rm -f /boot/doneit*
 log "Removed /boot/doneit marker"
 
-# 删除 roms.tar (非特定设备)
+# 删除 roms.tar (非特定设备; 解包失败则保留供诊断与手动重试)
 if [ ! -f "/boot/rk3326-rg351v-linux.dtb" ] && [ ! -f "/boot/rk3326-rg351mp-linux.dtb" ]; then
-  sudo rm -f /roms.tar
-  log "Removed /roms.tar"
+  if [ "$rc" -eq 0 ]; then
+    sudo rm -f /roms.tar
+    log "Removed /roms.tar"
+  else
+    log "Keeping /roms.tar (extraction failed) - manual retry: sudo tar -xf /roms.tar -C /"
+  fi
 fi
 
 sudo rm -f /boot/fstab.exfat
 log "Removed /boot/fstab.exfat"
 
-# ==================== Step 9: 调用 clone.sh ====================
-log "=== Step 9: Run clone.sh ==="
+# ==================== Step 8: 调用 clone.sh ====================
+log "=== Step 8: Run clone.sh ==="
 if [ $exitcode -eq 0 ]; then
   dialog --infobox "The expansion of the EASYROMS partition and conversion to exFAT have been completed. The system will now enter ArkOS Clone adjustment." $height $width 2>&1 > /dev/tty1 | sleep 3
   

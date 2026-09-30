@@ -91,14 +91,6 @@ pack_roms_tar() {
     cp -f rootfs/dArkOS/opt/pymo/Scan_for_new_games.pymo roms/pymo/
   fi
 
-  # 合并主题: 以项目为准，整体替换 tempthemes 里的 es-theme-nes-box
-  # 原厂机制: 首启把 tempthemes 搬进 /roms/themes
-  if [[ -d roms/themes/es-theme-nes-box ]]; then
-    echo "== 替换 es-theme-nes-box 到镜像 tempthemes =="
-    fatal sudo rm -rf "$MOUNT_DIR/root/tempthemes/es-theme-nes-box"
-    fatal sudo mkdir -p "$MOUNT_DIR/root/tempthemes/es-theme-nes-box"
-    fatal sudo cp -a roms/themes/es-theme-nes-box/. "$MOUNT_DIR/root/tempthemes/es-theme-nes-box"/
-  fi
 
   # 组装打包视图: 项目增量 + 原厂骨架 (首启会重格 p3，骨架必须随 tar 进包)
   # 内容放在 stage/roms/ 下，tar 成员即带 roms/ 前缀
@@ -116,8 +108,6 @@ pack_roms_tar() {
   # 否则原厂自带的老 PortMaster/PortMaster.sh 会覆盖构建时新下载的版本
   if [[ -d "$MOUNT_DIR/roms" ]]; then
     echo "== 合并原厂 roms 骨架 (仅入包，不落项目目录) =="
-    # themes 排除: 原厂 p3 自带完整 es-theme-nes-box (19M)，首启由
-    # "删默认主题 + tempthemes 搬运" 机制提供，打进 tar 会让 pymo 白走一趟删/补
     fatal sudo rsync -a --checksum \
       --exclude 'System Volume Information' \
       --exclude 'EUMONBMP.SYS' \
@@ -125,14 +115,20 @@ pack_roms_tar() {
       --exclude 'tools/Gamma' \
       --exclude 'tools/ES-logo-changer' \
       --exclude 'tools/PortMaster.sh' \
-      --exclude 'themes/es-theme-nes-box' \
+      \
       "$MOUNT_DIR/roms/" "$stage/roms"/
   fi
 
+  # 原厂 tempthemes 主题包 (若存在): dArkOS 带 freeplay 等 5 主题, ArkOS 为完整 nes-box
+  if [[ -d "$MOUNT_DIR/root/tempthemes" ]]; then
+    echo "== 合并原厂 tempthemes 主题 (仅入包) =="
+    fatal sudo rsync -a "$MOUNT_DIR/root/tempthemes/" "$stage/roms/themes/"
+  fi
+
   # --checksum: 项目必须无条件覆盖原厂 (防同尺寸同 mtime 漏覆盖, 同 logo 事件教训)
-  # 排除 themes/es-theme-nes-box: 该主题已通过 tempthemes 走首启搬运，不再入 tar
+  # 主题 (roms/themes, 含完整 es-theme-nes-box + pymo) 随项目增量直接入 tar
   fatal sudo rsync -a --checksum \
-    --exclude 'themes/es-theme-nes-box' \
+    \
     roms/ "$stage/roms"/
 
   # Gamma / ES-logo-changer 不再随包提供 (双保险: 即使经其他路径混入 stage 也删掉)
@@ -168,8 +164,10 @@ cleanup_stock() {
   safe sudo rm -f "$MOUNT_DIR/root/opt/system/Advanced/Reset EmulationStation Controls.sh"
   safe sudo rm -f "$MOUNT_DIR/root/opt/system/Advanced/Fix Global Hotkeys.sh"
   safe sudo rm -f "$MOUNT_DIR/root/etc/emulationstation/es_input.cfg"
+  # tempthemes 机制废弃: 主题已随 roms.tar 交付, 镜像不再携带
+  safe sudo rm -rf "$MOUNT_DIR/root/tempthemes"
   # p3 保持原厂 NTFS 出厂，首启 expandtoexfat.sh 转换为 exFAT 并切换 fstab
-  # (fstab.exfat 保留在 boot 分区供首启使用；tempthemes 保留——首启搬进 /roms/themes)
+  # (fstab.exfat 保留在 boot 分区供首启使用；tempthemes 废弃删除——主题已随 roms.tar 交付)
 }
 
 prune_old_libs() {

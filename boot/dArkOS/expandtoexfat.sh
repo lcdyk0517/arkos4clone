@@ -114,30 +114,6 @@ else
   fi
 fi
 sync
-
-# 删除默认主题
-if [ -d /roms/themes/es-theme-nes-box ]; then
-  log "Removing default theme es-theme-nes-box..."
-  sudo rm -rf -v /roms/themes/es-theme-nes-box/ 2>&1 | tee -a "$LOG_FILE"
-fi
-
-# ==================== Step 7: 移动主题 ====================
-log "=== Step 7: Move tempthemes ==="
-if [ -d /tempthemes ] && grep -q " /roms " /proc/mounts; then
-  log "Moving /tempthemes/* to /roms/themes..."
-  sudo mkdir -p /roms/themes
-  sudo mv -f -v /tempthemes/* /roms/themes 2>&1 | tee -a "$LOG_FILE"
-  sync
-  sleep 1
-  sudo rm -rf -v /tempthemes 2>&1 | tee -a "$LOG_FILE"
-  log "tempthemes moved and cleaned"
-else
-  if [ -d /tempthemes ]; then
-    log "ERROR: /roms not mounted - keep /tempthemes for next attempt"
-  else
-    log "/tempthemes not found, skip"
-  fi
-fi
 sleep 2
 
 # ==================== Step 8: 挂载失败处理 (必须放在一切删除性操作之前) ====================
@@ -183,9 +159,14 @@ sudo rm -f /boot/doneit*
 sudo rm -f /boot/.exfat_fails
 log "Removed /boot/doneit marker"
 
-# 删除 roms.tar
-sudo rm -f /roms.tar
-log "Removed /roms.tar"
+# 删除 roms.tar (仅解包成功时; 失败保留供诊断与手动重试, 免去重新刷写)
+if [ "$exitcode" -eq 0 ] && [ "$rc" -eq 0 ]; then
+  sudo rm -f /roms.tar
+  log "Removed /roms.tar"
+else
+  log "Keeping /roms.tar (extraction failed) - manual retry:"
+  log "  sudo tar --strip-components=1 -xf /roms.tar -C /roms"
+fi
 
 sudo rm -f /boot/fstab.exfat
 log "Removed /boot/fstab.exfat"

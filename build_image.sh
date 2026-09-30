@@ -217,17 +217,55 @@ check_pm_libs() {
 }
 
 check_install_portmaster() {
-  # 每次构建都拉取 PortMaster-GUI 最新 release 的 Install.PortMaster.sh,
-  # 放入 roms/tools/ (设备上经 bind 出现在 /opt/system/Tools)
+  # 拉取 PortMaster-GUI 最新 release 的 Install.PortMaster.sh,
+  # 放入 roms/tools/ (设备上经 bind 出现在 /opt/system/Tools)。
+  # 带缓存: 本地文件不旧于线上资源更新时间时跳过下载;
+  # API 失败时若有本地副本则复用 (仅无本地副本才报错)
   local dst="$SCRIPT_DIR/roms/tools/Install.PortMaster.sh"
-  local url
-  log_info "获取最新 Install.PortMaster.sh 下载地址..."
-  url=$(curl -s https://api.github.com/repos/PortsMaster/PortMaster-GUI/releases/latest |
-    python3 -c "import sys,json; d=json.load(sys.stdin); print(next(a['browser_download_url'] for a in d['assets'] if a['name']=='Install.PortMaster.sh'))" 2>/dev/null)
-  if [[ -z "$url" ]]; then
-    log_error "获取 Install.PortMaster.sh 下载地址失败 (GitHub API)"
-    exit 1
+  local url="" updated_at=""
+
+  log_info "获取最新 Install.PortMaster.sh 信息..."
+  local api_json
+  # --connect-timeout/--max-time: sudo 会剥离代理环境变量, 国内直连 GitHub API 可能被黑洞挂死
+  api_json=$(curl -s --connect-timeout 8 --max-time 25 \
+    https://api.github.com/repos/PortsMaster/PortMaster-GUI/releases/latest 2>/dev/null || true)
+  if [[ -n "$api_json" ]]; then
+    # 注意: 必须用 here-string 喂 JSON -- 构建 stdin 是 sudo 密码管道(EOF),
+    # python 从 stdin 读会拿到空输入导致解析恒失败
+    read -r url updated_at <<< "$(python3 -c "
+import sys, json
+try:
+    d = json.loads(sys.argv[1])
+    a = next(a for a in d['assets'] if a['name'] == 'Install.PortMaster.sh')
+    print(a['browser_download_url'], a['updated_at'])
+except Exception:
+    pass
+" "$api_json" 2>/dev/null || true)"
   fi
+
+  # 缓存判断: 本地文件存在且不旧于线上更新时间 -> 跳过下载
+  if [[ -s "$dst" ]]; then
+    if [[ -n "$updated_at" ]]; then
+      local asset_epoch local_epoch
+      asset_epoch=$(date -d "$updated_at" +%s 2>/dev/null || echo 0)
+      local_epoch=$(stat -c%Y "$dst" 2>/dev/null || echo 0)
+      if (( local_epoch >= asset_epoch )); then
+        log_ok "本地 Install.PortMaster.sh 已是最新 ($(date -d "@$local_epoch" '+%F %T')), 跳过下载"
+        return 0
+      fi
+      log_info "线上有新版本 ($(date -d "@$asset_epoch" '+%F %T')), 重新下载..."
+    else
+      log_warn "无法查询更新 (GitHub API 不可达), 使用本地副本"
+      log_warn "提示: 若需代理, 请用 sudo -E ./build_image.sh ... 保留环境变量"
+      return 0
+    fi
+  else
+    if [[ -z "$url" ]]; then
+      log_error "获取 Install.PortMaster.sh 下载地址失败 (GitHub API) 且无本地副本"
+      exit 1
+    fi
+  fi
+
   mkdir -p "$(dirname "$dst")"
   log_info "下载 Install.PortMaster.sh ($url)..."
   if [[ -n "${SUDO_USER:-}" ]]; then
@@ -509,6 +547,30 @@ step_verify_fs() {
   esac
 
   log_ok "p2 文件系统校验通过 ($fstype, rc=$rc)"
+
+  # roms.tar 全字节读回闸门: drop caches 后强制真盘读取,
+  # 拦截 btrfs/文件系统数据块损坏 (设备端 EIO 的根源)
+  mkdir -p /mnt/arkos_verify
+  if mount -o ro "${loop}p2" /mnt/arkos_verify 2>/dev/null; then
+    if [[ -f /mnt/arkos_verify/roms.tar ]]; then
+      sync
+      echo 3 > /proc/sys/vm/drop_caches 2>/dev/null || true
+      log_info "roms.tar 全字节读回校验 (冷缓存, 真实块读取)..."
+      if ! md5sum /mnt/arkos_verify/roms.tar > /dev/null 2>&1; then
+        log_error "roms.tar 读回出现 I/O 错误 -- 镜像数据块损坏"
+        umount /mnt/arkos_verify 2>/dev/null
+        losetup -d "$loop" 2>/dev/null
+        exit 1
+      fi
+      local members
+      members=$(tar -tf /mnt/arkos_verify/roms.tar 2>/dev/null | wc -l)
+      log_ok "roms.tar 读回校验通过 (${members} 成员, 无 I/O 错误)"
+    else
+      log_warn "镜像内无 roms.tar, 跳过读回校验"
+    fi
+    umount /mnt/arkos_verify 2>/dev/null || true
+  fi
+  rmdir /mnt/arkos_verify 2>/dev/null || true
 }
 
 step_compress() {
@@ -520,6 +582,10 @@ step_compress() {
   if xz -5 -T0 -v "$img"; then
     log_ok "压缩完成: $xz_file"
     log_ok "文件大小: $(du -h "$xz_file" | cut -f1)"
+    # 校验和 sidecar: .xz 转存到 /mnt/d 等 9p 盘后务必 md5sum -c 校验
+    # (WSL 9p 大文件写入可能静默丢数据, 本次 dArkOS 镜像全零损坏即此原因)
+    md5sum "$xz_file" > "${xz_file}.md5"
+    log_ok "校验文件: ${xz_file}.md5"
   else
     log_error "压缩失败"
     exit 1
