@@ -11,6 +11,9 @@ log() {
 
 log "========== expandtoexfat.sh Start =========="
 
+# Disk holding the root filesystem: mmcblk0 on SD, mmcblk2 on eMMC
+DISK=/dev/$(lsblk -no PKNAME "$(findmnt -no SOURCE /)")
+
 # ==================== Step 1: 卸载 roms ====================
 log "=== Step 1: Unmount /roms ==="
 sudo umount /roms 2>/dev/null && log "Unmounted /roms" || log "/roms not mounted or unmount failed"
@@ -35,7 +38,7 @@ fi
 log "=== Step 2: Check partition expansion status ==="
 if [ ! -f /boot/doneit ]; then
   log "First run: expanding partition 3"
-  sudo echo ", +" | sudo sfdisk -N 3 --force /dev/mmcblk0 2>&1 | tee -a "$LOG_FILE"
+  sudo echo ", +" | sudo sfdisk -N 3 --force $DISK 2>&1 | tee -a "$LOG_FILE"
   sudo touch "/boot/doneit"
   log "Created /boot/doneit marker"
   dialog --infobox "EASYROMS partition expansion and conversion to exfat in process.  The device will now reboot to continue the process..." $height $width 2>&1 > /dev/tty1
@@ -47,22 +50,22 @@ log "Partition already expanded (doneit exists)"
 
 # ==================== Step 3: 重建 p3 (原厂流程；p2 已是 11G 不再扩容) ====================
 log "=== Step 3: Recreate partition 3 ==="
-printf "d\n3\nw\n" | sudo fdisk /dev/mmcblk0 2>&1 | tee -a "$LOG_FILE"
+printf "d\n3\nw\n" | sudo fdisk $DISK 2>&1 | tee -a "$LOG_FILE"
 
-ext4endSector=$(sudo sfdisk -l /dev/mmcblk0 | grep mmcblk0p2 | awk '{print $3}')
+ext4endSector=$(sudo sfdisk -l $DISK | grep "${DISK}p2" | awk '{print $3}')
 exfatstartSector=$(echo print 1+$ext4endSector | perl)
 log "Creating new partition 3 starting at sector $exfatstartSector (type 07)..."
 # 类型必须发 7 (HPFS/NTFS/exFAT)；发 11 会被 fdisk 解释成 Hidden FAT12
-printf "n\np\n3\n$exfatstartSector\n\nt\n3\n7\nw\n" | sudo fdisk /dev/mmcblk0 2>&1 | tee -a "$LOG_FILE"
+printf "n\np\n3\n$exfatstartSector\n\nt\n3\n7\nw\n" | sudo fdisk $DISK 2>&1 | tee -a "$LOG_FILE"
 
 # ==================== Step 4: 格式化 exFAT ====================
 log "=== Step 4: Format exFAT partition ==="
-log "Creating exFAT filesystem on /dev/mmcblk0p3..."
-sudo mkfs.exfat -c 16384 -n EASYROMS /dev/mmcblk0p3 2>&1 | tee -a "$LOG_FILE"
+log "Creating exFAT filesystem on ${DISK}p3..."
+sudo mkfs.exfat -c 16384 -n EASYROMS ${DISK}p3 2>&1 | tee -a "$LOG_FILE"
 mkfs_rc=${PIPESTATUS[0]}
 if [ "$mkfs_rc" -ne 0 ]; then
   log "mkfs.exfat -c 16384 failed, retrying with default cluster size..."
-  sudo mkfs.exfat -n EASYROMS /dev/mmcblk0p3 2>&1 | tee -a "$LOG_FILE"
+  sudo mkfs.exfat -n EASYROMS ${DISK}p3 2>&1 | tee -a "$LOG_FILE"
   mkfs_rc=${PIPESTATUS[0]}
 fi
 if [ "$mkfs_rc" -ne 0 ]; then
@@ -73,14 +76,14 @@ else
   sync
   sleep 2
   log "Running fsck on exFAT partition..."
-  sudo fsck.exfat -a /dev/mmcblk0p3 2>&1 | tee -a "$LOG_FILE"
+  sudo fsck.exfat -a ${DISK}p3 2>&1 | tee -a "$LOG_FILE"
   sync
 fi
 
 # ==================== Step 5: 挂载 roms ====================
 log "=== Step 5: Mount /roms ==="
 if [ "${exitcode:-0}" -eq 0 ]; then
-  sudo mount -t exfat -w /dev/mmcblk0p3 /roms 2>&1 | tee -a "$LOG_FILE"
+  sudo mount -t exfat -w ${DISK}p3 /roms 2>&1 | tee -a "$LOG_FILE"
   exitcode=${PIPESTATUS[0]}
   if ! awk '$2 == "/roms" {found=1} END {exit !found}' /proc/mounts; then
     exitcode=1
