@@ -99,7 +99,7 @@ if [ "$exitcode" -eq 0 ] && [ -f /roms.tar ]; then
            --no-same-permissions --no-same-owner \
            --hard-dereference \
            --strip-components=1 \
-           -xf /roms.tar -C /roms 2>&1 | tee -a "$LOG_FILE"
+           -xvf /roms.tar -C /roms 2>&1 | tee -a "$LOG_FILE"
   rc=${PIPESTATUS[0]}
   if [ "$rc" -eq 0 ]; then
     log "roms.tar extraction completed"
