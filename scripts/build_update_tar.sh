@@ -258,7 +258,8 @@ for s in zram-swap.service batteryplus.service es-status-daemon.service batt_led
 done
 
 log "=== Step 2: Find boot partition ==="
-BOOT_MP="$(findmnt -n -o TARGET /dev/mmcblk0p1 2>/dev/null || true)"
+DISK=/dev/$(lsblk -no PKNAME "$(findmnt -no SOURCE /)")
+BOOT_MP="$(findmnt -n -o TARGET "${DISK}p1" 2>/dev/null || true)"
 [[ -z "$BOOT_MP" ]] && BOOT_MP="/boot"
 log "Boot mount point: $BOOT_MP"
 
@@ -350,17 +351,17 @@ dd_from_tar() {
     return 0
   fi
   log "Flashing: $member (seek=$seek)"
-  tar -xO -f "$OTA_TAR_PATH" "$member" | dd of=/dev/mmcblk0 conv=notrunc bs=512 seek="$seek" 2>&1 | tee -a "$OTA_LOG" | tee -a "$LOG_FILE"
+  tar -xO -f "$OTA_TAR_PATH" "$member" | dd of="$DISK" conv=notrunc bs=512 seek="$seek" 2>&1 | tee -a "$OTA_LOG" | tee -a "$LOG_FILE"
 }
 
-if [[ -b "/dev/mmcblk0" && -n "$OTA_TAR_PATH" && -f "$OTA_TAR_PATH" ]]; then
+if [[ -b "$DISK" && -n "$OTA_TAR_PATH" && -f "$OTA_TAR_PATH" ]]; then
   dd_from_tar "uboot/idbloader.img" 64
   dd_from_tar "uboot/uboot.img" 16384
   dd_from_tar "uboot/trust.img" 24576
   sync || true
   log "uboot flashed successfully"
 else
-  log "Skipping uboot flash (no mmcblk0 or no tar)"
+  log "Skipping uboot flash (no $DISK or no tar)"
 fi
 
 log "=== Step 6: Update plymouth theme ==="
