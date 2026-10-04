@@ -286,6 +286,8 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   cleanup_stock
   safe sudo rm -f "$MOUNT_DIR/root/etc/systemd/system/batt_led.service"
   safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Backup dArkOS Settings"
+  safe sudo rm -f "$MOUNT_DIR/root/etc/systemd/system/logo.service" \
+    "$MOUNT_DIR/root/etc/systemd/system/multi-user.target.wants/logo.service"
 
   echo "== 设置 dArkOS plymouth 标题 =="
   safe sudo sed -i "/title\=/c\title\=dArkOS4Clone ($UPDATE_DATE)($MODDER)" "$MOUNT_DIR/root/usr/share/plymouth/themes/text.plymouth"
