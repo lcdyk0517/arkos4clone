@@ -210,10 +210,15 @@ func SelectConsole(lang *i18n.Language, brand string) (*ConsoleOption, error) {
 	Print("\n")
 	BoxHeader(lang.Menu3.AvailableConsolesFor + brand)
 
-	if brand == "Clone R36s" && lang.Menu3.CloneR36sNote != "" {
+	brandNotes := map[string]string{
+		"Clone R36s":    lang.Menu3.CloneR36sNote,
+		"SoySauce R36s": lang.Menu3.SoySauceNote,
+		"GameConsole":   lang.Menu3.GameConsoleNote,
+	}
+	if note, ok := brandNotes[brand]; ok && note != "" {
 		Print("\n")
 		Println(ColorWrap("┌────────────────────────────────────────┐", StyleCyan))
-		for _, line := range strings.Split(lang.Menu3.CloneR36sNote, "\n") {
+		for _, line := range strings.Split(note, "\n") {
 			Println(ColorWrap("│ "+line, StyleCyan))
 		}
 		Println(ColorWrap("└────────────────────────────────────────┘", StyleCyan))

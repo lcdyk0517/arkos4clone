@@ -48,6 +48,15 @@ var English = Language{
 			"  If one has no sound, try the other.\n" +
 			"• If the right joystick's up/down direction is inverted in the default DTB,\n" +
 			"  use the option with 'Invert Right Joystick' in its name to fix it.",
+		SoySauceNote: "NOTE:\n" +
+			"• For Y3506-series R36S, choose strictly according to the webTools detection result.\n" +
+			"• If you lost the original dtb, test them one by one.\n" +
+			"• The silkscreen on the board cannot tell you the panel; SoySauce devices have heavily mixed panels.\n" +
+			"• With the original dtb lost, even if a SoySauce dtb lights up the screen, it does NOT mean your device uses that panel.\n" +
+			"• If the system boots but games exit to a black screen, switch to another option and keep testing.",
+		GameConsoleNote: "NOTE:\n" +
+			"• Panel 4 Type 1 and Panel 4 Type 2 are mainly used to distinguish whether Wi-Fi works.\n" +
+			"• If Wi-Fi does not work on Panel 4 Type 1, switch to Panel 4 Type 2, and vice versa.",
 	},
 	Cleanup: CleanupStrings{
 		OperationCompleted:   "  ✅  Operation completed!",

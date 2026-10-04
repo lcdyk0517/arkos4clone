@@ -68,6 +68,8 @@ type Menu3Strings struct {
 	BatteryVersionOriginal string
 	BatteryVersionFix      string
 	CloneR36sNote          string
+	SoySauceNote           string
+	GameConsoleNote        string
 }
 
 // Menu4Strings holds language selection strings.

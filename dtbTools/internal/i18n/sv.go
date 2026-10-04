@@ -48,6 +48,15 @@ var Swedish = Language{
 			"  Om den ena inte har ljud, prova den andra.\n" +
 			"• Om den högre/ända riktningen på den högra joysticken är inverterad i standard-DTB,\n" +
 			"  använd alternativet med 'Invert Right Joystick' i namnet för att fixa det.",
+		SoySauceNote: "OBS:\n" +
+			"• För Y3506-seriens R36S, välj strikt enligt webTools detektionsresultat.\n" +
+			"• Om du har tappat bort den ursprungliga dtb-filen, testa dem en i taget.\n" +
+			"• Silentexten på kortet avslöjar inte panelen; SoySauce-enheter har kraftigt blandade paneler.\n" +
+			"• Utan original-dtb betyder en lyckad bild med ett SoySauce-dtb INTE att din enhet använder den panelen.\n" +
+			"• Om systemet startar men skärmen blir svart när du lämnar ett spel, byt till ett annat alternativ och fortsätt testa.",
+		GameConsoleNote: "OBS:\n" +
+			"• Panel 4 Type 1 och Panel 4 Type 2 används främst för att skilja på om Wi-Fi fungerar.\n" +
+			"• Om Wi-Fi inte fungerar med Panel 4 Type 1, byt till Panel 4 Type 2, och tvärtom.",
 	},
 	Cleanup: CleanupStrings{
 		OperationCompleted:   "  ✅  Operation slutförd!",

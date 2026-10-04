@@ -48,6 +48,15 @@ var French = Language{
 			"  Si l'une n'a pas de son, essayez l'autre.\n" +
 			"• Si la direction haut/bas du joystick droit est inversée dans le DTB par défaut,\n" +
 			"  utilisez l'option avec 'Invert Right Joystick' dans le nom pour la corriger.",
+		SoySauceNote: "NOTE :\n" +
+			"• Pour les R36S de la série Y3506, suivez strictement le résultat de détection de webTools.\n" +
+			"• Si vous avez perdu le dtb d'origine, testez-les un par un.\n" +
+			"• La sérigraphie de la carte ne révèle pas le panneau ; les appareils SoySauce mélangent fortement les panneaux.\n" +
+			"• Sans le dtb d'origine, même si un dtb SoySauce allume l'écran, cela ne signifie PAS que votre appareil utilise ce panneau.\n" +
+			"• Si le système démarre mais que l'écran devient noir en quittant un jeu, changez d'option et continuez les tests.",
+		GameConsoleNote: "NOTE :\n" +
+			"• Panel 4 Type 1 et Panel 4 Type 2 servent principalement à distinguer si le Wi-Fi fonctionne.\n" +
+			"• Si le Wi-Fi ne fonctionne pas avec Panel 4 Type 1, passez à Panel 4 Type 2, et inversement.",
 	},
 	Cleanup: CleanupStrings{
 		OperationCompleted:   "  ✅  Opération terminée!",

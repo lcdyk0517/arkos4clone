@@ -48,6 +48,15 @@ var Vietnamese = Language{
 			"  Nếu một trong số đó không có âm thanh, hãy thử cái kia.\n" +
 			"• Nếu hướng lên/xuống của joystick bên phải bị đảo ngược trong DTB mặc định,\n" +
 			"  hãy sử dụng tùy chọn có 'Invert Right Joystick' trong tên để sửa nó.",
+		SoySauceNote: "LƯU Ý:\n" +
+			"• R36S dòng Y3506 vui lòng chọn đúng theo kết quả dò tìm của webTools.\n" +
+			"• Nếu bạn làm mất dtb gốc, hãy thử lần lượt từng cái.\n" +
+			"• Chữ in trên bo mạch không cho biết loại màn hình; máy SoySauce bị trộn panel rất nặng.\n" +
+			"• Khi mất dtb gốc, ngay cả khi dtb SoySauce sáng màn hình cũng KHÔNG có nghĩa là máy bạn dùng panel đó.\n" +
+			"• Nếu vào được hệ thống nhưng thoát game bị màn hình đen, hãy đổi lựa chọn khác và tiếp tục thử.",
+		GameConsoleNote: "LƯU Ý:\n" +
+			"• Panel 4 Type 1 và Panel 4 Type 2 chủ yếu để phân biệt Wi-Fi có dùng được hay không.\n" +
+			"• Nếu Wi-Fi không dùng được trên Panel 4 Type 1, hãy chuyển sang Panel 4 Type 2, và ngược lại.",
 	},
 	Cleanup: CleanupStrings{
 		OperationCompleted:   "  ✅  Hoạt động đã hoàn thành!",

@@ -47,6 +47,15 @@ var Chinese = Language{
 			"• 'With Amplifier' 和 'Without Amplifier' 仅在声音输出上有区别。\n" +
 			"  如果其中一个没有声音，请尝试另一个。\n" +
 			"• 若默认 DTB 右摇杆上下颠倒，请使用名称中带 'Invert Right Joystick' 的版本修复。",
+		SoySauceNote: "说明：\n" +
+			"• Y3506 系列的 R36S 请严格按照 webTools 的检测结果选择。\n" +
+			"• 若你丢失了原始 dtb，请依次测试。\n" +
+			"• 主板上的丝印无法得知具体面板信息，SoySauce 设备面板混用严重。\n" +
+			"• 在 dtb 遗失的情况下，就算 SoySauce 成功点亮也不代表你的设备就属于该 Panel。\n" +
+			"• 若成功进入系统后出现游戏退出黑屏，请更换选项继续测试。",
+		GameConsoleNote: "说明：\n" +
+			"• Panel 4 Type 1 和 Panel 4 Type 2 主要用来区别 wifi 是否可用。\n" +
+			"• 若 Panel 4 Type 1 的 wifi 不可用，请切换到 Panel 4 Type 2；反之亦然。",
 	},
 	Cleanup: CleanupStrings{
 		OperationCompleted:   "  ✅  操作完成！",

@@ -48,6 +48,15 @@ var Japanese = Language{
 			"  一方に音がない場合は、もう一方を試してください。\n" +
 			"• デフォルトDTBで右ジョイスティックの上下方向が反転している場合、\n" +
 			"  名前に'Invert Right Joystick'を含むオプションを使用して修正してください。",
+		SoySauceNote: "注記:\n" +
+			"• Y3506 シリーズの R36S は、webTools の検出結果に厳密に従って選択してください。\n" +
+			"• 純正の dtb を紛失した場合は、順番にテストしてください。\n" +
+			"• 基板のシルク印刷ではパネル情報を判別できません。SoySauce 端末はパネルの混在が非常に深刻です。\n" +
+			"• 純正 dtb を紛失した場合、SoySauce の dtb で画面が点灯しても、そのパネルが自分の端末に合っているとは限りません。\n" +
+			"• システム起動後にゲーム終了時の画面が真っ暗になる場合は、別の選択肢に切り替えてテストを続けてください。",
+		GameConsoleNote: "注記:\n" +
+			"• Panel 4 Type 1 と Panel 4 Type 2 は、主に Wi-Fi の使える／使えないを区別するためのものです。\n" +
+			"• Panel 4 Type 1 で Wi-Fi が使えない場合は Panel 4 Type 2 に切り替え、その逆も同様です。",
 	},
 	Cleanup: CleanupStrings{
 		OperationCompleted:   "  ✅  操作完了！",
