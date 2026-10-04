@@ -440,6 +440,11 @@ if have_systemctl; then
   chmod 777 /usr/local/bin/ogage 2>/dev/null && log "Fixed: ogage chmod 777" || true
 fi
 
+if [[ -f "$BOOT_MP/emmc.conf" ]]; then
+  log "=== Step 11: Rebuild eMMC boot files ==="
+  /usr/local/bin/emmc-boot-files.sh "$BOOT_MP" && log "eMMC boot files rebuilt"
+fi
+
 sync
 log "========== OTA Update Complete =========="
 log "OTA SUCCESS"
