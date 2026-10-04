@@ -104,4 +104,11 @@ var Spanish = Language{
 		VoltageApplied:       "¡Aumento de voltaje aplicado con éxito!",
 		VoltageSkipped:       "Aumento de voltaje omitido.",
 	},
+	PortMaster: PortMasterStrings{
+		Title:          "Dependencias de PortMaster",
+		AskExtract:     "¿Extraer las dependencias de PortMaster a la partición Roms en el primer arranque?\nSi su tarjeta SD es de mala calidad, elija No; de lo contrario, la extracción de roms.tar puede tardar demasiado.",
+		KeepingLibs:    "Las dependencias de PortMaster se extraerán a Roms con normalidad (sin cambios).",
+		ExcludeApplied: "expandtoexfat.sh actualizado: se omitirán los *.squashfs al extraer roms.tar.",
+		ExcludeAlready: "expandtoexfat.sh ya omite los *.squashfs; no se necesitan cambios.",
+	},
 }

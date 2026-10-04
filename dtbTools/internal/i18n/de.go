@@ -104,4 +104,11 @@ var German = Language{
 		VoltageApplied:       "Spannungserhöhung erfolgreich angewendet!",
 		VoltageSkipped:       "Spannungserhöhung übersprungen.",
 	},
+	PortMaster: PortMasterStrings{
+		Title:          "PortMaster-Abhängigkeiten",
+		AskExtract:     "Sollen beim ersten Start die PortMaster-Abhängigkeiten in die Roms-Partition entpackt werden?\nBei einer SD-Karte schlechter Qualität wählen Sie Nein, sonst kann das Entpacken von roms.tar zu lange dauern.",
+		KeepingLibs:    "PortMaster-Abhängigkeiten werden wie üblich nach Roms entpackt (keine Änderungen).",
+		ExcludeApplied: "expandtoexfat.sh aktualisiert: *.squashfs wird beim Entpacken von roms.tar übersprungen.",
+		ExcludeAlready: "expandtoexfat.sh überspringt *.squashfs bereits — keine Änderungen nötig.",
+	},
 }

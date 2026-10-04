@@ -104,4 +104,11 @@ var Polish = Language{
 		VoltageApplied:       "Zwiększenie napięcia zastosowane pomyślnie!",
 		VoltageSkipped:       "Zwiększenie napięcia pominięte.",
 	},
+	PortMaster: PortMasterStrings{
+		Title:          "Zależności PortMaster",
+		AskExtract:     "Czy przy pierwszym uruchomieniu rozpakowywać zależności PortMaster na partycję Roms?\nJeśli karta SD jest słabej jakości, wybierz Nie — w przeciwnym razie rozpakowywanie roms.tar może trwać zbyt długo.",
+		KeepingLibs:    "Zależności PortMaster zostaną rozpakowane na Roms jak zwykle (bez zmian).",
+		ExcludeApplied: "expandtoexfat.sh zaktualizowany: pliki *.squashfs będą pomijane przy rozpakowywaniu roms.tar.",
+		ExcludeAlready: "expandtoexfat.sh już pomija pliki *.squashfs — bez zmian.",
+	},
 }

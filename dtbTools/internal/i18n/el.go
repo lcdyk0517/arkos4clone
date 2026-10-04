@@ -104,4 +104,11 @@ var Greek = Language{
 		VoltageApplied:       "Η αύξηση τάσης εφαρμόστηκε με επιτυχία!",
 		VoltageSkipped:       "Η αύξηση τάσης παραλείφθηκε.",
 	},
+	PortMaster: PortMasterStrings{
+		Title:          "Εξαρτήσεις PortMaster",
+		AskExtract:     "Να εξαχθούν οι εξαρτήσεις PortMaster στην κατάτμηση Roms κατά την πρώτη εκκίνηση;\nΑν η κάρτα SD είναι κακής ποιότητας, επιλέξτε Όχι, αλλιώς η εξαγωγή του roms.tar μπορεί να διαρκέσει πολύ.",
+		KeepingLibs:    "Οι εξαρτήσεις PortMaster θα εξαχθούν κανονικά στο Roms (καμία αλλαγή).",
+		ExcludeApplied: "Το expandtoexfat.sh ενημερώθηκε: τα *.squashfs θα παραλείπονται κατά την εξαγωγή του roms.tar.",
+		ExcludeAlready: "Το expandtoexfat.sh ήδη παραλείπει τα *.squashfs — δεν χρειάζονται αλλαγές.",
+	},
 }

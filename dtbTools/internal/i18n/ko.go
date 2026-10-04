@@ -104,4 +104,11 @@ var Korean = Language{
 		VoltageApplied:       "전압 인상이 성공적으로 적용되었습니다!",
 		VoltageSkipped:       "전압 인상을 건너뛰었습니다.",
 	},
+	PortMaster: PortMasterStrings{
+		Title:          "PortMaster 종속성",
+		AskExtract:     "첫 부팅 시 roms.tar 압축을 풀 때 PortMaster 종속성을 Roms 파티션에 풀까요?\nSD 카드 품질이 좋지 않으면 아니오를 선택하세요. 그렇지 않으면 roms.tar 압축 해제가 너무 오래 걸릴 수 있습니다.",
+		KeepingLibs:    "PortMaster 종속성을 Roms 파티션에 그대로 풉니다(변경 없음).",
+		ExcludeApplied: "expandtoexfat.sh 수정 완료: roms.tar 풀기 시 *.squashfs를 제외합니다.",
+		ExcludeAlready: "expandtoexfat.sh가 이미 *.squashfs를 제외하도록 설정되어 있습니다.",
+	},
 }

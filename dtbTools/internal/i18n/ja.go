@@ -104,4 +104,11 @@ var Japanese = Language{
 		VoltageApplied:       "電圧増加が正常に適用されました！",
 		VoltageSkipped:       "電圧増加をスキップしました。",
 	},
+	PortMaster: PortMasterStrings{
+		Title:          "PortMaster 依存関係",
+		AskExtract:     "初回起動時に roms.tar を展開する際、PortMaster の依存ファイルを Roms パーティションに展開しますか？\nSDカードの品質が悪い場合は「いいえ」を選択してください。そうしないと roms.tar の展開に時間がかかりすぎる可能性があります。",
+		KeepingLibs:    "PortMaster の依存ファイルを Roms パーティションに通常どおり展開します（変更なし）。",
+		ExcludeApplied: "expandtoexfat.sh を更新しました：roms.tar の展開で *.squashfs を除外します。",
+		ExcludeAlready: "expandtoexfat.sh は既に *.squashfs を除外する設定です。",
+	},
 }

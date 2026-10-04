@@ -104,4 +104,11 @@ var Vietnamese = Language{
 		VoltageApplied:       "Tăng điện áp đã được áp dụng thành công!",
 		VoltageSkipped:       "Tăng điện áp đã bị bỏ qua.",
 	},
+	PortMaster: PortMasterStrings{
+		Title:          "Phụ thuộc PortMaster",
+		AskExtract:     "Khởi động lần đầu có giải nén các phụ thuộc PortMaster vào phân vùng Roms không?\nNếu thẻ SD chất lượng kém, hãy chọn Không, nếu không việc giải nén roms.tar có thể mất quá nhiều thời gian.",
+		KeepingLibs:    "Các phụ thuộc PortMaster sẽ được giải nén vào Roms như bình thường (không thay đổi).",
+		ExcludeApplied: "Đã cập nhật expandtoexfat.sh: bỏ qua *.squashfs khi giải nén roms.tar.",
+		ExcludeAlready: "expandtoexfat.sh đã bỏ qua *.squashfs — không cần thay đổi.",
+	},
 }

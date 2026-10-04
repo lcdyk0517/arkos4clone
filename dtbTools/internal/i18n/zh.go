@@ -103,4 +103,11 @@ var Chinese = Language{
 		VoltageApplied:       "电压增加已成功应用！",
 		VoltageSkipped:       "已跳过电压增加。",
 	},
+	PortMaster: PortMasterStrings{
+		Title:          "PortMaster 依赖",
+		AskExtract:     "首次启动解压 roms.tar 时，是否要将 PortMaster 的依赖解压到 Roms 分区？\n若 SD 卡质量较差请选择否，否则可能会导致解压 roms.tar 时间过长。",
+		KeepingLibs:    "PortMaster 依赖将照常解压到 Roms 分区（不做任何改动）。",
+		ExcludeApplied: "已修改 expandtoexfat.sh：解压 roms.tar 时将跳过 *.squashfs。",
+		ExcludeAlready: "expandtoexfat.sh 已配置跳过 *.squashfs，无需改动。",
+	},
 }

@@ -148,6 +148,12 @@ func main() {
 		return
 	}
 
+	// 最后: 若同级目录存在 expandtoexfat.sh (首次启动), 询问 PortMaster 依赖是否解压到 Roms 分区
+	if err := ops.AskPortMasterLibs(lang, baseDir); err != nil {
+		fmt.Printf("Error: %v\n", err)
+		return
+	}
+
 	ops.ShowSuccessFancy(lang, selected.DisplayName)
 
 	if lang.Variant == "cn" || lang.Variant == "ko" {

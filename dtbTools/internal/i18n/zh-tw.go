@@ -103,4 +103,11 @@ var ChineseTraditional = Language{
 		VoltageApplied:       "電壓增加已成功套用！",
 		VoltageSkipped:       "已跳過電壓增加。",
 	},
+	PortMaster: PortMasterStrings{
+		Title:          "PortMaster 相依性",
+		AskExtract:     "首次開機解壓 roms.tar 時，是否要將 PortMaster 的相依套件解壓到 Roms 分區？\n若 SD 卡品質較差請選擇否，否則可能會導致解壓 roms.tar 時間過長。",
+		KeepingLibs:    "PortMaster 相依套件將照常解壓到 Roms 分區（不做任何變更）。",
+		ExcludeApplied: "已修改 expandtoexfat.sh：解壓 roms.tar 時將略過 *.squashfs。",
+		ExcludeAlready: "expandtoexfat.sh 已設定略過 *.squashfs，無需變更。",
+	},
 }

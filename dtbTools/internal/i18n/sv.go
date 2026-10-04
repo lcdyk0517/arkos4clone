@@ -104,4 +104,11 @@ var Swedish = Language{
 		VoltageApplied:       "Spänningsökning tillämpad framgångsrikt!",
 		VoltageSkipped:       "Spänningsökning överhoppad.",
 	},
+	PortMaster: PortMasterStrings{
+		Title:          "PortMaster-beroenden",
+		AskExtract:     "Ska PortMaster-beroenden packas upp till Roms-partitionen vid första uppstarten?\nOm SD-kortet är av sämre kvalitet, välj Nej, annars kan uppackningen av roms.tar ta för lång tid.",
+		KeepingLibs:    "PortMaster-beroenden packas upp som vanligt till Roms (inga ändringar).",
+		ExcludeApplied: "expandtoexfat.sh uppdaterad: *.squashfs hoppas över vid uppackning av roms.tar.",
+		ExcludeAlready: "expandtoexfat.sh hoppar redan över *.squashfs — inga ändringar behövs.",
+	},
 }

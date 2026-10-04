@@ -426,3 +426,79 @@ func ShowSuccessFancy(lang *i18n.Language, consoleName string) {
 
 	ui.WaitEnter(lang.Common.PressEnterToContinue)
 }
+
+// PatchExpandScript adds --exclude='*.squashfs' to the roms.tar extraction command of
+// expandtoexfat.sh. Handles both the ArkOS variant (sudo tar ... -xvf /roms.tar -C /)
+// and the dArkOS variant (pv -n /roms.tar | tar ... -xf - -C /). Returns true if the
+// file was modified.
+func PatchExpandScript(path string) (bool, error) {
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return false, err
+	}
+	lines := strings.Split(string(data), "\n")
+	changed := false
+	for i, line := range lines {
+		trimmed := strings.TrimSpace(line)
+		// Skip comments and log hint text (e.g. "manual retry: sudo tar ...")
+		if strings.HasPrefix(trimmed, "#") || strings.HasPrefix(trimmed, "log ") {
+			continue
+		}
+		// Skip already-patched lines and anything that is not a tar command
+		// extracting roms.tar into /
+		if strings.Contains(line, "--exclude") ||
+			!strings.Contains(line, "roms.tar") ||
+			!strings.Contains(line, "tar ") ||
+			!strings.Contains(line, "-C /") {
+			continue
+		}
+		idx := strings.Index(line, "-C /")
+		lines[i] = line[:idx] + "--exclude='*.squashfs' " + line[idx:]
+		changed = true
+	}
+	if !changed {
+		return false, nil
+	}
+	info, err := os.Stat(path)
+	if err != nil {
+		return false, err
+	}
+	return true, os.WriteFile(path, []byte(strings.Join(lines, "\n")), info.Mode().Perm())
+}
+
+// AskPortMasterLibs asks whether PortMaster dependency libraries (*.squashfs) should be
+// extracted to the Roms partition on first boot. When the user declines, the sibling
+// expandtoexfat.sh is patched so roms.tar extraction skips *.squashfs.
+func AskPortMasterLibs(lang *i18n.Language, baseDir string) error {
+	script := filepath.Join(baseDir, "expandtoexfat.sh")
+	if _, err := os.Stat(script); err != nil {
+		return nil // Not first boot (script self-deleted) or not shipped: skip silently
+	}
+
+	ui.ClearScreen()
+	ui.Println("")
+	ui.BoxHeader(lang.PortMaster.Title)
+	ui.Println(ui.ColorWrap(lang.PortMaster.AskExtract, ui.StyleBoldGreen))
+	ui.Println("  1. Yes")
+	ui.Println("  2. No")
+
+	choice, err := ui.ReadIntChoice(lang, lang.Common.SelectNumber)
+	if err != nil {
+		return err
+	}
+	if choice != 2 {
+		ui.Println(ui.ColorWrap(lang.PortMaster.KeepingLibs, ui.StyleCyan))
+		return nil
+	}
+
+	patched, err := PatchExpandScript(script)
+	if err != nil {
+		return err
+	}
+	if patched {
+		ui.Println(ui.ColorWrap(lang.PortMaster.ExcludeApplied, ui.StyleBoldGreen))
+	} else {
+		ui.Println(ui.ColorWrap(lang.PortMaster.ExcludeAlready, ui.StyleCyan))
+	}
+	return nil
+}

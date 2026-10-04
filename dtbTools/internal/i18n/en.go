@@ -104,4 +104,11 @@ var English = Language{
 		VoltageApplied:       "Voltage increase applied successfully!",
 		VoltageSkipped:       "Voltage increase skipped.",
 	},
+	PortMaster: PortMasterStrings{
+		Title:          "PortMaster dependencies",
+		AskExtract:     "On first boot, should PortMaster dependencies be extracted to the Roms partition?\nIf your SD card quality is poor, choose No, otherwise extracting roms.tar may take too long.",
+		KeepingLibs:    "PortMaster dependencies will be extracted to Roms as usual (no changes made).",
+		ExcludeApplied: "Done: expandtoexfat.sh updated — roms.tar extraction will now skip *.squashfs.",
+		ExcludeAlready: "expandtoexfat.sh already skips *.squashfs — no changes made.",
+	},
 }

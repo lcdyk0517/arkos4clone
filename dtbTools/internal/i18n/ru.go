@@ -104,4 +104,11 @@ var Russian = Language{
 		VoltageApplied:       "Увеличение напряжения успешно применено!",
 		VoltageSkipped:       "Увеличение напряжения пропущено.",
 	},
+	PortMaster: PortMasterStrings{
+		Title:          "Зависимости PortMaster",
+		AskExtract:     "Распаковывать ли зависимости PortMaster на раздел Roms при первом запуске?\nЕсли SD-карта низкого качества, выберите Нет, иначе распаковка roms.tar может занять слишком много времени.",
+		KeepingLibs:    "Зависимости PortMaster будут распакованы на Roms как обычно (без изменений).",
+		ExcludeApplied: "expandtoexfat.sh обновлён: при распаковке roms.tar файлы *.squashfs будут пропущены.",
+		ExcludeAlready: "expandtoexfat.sh уже пропускает *.squashfs — изменения не требуются.",
+	},
 }
