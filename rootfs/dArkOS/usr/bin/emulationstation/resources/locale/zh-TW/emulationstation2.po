@@ -5279,3 +5279,15 @@ msgstr "SD2 卡為空"
 
 msgid "FAILED TO APPLY SYSTEM CONFIG"
 msgstr "套用系統設定失敗"
+
+msgid "ARE YOU SURE YOU WANT TO UPDATE THE SYSTEM?"
+msgstr "確定要更新系統嗎？"
+
+msgid "UPDATE COMPLETE"
+msgstr "更新完成"
+
+msgid "UPDATE FAILED"
+msgstr "更新失敗"
+
+msgid "LATER"
+msgstr "稍後"

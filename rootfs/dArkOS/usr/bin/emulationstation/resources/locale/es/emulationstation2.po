@@ -3762,3 +3762,15 @@ msgstr "La tarjeta SD2 está vacía"
 
 msgid "FAILED TO APPLY SYSTEM CONFIG"
 msgstr "Error al aplicar la configuración del sistema"
+
+msgid "ARE YOU SURE YOU WANT TO UPDATE THE SYSTEM?"
+msgstr "¿Seguro que deseas actualizar el sistema?"
+
+msgid "UPDATE COMPLETE"
+msgstr "Actualización completada"
+
+msgid "UPDATE FAILED"
+msgstr "Error de actualización"
+
+msgid "LATER"
+msgstr "Más tarde"

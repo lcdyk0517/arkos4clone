@@ -2838,3 +2838,15 @@ msgstr "Thẻ SD2 đang trống"
 
 msgid "FAILED TO APPLY SYSTEM CONFIG"
 msgstr "Không thể áp dụng cấu hình hệ thống"
+
+msgid "ARE YOU SURE YOU WANT TO UPDATE THE SYSTEM?"
+msgstr "Bạn có chắc muốn cập nhật hệ thống không?"
+
+msgid "UPDATE COMPLETE"
+msgstr "Cập nhật hoàn tất"
+
+msgid "UPDATE FAILED"
+msgstr "Cập nhật thất bại"
+
+msgid "LATER"
+msgstr "Để sau"

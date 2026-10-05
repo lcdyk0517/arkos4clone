@@ -2400,3 +2400,15 @@ msgstr "SD2カードが空です"
 
 msgid "FAILED TO APPLY SYSTEM CONFIG"
 msgstr "システム設定の適用に失敗しました"
+
+msgid "ARE YOU SURE YOU WANT TO UPDATE THE SYSTEM?"
+msgstr "システムを更新しますか？"
+
+msgid "UPDATE COMPLETE"
+msgstr "更新が完了しました"
+
+msgid "UPDATE FAILED"
+msgstr "更新に失敗しました"
+
+msgid "LATER"
+msgstr "後で"

@@ -3570,3 +3570,15 @@ msgstr "SD2-Karte ist leer"
 
 msgid "FAILED TO APPLY SYSTEM CONFIG"
 msgstr "Systemkonfiguration konnte nicht angewendet werden"
+
+msgid "ARE YOU SURE YOU WANT TO UPDATE THE SYSTEM?"
+msgstr "Möchten Sie das System wirklich aktualisieren?"
+
+msgid "UPDATE COMPLETE"
+msgstr "Aktualisierung abgeschlossen"
+
+msgid "UPDATE FAILED"
+msgstr "Aktualisierung fehlgeschlagen"
+
+msgid "LATER"
+msgstr "Später"

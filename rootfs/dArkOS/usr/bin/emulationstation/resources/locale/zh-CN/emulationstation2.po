@@ -5314,3 +5314,15 @@ msgstr "SD2 卡为空"
 
 msgid "FAILED TO APPLY SYSTEM CONFIG"
 msgstr "应用系统配置失败"
+
+msgid "ARE YOU SURE YOU WANT TO UPDATE THE SYSTEM?"
+msgstr "确定要更新系统吗？"
+
+msgid "UPDATE COMPLETE"
+msgstr "更新完成"
+
+msgid "UPDATE FAILED"
+msgstr "更新失败"
+
+msgid "LATER"
+msgstr "稍后"

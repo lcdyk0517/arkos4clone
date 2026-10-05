@@ -3202,3 +3202,15 @@ msgstr "Η κάρτα SD2 είναι κενή"
 
 msgid "FAILED TO APPLY SYSTEM CONFIG"
 msgstr "Αποτυχία εφαρμογής της διαμόρφωσης συστήματος"
+
+msgid "ARE YOU SURE YOU WANT TO UPDATE THE SYSTEM?"
+msgstr "Είστε σίγουροι ότι θέλετε να ενημερώσετε το σύστημα;"
+
+msgid "UPDATE COMPLETE"
+msgstr "Η ενημέρωση ολοκληρώθηκε"
+
+msgid "UPDATE FAILED"
+msgstr "Η ενημέρωση απέτυχε"
+
+msgid "LATER"
+msgstr "Αργότερα"

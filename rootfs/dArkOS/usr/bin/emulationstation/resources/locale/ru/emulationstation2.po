@@ -5254,3 +5254,15 @@ msgstr "SD2 пуста"
 
 msgid "FAILED TO APPLY SYSTEM CONFIG"
 msgstr "Не удалось применить системную конфигурацию"
+
+msgid "ARE YOU SURE YOU WANT TO UPDATE THE SYSTEM?"
+msgstr "Вы уверены, что хотите обновить систему?"
+
+msgid "UPDATE COMPLETE"
+msgstr "Обновление завершено"
+
+msgid "UPDATE FAILED"
+msgstr "Ошибка обновления"
+
+msgid "LATER"
+msgstr "Позже"

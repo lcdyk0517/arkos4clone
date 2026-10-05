@@ -3006,3 +3006,15 @@ msgstr "SD2 카드가 비어 있습니다"
 
 msgid "FAILED TO APPLY SYSTEM CONFIG"
 msgstr "시스템 설정 적용 실패"
+
+msgid "ARE YOU SURE YOU WANT TO UPDATE THE SYSTEM?"
+msgstr "시스템을 업데이트하시겠습니까?"
+
+msgid "UPDATE COMPLETE"
+msgstr "업데이트 완료"
+
+msgid "UPDATE FAILED"
+msgstr "업데이트 실패"
+
+msgid "LATER"
+msgstr "나중에"

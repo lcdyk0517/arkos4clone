@@ -5277,3 +5277,15 @@ msgstr "SD2 порожня"
 
 msgid "FAILED TO APPLY SYSTEM CONFIG"
 msgstr "Не вдалося застосувати системну конфігурацію"
+
+msgid "ARE YOU SURE YOU WANT TO UPDATE THE SYSTEM?"
+msgstr "Ви впевнені, що хочете оновити систему?"
+
+msgid "UPDATE COMPLETE"
+msgstr "Оновлення завершено"
+
+msgid "UPDATE FAILED"
+msgstr "Помилка оновлення"
+
+msgid "LATER"
+msgstr "Пізніше"

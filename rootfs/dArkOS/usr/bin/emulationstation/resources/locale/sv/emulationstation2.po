@@ -4330,3 +4330,15 @@ msgstr "SD2-kortet är tomt"
 
 msgid "FAILED TO APPLY SYSTEM CONFIG"
 msgstr "Kunde inte tillämpa systemkonfigurationen"
+
+msgid "ARE YOU SURE YOU WANT TO UPDATE THE SYSTEM?"
+msgstr "Vill du verkligen uppdatera systemet?"
+
+msgid "UPDATE COMPLETE"
+msgstr "Uppdateringen har slutförts"
+
+msgid "UPDATE FAILED"
+msgstr "Uppdateringen misslyckades"
+
+msgid "LATER"
+msgstr "Senare"

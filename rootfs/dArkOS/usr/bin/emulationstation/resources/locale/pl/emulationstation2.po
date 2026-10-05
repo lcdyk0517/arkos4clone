@@ -4102,3 +4102,15 @@ msgstr "Karta SD2 jest pusta"
 
 msgid "FAILED TO APPLY SYSTEM CONFIG"
 msgstr "Nie udało się zastosować konfiguracji systemu"
+
+msgid "ARE YOU SURE YOU WANT TO UPDATE THE SYSTEM?"
+msgstr "Czy na pewno chcesz zaktualizować system?"
+
+msgid "UPDATE COMPLETE"
+msgstr "Aktualizacja zakończona"
+
+msgid "UPDATE FAILED"
+msgstr "Aktualizacja nie powiodła się"
+
+msgid "LATER"
+msgstr "Później"
