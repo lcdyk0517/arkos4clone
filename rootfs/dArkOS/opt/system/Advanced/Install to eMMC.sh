@@ -13,15 +13,17 @@ SD=/dev/mmcblk0
 EMMC=/dev/mmcblk2
 B=/boot
 EB=/mnt/emmc-boot ER=/mnt/emmc-root EM=/mnt/emmc-roms
+BAK=/roms/backup/emmc-backup.img
 ROMS_MIB=1024
 
 msg() { printf "\n%s" "$*"; }
 quit() { msg "$*"; sleep 5; exit 1; }
 ask() {
-  msg "$*"
-  printf "\nPress A to continue.  Press B to exit.\n"
+  msg "$1"
+  printf "\nPress A to continue.%s  Press B to exit.\n" "${2:+  Press X to $2.}"
   while true; do
-    Test_Button_A; [ "$?" -eq 10 ] && return
+    Test_Button_A; [ "$?" -eq 10 ] && return 0
+    [ -n "$2" ] && { Test_Button_X; [ "$?" -eq 10 ] && return 1; }
     Test_Button_B; [ "$?" -eq 10 ] && exit 0
   done
 }
@@ -56,10 +58,21 @@ FS=$(findmnt -no FSTYPE /)
 [ $FS = btrfs ] && NEED_MIB=$(( USED_MIB * 3 / 4 )) || NEED_MIB=$USED_MIB
 [ $ROOT_MIB -gt $NEED_MIB ] || quit "The eMMC ($EMMC_MIB MiB) is too small for this system ($USED_MIB MiB)."
 
-ask "Copy this system to the eMMC ($EMMC_MIB MiB)? Everything on the eMMC will be erased."
+ask "Copy this system to the eMMC ($EMMC_MIB MiB)? Everything on the eMMC will be erased." \
+  "back up the eMMC first" || BACKUP=1
+umount ${EMMC}p* 2>/dev/null
+
+if [ -n "$BACKUP" ]; then
+  rm -f $BAK.part
+  [ $(( $(df -B1 --output=avail /roms | tail -1) + $(stat -c %s $BAK 2>/dev/null || echo 0) )) -gt \
+    $(blockdev --getsize64 $EMMC) ] || quit "Not enough space in /roms for the backup."
+  msg "Backing up the eMMC to $BAK..."
+  mkdir -p ${BAK%/*}
+  dd if=$EMMC of=$BAK.part bs=4M conv=fsync status=progress && mv $BAK.part $BAK ||
+    { rm -f $BAK.part; quit "Backing up the eMMC failed."; }
+fi
 
 msg "Partitioning..."
-umount ${EMMC}p* 2>/dev/null
 sfdisk -q --wipe always $EMMC <<EOF || quit "Partitioning failed."
 label: dos
 start=32768, size=256MiB, type=c, bootable
