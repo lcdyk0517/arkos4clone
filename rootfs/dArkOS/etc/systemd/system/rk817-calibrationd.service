@@ -1,0 +1,13 @@
+[Unit]
+Description=Persist ArkOS4Clone RK817 battery calibration
+After=local-fs.target
+ConditionPathExists=/sys/bus/platform/devices/rk817-battery/rk817_calibration
+
+[Service]
+Type=simple
+ExecStart=/usr/local/sbin/rk817-calibrationd
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
