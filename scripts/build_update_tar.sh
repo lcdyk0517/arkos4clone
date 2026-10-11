@@ -418,8 +418,9 @@ log "=== Step 8: Apply permissions (META) ==="
 apply_meta
 
 log "=== Step 9: Fix modules permissions ==="
+# The 4.4 and 5.10 kernels each have their module directory
 fix_modules_perms() {
-  local base="/usr/lib/modules/4.4.189"
+  local base="/usr/lib/modules/$1"
   [[ -d "$base" ]] || { log "modules dir not found: $base"; return 0; }
   log "Fixing modules: $base"
   chown -R $CHOWN_USER "$base" 2>/dev/null || true
@@ -427,10 +428,18 @@ fix_modules_perms() {
   local ko_count; ko_count=$(find "$base" -name "*.ko" 2>/dev/null | wc -l)
   log "Fixed $ko_count .ko files"
   if command -v depmod >/dev/null 2>&1; then
-    depmod -a 4.4.189 2>/dev/null && log "depmod completed" || true
+    depmod -a "$1" 2>/dev/null && log "depmod completed" || true
   fi
 }
-fix_modules_perms
+fix_modules_perms 4.4.189
+fix_modules_perms 5.10.252-arkos4clone
+
+# Mesa's Vulkan drivers cannot drive this GPU, but the loader loads each
+# one (lvp pulls in LLVM, ~3.6 s per Vulkan app start); keep only Mali's
+if [[ -f /usr/share/vulkan/icd.d/mali.json ]]; then
+  find /usr/share/vulkan/icd.d -name '*.json' ! -name 'mali.json' -print -delete 2>/dev/null |
+    while read -r f; do log "Removed Vulkan ICD: $f"; done
+fi
 
 log "=== Step 10: Enable services ==="
 if have_systemctl; then
