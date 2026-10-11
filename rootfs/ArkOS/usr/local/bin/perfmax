@@ -1,0 +1,90 @@
+#!/bin/bash
+printf "\033c" >> /dev/tty1
+
+if [[ "$(tr -d '\0' < /proc/device-tree/compatible)" == *"rk3326"* ]]; then
+  isitrk3326="True"
+  gpu="ff400000"
+  usr_gpu_speed="400000000"
+  usr_cpu_speed="1008000"
+  usr_dmc_speed="528000000"
+else
+  isitrk3326=""
+  gpu="fde60000"
+  usr_gpu_speed="300000000"
+  usr_cpu_speed="600000"
+  usr_dmc_speed="528000000"
+fi
+
+# A DDR request between two rates is rounded up to the next one, and not
+# every kernel has 528 MHz (5.10 has 450 and 666): use the fastest rate at
+# or below the powersave target.
+dmc_rate=0
+for f in $(cat /sys/devices/platform/dmc/devfreq/dmc/available_frequencies 2>/dev/null); do
+  [ "$f" -le "$usr_dmc_speed" ] && [ "$f" -gt "$dmc_rate" ] && dmc_rate=$f
+done
+[ "$dmc_rate" -gt 0 ] && usr_dmc_speed=$dmc_rate
+
+if [[ ! -z "$isitrk3326" ]] && [[ $(tty) != *"pts"* ]]; then
+  rm /home/ark/.asoundrc
+fi
+
+if [ -f "/roms/launchimages/loading.gif" ] && [[ $(tty) != *"pts"* ]]; then
+  ffplay -x 1280 -y 720 /roms/launchimages/loading.gif &
+  PROC=$!
+  (sleep 3s; kill -9 $PROC)
+fi
+
+chmod 777 /sys/devices/platform/${gpu}.gpu/devfreq/${gpu}.gpu/governor
+chmod 777 /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
+chmod 777 /sys/devices/platform/dmc/devfreq/dmc/governor
+
+if [[ "$1" == "kodi" ]]; then
+  echo "performance" > /sys/devices/platform/${gpu}.gpu/devfreq/${gpu}.gpu/governor
+  echo "performance" > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
+  echo "performance" > /sys/devices/platform/dmc/devfreq/dmc/governor
+elif [[ "$1" == "powersave" ]]; then
+  echo "userspace" > /sys/devices/platform/${gpu}.gpu/devfreq/${gpu}.gpu/governor
+  echo "${usr_gpu_speed}" | sudo tee /sys/devices/platform/${gpu}.gpu/devfreq/${gpu}.gpu/userspace/set_freq > /dev/null &
+  echo "userspace" > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
+  echo "${usr_cpu_speed}" | sudo tee /sys/devices/system/cpu/cpufreq/policy0/scaling_setspeed > /dev/null &
+  echo "userspace" > /sys/devices/platform/dmc/devfreq/dmc/governor
+  echo "${usr_dmc_speed}" | sudo tee  /sys/devices/platform/dmc/devfreq/dmc/userspace/set_freq > /dev/null &
+elif [[ "$1" != "ondemand" ]]; then
+  echo "$1" > /sys/devices/platform/${gpu}.gpu/devfreq/${gpu}.gpu/governor
+  echo "$1" > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
+  echo "$1" > /sys/devices/platform/dmc/devfreq/dmc/governor
+else
+  echo simple_"$1" > /sys/devices/platform/${gpu}.gpu/devfreq/${gpu}.gpu/governor
+  echo "$1" > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
+  echo dmc_"$1" > /sys/devices/platform/dmc/devfreq/dmc/governor
+fi
+
+if [ -f "/usr/local/bin/quickmode.sh" ]; then
+   sudo rm -f /dev/shm/governor_settings.state
+   sudo touch /dev/shm/governor_settings.state
+   sudo chmod 777 /dev/shm/governor_settings.state
+   mapfile settings < /dev/shm/governor_settings.state
+
+   settings[0]="$(cat /sys/devices/platform/${gpu}.gpu/devfreq/${gpu}.gpu/governor)"
+   settings[1]="$(cat /sys/devices/system/cpu/cpufreq/policy0/scaling_governor)"
+   settings[2]="$(cat /sys/devices/platform/dmc/devfreq/dmc/governor)"
+
+   for j in "${settings[@]}"
+   do
+     echo $j
+   done > /dev/shm/governor_settings.state
+
+   if [[ "$(cat /sys/devices/platform/${gpu}.gpu/devfreq/${gpu}.gpu/governor)" == "userspace" ]]; then
+     sudo rm -f /dev/shm/userspace_speed_settings.state
+     sudo touch /dev/shm/userspace_speed_settings.state
+     sudo chmod 777 /dev/shm/userspace_speed_settings.state
+     mapfile usettings < /dev/shm/userspace_speed_settings.state
+     usettings[0]="$(cat /sys/devices/platform/${gpu}.gpu/devfreq/${gpu}.gpu/userspace/set_freq)"
+     usettings[1]="$(cat /sys/devices/system/cpu/cpufreq/policy0/scaling_setspeed)"
+     usettings[2]="$(cat /sys/devices/platform/dmc/devfreq/dmc/userspace/set_freq)"
+     for j in "${usettings[@]}"
+     do
+       echo $j
+     done > /dev/shm/userspace_speed_settings.state
+   fi
+fi
