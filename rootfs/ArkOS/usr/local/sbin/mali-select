@@ -1,0 +1,68 @@
+#!/bin/sh
+# Point the Mali library names at the userspace driver that matches the
+# running kernel's GPU driver: the 4.4 kernel needs the base image's rxp0
+# driver, the 5.10 kernel g29p1 (which also provides Vulkan).
+#
+# The base images install rxp0 as files named libmali-bifrost-g31-rxp0*.so:
+# dArkOS in /usr/lib/<arch>; ArkOS in /usr/local/lib/<arch> (first in the
+# library path) and in /usr/lib/aarch64-linux-gnu. Programs reach them
+# through libMali.so, through links such as libEGL.so.1, or by name (some
+# SDL2 builds). On its first run this moves every such file into a mali/
+# folder next to it, outside the library path, and keeps its name as a
+# link; g29p1 is in /usr/lib/<arch>/mali/. Links are only rewritten when
+# they point elsewhere.
+set -u
+
+case "$(uname -r)" in
+4.4.*) kernel=4.4 ;;
+*)     kernel=5.10 ;;
+esac
+
+link() {
+    [ "$(readlink "$1")" = "$2" ] || ln -sfn "$2" "$1"
+}
+
+for arch in aarch64-linux-gnu arm-linux-gnueabihf; do
+    g29p1=/usr/lib/$arch/mali/libmali-bifrost-g31-g29p1.so
+    if [ ! -f "$g29p1" ]; then
+        echo "mali-select: $g29p1 is missing" >&2
+        continue
+    fi
+
+    for dir in /usr/local/lib/$arch /usr/lib/$arch; do
+        for f in "$dir"/libmali-bifrost-g31-rxp0*.so; do
+            [ -f "$f" ] && [ ! -L "$f" ] || continue
+            mkdir -p "$dir/mali" && mv -f "$f" "$dir/mali/"
+        done
+
+        rxp0=
+        for f in "$dir"/mali/libmali-bifrost-g31-rxp0*.so; do
+            [ -f "$f" ] || continue
+            name=${f##*/}
+            rxp0=${rxp0:-$name}
+            if [ "$kernel" = 4.4 ]; then
+                link "$dir/$name" "mali/$name"
+            else
+                link "$dir/$name" "$g29p1"
+            fi
+        done
+
+        [ "$dir" = "/usr/lib/$arch" ] || continue
+
+        # Every EGL, GLES, GBM, OpenCL and wayland-egl name in this folder
+        # links to libMali.so (where the base image has one)
+        if [ -n "$rxp0" ] || [ -e "$dir/libMali.so" ]; then
+            if [ "$kernel" = 5.10 ]; then
+                link "$dir/libMali.so" mali/libmali-bifrost-g31-g29p1.so
+            elif [ -n "$rxp0" ]; then
+                link "$dir/libMali.so" "$rxp0"
+            fi
+        fi
+        if [ "$kernel" = 5.10 ]; then
+            link "$dir/libMaliVulkan.so.1" mali/libmali-bifrost-g31-g29p1.so
+        else
+            rm -f "$dir/libMaliVulkan.so.1"
+        fi
+    done
+done
+exit 0

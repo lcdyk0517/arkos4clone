@@ -1,0 +1,2 @@
+# libmali g29p1 allocates its buffers from the DMA-BUF system heap
+SUBSYSTEM=="dma_heap", KERNEL=="system*", GROUP="video", MODE="0660"
