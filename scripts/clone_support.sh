@@ -166,6 +166,11 @@ cleanup_stock() {
   safe sudo rm -f "$MOUNT_DIR/root/etc/emulationstation/es_input.cfg"
   # tempthemes 机制废弃: 主题已随 roms.tar 交付, 镜像不再携带
   safe sudo rm -rf "$MOUNT_DIR/root/tempthemes"
+  # Mesa 的 Vulkan 驱动 (panfrost/lvp 等) 都驱动不了本机 GPU (Mali kbase)，加载器却会逐个加载，
+  # lvp 还拖进 LLVM，让每个 Vulkan 程序启动多花约 3.6 秒；只留 mali.json
+  if [[ -d "$MOUNT_DIR/root/usr/share/vulkan/icd.d" ]]; then
+    safe sudo find "$MOUNT_DIR/root/usr/share/vulkan/icd.d" -name '*.json' ! -name 'mali.json' -delete
+  fi
   # p3 保持原厂 NTFS 出厂，首启 expandtoexfat.sh 转换为 exFAT 并切换 fstab
   # (fstab.exfat 保留在 boot 分区供首启使用；tempthemes 废弃删除——主题已随 roms.tar 交付)
 }

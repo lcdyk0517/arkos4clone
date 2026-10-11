@@ -44,10 +44,14 @@ dd if=$SD bs=512 skip=16384 count=8192 status=none | grep -qaF 'fatload ${devtyp
 
 # Remember the console selection so the boot files can be rebuilt after an OTA update
 dtb=$(tr -d '\r' < $B/boot.ini | awk '/^load .*\.dtb$/ {print $NF; exit}')
-for d in $B/consoles/*/; do same $B/$dtb "$d$dtb" 2>/dev/null && CONSOLE=$(basename "$d"); done
+for d in $B/consoles/*/; do
+  { same $B/$dtb "$d$dtb" || same $B/$dtb "${d}5.10/$dtb"; } 2>/dev/null && CONSOLE=$(basename "$d")
+done
 for k in $B/consoles/kernel/*/Image; do same $B/Image "$k" && KERNEL=$(basename "$(dirname "$k")"); done
 for l in $B/consoles/logo/*/logo.bmp; do same $B/logo.bmp "$l" && LOGO=${l#$B/consoles/}; done
 [ -n "$CONSOLE" ] && [ -n "$KERNEL" ] || quit "Select the console with dtb_selector first."
+# The 5.10 kernel's battery gauge choice is on the command line
+GAUGE=$(grep -oE 'rk817_gauge=[a-z0-9]+' $B/boot.ini | head -n 1)
 OC=$(grep -oE '(max|boot)_(cpu|gpu|ddr)freq=[0-9]+' $B/boot.ini | xargs)
 grep -q rk3326-oc-voltage.dtbo $B/boot.ini && VOLTAGE=1
 
@@ -93,8 +97,8 @@ mount ${EMMC}p1 $EB && mount -o $OPT ${EMMC}p2 $ER && mount ${EMMC}p3 $EM || qui
 msg "Copying the boot partition..."
 rsync -rt $B/ $EB/ --exclude='/dtb_selector_*' --exclude='/*.log' --exclude='/*.txt' \
   --exclude=/boot.ini --exclude='/*.dtb' --exclude=/Image --exclude=/logo.bmp
-printf 'CONSOLE="%s"\nKERNEL="%s"\nLOGO="%s"\nOC="%s"\nVOLTAGE="%s"\n' \
-  "$CONSOLE" "$KERNEL" "$LOGO" "$OC" "$VOLTAGE" > $EB/emmc.conf
+printf 'CONSOLE="%s"\nKERNEL="%s"\nGAUGE="%s"\nLOGO="%s"\nOC="%s"\nVOLTAGE="%s"\n' \
+  "$CONSOLE" "$KERNEL" "$GAUGE" "$LOGO" "$OC" "$VOLTAGE" > $EB/emmc.conf
 /usr/local/bin/emmc-boot-files.sh $EB || quit "Creating the boot files failed."
 
 msg "Copying the system, this takes a while..."
