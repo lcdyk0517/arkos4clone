@@ -1,0 +1,123 @@
+From bc9c55ecfbc30146849eebe9455ab94b60a97e0b Mon Sep 17 00:00:00 2001
+From: lcdyk0517 <lcdyk0517@qq.com>
+Date: Thu, 25 Dec 2025 01:35:37 +0000
+Subject: [PATCH] SDL_kmsdrm: fix mouse and video behavior
+
+---
+ src/video/kmsdrm/SDL_kmsdrmmouse.c | 11 +++++------
+ src/video/kmsdrm/SDL_kmsdrmvideo.c | 22 +++++++++++-----------
+ 2 files changed, 16 insertions(+), 17 deletions(-)
+
+diff --git a/src/video/kmsdrm/SDL_kmsdrmmouse.c b/src/video/kmsdrm/SDL_kmsdrmmouse.c
+index 57259877d..3ad5c849f 100644
+--- a/src/video/kmsdrm/SDL_kmsdrmmouse.c
++++ b/src/video/kmsdrm/SDL_kmsdrmmouse.c
+@@ -171,10 +171,8 @@ static int KMSDRM_DumpCursorToBO(SDL_VideoDisplay *display, SDL_Cursor *cursor)
+ 
+     /* Copy from the cursor buffer to a buffer that we can dump to the GBM BO. */
+     for (i = 0; i < curdata->h; i++) {
+-        for (j = 0; j < curdata->w; j++) {
+-            src_row = ((uint32_t*)curdata->buffer)[i * curdata->w + j];
+-            SDL_memcpy(ready_buffer + ((curdata->w - j + 1) * bo_stride) + i, &src_row, 4);
+-        }
++        src_row = &((uint8_t *)curdata->buffer)[i * curdata->w * 4];
++        SDL_memcpy(ready_buffer + (i * bo_stride), src_row, (size_t)4 * curdata->w);
+     }
+ 
+     /* Dump the cursor buffer to our GBM BO. */
+@@ -382,7 +380,8 @@ static int KMSDRM_WarpMouseGlobal(int x, int y)
+         if (dispdata->cursor_bo) {
+             int ret = 0;
+ 
+-            ret = KMSDRM_drmModeMoveCursor(dispdata->cursor_bo_drm_fd, dispdata->crtc->crtc_id, y, dispdata->mode.vdisplay + curdata->w - x);
++            ret = KMSDRM_drmModeMoveCursor(dispdata->cursor_bo_drm_fd, dispdata->crtc->crtc_id, dispdata->mode.hdisplay - curdata->w - x, dispdata->mode.vdisplay - curdata->h - y);
++
+ 
+             if (ret) {
+                 SDL_SetError("drmModeMoveCursor() failed.");
+@@ -443,7 +442,7 @@ static void KMSDRM_MoveCursor(SDL_Cursor *cursor)
+             return;
+         }
+ 
+-        ret = KMSDRM_drmModeMoveCursor(dispdata->cursor_bo_drm_fd, dispdata->crtc->crtc_id, mouse->y, dispdata->mode.vdisplay - curdata->w - mouse->x);
++        ret = KMSDRM_drmModeMoveCursor(dispdata->cursor_bo_drm_fd, dispdata->crtc->crtc_id, dispdata->mode.hdisplay - curdata->w - mouse->x, dispdata->mode.vdisplay - curdata->h - mouse->y);
+ 
+         if (ret) {
+             SDL_SetError("drmModeMoveCursor() failed.");
+diff --git a/src/video/kmsdrm/SDL_kmsdrmvideo.c b/src/video/kmsdrm/SDL_kmsdrmvideo.c
+index e62458015..815c93a52 100644
+--- a/src/video/kmsdrm/SDL_kmsdrmvideo.c
++++ b/src/video/kmsdrm/SDL_kmsdrmvideo.c
+@@ -366,10 +366,10 @@ KMSDRM_InitRotateBuffer(_THIS, int frameWidth, int frameHeight)
+     // setup rotation
+     src_info.fd = -1;
+     src_info.mmuFlag = 1;
+-    src_info.rotation = HAL_TRANSFORM_ROT_270;
++    src_info.rotation = HAL_TRANSFORM_ROT_180;
+ 
+     // swap width and height and adjust stride here because our source buffer is 480x854
+-    rga_set_rect(&src_info.rect, 0, 0, frameHeight, frameWidth, l_frameHeight, frameWidth, RK_FORMAT_BGRA_8888);
++    rga_set_rect(&src_info.rect, 0, 0, frameWidth, frameHeight, frameWidth, l_frameHeight, RK_FORMAT_BGRA_8888);
+ 
+     dst_info.fd = -1;
+     dst_info.mmuFlag = 1;
+@@ -943,8 +943,8 @@ static void KMSDRM_AddDisplay(_THIS, drmModeConnector *connector, drmModeRes *re
+     modedata->mode_index = mode_index;
+ 
+     display.driverdata = dispdata;
+-    display.desktop_mode.w = dispdata->mode.vdisplay;
+-    display.desktop_mode.h = dispdata->mode.hdisplay;
++    display.desktop_mode.w = dispdata->mode.hdisplay;
++    display.desktop_mode.h = dispdata->mode.vdisplay;
+     display.desktop_mode.refresh_rate = dispdata->mode.vrefresh;
+     display.desktop_mode.format = SDL_PIXELFORMAT_ARGB8888;
+     display.desktop_mode.driverdata = modedata;
+@@ -1226,7 +1226,7 @@ static void KMSDRM_DirtySurfaces(SDL_Window *window)
+        or SetWindowFullscreen, send a fake event for now since the actual
+        recreation is deferred */
+     KMSDRM_GetModeToSet(window, &mode);
+-    SDL_SendWindowEvent(window, SDL_WINDOWEVENT_RESIZED, mode.vdisplay, mode.hdisplay);
++    SDL_SendWindowEvent(window, SDL_WINDOWEVENT_RESIZED, mode.hdisplay, mode.vdisplay);
+ }
+ 
+ /* This determines the size of the fb, which comes from the GBM surface
+@@ -1261,13 +1261,13 @@ int KMSDRM_CreateSurfaces(_THIS, SDL_Window *window)
+        mode that's set in sync with what SDL_video.c thinks is set */
+     KMSDRM_GetModeToSet(window, &dispdata->mode);
+ 
+-    display->current_mode.w = dispdata->mode.vdisplay;
+-    display->current_mode.h = dispdata->mode.hdisplay;
++    display->current_mode.w = dispdata->mode.hdisplay;
++    display->current_mode.h = dispdata->mode.vdisplay;
+     display->current_mode.refresh_rate = dispdata->mode.vrefresh;
+     display->current_mode.format = SDL_PIXELFORMAT_ARGB8888;
+ 
+     windata->gs = KMSDRM_gbm_surface_create(viddata->gbm_dev,
+-                                            dispdata->mode.vdisplay, dispdata->mode.hdisplay,
++                                            dispdata->mode.hdisplay, dispdata->mode.vdisplay,
+                                             surface_fmt, surface_flags);
+ 
+     if (!windata->gs) {
+@@ -1291,7 +1291,7 @@ int KMSDRM_CreateSurfaces(_THIS, SDL_Window *window)
+     ret = SDL_EGL_MakeCurrent(_this, windata->egl_surface, egl_context);
+ 
+     SDL_SendWindowEvent(window, SDL_WINDOWEVENT_RESIZED,
+-                        dispdata->mode.vdisplay, dispdata->mode.hdisplay);
++                        dispdata->mode.hdisplay, dispdata->mode.vdisplay);
+ 
+     windata->egl_surface_dirty = SDL_FALSE;
+ 
+@@ -1408,8 +1408,8 @@ void KMSDRM_GetDisplayModes(_THIS, SDL_VideoDisplay *display)
+             modedata->mode_index = i;
+         }
+ 
+-        mode.w = conn->modes[i].vdisplay;
+-        mode.h = conn->modes[i].hdisplay;
++        mode.w = conn->modes[i].hdisplay;
++        mode.h = conn->modes[i].vdisplay;
+         mode.refresh_rate = conn->modes[i].vrefresh;
+         mode.format = SDL_PIXELFORMAT_ARGB8888;
+         mode.driverdata = modedata;
+-- 
+2.20.1
+

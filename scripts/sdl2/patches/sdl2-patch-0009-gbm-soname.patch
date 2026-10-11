@@ -1,0 +1,11 @@
+--- a/cmake/sdlchecks.cmake
++++ b/cmake/sdlchecks.cmake
+@@ -1349,7 +1349,7 @@
+         FindLibraryAndSONAME(drm LIBDIRS ${PKG_KMSDRM_LIBRARY_DIRS})
+         FindLibraryAndSONAME(gbm LIBDIRS ${PKG_KMSDRM_LIBRARY_DIRS})
+         set(SDL_VIDEO_DRIVER_KMSDRM_DYNAMIC "\"${DRM_LIB_SONAME}\"")
+-        set(SDL_VIDEO_DRIVER_KMSDRM_DYNAMIC_GBM "\"${GBM_LIB_SONAME}\"")
++        set(SDL_VIDEO_DRIVER_KMSDRM_DYNAMIC_GBM "\"libgbm.so.1\"")
+         set(HAVE_KMSDRM_SHARED TRUE)
+       else()
+         list(APPEND EXTRA_LIBS ${PKG_KMSDRM_LIBRARIES})
