@@ -3882,7 +3882,7 @@
 	</system>
 	<system>
 		<name>fbneo</name>
-		<fullname>Final Burn Neo</fullname>
+		<fullname>Final Burn Neo [SD2]</fullname>
 		<path>/roms2/fbneo/</path>
 		<extension>.7z .zip .fid .hak .FID .HAK</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/%EMULATOR% -L /home/ark/.config/%EMULATOR%/cores/%CORE%_libretro.so %ROM%; sudo perfnorm</command>
@@ -5681,6 +5681,15 @@
 		<manufacturer>Belogic</manufacturer>
 		<release>2008</release>
 		<hardware>console</hardware>
+	</system>
+	<system>
+		<name>videos</name>
+		<fullname>Movies [SD2]</fullname>
+		<path>/roms2/movies/</path>
+		<extension>.mp4 .MP4 .avi .AVI .mpeg .MPEG .mkv .MKV .mov .MOV</extension>
+		<command>sudo perfmax %GOVERNOR% %ROM%; /usr/local/bin/mediaplayer.sh %ROM%; sudo perfnorm</command>
+		<platform>videos</platform>
+		<theme>vhs</theme>
 	</system>
 
 </systemList>

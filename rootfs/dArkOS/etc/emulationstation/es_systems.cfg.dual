@@ -5543,7 +5543,7 @@
 	<system>
 		<name>gametank</name>
 		<fullname>GameTank [SD2]</fullname>
-		<path>/roms/gametank/</path>
+		<path>/roms2/gametank/</path>
 		<extension>.7z .7Z .gtr .GTR .zip .ZIP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/gametank.sh %EMULATOR% %CORE% %ROM%; sudo perfnorm</command>
 		<emulators>
@@ -5640,6 +5640,17 @@
 		<manufacturer>Belogic</manufacturer>
 		<release>2008</release>
 		<hardware>console</hardware>
+	</system>
+	<system>
+		<name>videos</name>
+		<fullname>Movies [SD2]</fullname>
+		<path>/roms2/movies/</path>
+		<extension>.mp4 .MP4 .avi .AVI .mpeg .MPEG .mkv .MKV .mov .MOV</extension>
+		<command>sudo perfmax %GOVERNOR% %ROM%; /usr/local/bin/mediaplayer.sh %ROM%; sudo perfnorm</command>
+		<platform>videos</platform>
+		<theme>vhs</theme>
+		<manufacturer>Various</manufacturer>
+		<release>unknown</release>
 	</system>
 
 </systemList>
