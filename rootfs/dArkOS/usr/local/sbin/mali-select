@@ -1,0 +1,47 @@
+#!/bin/sh
+# Point the Mali library names at the userspace driver that matches the
+# running kernel's GPU driver: the 4.4 kernel needs the base image's rxp0
+# driver, the 5.10 kernel g29p1 (which also provides Vulkan). Both live in
+# /usr/lib/<arch>/mali/, outside the library path, so ldconfig leaves them
+# alone. Links are only rewritten when they point elsewhere.
+set -u
+
+case "$(uname -r)" in
+4.4.*) driver=libmali-bifrost-g31-rxp0-gbm.so vulkan=0 ;;
+*)     driver=libmali-bifrost-g31-g29p1.so    vulkan=1 ;;
+esac
+
+link() {
+    [ "$(readlink "$1")" = "$2" ] || ln -sfn "$2" "$1"
+}
+
+for dir in /usr/lib/aarch64-linux-gnu /usr/lib/arm-linux-gnueabihf; do
+    [ -d "$dir/mali" ] || continue
+
+    # The base image (and its OTA updates) installs rxp0 as a file under the
+    # name some SDL builds load directly: keep the file in mali/, and the
+    # name as a link.
+    rxp0=$dir/libmali-bifrost-g31-rxp0-gbm.so
+    if [ -f "$rxp0" ] && [ ! -L "$rxp0" ]; then
+        mv -f "$rxp0" "$dir/mali/"
+    fi
+
+    if [ ! -f "$dir/mali/$driver" ]; then
+        echo "mali-select: $dir/mali/$driver is missing" >&2
+        continue
+    fi
+
+    # Every EGL, GLES, GBM, OpenCL and wayland-egl name links to libMali.so
+    link "$dir/libMali.so" "mali/$driver"
+    link "$rxp0" "mali/$driver"
+    if [ "$vulkan" = 1 ]; then
+        link "$dir/libMaliVulkan.so.1" "mali/$driver"
+    else
+        rm -f "$dir/libMaliVulkan.so.1"
+    fi
+
+    # ldconfig (run by apt) points these at Debian's own libraries
+    link "$dir/libGLESv1_CM.so.1" libMali.so
+    link "$dir/libwayland-egl.so.1" libMali.so
+done
+exit 0

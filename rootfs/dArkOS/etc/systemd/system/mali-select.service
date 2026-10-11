@@ -1,0 +1,14 @@
+[Unit]
+Description=Select the Mali GPU driver for the running kernel
+DefaultDependencies=no
+After=local-fs.target systemd-remount-fs.service
+Before=sysinit.target shutdown.target
+Conflicts=shutdown.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/local/sbin/mali-select
+
+[Install]
+WantedBy=sysinit.target
