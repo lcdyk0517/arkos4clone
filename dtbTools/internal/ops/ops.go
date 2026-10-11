@@ -130,6 +130,54 @@ var ddrFreqOptions = []FreqOption{
 	{194}, {328}, {450}, {528}, {666}, {786}, {924}, {1040},
 }
 
+// The kernels the OS ships: 4.4 in consoles/kernel/<battery version>/,
+// 5.10 in consoles/kernel/5.10/, with its DTBs and overlay in a 5.10 folder
+// next to the 4.4 files.
+const (
+	Kernel44  = "4.4"
+	Kernel510 = "5.10"
+)
+
+// GPU and DDR options of the 5.10 kernel are its OPPs: the kernel removes
+// every OPP above max_gpufreq/max_ddrfreq, so a value between two OPPs would
+// run at the lower one.
+var gpuFreqOptions510 = []FreqOption{
+	{200}, {300}, {400}, {480}, {520}, {600},
+}
+
+var ddrFreqOptions510 = []FreqOption{
+	{194}, {328}, {450}, {666}, {786}, {924}, {1032},
+}
+
+// Kernel command line option that selects the RK817 battery gauge of the
+// 5.10 kernel. The standard Rockchip gauge is its default, so it needs no
+// option.
+const gaugeBootArg = "rk817_gauge"
+
+// SelectKernel asks the user which kernel to boot.
+func SelectKernel(lang *i18n.Language) (string, error) {
+	ui.ClearScreen()
+	ui.Println("")
+	ui.BoxHeader(lang.Menu3.SelectKernel)
+	ui.Println(lang.Menu3.Kernel44)
+	ui.Println(lang.Menu3.Kernel510)
+
+	for {
+		choice, err := ui.ReadIntChoice(lang, lang.Common.SelectNumber)
+		if err != nil {
+			return "", err
+		}
+		switch choice {
+		case 1:
+			return Kernel44, nil
+		case 2:
+			return Kernel510, nil
+		default:
+			ui.Println(ui.ColorWrap(lang.Common.InvalidSelection, ui.StyleRed))
+		}
+	}
+}
+
 // SelectBatteryVersion asks the user which battery driver to use.
 func SelectBatteryVersion(lang *i18n.Language) (string, error) {
 	ui.ClearScreen()
@@ -187,7 +235,7 @@ func SelectFrequency(lang *i18n.Language, label string, options []FreqOption, de
 }
 
 // SelectOverclocking runs the overclocking configuration flow.
-func SelectOverclocking(lang *i18n.Language) (*OverclockConfig, error) {
+func SelectOverclocking(lang *i18n.Language, kernel string) (*OverclockConfig, error) {
 	ui.ClearScreen()
 	ui.Println("")
 	ui.BoxHeader(lang.Overclock.OverclockTitle)
@@ -234,7 +282,14 @@ func SelectOverclocking(lang *i18n.Language) (*OverclockConfig, error) {
 	}
 	cfg.CPU.BootFreq = cpuBoot
 
-	gpuFreq, err := SelectFrequency(lang, lang.Overclock.ConfigGPU, gpuFreqOptions, 520, nil, 650)
+	gpuOptions, gpuExtreme := gpuFreqOptions, 650
+	ddrOptions, ddrExtreme := ddrFreqOptions, 1040
+	if kernel == Kernel510 {
+		gpuOptions, gpuExtreme = gpuFreqOptions510, 600
+		ddrOptions, ddrExtreme = ddrFreqOptions510, 1032
+	}
+
+	gpuFreq, err := SelectFrequency(lang, lang.Overclock.ConfigGPU, gpuOptions, 520, nil, gpuExtreme)
 	if err != nil {
 		return nil, err
 	}
@@ -243,7 +298,7 @@ func SelectOverclocking(lang *i18n.Language) (*OverclockConfig, error) {
 
 	ui.Println(ui.ColorWrap(lang.Overclock.GPUDDRFreezeTip, ui.StyleBoldRed))
 
-	ddrFreq, err := SelectFrequency(lang, lang.Overclock.ConfigDDR, ddrFreqOptions, 666, ddrLabels, 1040)
+	ddrFreq, err := SelectFrequency(lang, lang.Overclock.ConfigDDR, ddrOptions, 666, ddrLabels, ddrExtreme)
 	if err != nil {
 		return nil, err
 	}
@@ -311,8 +366,43 @@ func SelectVoltage(lang *i18n.Language) (bool, error) {
 	return true, nil
 }
 
+// ApplyBatteryVersionToBootIni selects the battery gauge of the 5.10 kernel
+// on the kernel command line: "arkos4clone_fix" adds rk817_gauge=arkos4clone,
+// anything else removes the option so the kernel uses its default (Rockchip)
+// gauge. The option goes before the frequency options, which
+// ApplyOverclockingToBootIni expects at the end of bootargs.
+func ApplyBatteryVersionToBootIni(baseDir, version string) error {
+	bootIni := filepath.Join(baseDir, "boot.ini")
+	data, err := os.ReadFile(bootIni)
+	if err != nil {
+		return err
+	}
+
+	bootargs := regexp.MustCompile(`setenv\s+bootargs\s+"[^"]*"`)
+	loc := bootargs.FindIndex(data)
+	if loc == nil {
+		return fmt.Errorf("no bootargs line in %s", bootIni)
+	}
+	line := string(data[loc[0]:loc[1]])
+	line = regexp.MustCompile(`\s+`+gaugeBootArg+`=\S*`).ReplaceAllLiteralString(line, "")
+	line = strings.TrimSuffix(line, `"`)
+	if version == "arkos4clone_fix" {
+		arg := " " + gaugeBootArg + "=arkos4clone"
+		freqs := regexp.MustCompile(`(?:\s+(?:max_cpufreq|boot_cpufreq|max_gpufreq|boot_gpufreq|max_ddrfreq|boot_ddrfreq)=\d+)+$`)
+		if f := freqs.FindStringIndex(line); f != nil {
+			line = line[:f[0]] + arg + line[f[0]:]
+		} else {
+			line += arg
+		}
+	}
+	line += `"`
+
+	content := string(data[:loc[0]]) + line + string(data[loc[1]:])
+	return os.WriteFile(bootIni, []byte(content), 0644)
+}
+
 // ApplyOverclockingToBootIni writes overclocking parameters into boot.ini.
-func ApplyOverclockingToBootIni(baseDir string, oc *OverclockConfig) error {
+func ApplyOverclockingToBootIni(baseDir string, oc *OverclockConfig, kernel string) error {
 	bootIni := filepath.Join(baseDir, "boot.ini")
 	data, err := os.ReadFile(bootIni)
 	if err != nil {
@@ -329,6 +419,10 @@ func ApplyOverclockingToBootIni(baseDir string, oc *OverclockConfig) error {
 	}
 
 	if oc.Voltage {
+		voltageOverlay := "consoles/dtbo/rk3326-oc-voltage.dtbo"
+		if kernel == Kernel510 {
+			voltageOverlay = "consoles/dtbo/5.10/rk3326-oc-voltage.dtbo"
+		}
 		content = strings.Replace(content,
 			`setenv dtb_loadaddr "0x01f00000"`,
 			"setenv dtb_loadaddr \"0x01f00000\"\nsetenv dtbo_loadaddr \"0x01f30000\"", 1)
@@ -338,7 +432,7 @@ func ApplyOverclockingToBootIni(baseDir string, oc *OverclockConfig) error {
 		for _, line := range lines {
 			newLines = append(newLines, line)
 			if strings.Contains(line, "load mmc 1:1 ${dtb_loadaddr}") {
-				newLines = append(newLines, "load mmc 1:1 ${dtbo_loadaddr} consoles/dtbo/rk3326-oc-voltage.dtbo")
+				newLines = append(newLines, "load mmc 1:1 ${dtbo_loadaddr} "+voltageOverlay)
 				newLines = append(newLines, "")
 				newLines = append(newLines, "fdt addr ${dtb_loadaddr}")
 				newLines = append(newLines, "fdt resize 8192")
@@ -349,6 +443,38 @@ func ApplyOverclockingToBootIni(baseDir string, oc *OverclockConfig) error {
 	}
 
 	return os.WriteFile(bootIni, []byte(content), 0644)
+}
+
+// copyConsoleFiles copies a console folder to the boot partition. The
+// folder holds the 4.4 DTB, with the 5.10 DTB of the same name in its 5.10
+// folder: for the 5.10 kernel that one is copied instead.
+func copyConsoleFiles(srcPath, baseDir, kernel string) error {
+	entries, err := os.ReadDir(srcPath)
+	if err != nil {
+		return err
+	}
+	for _, e := range entries {
+		src := filepath.Join(srcPath, e.Name())
+		dst := filepath.Join(baseDir, e.Name())
+		switch {
+		case e.IsDir() && e.Name() == Kernel510:
+			continue
+		case e.IsDir():
+			err = CopyDirectory(src, dst)
+		case kernel == Kernel510 && strings.HasSuffix(e.Name(), ".dtb"):
+			src = filepath.Join(srcPath, Kernel510, e.Name())
+			if _, statErr := os.Stat(src); statErr != nil {
+				return fmt.Errorf("5.10 DTB not found: %s", src)
+			}
+			err = CopyFile(src, dst)
+		default:
+			err = CopyFile(src, dst)
+		}
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
 
 // CopySelectedConsole performs the full copy flow for a selected console.
@@ -365,7 +491,12 @@ func CopySelectedConsole(lang *i18n.Language, selected *ui.ConsoleOption, baseDi
 		return fmt.Errorf("source directory not found: %s", srcPath)
 	}
 
-	if err := CopyDirectory(srcPath, baseDir); err != nil {
+	kernel, err := SelectKernel(lang)
+	if err != nil {
+		return fmt.Errorf("failed to select kernel: %v", err)
+	}
+
+	if err := copyConsoleFiles(srcPath, baseDir, kernel); err != nil {
 		return fmt.Errorf("failed to copy console: %v", err)
 	}
 
@@ -373,25 +504,33 @@ func CopySelectedConsole(lang *i18n.Language, selected *ui.ConsoleOption, baseDi
 	if err != nil {
 		return fmt.Errorf("failed to select battery version: %v", err)
 	}
-	if batteryVersion != "" {
-		kernelSrc := filepath.Join(baseDir, "consoles", "kernel", batteryVersion, "Image")
-		if _, err := os.Stat(kernelSrc); err == nil {
-			ui.Printf(lang.Menu3.CopyingFmt, "kernel/"+batteryVersion+"/Image")
-			if err := CopyFile(kernelSrc, filepath.Join(baseDir, "Image")); err != nil {
-				return fmt.Errorf("failed to copy kernel Image: %v", err)
-			}
-		} else {
-			ui.Printf("  Warning: Kernel Image not found: %s\n", kernelSrc)
+	// The 4.4 kernel has one Image per battery driver; the 5.10 kernel has
+	// both drivers and picks one on the command line.
+	imageDir := batteryVersion
+	if kernel == Kernel510 {
+		imageDir = Kernel510
+	}
+	kernelSrc := filepath.Join(baseDir, "consoles", "kernel", imageDir, "Image")
+	if _, err := os.Stat(kernelSrc); err != nil {
+		return fmt.Errorf("kernel Image not found: %s", kernelSrc)
+	}
+	ui.Printf(lang.Menu3.CopyingFmt, "kernel/"+imageDir+"/Image")
+	if err := CopyFile(kernelSrc, filepath.Join(baseDir, "Image")); err != nil {
+		return fmt.Errorf("failed to copy kernel Image: %v", err)
+	}
+	if kernel == Kernel510 {
+		if err := ApplyBatteryVersionToBootIni(baseDir, batteryVersion); err != nil {
+			return fmt.Errorf("failed to apply battery version: %v", err)
 		}
 	}
 
-	ocCfg, err := SelectOverclocking(lang)
+	ocCfg, err := SelectOverclocking(lang, kernel)
 	if err != nil {
 		return fmt.Errorf("failed to select overclocking: %v", err)
 	}
 	if ocCfg != nil {
 		ui.Println(ui.ColorWrap(lang.Overclock.ApplyOverclock, ui.StyleCyan))
-		if err := ApplyOverclockingToBootIni(baseDir, ocCfg); err != nil {
+		if err := ApplyOverclockingToBootIni(baseDir, ocCfg, kernel); err != nil {
 			return fmt.Errorf("failed to apply overclocking: %v", err)
 		}
 		ui.Println(ui.ColorWrap(lang.Overclock.OverclockApplied, ui.StyleBoldGreen))

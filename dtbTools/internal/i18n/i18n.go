@@ -64,6 +64,9 @@ type Menu3Strings struct {
 	Copying                string
 	CopyingExtra           string
 	CopyingFmt             string
+	SelectKernel           string
+	Kernel44               string
+	Kernel510              string
 	SelectBatteryVersion   string
 	BatteryVersionOriginal string
 	BatteryVersionFix      string
