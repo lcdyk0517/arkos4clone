@@ -1,0 +1,30 @@
+#!/bin/sh
+# Persist the ArkOS4Clone RK817 gauge's learned voltage endpoints.
+set -eu
+
+attribute=/sys/bus/platform/devices/rk817-battery/rk817_calibration
+calibration=/var/lib/rk817_battery_calib
+
+[ -r "$attribute" ] && [ -w "$attribute" ] || exit 0
+
+saved=
+if [ -r "$calibration" ]; then
+    if IFS=' ' read -r charge_full discharge_full < "$calibration"; then
+        if printf '%s %s\n' "$charge_full" "$discharge_full" > "$attribute"; then
+            saved="$charge_full $discharge_full"
+        fi
+    fi
+fi
+
+while :; do
+    IFS=' ' read -r charge_full discharge_full calibrated < "$attribute" || exit 1
+    current="$charge_full $discharge_full"
+    if [ "$calibrated" = 1 ] && [ "$current" != "$saved" ]; then
+        temporary="$calibration.tmp.$$"
+        printf '%s\n' "$current" > "$temporary"
+        chmod 0644 "$temporary"
+        mv -f "$temporary" "$calibration"
+        saved="$current"
+    fi
+    sleep 30
+done
