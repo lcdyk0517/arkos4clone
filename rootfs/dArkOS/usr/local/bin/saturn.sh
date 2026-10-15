@@ -25,6 +25,11 @@ if [[ $1 == *"standalone"* ]]; then
     if [[ ! -d "/$directory/saturn/yabasanshiro-2412" ]]; then
       mkdir /$directory/saturn/yabasanshiro-2412
     fi
+  elif [[ $1 == *"pirry"* ]]; then
+    YABA_BIN="./yabasanshiro-pirry"
+    if [[ ! -d "/$directory/saturn/yabasanshiro-pirry" ]]; then
+      mkdir /$directory/saturn/yabasanshiro-pirry
+    fi
   else
     YABA_BIN="./yabasanshiro"
     if [[ ! -d "/$directory/saturn/yabasanshiro" ]]; then
