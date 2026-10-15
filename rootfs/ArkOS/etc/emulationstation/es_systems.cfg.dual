@@ -1711,6 +1711,7 @@
 		      </emulator>
 			<emulator name="retroarch32">
 				<cores>
+					<core>yabadabadoo</core>
 					<core>yabasanshiro</core>
 					<core>yabause</core>
 				</cores>
@@ -4571,6 +4572,7 @@
 		      </emulator>
 			<emulator name="retroarch32">
 				<cores>
+					<core>yabadabadoo</core>
 					<core>yabasanshiro</core>
 					<core>yabause</core>
 				</cores>
