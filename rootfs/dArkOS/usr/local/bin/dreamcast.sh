@@ -52,6 +52,7 @@ elif [[ $1 == "retrorun"* ]]; then
     CORE="32"
     export LD_LIBRARY_PATH=/home/ark/.quirks/libs/retrorun_libs/32/:$LD_LIBRARY_PATH
   fi
+  export GLIBC_TUNABLES=glibc.rtld.execstack=2
   $ESUDO $RETRORUN_BIN -c /home/ark/.config/retrorun.cfg --triggers -s /$directory/dreamcast -d /$directory/bios /home/ark/.config/retroarch$CORE/cores/"$2"_libretro.so "$3"
   printf "\033c" >> /dev/tty1
 else

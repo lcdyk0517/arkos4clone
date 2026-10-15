@@ -40,16 +40,16 @@ elif [[ $1 == "retrorun"* ]]; then
     sed -i "/retrorun_screenshot_folder \=/c\retrorun_screenshot_folder \= \/$directory\/dreamcast" /home/ark/.config/retrorun.cfg
   fi
   if [[ $1 == "retrorun" ]]; then
-    RETRORUN_BIN="/usr/local/bin/retrorun"
+    RETRORUN_BIN="/opt/retrorun/retrorun"
     CORE=""
   elif [[ $1 == "retrorun32" ]]; then
-    RETRORUN_BIN="/usr/local/bin/retrorun32"
+    RETRORUN_BIN="/opt/retrorun/retrorun32"
     CORE="32"
   elif [[ $1 == "retrorunsdl" ]]; then
-    RETRORUN_BIN="/usr/local/bin/retrorunsdl"
+    RETRORUN_BIN="/opt/retrorun/retrorunsdl"
     CORE=""
   else
-    RETRORUN_BIN="/usr/local/bin/retrorunsdl32"
+    RETRORUN_BIN="/opt/retrorun/retrorunsdl32"
     CORE="32"
   fi
   $ESUDO $RETRORUN_BIN -c /home/ark/.config/retrorun.cfg --triggers -s /$directory/atomiswave -d /$directory/bios /home/ark/.config/retroarch$CORE/cores/"$2"_libretro.so "$3"
