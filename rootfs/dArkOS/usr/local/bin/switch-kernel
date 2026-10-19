@@ -1,0 +1,89 @@
+#!/bin/bash
+# Switch the boot files between the 4.4 and the 5.10 kernel, without dtb_selector.
+# The console, battery gauge, overclock and voltage selected in dtb_selector are kept.
+#
+# Usage: switch-kernel status   print the kernel the boot files start: original,
+#                               arkos4clone_fix (4.4, by battery driver) or 5.10
+#        switch-kernel 4.4|5.10 switch the boot files; reboot to start the kernel
+#
+# On an eMMC system (/boot/emmc.conf) the choice is stored in emmc.conf and the
+# boot files are rebuilt from it, as after an OTA update.
+B=${BOOT_DIR:-/boot}
+C="$B/consoles"
+
+quit() { echo "$*" >&2; exit 1; }
+same() { cmp -s "$1" "$2"; }
+
+[ -d "$C/kernel" ] || quit "No $C/kernel: this system has no kernel to switch to."
+
+dtb=$(tr -d '\r' < $B/boot.ini | awk '/^load .*\.dtb$/ {print $NF; exit}')
+[ -n "$dtb" ] || quit "No DTB in boot.ini. Select the console with dtb_selector first."
+
+# The kernel in the boot files: its Image is one of the shipped ones
+KERNEL=
+for k in "$C"/kernel/*/Image; do same $B/Image "$k" && KERNEL=$(basename "$(dirname "$k")"); done
+[ -n "$KERNEL" ] || quit "The kernel in $B is not one of the shipped kernels."
+
+# The 4.4 kernel has one Image per battery driver, the 5.10 kernel takes the
+# driver on its command line. Carry the choice over to the other kernel.
+case $KERNEL in
+  5.10) GAUGE=$(grep -oE 'rk817_gauge=[a-z0-9]+' $B/boot.ini | head -n 1) ;;
+  arkos4clone_fix) GAUGE=rk817_gauge=arkos4clone ;;
+  *) GAUGE= ;;
+esac
+
+case $1 in
+  status) echo "$KERNEL"; exit 0 ;;
+  4.4) [ -n "$GAUGE" ] && NEW=arkos4clone_fix || NEW=original; GAUGE= ;;
+  5.10) NEW=5.10 ;;
+  *) quit "Usage: ${0##*/} status|4.4|5.10" ;;
+esac
+[ $NEW = $KERNEL ] && { echo "Already using the $1 kernel."; exit 0; }
+[ -w $B ] || quit "Run as root."
+
+if [ -f $B/emmc.conf ]; then
+  . $B/emmc.conf
+else
+  for d in "$C"/*/; do
+    { same $B/$dtb "$d$dtb" || same $B/$dtb "${d}5.10/$dtb"; } 2>/dev/null && CONSOLE=$(basename "$d")
+  done
+fi
+[ -n "$CONSOLE" ] || quit "Select the console with dtb_selector first."
+
+k=; [ $NEW = 5.10 ] && k=5.10/
+src="$C/$CONSOLE/$k$dtb"
+[ -f "$src" ] || quit "No $1 DTB for this console: $src"
+[ -f "$C/kernel/$NEW/Image" ] || quit "No $1 kernel Image."
+
+if [ -f $B/emmc.conf ]; then
+  sed -i -e "s|^KERNEL=.*|KERNEL=\"$NEW\"|" -e "s|^GAUGE=.*|GAUGE=\"$GAUGE\"|" $B/emmc.conf
+  /usr/local/bin/emmc-boot-files.sh $B || quit "Creating the boot files failed."
+  sync
+  echo "Switched to the $1 kernel."
+  exit 0
+fi
+
+# SD card: build the new files next to the old ones, then move them into place.
+# The overclock is the one in the current boot.ini.
+OC=$(grep -oE '(max|boot)_(cpu|gpu|ddr)freq=[0-9]+' $B/boot.ini | xargs)
+grep -q rk3326-oc-voltage.dtbo $B/boot.ini && VOLTAGE=1
+
+need=$(( $(stat -c %s "$C/kernel/$NEW/Image") + $(stat -c %s "$src") + 65536 ))
+[ $(( $(df -B1 --output=avail $B | tail -1) )) -gt $need ] || quit "Not enough free space in $B."
+
+new=$B/.kernel-switch
+rm -rf $new; mkdir $new || quit "Cannot write to $B."
+trap 'rm -rf $new' EXIT
+cp "$src" $new/dtb && cp "$C/kernel/$NEW/Image" $new/Image && cp "$C/$CONSOLE/boot.ini" $new/boot.ini ||
+  quit "Copying the boot files failed."
+[ -z "$GAUGE" ] || sed -E -i "s/^(setenv bootargs \"[^\"]*)\"/\1 $GAUGE\"/" $new/boot.ini
+[ -z "$OC" ] || sed -E -i -e 's/ (max|boot)_(cpu|gpu|ddr)freq=[0-9]+//g' \
+  -e "s/^(setenv bootargs \"[^\"]*)\"/\1 $OC\"/" $new/boot.ini
+[ -z "$VOLTAGE" ] || sed -i -e '/^setenv dtb_loadaddr/a setenv dtbo_loadaddr "0x01f30000"' \
+  -e '/^load .*\.dtb$/a load mmc 1:1 ${dtbo_loadaddr} consoles/dtbo/'"$k"'rk3326-oc-voltage.dtbo\nfdt addr ${dtb_loadaddr}\nfdt resize 8192\nfdt apply ${dtbo_loadaddr}' $new/boot.ini
+sync
+same $new/Image "$C/kernel/$NEW/Image" || quit "Copying the kernel failed."
+
+mv $new/dtb "$B/$dtb" && mv $new/Image $B/Image && mv $new/boot.ini $B/boot.ini || quit "Replacing the boot files failed."
+sync
+echo "Switched to the $1 kernel."
