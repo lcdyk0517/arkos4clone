@@ -12,6 +12,12 @@ Bringing **(d)ArkOS 4.4 kernel** porting to unsupported devices. Contributions v
 
 ---
 
+## Collaborators
+
+- [@jokubasver](https://github.com/jokubasver) — mainly maintains support for **kernel 5.10.252**.
+
+---
+
 ## Support the Project
 
 ![devices](https://r36s.dpdns.org/devices.jpg)
