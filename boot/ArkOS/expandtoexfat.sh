@@ -16,7 +16,27 @@ DISK=/dev/$(lsblk -no PKNAME "$(findmnt -no SOURCE /)")
 
 # ==================== Step 1: 卸载 roms ====================
 log "=== Step 1: Unmount /roms ==="
-sudo umount /roms 2>/dev/null && log "Unmounted /roms" || log "/roms not mounted or unmount failed"
+# 开机时并行启动的服务可能仍占用 /roms 或 p3: 此时卸载失败, 内核拒绝移除 p3
+# ("Device or resource busy"), mkfs.exfat 也随之失败, 只能重启重试。
+# 最多等待 20 秒让 p3 释放, 若仍被占用则记录占用者。
+for i in $(seq 1 20); do
+  if mountpoint -q /roms; then
+    sudo umount /roms 2>/dev/null && log "Unmounted /roms"
+  fi
+  if ! mountpoint -q /roms && ! sudo fuser -s ${DISK}p3 2>/dev/null; then
+    break
+  fi
+  if [ "$i" -eq 1 ]; then
+    log "/roms or ${DISK}p3 is busy, waiting for it to be released. Holders:"
+    sudo fuser -vm /roms ${DISK}p3 2>&1 | tee -a "$LOG_FILE"
+  fi
+  sleep 1
+done
+if mountpoint -q /roms || sudo fuser -s ${DISK}p3 2>/dev/null; then
+  log "WARNING: /roms or ${DISK}p3 still busy after 20s"
+else
+  log "/roms is unmounted and ${DISK}p3 is free"
+fi
 
 #sudo ln -s /dev/mmcblk0 /dev/hda
 #sudo ln -s /dev/mmcblk0p3 /dev/hda3
