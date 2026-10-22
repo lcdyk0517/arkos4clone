@@ -1,0 +1,79 @@
+<theme>
+
+    <formatVersion>7</formatVersion>
+	
+	<include>./metadata_none.xml</include>  <!-- Options: metadata_none, metadata_basic -->
+
+    <variables>
+		<subset.colorset>Theme Color</subset.colorset>
+		<fontsize>Gamelist Font Size</fontsize>
+    </variables>
+
+     <subset name="colorset" displayName="${subset.colorset}">
+        <include name="red" displayName="${red}">./_colors/red.xml</include>
+		<include name="blue" displayName="${blue}">./_colors/blue.xml</include>
+		<include name="green" displayName="${green}">./_colors/green.xml</include>
+		<include name="indigo" displayName="${indigo}">./_colors/indigo.xml</include>
+		<include name="orange" displayName="${orange}">./_colors/orange.xml</include>
+		<include name="yellow" displayName="${yellow}">./_colors/yellow.xml</include>
+		<include name="fuchsia" displayName="${fuchsia}">./_colors/fuchsia.xml</include>
+		<include name="glacier" displayName="${glacier}">./_colors/glacier.xml</include>
+		<include name="gold" displayName="${gold}">./_colors/gold.xml</include>
+		<include name="platinum" displayName="${platinum}">./_colors/platinum.xml</include>
+		<include name="white" displayName="${white}">./_colors/white.xml</include>
+		<include name="black" displayName="${black}">./_colors/black.xml</include>
+    </subset>
+	
+	<subset name="fontsize" displayName="${fontsize}">
+        <include name="normal" displayName="${normal}">./_inc/xml/normal.xml</include>
+		<include name="large" displayName="${large}">./_inc/xml/large.xml</include>
+    </subset>
+
+    <view name="system, basic, detailed, video">
+	
+		<image name="logo">
+			<path>./${system.theme}/system.svg</path>
+			<path>./${system.theme}/system.png</path>
+		</image>
+		
+		<textlist name="gamelist">
+			<selectorColor>${FPselectColor}</selectorColor>
+		</textlist>
+	</view>
+    
+	 <view name="system">
+		<image name="buttonmap" extra="true">
+			<path>./${system.theme}/buttons.svg</path>
+			<path>./${system.theme}/buttons.png</path>
+			<origin>0.5 0.5</origin>
+			<pos>0.5 0.220</pos>
+			<maxSize>1 0.200</maxSize>
+			<zIndex>39</zIndex>
+			<color>${FPselectColor}66</color>
+		</image>
+		
+		<textlist name="gamelist">
+			<selectorColor>${FPselectColor}</selectorColor>
+		</textlist>
+	</view>
+	
+	<view name="basic"></view>
+    
+	<view name="detailed"></view>
+
+	<include>./freeplay.xml</include>
+
+  <!-- Large screens (700x700 and up): ES starts its Wi-Fi, Bluetooth and battery icons at
+       95.5% of the width, so the battery ends up off screen. Start them where the three icons
+       and "100%" fit. Left alignment, because right alignment leaves the Bluetooth icon out of
+       the width. Small screens keep ES's own top-left placement -->
+  <view name="screen">
+    <batteryIndicator name="batteryIndicator" tinyScreen="false">
+      <pos>0.815 0.0125</pos>
+      <size>0.175 0.033</size>
+      <horizontalAlignment>left</horizontalAlignment>
+      <itemSpacing>0.005</itemSpacing>
+    </batteryIndicator>
+  </view>
+
+</theme>
