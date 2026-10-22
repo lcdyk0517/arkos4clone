@@ -133,6 +133,8 @@ pack_roms_tar() {
 
   # Gamma / ES-logo-changer 不再随包提供 (双保险: 即使经其他路径混入 stage 也删掉)
   safe sudo rm -rf "$stage/roms/tools/Gamma" "$stage/roms/tools/ES-logo-changer" "$stage/roms/tools/PortMaster.sh"
+  # JDK 类库源码 (59M): 只有 IDE 和调试器会读取, J2ME 模拟器从不使用
+  safe sudo rm -f "$stage/roms/j2me/jdk/lib/src.zip"
 
   # -h 解引用符号链接: 设备 exFAT 不支持链接
   # --owner=0 --group=0: 归档属主归一化为 root (否则会把构建机的 uid 写进包里，
