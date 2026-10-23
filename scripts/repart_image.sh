@@ -9,7 +9,13 @@ else
   RSYNC_PROGRESS="--info=progress2"
 fi
 P1_TARGET_MB=256              # p1 (boot) 目标容量: 256MiB (原厂 112MiB)
-P2_TARGET_MB=11264            # p2 (root) 目标容量: 11G，设备上不再变动
+# p2 (root) 目标容量，设备上不再变动: dArkOS 为 12G (其 root 由压缩 btrfs 转换为 ext4 后，
+# 11G 已放不下)，ArkOS 为 11G
+if [[ "${ARKOS_IMAGE_NAME:-}" == *dArkOS* ]]; then
+  P2_TARGET_MB=12288
+else
+  P2_TARGET_MB=11264
+fi
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
 # 临时目录优先使用 ARKOS_WORK_DIR，否则使用当前目录
 WORK_BASE="${ARKOS_WORK_DIR:-$(pwd)}"
@@ -112,7 +118,7 @@ if has_p3; then
   P3_CUR_MB=$(( (P3_END - P3_START + 1) * SECTOR_SIZE / 1024 / 1024 ))
 fi
 
-# p1 扩到固定 256MiB；p2 扩到固定 11G；p3 保持原样 (出厂空盘)
+# p1 扩到固定 256MiB；p2 扩到 P2_TARGET_MB；p3 保持原样 (出厂空盘)
 # roms/ 打包为 /roms.tar 由首启解包
 BOOT_ADD_MB=$(( P1_TARGET_MB > P1_CUR_MB ? P1_TARGET_MB - P1_CUR_MB : 0 ))
 P2_DELTA=$(( P2_TARGET_MB > P2_CUR_MB ? P2_TARGET_MB - P2_CUR_MB : 0 ))

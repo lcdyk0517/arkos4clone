@@ -139,7 +139,7 @@ jobs:
 
       - name: Build image
         run: |
-          chmod +x build_image.sh scripts/repart_image.sh scripts/mount_arkos.sh scripts/clone_support.sh scripts/build_dtb_selector.sh uboot/flash_uboot.sh
+          chmod +x build_image.sh scripts/repart_image.sh scripts/convert_rootfs.sh scripts/mount_arkos.sh scripts/clone_support.sh scripts/build_dtb_selector.sh uboot/flash_uboot.sh
           mkdir -p mnt
           sudo ./build_image.sh $(ls *.img) . --ci
 
@@ -247,7 +247,7 @@ jobs:
 
       - name: Build image
         run: |
-          chmod +x build_image.sh scripts/repart_image.sh scripts/mount_arkos.sh scripts/clone_support.sh scripts/build_dtb_selector.sh uboot/flash_uboot.sh
+          chmod +x build_image.sh scripts/repart_image.sh scripts/convert_rootfs.sh scripts/mount_arkos.sh scripts/clone_support.sh scripts/build_dtb_selector.sh uboot/flash_uboot.sh
           mkdir -p mnt
           sudo -E ./build_image.sh $(ls *.img) . --ci
 

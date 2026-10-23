@@ -34,7 +34,7 @@ if [ -f "/boot/rk3326-rg351v-linux.dtb" ] || [ -f "/boot/rk3326-rg351mp-linux.dt
 fi
 
 # ==================== Step 2: 首次分区扩展 ====================
-# p2 构建时已扩到 11G，首启不再扩容 p2，仅把 p3 扩到盘尾
+# p2 构建时已扩到最终大小，首启不再扩容 p2，仅把 p3 扩到盘尾
 log "=== Step 2: Check partition expansion status ==="
 if [ ! -f /boot/doneit ]; then
   log "First run: expanding partition 3"
@@ -48,7 +48,7 @@ if [ ! -f /boot/doneit ]; then
 fi
 log "Partition already expanded (doneit exists)"
 
-# ==================== Step 3: 重建 p3 (原厂流程；p2 已是 11G 不再扩容) ====================
+# ==================== Step 3: 重建 p3 (原厂流程；p2 已是最终大小，不再扩容) ====================
 log "=== Step 3: Recreate partition 3 ==="
 printf "d\n3\nw\n" | sudo fdisk $DISK 2>&1 | tee -a "$LOG_FILE"
 

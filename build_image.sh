@@ -44,7 +44,7 @@ check_image() {
 }
 
 check_tools() {
-  local tools=(losetup mount umount parted rsync dd xz mkfs.exfat)
+  local tools=(losetup mount umount parted rsync dd xz mkfs.exfat mkfs.ext4 e2fsck wipefs)
   for t in "${tools[@]}"; do
     if ! command -v "$t" >/dev/null 2>&1; then
       log_error "缺少工具: $t"
@@ -428,6 +428,21 @@ step_grow() {
   fi
 }
 
+step_convert_rootfs() {
+  local img="$1"
+  if [[ "${ARKOS_ROOTFS:-ext4}" == "keep" ]]; then
+    log_info "步骤 2/8: ARKOS_ROOTFS=keep，保持 p2 文件系统不变"
+    return
+  fi
+  log_info "步骤 2/8: 将 p2 转换为 ext4 (如为 btrfs)..."
+  if "$SCRIPT_DIR/scripts/convert_rootfs.sh" "$img"; then
+    log_ok "p2 文件系统转换完成"
+  else
+    log_error "p2 文件系统转换失败"
+    exit 1
+  fi
+}
+
 step_flash_uboot() {
   local img="$1"
   log_info "步骤 3/8: 写入 U-Boot..."
@@ -617,6 +632,8 @@ ArkOS4Clone 一键构建脚本
 环境变量:
   ARKOS_MNT       挂载路径 (默认: <工作目录>/mnt)
   ARKOS_WORK_DIR  临时工作目录 (默认: <工作目录>)
+  ARKOS_ROOTFS    p2 文件系统: ext4 把 btrfs 的 p2 转换为 ext4 (默认)，
+                  keep 保持不变
 
 示例:
   # 使用默认工作目录（源镜像所在目录）
@@ -628,7 +645,8 @@ ArkOS4Clone 一键构建脚本
 执行步骤:
   0. 编译 dtb_selector 工具 (scripts/build_dtb_selector.sh)
   1. 复制源镜像到工作目录
-  2. 分区调整 (scripts/repart_image.sh): p1 扩到 256M, p2 扩到 11G, p3 按原容量重建
+  2. 分区调整 (scripts/repart_image.sh): p1 扩到 256M, p2 扩到 12G (dArkOS) 或 11G (ArkOS), p3 按原容量重建
+     然后把 p2 从 btrfs 转换为 ext4 (scripts/convert_rootfs.sh)
   3. 写入 U-Boot (flash_uboot.sh)
   4. 挂载镜像 (scripts/mount_arkos.sh mount)
   5. 注入定制内容 (scripts/clone_support.sh)
@@ -737,6 +755,7 @@ main() {
   # 步骤 2: 分区调整
   echo ""
   step_grow "$work_image"
+  step_convert_rootfs "$work_image"
   # 步骤 3: 写入uboot
   echo ""
   step_flash_uboot "$work_image"
