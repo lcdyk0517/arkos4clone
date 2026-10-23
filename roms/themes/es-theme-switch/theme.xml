@@ -1,0 +1,157 @@
+<!--
+Fork by:        Jetup13
+theme name:		Switch
+version:		4.4
+OG author:		Lilbud
+email:			bvw20002010@gmail.com
+license:		creative commons CC-BY-NC-SA
+based on:       Switch Theme for Launchbox by Grila
+-->
+
+<theme defaultView="grid">
+	<formatVersion>7</formatVersion>
+	
+	<include>./_art/xml/artworklogos.xml</include>
+	<include>./_art/xml/hidden.xml</include>
+	<include>./_art/xml/icons.xml</include>
+	<include>./_art/gamelistview/basicview.xml</include>
+	<include>./_art/gamelistview/gridview.xml</include>
+	<variables>
+		<mainFont>./_art/Acre.otf</mainFont>
+		<subset.colorset>Theme Color</subset.colorset>
+		<systemview>System Icon Style</systemview>
+		<gamelistview>Detailed Gamelist View Style</gamelistview>
+		<gridselection>Gridview Selection</gridselection>
+		<tabb>Show Top and Bottom Bar</tabb>
+		<forceupper>Force Uppercase</forceupper>
+	</variables>
+	
+	<subset name="colorset" displayName="${subset.colorset}">
+		<include name="dark">./_art/colors/dark.xml</include>
+		<include name="royal blue">./_art/colors/royalblue.xml</include>
+		<include name="electric blue">./_art/colors/electricblue.xml</include>
+		<include name="pastel blue">./_art/colors/pastelblue.xml</include>
+		<include name="mint green">./_art/colors/mintgreen.xml</include>
+		<include name="apple green">./_art/colors/applegreen.xml</include>
+		<include name="cardinal red">./_art/colors/cardinalred.xml</include>
+		<include name="pastel red">./_art/colors/pastelred.xml</include>
+		<include name="fuchsia pink">./_art/colors/fuchsiapink.xml</include>
+		<include name="pastel pink">./_art/colors/pastelpink.xml</include>
+		<include name="orange">./_art/colors/orange.xml</include>
+		<include name="yellow">./_art/colors/yellow.xml</include>
+		<include name="violet">./_art/colors/violet.xml</include>
+		<include name="dark crystal">./_art/colors/darkcrystal.xml</include>
+		<include name="violet crystal">./_art/colors/violetcrystal.xml</include>
+		<include name="teal crystal">./_art/colors/tealcrystal.xml</include>
+		<include name="dark matte">./_art/colors/darkmatte.xml</include>
+		<include name="light">./_art/colors/light.xml</include>
+		<include name="black">./_art/colors/black.xml</include>
+	</subset>
+	
+	<subset name="systemview" displayName="${systemview}">
+		<include name="default">./_art/systemview/default.xml</include>
+		<include name="small">./_art/systemview/small.xml</include>
+		<include name="rgb30">./_art/systemview/rgb30.xml</include>
+	</subset>
+	
+	<subset name="gamelistview" displayName="${gamelistview}">
+		<include name="No Metadata">./_art/gamelistview/nometa.xml</include>
+		<include name="w/ Description">./_art/gamelistview/withdescription.xml</include>
+		<include name="w/ Metadata">./_art/gamelistview/withmeta.xml</include>
+	</subset>
+
+	<subset name="Grid Selection" displayName="${gridselection}">
+		<include name="Default">./_art/xml/gridcenterselectionwithloop.xml</include>
+		<include name="Centered wo/Loop">./_art/xml/gridcenterselection.xml</include>
+		<include name="Uncentered w/Loop">./_art/xml/gridloop.xml</include>
+		<include name="Uncentered wo/Loop">./_art/xml/gridnoloop.xml</include>
+	</subset>
+	
+	<subset name="Top and Bottom Bar" displayName="${tabb}">
+		<include name="yes">./_art/xml/topandbottomline.xml</include>
+		<include name="no"/>
+	</subset>
+	
+	<subset name="Force Uppercase" displayName="${forceupper}">
+		<include name="System Name and Gamelist">./_art/xml/forceuppercaseall.xml</include>
+		<include name="System Name Only">./_art/xml/forceuppercasesystemname.xml</include>
+		<include name="Gamelist Only">./_art/xml/forceuppercasegamelist.xml</include>
+		<include name="no"/>
+	</subset>
+	
+	<view name="system, basic, detailed, video, grid">
+	<image name="background" extra="true">
+		<pos>0 0</pos>
+		<tile>true</tile>
+		<origin>0 0</origin>
+		<size>1 1</size>
+		<path>./_art/assets/box.png</path>
+		<zIndex>-100</zIndex>
+	</image>
+	</view>
+	
+	<view name="basic">
+	<textlist name="gamelist">
+		<fontPath>${mainFont}</fontPath>
+		<scrollSound>./_art/assets/Move.wav</scrollSound>
+		<size>1 .8</size>
+	</textlist>	
+	</view>
+	
+	<view name="detailed, video">
+	<textlist name="gamelist">
+		<fontPath>${mainFont}</fontPath>
+		<scrollSound>./_art/assets/Move.wav</scrollSound>
+	</textlist>	
+		
+	<image name="logo">
+		<color>00000000</color>
+		<path>./assets/box.png</path>
+		<pos>1 1</pos>
+	</image>
+		
+	<text name="md_lbl_releasedate, md_lbl_developer, md_lbl_genre, md_lbl_players, md_lbl_lastplayed, md_lbl_playcount, md_developer, md_genre, md_players, md_playcount, md_description" extra="true">
+		<forceUppercase>0</forceUppercase>
+		<fontPath>${mainFont}</fontPath>
+	</text>
+		
+	<text name="md_lbl_lastplayed, md_lbl_publisher, md_publsher, md_lbl_rating, md_lbl_playcount, md_playcount">
+		<pos>1 1</pos>
+	</text>
+	</view>
+	
+	<view name="system, video, detailed, basic, grid">
+	<helpsystem name="help">
+		<origin>-9 1</origin>
+	</helpsystem>
+	</view>
+	
+	<view name="screen">
+	<text name="clock">
+		<fontPath>${mainFont}</fontPath>
+		<fontSize>0.04</fontSize>
+		<color>${mainColor}</color>
+		<pos>0.865 .945</pos>
+		<size>0.4 0.039</size>
+		<alignment>left</alignment>
+		<verticalAlignment>center</verticalAlignment>
+	</text>
+	<batteryIndicator name="batteryIndicator">
+		<color>${mainColor}</color>
+	</batteryIndicator>
+	</view>
+  
+  <!-- Large screens (700x700 and up): ES starts its Wi-Fi, Bluetooth and battery icons at
+       95.5% of the width, so the battery ends up off screen. Start them where the three icons
+       and "100%" fit. Left alignment, because right alignment leaves the Bluetooth icon out of
+       the width. Small screens keep ES's own top-left placement -->
+  <view name="screen">
+    <batteryIndicator name="batteryIndicator" tinyScreen="false">
+      <pos>0.815 0.0125</pos>
+      <size>0.175 0.033</size>
+      <horizontalAlignment>left</horizontalAlignment>
+      <itemSpacing>0.005</itemSpacing>
+    </batteryIndicator>
+  </view>
+
+</theme>

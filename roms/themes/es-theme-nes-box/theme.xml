@@ -11,6 +11,19 @@ version         1.9
 <theme>
    <formatVersion>7</formatVersion>
    <include>./main.xml</include>
+  <!-- Large screens (700x700 and up): ES starts its Wi-Fi, Bluetooth and battery icons at
+       95.5% of the width, so the battery ends up off screen. Start them where the three icons
+       and "100%" fit. Left alignment, because right alignment leaves the Bluetooth icon out of
+       the width. Small screens keep ES's own top-left placement -->
+  <view name="screen">
+    <batteryIndicator name="batteryIndicator" tinyScreen="false">
+      <pos>0.815 0.0125</pos>
+      <size>0.175 0.033</size>
+      <horizontalAlignment>left</horizontalAlignment>
+      <itemSpacing>0.005</itemSpacing>
+    </batteryIndicator>
+  </view>
+
     <variables>
 	 <fullscreenfixSubsetname>Emulationstation Screen Size</fullscreenfixSubsetname>
 	 <fontsize>Font Size</fontsize>
