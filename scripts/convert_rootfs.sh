@@ -132,14 +132,16 @@ fix_fstab() {
 # The initramfs runs "fsck -t <type>" on the root at every boot, but it was built while the root
 # was btrfs and only carries fsck.btrfs. Without fsck.ext4, fsck exits 8 and the initramfs prints
 # "File system check failed" and sleeps 5 seconds on every boot. Rebuilding it needs an arm64
-# chroot, so instead append a second cpio with e2fsck and its libraries (the kernel unpacks
-# concatenated archives in order) and rewrite the uImage header.
+# chroot, so instead add a cpio with e2fsck and its libraries after the original one and rewrite
+# the uImage header. Both cpio archives go in one gzip stream: the Rockchip 4.4 kernel stops
+# unpacking after the first compressed member (a CONFIG_ARCH_ROCKCHIP patch in init/initramfs.c),
+# so a second gzip member would be ignored there.
 add_fsck_ext4_to_initrd() {
   local initrd="$BOOT_MNT/uInitrd"
   [[ -f "$initrd" ]] || { echo "  $initrd not found, skipping"; return 0; }
   local add="${WORK_BASE}/initrd_add"
   local libdir=usr/lib/aarch64-linux-gnu
-  rm -rf "$add" "$add.cpio.gz"
+  rm -rf "$add" "$add.cpio"
   mkdir -p "$add/usr/sbin" "$add/$libdir"
   cp -L "$NEW_MNT/usr/sbin/e2fsck" "$add/usr/sbin/e2fsck"
   ln -s e2fsck "$add/usr/sbin/fsck.ext4"
@@ -148,14 +150,14 @@ add_fsck_ext4_to_initrd() {
     cp -L "$NEW_MNT/$libdir/$lib" "$add/$libdir/$lib"
   done
   # Files only: the directories already exist in the initramfs and a directory entry would reset
-  # their mode. gzip, not zstd: the 4.4 kernel cannot unpack a zstd initramfs
-  (cd "$add" && find . ! -type d | LC_ALL=C sort | cpio -o -H newc -R 0:0 --quiet) | gzip -9n > "$add.cpio.gz"
+  # their mode
+  (cd "$add" && find . ! -type d | LC_ALL=C sort | cpio -o -H newc -R 0:0 --quiet) > "$add.cpio"
   rm -rf "$add"
 
   # Legacy uImage header: 64 bytes, big endian; size at 12, data CRC at 24, header CRC at 4.
   # boot.ini loads the initrd at 0x01100000 and the dtb at 0x01f00000, so it must stay under 14MiB.
-  python3 -I - "$initrd" "$add.cpio.gz" <<'PY'
-import struct, sys, zlib
+  python3 -I - "$initrd" "$add.cpio" <<'PY'
+import gzip, struct, sys, zlib
 path, extra = sys.argv[1], sys.argv[2]
 d = open(path, "rb").read()
 hdr = bytearray(d[:64])
@@ -163,8 +165,18 @@ magic, size = struct.unpack_from(">I", hdr, 0)[0], struct.unpack_from(">I", hdr,
 img_type, comp = hdr[30], hdr[31]
 if magic != 0x27051956 or img_type != 3 or comp != 0:
     sys.exit("uInitrd is not an uncompressed legacy ramdisk uImage")
-payload = d[64:64 + size]
-payload += b"\0" * (-len(payload) % 4) + open(extra, "rb").read()
+# The initramfs must be a single gzip member (anything after it may only be zero padding)
+dec = zlib.decompressobj(31)
+try:
+    cpio = dec.decompress(d[64:64 + size]) + dec.flush()
+except zlib.error:
+    sys.exit("initramfs is not gzip compressed")
+if not dec.eof or dec.unused_data.strip(b"\0"):
+    sys.exit("initramfs is not a single gzip member")
+# Each cpio header must start 4-byte aligned in the unpacked stream
+cpio += b"\0" * (-len(cpio) % 4) + open(extra, "rb").read()
+# gzip, not zstd: the 4.4 kernel cannot unpack a zstd initramfs
+payload = gzip.compress(cpio, 9, mtime=0)
 if 64 + len(payload) > 0x01f00000 - 0x01100000:
     sys.exit("new uInitrd would overlap the dtb load address")
 struct.pack_into(">I", hdr, 12, len(payload))
@@ -175,7 +187,7 @@ open(path + ".new", "wb").write(bytes(hdr) + payload)
 print(f"  uInitrd: {len(d)} -> {64 + len(payload)} bytes")
 PY
   mv "$initrd.new" "$initrd"
-  rm -f "$add.cpio.gz"
+  rm -f "$add.cpio"
 }
 
 echo "== Updating fstab root entries =="
