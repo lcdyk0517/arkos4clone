@@ -329,7 +329,14 @@ setup_audio() {
   local state; state="$(amixer get 'Playback Path' 2>/dev/null | grep -oP "Item0: '\K\w+" || true)"
   if [[ "$state" == "OFF" || "$state" == "HP" ]]; then
     msg "Switching audio to SPK"
+    # 切换输出路径会给功放上电, 满音量时可能产生爆音: 先把音量降到最低, 切换后再恢复。
+    # 4.4 内核切到 SPK 时会把 DTS 的 spk-volume (约 -1.1dB, 高于滑块上限 -6.75dB)
+    # 直接写入 DAC, 恢复音量也让它回到正常范围
+    local vol; vol="$(amixer get 'Playback' 2>/dev/null | grep -oP 'Front Left: \K\d+' || true)"
+    amixer -q set 'Playback' 0 || true
     amixer set 'Playback Path' 'SPK' || true
+    sleep 0.2
+    [[ -n "$vol" ]] && { amixer -q set 'Playback' "$vol" || true; }
     sudo alsactl store || true
   fi
   cp_if_exists "$QUIRKS_DIR/asoundrc" "/home/ark/.asoundrc" "yes" || true
