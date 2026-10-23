@@ -133,6 +133,9 @@ pack_roms_tar() {
 
   # Gamma / ES-logo-changer 不再随包提供 (双保险: 即使经其他路径混入 stage 也删掉)
   safe sudo rm -rf "$stage/roms/tools/Gamma" "$stage/roms/tools/ES-logo-changer" "$stage/roms/tools/PortMaster.sh"
+  # J2ME 模拟器用不到的 JDK 部分: 类库源码 (59M, 供 IDE 和调试器读取)、
+  # jmods (79M, 供 jlink 构建自定义运行时; java 本身加载 lib/modules) 与 demo 示例 (6M)
+  safe sudo rm -rf "$stage/roms/j2me/jdk/lib/src.zip" "$stage/roms/j2me/jdk/jmods" "$stage/roms/j2me/jdk/demo"
 
   # -h 解引用符号链接: 设备 exFAT 不支持链接
   # --owner=0 --group=0: 归档属主归一化为 root (否则会把构建机的 uid 写进包里，
@@ -173,6 +176,42 @@ cleanup_stock() {
   fi
   # p3 保持原厂 NTFS 出厂，首启 expandtoexfat.sh 转换为 exFAT 并切换 fstab
   # (fstab.exfat 保留在 boot 分区供首启使用；tempthemes 废弃删除——主题已随 roms.tar 交付)
+}
+
+remove_dev_files() {
+  # 原厂构建/开发文件: 设备是消费终端, 无任何现场编译场景
+  # 头文件 / 内核构建目录
+  safe sudo rm -rf "$MOUNT_DIR/root/usr/include" "$MOUNT_DIR/root/usr/src"
+  # 静态库 .a (纯链接期产物 ~91M) 与 libtool .la
+  # -prune 跳过 modules/firmware 目录; -print0/-0 兼容特殊文件名
+  # 注: .pc 与 pkg-config 保留 -- 个别运行时会调用, 且总共 <100KB 无删的价值
+  safe sudo find "$MOUNT_DIR/root/usr/lib" "$MOUNT_DIR/root/usr/local/lib" \
+    \( -type d \( -name modules -o -name firmware \) \) -prune -o \
+    \( -name '*.a' -o -name '*.la' \) -type f -print0 2>/dev/null |
+    xargs -0 -r sudo rm -f
+  # cmake 开发元数据 (cmake 本体一并删除)
+  safe sudo rm -rf "$MOUNT_DIR/root"/usr/lib/*/cmake "$MOUNT_DIR/root"/usr/lib/cmake
+  # 交叉编译器/构建工具残留 (/usr/bin, ~25M); 保留原生 pkg-config
+  safe sudo rm -f "$MOUNT_DIR/root"/usr/bin/aarch64-linux-gnu-* \
+    "$MOUNT_DIR/root"/usr/bin/aarch64-unknown-* \
+    "$MOUNT_DIR/root"/usr/bin/c89-gcc "$MOUNT_DIR/root"/usr/bin/c99-gcc \
+    "$MOUNT_DIR/root"/usr/bin/cmake "$MOUNT_DIR/root"/usr/bin/ccmake \
+    "$MOUNT_DIR/root"/usr/bin/ctest "$MOUNT_DIR/root"/usr/bin/cpack
+  # gcc 内部文件 (cc1、crt、libgcc.a); 运行时的 libgcc_s 在 /usr/lib/<arch>
+  safe sudo rm -rf "$MOUNT_DIR/root/usr/lib/gcc"
+  # Rust 工具链 (含 librustc_driver 与 cargo 约 265M); 只有 rustc/rustdoc/cargo 引用它,
+  # Rust 程序的标准库是静态链接的
+  safe sudo rm -rf "$MOUNT_DIR/root/usr/lib/rustlib"
+  safe sudo rm -f "$MOUNT_DIR/root"/usr/lib/*/librustc_driver-*.so \
+    "$MOUNT_DIR/root"/usr/bin/cargo "$MOUNT_DIR/root"/usr/bin/rustc "$MOUNT_DIR/root"/usr/bin/rustdoc \
+    "$MOUNT_DIR/root"/usr/bin/rust-clang "$MOUNT_DIR/root"/usr/bin/rust-lld "$MOUNT_DIR/root"/usr/bin/rust-llvm-dwp
+  # 原厂构建遗留在 / 下的 meson 源码 (含 .git)
+  safe sudo rm -rf "$MOUNT_DIR/root/meson"
+  # 软件包文档与 apt 包缓存 (下次 apt update 时 apt 会重新生成)
+  if [[ -d "$MOUNT_DIR/root/usr/share/doc" ]]; then
+    safe sudo find "$MOUNT_DIR/root/usr/share/doc" -mindepth 1 -delete
+  fi
+  safe sudo rm -f "$MOUNT_DIR/root"/var/cache/apt/*.bin
 }
 
 prune_old_libs() {
@@ -295,6 +334,10 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
 
   echo "== sync rootfs/dArkOS =="
   sync_rootfs dArkOS 1000:1000
+
+  # 在打包 roms.tar 之前执行, 避免 root 分区同时容纳这些残留和 tar
+  echo "== 删除构建/开发残留 =="
+  remove_dev_files
   pack_roms_tar
 
   echo "== 清理 dArkOS 不需要的文件 =="
@@ -322,27 +365,9 @@ else
   # 腾出空间
   echo "== 节约空间 =="
   prune_old_libs
-  safe sudo rm -rf "$MOUNT_DIR/root/usr/lib/gcc"
   safe sudo rm -rf "$MOUNT_DIR/root/opt/ppssppgo"
   safe sudo rm -rf "$MOUNT_DIR/root/opt/hypseus"
-  # 原厂构建/开发文件: 设备是消费终端, 无任何现场编译场景
-  # 头文件 / 内核构建目录
-  safe sudo rm -rf "$MOUNT_DIR/root/usr/include" "$MOUNT_DIR/root/usr/src"
-  # 静态库 .a (纯链接期产物 ~91M) 与 libtool .la
-  # -prune 跳过 modules/firmware 目录; -print0/-0 兼容特殊文件名
-  # 注: .pc 与 pkg-config 保留 -- 个别运行时会调用, 且总共 <100KB 无删的价值
-  safe sudo find "$MOUNT_DIR/root/usr/lib" "$MOUNT_DIR/root/usr/local/lib" \
-    \( -type d \( -name modules -o -name firmware \) \) -prune -o \
-    \( -name '*.a' -o -name '*.la' \) -type f -print0 2>/dev/null |
-    xargs -0 -r sudo rm -f
-  # cmake 开发元数据 (cmake 本体一并删除)
-  safe sudo rm -rf "$MOUNT_DIR/root"/usr/lib/*/cmake "$MOUNT_DIR/root"/usr/lib/cmake
-  # 交叉编译器/构建工具残留 (/usr/bin, ~25M); 保留原生 pkg-config
-  safe sudo rm -f "$MOUNT_DIR/root"/usr/bin/aarch64-linux-gnu-* \
-    "$MOUNT_DIR/root"/usr/bin/aarch64-unknown-* \
-    "$MOUNT_DIR/root"/usr/bin/c89-gcc "$MOUNT_DIR/root"/usr/bin/c99-gcc \
-    "$MOUNT_DIR/root"/usr/bin/cmake "$MOUNT_DIR/root"/usr/bin/ccmake \
-    "$MOUNT_DIR/root"/usr/bin/ctest "$MOUNT_DIR/root"/usr/bin/cpack
+  remove_dev_files
 
   echo "== sync rootfs/dArkOS + rootfs/ArkOS =="
   sync_rootfs dArkOS 1002:1002
