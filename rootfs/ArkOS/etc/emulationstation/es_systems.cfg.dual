@@ -2040,6 +2040,10 @@
 		<extension>.chd .CHD .cso .CSO .iso .ISO .pbp .PBP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/ppsspp.sh %EMULATOR% %ROM%; sudo perfnorm</command>
 		<emulators>
+			<emulator name="standalone-vulkan">
+		      </emulator>
+			<emulator name="standalone-2021-vulkan">
+		      </emulator>
 			<emulator name="standalone-2021">
 		      </emulator>
 			<emulator name="standalone">
@@ -2060,6 +2064,8 @@
 		<extension>.chd .CHD .cso .CSO .iso .ISO .pbp .PBP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/ppsspp.sh %EMULATOR% %ROM%; sudo perfnorm</command>
 		<emulators>
+			<emulator name="standalone-vulkan">
+		      </emulator>
 			<emulator name="standalone">
 		      </emulator>
 			<emulator name="retroarch">
@@ -4901,6 +4907,10 @@
 		<extension>.chd .CHD .cso .CSO .iso .ISO .pbp .PBP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/ppsspp.sh %EMULATOR% %ROM%; sudo perfnorm</command>
 		<emulators>
+			<emulator name="standalone-vulkan">
+		      </emulator>
+			<emulator name="standalone-2021-vulkan">
+		      </emulator>
 			<emulator name="standalone-2021">
 		      </emulator>
 			<emulator name="standalone">
@@ -4921,6 +4931,8 @@
 		<extension>.chd .CHD .cso .CSO .iso .ISO .pbp .PBP</extension>
 		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/ppsspp.sh %EMULATOR% %ROM%; sudo perfnorm</command>
 		<emulators>
+			<emulator name="standalone-vulkan">
+		      </emulator>
 			<emulator name="standalone">
 		      </emulator>
 			<emulator name="retroarch">

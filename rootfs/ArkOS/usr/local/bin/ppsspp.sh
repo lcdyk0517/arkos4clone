@@ -2,7 +2,7 @@
 
 directory=$(dirname "$2" | cut -d "/" -f2)
 
-if  [[ $1 == "standalone" ]]; then
+if  [[ $1 == "standalone" ]] || [[ $1 == "standalone-vulkan" ]]; then
   if  [[ ! -d "/$directory/psp/ppsspp" ]]; then
     cp -rf /opt/ppsspp/backupforromsfolder/ppsspp /$directory/psp
   fi
@@ -14,6 +14,11 @@ if  [[ $1 == "standalone" ]]; then
   fi
   sudo systemctl start ppsspphotkey.service
   cp -f /$directory/psp/ppsspp/PSP/SYSTEM/ppsspp.ini.sdl /$directory/psp/ppsspp/PSP/SYSTEM/ppsspp.ini
+  if [[ $1 == *-vulkan ]]; then
+    sed -i '/^GraphicsBackend =/c\GraphicsBackend = 3 (VULKAN)' /$directory/psp/ppsspp/PSP/SYSTEM/ppsspp.ini
+  else
+    sed -i '/^GraphicsBackend =/c\GraphicsBackend = 0 (OPENGL)' /$directory/psp/ppsspp/PSP/SYSTEM/ppsspp.ini
+  fi
   xres="$(cat /sys/class/graphics/fb0/modes | grep -o -P '(?<=:).*(?=p-)' | cut -dx -f1)"
   if [ $xres -ge "1280" ]; then
     HDMI="/usr/lib/aarch64-linux-gnu/libSDL2-2.0.so.0.10.0"
@@ -21,7 +26,7 @@ if  [[ $1 == "standalone" ]]; then
   LD_PRELOAD="$HDMI /opt/ppsspp/libstdc++.so.6" /opt/ppsspp/PPSSPPSDL --fullscreen "$2"
   cp -f /$directory/psp/ppsspp/PSP/SYSTEM/ppsspp.ini /$directory/psp/ppsspp/PSP/SYSTEM/ppsspp.ini.sdl
   sudo systemctl stop ppsspphotkey.service
-elif [[ $1 == "standalone-2021" ]]; then
+elif [[ $1 == "standalone-2021" ]] || [[ $1 == "standalone-2021-vulkan" ]]; then
   if  [[ ! -d "/$directory/psp/ppsspp" ]]; then
     cp -rf /opt/ppsspp/backupforromsfolder/ppsspp /$directory/psp
   fi
@@ -34,6 +39,11 @@ elif [[ $1 == "standalone-2021" ]]; then
   export SDL_AUDIODRIVER=alsa
   sudo systemctl start ppsspphotkey.service
   cp -f /$directory/psp/ppsspp/PSP/SYSTEM/ppsspp.ini.sdl /$directory/psp/ppsspp/PSP/SYSTEM/ppsspp.ini
+  if [[ $1 == *-vulkan ]]; then
+    sed -i '/^GraphicsBackend =/c\GraphicsBackend = 3 (VULKAN)' /$directory/psp/ppsspp/PSP/SYSTEM/ppsspp.ini
+  else
+    sed -i '/^GraphicsBackend =/c\GraphicsBackend = 0 (OPENGL)' /$directory/psp/ppsspp/PSP/SYSTEM/ppsspp.ini
+  fi
   LD_PRELOAD=/opt/ppsspp/libstdc++.so.6 /opt/ppsspp-2021/PPSSPPSDL --fullscreen "$2"
   cp -f /$directory/psp/ppsspp/PSP/SYSTEM/ppsspp.ini /$directory/psp/ppsspp/PSP/SYSTEM/ppsspp.ini.sdl
   sudo systemctl stop ppsspphotkey.service
