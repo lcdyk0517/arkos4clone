@@ -273,6 +273,16 @@ prune_old_libs() {
   done
 }
 
+disable_idle_timers() {
+  # 掌机上无用的定时器: 每天两次经 Wi-Fi 执行 apt update/upgrade (占用 CPU 并写 SD 卡, 可能在游戏中触发)、
+  # dpkg 数据库备份, 以及针对 LVM 上的 ext4 和 XFS 的 scrub (两者都不存在)。
+  # fstrim 与 logrotate 保持启用
+  local t
+  for t in apt-daily apt-daily-upgrade dpkg-db-backup e2scrub_all xfs_scrub_all; do
+    safe sudo rm -f "$MOUNT_DIR/root/etc/systemd/system/timers.target.wants/$t.timer"
+  done
+}
+
 if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   # ============================================================
   # dArkOS (UID=1000)
@@ -291,6 +301,7 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
   cleanup_stock
   safe sudo rm -f "$MOUNT_DIR/root/etc/systemd/system/batt_led.service"
   safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Backup dArkOS Settings"
+  disable_idle_timers
   safe sudo rm -f "$MOUNT_DIR/root/etc/systemd/system/logo.service" \
     "$MOUNT_DIR/root/etc/systemd/system/multi-user.target.wants/logo.service"
 
@@ -342,6 +353,7 @@ else
   cleanup_stock
   safe sudo rm -f "$MOUNT_DIR/root/etc/systemd/system/batt_led.service"
   safe sudo rm -f "$MOUNT_DIR/root/etc/systemd/system/ddtbcheck.service"
+  disable_idle_timers
   safe sudo rm -rf "$MOUNT_DIR/root/opt/system/Advanced/Read from SD1 and SD2 for Roms"
   safe sudo rm -f "$MOUNT_DIR/root/opt/system/Advanced/Read from SD1 and SD2 for Roms.sh"
   safe sudo rm -f "$MOUNT_DIR/root/opt/system/Advanced/Switch to SD2 for Roms.sh"
