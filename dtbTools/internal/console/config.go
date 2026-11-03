@@ -262,6 +262,13 @@ var Consoles = []ConsoleConfig{
 		ExtraSources: []string{"logo/480P/"},
 	},
 	{
+		RealName: "clone type2 panel1 rk809",
+		BrandEntries: []BrandEntry{
+			{Brand: "Clone R36s", DisplayName: "Clone Type 2 Panel 1 Without Amplifier With RK809 PMIC"},
+		},
+		ExtraSources: []string{"logo/480P/"},
+	},
+	{
 		RealName: "clone type2 panel2",
 		BrandEntries: []BrandEntry{
 			{Brand: "Clone R36s", DisplayName: "Clone Type 2 Panel 2"},
