@@ -2065,7 +2065,7 @@
 		</emulators>
 		<platform>psp</platform>
 		<theme>psp</theme>
-		<manufacturer>Henrik Rydgård</manufacturer>
+		<manufacturer>Sony</manufacturer>
 		<release>2004</release>
 		<hardware>handheld</hardware>
 	</system>
@@ -4944,7 +4944,7 @@
 		</emulators>
 		<platform>psp</platform>
 		<theme>psp</theme>
-		<manufacturer>Henrik Rydgård</manufacturer>
+		<manufacturer>Sony</manufacturer>
 		<release>2004</release>
 		<hardware>handheld</hardware>
 	</system>
