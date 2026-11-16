@@ -1,7 +1,0 @@
-uniform vec4 shadowColor;
-
-OUTPUT
-
-void main() {
-	outColor = shadowColor;
-}

@@ -50,7 +50,7 @@ df -h "$MOUNT_DIR/root" || true
 RSYNC_BOOT_OPTS="-rltcD --no-owner --no-group --no-perms --omit-dir-times"
 RSYNC_ROOT_OPTS="-rlptcD --omit-dir-times"
 
-echo "== 解压大型核心 (.so.xz -> .so，已解压则跳过) =="
+echo "== 解压大型文件 (.so.xz / scummvm.xz，已解压则跳过) =="
 while IFS= read -r -d '' core_xz; do
   core_so="${core_xz%.xz}"
   # 压缩包是 git 交付物，保留在原地不删；镜像侧由 rsync --exclude 排除
@@ -60,7 +60,7 @@ while IFS= read -r -d '' core_xz; do
   else
     echo "已解压过，跳过 $core_xz"
   fi
-done < <(find rootfs -name '*.so.xz' -print0)
+done < <(find rootfs \( -name '*.so.xz' -o -name 'scummvm.xz' \) -print0)
 
 sync_boot() {
   fatal sudo rsync $RSYNC_BOOT_OPTS "boot/$1/" "$MOUNT_DIR/boot/"
@@ -68,7 +68,7 @@ sync_boot() {
 
 sync_rootfs() {
   # $1: rootfs/ 子目录, $2: 属主 (如 1002:1002)
-  fatal sudo rsync $RSYNC_ROOT_OPTS --exclude='/home/ark/.config/retroarch*/cores/*.so.xz' --chown="$2" --chmod=D0777,F0777 "rootfs/$1/" "$MOUNT_DIR/root/"
+  fatal sudo rsync $RSYNC_ROOT_OPTS --exclude='/home/ark/.config/retroarch*/cores/*.so.xz' --exclude='/opt/scummvm/scummvm.xz' --chown="$2" --chmod=D0777,F0777 "rootfs/$1/" "$MOUNT_DIR/root/"
 }
 
 pack_roms_tar() {

@@ -61,8 +61,8 @@ meta_finalize_dedupe() {
 rm -rf "$STAGE"
 mkdir -p "$PAYLOAD_BOOT" "$PAYLOAD_ROOT"
 
-# OTA 里同样可能带着未解压的大核心
-echo "== 解压大型核心 (.so.xz -> .so，已解压则跳过) =="
+# OTA 里同样可能带着未解压的大核心/大二进制
+echo "== 解压大型文件 (.so.xz / scummvm.xz，已解压则跳过) =="
 while IFS= read -r -d '' core_xz; do
   core_so="${core_xz%.xz}"
   # 压缩包是 git 交付物，保留在原地不删；OTA payload 由 rsync --exclude 排除
@@ -75,7 +75,7 @@ while IFS= read -r -d '' core_xz; do
   else
     echo "已解压过，跳过 $core_xz"
   fi
-done < <(find rootfs -name '*.so.xz' -print0)
+done < <(find rootfs \( -name '*.so.xz' -o -name 'scummvm.xz' \) -print0)
 
 
 if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
@@ -100,6 +100,7 @@ if [[ "$ARKOS_IMAGE_NAME" == *dArkOS* ]]; then
     --exclude=usr/lib/firmware \
     --exclude=opt/system/Tools \
     --exclude='/home/ark/.config/retroarch*/cores/*.so.xz' \
+    --exclude='/opt/scummvm/scummvm.xz' \
     --exclude='/home/ark/.config/retroarch*/cores/*mame*' \
     rootfs/dArkOS/ "$PAYLOAD_ROOT/"
 
@@ -124,6 +125,7 @@ else
     --exclude=usr/lib/firmware \
     --exclude=opt/system/Tools \
     --exclude='/home/ark/.config/retroarch*/cores/*.so.xz' \
+    --exclude='/opt/scummvm/scummvm.xz' \
     --exclude='/home/ark/.config/retroarch*/cores/*mame*' \
     rootfs/dArkOS/ "$PAYLOAD_ROOT/"
 
@@ -131,6 +133,7 @@ else
     --exclude=usr/lib/firmware \
     --exclude=opt/system/Tools \
     --exclude='/home/ark/.config/retroarch*/cores/*.so.xz' \
+    --exclude='/opt/scummvm/scummvm.xz' \
     --exclude='/home/ark/.config/retroarch*/cores/*mame*' \
     rootfs/ArkOS/ "$PAYLOAD_ROOT/"
 
