@@ -1282,6 +1282,7 @@
 			</emulator>
 			<emulator name="retroarch">
 				<cores>
+					<core>armn64</core>
 					<core>km_ludicrousn64_2k22_xtreme_amped</core>
 					<core>parallel_n64</core>
 					<core>mupen64plus_next</core>
@@ -1315,6 +1316,7 @@
 			</emulator>
 			<emulator name="retroarch">
 				<cores>
+					<core>armn64</core>
 					<core>km_ludicrousn64_2k22_xtreme_amped</core>
 					<core>parallel_n64</core>
 					<core>mupen64plus_next</core>
@@ -1452,6 +1454,7 @@
 			</emulator>
 			<emulator name="retroarch32">
 				<cores>
+					<core>armgba</core>
 					<core>gpsp_ezode_mod</core>
 					<core>gpsp</core>
 				</cores>
