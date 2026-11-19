@@ -1373,6 +1373,7 @@
 					<core>tgbdual</core>
 					<core>vbam</core>
 					<core>bsnes</core>
+					<core>armgba</core>
 				</cores>
 			</emulator>
 			<emulator name="mednafen">
@@ -1406,6 +1407,7 @@
 					<core>tgbdual</core>
 					<core>vbam</core>
 					<core>bsnes</core>
+					<core>armgba</core>
 				</cores>
 			</emulator>
 			<emulator name="mednafen">
@@ -1438,10 +1440,12 @@
 					<core>vbam</core>
 					<core>vba_next</core>
 					<core>gpsp</core>
+					<core>armgba</core>
 				</cores>
 			</emulator>
 			<emulator name="retroarch32">
 				<cores>
+					<core>armgba</core>
 					<core>gpsp_ezode_mod</core>
 					<core>gpsp</core>
 				</cores>
@@ -2834,6 +2838,18 @@
 		<theme>uzebox</theme>
 		<manufacturer>Belogic</manufacturer>
 		<release>2008</release>
+		<hardware>console</hardware>
+	</system>
+	<system>
+		<name>zeebo</name>
+		<fullname>Zeebo</fullname>
+		<path>/roms/zeebo</path>
+		<extension>.7z .7Z .mod .MOD .zip .ZIP</extension>
+		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/zeebx_libretro.so %ROM%; sudo perfnorm</command>
+		<platform>zeebo</platform>
+		<theme>zeebo</theme>
+		<manufacturer>Zeebo</manufacturer>
+		<release>2009</release>
 		<hardware>console</hardware>
 	</system>
 	<system>

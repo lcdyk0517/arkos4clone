@@ -1373,6 +1373,7 @@
 					<core>tgbdual</core>
 					<core>vbam</core>
 					<core>bsnes</core>
+					<core>armgba</core>
 				</cores>
 			</emulator>
 			<emulator name="mednafen">
@@ -1406,6 +1407,7 @@
 					<core>tgbdual</core>
 					<core>vbam</core>
 					<core>bsnes</core>
+					<core>armgba</core>
 				</cores>
 			</emulator>
 			<emulator name="mednafen">
@@ -1438,6 +1440,7 @@
 					<core>vbam</core>
 					<core>vba_next</core>
 					<core>gpsp</core>
+					<core>armgba</core>
 				</cores>
 			</emulator>
 			<emulator name="retroarch32">
@@ -1649,6 +1652,7 @@
 			<emulator name="retroarch">
 				<cores>
 					<core>genesis_plus_gx</core>
+					<core>genesis_plus_gx_EX</core>
 					<core>genesis_plus_gx_wide</core>
 					<core>picodrive</core>
 				</cores>
@@ -1725,22 +1729,22 @@
 					<core>yabasanshiro</core>
 				</cores>
 			</emulator>
-			<emulator name="retrorun">
-				<cores>
-					<core>yabasanshiro</core>
-				</cores>
-			</emulator>
 			<emulator name="retrorun32">
 				<cores>
 					<core>yabasanshiro</core>
 				</cores>
 			</emulator>
-			<emulator name="retrorunsdl">
+			<emulator name="retrorun">
 				<cores>
 					<core>yabasanshiro</core>
 				</cores>
 			</emulator>
 			<emulator name="retrorunsdl32">
+				<cores>
+					<core>yabasanshiro</core>
+				</cores>
+			</emulator>
+			<emulator name="retrorunsdl">
 				<cores>
 					<core>yabasanshiro</core>
 				</cores>
@@ -1801,7 +1805,7 @@
 					<core>flycast32_rumble</core>
 					<core>flycast_xtreme</core>
 				</cores>
-			  </emulator>
+			</emulator>
 			<emulator name="retrorunsdl">
 				<cores>
 					<core>flycast2021</core>
@@ -2837,6 +2841,18 @@
 		<hardware>console</hardware>
 	</system>
 	<system>
+		<name>zeebo</name>
+		<fullname>Zeebo</fullname>
+		<path>/roms/zeebo</path>
+		<extension>.7z .7Z .mod .MOD .zip .ZIP</extension>
+		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/zeebx_libretro.so %ROM%; sudo perfnorm</command>
+		<platform>zeebo</platform>
+		<theme>zeebo</theme>
+		<manufacturer>Zeebo</manufacturer>
+		<release>2009</release>
+		<hardware>console</hardware>
+	</system>
+	<system>
 		<name>videos</name>
 		<fullname>Movies</fullname>
 		<path>/roms/movies/</path>
@@ -2844,6 +2860,8 @@
 		<command>sudo perfmax %GOVERNOR% %ROM%; /usr/local/bin/mediaplayer.sh %ROM%; sudo perfnorm</command>
 		<platform>videos</platform>
 		<theme>vhs</theme>
+		<manufacturer>Various</manufacturer>
+		<release>unknown</release>
 	</system>
 	<system>
 		<name>retroarch</name>
@@ -4230,6 +4248,7 @@
 					<core>tgbdual</core>
 					<core>vbam</core>
 					<core>bsnes</core>
+					<core>armgba</core>
 				</cores>
 			</emulator>
 			<emulator name="mednafen">
@@ -4263,6 +4282,7 @@
 					<core>tgbdual</core>
 					<core>vbam</core>
 					<core>bsnes</core>
+					<core>armgba</core>
 				</cores>
 			</emulator>
 			<emulator name="mednafen">
@@ -4295,6 +4315,7 @@
 					<core>vbam</core>
 					<core>vba_next</core>
 					<core>gpsp</core>
+					<core>armgba</core>
 				</cores>
 			</emulator>
 			<emulator name="retroarch32">
@@ -4506,6 +4527,7 @@
 			<emulator name="retroarch">
 				<cores>
 					<core>genesis_plus_gx</core>
+					<core>genesis_plus_gx_EX</core>
 					<core>genesis_plus_gx_wide</core>
 					<core>picodrive</core>
 				</cores>
@@ -4871,11 +4893,11 @@
 			</emulator>
 			<emulator name="retroarch">
 				<cores>
+					<core>pcsx_rearmed_neon</core>
 					<core>duckstation</core>
 					<core>swanstation</core>
 					<core>pcsx_rearmed_unai</core>
 					<core>pcsx_rearmed_peops</core>
-					<core>pcsx_rearmed_neon</core>
 				</cores>
 			</emulator>
 			<emulator name="standalone-duckstation">
@@ -5694,6 +5716,18 @@
 		<hardware>console</hardware>
 	</system>
 	<system>
+		<name>zeebo</name>
+		<fullname>Zeebo</fullname>
+		<path>/roms2/zeebo</path>
+		<extension>.7z .7Z .mod .MOD .zip .ZIP</extension>
+		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/retroarch -L /home/ark/.config/retroarch/cores/zeebx_libretro.so %ROM%; sudo perfnorm</command>
+		<platform>zeebo</platform>
+		<theme>zeebo</theme>
+		<manufacturer>Zeebo</manufacturer>
+		<release>2009</release>
+		<hardware>console</hardware>
+	</system>
+	<system>
 		<name>videos</name>
 		<fullname>Movies [SD2]</fullname>
 		<path>/roms2/movies/</path>
@@ -5704,5 +5738,4 @@
 		<manufacturer>Various</manufacturer>
 		<release>unknown</release>
 	</system>
-
 </systemList>
