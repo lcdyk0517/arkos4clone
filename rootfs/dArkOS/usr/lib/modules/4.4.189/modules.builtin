@@ -72,6 +72,7 @@ kernel/crypto/crc32c_generic.ko
 kernel/crypto/crct10dif_common.ko
 kernel/crypto/crct10dif_generic.ko
 kernel/crypto/lzo.ko
+kernel/crypto/lz4.ko
 kernel/crypto/rng.ko
 kernel/crypto/ansi_cprng.ko
 kernel/crypto/drbg.ko
@@ -80,6 +81,7 @@ kernel/crypto/ghash-generic.ko
 kernel/crypto/af_alg.ko
 kernel/crypto/algif_hash.ko
 kernel/crypto/algif_skcipher.ko
+kernel/crypto/zstd.ko
 kernel/crypto/xor.ko
 kernel/crypto/ablk_helper.ko
 kernel/crypto/asymmetric_keys/asymmetric_keys.ko
@@ -312,9 +314,11 @@ kernel/lib/crc-itu-t.ko
 kernel/lib/crc32.ko
 kernel/lib/crc7.ko
 kernel/lib/libcrc32c.ko
+kernel/lib/xxhash.ko
 kernel/lib/asn1_decoder.ko
 kernel/lib/oid_registry.ko
 kernel/lib/fonts/font.ko
+kernel/lib/lz4/lz4_compress.ko
 kernel/lib/lz4/lz4_decompress.ko
 kernel/lib/lzo/lzo_compress.ko
 kernel/lib/lzo/lzo_decompress.ko
@@ -324,3 +328,5 @@ kernel/lib/reed_solomon/reed_solomon.ko
 kernel/lib/xz/xz_dec.ko
 kernel/lib/zlib_deflate/zlib_deflate.ko
 kernel/lib/zlib_inflate/zlib_inflate.ko
+kernel/lib/zstd/zstd_compress.ko
+kernel/lib/zstd/zstd_decompress.ko
