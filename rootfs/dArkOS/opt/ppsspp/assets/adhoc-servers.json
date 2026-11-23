@@ -61,10 +61,11 @@
 			"host": "relay-sa.arenaanywhere.site",
 			"discord": "https://discord.gg/GdsXWmNHq5",
 			"ip": "34.35.138.175",
-			"web": "",
+			"web": "https://arenaanywhere.site/lobby-status.html",
 			"location": "South Africa",
 			"location-emoji": "🇿🇦",
 			"description": "For players looking to play any games",
+			"status_data_json": "https://relay-sa.arenaanywhere.site/data.json",
 			"data_mode": "AemuPostoffice"
 		},
 		{
@@ -72,20 +73,20 @@
 			"host": "relay.arenaanywhere.site",
 			"discord": "https://discord.gg/GdsXWmNHq5",
 			"ip": "34.91.25.46",
-			"web": "",
+			"web": "https://arenaanywhere.site/lobby-status.html",
 			"location": "Europe",
 			"location-emoji": "🇪🇺",
 			"description": "For players looking to play any games",
+			"status_data_json": "https://relay.arenaanywhere.site/data.json",
 			"data_mode": "AemuPostoffice"
 		},
 		{
-			"name": "ArenaAnywhere Dubai",
-			"host": "relay-dubai.arenaanywhere.site",
+			"name": "ArenaAnywhere US",
+			"host": "relay-usa.arenaanywhere.site",
 			"discord": "https://discord.gg/GdsXWmNHq5",
-			"ip": "34.165.197.39",
-			"web": "",
-			"location": "Dubai",
-			"location-emoji": "🇦🇪",
+			"web": "https://arenaanywhere.site/lobby-status.html",
+			"location": "US",
+			"location-emoji": "🇺🇸",
 			"description": "For players looking to play any games",
 			"data_mode": "AemuPostoffice"
 		},
@@ -94,10 +95,11 @@
 			"host": "relay-asia.arenaanywhere.site",
 			"ip": "35.198.217.43",
 			"discord": "https://discord.gg/GdsXWmNHq5",
-			"web": "",
+			"web": "https://arenaanywhere.site/lobby-status.html",
 			"location": "Singapore",
 			"location-emoji": "🇸🇬",
 			"description": "For players looking to play any games",
+			"status_data_json": "https://relay-asia.arenaanywhere.site/data.json",
 			"data_mode": "AemuPostoffice"
 		},
 		{
@@ -110,15 +112,6 @@
 			"description": "For players looking to play any games",
 			"data_mode": "AemuPostoffice",
 			"status_data_json": "http://sayaakanlawan.my.id/data.json"
-		},
-		{
-			"name": "Retroverze Relay Beta",
-			"host": "psp.retroverze.my.id",
-			"discord": "",
-			"web": "https://retroverze.my.id/beta",
-			"location": "Unknown",
-			"description": "For players looking to play any games",
-			"data_mode": "AemuPostoffice"
 		},
 		{
 			"name": "Games Nexus",
@@ -140,7 +133,8 @@
 			"location": "China",
 			"location-emoji": "🇨🇳",
 			"description": "For players looking to play any games",
-			"data_mode": "AemuPostoffice"
+			"data_mode": "AemuPostoffice",
+			"status_data_json": "https://adhoc.cvn-play.top/data.json"
 		},
 		{
 			"name": "NT Arena Brasil",
@@ -183,6 +177,74 @@
 			"description": "For players looking to play any games",
 			"data_mode": "AemuPostoffice",
 			"status_data_json": "https://status-brazil-01.sprawl-relay.link?format=aemu"
+		},
+		{
+			"name": "PSP Brasil",
+			"host": "pspbrasil.duckdns.org",
+			"discord": "",
+			"web": "https://pspbrasil.duckdns.org/",
+			"location": "São Paulo, Brazil",
+			"location-emoji": "🇧🇷",
+			"description": "Rede br para partidas online de jogos PSP.",
+			"data_mode": "AemuPostoffice",
+			"status_data_json": "https://pspbrasil.duckdns.org/data.json"
+		},
+		{
+			"name": "Jeddah Relay - Middle East",
+			"host": "jeddah-relay.ddns.net",
+			"discord": "https://discord.gg/44qRAzADw",
+			"web": "",
+			"location": "Jeddah, Saudi Arabia",
+			"location-emoji": "🇸🇦",
+			"description": "Dedicated regional relay server providing low-latency matchmaking for MENA players.",
+			"data_mode": "AemuPostoffice",
+			"status_data_json": "http://jeddah-relay.ddns.net/data.json"
+		},
+		{
+			"name": "Alpha Adhoc Server",
+			"host": "140.245.237.12",
+			"discord": "https://discord.gg/fenYRERNRy",
+			"web": "http://140.245.237.12:8080/",
+			"location": "India",
+			"location-emoji": "🇮🇳",
+			"description": "Indian adhoc relay from alpha community",
+			"data_mode": "AemuPostoffice",
+			"status_xml": "",
+			"icon": "https://raw.githubusercontent.com/MainPiyushHoon/Alpha-Community-Webpage/refs/heads/main/src/images/ALPHA.webp"
+		},
+		{
+			"name": "SWAENET",
+			"host": "132.226.189.224",
+			"discord": "https://discord.gg/CgZxfHA8ZC",
+			"web": "https://132.226.189.224/",
+			"location": "Mumbai, India",
+			"location-emoji": "🇮🇳",
+			"description": "SWAENET PPSSPP Relay – Mumbai, India – part of the SWAEYERS community, offering low‑latency, reliable gaming connectivity.",
+			"data_mode": "AemuPostoffice",
+			"status_data_json": "https://132.226.189.224/data.json",
+			"icon": "https://132.226.189.224/assets/favicon.svg"
+		},
+		{
+			"name": "aemu_postoffice test server",
+			"host": "185.183.157.234",
+			"discord": "https://discord.com/invite/wxeGVkM",
+			"web": "http://185.183.157.234:8888/",
+			"location": "Germany",
+			"location-emoji": "🇩🇪",
+			"description": "Testing ground for aemu_postoffice reference server",
+			"data_mode": "AemuPostoffice",
+			"status_data_json": "http://185.183.157.234:8888/data.json",
+			"icon": "/favicon.ico"
+		},
+		{
+			"name": "Andexplaystream",
+			"host": "psp.andexplaystream.online",
+			"discord": "",
+			"location": "Jakarta, Indonesia",
+			"location-emoji": "🇮🇩",
+			"description": "For players looking to play any games",
+			"data_mode": "AemuPostoffice",
+			"status_data_json": "http://psp.andexplaystream.online/data.json"
 		}
 	]
 }
