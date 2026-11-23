@@ -1432,6 +1432,7 @@
 		<emulators>
 			<emulator name="retroarch">
 				<cores>
+					<core>armgba</core>
 					<core>gpsp_ezode_mod</core>
 					<core>mgba_rumble</core>
 					<core>mgba</core>
@@ -4289,6 +4290,7 @@
 		<emulators>
 			<emulator name="retroarch">
 				<cores>
+					<core>armgba</core>
 					<core>gpsp_ezode_mod</core>
 					<core>mgba_rumble</core>
 					<core>mgba</core>
