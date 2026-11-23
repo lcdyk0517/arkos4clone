@@ -1142,6 +1142,10 @@ alias usb:vA69Cp88DCd*dc*dsc*dp*icFFiscFFipFFin* aic8800_fdrv_usb
 alias usb:vA69Cp8D41d*dc*dsc*dp*icFFiscFFipFFin* aic8800_fdrv_usb
 alias usb:vA69Cp8D81d*dc*dsc*dp*icFFiscFFipFFin* aic8800_fdrv_usb
 alias usb:vA69Cp8801d*dc*dsc*dp*icFFiscFFipFFin* aic8800_fdrv_usb
+alias usb:v350Bp9106d*dc*dsc*dp*icFFiscFFipFFin* zt9101_ztopmac_usb
+alias usb:v350Bp9086d*dc*dsc*dp*icFFiscFFipFFin* zt9101_ztopmac_usb
+alias usb:v2310p9086d*dc*dsc*dp*icFFiscFFipFFin* zt9101_ztopmac_usb
+alias usb:v350Bp9101d*dc*dsc*dp*icFFiscFFipFFin* zt9101_ztopmac_usb
 alias sdio:c*v0296d5348* rk915
 alias sdio:c*v0296d5347* rk915
 alias platform:rk915 rk915

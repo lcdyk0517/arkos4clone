@@ -82,6 +82,7 @@ kernel/drivers/net/wireless/rockchip_wlan/rtl8814au/8814au.ko
 kernel/drivers/net/wireless/rockchip_wlan/rtl8852bu/8852bu.ko
 kernel/drivers/net/wireless/rockchip_wlan/aic8800-usb/aic_load_fw/aic_load_fw_usb.ko
 kernel/drivers/net/wireless/rockchip_wlan/aic8800-usb/aic8800_fdrv/aic8800_fdrv_usb.ko
+kernel/drivers/net/wireless/rockchip_wlan/zt9101/zt9101_ztopmac_usb.ko
 kernel/drivers/net/wireless/rockchip_wlan/rk915/rk915.ko
 kernel/drivers/net/wireless/esp8089/esp8089.ko
 kernel/drivers/net/wireless/swt6621s_wifi/swt6621s_wifi.ko
