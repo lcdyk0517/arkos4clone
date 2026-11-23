@@ -5326,3 +5326,12 @@ msgstr "更新失败"
 
 msgid "LATER"
 msgstr "稍后"
+
+msgid "ONLINE TOOLS"
+msgstr "联机工具"
+
+msgid "Netplay"
+msgstr "联机大厅"
+
+msgid "Stop ZeroTier"
+msgstr "停止 ZeroTier"
