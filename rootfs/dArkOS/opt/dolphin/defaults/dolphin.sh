@@ -8,6 +8,30 @@ sd="$(echo "${rom}" | cut -d/ -f2)"
 user_dir="/${sd}/gc"
 defaults="/opt/dolphin/defaults/Config"
 
+# Dolphin needs Vulkan, which the 4.4 kernel does not provide. Show a notice
+# and wait for A/B instead of dropping the user back with a black screen.
+case "$(uname -r)" in
+  4.4*)
+    export TERM=linux
+    sudo chmod 666 /dev/tty1 2>/dev/null
+    printf "\033c" > /dev/tty1
+    dialog --title "Dolphin" --infobox $'Vulkan is not available on the 4.4 kernel.\n\nSwitch to the 5.10 kernel and launch Dolphin again.\n\nPress A or B to exit.' 12 64 > /dev/tty1 2>&1
+    . /usr/local/bin/buttonmon.sh 2>/dev/null
+    dev="/dev/input/event${event_num:-2}"
+    btn_a="${event_btn_a:-BTN_EAST}"
+    btn_b="${event_btn_b:-BTN_SOUTH}"
+    while :; do
+      evtest --query "$dev" EV_KEY "$btn_a" >/dev/null 2>&1
+      [ $? -eq 10 ] && break
+      evtest --query "$dev" EV_KEY "$btn_b" >/dev/null 2>&1
+      [ $? -eq 10 ] && break
+      sleep 0.1
+    done
+    printf "\033c" > /dev/tty1
+    exit 0
+    ;;
+esac
+
 mkdir -p "${user_dir}/Config"
 for f in "${defaults}"/*.ini; do
   [ -f "${user_dir}/Config/$(basename "${f}")" ] || cp "${f}" "${user_dir}/Config/"
