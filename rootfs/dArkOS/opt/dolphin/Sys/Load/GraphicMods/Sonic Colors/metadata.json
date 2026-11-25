@@ -1,0 +1,31 @@
+{
+	"meta":
+	{
+		"title": "Bloom Texture Definitions",
+		"author": "Silent Hell, FrankyBuster"
+	},
+	"groups":
+	[
+		{
+			"name": "Bloom",
+			"targets": [
+				{
+					"type": "efb",
+					"texture_filename": "efb1_n000007_160x120_6"
+				},
+				{
+					"type": "efb",
+					"texture_filename": "efb1_n000009_80x60_6"
+				},
+				{
+					"type": "efb",
+					"texture_filename": "efb1_n000011_40x30_6"
+				},
+				{
+					"type": "efb",
+					"texture_filename": "efb1_n000013_20x15_6"
+				}
+			]
+		}
+	]
+}
