@@ -722,7 +722,8 @@ main() {
   check_tools
   check_jdk_file
   check_portmaster
-  check_pm_libs
+  # 不注入Ports
+  # check_pm_libs
   check_install_portmaster
   check_clone_dependencies
 
