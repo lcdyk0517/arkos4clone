@@ -1,0 +1,86 @@
+# Kodi Media Center language file
+# Addon Name: Generic Artist Scraper
+# Addon id: metadata.generic.artists
+# Addon Provider: Team Kodi
+msgid ""
+msgstr ""
+"Project-Id-Version: KODI Main\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2022-09-06 10:59+0000\n"
+"Last-Translator: Christian Gade <gade@kodi.tv>\n"
+"Language-Team: Dutch <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-generic-artists/nl_nl/>\n"
+"Language: nl_nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.14\n"
+
+msgctxt "Addon Summary"
+msgid "Generic music scraper for artists"
+msgstr "Generieke muziek schraper voor artiesten"
+
+msgctxt "Addon Description"
+msgid "Searches for artist information and artwork across multiple websites."
+msgstr "Zoekt naar informatie over artiesten en kunstwerken op meerdere websites."
+
+msgctxt "#30000"
+msgid "Preferences"
+msgstr "Voorkeuren"
+
+msgctxt "#30001"
+msgid "Preferred language for artist biography"
+msgstr "Voorkeurstaal voor artiestenbiografie"
+
+msgctxt "#30002"
+msgid "Prefer biography from"
+msgstr "Liever biografie van"
+
+msgctxt "#30003"
+msgid "Prefer discography from"
+msgstr "Liever discografie van"
+
+msgctxt "#30004"
+msgid "Prefer genres from"
+msgstr "Voorkeur voor genres van"
+
+msgctxt "#30005"
+msgid "Prefer styles from"
+msgstr "Voorkeur voor stijlen van"
+
+msgctxt "#30006"
+msgid "Prefer moods from"
+msgstr "Liever stemmingen van"
+
+msgctxt "#30101"
+msgid "Allow less accurate search results"
+msgstr "Minder nauwkeurige zoekresultaten toestaan"
+
+msgctxt "#30201"
+msgid "If available, the artist biography will be downloaded in the selected language. It will fallback to English."
+msgstr "Indien beschikbaar, wordt de artiestenbiografie gedownload in de geselecteerde taal. Het zal terugvallen op het Engels."
+
+msgctxt "#30202"
+msgid "Try to get the artist biography using the selected scraper. Other scrapers will be used if the preferred scraper returns no results."
+msgstr "Probeer de biografie van de artiest te krijgen met de geselecteerde schraper. Andere schrapers worden gebruikt als de gewenste schraper geen resultaten oplevert."
+
+msgctxt "#30203"
+msgid "Try to get the artist discography using the selected scraper. Other scrapers will be used if the preferred scraper returns no results."
+msgstr "Probeer de biografie van de artiest te krijgen met de geselecteerde schraper. Andere schrapers worden gebruikt als de gewenste schraper geen resultaten oplevert."
+
+msgctxt "#30204"
+msgid "Try to get genre info using the selected scraper. Other scrapers will be used if the preferred scraper returns no results."
+msgstr "Probeer genre-informatie te krijgen met behulp van de geselecteerde schraper. Andere schrapers worden gebruikt als de gewenste schraper geen resultaten oplevert."
+
+msgctxt "#30205"
+msgid "Try to get style info using the selected scraper. Other scrapers will be used if the preferred scraper returns no results."
+msgstr "Probeer stijlinformatie te krijgen met de geselecteerde schraper. Andere schrapers worden gebruikt als de gewenste schraper geen resultaten oplevert."
+
+msgctxt "#30206"
+msgid "Try to get mood info using the selected scraper. Other scrapers will be used if the preferred scraper returns no results."
+msgstr "Probeer stemmingsinformatie te krijgen met de geselecteerde schraper. Andere schrapers worden gebruikt als de gewenste schraper geen resultaten oplevert."
+
+msgctxt "#30301"
+msgid "If Musicbrainz does not provide a link to allmusic and/or discogs, we can search those sites based on artistname. Since artist names are not unique, this could potentially result in a mixture of metadata from multiple artists by the same name."
+msgstr "Als Musicbrainz geen link geeft naar alle muziek en/of discogs, kunnen we die sites doorzoeken op artiestnaam. Aangezien artiestennamen niet uniek zijn, kan dit mogelijk resulteren in een mengeling van metadata van meerdere artiesten met dezelfde naam."

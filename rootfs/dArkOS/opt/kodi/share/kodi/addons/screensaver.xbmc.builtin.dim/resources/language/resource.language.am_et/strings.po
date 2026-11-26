@@ -1,0 +1,41 @@
+# Kodi Media Center language file
+# Addon Name: Dim
+# Addon id: screensaver.xbmc.builtin.dim
+# Addon Provider: Team Kodi
+msgid ""
+msgstr ""
+"Project-Id-Version: KODI Main\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2021-07-30 06:40+0000\n"
+"Last-Translator: Christian Gade <gade@kodi.tv>\n"
+"Language-Team: Amharic (Ethiopia) <https://kodi.weblate.cloud/projects/kodi-core/screensaver-xbmc-builtin-dim/am_et/>\n"
+"Language: am_et\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Weblate 4.7.2\n"
+
+msgctxt "Addon Summary"
+msgid "Screensaver that dims your screen"
+msgstr "መመልከቻ ማዳኛ የ እርስዎን መመልከቻ ፈዘዝ ያደርገዋል"
+
+msgctxt "Addon Description"
+msgid "The Dim screensaver is a simple screensaver that will dim (fade out) your screen to a setable value between 20 and 100% ."
+msgstr "የ መመልከቻ ማዳኛ ማደብዘዣ የ እርስዎን መመልከቻ ያፈዘዋል (ማፍዘዣ) የ እርስዎን መመልከቻ ዋጋ በ 20 እና በ 100% መካከል"
+
+#. Setting name for edit screen dim in percentage (0% = black, 100% = no dim)
+msgctxt "#30000"
+msgid "Brightness level"
+msgstr ""
+
+#. Setting help text
+msgctxt "#30001"
+msgid "Level in percent of how strongly the screen remains illuminated."
+msgstr ""
+
+#. Setting category name
+msgctxt "#30002"
+msgid "Preferences"
+msgstr "ምርጫዎች"

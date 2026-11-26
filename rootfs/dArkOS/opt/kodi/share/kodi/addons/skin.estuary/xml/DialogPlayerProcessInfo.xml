@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<depth>DepthOSD</depth>
+	<defaultcontrol always="true">5553</defaultcontrol>
+	<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+	<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+	<onunload>ClearProperty(PlayerInfoDialogFocus,Home)</onunload>
+	<controls>
+		<control type="group">
+			<bottom>0</bottom>
+			<height>250</height>
+			<animation effect="slide" end="0,-20" time="150" condition="VideoPlayer.Content(LiveTV)">conditional</animation>
+			<control type="image">
+				<left>30</left>
+				<top>-220</top>
+				<right>30</right>
+				<height>330</height>
+				<texture border="40">dialogs/dialog-bg-nobo.png</texture>
+			</control>
+			<control type="grouplist">
+				<left>50</left>
+				<top>-204</top>
+				<visible>String.IsEqual(Window(Home).Property(PlayerInfoDialogFocus),5551)</visible>
+				<control type="label">
+					<width>1200</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamServiceName,[COLOR button_focus]$LOCALIZE[19099]:[/COLOR] ]</label>
+					<font>font14</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+					<width>1200</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamProviderName,[COLOR button_focus]$LOCALIZE[19101]:[/COLOR] ]</label>
+					<font>font14</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+					<width>1200</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamClient,[COLOR button_focus]$LOCALIZE[19012]:[/COLOR] ]</label>
+					<font>font14</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+					<width>1200</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamDevice,[COLOR button_focus]$LOCALIZE[19006]:[/COLOR] ]</label>
+					<font>font14</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+					<width>1200</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamStatus,[COLOR button_focus]$LOCALIZE[19007]:[/COLOR] ]</label>
+					<font>font14</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+					<width>1200</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamEncryptionName,[COLOR button_focus]$LOCALIZE[19015]:[/COLOR] ]</label>
+					<font>font14</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+			</control>
+			<control type="grouplist">
+				<left>1250</left>
+				<top>-204</top>
+				<visible>String.IsEqual(Window(Home).Property(PlayerInfoDialogFocus),5551)</visible>
+				<usecontrolcoords>true</usecontrolcoords>
+				<control type="label">
+					<width>600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamBer,[COLOR button_focus]$LOCALIZE[19010]:[/COLOR] ]</label>
+					<font>font14</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+					<width>600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamUnc,[COLOR button_focus]$LOCALIZE[19011]:[/COLOR] ]</label>
+					<font>font14</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+					<width>600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamMux,[COLOR button_focus]$LOCALIZE[19100]:[/COLOR] ]</label>
+					<font>font14</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+					<width>600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamSignal,[COLOR button_focus]$LOCALIZE[19008]:[/COLOR] ]</label>
+					<font>font14</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="progress">
+					<top>5</top>
+					<width>600</width>
+					<height>18</height>
+					<info>PVR.ActStreamProgrSignal</info>
+				</control>
+				<control type="label">
+					<top>5</top>
+					<width>1600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[PVR.ActStreamSNR,[COLOR button_focus]$LOCALIZE[19009]:[/COLOR] ]</label>
+					<font>font14</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="progress">
+					<top>0</top>
+					<width>600</width>
+					<height>18</height>
+					<info>PVR.ActStreamProgrSNR</info>
+				</control>
+			</control>
+			<control type="grouplist">
+				<left>50</left>
+				<top>-204</top>
+				<visible>String.IsEqual(Window(Home).Property(PlayerInfoDialogFocus),5552)</visible>
+				<control type="label">
+					<width>830</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[VideoPlayer.VideoCodec,[COLOR button_focus]$LOCALIZE[31600]:[/COLOR] ]</label>
+					<font>font14</font>
+					<shadowcolor>black</shadowcolor>
+					<visible>Player.HasVideo</visible>
+				</control>
+				<control type="label">
+					<width>830</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[VideoPlayer.VideoResolution,[COLOR button_focus]$LOCALIZE[31601]:[/COLOR] ]</label>
+					<font>font14</font>
+					<shadowcolor>black</shadowcolor>
+					<visible>Player.HasVideo</visible>
+				</control>
+				<control type="label">
+					<width>830</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[VideoPlayer.VideoAspect,[COLOR button_focus]$LOCALIZE[31602]:[/COLOR] ]</label>
+					<font>font14</font>
+					<shadowcolor>black</shadowcolor>
+					<visible>Player.HasVideo</visible>
+				</control>
+				<control type="label">
+					<width>830</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[VideoPlayer.VideoBitrate,[COLOR button_focus]$LOCALIZE[31603]:[/COLOR] , kb/s]</label>
+					<font>font14</font>
+					<shadowcolor>black</shadowcolor>
+					<visible>Player.HasVideo</visible>
+				</control>
+			</control>
+			<control type="grouplist">
+				<left>1010</left>
+				<top>-204</top>
+				<visible>String.IsEqual(Window(Home).Property(PlayerInfoDialogFocus),5552)</visible>
+				<control type="label">
+					<width>830</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[VideoPlayer.AudioCodec,[COLOR button_focus]$LOCALIZE[31604]:[/COLOR] ]</label>
+					<font>font14</font>
+					<shadowcolor>black</shadowcolor>
+					<visible>Player.HasVideo</visible>
+				</control>
+				<control type="label">
+					<width>830</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[VideoPlayer.AudioChannels,[COLOR button_focus]$LOCALIZE[31605]:[/COLOR] ]</label>
+					<font>font14</font>
+					<shadowcolor>black</shadowcolor>
+					<visible>Player.HasVideo</visible>
+				</control>
+				<control type="label">
+					<width>830</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[VideoPlayer.AudioBitrate,[COLOR button_focus]$LOCALIZE[31606]:[/COLOR] , kb/s]</label>
+					<font>font14</font>
+					<shadowcolor>black</shadowcolor>
+					<visible>Player.HasVideo</visible>
+				</control>
+			</control>
+			<control type="grouplist">
+				<left>50</left>
+				<top>-204</top>
+				<visible>String.IsEqual(Window(Home).Property(PlayerInfoDialogFocus),5553)</visible>
+				<control type="label">
+					<width>1600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[Player.Process(videodecoder),[COLOR button_focus]$LOCALIZE[31139]:[/COLOR] ]$VAR[VideoHWDecoder, (,)]</label>
+					<font>font14</font>
+					<shadowcolor>black</shadowcolor>
+					<visible>Player.HasVideo</visible>
+				</control>
+				<control type="label">
+					<width>1600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[Player.Process(pixformat),[COLOR button_focus]$LOCALIZE[31140]:[/COLOR] ]</label>
+					<font>font14</font>
+					<shadowcolor>black</shadowcolor>
+					<visible>Player.HasVideo</visible>
+				</control>
+				<control type="label">
+					<width>1600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[Player.Process(deintmethod),[COLOR button_focus]$LOCALIZE[16038]:[/COLOR] ]</label>
+					<font>font14</font>
+					<shadowcolor>black</shadowcolor>
+					<visible>Player.HasVideo</visible>
+				</control>
+				<control type="label">
+					<width>1600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[Player.Process(videowidth),[COLOR button_focus]$LOCALIZE[38031]:[/COLOR] ,x]$INFO[Player.Process(videoheight)]$INFO[Player.Process(videoscantype)]$INFO[Player.Process(videodar),$COMMA , AR]$INFO[Player.Process(videofps),$COMMA , FPS]</label>
+					<font>font14</font>
+					<shadowcolor>black</shadowcolor>
+					<visible>Player.HasVideo</visible>
+				</control>
+				<control type="label">
+					<width>1600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>[COLOR button_focus]$LOCALIZE[460]:[/COLOR] $INFO[Player.Process(audiochannels),,$COMMA ]$INFO[Player.Process(audiodecoder)]$INFO[Player.Process(audiobitspersample),$COMMA , bits]$INFO[Player.Process(audiosamplerate),$COMMA , Hz]</label>
+					<font>font14</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+			</control>
+			<control type="grouplist">
+				<left>50</left>
+				<top>-204</top>
+				<visible>String.IsEqual(Window(Home).Property(PlayerInfoDialogFocus),5554)</visible>
+				<control type="label">
+					<width>1600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[System.ScreenResolution,[COLOR button_focus]$LOCALIZE[31607]:[/COLOR] ]</label>
+					<font>font14</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+					<width>1600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[System.FPS,[COLOR button_focus]$LOCALIZE[31608]:[/COLOR] , fps]</label>
+					<font>font14</font>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+					<width>1600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[System.Memory(used.percent),[COLOR button_focus]$LOCALIZE[31030]:[/COLOR] ]</label>
+					<font>font14</font>
+					<shadowcolor>black</shadowcolor>
+					<visible>System.SupportsCPUUsage</visible>
+				</control>
+				<control type="label">
+					<width>1600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[System.CpuUsage,[COLOR button_focus]$LOCALIZE[31609]:[/COLOR] ]</label>
+					<font>font14</font>
+					<shadowcolor>black</shadowcolor>
+					<visible>System.SupportsCPUUsage</visible>
+				</control>
+				<control type="label">
+					<width>1600</width>
+					<height>50</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[System.Memory(used.percent),[COLOR button_focus]$LOCALIZE[31030]:[/COLOR] ]</label>
+					<font>font14</font>
+					<shadowcolor>black</shadowcolor>
+					<visible>!System.SupportsCPUUsage</visible>
+				</control>
+			</control>
+			<control type="grouplist" id="5550">
+				<right>15</right>
+				<top>-310</top>
+				<width>1000</width>
+				<height>100</height>
+				<align>right</align>
+				<orientation>horizontal</orientation>
+				<itemgap>-10</itemgap>
+				<onup>Close</onup>
+				<ondown>Close</ondown>
+				<usecontrolcoords>true</usecontrolcoords>
+				<control type="button" id="5551">
+					<width>auto</width>
+					<height>100</height>
+					<textoffsetx>40</textoffsetx>
+					<label>$LOCALIZE[31137]</label>
+					<visible>VideoPlayer.Content(livetv)</visible>
+					<onfocus>SetProperty(PlayerInfoDialogFocus,5551,Home)</onfocus>
+				</control>
+				<control type="button" id="5552">
+					<width>auto</width>
+					<height>100</height>
+					<textoffsetx>40</textoffsetx>
+					<label>$LOCALIZE[31610]</label>
+					<onfocus>SetProperty(PlayerInfoDialogFocus,5552,Home)</onfocus>
+				</control>
+				<control type="button" id="5553">
+					<width>auto</width>
+					<height>100</height>
+					<textoffsetx>40</textoffsetx>
+					<label>$LOCALIZE[31138]</label>
+					<onfocus>SetProperty(PlayerInfoDialogFocus,5553,Home)</onfocus>
+				</control>
+				<control type="button" id="5554">
+					<width>auto</width>
+					<height>100</height>
+					<textoffsetx>40</textoffsetx>
+					<label>$LOCALIZE[31611]</label>
+					<onfocus>SetProperty(PlayerInfoDialogFocus,5554,Home)</onfocus>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

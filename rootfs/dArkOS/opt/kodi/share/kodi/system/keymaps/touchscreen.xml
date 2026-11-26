@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file contains the mapping of touch gestures to actions within Kodi.             -->
+<!--                                                                                      -->
+<!-- The format is:                                                                       -->
+<!--  <window>                                                                            -->
+<!--    <device>                                                                          -->
+<!--      <gesture>action</gesture>                                                       -->
+<!--    </device>                                                                         -->
+<!--  </window>                                                                           -->
+<!--                                                                                      -->
+<!-- The <global> section is a fall through - they will only be used if the button is     -->
+<!-- not used in the current window's section.                                            -->
+<!--                                                                                      -->
+<!-- Actions can be built-in functions.                                                   -->
+<!--  eg <tap pointers="2">ActivateWindow(Music)</tap>                                    -->
+<!-- would automatically go to Music when two fingers tap the screen at once.             -->
+<!--                                                                                      -->
+<!--                                                                                      -->
+<!-- An empty action removes the corresponding mapping from default and parent keymaps.   -->
+<!-- This is different from a "noop" action, which disables a button.                     -->
+<!--                                                                                      -->
+<!-- More documentation on keymaps can be found on http://kodi.wiki/view/keymaps          -->
+<keymap>
+  <global>
+    <touch>
+      <tap>LeftClick</tap>
+      <longpress>RightClick</longpress>
+      <tap pointers="2">RightClick</tap>
+      <pan>PanGesture</pan>
+      <swipe direction="left">SwipeLeft</swipe>
+      <swipe direction="left" pointers="2">Back</swipe>
+      <swipe direction="right">SwipeRight</swipe>
+      <swipe direction="right" pointers="2">Menu</swipe>  <!-- Easier access to the side blade menu on touchscreens.  -->
+      <swipe direction="up">SwipeUp</swipe>
+      <swipe direction="down">SwipeDown</swipe>
+      <swipe direction="up" pointers="3">SwitchPlayer</swipe>
+      <swipe direction="down" pointers="3">ActivateWindow(PlayerControls)</swipe>
+    </touch>
+  </global>
+  <FileManager>
+    <touch>
+      <tap>Select</tap>
+      <swipe direction="left">Highlight</swipe>
+      <swipe direction="right">Highlight</swipe>
+    </touch>
+  </FileManager>
+  <FullScreenVideo>
+    <touch>
+      <swipe direction="left">StepBack</swipe>
+      <swipe direction="right">StepForward</swipe>
+      <swipe direction="up">ChapterOrBigStepForward</swipe>
+      <swipe direction="down">ChapterOrBigStepBack</swipe>
+      <swipe direction="up" pointers="2">SkipNext</swipe>
+      <swipe direction="down" pointers="2">SkipPrevious</swipe>
+      <tap pointers="2">Playlist</tap>
+      <tap pointers="3">PlayPause</tap>
+    </touch>
+  </FullScreenVideo>
+  <FullScreenGame>
+    <touch>
+      <swipe direction="left">StepBack</swipe>
+      <swipe direction="right">StepForward</swipe>
+      <swipe direction="left" pointers="2">Seek(-7)</swipe>
+      <tap pointers="3">PlayPause</tap>
+    </touch>
+  </FullScreenGame>
+  <PlayerControls>
+    <touch>
+      <swipe direction="down" pointers="3">Back</swipe>
+    </touch>
+  </PlayerControls>
+  <Visualisation>
+    <touch>
+      <swipe direction="left">StepBack</swipe>
+      <swipe direction="right">StepForward</swipe>
+      <swipe direction="up">SkipNext</swipe>
+      <swipe direction="down">SkipPrevious</swipe>
+      <swipe direction="up" pointers="2">SkipNext</swipe>
+      <swipe direction="down" pointers="2">SkipPrevious</swipe>
+      <tap pointers="2">Playlist</tap>
+      <tap pointers="3">PlayPause</tap>
+    </touch>
+  </Visualisation>
+  <SlideShow>
+    <touch>
+      <zoom>ZoomGesture</zoom>
+      <rotate>RotateGesture</rotate>
+      <swipe direction="right" pointers="2">PreviousPicture</swipe> <!-- right/left are flipped here to make picture flipping feel more natural on touch screens. Two pointers are used in order to avoid conflicting with the panning gesture on zoomed-in images. -->
+      <swipe direction="left" pointers="2">NextPicture</swipe>
+      <tap pointers="2">Pause</tap>
+      <tap pointers="3">Info</tap>
+      <longpress>Back</longpress>
+    </touch>
+  </SlideShow>
+  <ScreenCalibration>
+    <touch>
+      <swipe direction="up">Up</swipe>
+      <swipe direction="down">Down</swipe>
+      <swipe direction="right">Right</swipe>
+      <swipe direction="left">Left</swipe>
+      <tap pointers="1">NextCalibration</tap>
+    </touch>
+  </ScreenCalibration>
+  <VideoMenu>
+    <touch>
+      <swipe direction="up" pointers="2">SkipNext</swipe>
+      <swipe direction="down" pointers="2">SkipPrevious</swipe>
+    </touch>
+  </VideoMenu>
+  <ContextMenu>
+    <touch>
+      <swipe direction="left" pointers="3">Back</swipe> <!-- backs out of "switch player" -->
+      <swipe direction="right" pointers="3">Back</swipe>
+    </touch>
+  </ContextMenu>
+  <PictureInfo>
+    <touch>
+      <tap pointers="3">Back</tap>
+    </touch>
+  </PictureInfo>
+  <FullScreenLiveTV>
+    <touch>
+      <swipe direction="up">Up</swipe>
+      <swipe direction="down">Down</swipe>
+    </touch>
+  </FullScreenLiveTV>
+  <FullScreenRadio>
+    <touch>
+      <swipe direction="up">ChannelUp</swipe>
+      <swipe direction="down">ChannelDown</swipe>
+    </touch>
+  </FullScreenRadio>
+</keymap>

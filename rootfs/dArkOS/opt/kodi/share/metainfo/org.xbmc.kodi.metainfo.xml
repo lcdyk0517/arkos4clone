@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <id>org.xbmc.kodi</id>
+    <name>Kodi</name>
+    <project_license>GPL-2.0-only GPL-2.0-or-later LGPL-2.1-or-later MIT BSD-3-Clause BSD-4-Clause</project_license>
+    <metadata_license>CC0-1.0</metadata_license>
+    <developer_name>Team Kodi</developer_name>
+    <summary>Ultimate entertainment center</summary>
+    <url type="homepage">https://kodi.tv/</url>
+    <url type="donation">https://kodi.tv/contribute/donate</url>
+    <url type="bugtracker">https://github.com/xbmc/xbmc/issues</url>
+    <url type="faq">https://kodi.wiki/view/FAQs</url>
+    <url type="help">https://forum.kodi.tv/</url>
+    <url type="translate">https://kodi.weblate.cloud/</url>
+    <url type="contribute">https://github.com/xbmc/xbmc/blob/master/docs/CONTRIBUTING.md</url>
+    <url type="vcs-browser">https://github.com/xbmc/xbmc/</url>
+    <description>
+        <p>Kodi allows users to play and view videos, music, podcasts,
+        and other digital media files from local storage, network storage
+        and the internet. It's optimized for a 10-foot user interface to be
+        used with televisions and remote controls.</p>
+
+        <p>Kodi spawned from the love of media. It is an entertainment hub
+        that brings all your digital media together into a beautiful
+        and user friendly package. It is 100% free and open source,
+        very customisable and runs on a wide variety of devices. It is
+        supported by a dedicated team of volunteers and a huge community.</p>
+    </description>
+    <keywords>
+        <keyword>Kodi</keyword>
+        <keyword>xbmc</keyword>
+        <keyword>audio</keyword>
+        <keyword>video</keyword>
+        <keyword>media</keyword>
+        <keyword>media center</keyword>
+        <keyword>music</keyword>
+        <keyword>tv</keyword>
+        <keyword>television</keyword>
+        <keyword>remote control</keyword>
+    </keywords>
+    <launchable type="desktop-id">kodi.desktop</launchable>
+    <screenshots>
+        <screenshot type="default">
+            <image>https://mirrors.kodi.tv/screenshots/kodi-recently-added.jpg</image>
+            <caption>The homescreen keeps your media organized</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://mirrors.kodi.tv/screenshots/kodi-videolibrary.jpg</image>
+            <caption>Easily browse your movies and series</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://mirrors.kodi.tv/screenshots/kodi-video-info.jpg</image>
+            <caption>Get additional infos about your movies or series</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://mirrors.kodi.tv/screenshots/kodi-tvshow.jpg</image>
+            <caption>Browse TV shows by seasons</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://mirrors.kodi.tv/screenshots/kodi-music-info.jpg</image>
+            <caption>Use the music library to organize and read about your artists</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://mirrors.kodi.tv/screenshots/kodi-epg.jpg</image>
+            <caption>Use the EPG to manage your TV stations</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://mirrors.kodi.tv/screenshots/kodi-addons.jpg</image>
+            <caption>Extend what Kodi can do, just use addons</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://mirrors.kodi.tv/screenshots/kodi-weather.jpg</image>
+            <caption>Keep the weather in check</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://mirrors.kodi.tv/screenshots/kodi-webinterface.jpg</image>
+            <caption>The webinterface enables you to manage your Kodi from other devices</caption>
+        </screenshot>
+    </screenshots>
+    <releases>
+        <release date="2025-08-18" version="22.0~a1-Piers" type="development"><url>https://kodi.tv/article/kodi-22-0-piers-alpha-1/</url></release>
+        <release date="2025-10-31" version="21.3-Omega" type="stable"><url>https://kodi.tv/article/kodi-21-3-omega-release/</url></release>
+        <release date="2025-01-15" version="21.2-Omega" type="stable"><url>https://kodi.tv/article/kodi-21-2-omega-release/</url></release>
+        <release date="2024-08-17" version="21.1-Omega" type="stable"><url>https://kodi.tv/article/kodi-21-1-omega-release/</url></release>
+        <release date="2024-04-06" version="21.0-Omega" type="stable"><url>https://kodi.tv/article/kodi-21-0-omega-release/</url></release>
+        <release date="2024-03-18" version="21.0~rc2-Omega" type="development"/>
+        <release date="2024-03-07" version="21.0~rc1-Omega" type="development"><url>https://kodi.tv/article/kodi-21-0-omega-rc1/</url></release>
+        <release date="2024-02-15" version="21.0~b3-Omega" type="development"><url>https://kodi.tv/article/kodi-21-0-omega-beta-3/</url></release>
+        <release date="2023-12-09" version="21.0~b2-Omega" type="development"><url>https://kodi.tv/article/kodi-21-0-omega-beta-2/</url></release>
+        <release date="2023-10-17" version="21.0~b1-Omega" type="development"><url>https://kodi.tv/article/kodi-omega-beta-1/</url></release>
+        <release date="2023-09-07" version="21.0~a3-Omega" type="development"><url>https://kodi.tv/article/kodi-omega-alpha-3/</url></release>
+        <release date="2023-06-17" version="21.0~a2-Omega" type="development"><url>https://kodi.tv/article/kodi-omega-alpha-2/</url></release>
+        <release date="2023-04-16" version="21.0~a1-Omega" type="development"><url>https://kodi.tv/article/kodi-omega-alpha-1/</url></release>
+        <release date="2024-03-02" version="20.5-Nexus" type="stable"><url>https://kodi.tv/article/kodi-20-5-nexus-release/</url></release>
+        <release date="2024-02-10" version="20.4-Nexus" type="stable"><url>https://kodi.tv/article/kodi-20-4-nexus-release/</url></release>
+        <release date="2024-01-09" version="20.3-Nexus" type="stable"><url>https://kodi.tv/article/kodi-20-3-nexus-release/</url></release>
+        <release date="2023-06-28" version="20.2-Nexus" type="stable"><url>https://kodi.tv/article/kodi-20-2-nexus-release/</url></release>
+        <release date="2023-03-11" version="20.1-Nexus" type="stable"><url>https://kodi.tv/article/kodi-20-1-nexus-release/</url></release>
+        <release date="2023-01-15" version="20.0-Nexus" type="stable"><url>https://kodi.tv/article/kodi-20-0-nexus-release/</url></release>
+        <release date="2022-12-21" version="20.0~rc2-Nexus" type="development"><url>https://kodi.tv/article/kodi-nexus-rc-2/</url></release>
+        <release date="2022-12-10" version="20.0~rc1-Nexus" type="development"><url>https://kodi.tv/article/kodi-nexus-rc-1/</url></release>
+        <release date="2022-11-08" version="20.0~b1-Nexus" type="development"><url>https://kodi.tv/article/kodi-nexus-beta-1/</url></release>
+        <release date="2022-09-08" version="20.0~a3-Nexus" type="development"><url>https://kodi.tv/article/kodi-nexus-alpha-3/</url></release>
+        <release date="2022-07-09" version="20.0~a2-Nexus" type="development"><url>https://kodi.tv/article/kodi-nexus-alpha-2/</url></release>
+        <release date="2022-05-16" version="20.0~a1-Nexus" type="development"><url>https://kodi.tv/article/kodi-nexus-alpha-1/</url></release>
+        <release date="2022-12-24" version="19.5-Matrix" type="stable"><url>https://kodi.tv/article/kodi-matrix-19-5-release/</url></release>
+        <release date="2022-03-03" version="19.4-Matrix" type="stable"><url>https://kodi.tv/article/kodi-matrix-19-4-release/</url></release>
+        <release date="2021-10-24" version="19.3-Matrix" type="stable"><url>https://kodi.tv/article/kodi-matrix-19-3-release/</url></release>
+        <release date="2021-10-08" version="19.2-Matrix" type="stable"><url>https://kodi.tv/article/kodi-matrix-19-2-release/</url></release>
+        <release date="2021-05-09" version="19.1-Matrix" type="stable"><url>https://kodi.tv/article/kodi-matrix-19-1-release/</url></release>
+        <release date="2021-02-19" version="19.0-Matrix" type="stable"><url>https://kodi.tv/article/kodi-19-0-matrix-release/</url></release>
+        <release date="2020-10-24" version="18.9-Leia" type="stable"><url>https://kodi.tv/article/kodi-leia-189-release/</url></release>
+        <release date="2020-07-28" version="18.8-Leia" type="stable"><url>https://kodi.tv/article/kodi-leia-188-release/</url></release>
+        <release date="2020-05-21" version="18.7-Leia" type="stable"><url>https://kodi.tv/article/kodi-leia-187-release/</url></release>
+        <release date="2020-02-29" version="18.6-Leia" type="stable"><url>https://kodi.tv/article/kodi-leia-186-release/</url></release>
+        <release date="2019-11-18" version="18.5-Leia" type="stable"><url>https://kodi.tv/article/kodi-leia-185-release/</url></release>
+        <release date="2019-08-31" version="18.4-Leia" type="stable"><url>https://kodi.tv/article/kodi-leia-184-release/</url></release>
+        <release date="2019-06-27" version="18.3-Leia" type="stable"><url>https://kodi.tv/article/kodi-leia-183-release/</url></release>
+        <release date="2019-04-22" version="18.2-Leia" type="stable"><url>https://kodi.tv/article/kodi-leia-182-release/</url></release>
+        <release date="2019-02-17" version="18.1-Leia" type="stable"/>
+        <release date="2019-01-28" version="18.0-Leia" type="stable"><url>https://kodi.tv/article/kodi-180/</url></release>
+    </releases>
+    <content_rating type="oars-1.0">
+        <content_attribute id="violence-cartoon">none</content_attribute>
+        <content_attribute id="violence-fantasy">none</content_attribute>
+        <content_attribute id="violence-realistic">none</content_attribute>
+        <content_attribute id="violence-bloodshed">none</content_attribute>
+        <content_attribute id="violence-sexual">none</content_attribute>
+        <content_attribute id="drugs-alcohol">none</content_attribute>
+        <content_attribute id="drugs-narcotics">none</content_attribute>
+        <content_attribute id="drugs-tobacco">none</content_attribute>
+        <content_attribute id="sex-nudity">none</content_attribute>
+        <content_attribute id="sex-themes">none</content_attribute>
+        <content_attribute id="language-profanity">none</content_attribute>
+        <content_attribute id="language-humor">none</content_attribute>
+        <content_attribute id="language-discrimination">none</content_attribute>
+        <content_attribute id="social-chat">none</content_attribute>
+        <content_attribute id="social-info">none</content_attribute>
+        <content_attribute id="social-audio">none</content_attribute>
+        <content_attribute id="social-location">none</content_attribute>
+        <content_attribute id="social-contacts">none</content_attribute>
+        <content_attribute id="money-purchasing">none</content_attribute>
+        <content_attribute id="money-gambling">none</content_attribute>
+    </content_rating>
+    <recommends>
+        <control>keyboard</control>
+        <control>pointing</control>
+        <control>touch</control>
+        <control>tv-remote</control>
+        <control>gamepad</control>
+        <control>tablet</control>
+    </recommends>
+    <branding>
+        <color type="primary" scheme_preference="light">#E8F8FF</color>
+        <color type="primary" scheme_preference="dark">#082838</color>
+    </branding>
+</component>

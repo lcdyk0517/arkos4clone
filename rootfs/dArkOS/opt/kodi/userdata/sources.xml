@@ -1,0 +1,25 @@
+<sources>
+    <programs>
+        <default pathversion="1"></default>
+    </programs>
+    <video>
+        <default pathversion="1"></default>
+        <source>
+            <name>videos</name>
+            <path pathversion="1">/roms2/videos/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+    </video>
+    <music>
+        <default pathversion="1"></default>
+    </music>
+    <pictures>
+        <default pathversion="1"></default>
+    </pictures>
+    <files>
+        <default pathversion="1"></default>
+    </files>
+    <games>
+        <default pathversion="1"></default>
+    </games>
+</sources>

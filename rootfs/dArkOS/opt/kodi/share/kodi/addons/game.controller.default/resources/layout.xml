@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<layout label="30000" image="layout.png">
+  <category name="face" label="35074">
+    <button name="a" type="digital" label="30001"/>
+    <button name="b" type="digital" label="30002"/>
+    <button name="x" type="digital" label="30003"/>
+    <button name="y" type="digital" label="30004"/>
+    <button name="start" type="digital" label="30005"/>
+    <button name="back" type="digital" label="30006"/>
+    <button name="guide" type="digital" label="30007"/>
+    <button name="up" type="digital" label="30010"/>
+    <button name="right" type="digital" label="30012"/>
+    <button name="down" type="digital" label="30011"/>
+    <button name="left" type="digital" label="30013"/>
+    <button name="leftthumb" type="digital" label="30008"/>
+    <button name="rightthumb" type="digital" label="30009"/>
+  </category>
+  <category name="shoulder" label="35075">
+    <button name="leftbumper" type="digital" label="30014"/>
+    <button name="rightbumper" type="digital" label="30015"/>
+  </category>
+  <category name="triggers" label="35076">
+    <button name="lefttrigger" type="analog" label="30016"/>
+    <button name="righttrigger" type="analog" label="30017"/>
+  </category>
+  <category name="analogsticks" label="35077">
+    <analogstick name="leftstick" label="30008"/>
+    <analogstick name="rightstick" label="30009"/>
+  </category>
+  <category name="haptics">
+    <motor name="leftmotor"/>
+    <motor name="rightmotor"/>
+  </category>
+</layout>

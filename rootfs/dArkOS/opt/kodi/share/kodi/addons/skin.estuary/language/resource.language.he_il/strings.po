@@ -1,0 +1,745 @@
+# Kodi Media Center language file
+# Addon Name: Estuary
+# Addon id: skin.estuary
+# Addon Provider: Team Kodi
+msgid ""
+msgstr ""
+"Project-Id-Version: KODI Main\n"
+"Report-Msgid-Bugs-To: https://github.com/xbmc/xbmc/issues/\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2023-12-04 09:42+0000\n"
+"Last-Translator: Christian Gade <gade@kodi.tv>\n"
+"Language-Team: Hebrew (Israel) <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-estuary/he_il/>\n"
+"Language: he_il\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && n % 10 == 0) ? 2 : 3));\n"
+"X-Generator: Weblate 5.2.1\n"
+
+msgctxt "Addon Summary"
+msgid "Estuary skin by phil65. (Kodi's default skin)"
+msgstr "מעטפת Estuary של phil65 (ברירת המחדל של קודי)"
+
+msgctxt "Addon Description"
+msgid "Estuary is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
+msgstr "Estuary היא מעטפת ברירת המחדל של קודי מגרסאות 17.0 ומעלה. מטרת מעטפת זו היא להיות פשוטה לשימוש ולהכרה ראשונית על ידי משתמשים חדשים."
+
+msgctxt "Addon Disclaimer"
+msgid "Estuary is the default skin for Kodi, removing it may cause issues"
+msgstr "Estuary היא מעטפת ברירת המחדל של קודי, הסרתה עלולה לגרום לתקלות"
+
+msgctxt "#31000"
+msgid "Now playing"
+msgstr "מנגן כעת"
+
+msgctxt "#31001"
+msgid "Search..."
+msgstr "חיפוש..."
+
+msgctxt "#31002"
+msgid "Show media fanart as background"
+msgstr "הראה מדיית פאנארט כרקע"
+
+msgctxt "#31003"
+msgid "Cinema mode"
+msgstr "מצב קולנוע"
+
+msgctxt "#31004"
+msgid "Change mode"
+msgstr "שינוי מצב"
+
+msgctxt "#31005"
+msgid "Watch as 2D"
+msgstr "צפייה כ-2D"
+
+msgctxt "#31006"
+msgid "Random movies"
+msgstr "‎סרטים אקראיים"
+
+msgctxt "#31007"
+msgid "Unwatched movies"
+msgstr "סרטים שלא נצפו"
+
+msgctxt "#31008"
+msgid "Enable category widgets"
+msgstr "אפשר יישומוני קטגוריה"
+
+msgctxt "#31009"
+msgid "Download icons"
+msgstr "הורד סמלילים"
+
+msgctxt "#31010"
+msgid "In progress movies"
+msgstr "סרטים בצפייה"
+
+msgctxt "#31011"
+msgid "Most played albums"
+msgstr "אלבומים שנוגנו הכי הרבה"
+
+msgctxt "#31012"
+msgid "Random albums"
+msgstr "‎אלבומים אקראיים"
+
+msgctxt "#31013"
+msgid "Random artists"
+msgstr "אמנים אקראיים"
+
+msgctxt "#31014"
+msgid "Unplayed albums"
+msgstr "אלבומים שלא נוגנו"
+
+#. home screen recordings widget: recent tv / radio recordings
+msgctxt "#31015"
+msgid "Recent recordings"
+msgstr "הקלטות אחרונות"
+
+#. home screen channel widget: recently played tv channels. (please note that in some non-english languages #31018 and #31016 might not be equal)
+msgctxt "#31016"
+msgid "Recently played channels"
+msgstr "ערוצים שהופעלו לאחרונה"
+
+msgctxt "#31017"
+msgid "Rated"
+msgstr "מדורג"
+
+#. home screen channel widget: recently played radio channels. (please note that in some non-english languages #31018 and #31016 might not be equal)
+msgctxt "#31018"
+msgid "Recently played channels"
+msgstr "ערוצים שהופעלו לאחרונה"
+
+msgctxt "#31019"
+msgid "Forecast"
+msgstr "תחזית"
+
+msgctxt "#31020"
+msgid "Actions"
+msgstr "פעולות"
+
+msgctxt "#31021"
+msgid "Misc options"
+msgstr "אפשרויות שונות"
+
+msgctxt "#31022"
+msgid "Sort by"
+msgstr "מיון לפי"
+
+msgctxt "#31023"
+msgid "Viewtype"
+msgstr "מצב תצוגה"
+
+msgctxt "#31024"
+msgid "Choose rating to display for media items"
+msgstr "בחר דירוג להצגה עבור פריטי מדיה"
+
+msgctxt "#31025"
+msgid "No favourites found. You can add any item from media views to this list by using the context menu."
+msgstr "לא נמצאו מועדפים. ניתן להוסיף כל פריט מדיה לרשימה זו ע\"י שימוש בתפריט הקישור."
+
+msgctxt "#31026"
+msgid "Timeshift"
+msgstr "הסט זמן"
+
+msgctxt "#31027"
+msgid "Next aired"
+msgstr "השידור הבא"
+
+msgctxt "#31028"
+msgid "Show fanart"
+msgstr "הצג פאנארט"
+
+msgctxt "#31029"
+msgid "Last logged in"
+msgstr "התחברות לאחרונה ב-"
+
+#. Label to show the system memory usage
+msgctxt "#31030"
+msgid "System memory usage"
+msgstr "שימוש בזיכרון המערכת"
+
+msgctxt "#31031"
+msgid "Version info"
+msgstr "מידע גרסה"
+
+msgctxt "#31032"
+msgid "Order"
+msgstr "סידור"
+
+msgctxt "#31033"
+msgid "Your rating"
+msgstr "הדירוג שלך"
+
+msgctxt "#31034"
+msgid "Extended info"
+msgstr "מידע מורחב"
+
+msgctxt "#31035"
+msgid "Pages"
+msgstr "‎דפים"
+
+msgctxt "#31036"
+msgid "items"
+msgstr "פריטים"
+
+msgctxt "#31037"
+msgid "Selected track"
+msgstr ""
+
+msgctxt "#31038"
+msgid "Rewind"
+msgstr "הרצה אחורה"
+
+msgctxt "#31039"
+msgid "Fast forward"
+msgstr "הרצה קדימה"
+
+msgctxt "#31041"
+msgid "Camera manufacturer"
+msgstr "יצרן מצלמה"
+
+msgctxt "#31042"
+msgid "Playlist options"
+msgstr "אפשרויות רשימת ניגון"
+
+msgctxt "#31043"
+msgid "Set the type and add rules to create a smart playlist. These playlists are dynamic and include all media items from your database which apply to your chosen rules."
+msgstr "הגדר את הסוג והוסף כללים ליצירת רשימת השמעה חכמה. רשימות השמעה אלו דינמיות וכוללות את כל פריטי המדיה ממסד הנתונים שלך, החלים בכללים שבחרת."
+
+msgctxt "#31044"
+msgid "Add group"
+msgstr "הוסף קבוצה"
+
+msgctxt "#31045"
+msgid "Rename group"
+msgstr "שנה שם קבוצה"
+
+msgctxt "#31046"
+msgid "Delete group"
+msgstr "מחק קבוצה"
+
+msgctxt "#31048"
+msgid "Available"
+msgstr "זמין"
+
+msgctxt "#31052"
+msgid "filtered"
+msgstr "מסונן"
+
+msgctxt "#31053"
+msgid "Arial based"
+msgstr "מבוסס אריאל"
+
+msgctxt "#31054"
+msgid "Press [B]Left[/B] to step back, or [B]Right[/B] to step forward"
+msgstr ""
+
+msgctxt "#31055"
+msgid "Press [B]Right[/B] to frame advance"
+msgstr ""
+
+msgctxt "#31056"
+msgid "Go to playlist"
+msgstr "מעבר לרשימת ניגון"
+
+msgctxt "#31057"
+msgid "Show login screen on startup"
+msgstr "הצג מסך כניסה בעת ההפעלה"
+
+msgctxt "#31058"
+msgid "Automatic Login on startup"
+msgstr "התחברות אוטומטית באיתחול"
+
+msgctxt "#31061"
+msgid "Main menu items"
+msgstr "פריטי תפריט ראשי"
+
+msgctxt "#31062"
+msgid "Choose weather fanart pack"
+msgstr "בחר חבילת פאנארט למזג האוויר"
+
+msgctxt "#31063"
+msgid "Sections"
+msgstr "מקטעים"
+
+msgctxt "#31065"
+msgid "Video playlist"
+msgstr "רשימות ניגון וידאו"
+
+msgctxt "#31066"
+msgid "Music playlist"
+msgstr "רשימות ניגון מוזיקה"
+
+msgctxt "#31067"
+msgid "Event log"
+msgstr "יומן אירועים"
+
+msgctxt "#31068"
+msgid "Choose presets"
+msgstr "בחר הגדרות קבועות מראש"
+
+msgctxt "#31069"
+msgid "Last Updated"
+msgstr "עודכן לאחרונה"
+
+msgctxt "#31071"
+msgid "by"
+msgstr "על ידי"
+
+msgctxt "#31072"
+msgid "Power Options"
+msgstr "אפשרויות כיבוי"
+
+msgctxt "#31073"
+msgid "Total length"
+msgstr ""
+
+msgctxt "#31074"
+msgid "Total duration"
+msgstr "אורך כולל"
+
+msgctxt "#31075"
+msgid "Movie sets"
+msgstr "מארז סרטים"
+
+msgctxt "#31079"
+msgid "Cast not available"
+msgstr "שידור אינו זמין"
+
+msgctxt "#31080"
+msgid "Ends at"
+msgstr "שעת סיום"
+
+msgctxt "#31082"
+msgid "Lyrics add-on"
+msgstr "הרחבת מילים לשירים"
+
+msgctxt "#31083"
+msgid "Lyrics add-on settings"
+msgstr "הגדרות הרחבת מילים"
+
+msgctxt "#31084"
+msgid "Visualisation settings"
+msgstr "הגדרות הדמיה"
+
+msgctxt "#31089"
+msgid "Available groups"
+msgstr "קבוצות זמינות"
+
+msgctxt "#31092"
+msgid "Video menu"
+msgstr "תפריט ווידאו"
+
+msgctxt "#31093"
+msgid "Show weather info in top bar"
+msgstr "הצג פרטי מזג אוויר בסרגל העליון"
+
+msgctxt "#31095"
+msgid "Use slide animations"
+msgstr "אפשר הנפשות החלקה"
+
+msgctxt "#31096"
+msgid "Local subtitle available"
+msgstr "כתובית מקומית זמינה"
+
+msgctxt "#31097"
+msgid "Channel options"
+msgstr "אפשרויות ערוץ"
+
+msgctxt "#31098"
+msgid "Select your Kodi user profile[CR]to login and continue"
+msgstr "יש לבחור את חשבון המשתמש שלך[CR]בקודי להתחברות והמשך"
+
+#. viewtype name
+msgctxt "#31099"
+msgid "IconWall"
+msgstr "קיר סמלילים"
+
+#. viewtype name
+msgctxt "#31100"
+msgid "Shift"
+msgstr "הזזה"
+
+#. viewtype name
+msgctxt "#31101"
+msgid "InfoWall"
+msgstr "קיר מידע"
+
+#. viewtype name
+msgctxt "#31102"
+msgid "Wall"
+msgstr "קיר"
+
+msgctxt "#31103"
+msgid "Enter text here..."
+msgstr "הכנס את הטקסט כאן..."
+
+msgctxt "#31104"
+msgid "Your library is currently empty. In order to populate it with your personal media, enter \"Files\" section, add a media source and configure it. After the source has been added and indexed you will be able to browse your library."
+msgstr "הספרייה שלך ריקה כרגע. על מנת להוסיף את התכנים שלך, יש להוסיף מקורות מדיה דרך מסך 'קבצים'. לאחר שהמקור נוסף ונסרק, הוא יהיה זמין בספרייה."
+
+msgctxt "#31105"
+msgid "Add video sources and set the appropriate content type in order to populate your video libraries."
+msgstr "הוסף מקורות וידאו והגדר את סוג התוכן המתאים כדי לאכלס את ספריות הווידאו שלך."
+
+msgctxt "#31106"
+msgid "Teletext"
+msgstr "טלטקסט"
+
+#. viewtype name
+msgctxt "#31107"
+msgid "WideList"
+msgstr "רשימה רחבה"
+
+msgctxt "#31110"
+msgid "Enter files section"
+msgstr "הזן מקטע קבצים"
+
+msgctxt "#31111"
+msgid "View your personal pictures or download one of the many image add-ons from the official repository."
+msgstr "הצג את התמונות האישיות שלך או הורד אחת מהרחבות התמונה הרבות מהמאגר הרשמי."
+
+msgctxt "#31112"
+msgid "Toggle audio stream"
+msgstr "החלף זרם שמע"
+
+msgctxt "#31113"
+msgid "Search local library"
+msgstr "חפש ספרייה מקומית"
+
+msgctxt "#31114"
+msgid "Search YouTube"
+msgstr "חפש ביו-טיוב"
+
+msgctxt "#31115"
+msgid "Toggle subtitle"
+msgstr ""
+
+msgctxt "#31116"
+msgid "Remove this main menu item"
+msgstr "מחק את פריט התפריט הראשי הזה"
+
+msgctxt "#31117"
+msgid "Edit nodes"
+msgstr "עריכת צמתים"
+
+msgctxt "#31118"
+msgid "Enter add-on browser"
+msgstr "הפעל דפדפן הרחבות"
+
+msgctxt "#31119"
+msgid "You do not have any add-ons installed yet. Visit our add-on browser to browse through our collection and improve your Kodi experience."
+msgstr "עדיין לא מותקנות הרחבות. בקר בדפדפן ההרחבות שלנו, כדי לעיין באוסף שלנו ולשפר את חווית הקודי שלך."
+
+msgctxt "#31120"
+msgid "You did not set up a weather provider yet. In order to view weather information, choose a weather provider and set up your location."
+msgstr "עדיין לא הגדרת ספק מזג אוויר. כדי להציג מידע על מזג האוויר, בחר ספק מזג אוויר והגדר את המיקום שלך."
+
+msgctxt "#31121"
+msgid "Set weather provider"
+msgstr "הגדר ספק מזג האוויר"
+
+msgctxt "#31122"
+msgid "Unwatched TV Shows"
+msgstr "סדרות טלוויזיה שלא נצפו"
+
+msgctxt "#31123"
+msgid "Same director"
+msgstr "אותו במאי"
+
+msgctxt "#31125"
+msgid "Press up for actor info"
+msgstr "לחץ על למעלה לקבלת מידע על השחקן"
+
+msgctxt "#31126"
+msgid "Press OK to read plot"
+msgstr "לחץ על אישור לקריאת העלילה"
+
+msgctxt "#31127"
+msgid "Show icons"
+msgstr "הראה סמלילים"
+
+msgctxt "#31128"
+msgid "Contributors"
+msgstr "תורמים"
+
+msgctxt "#31129"
+msgid "General settings applying to all areas of the skin."
+msgstr "הגדרות כלליות החלות על כל האזורים של המעטפת."
+
+msgctxt "#31130"
+msgid "Main menu-related settings: Configure the home screen to your likings."
+msgstr "הגדרות הקשורות לתפריט הראשי: הגדר את מסך הבית בהתאם להעדפותיך."
+
+msgctxt "#31131"
+msgid "Choose skin fanart pack"
+msgstr "בחר חבילת פאנארט למעטפת"
+
+msgctxt "#31132"
+msgid "Select Program"
+msgstr "בחר תוכנית"
+
+msgctxt "#31133"
+msgid "Select Resolution"
+msgstr "בחירת רזולוציה"
+
+msgctxt "#31134"
+msgid "Remaining"
+msgstr "נותר"
+
+msgctxt "#31135"
+msgid "Binary"
+msgstr ""
+
+msgctxt "#31136"
+msgid "Click here to see latest changes..."
+msgstr "לחץ כאן לראות את השינויים האחרונים..."
+
+#. Label to show PVR info page
+msgctxt "#31137"
+msgid "PVR"
+msgstr "PVR"
+
+#. Label to show player info page
+msgctxt "#31138"
+msgid "Player"
+msgstr "נגן"
+
+#. Label to show video decoder name
+msgctxt "#31139"
+msgid "Video decoder"
+msgstr "מפענח וידאו"
+
+#. Label to show the video pixel format
+msgctxt "#31140"
+msgid "Pixel format"
+msgstr "פורמט פיקסל"
+
+msgctxt "#31141"
+msgid "Changes for version"
+msgstr "שינויים עבור הגרסה"
+
+msgctxt "#31142"
+msgid "Play speed"
+msgstr "מהירות ניגון"
+
+msgctxt "#31143"
+msgid "You did not set up PVR yet. In order to use PVR, choose a PVR client addon and configure it. Please visit http://kodi.wiki/view/PVR to learn more."
+msgstr "אתה עדיין לא הגדרת לקוח PVR. כדי להשתמש ב-PVR, בחר בהרחבת לקוח PVR והגדר אותה. בקר בכתובת: http://kodi.wiki/view/PVR למידע נוסף."
+
+msgctxt "#31144"
+msgid "Enter add-on browser"
+msgstr "הפעל דפדפן הרחבות"
+
+msgctxt "#31145"
+msgid "Search add-ons"
+msgstr "חפש הרחבות"
+
+msgctxt "#31146"
+msgid "In cinemas"
+msgstr "בקולנוע"
+
+msgctxt "#31147"
+msgid "In cinemas soon"
+msgstr ""
+
+msgctxt "#31148"
+msgid "Categories"
+msgstr "קטגוריות"
+
+msgctxt "#31149"
+msgid "Select genre fanart pack"
+msgstr "בחר חבילת סגנונות פאנארט"
+
+msgctxt "#31150"
+msgid "Origin"
+msgstr ""
+
+msgctxt "#31151"
+msgid "Unwatched music videos"
+msgstr "סרטוני מוזיקה שטרם נצפו"
+
+msgctxt "#31152"
+msgid "Random music videos"
+msgstr "סרטוני מוזיקה אקראיים"
+
+msgctxt "#31153"
+msgid "You do not have any add-ons of this type installed. Enter the add-on browser to download add-ons created by our community."
+msgstr "לא מותקנות הרחבות מהסוג זה. אנא כנס לדפדפן ההרחבות כדי להוריד הרחבות שנוצרו על ידי הקהילה שלנו."
+
+msgctxt "#31154"
+msgid "Press OK to switch between locations"
+msgstr "לחץ על אישור כדי לעבור בין מיקומים"
+
+msgctxt "#31155"
+msgid "No bookmarks created yet."
+msgstr "עדיין לא נוצרו סימניות."
+
+msgctxt "#31156"
+msgid "Choose background pattern"
+msgstr "בחר תבנית רקע"
+
+msgctxt "#31157"
+msgid "Edit categories"
+msgstr "עריכת קטגוריות"
+
+msgctxt "#31158"
+msgid "Touch mode"
+msgstr "מצב לחיצה"
+
+msgctxt "#31159"
+msgid "Artwork"
+msgstr "גרפיקה"
+
+msgctxt "#31160"
+msgid "Show media flags"
+msgstr "הצג דגלי מידע על הסרט"
+
+msgctxt "#31161"
+msgid "Numeric pad"
+msgstr "לוח ספרות"
+
+msgctxt "#31162"
+msgid "Play your personal games or download one of the many game add-ons from the official repository."
+msgstr "שחק את המשחקים האישיים שלך או הורד אחד מהמשחקים הרבים מהמאגר הרשמי."
+
+msgctxt "#31163"
+msgid "Show Fanart background"
+msgstr "הצג רקע פאנארט"
+
+#. Choose profile identifier
+msgctxt "#31164"
+msgid "Choose kind of profile identification"
+msgstr "לבחור סוג של זיהוי פרופיל"
+
+#. Label for the kind of profile identification
+msgctxt "#31165"
+msgid "Profile name"
+msgstr "שם משתמש"
+
+#. Label for the kind of profile identification
+msgctxt "#31166"
+msgid "Profile avatar"
+msgstr "דמות מייצגת לפרופיל"
+
+#. Label of a setting
+msgctxt "#31167"
+msgid "Animate background"
+msgstr "הנפשת הרקע"
+
+#. Label of a setting
+msgctxt "#31168"
+msgid "Show posters instead of thumbs for musicvideos"
+msgstr ""
+
+#. Description label for skin settings area
+msgctxt "#31169"
+msgid "Artwork related settings."
+msgstr ""
+
+#. Label for OSD settings category
+msgctxt "#31170"
+msgid "On screen display"
+msgstr ""
+
+#. Helper text for the label of OSD settings category
+msgctxt "#31171"
+msgid "On screen display (OSD) related settings"
+msgstr ""
+
+#. Setting Automatically close video OSD
+msgctxt "#31172"
+msgid "Automatically close video OSD"
+msgstr ""
+
+#. Setting auto close time for video osd
+msgctxt "#31173"
+msgid "Video OSD autoclose time (seconds)"
+msgstr ""
+
+#. Setting to control what happens when clicking a music album on the home screen
+msgctxt "#31174"
+msgid "Default select action for albums on the home screen"
+msgstr ""
+
+#. Setting to control what happens when clicking a TV show on the home screen
+msgctxt "#31175"
+msgid "Default select action for TV shows on the home screen"
+msgstr ""
+
+#. Setting to control what happens when clicking a movie set on the home screen
+msgctxt "#31176"
+msgid "Default select action for movie sets on the home screen"
+msgstr ""
+
+# empty strings from id 31170 to 31599
+#. Label to show the video codec name
+msgctxt "#31600"
+msgid "Video codec"
+msgstr "מקודד וידאו"
+
+#. Label to show the video resolution
+msgctxt "#31601"
+msgid "Video resolution"
+msgstr "אבחנת וידאו"
+
+#. Label to show the video aspect
+msgctxt "#31602"
+msgid "Video aspect"
+msgstr "יחס וידאו"
+
+#. Label to show the video bitrate
+msgctxt "#31603"
+msgid "Video bitrate"
+msgstr ""
+
+#. Label to show the audio codec name
+msgctxt "#31604"
+msgid "Audio codec"
+msgstr "מקודד שמע"
+
+#. Label to show the number of audio channels
+msgctxt "#31605"
+msgid "Audio channels"
+msgstr "ערוצי אודיו"
+
+#. Label to show the audio bitrate
+msgctxt "#31606"
+msgid "Audio bitrate"
+msgstr ""
+
+#. Label to show the screen resolution
+msgctxt "#31607"
+msgid "Screen resolution"
+msgstr "אבחנת מסך"
+
+#. Label to show the system rendering speed
+msgctxt "#31608"
+msgid "System rendering speed"
+msgstr ""
+
+#. Label to show the system CPU usage
+msgctxt "#31609"
+msgid "System CPU usage"
+msgstr "שימוש המערכת במעבד"
+
+#. Label to show the media (metadata) info page
+msgctxt "#31610"
+msgid "Media"
+msgstr "מידה"
+
+#. Label to show the system info page
+msgctxt "#31611"
+msgid "System"
+msgstr "מערכת"
+
+#~ msgctxt "#31615"
+#~ msgid "Extras"
+#~ msgstr "מיוחדים"
+
+#~ msgctxt "#31137"
+#~ msgid "PVR info"
+#~ msgstr "מידע PVR"
+
+#~ msgctxt "#31138"
+#~ msgid "Player process info"
+#~ msgstr "מידע על תהליך הנגן"

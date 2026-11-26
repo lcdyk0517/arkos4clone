@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<include>Animation_DialogPopupOpenClose</include>
+	<controls>
+		<control type="group">
+			<centertop>50%</centertop>
+			<centerleft>50%</centerleft>
+			<width>1640</width>
+			<height>780</height>
+			<include>Animation_DialogPopupVisible</include>
+			<include content="DialogBackgroundCommons">
+				<param name="width" value="1640" />
+				<param name="height" value="780" />
+				<param name="header_id" value="2" />
+			</include>
+			<control type="image">
+				<left>20</left>
+				<width>400</width>
+				<height>630</height>
+				<top>100</top>
+				<texture>$VAR[VideoListPosterVar]</texture>
+				<aspectratio aligny="top">keep</aspectratio>
+			</control>
+			<control type="label">
+				<description>Path label</description>
+				<left>20</left>
+				<bottom>10</bottom>
+				<width>1300</width>
+				<height>30</height>
+				<font>font12</font>
+				<align>right</align>
+				<aligny>bottom</aligny>
+				<textcolor>grey</textcolor>
+				<label>$INFO[Container(50).ListItem.FileNameAndPath]</label>
+			</control>
+			<control type="label">
+				<right>20</right>
+				<bottom>10</bottom>
+				<width>275</width>
+				<height>30</height>
+				<font>font12</font>
+				<align>right</align>
+				<aligny>bottom</aligny>
+				<textcolor>grey</textcolor>
+				<label>$VAR[SelectLabel]</label>
+			</control>
+			<control type="group" id="100">
+				<top>80</top>
+				<left>420</left>
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>920</width>
+					<height>665</height>
+					<texture border="40">buttons/dialogbutton-nofo.png</texture>
+				</control>
+				<control type="list" id="50">
+					<description>version list</description>
+					<top>20</top>
+					<left>20</left>
+					<height>625</height>
+					<onup>50</onup>
+					<ondown>50</ondown>
+					<onleft>9001</onleft>
+					<onright>60</onright>
+					<pagecontrol>60</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<include>MediaInfoListLayout</include>
+				</control>
+				<control type="scrollbar" id="60">
+					<left>900</left>
+					<top>20</top>
+					<width>12</width>
+					<height>625</height>
+					<onleft>50</onleft>
+					<onright>101</onright>
+					<orientation>vertical</orientation>
+				</control>
+			</control>
+			<control type="grouplist" id="101">
+				<left>1340</left>
+				<top>80</top>
+				<width>300</width>
+				<height>565</height>
+				<onleft condition="Integer.IsGreater(Container(50).NumItems,0)">100</onleft>
+				<itemgap>dialogbuttons_itemgap</itemgap>
+				<align>top</align>
+				<scrolltime tween="quadratic">200</scrolltime>
+				<include content="DefaultDialogButton">
+					<param name="id" value="21" />
+					<param name="label" value="$LOCALIZE[208]" />
+				</include>
+				<include content="DefaultDialogButton">
+					<param name="id" value="22" />
+					<param name="label" value="$LOCALIZE[40014]" />
+					<param name="visible">Window.IsVisible(managevideoversions)</param>
+				</include>
+				<include content="DefaultDialogButton">
+					<param name="id" value="23" />
+					<param name="label" value="$LOCALIZE[40015]" />
+					<param name="visible">Window.IsVisible(managevideoextras)</param>
+				</include>
+				<include content="DefaultDialogButton">
+					<param name="id" value="27" />
+					<param name="label" value="$LOCALIZE[13511]" />
+				</include>
+				<include content="DefaultDialogButton">
+					<param name="id" value="24" />
+					<param name="label" value="$LOCALIZE[40004]" />
+					<param name="visible">Window.IsVisible(managevideoversions)</param>
+				</include>
+				<include content="DefaultDialogButton">
+					<param name="id" value="28" />
+					<param name="label" value="$LOCALIZE[118]" />
+					<param name="visible">Window.IsVisible(managevideoextras)</param>
+				</include>
+				<include content="DefaultDialogButton">
+					<param name="id" value="26" />
+					<param name="label" value="$LOCALIZE[15015]" />
+				</include>
+				<include content="DefaultDialogButton">
+					<param name="id" value="25" />
+					<param name="label" value="$LOCALIZE[40023]" />
+					<param name="visible">Window.IsVisible(managevideoversions)</param>
+				</include>
+			</control>
+		</control>
+	</controls>
+</window>

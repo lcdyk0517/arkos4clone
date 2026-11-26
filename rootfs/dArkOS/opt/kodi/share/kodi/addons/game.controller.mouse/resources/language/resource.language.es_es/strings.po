@@ -1,0 +1,70 @@
+# Kodi Media Center language file
+# Addon Name: Computer Mouse
+# Addon id: game.controller.mouse
+# Addon Provider: Team Kodi
+msgid ""
+msgstr ""
+"Project-Id-Version: game.controller.mouse\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
+"POT-Creation-Date: 2014-05-30 17:00+8\n"
+"PO-Revision-Date: 2023-01-16 22:15+0000\n"
+"Last-Translator: José Antonio Alvarado <jalvarado0.eses@gmail.com>\n"
+"Language-Team: Spanish (Spain) <https://kodi.weblate.cloud/projects/kodi-add-ons-game/game-controller-mouse/es_es/>\n"
+"Language: es_es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.15\n"
+
+msgctxt "Addon Summary"
+msgid "Computer Mouse"
+msgstr "Ratón de Ordenador"
+
+msgctxt "Addon Description"
+msgid "A standard mouse with two buttons and a middle wheel."
+msgstr "Un ratón estándar con dos botones y una rueda central."
+
+msgctxt "#30000"
+msgid "Computer mouse"
+msgstr "Ratón de Ordenador"
+
+msgctxt "#30001"
+msgid "Left button"
+msgstr "Botón izquierdo"
+
+msgctxt "#30002"
+msgid "Right button"
+msgstr "Botón derecho"
+
+msgctxt "#30003"
+msgid "Middle button"
+msgstr "Botón central"
+
+msgctxt "#30004"
+msgid "Wheel up"
+msgstr "Rueda arriba"
+
+msgctxt "#30005"
+msgid "Wheel down"
+msgstr "Rueda abajo"
+
+msgctxt "#30006"
+msgid "Pointer"
+msgstr "Puntero"
+
+msgctxt "#30007"
+msgid "Wheel left"
+msgstr "Rueda izquierda"
+
+msgctxt "#30008"
+msgid "Wheel right"
+msgstr "Rueda derecha"
+
+msgctxt "#30009"
+msgid "Button 4"
+msgstr "Botón 4"
+
+msgctxt "#30010"
+msgid "Button 5"
+msgstr "Botón 5"

@@ -1,0 +1,761 @@
+# Kodi Media Center language file
+# Addon Name: Estuary
+# Addon id: skin.estuary
+# Addon Provider: Team Kodi
+msgid ""
+msgstr ""
+"Project-Id-Version: KODI Main\n"
+"Report-Msgid-Bugs-To: https://github.com/xbmc/xbmc/issues/\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2023-01-29 21:15+0000\n"
+"Last-Translator: psp2111-ADSLGATE <psp100000@hotmail.com>\n"
+"Language-Team: Arabic (Saudi Arabia) <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-estuary/ar_sa/>\n"
+"Language: ar_sa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Weblate 4.15.2\n"
+
+msgctxt "Addon Summary"
+msgid "Estuary skin by phil65. (Kodi's default skin)"
+msgstr "مظهر Estuary بواسطة phil65. ( مظهر كودي الافتراضي )"
+
+msgctxt "Addon Description"
+msgid "Estuary is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
+msgstr "Estuary هو المظهر الافتراضي ل كودي الإصدار 17.0 و أعلى. يطمح بأن يكون سهل الاستخدام والفهم لمستخدمين كودي الجدد."
+
+msgctxt "Addon Disclaimer"
+msgid "Estuary is the default skin for Kodi, removing it may cause issues"
+msgstr "Estuary هو المظهر الافتراضي ل كودي, إزالته قد تسبب بعض المشاكل"
+
+msgctxt "#31000"
+msgid "Now playing"
+msgstr "قيد التشغيل الآن"
+
+msgctxt "#31001"
+msgid "Search..."
+msgstr "البحث..."
+
+msgctxt "#31002"
+msgid "Show media fanart as background"
+msgstr "أظهر Fanart الوسائط كخلفية"
+
+msgctxt "#31003"
+msgid "Cinema mode"
+msgstr "وضع السينما"
+
+msgctxt "#31004"
+msgid "Change mode"
+msgstr "تغيير الوضع"
+
+msgctxt "#31005"
+msgid "Watch as 2D"
+msgstr "مشاهدة كثنائي الأبعاد"
+
+msgctxt "#31006"
+msgid "Random movies"
+msgstr "أفلام عشوائية"
+
+msgctxt "#31007"
+msgid "Unwatched movies"
+msgstr "أفلام لم تشاهدها"
+
+msgctxt "#31008"
+msgid "Enable category widgets"
+msgstr "تمكين ويدجيت الفئة"
+
+msgctxt "#31009"
+msgid "Download icons"
+msgstr "تنزيل الأيقونات"
+
+msgctxt "#31010"
+msgid "In progress movies"
+msgstr "أفلام قيد التقدم"
+
+msgctxt "#31011"
+msgid "Most played albums"
+msgstr "الألبومات الأكثر تشغيلًا"
+
+msgctxt "#31012"
+msgid "Random albums"
+msgstr "ألبومات عشوائية"
+
+msgctxt "#31013"
+msgid "Random artists"
+msgstr "فنانين عشوائيين"
+
+msgctxt "#31014"
+msgid "Unplayed albums"
+msgstr "ألبومات لم يتم تشغيلها"
+
+#. home screen recordings widget: recent tv / radio recordings
+msgctxt "#31015"
+msgid "Recent recordings"
+msgstr "التسجيلات الحديثة"
+
+#. home screen channel widget: recently played tv channels. (please note that in some non-english languages #31018 and #31016 might not be equal)
+msgctxt "#31016"
+msgid "Recently played channels"
+msgstr "القنوات التي تم تشغيلها مؤخرًا"
+
+msgctxt "#31017"
+msgid "Rated"
+msgstr "تصنيف"
+
+#. home screen channel widget: recently played radio channels. (please note that in some non-english languages #31018 and #31016 might not be equal)
+msgctxt "#31018"
+msgid "Recently played channels"
+msgstr "القنوات التي تم تشغيلها مؤخرًا"
+
+msgctxt "#31019"
+msgid "Forecast"
+msgstr "توقعات الطقس"
+
+msgctxt "#31020"
+msgid "Actions"
+msgstr "الإجراءات"
+
+msgctxt "#31021"
+msgid "Misc options"
+msgstr "خيارات متنوعة"
+
+msgctxt "#31022"
+msgid "Sort by"
+msgstr "رتب حسب"
+
+msgctxt "#31023"
+msgid "Viewtype"
+msgstr "طريقة العرض"
+
+msgctxt "#31024"
+msgid "Choose rating to display for media items"
+msgstr "اختر التصنيف الذي تريد عرضه لعناصر الوسائط"
+
+msgctxt "#31025"
+msgid "No favourites found. You can add any item from media views to this list by using the context menu."
+msgstr "لم يتم العثور على مفضلات. يمكنك إضافة أي عنصر من عروض الوسائط إلى هذه القائمة باستخدام قائمة السياق."
+
+msgctxt "#31026"
+msgid "Timeshift"
+msgstr "الانتقال الزمني"
+
+msgctxt "#31027"
+msgid "Next aired"
+msgstr "يبث لاحقًا"
+
+msgctxt "#31028"
+msgid "Show fanart"
+msgstr "إظهار fanart"
+
+msgctxt "#31029"
+msgid "Last logged in"
+msgstr "آخر تسجيل دخول"
+
+#. Label to show the system memory usage
+msgctxt "#31030"
+msgid "System memory usage"
+msgstr "استخدام الذاكرة العشوائية للنظام"
+
+msgctxt "#31031"
+msgid "Version info"
+msgstr "معلومات الإصدار"
+
+msgctxt "#31032"
+msgid "Order"
+msgstr "الترتيب"
+
+msgctxt "#31033"
+msgid "Your rating"
+msgstr "تقييمك"
+
+msgctxt "#31034"
+msgid "Extended info"
+msgstr "المزيد من المعلومات"
+
+msgctxt "#31035"
+msgid "Pages"
+msgstr "الصفحات"
+
+msgctxt "#31036"
+msgid "items"
+msgstr "العناصر"
+
+msgctxt "#31037"
+msgid "Selected track"
+msgstr "المسار المختار"
+
+msgctxt "#31038"
+msgid "Rewind"
+msgstr "التراجع"
+
+msgctxt "#31039"
+msgid "Fast forward"
+msgstr "التقدم السريع"
+
+# empty string with id 31040
+msgctxt "#31041"
+msgid "Camera manufacturer"
+msgstr "الشركة المصنعة للكاميرا"
+
+msgctxt "#31042"
+msgid "Playlist options"
+msgstr "خيارات قائمة التشغيل"
+
+msgctxt "#31043"
+msgid "Set the type and add rules to create a smart playlist. These playlists are dynamic and include all media items from your database which apply to your chosen rules."
+msgstr "عيّن النوع وأضف الأوامر لإنشاء قائمة تشغيل ذكية. قوائم التشغيل هذه ديناميكية وتتضمن جميع عناصر الوسائط من قاعدة البيانات الخاصة بك والتي تنطبق على الأوامر التي اخترتها."
+
+msgctxt "#31044"
+msgid "Add group"
+msgstr "أضف مجموعة"
+
+msgctxt "#31045"
+msgid "Rename group"
+msgstr "إعادة تسمية المجموعة"
+
+msgctxt "#31046"
+msgid "Delete group"
+msgstr "حذف المجموعة"
+
+# empty string with id 31047
+msgctxt "#31048"
+msgid "Available"
+msgstr "متوفر"
+
+# empty strings from id 31049 to 31051
+msgctxt "#31052"
+msgid "filtered"
+msgstr "مفلتر"
+
+msgctxt "#31053"
+msgid "Arial based"
+msgstr "Arial based"
+
+msgctxt "#31054"
+msgid "Press [B]Left[/B] to step back, or [B]Right[/B] to step forward"
+msgstr "اضغط على [B]Left[/B] للتراجع ، أو [B]Right[/B] للتقدم السريع"
+
+msgctxt "#31055"
+msgid "Press [B]Right[/B] to frame advance"
+msgstr "اضغط على [B]Right[/B] لتجاوز الاطار"
+
+msgctxt "#31056"
+msgid "Go to playlist"
+msgstr "انتقل إلى قائمة التشغيل"
+
+msgctxt "#31057"
+msgid "Show login screen on startup"
+msgstr "إظهار شاشة تسجيل الدخول عند بدء التشغيل"
+
+msgctxt "#31058"
+msgid "Automatic Login on startup"
+msgstr "تسجيل الدخول التلقائي عند بدء التشغيل"
+
+msgctxt "#31061"
+msgid "Main menu items"
+msgstr "عناصر القائمة الرئيسية"
+
+msgctxt "#31062"
+msgid "Choose weather fanart pack"
+msgstr "اختر حزمة fanart للطقس"
+
+msgctxt "#31063"
+msgid "Sections"
+msgstr "الأقسام"
+
+# empty string with id 31064
+msgctxt "#31065"
+msgid "Video playlist"
+msgstr "قائمة تشغيل الفيديو"
+
+msgctxt "#31066"
+msgid "Music playlist"
+msgstr "قائمة تشغيل الموسيقى"
+
+msgctxt "#31067"
+msgid "Event log"
+msgstr "سجل الأحداث"
+
+msgctxt "#31068"
+msgid "Choose presets"
+msgstr "اختر الإعدادات المسبقة"
+
+msgctxt "#31069"
+msgid "Last Updated"
+msgstr "محدثة مؤخراً"
+
+# empty string with id 31070
+msgctxt "#31071"
+msgid "by"
+msgstr "بواسطة"
+
+msgctxt "#31072"
+msgid "Power Options"
+msgstr "خيارات الطاقة"
+
+msgctxt "#31073"
+msgid "Total length"
+msgstr "الطول الإجمالي"
+
+msgctxt "#31074"
+msgid "Total duration"
+msgstr "إجمالي المدة"
+
+msgctxt "#31075"
+msgid "Movie sets"
+msgstr "مجموعات الفيلم"
+
+# empty strings from id 31076 to 31078
+msgctxt "#31079"
+msgid "Cast not available"
+msgstr "الطاقم غير متوفر"
+
+msgctxt "#31080"
+msgid "Ends at"
+msgstr "ينتهي عند"
+
+# empty string with id 31081
+msgctxt "#31082"
+msgid "Lyrics add-on"
+msgstr "إضافة \"كلمات الأغاني\""
+
+msgctxt "#31083"
+msgid "Lyrics add-on settings"
+msgstr "إعدادات إضافة \"كلمات الأغاني\""
+
+msgctxt "#31084"
+msgid "Visualisation settings"
+msgstr "إعدادات المؤثرات البصرية"
+
+# empty strings from id 31085 to 31088
+msgctxt "#31089"
+msgid "Available groups"
+msgstr "المجموعات المتاحة"
+
+# empty strings from id 31090 to 31091
+msgctxt "#31092"
+msgid "Video menu"
+msgstr "قائمة الفيديو"
+
+msgctxt "#31093"
+msgid "Show weather info in top bar"
+msgstr "إظهار معلومات الطقس في الشريط العلوي"
+
+# empty string with id 31094
+msgctxt "#31095"
+msgid "Use slide animations"
+msgstr "استخدم الرسوم المتحركة للشرائح"
+
+msgctxt "#31096"
+msgid "Local subtitle available"
+msgstr "الترجمة المحلية متاحة"
+
+msgctxt "#31097"
+msgid "Channel options"
+msgstr "خيارات القناة"
+
+msgctxt "#31098"
+msgid "Select your Kodi user profile[CR]to login and continue"
+msgstr "حدد ملف تعريف مستخدم ل Kodi الخاص بك [CR] لتسجيل الدخول والمتابعة"
+
+#. viewtype name
+msgctxt "#31099"
+msgid "IconWall"
+msgstr "جدار و أيقونة"
+
+#. viewtype name
+msgctxt "#31100"
+msgid "Shift"
+msgstr "مناوبة"
+
+#. viewtype name
+msgctxt "#31101"
+msgid "InfoWall"
+msgstr "جدار ومعلومة"
+
+#. viewtype name
+msgctxt "#31102"
+msgid "Wall"
+msgstr "جدار"
+
+msgctxt "#31103"
+msgid "Enter text here..."
+msgstr "أدخل النص هنا..."
+
+msgctxt "#31104"
+msgid "Your library is currently empty. In order to populate it with your personal media, enter \"Files\" section, add a media source and configure it. After the source has been added and indexed you will be able to browse your library."
+msgstr "مكتبتك فارغة حاليا. لتعبئتها بوسائطك الشخصية ، أدخل قسم \"الملفات\" وأضف مصدر وسائط وقم بتكوينه. بعد إضافة المصدر وفهرسته ، ستتمكن من تصفح مكتبتك."
+
+msgctxt "#31105"
+msgid "Add video sources and set the appropriate content type in order to populate your video libraries."
+msgstr "أضف مصادر الفيديو وقم بتعيين نوع المحتوى المناسب لتعبئة مكتبات الفيديو الخاصة بك."
+
+msgctxt "#31106"
+msgid "Teletext"
+msgstr "نصوص التلفاز"
+
+#. viewtype name
+msgctxt "#31107"
+msgid "WideList"
+msgstr "قائمة واسعة"
+
+# empty strings from id 31108 to 31109
+msgctxt "#31110"
+msgid "Enter files section"
+msgstr "أدخل قسم الملفات"
+
+msgctxt "#31111"
+msgid "View your personal pictures or download one of the many image add-ons from the official repository."
+msgstr "اعرض صورك الشخصية أو قم بتنزيل إحدى إضافات الصور العديدة من المستودع الرسمي."
+
+msgctxt "#31112"
+msgid "Toggle audio stream"
+msgstr "تبديل تدفق الصوت"
+
+msgctxt "#31113"
+msgid "Search local library"
+msgstr "ابحث في المكتبة المحلية"
+
+msgctxt "#31114"
+msgid "Search YouTube"
+msgstr "ابحث في YouTube"
+
+msgctxt "#31115"
+msgid "Toggle subtitle"
+msgstr "تبديل الترجمة"
+
+msgctxt "#31116"
+msgid "Remove this main menu item"
+msgstr "إزالة عنصر القائمة الرئيسية هذا"
+
+msgctxt "#31117"
+msgid "Edit nodes"
+msgstr "تحرير العقد"
+
+msgctxt "#31118"
+msgid "Enter add-on browser"
+msgstr "الدخول الى متصفح الإضافات"
+
+msgctxt "#31119"
+msgid "You do not have any add-ons installed yet. Visit our add-on browser to browse through our collection and improve your Kodi experience."
+msgstr "ليس لديك أي إضافات مثبتة حتى الآن. قم بزيارة متصفح الإضافات لتصفح مجموعتنا وتحسين تجربة Kodi الخاصة بك."
+
+msgctxt "#31120"
+msgid "You did not set up a weather provider yet. In order to view weather information, choose a weather provider and set up your location."
+msgstr "لم تقم بإعداد مزود الطقس حتى الآن. لعرض معلومات الطقس ، اختر مزود الطقس وقم بإعداد موقعك."
+
+msgctxt "#31121"
+msgid "Set weather provider"
+msgstr "تعيين مزود الطقس"
+
+msgctxt "#31122"
+msgid "Unwatched TV Shows"
+msgstr "المسلسلات التي لم تتم مشاهدتها"
+
+msgctxt "#31123"
+msgid "Same director"
+msgstr "نفس المخرج"
+
+# empty string with id 31124
+msgctxt "#31125"
+msgid "Press up for actor info"
+msgstr "إظهار الصور على الخريطة"
+
+msgctxt "#31126"
+msgid "Press OK to read plot"
+msgstr "اضغط على OK لقراءة الحبكة"
+
+msgctxt "#31127"
+msgid "Show icons"
+msgstr "إظهار الأيقونات"
+
+msgctxt "#31128"
+msgid "Contributors"
+msgstr "المساهمون"
+
+msgctxt "#31129"
+msgid "General settings applying to all areas of the skin."
+msgstr "الإعدادات العامة تنطبق على جميع مناطق المظهر."
+
+msgctxt "#31130"
+msgid "Main menu-related settings: Configure the home screen to your likings."
+msgstr "الإعدادات المتعلقة بالقائمة الرئيسية: قم بتكوين الشاشة الرئيسية حسب رغبتك."
+
+msgctxt "#31131"
+msgid "Choose skin fanart pack"
+msgstr "اختر حزمة fanart للمظهر"
+
+msgctxt "#31132"
+msgid "Select Program"
+msgstr "حدد البرنامج"
+
+msgctxt "#31133"
+msgid "Select Resolution"
+msgstr "حدد دقة الوضوح"
+
+msgctxt "#31134"
+msgid "Remaining"
+msgstr "المتبقي"
+
+msgctxt "#31135"
+msgid "Binary"
+msgstr "ثنائي"
+
+msgctxt "#31136"
+msgid "Click here to see latest changes..."
+msgstr "انقر هنا لمشاهدة أحدث التغييرات..."
+
+#. Label to show PVR info page
+msgctxt "#31137"
+msgid "PVR"
+msgstr "PVR"
+
+#. Label to show player info page
+msgctxt "#31138"
+msgid "Player"
+msgstr "مشغل الوسائط"
+
+#. Label to show video decoder name
+msgctxt "#31139"
+msgid "Video decoder"
+msgstr "وحدة فك ترميز الفيديو"
+
+#. Label to show the video pixel format
+msgctxt "#31140"
+msgid "Pixel format"
+msgstr "تنسيق البكسل"
+
+msgctxt "#31141"
+msgid "Changes for version"
+msgstr "التغييرات لهذا الإصدار"
+
+msgctxt "#31142"
+msgid "Play speed"
+msgstr "سرعة التشغيل"
+
+msgctxt "#31143"
+msgid "You did not set up PVR yet. In order to use PVR, choose a PVR client addon and configure it. Please visit http://kodi.wiki/view/PVR to learn more."
+msgstr "لم تقم بإعداد PVR حتى الآن. من أجل استخدام PVR ، اختر ملحق عميل PVR وقم بتكوينه. يرجى زيارة http://kodi.wiki/view/PVR لمعرفة المزيد."
+
+msgctxt "#31144"
+msgid "Enter add-on browser"
+msgstr "الدخول الى متصفح الإضافات"
+
+msgctxt "#31145"
+msgid "Search add-ons"
+msgstr "البحث في الإضافات"
+
+msgctxt "#31146"
+msgid "In cinemas"
+msgstr "في دور السينما"
+
+msgctxt "#31147"
+msgid "In cinemas soon"
+msgstr "في دور السينما قريباً"
+
+msgctxt "#31148"
+msgid "Categories"
+msgstr "الفئات"
+
+msgctxt "#31149"
+msgid "Select genre fanart pack"
+msgstr "حدد حزمة fanart للنوع \"Genre\""
+
+msgctxt "#31150"
+msgid "Origin"
+msgstr "المستودع"
+
+msgctxt "#31151"
+msgid "Unwatched music videos"
+msgstr "المقاطع الموسيقية لم تتم مشاهدتها"
+
+msgctxt "#31152"
+msgid "Random music videos"
+msgstr "مقاطع موسيقية عشوائية"
+
+msgctxt "#31153"
+msgid "You do not have any add-ons of this type installed. Enter the add-on browser to download add-ons created by our community."
+msgstr "ليس لديك أي إضافات مثبتة من هذا النوع. أدخل إلى متصفح الإضافات لتنزيل الإضافات التي أنشأها مجتمعنا."
+
+msgctxt "#31154"
+msgid "Press OK to switch between locations"
+msgstr "اضغط على \"OK\" للتبديل بين المواقع"
+
+msgctxt "#31155"
+msgid "No bookmarks created yet."
+msgstr "لم يتم إنشاء إشارات مرجعية حتى الآن."
+
+msgctxt "#31156"
+msgid "Choose background pattern"
+msgstr "اختر نمط الخلفية"
+
+msgctxt "#31157"
+msgid "Edit categories"
+msgstr "تحرير الفئات"
+
+msgctxt "#31158"
+msgid "Touch mode"
+msgstr "وضع اللمس"
+
+msgctxt "#31159"
+msgid "Artwork"
+msgstr "Artwork"
+
+msgctxt "#31160"
+msgid "Show media flags"
+msgstr "إظهار إشارات الوسائط"
+
+msgctxt "#31161"
+msgid "Numeric pad"
+msgstr "لوحة أرقام"
+
+msgctxt "#31162"
+msgid "Play your personal games or download one of the many game add-ons from the official repository."
+msgstr "العب ألعابك الشخصية أو قم بتنزيل إحدى إضافات الألعاب العديدة من المستودع الرسمي."
+
+msgctxt "#31163"
+msgid "Show Fanart background"
+msgstr "إظهار خلفية Fanart"
+
+#. Choose profile identifier
+msgctxt "#31164"
+msgid "Choose kind of profile identification"
+msgstr "اختر نوع تعريف الملف الشخصي"
+
+#. Label for the kind of profile identification
+msgctxt "#31165"
+msgid "Profile name"
+msgstr "اسم الملف الشخصي"
+
+#. Label for the kind of profile identification
+msgctxt "#31166"
+msgid "Profile avatar"
+msgstr "الصورة الرمزية للملف الشخصي"
+
+#. Label of a setting
+msgctxt "#31167"
+msgid "Animate background"
+msgstr "تحريك الخلفية"
+
+#. Label of a setting
+msgctxt "#31168"
+msgid "Show posters instead of thumbs for musicvideos"
+msgstr "اعرض الملصقات بدلاً من صور العرض لمقاطع الفيديو الموسيقية"
+
+#. Description label for skin settings area
+msgctxt "#31169"
+msgid "Artwork related settings."
+msgstr "الإعدادات المتعلقة بال Artwork."
+
+#. Label for OSD settings category
+msgctxt "#31170"
+msgid "On screen display"
+msgstr "المعروضة على الشاشة"
+
+#. Helper text for the label of OSD settings category
+msgctxt "#31171"
+msgid "On screen display (OSD) related settings"
+msgstr "إعدادات متعلقة بالعرض على الشاشة (OSD)"
+
+#. Setting Automatically close video OSD
+msgctxt "#31172"
+msgid "Automatically close video OSD"
+msgstr "إغلاق واجهة الفيديو تلقائيا"
+
+#. Setting auto close time for video osd
+msgctxt "#31173"
+msgid "Video OSD autoclose time (seconds)"
+msgstr "وقت إغلاق واجهة الفيديو (ثواني)"
+
+#. Setting to control what happens when clicking a music album on the home screen
+msgctxt "#31174"
+msgid "Default select action for albums on the home screen"
+msgstr "الإجراء الافتراضي للألبومات على الشاشة الرئيسية"
+
+#. Setting to control what happens when clicking a TV show on the home screen
+msgctxt "#31175"
+msgid "Default select action for TV shows on the home screen"
+msgstr "الإجراء الافتراضي للمسلسلات على الشاشة الرئيسية"
+
+#. Setting to control what happens when clicking a movie set on the home screen
+msgctxt "#31176"
+msgid "Default select action for movie sets on the home screen"
+msgstr "الإجراء الافتراضي لمجموعات الأفلام على الشاشة الرئيسية"
+
+# empty strings from id 31170 to 31599
+#. Label to show the video codec name
+msgctxt "#31600"
+msgid "Video codec"
+msgstr "ترميز الفيديو"
+
+#. Label to show the video resolution
+msgctxt "#31601"
+msgid "Video resolution"
+msgstr "دقة الفيديو"
+
+#. Label to show the video aspect
+msgctxt "#31602"
+msgid "Video aspect"
+msgstr "أبعاد الفيديو"
+
+#. Label to show the video bitrate
+msgctxt "#31603"
+msgid "Video bitrate"
+msgstr "معدل البت للفيديو"
+
+#. Label to show the audio codec name
+msgctxt "#31604"
+msgid "Audio codec"
+msgstr "ترميز الصوت"
+
+#. Label to show the number of audio channels
+msgctxt "#31605"
+msgid "Audio channels"
+msgstr "قنوات الصوت"
+
+#. Label to show the audio bitrate
+msgctxt "#31606"
+msgid "Audio bitrate"
+msgstr "معدل البت للصوت"
+
+#. Label to show the screen resolution
+msgctxt "#31607"
+msgid "Screen resolution"
+msgstr "دقة الشاشة"
+
+#. Label to show the system rendering speed
+msgctxt "#31608"
+msgid "System rendering speed"
+msgstr "سرعة عرض النظام"
+
+#. Label to show the system CPU usage
+msgctxt "#31609"
+msgid "System CPU usage"
+msgstr "استخدام النظام للمعالج المركزي"
+
+#. Label to show the media (metadata) info page
+msgctxt "#31610"
+msgid "Media"
+msgstr "الوسائط"
+
+#. Label to show the system info page
+msgctxt "#31611"
+msgid "System"
+msgstr "النظام"
+
+#~ msgctxt "#31059"
+#~ msgid "Select + X"
+#~ msgstr "Select + X"
+
+#~ msgctxt "#31060"
+#~ msgid "Select + Start"
+#~ msgstr "Select + Start"
+
+#~ msgctxt "#31137"
+#~ msgid "PVR info"
+#~ msgstr "معلومات PVR"
+
+#~ msgctxt "#31138"
+#~ msgid "Player process info"
+#~ msgstr "معلومات المعالجة لمشغل الوسائط"

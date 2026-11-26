@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<onload condition="!ListItem.Property(addon.isinstalled) + Window.IsActive(addonbrowser)">SetFocus(6)</onload>
+	<onload>SetProperty(infobackground,$ESCINFO[ListItem.Art(fanart)],home)</onload>
+	<onunload>ClearProperty(infobackground,home)</onunload>
+	<controls>
+		<control type="group">
+			<centertop>50%</centertop>
+			<height>1080</height>
+			<centerleft>50%</centerleft>
+			<width>1920</width>
+			<control type="group">
+				<include>OpenClose_Right</include>
+				<control type="button" id="5000">
+					<left>605</left>
+					<top>400</top>
+					<width>755</width>
+					<height>435</height>
+					<label></label>
+					<texturenofocus border="21">dialogs/dialog-bg.png</texturenofocus>
+					<onup>50</onup>
+					<ondown>9000</ondown>
+					<onclick>SetProperty(TextViewer_Header,$LOCALIZE[31141] $INFO[ListItem.AddonVersion],home)</onclick>
+					<onclick>SetProperty(TextViewer_Text,$ESCINFO[ListItem.AddonNews],home)</onclick>
+					<onclick>ActivateWindow(1102)</onclick>
+					<enable>!String.IsEmpty(ListItem.AddonNews)</enable>
+				</control>
+				<control type="textbox">
+					<left>650</left>
+					<top>430</top>
+					<width>665</width>
+					<height>375</height>
+					<label>$INFO[ListItem.AddonSummary,[B],[/B][CR]]$INFO[ListItem.AddonDescription][CR]$VAR[AddonNewsVar,[I][CR][CR],[/I]]</label>
+					<autoscroll delay="5000" repeat="7500" time="5000">true</autoscroll>
+				</control>
+				<control type="group">
+					<left>606</left>
+					<top>160</top>
+					<visible>Integer.IsEqual(Container(50).NumItems,0)</visible>
+					<control type="image">
+						<width>425</width>
+						<height>260</height>
+						<texture background="true">DefaultNoPreview.png</texture>
+						<aspectratio>scale</aspectratio>
+						<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+						<bordersize>20</bordersize>
+					</control>
+					<control type="image">
+						<left>405</left>
+						<width>425</width>
+						<height>260</height>
+						<texture background="true">DefaultNoPreview.png</texture>
+						<aspectratio>scale</aspectratio>
+						<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+						<bordersize>20</bordersize>
+					</control>
+					<control type="image">
+						<left>810</left>
+						<width>425</width>
+						<height>260</height>
+						<texture background="true">DefaultNoPreview.png</texture>
+						<aspectratio>scale</aspectratio>
+						<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+						<bordersize>20</bordersize>
+					</control>
+				</control>
+				<control type="panel" id="50">
+					<left>618</left>
+					<top>160</top>
+					<width>1215</width>
+					<height>273</height>
+					<ondown>5000</ondown>
+					<onup>9000</onup>
+					<orientation>horizontal</orientation>
+					<itemlayout height="225" width="405">
+						<control type="image">
+							<left>-12</left>
+							<width>425</width>
+							<height>260</height>
+							<texture background="true">DefaultNoPreview.png</texture>
+							<aspectratio>scale</aspectratio>
+							<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+							<bordersize>20</bordersize>
+						</control>
+						<control type="image">
+							<left>-12</left>
+							<width>425</width>
+							<height>260</height>
+							<texture background="true">$INFO[ListItem.Icon]</texture>
+							<aspectratio>scale</aspectratio>
+							<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+							<bordersize>20</bordersize>
+						</control>
+					</itemlayout>
+					<focusedlayout height="225" width="405">
+						<control type="image">
+							<left>-12</left>
+							<width>425</width>
+							<height>260</height>
+							<texture background="true">DefaultNoPreview.png</texture>
+							<aspectratio>scale</aspectratio>
+							<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+							<bordersize>20</bordersize>
+						</control>
+						<control type="image">
+							<left>-12</left>
+							<width>425</width>
+							<height>260</height>
+							<texture background="true">$INFO[ListItem.Icon]</texture>
+							<aspectratio>scale</aspectratio>
+							<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+							<bordersize>20</bordersize>
+						</control>
+						<control type="image">
+							<left>4</left>
+							<top>16</top>
+							<width>393</width>
+							<height>228</height>
+							<texture border="8" colordiffuse="button_focus">buttons/thumbnail_focused.png</texture>
+						</control>
+					</focusedlayout>
+				</control>
+				<include content="LeftRightArrows">
+					<param name="list_id" value="50" />
+					<param name="left_posx" value="590" />
+					<param name="right_posx" value="1840" />
+					<param name="posy" value="280" />
+					<param name="visible" value="true" />
+				</include>
+				<control type="group">
+					<control type="image">
+						<left>1370</left>
+						<top>420</top>
+						<width>450</width>
+						<height>396</height>
+						<aspectratio>scale</aspectratio>
+						<texture colordiffuse="AAFFFFFF">colors/black.png</texture>
+					</control>
+					<control type="group">
+						<left>1340</left>
+						<top>430</top>
+						<control type="list">
+							<left>42</left>
+							<top>0</top>
+							<width>446</width>
+							<height>385</height>
+							<pagecontrol/>
+							<itemlayout height="75">
+								<control type="label">
+									<left>10</left>
+									<top>0</top>
+									<width>410</width>
+									<height>30</height>
+									<font>font27_narrow</font>
+									<label>$INFO[ListItem.Label,[COLOR button_focus],[/COLOR]]</label>
+								</control>
+								<control type="label">
+									<left>10</left>
+									<top>30</top>
+									<width>380</width>
+									<height>30</height>
+									<font>font27_narrow</font>
+									<label>$INFO[ListItem.Label2]</label>
+								</control>
+								<control type="image">
+									<right>25</right>
+									<top>35</top>
+									<width>32</width>
+									<height>32</height>
+									<texture>$INFO[ListItem.Icon]</texture>
+								</control>
+							</itemlayout>
+							<focusedlayout height="75">
+								<control type="label">
+									<left>10</left>
+									<top>0</top>
+									<width>410</width>
+									<height>30</height>
+									<font>font27_narrow</font>
+									<label>$INFO[ListItem.Label,[COLOR button_focus],[/COLOR]]</label>
+									<scroll>false</scroll>
+								</control>
+								<control type="label">
+									<left>10</left>
+									<top>30</top>
+									<width>380</width>
+									<height>30</height>
+									<font>font27_narrow</font>
+									<label>$INFO[ListItem.Label2]</label>
+									<scroll>false</scroll>
+								</control>
+								<control type="image">
+									<right>25</right>
+									<top>35</top>
+									<width>32</width>
+									<height>32</height>
+									<texture>$INFO[ListItem.Icon]</texture>
+								</control>
+							</focusedlayout>
+							<content>
+								<item>
+									<label>$LOCALIZE[21866]:</label>
+									<label2>$INFO[ListItem.AddonType]</label2>
+									<visible>!String.IsEmpty(ListItem.AddonType)</visible>
+								</item>
+								<item>
+									<label>$LOCALIZE[31150]:</label>
+									<label2>$INFO[ListItem.AddonOrigin]</label2>
+									<icon>$VAR[AddonsOriginVar]</icon>
+									<visible>!String.IsEmpty(ListItem.AddonOrigin)</visible>
+								</item>
+								<item>
+									<label>$LOCALIZE[22031]:</label>
+									<label2>$INFO[ListItem.AddonSize]</label2>
+									<visible>!String.IsEmpty(ListItem.AddonSize)</visible>
+								</item>
+								<item>
+									<label>$LOCALIZE[467]:</label>
+									<label2>$LOCALIZE[31135]</label2>
+									<visible>ListItem.Property(Addon.IsBinary)</visible>
+								</item>
+								<item>
+									<label>$LOCALIZE[126]:</label>
+									<label2>$INFO[ListItem.Property(Addon.Status)]$INFO[ListItem.Property(Addon.ValidUpdateVersion),[CR]($LOCALIZE[19114]: ,)]</label2>
+									<visible>!String.IsEmpty(ListItem.Property(Addon.Status))</visible>
+								</item>
+							</content>
+						</control>
+					</control>
+				</control>
+				<control type="grouplist" id="9000">
+					<left>90</left>
+					<top>840</top>
+					<width>1740</width>
+					<height>300</height>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onup>5000</onup>
+					<ondown>9000</ondown>
+					<align>center</align>
+					<itemgap>-18</itemgap>
+					<orientation>horizontal</orientation>
+					<include content="InfoDialogButton">
+						<param name="id" value="12" />
+						<param name="icon" value="icons/infodialogs/launch.png" />
+						<param name="label" value="$LOCALIZE[518]" />
+					</include>
+					<include content="InfoDialogButton">
+						<param name="id" value="9" />
+						<param name="icon" value="icons/infodialogs/configure.png" />
+						<param name="label" value="$LOCALIZE[24020]" />
+					</include>
+					<control type="radiobutton" id="13">
+						<width>262</width>
+						<height>140</height>
+						<align>center</align>
+						<aligny>top</aligny>
+						<textoffsetx>35</textoffsetx>
+						<textoffsety>76</textoffsety>
+						<radioposx>81</radioposx>
+						<radioposy>17</radioposy>
+						<radiowidth>100</radiowidth>
+						<font>font12</font>
+						<visible>Control.IsEnabled(13)</visible>
+					</control>
+					<include content="InfoDialogButton">
+						<param name="id" value="10" />
+						<param name="icon" value="icons/infodialogs/info.png" />
+						<param name="label" value="$LOCALIZE[39024]" />
+					</include>
+					<include content="InfoDialogToggleButton">
+						<param name="id" value="7" />
+						<param name="icon_on" value="icons/infodialogs/disable.png" />
+						<param name="icon_off" value="icons/infodialogs/enabled.png" />
+						<param name="selected" value="!String.StartsWith(Control.GetLabel(7),$LOCALIZE[24022]) | !Window.IsActive(addonbrowser)" />
+						<param name="label" value="" />
+					</include>
+					<include content="InfoDialogButton">
+						<param name="id" value="8" />
+						<param name="icon" value="icons/infodialogs/install.png" />
+						<param name="label" value="$LOCALIZE[24138]" />
+					</include>
+					<include content="InfoDialogButton">
+						<param name="id" value="14" />
+						<param name="icon" value="icons/infodialogs/update.png" />
+						<param name="label" value="$LOCALIZE[24069]" />
+					</include>
+					<include content="InfoDialogToggleButton">
+						<param name="id" value="6" />
+						<param name="icon_on" value="icons/infodialogs/uninstall.png" />
+						<param name="icon_off" value="icons/infodialogs/install.png" />
+						<param name="selected" value="ListItem.Property(addon.isinstalled) | !Window.IsActive(addonbrowser)" />
+						<param name="label" value="" />
+					</include>
+				</control>
+			</control>
+			<control type="group">
+				<include>OpenClose_Left</include>
+				<top>158</top>
+				<left>80</left>
+				<control type="image">
+					<left>-6</left>
+					<top>4</top>
+					<width>540</width>
+					<height>540</height>
+					<aspectratio>scale</aspectratio>
+					<texture>dialogs/dialog-bg-nobo.png</texture>
+					<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+				</control>
+				<control type="image">
+					<left>14</left>
+					<top>24</top>
+					<width>500</width>
+					<height>500</height>
+					<aspectratio aligny="top">scale</aspectratio>
+					<fadetime>300</fadetime>
+					<texture fallback="DefaultAddon.png" background="true">$INFO[ListItem.Art(thumb)]</texture>
+				</control>
+				<control type="group">
+					<visible>String.IsEqual(ListItem.AddonLifecycleType,$LOCALIZE[24170]) | String.IsEqual(ListItem.AddonLifecycleType,$LOCALIZE[24171])</visible>
+					<control type="image">
+						<left>14</left>
+						<top>24</top>
+						<width>500</width>
+						<height>500</height>
+						<texture colordiffuse="AAFFFFFF">colors/black.png</texture>
+					</control>
+					<control type="textbox">
+						<left>25</left>
+						<top>24</top>
+						<width>478</width>
+						<height>500</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$VAR[AddonLifecycleType]</label>
+						<font>font32_title</font>
+					</control>
+				</control>
+			</control>
+			<control type="textbox">
+				<left>150</left>
+				<top>980</top>
+				<width>1620</width>
+				<height>82</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<animation effect="fade" start="0" end="100" time="300" delay="300">WindowOpen</animation>
+				<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+				<label>[I]$INFO[ListItem.AddonDisclaimer][/I]</label>
+				<textcolor>88FFFFFF</textcolor>
+				<autoscroll time="2000" delay="3000" repeat="5000">true</autoscroll>
+			</control>
+			<include content="InfoDialogTopBarInfo">
+				<param name="main_label" value="$INFO[ListItem.AddonName]" />
+				<param name="sub_label" value="$INFO[ListItem.AddonVersion,[COLOR grey],[/COLOR]]$INFO[ListItem.AddonCreator, $LOCALIZE[31071] ]" />
+			</include>
+		</control>
+		<include condition="Skin.HasSetting(touchmode)">TouchBackButton</include>
+	</controls>
+</window>

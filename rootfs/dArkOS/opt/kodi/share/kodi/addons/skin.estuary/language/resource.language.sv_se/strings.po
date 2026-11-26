@@ -1,0 +1,753 @@
+# Kodi Media Center language file
+# Addon Name: Estuary
+# Addon id: skin.estuary
+# Addon Provider: Team Kodi
+msgid ""
+msgstr ""
+"Project-Id-Version: KODI Main\n"
+"Report-Msgid-Bugs-To: https://github.com/xbmc/xbmc/issues/\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2023-12-04 09:42+0000\n"
+"Last-Translator: Christian Gade <gade@kodi.tv>\n"
+"Language-Team: Swedish <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-estuary/sv_se/>\n"
+"Language: sv_se\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.2.1\n"
+
+msgctxt "Addon Summary"
+msgid "Estuary skin by phil65. (Kodi's default skin)"
+msgstr "Estuary, ett skal av phil65. (Kodi's standardskal)"
+
+msgctxt "Addon Description"
+msgid "Estuary is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
+msgstr "Estuary är standardskalet för Kodi 17.0 och uppåt. Det är utformat för att vara lättförståeligt och användarvänligt för förstagångsanvändare av Kodi."
+
+msgctxt "Addon Disclaimer"
+msgid "Estuary is the default skin for Kodi, removing it may cause issues"
+msgstr "Estuary är Kodis standardskal. Om du tar bort det kan det orsaka problem"
+
+msgctxt "#31000"
+msgid "Now playing"
+msgstr "Spelas just nu"
+
+msgctxt "#31001"
+msgid "Search..."
+msgstr "Sök..."
+
+msgctxt "#31002"
+msgid "Show media fanart as background"
+msgstr "Visa media-fanart som bakgrund"
+
+msgctxt "#31003"
+msgid "Cinema mode"
+msgstr "Bioläge"
+
+msgctxt "#31004"
+msgid "Change mode"
+msgstr "Ändra läge"
+
+msgctxt "#31005"
+msgid "Watch as 2D"
+msgstr "Se i 2D"
+
+msgctxt "#31006"
+msgid "Random movies"
+msgstr "Slumpvis utvalda filmer"
+
+msgctxt "#31007"
+msgid "Unwatched movies"
+msgstr "Osedda filmer"
+
+msgctxt "#31008"
+msgid "Enable category widgets"
+msgstr "Aktivera gränssnittskomponenter för kategorier"
+
+msgctxt "#31009"
+msgid "Download icons"
+msgstr "Hämtar ikoner"
+
+msgctxt "#31010"
+msgid "In progress movies"
+msgstr "Pågående filmer"
+
+msgctxt "#31011"
+msgid "Most played albums"
+msgstr "Mest spelade album"
+
+msgctxt "#31012"
+msgid "Random albums"
+msgstr "Slumpvis utvalda album"
+
+msgctxt "#31013"
+msgid "Random artists"
+msgstr "Slumpvis utvalda artister"
+
+msgctxt "#31014"
+msgid "Unplayed albums"
+msgstr "Ospelade album"
+
+#. home screen recordings widget: recent tv / radio recordings
+msgctxt "#31015"
+msgid "Recent recordings"
+msgstr "Nya inspelningar"
+
+#. home screen channel widget: recently played tv channels. (please note that in some non-english languages #31018 and #31016 might not be equal)
+msgctxt "#31016"
+msgid "Recently played channels"
+msgstr "Nyligen spelade kanaler"
+
+msgctxt "#31017"
+msgid "Rated"
+msgstr "Betygsatt"
+
+#. home screen channel widget: recently played radio channels. (please note that in some non-english languages #31018 and #31016 might not be equal)
+msgctxt "#31018"
+msgid "Recently played channels"
+msgstr "Nyligen spelade kanaler"
+
+msgctxt "#31019"
+msgid "Forecast"
+msgstr "Prognos"
+
+msgctxt "#31020"
+msgid "Actions"
+msgstr "Åtgärder"
+
+msgctxt "#31021"
+msgid "Misc options"
+msgstr "Övriga val"
+
+msgctxt "#31022"
+msgid "Sort by"
+msgstr "Sortera efter"
+
+msgctxt "#31023"
+msgid "Viewtype"
+msgstr "Vytyp"
+
+msgctxt "#31024"
+msgid "Choose rating to display for media items"
+msgstr "Välj betyg att visa för mediaobjekt"
+
+msgctxt "#31025"
+msgid "No favourites found. You can add any item from media views to this list by using the context menu."
+msgstr "Inga favoriter hittades. Du kan lägga till objekt från mediavyer till den här listan genom att använda innehållsmenyn."
+
+msgctxt "#31026"
+msgid "Timeshift"
+msgstr "Tidsskifte"
+
+msgctxt "#31027"
+msgid "Next aired"
+msgstr "Nästa sändning"
+
+msgctxt "#31028"
+msgid "Show fanart"
+msgstr "Visa fanart"
+
+msgctxt "#31029"
+msgid "Last logged in"
+msgstr "Senast inloggad"
+
+#. Label to show the system memory usage
+msgctxt "#31030"
+msgid "System memory usage"
+msgstr "Systemets minnesanvändning"
+
+msgctxt "#31031"
+msgid "Version info"
+msgstr "Versionsinfo"
+
+msgctxt "#31032"
+msgid "Order"
+msgstr "Sortera"
+
+msgctxt "#31033"
+msgid "Your rating"
+msgstr "Ditt betyg"
+
+msgctxt "#31034"
+msgid "Extended info"
+msgstr "Utökad info"
+
+msgctxt "#31035"
+msgid "Pages"
+msgstr "Sidor"
+
+msgctxt "#31036"
+msgid "items"
+msgstr "objekt"
+
+msgctxt "#31037"
+msgid "Selected track"
+msgstr "Markerat spår"
+
+msgctxt "#31038"
+msgid "Rewind"
+msgstr "Spolar bakåt"
+
+msgctxt "#31039"
+msgid "Fast forward"
+msgstr "Spolar framåt"
+
+msgctxt "#31041"
+msgid "Camera manufacturer"
+msgstr "Kameratillverkare"
+
+msgctxt "#31042"
+msgid "Playlist options"
+msgstr "Alternativ för spellista"
+
+msgctxt "#31043"
+msgid "Set the type and add rules to create a smart playlist. These playlists are dynamic and include all media items from your database which apply to your chosen rules."
+msgstr "Ställ in typ och lägg till regler för att skapa en smart spellista. Dessa spellistor är dynamiska och omfattar alla mediaobjekt från databasen som matchar dina valda regler."
+
+msgctxt "#31044"
+msgid "Add group"
+msgstr "Lägg till grupp"
+
+msgctxt "#31045"
+msgid "Rename group"
+msgstr "Byt namn på grupp"
+
+msgctxt "#31046"
+msgid "Delete group"
+msgstr "Ta bort grupp"
+
+msgctxt "#31048"
+msgid "Available"
+msgstr "Tillgänglig"
+
+msgctxt "#31052"
+msgid "filtered"
+msgstr "filtrerad"
+
+msgctxt "#31053"
+msgid "Arial based"
+msgstr "Arialbaserad"
+
+msgctxt "#31054"
+msgid "Press [B]Left[/B] to step back, or [B]Right[/B] to step forward"
+msgstr "Tryck på [B]vänster[/B] för att gå tillbaka eller [B]höger[/B] för att gå framåt"
+
+msgctxt "#31055"
+msgid "Press [B]Right[/B] to frame advance"
+msgstr "Tryck på [B]Höger[/B] för att gå framåt"
+
+msgctxt "#31056"
+msgid "Go to playlist"
+msgstr "Gå till spellista"
+
+msgctxt "#31057"
+msgid "Show login screen on startup"
+msgstr "Visa inloggningsskärmen vid uppstart"
+
+msgctxt "#31058"
+msgid "Automatic Login on startup"
+msgstr "Automatisk inloggning vid uppstart"
+
+msgctxt "#31061"
+msgid "Main menu items"
+msgstr "Huvudmenyobjekt"
+
+msgctxt "#31062"
+msgid "Choose weather fanart pack"
+msgstr "Välj väder-fanart paket"
+
+msgctxt "#31063"
+msgid "Sections"
+msgstr "Sektioner"
+
+msgctxt "#31065"
+msgid "Video playlist"
+msgstr "Spellista för video"
+
+msgctxt "#31066"
+msgid "Music playlist"
+msgstr "Spellista för musik"
+
+msgctxt "#31067"
+msgid "Event log"
+msgstr "Händelselogg"
+
+msgctxt "#31068"
+msgid "Choose presets"
+msgstr "Välj förinställningar"
+
+msgctxt "#31069"
+msgid "Last Updated"
+msgstr "Senast uppdaterad"
+
+msgctxt "#31071"
+msgid "by"
+msgstr "av"
+
+msgctxt "#31072"
+msgid "Power Options"
+msgstr "Energialternativ"
+
+msgctxt "#31073"
+msgid "Total length"
+msgstr "Total längd"
+
+msgctxt "#31074"
+msgid "Total duration"
+msgstr "Total speltid"
+
+msgctxt "#31075"
+msgid "Movie sets"
+msgstr "Filmsamlingar"
+
+msgctxt "#31079"
+msgid "Cast not available"
+msgstr "Roller inte tillgängliga"
+
+msgctxt "#31080"
+msgid "Ends at"
+msgstr "Slutar"
+
+msgctxt "#31082"
+msgid "Lyrics add-on"
+msgstr "Tillägg för sångtexter"
+
+msgctxt "#31083"
+msgid "Lyrics add-on settings"
+msgstr "Inställningar för sångtexttillägg"
+
+msgctxt "#31084"
+msgid "Visualisation settings"
+msgstr "Visualiseringsinställningar"
+
+msgctxt "#31089"
+msgid "Available groups"
+msgstr "Tillgängliga grupper"
+
+msgctxt "#31092"
+msgid "Video menu"
+msgstr "Videomeny"
+
+msgctxt "#31093"
+msgid "Show weather info in top bar"
+msgstr "Visa väderinformation i översta fältet"
+
+msgctxt "#31095"
+msgid "Use slide animations"
+msgstr "Använd glidanimeringar"
+
+msgctxt "#31096"
+msgid "Local subtitle available"
+msgstr "Lokal undertext tillgänglig"
+
+msgctxt "#31097"
+msgid "Channel options"
+msgstr "Kanalalternativ"
+
+msgctxt "#31098"
+msgid "Select your Kodi user profile[CR]to login and continue"
+msgstr "Välj din Kodi-användarprofil[CR]för att logga in och fortsätta"
+
+#. viewtype name
+msgctxt "#31099"
+msgid "IconWall"
+msgstr "Ikonvägg"
+
+#. viewtype name
+msgctxt "#31100"
+msgid "Shift"
+msgstr "Skifta"
+
+#. viewtype name
+msgctxt "#31101"
+msgid "InfoWall"
+msgstr "Infovägg"
+
+#. viewtype name
+msgctxt "#31102"
+msgid "Wall"
+msgstr "Vägg"
+
+msgctxt "#31103"
+msgid "Enter text here..."
+msgstr "Ange text här..."
+
+msgctxt "#31104"
+msgid "Your library is currently empty. In order to populate it with your personal media, enter \"Files\" section, add a media source and configure it. After the source has been added and indexed you will be able to browse your library."
+msgstr "Biblioteket är för närvarande tomt. För att fylla det med din personliga media, gå till Filsektionen, lägg till en mediakälla och konfigurera den. Efter att källan har lagts till och indexerats, kommer du att kunna bläddra i biblioteket."
+
+msgctxt "#31105"
+msgid "Add video sources and set the appropriate content type in order to populate your video libraries."
+msgstr "Lägg till videokällor och ange lämpligt innehållstyp för att fylla dina videobibliotek."
+
+msgctxt "#31106"
+msgid "Teletext"
+msgstr "Text-tv"
+
+#. viewtype name
+msgctxt "#31107"
+msgid "WideList"
+msgstr "Bred lista"
+
+msgctxt "#31110"
+msgid "Enter files section"
+msgstr "Gå till filsektionen"
+
+msgctxt "#31111"
+msgid "View your personal pictures or download one of the many image add-ons from the official repository."
+msgstr "Visa dina personliga bilder eller hämta en av de många bild tilläggen från det officiella förrådet."
+
+msgctxt "#31112"
+msgid "Toggle audio stream"
+msgstr "Växla ljudström"
+
+msgctxt "#31113"
+msgid "Search local library"
+msgstr "Sök i det lokala biblioteket"
+
+msgctxt "#31114"
+msgid "Search YouTube"
+msgstr "Sök på Youtube"
+
+msgctxt "#31115"
+msgid "Toggle subtitle"
+msgstr "Växla undertext"
+
+msgctxt "#31116"
+msgid "Remove this main menu item"
+msgstr "Ta bort det här objektet från huvudmenyn"
+
+msgctxt "#31117"
+msgid "Edit nodes"
+msgstr "Redigera noder"
+
+msgctxt "#31118"
+msgid "Enter add-on browser"
+msgstr "Gå till tilläggsutforskaren"
+
+msgctxt "#31119"
+msgid "You do not have any add-ons installed yet. Visit our add-on browser to browse through our collection and improve your Kodi experience."
+msgstr "Du har inte några tillägg installerade ännu. Besök vår tilläggsutforskare för att bläddra igenom vår samling och förbättra din Kodi-upplevelse."
+
+msgctxt "#31120"
+msgid "You did not set up a weather provider yet. In order to view weather information, choose a weather provider and set up your location."
+msgstr "Du har inte ställt in en väderleverantör ännu. För att visa väderinformation, välj en väderleverantör och ange din plats."
+
+msgctxt "#31121"
+msgid "Set weather provider"
+msgstr "Ställ in väderleverantör"
+
+msgctxt "#31122"
+msgid "Unwatched TV Shows"
+msgstr "Osedda tv-program"
+
+msgctxt "#31123"
+msgid "Same director"
+msgstr "Samma regissör"
+
+msgctxt "#31125"
+msgid "Press up for actor info"
+msgstr "Tryck upp för skådespelarinformation"
+
+msgctxt "#31126"
+msgid "Press OK to read plot"
+msgstr "Tryck på OK för att läsa handling"
+
+msgctxt "#31127"
+msgid "Show icons"
+msgstr "Visa ikoner"
+
+msgctxt "#31128"
+msgid "Contributors"
+msgstr "Bidragsgivare"
+
+msgctxt "#31129"
+msgid "General settings applying to all areas of the skin."
+msgstr "Allmänna inställningar som gäller för alla områden av skalet."
+
+msgctxt "#31130"
+msgid "Main menu-related settings: Configure the home screen to your likings."
+msgstr "Huvudmeny-relaterade inställningar: Konfigurera startskärmen till ditt tycke och smak."
+
+msgctxt "#31131"
+msgid "Choose skin fanart pack"
+msgstr "Välj skal-fanart paket"
+
+msgctxt "#31132"
+msgid "Select Program"
+msgstr "Välj program"
+
+msgctxt "#31133"
+msgid "Select Resolution"
+msgstr "Välj upplösning"
+
+msgctxt "#31134"
+msgid "Remaining"
+msgstr "Återstående"
+
+msgctxt "#31135"
+msgid "Binary"
+msgstr "Binär"
+
+msgctxt "#31136"
+msgid "Click here to see latest changes..."
+msgstr "Klicka här för att se de senaste ändringarna..."
+
+#. Label to show PVR info page
+msgctxt "#31137"
+msgid "PVR"
+msgstr "PVR"
+
+#. Label to show player info page
+msgctxt "#31138"
+msgid "Player"
+msgstr "Spelare"
+
+#. Label to show video decoder name
+msgctxt "#31139"
+msgid "Video decoder"
+msgstr "Videoavkodare"
+
+#. Label to show the video pixel format
+msgctxt "#31140"
+msgid "Pixel format"
+msgstr "Pixelformat"
+
+msgctxt "#31141"
+msgid "Changes for version"
+msgstr "Ändringar för version"
+
+msgctxt "#31142"
+msgid "Play speed"
+msgstr "Uppspelningshastighet"
+
+msgctxt "#31143"
+msgid "You did not set up PVR yet. In order to use PVR, choose a PVR client addon and configure it. Please visit http://kodi.wiki/view/PVR to learn more."
+msgstr "Du har inte konfigurerat PVR ännu. För att kunna nyttja PVR måste du välja PVR-klienttillägg, samt konfigurera det. Besök http://kodi.wiki/view/PVR för att lära dig mer."
+
+msgctxt "#31144"
+msgid "Enter add-on browser"
+msgstr "Gå till tilläggsutforskaren"
+
+msgctxt "#31145"
+msgid "Search add-ons"
+msgstr "Sök bland tillägg"
+
+msgctxt "#31146"
+msgid "In cinemas"
+msgstr "På bio"
+
+msgctxt "#31147"
+msgid "In cinemas soon"
+msgstr "På bio snart"
+
+msgctxt "#31148"
+msgid "Categories"
+msgstr "Kategorier"
+
+msgctxt "#31149"
+msgid "Select genre fanart pack"
+msgstr "Välj genre-fanart paket"
+
+msgctxt "#31150"
+msgid "Origin"
+msgstr "Ursprung"
+
+msgctxt "#31151"
+msgid "Unwatched music videos"
+msgstr "Osedda musikvideor"
+
+msgctxt "#31152"
+msgid "Random music videos"
+msgstr "Slumpvis utvalda musikvideor"
+
+msgctxt "#31153"
+msgid "You do not have any add-ons of this type installed. Enter the add-on browser to download add-ons created by our community."
+msgstr "Du har inga tillägg av denna typ installerat. Gå till tilläggshanteraren för att hämta tillägg som skapats av vår community."
+
+msgctxt "#31154"
+msgid "Press OK to switch between locations"
+msgstr "Tryck på OK för att växla mellan platser"
+
+msgctxt "#31155"
+msgid "No bookmarks created yet."
+msgstr "Inga bokmärken skapade än."
+
+msgctxt "#31156"
+msgid "Choose background pattern"
+msgstr "Välj bakgrundsmönster"
+
+msgctxt "#31157"
+msgid "Edit categories"
+msgstr "Redigera kategorier"
+
+msgctxt "#31158"
+msgid "Touch mode"
+msgstr "Pekskärmsläge"
+
+msgctxt "#31159"
+msgid "Artwork"
+msgstr "Utsmyckning"
+
+msgctxt "#31160"
+msgid "Show media flags"
+msgstr "Visa mediaflaggor"
+
+msgctxt "#31161"
+msgid "Numeric pad"
+msgstr "Numerisk knappsats"
+
+msgctxt "#31162"
+msgid "Play your personal games or download one of the many game add-ons from the official repository."
+msgstr "Spela dina egna spel eller hämta någon av de många speltilläggen från det officiella förrådet."
+
+msgctxt "#31163"
+msgid "Show Fanart background"
+msgstr "Visa Fanart-bakgrund"
+
+#. Choose profile identifier
+msgctxt "#31164"
+msgid "Choose kind of profile identification"
+msgstr "Välj typ av profilidentifiering"
+
+#. Label for the kind of profile identification
+msgctxt "#31165"
+msgid "Profile name"
+msgstr "Profilnamn"
+
+#. Label for the kind of profile identification
+msgctxt "#31166"
+msgid "Profile avatar"
+msgstr "Profil avatar"
+
+#. Label of a setting
+msgctxt "#31167"
+msgid "Animate background"
+msgstr "Animera bakgrund"
+
+#. Label of a setting
+msgctxt "#31168"
+msgid "Show posters instead of thumbs for musicvideos"
+msgstr "Visa affischer istället för miniatyrbilder för musikvideor"
+
+#. Description label for skin settings area
+msgctxt "#31169"
+msgid "Artwork related settings."
+msgstr "Inställningar för omslag."
+
+#. Label for OSD settings category
+msgctxt "#31170"
+msgid "On screen display"
+msgstr "Skärmvisning"
+
+#. Helper text for the label of OSD settings category
+msgctxt "#31171"
+msgid "On screen display (OSD) related settings"
+msgstr "Skärmvisning (OSD) relaterade inställningar"
+
+#. Setting Automatically close video OSD
+msgctxt "#31172"
+msgid "Automatically close video OSD"
+msgstr "Stäng video OSD automatiskt"
+
+#. Setting auto close time for video osd
+msgctxt "#31173"
+msgid "Video OSD autoclose time (seconds)"
+msgstr "Tid för video OSD automatisk stängning (sekunder)"
+
+#. Setting to control what happens when clicking a music album on the home screen
+msgctxt "#31174"
+msgid "Default select action for albums on the home screen"
+msgstr "Standardvalåtgärd för album på hemskärmen"
+
+#. Setting to control what happens when clicking a TV show on the home screen
+msgctxt "#31175"
+msgid "Default select action for TV shows on the home screen"
+msgstr "Standardvalsåtgärd för TV-serier på hemskärmen"
+
+#. Setting to control what happens when clicking a movie set on the home screen
+msgctxt "#31176"
+msgid "Default select action for movie sets on the home screen"
+msgstr "Standardvalsåtgärd för filmer på hemskärmen"
+
+# empty strings from id 31170 to 31599
+#. Label to show the video codec name
+msgctxt "#31600"
+msgid "Video codec"
+msgstr "Videocodec"
+
+#. Label to show the video resolution
+msgctxt "#31601"
+msgid "Video resolution"
+msgstr "Videoupplösning"
+
+#. Label to show the video aspect
+msgctxt "#31602"
+msgid "Video aspect"
+msgstr "Bildförhållande"
+
+#. Label to show the video bitrate
+msgctxt "#31603"
+msgid "Video bitrate"
+msgstr "Video överföringshastighet"
+
+#. Label to show the audio codec name
+msgctxt "#31604"
+msgid "Audio codec"
+msgstr "Ljudcodec"
+
+#. Label to show the number of audio channels
+msgctxt "#31605"
+msgid "Audio channels"
+msgstr "Ljudkanaler"
+
+#. Label to show the audio bitrate
+msgctxt "#31606"
+msgid "Audio bitrate"
+msgstr "Ljud överföringshastighet"
+
+#. Label to show the screen resolution
+msgctxt "#31607"
+msgid "Screen resolution"
+msgstr "Skärmupplösning"
+
+#. Label to show the system rendering speed
+msgctxt "#31608"
+msgid "System rendering speed"
+msgstr "Systemets renderingshastighet"
+
+#. Label to show the system CPU usage
+msgctxt "#31609"
+msgid "System CPU usage"
+msgstr "Systemets CPU-användning"
+
+#. Label to show the media (metadata) info page
+msgctxt "#31610"
+msgid "Media"
+msgstr "Media"
+
+#. Label to show the system info page
+msgctxt "#31611"
+msgid "System"
+msgstr "System"
+
+#~ msgctxt "#31615"
+#~ msgid "Extras"
+#~ msgstr "Extra"
+
+#~ msgctxt "#31059"
+#~ msgid "Select + X"
+#~ msgstr "Select + X"
+
+#~ msgctxt "#31060"
+#~ msgid "Select + Start"
+#~ msgstr "Select + Start"
+
+#~ msgctxt "#31137"
+#~ msgid "PVR info"
+#~ msgstr "PVR-info"
+
+#~ msgctxt "#31138"
+#~ msgid "Player process info"
+#~ msgstr "Spelarprocessinfo"

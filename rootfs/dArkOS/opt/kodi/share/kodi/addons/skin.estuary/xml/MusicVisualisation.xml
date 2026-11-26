@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<defaultcontrol></defaultcontrol>
+	<backgroundcolor>background</backgroundcolor>
+	<onload condition="System.AddonIsEnabled(script.artistslideshow) + !Skin.HasSetting(hide_background_fanart)">RunScript(script.artistslideshow)</onload>
+	<controls>
+		<control type="visualisation" id="2">
+			<include>FullScreenDimensions</include>
+			<visible>Player.HasAudio</visible>
+		</control>
+		<control type="group">
+			<depth>DepthBackground</depth>
+			<include>FullScreenDimensions</include>
+			<visible>!Skin.HasSetting(hide_background_fanart)</visible>
+			<animation effect="zoom" start="105" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(animate_background_fanart)">Conditional</animation>
+			<animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(animate_background_fanart)">Conditional</animation>
+			<control type="image">
+				<aspectratio>scale</aspectratio>
+				<fadetime>400</fadetime>
+				<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
+				<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+				<animation effect="fade" start="100" end="50" time="0" condition="Visualisation.Enabled">Conditional</animation>
+				<texture background="true">$INFO[Player.Art(fanart)]</texture>
+				<visible>String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.Image))</visible>
+			</control>
+			<control type="image">
+				<aspectratio>scale</aspectratio>
+				<fadetime>400</fadetime>
+				<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
+				<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+				<animation effect="fade" start="100" end="50" time="0" condition="Visualisation.Enabled">Conditional</animation>
+				<texture background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow.Image)]</texture>
+			</control>
+		</control>
+		<control type="group">
+			<visible>!Visualisation.Enabled + [[String.IsEmpty(Player.Art(fanart)) + String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.Image))] | Skin.HasSetting(hide_background_fanart)]</visible>
+			<include>ColoredBackgroundImages</include>
+		</control>
+		<control type="group">
+			<visible>[Player.ShowInfo | Window.IsActive(musicosd)] + !MusicPlayer.Content(livetv)</visible>
+			<height>460</height>
+			<include>OpenClose_Left</include>
+			<include>Visible_Left</include>
+			<bottom>0</bottom>
+			<control type="image">
+				<left>0</left>
+				<width>120%</width>
+				<height>280</height>
+				<texture colordiffuse="80FFFFFF">dialogs/dialog-bg-nobo.png</texture>
+			</control>
+			<control type="image">
+				<left>20</left>
+				<top>-140</top>
+				<include>Visible_Left</include>
+				<visible>[Player.ShowInfo | Window.IsActive(musicosd)] + !MusicPlayer.Content(livetv)</visible>
+				<width>400</width>
+				<height>400</height>
+				<fadetime>400</fadetime>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<texture fallback="DefaultAlbumCover.png" border="2">$INFO[MusicPlayer.Cover]</texture>
+				<bordertexture colordiffuse="border_alpha">colors/black.png</bordertexture>
+				<bordersize>4</bordersize>
+			</control>
+			<control type="group">
+				<visible>[Player.ShowInfo | Window.IsActive(musicosd)] + ![Window.IsActive(playerprocessinfo) | MusicPlayer.Content(livetv)]</visible>
+				<include>Visible_Left</include>
+				<left>440</left>
+				<top>10</top>
+				<control type="label">
+					<top>10</top>
+					<width>1450</width>
+					<height>50</height>
+					<aligny>center</aligny>
+					<label>[B]$INFO[MusicPlayer.TrackNumber,,. ]$INFO[Player.Title][/B]</label>
+					<font>font45</font>
+					<shadowcolor>black</shadowcolor>
+					<scroll>true</scroll>
+				</control>
+				<control type="label">
+					<top>65</top>
+					<width>1450</width>
+					<height>50</height>
+					<aligny>center</aligny>
+					<label>$INFO[MusicPlayer.Artist]</label>
+					<font>font45</font>
+					<shadowcolor>black</shadowcolor>
+					<scroll>true</scroll>
+				</control>
+				<control type="grouplist">
+					<top>120</top>
+					<width>1450</width>
+					<height>40</height>
+					<align>left</align>
+					<orientation>horizontal</orientation>
+					<itemgap>20</itemgap>
+					<control type="label">
+						<width>100</width>
+						<height>35</height>
+						<label>$INFO[MusicPlayer.Year]</label>
+						<font>font37</font>
+						<shadowcolor>black</shadowcolor>
+						<aligny>center</aligny>
+						<align>left</align>
+						<visible>!String.IsEmpty(MusicPlayer.Year)</visible>
+					</control>
+					<control type="label">
+						<width min="0" max="1130">auto</width>
+						<height>35</height>
+						<label>$INFO[MusicPlayer.Genre]</label>
+						<font>font37</font>
+						<shadowcolor>black</shadowcolor>
+						<aligny>center</aligny>
+						<align>left</align>
+						<scroll>true</scroll>
+						<visible>!String.IsEmpty(MusicPlayer.Genre)</visible>
+					</control>
+					<control type="image">
+						<width>190</width>
+						<height>40</height>
+						<texture fallback="flags/starrating/0.png">$INFO[MusicPlayer.UserRating,flags/starrating/,.png]</texture>
+						<aspectratio>keep</aspectratio>
+						<aligny>center</aligny>
+						<align>left</align>
+					</control>
+				</control>
+				<control type="label">
+					<top>165</top>
+					<width>1450</width>
+					<height>40</height>
+					<aligny>center</aligny>
+					<label>$INFO[MusicPlayer.Album]$VAR[MultiDiscVar]</label>
+					<font>font37</font>
+					<shadowcolor>black</shadowcolor>
+					<scroll>true</scroll>
+				</control>
+				<control type="label">
+					<top>210</top>
+					<width>1450</width>
+					<height>40</height>
+					<aligny>center</aligny>
+					<label>$VAR[OSDNextLabelVar]</label>
+					<shadowcolor>black</shadowcolor>
+					<scroll>true</scroll>
+					<visible>Integer.IsGreater(Playlist.Length(music),1)</visible>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,753 @@
+# Kodi Media Center language file
+# Addon Name: Estuary
+# Addon id: skin.estuary
+# Addon Provider: Team Kodi
+msgid ""
+msgstr ""
+"Project-Id-Version: KODI Main\n"
+"Report-Msgid-Bugs-To: https://github.com/xbmc/xbmc/issues/\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2023-11-28 18:10+0000\n"
+"Last-Translator: Oskari Lavinto <olavinto@protonmail.com>\n"
+"Language-Team: Finnish <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-estuary/fi_fi/>\n"
+"Language: fi_fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.2.1\n"
+
+msgctxt "Addon Summary"
+msgid "Estuary skin by phil65. (Kodi's default skin)"
+msgstr "Estuary-ulkoasun ovat kehittäneet phil65 ja Piers. (Kodin oletusulkoasu)"
+
+msgctxt "Addon Description"
+msgid "Estuary is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
+msgstr "Estuary on Kodin oletusulkoasu alkaen versiosta 17.0. Sen on tarkoitus olla uusille Kodi-käyttäjille selkeä ja helppokäyttöinen."
+
+msgctxt "Addon Disclaimer"
+msgid "Estuary is the default skin for Kodi, removing it may cause issues"
+msgstr "Estuary on Kodin oletusulkoasu ja sen poisto voi aiheuttaa ongelmia"
+
+msgctxt "#31000"
+msgid "Now playing"
+msgstr "Toistetaan parhaillaan"
+
+msgctxt "#31001"
+msgid "Search..."
+msgstr "Etsi..."
+
+msgctxt "#31002"
+msgid "Show media fanart as background"
+msgstr "Näytä median fanitaide taustana"
+
+msgctxt "#31003"
+msgid "Cinema mode"
+msgstr "Teatteritila"
+
+msgctxt "#31004"
+msgid "Change mode"
+msgstr "Vaihda tilaa"
+
+msgctxt "#31005"
+msgid "Watch as 2D"
+msgstr "Katsele 2D-tilassa"
+
+msgctxt "#31006"
+msgid "Random movies"
+msgstr "Satunnaiset elokuvat"
+
+msgctxt "#31007"
+msgid "Unwatched movies"
+msgstr "Katsomattomat elokuvat"
+
+msgctxt "#31008"
+msgid "Enable category widgets"
+msgstr "Näytä kategorioiden widgetit"
+
+msgctxt "#31009"
+msgid "Download icons"
+msgstr "Lataa kuvakkeet"
+
+msgctxt "#31010"
+msgid "In progress movies"
+msgstr "Keskeneräiset elokuvat"
+
+msgctxt "#31011"
+msgid "Most played albums"
+msgstr "Kuunnelluimmat albumit"
+
+msgctxt "#31012"
+msgid "Random albums"
+msgstr "Satunnaiset albumit"
+
+msgctxt "#31013"
+msgid "Random artists"
+msgstr "Satunnaiset esittäjät"
+
+msgctxt "#31014"
+msgid "Unplayed albums"
+msgstr "Kuuntelemattomat albumit"
+
+#. home screen recordings widget: recent tv / radio recordings
+msgctxt "#31015"
+msgid "Recent recordings"
+msgstr "Viimeksi tallennetut"
+
+#. home screen channel widget: recently played tv channels. (please note that in some non-english languages #31018 and #31016 might not be equal)
+msgctxt "#31016"
+msgid "Recently played channels"
+msgstr "Viimeksi katsotut kanavat"
+
+msgctxt "#31017"
+msgid "Rated"
+msgstr "Sisältöluokitus"
+
+#. home screen channel widget: recently played radio channels. (please note that in some non-english languages #31018 and #31016 might not be equal)
+msgctxt "#31018"
+msgid "Recently played channels"
+msgstr "Viimeksi kuunnellut kanavat"
+
+msgctxt "#31019"
+msgid "Forecast"
+msgstr "Ennuste"
+
+msgctxt "#31020"
+msgid "Actions"
+msgstr "Toiminnot"
+
+msgctxt "#31021"
+msgid "Misc options"
+msgstr "Muut asetukset"
+
+msgctxt "#31022"
+msgid "Sort by"
+msgstr "Lajitteluperuste"
+
+msgctxt "#31023"
+msgid "Viewtype"
+msgstr "Näkymä"
+
+msgctxt "#31024"
+msgid "Choose rating to display for media items"
+msgstr "Valitse mediakohteille näytettävä arvio"
+
+msgctxt "#31025"
+msgid "No favourites found. You can add any item from media views to this list by using the context menu."
+msgstr "Suosikkeja ei löytynyt. Voit lisätä minkä tahansa medianäkymien kohteen tälle listalle käyttämällä sisältövalikkoa."
+
+msgctxt "#31026"
+msgid "Timeshift"
+msgstr "Ajansiirto"
+
+msgctxt "#31027"
+msgid "Next aired"
+msgstr "Seuraava esitys"
+
+msgctxt "#31028"
+msgid "Show fanart"
+msgstr "Näytä fanitaide"
+
+msgctxt "#31029"
+msgid "Last logged in"
+msgstr "Kirjautunut viimeksi"
+
+#. Label to show the system memory usage
+msgctxt "#31030"
+msgid "System memory usage"
+msgstr "Keskusmuistin varaus"
+
+msgctxt "#31031"
+msgid "Version info"
+msgstr "Versiotiedot"
+
+msgctxt "#31032"
+msgid "Order"
+msgstr "Suunta"
+
+msgctxt "#31033"
+msgid "Your rating"
+msgstr "Oma arvio"
+
+msgctxt "#31034"
+msgid "Extended info"
+msgstr "ExtendedInfo"
+
+msgctxt "#31035"
+msgid "Pages"
+msgstr "Sivua"
+
+msgctxt "#31036"
+msgid "items"
+msgstr "kohdetta"
+
+msgctxt "#31037"
+msgid "Selected track"
+msgstr "Aktiivinen kappale"
+
+msgctxt "#31038"
+msgid "Rewind"
+msgstr "Taaksepäin"
+
+msgctxt "#31039"
+msgid "Fast forward"
+msgstr "Eteenpäin"
+
+msgctxt "#31041"
+msgid "Camera manufacturer"
+msgstr "Kameran valmistaja"
+
+msgctxt "#31042"
+msgid "Playlist options"
+msgstr "Toistolistavalinnat"
+
+msgctxt "#31043"
+msgid "Set the type and add rules to create a smart playlist. These playlists are dynamic and include all media items from your database which apply to your chosen rules."
+msgstr "Valitse älytoistolistan tyyppi ja hakuehdot. Tälle automaattisesti päivittyvälle listalle lisätään kaikki mediakirjastosi kohteet, jotka täyttävät asettamasi ehdot."
+
+msgctxt "#31044"
+msgid "Add group"
+msgstr "Lisää ryhmä"
+
+msgctxt "#31045"
+msgid "Rename group"
+msgstr "Nimeä ryhmä uudelleen"
+
+msgctxt "#31046"
+msgid "Delete group"
+msgstr "Poista ryhmä"
+
+msgctxt "#31048"
+msgid "Available"
+msgstr "Käytettävissä"
+
+msgctxt "#31052"
+msgid "filtered"
+msgstr "suodatettu"
+
+msgctxt "#31053"
+msgid "Arial based"
+msgstr "Arial-pohjainen"
+
+msgctxt "#31054"
+msgid "Press [B]Left[/B] to step back, or [B]Right[/B] to step forward"
+msgstr "Siirry askel taaksepäin painamalla [B]Vasemmalle[/B] tai askel eteenpäin painamalla [B]Oikealle[/B]"
+
+msgctxt "#31055"
+msgid "Press [B]Right[/B] to frame advance"
+msgstr "Paina [B]oikealle[/B] edetäksesi kuva kerrallaan"
+
+msgctxt "#31056"
+msgid "Go to playlist"
+msgstr "Avaa toistolista"
+
+msgctxt "#31057"
+msgid "Show login screen on startup"
+msgstr "Näytä kirjautumisruutu käynnistettäessä"
+
+msgctxt "#31058"
+msgid "Automatic Login on startup"
+msgstr "Kirjaudu automaattisesti käynnistettäessä"
+
+msgctxt "#31061"
+msgid "Main menu items"
+msgstr "Päävalikon kohteet"
+
+msgctxt "#31062"
+msgid "Choose weather fanart pack"
+msgstr "Valitse säätietojen taustapaketti"
+
+msgctxt "#31063"
+msgid "Sections"
+msgstr "Osiot"
+
+msgctxt "#31065"
+msgid "Video playlist"
+msgstr "Videotoistolista"
+
+msgctxt "#31066"
+msgid "Music playlist"
+msgstr "Musiikkitoistolista"
+
+msgctxt "#31067"
+msgid "Event log"
+msgstr "Tapahtumaloki"
+
+msgctxt "#31068"
+msgid "Choose presets"
+msgstr "Valitse esiasetukset"
+
+msgctxt "#31069"
+msgid "Last Updated"
+msgstr "Viimeksi päivitetty"
+
+msgctxt "#31071"
+msgid "by"
+msgstr "tekijältä"
+
+msgctxt "#31072"
+msgid "Power Options"
+msgstr "Virtavalinnat"
+
+msgctxt "#31073"
+msgid "Total length"
+msgstr "Kokonaiskesto"
+
+msgctxt "#31074"
+msgid "Total duration"
+msgstr "Kokonaiskesto"
+
+msgctxt "#31075"
+msgid "Movie sets"
+msgstr "Elokuvakokoelmat"
+
+msgctxt "#31079"
+msgid "Cast not available"
+msgstr "Näyttelijöitä ei ole saatavilla"
+
+msgctxt "#31080"
+msgid "Ends at"
+msgstr "Päättyy"
+
+msgctxt "#31082"
+msgid "Lyrics add-on"
+msgstr "Sanoituslisäosa"
+
+msgctxt "#31083"
+msgid "Lyrics add-on settings"
+msgstr "Sanoituslisäosan asetukset"
+
+msgctxt "#31084"
+msgid "Visualisation settings"
+msgstr "Visualisoinnin asetukset"
+
+msgctxt "#31089"
+msgid "Available groups"
+msgstr "Käytettävissä olevat ryhmät"
+
+msgctxt "#31092"
+msgid "Video menu"
+msgstr "Videon valikko"
+
+msgctxt "#31093"
+msgid "Show weather info in top bar"
+msgstr "Näytä säätiedot yläpalkissa"
+
+msgctxt "#31095"
+msgid "Use slide animations"
+msgstr "Käytä liukuanimaatioita"
+
+msgctxt "#31096"
+msgid "Local subtitle available"
+msgstr "Paikallinen tekstitys on käytettävissä"
+
+msgctxt "#31097"
+msgid "Channel options"
+msgstr "Kanavavalinnat"
+
+msgctxt "#31098"
+msgid "Select your Kodi user profile[CR]to login and continue"
+msgstr "Jatka kirjatumalla[CR]Kodi-käyttäjäprofiilillesi"
+
+#. viewtype name
+msgctxt "#31099"
+msgid "IconWall"
+msgstr "Kuvakeseinä"
+
+#. viewtype name
+msgctxt "#31100"
+msgid "Shift"
+msgstr "Siirtyvä"
+
+#. viewtype name
+msgctxt "#31101"
+msgid "InfoWall"
+msgstr "Tietoseinä"
+
+#. viewtype name
+msgctxt "#31102"
+msgid "Wall"
+msgstr "Seinä"
+
+msgctxt "#31103"
+msgid "Enter text here..."
+msgstr "Syötä tekstiä tähän..."
+
+msgctxt "#31104"
+msgid "Your library is currently empty. In order to populate it with your personal media, enter \"Files\" section, add a media source and configure it. After the source has been added and indexed you will be able to browse your library."
+msgstr "Kirjastosi on tällä hetkellä tyhjä. Täyttääksesi sen omalla mediallasi, avaa \"Tiedostot\" -osio, lisää medialähde ja määritä se. Kun lähde on lisätty ja tutkittu, voit selata kirjastoasi."
+
+msgctxt "#31105"
+msgid "Add video sources and set the appropriate content type in order to populate your video libraries."
+msgstr "Lisää videokirjastoosi sisältöä lisäämällä videolähteitä ja määrittämällä niille sopivat sisältötyypit."
+
+msgctxt "#31106"
+msgid "Teletext"
+msgstr "Teksti-TV"
+
+#. viewtype name
+msgctxt "#31107"
+msgid "WideList"
+msgstr "Leveä lista"
+
+msgctxt "#31110"
+msgid "Enter files section"
+msgstr "Avaa tiedostonäkymä"
+
+msgctxt "#31111"
+msgid "View your personal pictures or download one of the many image add-ons from the official repository."
+msgstr "Katsele omia kuviasi tai asenna jokin monista kuvalisäosista virallisesta jakeluvarastosta."
+
+msgctxt "#31112"
+msgid "Toggle audio stream"
+msgstr "Vaihda ääniraitaa"
+
+msgctxt "#31113"
+msgid "Search local library"
+msgstr "Etsi paikallisesta kirjastosta"
+
+msgctxt "#31114"
+msgid "Search YouTube"
+msgstr "Etsi YouTubesta"
+
+msgctxt "#31115"
+msgid "Toggle subtitle"
+msgstr "Vaihda tekstitystä"
+
+msgctxt "#31116"
+msgid "Remove this main menu item"
+msgstr "Poista tämä päävalikon kohde"
+
+msgctxt "#31117"
+msgid "Edit nodes"
+msgstr "Muokkaa solmuja"
+
+msgctxt "#31118"
+msgid "Enter add-on browser"
+msgstr "Avaa lisäosaselain"
+
+msgctxt "#31119"
+msgid "You do not have any add-ons installed yet. Visit our add-on browser to browse through our collection and improve your Kodi experience."
+msgstr "Lisäosia ei ole vielä asennettu. Lisäosaselaimella voit tutkia Kodin virallista lisäosavalikoimaa ja parantaa käyttökokemustasi."
+
+msgctxt "#31120"
+msgid "You did not set up a weather provider yet. In order to view weather information, choose a weather provider and set up your location."
+msgstr "Säätietojen toimittajaa ei ole asennettu. Nähdäksesi säätiedot, asenna haluamasi sääpalvelu ja määritä sijaintisi."
+
+msgctxt "#31121"
+msgid "Set weather provider"
+msgstr "Määritä säätietojen toimittaja"
+
+msgctxt "#31122"
+msgid "Unwatched TV Shows"
+msgstr "Katsomattomat sarjat"
+
+msgctxt "#31123"
+msgid "Same director"
+msgstr "Sama ohjaaja"
+
+msgctxt "#31125"
+msgid "Press up for actor info"
+msgstr "Näytä näyttelijän tiedot painamalla Ylös"
+
+msgctxt "#31126"
+msgid "Press OK to read plot"
+msgstr "Lue juoni painamalla Valinta"
+
+msgctxt "#31127"
+msgid "Show icons"
+msgstr "Näytä kuvakkeet"
+
+msgctxt "#31128"
+msgid "Contributors"
+msgstr "Osallistujat"
+
+msgctxt "#31129"
+msgid "General settings applying to all areas of the skin."
+msgstr "Yleiset asetukset, jotka vaikuttavat ulkoasun eri osa-alueisiin."
+
+msgctxt "#31130"
+msgid "Main menu-related settings: Configure the home screen to your likings."
+msgstr "Päävalikon asetukset: Tee aloitusnäytöstä haluamasi näköinen."
+
+msgctxt "#31131"
+msgid "Choose skin fanart pack"
+msgstr "Valitse ulkoasun fanitaidepaketti"
+
+msgctxt "#31132"
+msgid "Select Program"
+msgstr "Valitse ohjelma"
+
+msgctxt "#31133"
+msgid "Select Resolution"
+msgstr "Valitse resoluutio"
+
+msgctxt "#31134"
+msgid "Remaining"
+msgstr "Jäljellä"
+
+msgctxt "#31135"
+msgid "Binary"
+msgstr "Binääri"
+
+msgctxt "#31136"
+msgid "Click here to see latest changes..."
+msgstr "Paina nähdäksesi viimeisimmät muutokset..."
+
+#. Label to show PVR info page
+msgctxt "#31137"
+msgid "PVR"
+msgstr "Tallennin"
+
+#. Label to show player info page
+msgctxt "#31138"
+msgid "Player"
+msgstr "Soitin"
+
+#. Label to show video decoder name
+msgctxt "#31139"
+msgid "Video decoder"
+msgstr "Videodekooderi"
+
+#. Label to show the video pixel format
+msgctxt "#31140"
+msgid "Pixel format"
+msgstr "Pikselimuoto"
+
+msgctxt "#31141"
+msgid "Changes for version"
+msgstr "Version muutokset"
+
+msgctxt "#31142"
+msgid "Play speed"
+msgstr "Toistonopeus"
+
+msgctxt "#31143"
+msgid "You did not set up PVR yet. In order to use PVR, choose a PVR client addon and configure it. Please visit http://kodi.wiki/view/PVR to learn more."
+msgstr "PVR-ominaisuuksia ei ole vielä määritetty. Käyttääksesi niitä, valitse PVR-lisäosa lisäosaselaimesta ja määritä sen asetukset. Lisätietoja löydät osoitteesta http://kodi.wiki/view/PVR."
+
+msgctxt "#31144"
+msgid "Enter add-on browser"
+msgstr "Avaa lisäosaselain"
+
+msgctxt "#31145"
+msgid "Search add-ons"
+msgstr "Etsi lisäosista"
+
+msgctxt "#31146"
+msgid "In cinemas"
+msgstr "Teattereissa"
+
+msgctxt "#31147"
+msgid "In cinemas soon"
+msgstr "Tulossa teattereihin"
+
+msgctxt "#31148"
+msgid "Categories"
+msgstr "Kategoriat"
+
+msgctxt "#31149"
+msgid "Select genre fanart pack"
+msgstr "Valitse lajityyppien fanitaidepaketti"
+
+msgctxt "#31150"
+msgid "Origin"
+msgstr "Alkuperä"
+
+msgctxt "#31151"
+msgid "Unwatched music videos"
+msgstr "Katsomattomat musiikkivideot"
+
+msgctxt "#31152"
+msgid "Random music videos"
+msgstr "Satunnaiset musiikkivideot"
+
+msgctxt "#31153"
+msgid "You do not have any add-ons of this type installed. Enter the add-on browser to download add-ons created by our community."
+msgstr "Tämän tyyppisiä lisäosia ei ole asennettu. Avaa lisäosaselain asentaaksesi yhteisömme kehittämiä lisäosia."
+
+msgctxt "#31154"
+msgid "Press OK to switch between locations"
+msgstr "Vaihda sijaintia painamalla OK"
+
+msgctxt "#31155"
+msgid "No bookmarks created yet."
+msgstr "Kirjanmerkkejä ei ole vielä luotu."
+
+msgctxt "#31156"
+msgid "Choose background pattern"
+msgstr "Valitse taustan kuvio"
+
+msgctxt "#31157"
+msgid "Edit categories"
+msgstr "Muokkaa kategorioita"
+
+msgctxt "#31158"
+msgid "Touch mode"
+msgstr "Kosketusnäyttötila"
+
+msgctxt "#31159"
+msgid "Artwork"
+msgstr "Mediakuvitukset"
+
+msgctxt "#31160"
+msgid "Show media flags"
+msgstr "Näytä mediatunnisteet"
+
+msgctxt "#31161"
+msgid "Numeric pad"
+msgstr "Numeronäppäimistö"
+
+msgctxt "#31162"
+msgid "Play your personal games or download one of the many game add-ons from the official repository."
+msgstr "Pelaa omia pelejäsi tai lataa pelilisäosia virallisesta jakeluvarastosta."
+
+msgctxt "#31163"
+msgid "Show Fanart background"
+msgstr "Näytä fanitaide taustana"
+
+#. Choose profile identifier
+msgctxt "#31164"
+msgid "Choose kind of profile identification"
+msgstr "Valitse profiilin esitystapa"
+
+#. Label for the kind of profile identification
+msgctxt "#31165"
+msgid "Profile name"
+msgstr "Profiilin nimi"
+
+#. Label for the kind of profile identification
+msgctxt "#31166"
+msgid "Profile avatar"
+msgstr "Profiilin kuva"
+
+#. Label of a setting
+msgctxt "#31167"
+msgid "Animate background"
+msgstr "Animoitu tausta"
+
+#. Label of a setting
+msgctxt "#31168"
+msgid "Show posters instead of thumbs for musicvideos"
+msgstr "Näytä musiikkivideoille pienoiskuvien sijaan julisteet"
+
+#. Description label for skin settings area
+msgctxt "#31169"
+msgid "Artwork related settings."
+msgstr "Mediakuvituksiin liittyvät asetukset."
+
+#. Label for OSD settings category
+msgctxt "#31170"
+msgid "On screen display"
+msgstr "Kuvaruutunäyttö"
+
+#. Helper text for the label of OSD settings category
+msgctxt "#31171"
+msgid "On screen display (OSD) related settings"
+msgstr "Kuvaruutuvalikkoon (OSD) liittyvät asetukset."
+
+#. Setting Automatically close video OSD
+msgctxt "#31172"
+msgid "Automatically close video OSD"
+msgstr "Sulje videotoiston kuvaruutuvalikko automaattisesti"
+
+#. Setting auto close time for video osd
+msgctxt "#31173"
+msgid "Video OSD autoclose time (seconds)"
+msgstr "Videotoiston kuvaruutuvalikon automaattisulun viive (sekuntia)"
+
+#. Setting to control what happens when clicking a music album on the home screen
+msgctxt "#31174"
+msgid "Default select action for albums on the home screen"
+msgstr "Albumivalinnan oletustoiminto aloitusnäytössä"
+
+#. Setting to control what happens when clicking a TV show on the home screen
+msgctxt "#31175"
+msgid "Default select action for TV shows on the home screen"
+msgstr "Sarjavalinnan oletustoiminto aloitusnäytössä"
+
+#. Setting to control what happens when clicking a movie set on the home screen
+msgctxt "#31176"
+msgid "Default select action for movie sets on the home screen"
+msgstr "Elokuvakokoelmavalinnan oletustoiminto aloitusnäytössä"
+
+# empty strings from id 31170 to 31599
+#. Label to show the video codec name
+msgctxt "#31600"
+msgid "Video codec"
+msgstr "Videokoodekki"
+
+#. Label to show the video resolution
+msgctxt "#31601"
+msgid "Video resolution"
+msgstr "Videon tarkkuus"
+
+#. Label to show the video aspect
+msgctxt "#31602"
+msgid "Video aspect"
+msgstr "Videon kuvasuhde"
+
+#. Label to show the video bitrate
+msgctxt "#31603"
+msgid "Video bitrate"
+msgstr "Videon bittinopeus"
+
+#. Label to show the audio codec name
+msgctxt "#31604"
+msgid "Audio codec"
+msgstr "Äänikoodekki"
+
+#. Label to show the number of audio channels
+msgctxt "#31605"
+msgid "Audio channels"
+msgstr "Äänen kanavat"
+
+#. Label to show the audio bitrate
+msgctxt "#31606"
+msgid "Audio bitrate"
+msgstr "Äänen bittinopeus"
+
+#. Label to show the screen resolution
+msgctxt "#31607"
+msgid "Screen resolution"
+msgstr "Näytön resoluutio"
+
+#. Label to show the system rendering speed
+msgctxt "#31608"
+msgid "System rendering speed"
+msgstr "Järjestelmän renderöintinopeus"
+
+#. Label to show the system CPU usage
+msgctxt "#31609"
+msgid "System CPU usage"
+msgstr "Prosessorin kuormitus"
+
+#. Label to show the media (metadata) info page
+msgctxt "#31610"
+msgid "Media"
+msgstr "Media"
+
+#. Label to show the system info page
+msgctxt "#31611"
+msgid "System"
+msgstr "Järjestelmä"
+
+#~ msgctxt "#31615"
+#~ msgid "Extras"
+#~ msgstr "Lisäsisältö"
+
+#~ msgctxt "#31059"
+#~ msgid "Select + X"
+#~ msgstr "Valinta + X"
+
+#~ msgctxt "#31060"
+#~ msgid "Select + Start"
+#~ msgstr "Valitse + Aloita"
+
+#~ msgctxt "#31137"
+#~ msgid "PVR info"
+#~ msgstr "PVR-tiedot"
+
+#~ msgctxt "#31138"
+#~ msgid "Player process info"
+#~ msgstr "Soittimen tiedot"

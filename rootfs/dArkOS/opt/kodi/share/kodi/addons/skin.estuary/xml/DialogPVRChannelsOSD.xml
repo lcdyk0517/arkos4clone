@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">11</defaultcontrol>
+	<controls>
+		<control type="group">
+			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
+			<control type="group">
+				<depth>DepthOSD</depth>
+				<include>OpenClose_Left</include>
+				<include content="ContentPanel">
+					<param name="width" value="1042" />
+				</include>
+				<control type="fixedlist" id="11">
+					<left>0</left>
+					<top>list_top_offset</top>
+					<width>970</width>
+					<bottom>list_bottom</bottom>
+					<onleft>PreviousChannelGroup</onleft>
+					<onright>60</onright>
+					<onup>11</onup>
+					<ondown>11</ondown>
+					<movement>4</movement>
+					<focusposition>4</focusposition>
+					<pagecontrol>60</pagecontrol>
+					<scrolltime tween="cubic" easing="out">500</scrolltime>
+					<include content="PVRListItemLayouts">
+						<param name="list_id" value="11" />
+						<param name="label1" value="$INFO[ListItem.Label]" />
+						<param name="has_status_icon" value="true" />
+						<param name="info_update" value="5000" />
+					</include>
+				</control>
+				<control type="scrollbar" id="60">
+					<left>970</left>
+					<top>list_top_offset</top>
+					<width>12</width>
+					<bottom>list_bottom</bottom>
+					<onleft>11</onleft>
+					<onright>NextChannelGroup</onright>
+					<texturesliderbackground />
+					<animation effect="zoom" start="100,100" end="50,100" center="982,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(60)">conditional</animation>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<bottom>0</bottom>
+					<width>970</width>
+					<height>115</height>
+					<texture flipy="true">frame/InfoBar.png</texture>
+				</control>
+			</control>
+			<control type="group">
+				<depth>DepthOSD</depth>
+				<include>Animation_TopSlide</include>
+				<control type="image">
+					<left>0</left>
+					<width>970</width>
+					<height>110</height>
+					<texture>frame/InfoBar.png</texture>
+				</control>
+				<control type="label" id="2">
+					<description>header label</description>
+					<textoffsetx>40</textoffsetx>
+					<width>970</width>
+					<height>70</height>
+					<font>font45</font>
+					<aligny>center</aligny>
+					<label>$VAR[BreadcrumbsPVRChannelsOSDVar]</label>
+					<shadowcolor>black</shadowcolor>
+				</control>
+			</control>
+		</control>
+		<include>PVRChannelNumberInput</include>
+	</controls>
+</window>

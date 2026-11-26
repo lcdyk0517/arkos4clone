@@ -1,0 +1,749 @@
+# Kodi Media Center language file
+# Addon Name: Estuary
+# Addon id: skin.estuary
+# Addon Provider: Team Kodi
+msgid ""
+msgstr ""
+"Project-Id-Version: KODI Main\n"
+"Report-Msgid-Bugs-To: https://github.com/xbmc/xbmc/issues/\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2022-01-10 17:27+0000\n"
+"Last-Translator: Raimondas Dužinskas <raimondas.duzinskas@gmail.com>\n"
+"Language-Team: Lithuanian <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-estuary/lt_lt/>\n"
+"Language: lt_lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);\n"
+"X-Generator: Weblate 4.10.1\n"
+
+msgctxt "Addon Summary"
+msgid "Estuary skin by phil65. (Kodi's default skin)"
+msgstr "Estuary teminė išvaizda, kurią sukūrė phil65 ir Piers. (Numatytoji Kodi teminė išvaizda)"
+
+msgctxt "Addon Description"
+msgid "Estuary is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
+msgstr "Estuary yra numatytoji Kodi 17.0 ir aukštesnių versijų teminė išvaizda. Jos tikslas yra būti lengvai perprantama naujiems Kodi vartotojams."
+
+msgctxt "Addon Disclaimer"
+msgid "Estuary is the default skin for Kodi, removing it may cause issues"
+msgstr "Estuary yra numatytoji Kodi teminė išvaizda, jos pašalinimas gali sukelti problemų"
+
+msgctxt "#31000"
+msgid "Now playing"
+msgstr "Dabar atkuriama"
+
+msgctxt "#31001"
+msgid "Search..."
+msgstr "Ieškoti..."
+
+msgctxt "#31002"
+msgid "Show media fanart as background"
+msgstr "Rodyti media įrašo Fanart fone"
+
+msgctxt "#31003"
+msgid "Cinema mode"
+msgstr "Kino teatro režimas"
+
+msgctxt "#31004"
+msgid "Change mode"
+msgstr "Pakeisti režimą"
+
+msgctxt "#31005"
+msgid "Watch as 2D"
+msgstr "Žiūrėti 2D režimu"
+
+msgctxt "#31006"
+msgid "Random movies"
+msgstr "Atsitiktiniai filmai"
+
+msgctxt "#31007"
+msgid "Unwatched movies"
+msgstr "Neperžiūrėti filmai"
+
+msgctxt "#31008"
+msgid "Enable category widgets"
+msgstr "Įjungti kategorijos valdiklius"
+
+msgctxt "#31009"
+msgid "Download icons"
+msgstr "Atsisiųsti piktogramas"
+
+msgctxt "#31010"
+msgid "In progress movies"
+msgstr "Nebaigti žiūrėti filmai"
+
+msgctxt "#31011"
+msgid "Most played albums"
+msgstr "Dažniausiai klausyti albumai"
+
+msgctxt "#31012"
+msgid "Random albums"
+msgstr "Atsitiktiniai albumai"
+
+msgctxt "#31013"
+msgid "Random artists"
+msgstr "Atsitiktiniai atlikėjai"
+
+msgctxt "#31014"
+msgid "Unplayed albums"
+msgstr "Neperklausyti albumai"
+
+#. home screen recordings widget: recent tv / radio recordings
+msgctxt "#31015"
+msgid "Recent recordings"
+msgstr "Naujausi įrašai"
+
+#. home screen channel widget: recently played tv channels. (please note that in some non-english languages #31018 and #31016 might not be equal)
+msgctxt "#31016"
+msgid "Recently played channels"
+msgstr "Neseniai žiūrėti kanalai"
+
+msgctxt "#31017"
+msgid "Rated"
+msgstr "Įvertinta"
+
+#. home screen channel widget: recently played radio channels. (please note that in some non-english languages #31018 and #31016 might not be equal)
+msgctxt "#31018"
+msgid "Recently played channels"
+msgstr "Neseniai žiūrėti kanalai"
+
+msgctxt "#31019"
+msgid "Forecast"
+msgstr "Prognozė"
+
+msgctxt "#31020"
+msgid "Actions"
+msgstr "Veiksmai"
+
+msgctxt "#31021"
+msgid "Misc options"
+msgstr "Įvairios parinktys"
+
+msgctxt "#31022"
+msgid "Sort by"
+msgstr "Rūšiuoti pagal"
+
+msgctxt "#31023"
+msgid "Viewtype"
+msgstr "Rodinio tipas"
+
+msgctxt "#31024"
+msgid "Choose rating to display for media items"
+msgstr "Pasirinkite kurį media elementų reitingą rodyti"
+
+msgctxt "#31025"
+msgid "No favourites found. You can add any item from media views to this list by using the context menu."
+msgstr "Nerasta mėgstamiausiųjų. Jūs galite pridėti bet kurį elementą iš media rodinių į šį sąrašą naudodami kontekstinį meniu."
+
+msgctxt "#31026"
+msgid "Timeshift"
+msgstr "Laiko poslinkis"
+
+msgctxt "#31027"
+msgid "Next aired"
+msgstr "Kita transliacija"
+
+msgctxt "#31028"
+msgid "Show fanart"
+msgstr "Rodyti Fanart"
+
+msgctxt "#31029"
+msgid "Last logged in"
+msgstr "Paskutinis prisijungimas"
+
+#. Label to show the system memory usage
+msgctxt "#31030"
+msgid "System memory usage"
+msgstr "RAM naudojimas"
+
+msgctxt "#31031"
+msgid "Version info"
+msgstr "Versijos informacija"
+
+msgctxt "#31032"
+msgid "Order"
+msgstr "Rūšiavimas"
+
+msgctxt "#31033"
+msgid "Your rating"
+msgstr "Jūsų reitingas"
+
+msgctxt "#31034"
+msgid "Extended info"
+msgstr "Išplėstinė informacija"
+
+msgctxt "#31035"
+msgid "Pages"
+msgstr "Puslapis"
+
+msgctxt "#31036"
+msgid "items"
+msgstr "elem."
+
+msgctxt "#31037"
+msgid "Selected track"
+msgstr "Pasirinktas takelis"
+
+msgctxt "#31038"
+msgid "Rewind"
+msgstr "Prasukti atgal"
+
+msgctxt "#31039"
+msgid "Fast forward"
+msgstr "Prasukti pirmyn"
+
+msgctxt "#31041"
+msgid "Camera manufacturer"
+msgstr "Kameros gamintojas"
+
+msgctxt "#31042"
+msgid "Playlist options"
+msgstr "Grojaraščio parinktys"
+
+msgctxt "#31043"
+msgid "Set the type and add rules to create a smart playlist. These playlists are dynamic and include all media items from your database which apply to your chosen rules."
+msgstr "Nustatykite išmaniojo grojaraščio tipą ir taisykles. Šie grojaraščiai yra dinaminiai ir įtraukia visus media elementus iš jūsų duomenų bazės, kurie atitinka pasirinktas taisykles."
+
+msgctxt "#31044"
+msgid "Add group"
+msgstr "Pridėti grupę"
+
+msgctxt "#31045"
+msgid "Rename group"
+msgstr "Pervadinti grupę"
+
+msgctxt "#31046"
+msgid "Delete group"
+msgstr "Pašalinti grupę"
+
+msgctxt "#31048"
+msgid "Available"
+msgstr "Prieinama"
+
+msgctxt "#31052"
+msgid "filtered"
+msgstr "filtruota"
+
+msgctxt "#31053"
+msgid "Arial based"
+msgstr "Arial pagrindu"
+
+msgctxt "#31054"
+msgid "Press [B]Left[/B] to step back, or [B]Right[/B] to step forward"
+msgstr "Paspauskite [B]kairėn[/B] norėdami žengti atgal ar [B]dešinėn[/B], jei norite žengti pirmyn"
+
+msgctxt "#31055"
+msgid "Press [B]Right[/B] to frame advance"
+msgstr "Paspauskite [B]dešinėn[/B] norėdami perjungti kadrą pirmyn"
+
+msgctxt "#31056"
+msgid "Go to playlist"
+msgstr "Eiti į grojaraštį"
+
+msgctxt "#31057"
+msgid "Show login screen on startup"
+msgstr "Rodyti prisijungimo langą paleidžiant"
+
+msgctxt "#31058"
+msgid "Automatic Login on startup"
+msgstr "Automatinis prisijungimas paleidžiant"
+
+msgctxt "#31061"
+msgid "Main menu items"
+msgstr "Meniu elementai"
+
+msgctxt "#31062"
+msgid "Choose weather fanart pack"
+msgstr "Pasirinkti orų Fanart paketą"
+
+msgctxt "#31063"
+msgid "Sections"
+msgstr "Skyriai"
+
+msgctxt "#31065"
+msgid "Video playlist"
+msgstr "Vaizdo įrašų grojaraštis"
+
+msgctxt "#31066"
+msgid "Music playlist"
+msgstr "Muzikos grojaraštis"
+
+msgctxt "#31067"
+msgid "Event log"
+msgstr "Įvykių žurnalas"
+
+msgctxt "#31068"
+msgid "Choose presets"
+msgstr "Pasirinkite išankstines parinktis"
+
+msgctxt "#31069"
+msgid "Last Updated"
+msgstr "Paskutinis atnaujinimas"
+
+msgctxt "#31071"
+msgid "by"
+msgstr "nuo"
+
+msgctxt "#31072"
+msgid "Power Options"
+msgstr "Maitinimo parinktys"
+
+msgctxt "#31073"
+msgid "Total length"
+msgstr "Bendra trukmė"
+
+msgctxt "#31074"
+msgid "Total duration"
+msgstr "Bendra trukmė"
+
+msgctxt "#31075"
+msgid "Movie sets"
+msgstr "Filmų rinkiniai"
+
+msgctxt "#31079"
+msgid "Cast not available"
+msgstr "Vaidmenys neprieinami"
+
+msgctxt "#31080"
+msgid "Ends at"
+msgstr "Baigiasi"
+
+msgctxt "#31082"
+msgid "Lyrics add-on"
+msgstr "Dainų žodžių priedas"
+
+msgctxt "#31083"
+msgid "Lyrics add-on settings"
+msgstr "Dainų žodžių priedo nustatymai"
+
+msgctxt "#31084"
+msgid "Visualisation settings"
+msgstr "Vizualizacijos nustatymai"
+
+msgctxt "#31089"
+msgid "Available groups"
+msgstr "Galimos grupės"
+
+msgctxt "#31092"
+msgid "Video menu"
+msgstr "Vaizdo meniu"
+
+msgctxt "#31093"
+msgid "Show weather info in top bar"
+msgstr "Rodyti orų informaciją viršutinėje juostoje"
+
+msgctxt "#31095"
+msgid "Use slide animations"
+msgstr "Naudoti slinkimo animacijas"
+
+msgctxt "#31096"
+msgid "Local subtitle available"
+msgstr "Prieinami lokalūs subtitrai"
+
+msgctxt "#31097"
+msgid "Channel options"
+msgstr "Kanalo parinktys"
+
+msgctxt "#31098"
+msgid "Select your Kodi user profile[CR]to login and continue"
+msgstr "Pasirinkite savo Kodi profilį[CR]norėdami prisijungti ir tęsti"
+
+#. viewtype name
+msgctxt "#31099"
+msgid "IconWall"
+msgstr "Piktogramų siena"
+
+#. viewtype name
+msgctxt "#31100"
+msgid "Shift"
+msgstr "Postūmis"
+
+#. viewtype name
+msgctxt "#31101"
+msgid "InfoWall"
+msgstr "Infosiena"
+
+#. viewtype name
+msgctxt "#31102"
+msgid "Wall"
+msgstr "Siena"
+
+msgctxt "#31103"
+msgid "Enter text here..."
+msgstr "Įveskite tekstą čia..."
+
+msgctxt "#31104"
+msgid "Your library is currently empty. In order to populate it with your personal media, enter \"Files\" section, add a media source and configure it. After the source has been added and indexed you will be able to browse your library."
+msgstr "Jūsų biblioteka šiuo metu tuščia. Norėdami užpildyti ją asmeniniais media įrašais, eikite į \"Failų\" skyrių, pridėkite media šaltinį ir sukonfigūruokite jį. Kai šaltinis bus pridėtas ir suindeksuotas, galėsite naršyti po savo biblioteką."
+
+msgctxt "#31105"
+msgid "Add video sources and set the appropriate content type in order to populate your video libraries."
+msgstr "Pridėkite vaizdo įrašų šaltinių ir nustatykite atitinkamą turinio tipą, jei norite užpildyti savo vaizdo įrašų bibliotekas."
+
+msgctxt "#31106"
+msgid "Teletext"
+msgstr "Teletekstas"
+
+#. viewtype name
+msgctxt "#31107"
+msgid "WideList"
+msgstr "Platus sąrašas"
+
+msgctxt "#31110"
+msgid "Enter files section"
+msgstr "Eiti į failų skyrių"
+
+msgctxt "#31111"
+msgid "View your personal pictures or download one of the many image add-ons from the official repository."
+msgstr "Peržiūrėkite asmeninius paveikslėlius arba atsisiųskite vieną iš daugelio atvaizdų priedų iš oficialios saugyklos."
+
+msgctxt "#31112"
+msgid "Toggle audio stream"
+msgstr "Perjungti garso srautą"
+
+msgctxt "#31113"
+msgid "Search local library"
+msgstr "Ieškoti lokalioje bibliotekoje"
+
+msgctxt "#31114"
+msgid "Search YouTube"
+msgstr "Ieškoti YouTube"
+
+msgctxt "#31115"
+msgid "Toggle subtitle"
+msgstr "Perjungti subtitrus"
+
+msgctxt "#31116"
+msgid "Remove this main menu item"
+msgstr "Pašalinti šį pagrindinio meniu elementą"
+
+msgctxt "#31117"
+msgid "Edit nodes"
+msgstr "Redaguoti mazgus"
+
+msgctxt "#31118"
+msgid "Enter add-on browser"
+msgstr "Atidaryti priedų naršyklę"
+
+msgctxt "#31119"
+msgid "You do not have any add-ons installed yet. Visit our add-on browser to browse through our collection and improve your Kodi experience."
+msgstr "Jūs kol kas nesate įdiegę priedų. Atsidarykite priedų naršyklę, jei norite naršyti mūsų kolekciją ir pagerinti Kodi patirtį."
+
+msgctxt "#31120"
+msgid "You did not set up a weather provider yet. In order to view weather information, choose a weather provider and set up your location."
+msgstr "Jūs kol kas nenustatėte orų tiekėjo. Jei norite matyti orų informaciją, pasirinkite orų tiekėją ir nustatykite savo vietovę."
+
+msgctxt "#31121"
+msgid "Set weather provider"
+msgstr "Nustatyti orų tiekėją"
+
+msgctxt "#31122"
+msgid "Unwatched TV Shows"
+msgstr "Neperžiūrėtos TV laidos"
+
+msgctxt "#31123"
+msgid "Same director"
+msgstr "Tas pats režisierius"
+
+msgctxt "#31125"
+msgid "Press up for actor info"
+msgstr "Paspauskite aukštyn norėdami atidaryti aktoriaus informaciją"
+
+msgctxt "#31126"
+msgid "Press OK to read plot"
+msgstr "Paspauskite OK norėdami skaityti siužetą"
+
+msgctxt "#31127"
+msgid "Show icons"
+msgstr "Rodyti piktogramas"
+
+msgctxt "#31128"
+msgid "Contributors"
+msgstr "Bendraautoriai"
+
+msgctxt "#31129"
+msgid "General settings applying to all areas of the skin."
+msgstr "Pagrindiniai nustatymai pritaikomi visoms teminės išvaizdoms sritims."
+
+msgctxt "#31130"
+msgid "Main menu-related settings: Configure the home screen to your likings."
+msgstr "Su pagrindiniu meniu susiję nustatymai: susikonfigūruokite pradinį ekraną taip kaip patinka."
+
+msgctxt "#31131"
+msgid "Choose skin fanart pack"
+msgstr "Pasirinkti teminės išvaizdos Fanart paketą"
+
+msgctxt "#31132"
+msgid "Select Program"
+msgstr "Pasirinkite programą"
+
+msgctxt "#31133"
+msgid "Select Resolution"
+msgstr "Pasirinkti raišką"
+
+msgctxt "#31134"
+msgid "Remaining"
+msgstr "Liko"
+
+msgctxt "#31135"
+msgid "Binary"
+msgstr "Dvejetainis"
+
+msgctxt "#31136"
+msgid "Click here to see latest changes..."
+msgstr "Paspauskite čia norėdami peržiūrėti naujausius pakeitimus..."
+
+#. Label to show PVR info page
+msgctxt "#31137"
+msgid "PVR"
+msgstr "PVR"
+
+#. Label to show player info page
+msgctxt "#31138"
+msgid "Player"
+msgstr "Grotuvas"
+
+#. Label to show video decoder name
+msgctxt "#31139"
+msgid "Video decoder"
+msgstr "Vaizdo dekoderis"
+
+#. Label to show the video pixel format
+msgctxt "#31140"
+msgid "Pixel format"
+msgstr "Pikselio formatas"
+
+msgctxt "#31141"
+msgid "Changes for version"
+msgstr "Versijos pakeitimai"
+
+msgctxt "#31142"
+msgid "Play speed"
+msgstr "Atkūrimo greitis"
+
+msgctxt "#31143"
+msgid "You did not set up PVR yet. In order to use PVR, choose a PVR client addon and configure it. Please visit http://kodi.wiki/view/PVR to learn more."
+msgstr "Jūs kol kas nenustatėte PVR. Norėdami naudoti PVR, pasirinkite PVR kliento priedą ir sukonfigūruokite jį. Apsilankykite http://kodi.wiki/view/PVR, jei reikia daugiau informacijos."
+
+msgctxt "#31144"
+msgid "Enter add-on browser"
+msgstr "Atidaryti priedų naršyklę"
+
+msgctxt "#31145"
+msgid "Search add-ons"
+msgstr "Ieškoti priedų"
+
+msgctxt "#31146"
+msgid "In cinemas"
+msgstr "Kino teatruose"
+
+msgctxt "#31147"
+msgid "In cinemas soon"
+msgstr "Netrukus kino teatruose"
+
+msgctxt "#31148"
+msgid "Categories"
+msgstr "Kategorijos"
+
+msgctxt "#31149"
+msgid "Select genre fanart pack"
+msgstr "Pasirinkti žanrų Fanart paketą"
+
+msgctxt "#31150"
+msgid "Origin"
+msgstr "Kilmė"
+
+msgctxt "#31151"
+msgid "Unwatched music videos"
+msgstr "Neperžiūrėti muzikiniai klipai"
+
+msgctxt "#31152"
+msgid "Random music videos"
+msgstr "Atsitiktiniai muzikiniai klipai"
+
+msgctxt "#31153"
+msgid "You do not have any add-ons of this type installed. Enter the add-on browser to download add-ons created by our community."
+msgstr "Jūs kol kas nesate įdiegę šio tipo priedų. Atsidarykite priedų naršyklę, jei norite atsisiųsti mūsų bendruomenės sukurtų priedų."
+
+msgctxt "#31154"
+msgid "Press OK to switch between locations"
+msgstr "Paspauskite OK norėdami persijungti tarp vietovių"
+
+msgctxt "#31155"
+msgid "No bookmarks created yet."
+msgstr "Kol kas nėra jokių žymų."
+
+msgctxt "#31156"
+msgid "Choose background pattern"
+msgstr "Pasirinkite fono raštą"
+
+msgctxt "#31157"
+msgid "Edit categories"
+msgstr "Redaguoti kategorijas"
+
+msgctxt "#31158"
+msgid "Touch mode"
+msgstr "Jutiklinio ekrano režimas"
+
+msgctxt "#31159"
+msgid "Artwork"
+msgstr "Iliustracijos"
+
+msgctxt "#31160"
+msgid "Show media flags"
+msgstr "Rodyti media vėliavas"
+
+msgctxt "#31161"
+msgid "Numeric pad"
+msgstr "Skaičių klaviatūra"
+
+msgctxt "#31162"
+msgid "Play your personal games or download one of the many game add-ons from the official repository."
+msgstr "Žaiskite asmeninius žaidimus arba atsisiųskite vieną iš daugelio žaidimų priedų iš oficialios saugyklos."
+
+msgctxt "#31163"
+msgid "Show Fanart background"
+msgstr "Rodyti Fanart fone"
+
+#. Choose profile identifier
+msgctxt "#31164"
+msgid "Choose kind of profile identification"
+msgstr "Pasirinkite profilio identifikacijos būdą"
+
+#. Label for the kind of profile identification
+msgctxt "#31165"
+msgid "Profile name"
+msgstr "Profilio vardas"
+
+#. Label for the kind of profile identification
+msgctxt "#31166"
+msgid "Profile avatar"
+msgstr "Profilio avataras"
+
+#. Label of a setting
+msgctxt "#31167"
+msgid "Animate background"
+msgstr "Animuoti foną"
+
+#. Label of a setting
+msgctxt "#31168"
+msgid "Show posters instead of thumbs for musicvideos"
+msgstr "Muzikiniams vaizdo įrašams rodyti plakatus vietoje miniatiūrų"
+
+#. Description label for skin settings area
+msgctxt "#31169"
+msgid "Artwork related settings."
+msgstr "Su iliustracijomis susiję nustatymai."
+
+#. Label for OSD settings category
+msgctxt "#31170"
+msgid "On screen display"
+msgstr ""
+
+#. Helper text for the label of OSD settings category
+msgctxt "#31171"
+msgid "On screen display (OSD) related settings"
+msgstr ""
+
+#. Setting Automatically close video OSD
+msgctxt "#31172"
+msgid "Automatically close video OSD"
+msgstr ""
+
+#. Setting auto close time for video osd
+msgctxt "#31173"
+msgid "Video OSD autoclose time (seconds)"
+msgstr ""
+
+#. Setting to control what happens when clicking a music album on the home screen
+msgctxt "#31174"
+msgid "Default select action for albums on the home screen"
+msgstr ""
+
+#. Setting to control what happens when clicking a TV show on the home screen
+msgctxt "#31175"
+msgid "Default select action for TV shows on the home screen"
+msgstr ""
+
+#. Setting to control what happens when clicking a movie set on the home screen
+msgctxt "#31176"
+msgid "Default select action for movie sets on the home screen"
+msgstr ""
+
+# empty strings from id 31170 to 31599
+#. Label to show the video codec name
+msgctxt "#31600"
+msgid "Video codec"
+msgstr "Vaizdo kodekas"
+
+#. Label to show the video resolution
+msgctxt "#31601"
+msgid "Video resolution"
+msgstr "Vaizdo raiška"
+
+#. Label to show the video aspect
+msgctxt "#31602"
+msgid "Video aspect"
+msgstr "Vaizdo įrašo formato santykis"
+
+#. Label to show the video bitrate
+msgctxt "#31603"
+msgid "Video bitrate"
+msgstr "Vaizdo įrašo pralaidumas"
+
+#. Label to show the audio codec name
+msgctxt "#31604"
+msgid "Audio codec"
+msgstr "Garso kodekas"
+
+#. Label to show the number of audio channels
+msgctxt "#31605"
+msgid "Audio channels"
+msgstr "Garso kanalai"
+
+#. Label to show the audio bitrate
+msgctxt "#31606"
+msgid "Audio bitrate"
+msgstr "Garso įrašo pralaidumas"
+
+#. Label to show the screen resolution
+msgctxt "#31607"
+msgid "Screen resolution"
+msgstr "Ekrano skiriamoji geba"
+
+#. Label to show the system rendering speed
+msgctxt "#31608"
+msgid "System rendering speed"
+msgstr "Sistemos atvaizdavimo greitis"
+
+#. Label to show the system CPU usage
+msgctxt "#31609"
+msgid "System CPU usage"
+msgstr "Sistemos procesoriaus naudojimas"
+
+#. Label to show the media (metadata) info page
+msgctxt "#31610"
+msgid "Media"
+msgstr "Medija"
+
+#. Label to show the system info page
+msgctxt "#31611"
+msgid "System"
+msgstr "Sistema"
+
+#~ msgctxt "#31059"
+#~ msgid "Select + X"
+#~ msgstr "Select + X"
+
+#~ msgctxt "#31060"
+#~ msgid "Select + Start"
+#~ msgstr "Select + Start"
+
+#~ msgctxt "#31137"
+#~ msgid "PVR info"
+#~ msgstr "PVR informacija"
+
+#~ msgctxt "#31138"
+#~ msgid "Player process info"
+#~ msgstr "Grotuvo apdorojimo informacija"

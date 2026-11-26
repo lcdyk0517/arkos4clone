@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<settings version="1">
+  <section id="player">
+    <category id="videoplayer">
+      <group id="3">
+        <setting id="videoplayer.usevdpau" type="boolean" label="13425" help="36155">
+          <requirement>HAVE_LIBVDPAU</requirement>
+          <visible>false</visible>
+          <level>2</level>
+          <default>true</default>
+          <control type="toggle" />
+        </setting>
+        <setting id="videoplayer.usevdpaumixer" type="boolean" label="13437" help="36421">
+          <requirement>HAVE_LIBVDPAU</requirement>
+          <visible>false</visible>
+          <level>2</level>
+          <default>true</default>
+          <dependencies>
+            <dependency type="enable">
+              <condition setting="videoplayer.usevdpau" operator="is">true</condition> <!-- USE VDPAU -->
+            </dependency>
+          </dependencies>
+          <control type="toggle" />
+        </setting>
+        <setting id="videoplayer.usevdpaumpeg2" type="boolean" parent="videoplayer.usevdpau" label="13441" help="13442">
+          <requirement>HAVE_LIBVDPAU</requirement>
+          <visible>false</visible>
+          <level>3</level>
+          <default>false</default>
+          <dependencies>
+            <dependency type="enable">
+              <condition setting="videoplayer.usevdpau" operator="is">true</condition> <!-- USE VDPAU -->
+            </dependency>
+          </dependencies>
+          <control type="toggle" />
+        </setting>
+        <setting id="videoplayer.usevdpaumpeg4" type="boolean" parent="videoplayer.usevdpau" label="13443" help="13444">
+          <requirement>HAVE_LIBVDPAU</requirement>
+          <visible>false</visible>
+          <level>3</level>
+          <default>false</default>
+          <dependencies>
+            <dependency type="enable">
+              <condition setting="videoplayer.usevdpau" operator="is">true</condition> <!-- USE VDPAU -->
+            </dependency>
+          </dependencies>
+          <control type="toggle" />
+        </setting>
+        <setting id="videoplayer.usevdpauvc1" type="boolean" parent="videoplayer.usevdpau" label="13445" help="13446">
+          <requirement>HAVE_LIBVDPAU</requirement>
+          <visible>false</visible>
+          <level>3</level>
+          <default>true</default>
+          <dependencies>
+            <dependency type="enable">
+              <condition setting="videoplayer.usevdpau" operator="is">true</condition> <!-- USE VDPAU -->
+            </dependency>
+          </dependencies>
+          <control type="toggle" />
+        </setting>
+        <setting id="videoplayer.usevaapi" type="boolean" label="13426" help="36156">
+          <requirement>HAVE_LIBVA</requirement>
+          <visible>false</visible>
+          <level>2</level>
+          <default>true</default>
+          <control type="toggle" />
+        </setting>
+        <setting id="videoplayer.usevaapimpeg2" type="boolean" parent="videoplayer.usevaapi" label="13447" help="13448">
+          <requirement>HAVE_LIBVA</requirement>
+          <visible>false</visible>
+          <dependencies>
+            <dependency type="enable">
+              <condition setting="videoplayer.usevaapi" operator="is">true</condition>
+            </dependency>
+          </dependencies>
+          <level>3</level>
+          <default>false</default>
+          <control type="toggle" />
+        </setting>
+        <setting id="videoplayer.usevaapimpeg4" type="boolean" parent="videoplayer.usevaapi" label="13449" help="13450">
+          <requirement>HAVE_LIBVA</requirement>
+          <visible>false</visible>
+          <dependencies>
+            <dependency type="enable">
+              <condition setting="videoplayer.usevaapi" operator="is">true</condition>
+            </dependency>
+          </dependencies>
+          <level>3</level>
+          <default>true</default>
+          <control type="toggle" />
+        </setting>
+        <setting id="videoplayer.usevaapivc1" type="boolean" parent="videoplayer.usevaapi" label="13451" help="13452">
+          <requirement>HAVE_LIBVA</requirement>
+          <visible>false</visible>
+          <dependencies>
+            <dependency type="enable">
+              <condition setting="videoplayer.usevaapi" operator="is">true</condition>
+            </dependency>
+          </dependencies>
+          <level>3</level>
+          <default>true</default>
+          <control type="toggle" />
+        </setting>
+        <setting id="videoplayer.usevaapivp8" type="boolean" parent="videoplayer.usevaapi" label="13453" help="13454">
+          <requirement>HAVE_LIBVA</requirement>
+          <visible>false</visible>
+          <dependencies>
+            <dependency type="enable">
+              <condition setting="videoplayer.usevaapi" operator="is">true</condition>
+            </dependency>
+          </dependencies>
+          <level>3</level>
+          <default>true</default>
+          <control type="toggle" />
+        </setting>
+        <setting id="videoplayer.usevaapivp9" type="boolean" parent="videoplayer.usevaapi" label="13455" help="13456">
+          <requirement>HAVE_LIBVA</requirement>
+          <visible>false</visible>
+          <dependencies>
+            <dependency type="enable">
+              <condition setting="videoplayer.usevaapi" operator="is">true</condition>
+            </dependency>
+          </dependencies>
+          <level>3</level>
+          <default>true</default>
+          <control type="toggle" />
+        </setting>
+        <setting id="videoplayer.usevaapihevc" type="boolean" parent="videoplayer.usevaapi" label="13460" help="13461">
+          <requirement>HAVE_LIBVA</requirement>
+          <visible>false</visible>
+          <dependencies>
+            <dependency type="enable">
+              <condition setting="videoplayer.usevaapi" operator="is">true</condition>
+            </dependency>
+          </dependencies>
+          <level>3</level>
+          <default>true</default>
+          <control type="toggle" />
+        </setting>
+        <setting id="videoplayer.usevaapiav1" type="boolean" parent="videoplayer.usevaapi" label="13468" help="13469">
+          <requirement>HAVE_LIBVA</requirement>
+          <visible>false</visible>
+          <dependencies>
+            <dependency type="enable">
+              <condition setting="videoplayer.usevaapi" operator="is">true</condition>
+            </dependency>
+          </dependencies>
+          <level>3</level>
+          <default>true</default>
+          <control type="toggle" />
+        </setting>
+        <setting id="videoplayer.prefervaapirender" type="boolean" parent="videoplayer.usevaapi" label="13457" help="36433">
+          <requirement>HAVE_LIBVA</requirement>
+          <visible>false</visible>
+          <dependencies>
+            <dependency type="enable">
+              <condition setting="videoplayer.usevaapi" operator="is">true</condition>
+            </dependency>
+          </dependencies>
+          <level>3</level>
+          <default>true</default>
+          <control type="toggle" />
+        </setting>
+        <setting id="videoplayer.useprimedecoder" type="boolean" label="13430" help="36172">
+          <requirement>HAS_GLES</requirement>
+          <visible>false</visible>
+          <level>2</level>
+          <default>false</default>
+          <control type="toggle" />
+        </setting>
+        <setting id="videoplayer.useprimedecoderforhw" type="boolean" parent="videoplayer.useprimedecoder" label="13438" help="36172">
+          <requirement>HAS_GLES</requirement>
+          <visible>false</visible>
+          <dependencies>
+            <dependency type="enable">
+              <condition setting="videoplayer.useprimedecoder" operator="is">true</condition>
+            </dependency>
+          </dependencies>
+          <level>3</level>
+          <default>true</default>
+          <control type="toggle" />
+        </setting>
+        <setting id="videoplayer.useprimerenderer" type="integer" label="13462" help="13463">
+          <requirement>HAS_GLES</requirement>
+          <visible>false</visible>
+          <level>2</level>
+          <default>1</default>
+          <constraints>
+            <options>
+              <option label="13464">0</option> <!-- DIRECT -->
+              <option label="13465">1</option> <!-- GLES -->
+            </options>
+          </constraints>
+          <control type="spinner" format="string" />
+        </setting>
+      </group>
+    </category>
+  </section>
+  <section id="system">
+    <category id="display">
+      <group id="1">
+        <setting id="videoscreen.fakefullscreen">
+          <visible>false</visible>
+        </setting>
+        <setting id="videoscreen.hwscalingfilter" type="boolean" label="39151" help="39152">
+          <visible>false</visible>
+          <level>3</level>
+          <default>true</default>
+          <control type="toggle" />
+        </setting>
+        <setting id="videoscreen.limitguisize" type="integer" label="37021" help="36548">
+          <visible>false</visible>
+          <level>3</level>
+          <default>0</default>
+          <constraints>
+            <options>
+              <option label="37030">0</option> <!-- Unlimited -->
+              <option label="37028">1</option> <!-- 720 -->
+              <option label="13466">2</option> <!-- 1080 / 720 (>30Hz) -->
+              <option label="37046">3</option> <!-- 1080 -->
+              <option label="13467">4</option> <!-- Unlimited / 1080 (>30Hz) -->
+            </options>
+          </constraints>
+          <control type="list" format="string" />
+        </setting>
+        <setting id="videoscreen.limitedrange" type="boolean" label="36042" help="36359">
+          <level>3</level>
+          <default>false</default>
+          <control type="toggle" />
+        </setting>
+      </group>
+    </category>
+    <category id="input">
+      <group id="4" label="35150">
+        <setting id="input.libinputkeyboardlayout" type="string" label="407" help="36436">
+          <level>0</level>
+          <default>us</default>
+          <visible>false</visible>
+          <constraints>
+            <options>libinputkeyboardlayout</options>
+          </constraints>
+          <control type="list" format="string">
+            <multiselect>false</multiselect>
+          </control>
+        </setting>
+      </group>
+    </category>
+  </section>
+</settings>

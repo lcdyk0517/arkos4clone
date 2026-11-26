@@ -1,0 +1,765 @@
+# Kodi Media Center language file
+# Addon Name: Estuary
+# Addon id: skin.estuary
+# Addon Provider: Team Kodi
+msgid ""
+msgstr ""
+"Project-Id-Version: KODI Main\n"
+"Report-Msgid-Bugs-To: https://github.com/xbmc/xbmc/issues/\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2023-11-28 18:10+0000\n"
+"Last-Translator: Frodo19 <bilbohu@gmail.com>\n"
+"Language-Team: Hungarian <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-estuary/hu_hu/>\n"
+"Language: hu_hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.2.1\n"
+
+msgctxt "Addon Summary"
+msgid "Estuary skin by phil65. (Kodi's default skin)"
+msgstr "Estuary felszín. Készítette phil65 és Piers. (Kodi alapértelmezett felszín)"
+
+msgctxt "Addon Description"
+msgid "Estuary is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
+msgstr "Az Estuary az alapértelmezett felszín a 17.0 és újabb Kodi kiadásokban. Megpróbál könnyen kezelhető és használható lenni, az újonc Kodi felhasználóknak is."
+
+msgctxt "Addon Disclaimer"
+msgid "Estuary is the default skin for Kodi, removing it may cause issues"
+msgstr "Az Estuary az alapértelmezett Kodi felszín. Eltávolítása problémákat okozhat"
+
+msgctxt "#31000"
+msgid "Now playing"
+msgstr "Most játszott"
+
+msgctxt "#31001"
+msgid "Search..."
+msgstr "Keresés…"
+
+msgctxt "#31002"
+msgid "Show media fanart as background"
+msgstr "Médiaillusztrációk megjelenítése a háttérben"
+
+msgctxt "#31003"
+msgid "Cinema mode"
+msgstr "Mozi mód"
+
+msgctxt "#31004"
+msgid "Change mode"
+msgstr "Mód változtatása"
+
+msgctxt "#31005"
+msgid "Watch as 2D"
+msgstr "Megnézés 2D-ként"
+
+msgctxt "#31006"
+msgid "Random movies"
+msgstr "Véletlenszerű filmek"
+
+msgctxt "#31007"
+msgid "Unwatched movies"
+msgstr "Nem látott filmek"
+
+msgctxt "#31008"
+msgid "Enable category widgets"
+msgstr "Kategória ablakelemek engedélyezése"
+
+msgctxt "#31009"
+msgid "Download icons"
+msgstr "Ikonok letöltése"
+
+msgctxt "#31010"
+msgid "In progress movies"
+msgstr "Folyamatban lévő filmek"
+
+msgctxt "#31011"
+msgid "Most played albums"
+msgstr "Legtöbbet játszott albumok"
+
+msgctxt "#31012"
+msgid "Random albums"
+msgstr "Véletlenszerű albumok"
+
+msgctxt "#31013"
+msgid "Random artists"
+msgstr "Véletlenszerű előadók"
+
+msgctxt "#31014"
+msgid "Unplayed albums"
+msgstr "Nem játszott albumok"
+
+#. home screen recordings widget: recent tv / radio recordings
+msgctxt "#31015"
+msgid "Recent recordings"
+msgstr "Friss felvételek"
+
+#. home screen channel widget: recently played tv channels. (please note that in some non-english languages #31018 and #31016 might not be equal)
+msgctxt "#31016"
+msgid "Recently played channels"
+msgstr "Mostanában játszott csatornák"
+
+msgctxt "#31017"
+msgid "Rated"
+msgstr "Értékelés"
+
+#. home screen channel widget: recently played radio channels. (please note that in some non-english languages #31018 and #31016 might not be equal)
+msgctxt "#31018"
+msgid "Recently played channels"
+msgstr "Mostanában játszott csatornák"
+
+msgctxt "#31019"
+msgid "Forecast"
+msgstr "Előrejelzés"
+
+msgctxt "#31020"
+msgid "Actions"
+msgstr "Műveletek"
+
+msgctxt "#31021"
+msgid "Misc options"
+msgstr "Egyéb beállítások"
+
+msgctxt "#31022"
+msgid "Sort by"
+msgstr "Rendezés"
+
+msgctxt "#31023"
+msgid "Viewtype"
+msgstr "Nézettípus"
+
+msgctxt "#31024"
+msgid "Choose rating to display for media items"
+msgstr "Válassz besorolást a médiaelemek megjelenítéséhez"
+
+msgctxt "#31025"
+msgid "No favourites found. You can add any item from media views to this list by using the context menu."
+msgstr "Nem találhatóak kedvencek. Bármely elemet hozzáadhat ehhez a listához a média nézetekből, a környezeti menü használatával."
+
+msgctxt "#31026"
+msgid "Timeshift"
+msgstr "Csúsztatott felvétel"
+
+msgctxt "#31027"
+msgid "Next aired"
+msgstr "Következő premier"
+
+msgctxt "#31028"
+msgid "Show fanart"
+msgstr "Illusztráció megjelenítése"
+
+msgctxt "#31029"
+msgid "Last logged in"
+msgstr "Utoljára bejelentkezve"
+
+#. Label to show the system memory usage
+msgctxt "#31030"
+msgid "System memory usage"
+msgstr "Rendszer memóriahasználata"
+
+msgctxt "#31031"
+msgid "Version info"
+msgstr "Verzióinformáció"
+
+msgctxt "#31032"
+msgid "Order"
+msgstr "Rendezés"
+
+msgctxt "#31033"
+msgid "Your rating"
+msgstr "Értékelés"
+
+msgctxt "#31034"
+msgid "Extended info"
+msgstr "Bővített információ"
+
+msgctxt "#31035"
+msgid "Pages"
+msgstr "Oldalak"
+
+msgctxt "#31036"
+msgid "items"
+msgstr "Elemek"
+
+msgctxt "#31037"
+msgid "Selected track"
+msgstr "Kiválasztott sáv"
+
+msgctxt "#31038"
+msgid "Rewind"
+msgstr "Visszatekerés"
+
+msgctxt "#31039"
+msgid "Fast forward"
+msgstr "Előretekerés"
+
+msgctxt "#31041"
+msgid "Camera manufacturer"
+msgstr "Fényképezőkép gyártó"
+
+msgctxt "#31042"
+msgid "Playlist options"
+msgstr "Lejátszási lista lehetőségek"
+
+msgctxt "#31043"
+msgid "Set the type and add rules to create a smart playlist. These playlists are dynamic and include all media items from your database which apply to your chosen rules."
+msgstr "Adja meg a típust és a szabályokat az intelligens lejátszólista létrehozásához. Ezek a lejátszólisták dinamikusak, és minden médiaelemet figyelembe vesznek az adatbázisban, amelyekre alkalmazhatóak a választott szabályok."
+
+msgctxt "#31044"
+msgid "Add group"
+msgstr "Csoport hozzáadása"
+
+msgctxt "#31045"
+msgid "Rename group"
+msgstr "Csoport átnevezése"
+
+msgctxt "#31046"
+msgid "Delete group"
+msgstr "Csoport törlése"
+
+msgctxt "#31048"
+msgid "Available"
+msgstr "Elérhető"
+
+msgctxt "#31052"
+msgid "filtered"
+msgstr "szűrt"
+
+msgctxt "#31053"
+msgid "Arial based"
+msgstr "Arial betűkészlet"
+
+msgctxt "#31054"
+msgid "Press [B]Left[/B] to step back, or [B]Right[/B] to step forward"
+msgstr "Nyomja meg a [B]Bal[/B] gombot a vissza-, vagy a [B]Jobb[/B] gombot az előrelépéshez"
+
+msgctxt "#31055"
+msgid "Press [B]Right[/B] to frame advance"
+msgstr "Nyomja meg a [B]Jobb[/B] gombot a képkocka léptetéséhez"
+
+msgctxt "#31056"
+msgid "Go to playlist"
+msgstr "Lejátszólistához"
+
+msgctxt "#31057"
+msgid "Show login screen on startup"
+msgstr "Bejelentkezési képernyő megjelenítése indításkor"
+
+msgctxt "#31058"
+msgid "Automatic Login on startup"
+msgstr "Automatikus bejelentkezés indításkor"
+
+msgctxt "#31061"
+msgid "Main menu items"
+msgstr "Főmenü elemek"
+
+msgctxt "#31062"
+msgid "Choose weather fanart pack"
+msgstr "Válassz időjárás-illusztráció csomagot"
+
+msgctxt "#31063"
+msgid "Sections"
+msgstr "Szakaszok"
+
+msgctxt "#31065"
+msgid "Video playlist"
+msgstr "Videó lejátszólista"
+
+msgctxt "#31066"
+msgid "Music playlist"
+msgstr "Zenei lejátszólista"
+
+msgctxt "#31067"
+msgid "Event log"
+msgstr "Eseménynapló"
+
+msgctxt "#31068"
+msgid "Choose presets"
+msgstr "Válassz előre beállított értékeket"
+
+msgctxt "#31069"
+msgid "Last Updated"
+msgstr "Utoljára frissítve"
+
+msgctxt "#31071"
+msgid "by"
+msgstr "készítette"
+
+msgctxt "#31072"
+msgid "Power Options"
+msgstr "Kikapcsolási lehetőségek"
+
+msgctxt "#31073"
+msgid "Total length"
+msgstr "Teljes hossz"
+
+msgctxt "#31074"
+msgid "Total duration"
+msgstr "Teljes időtartam"
+
+msgctxt "#31075"
+msgid "Movie sets"
+msgstr "Film gyűjtemények"
+
+msgctxt "#31079"
+msgid "Cast not available"
+msgstr "Szereposztás nem elérhető"
+
+msgctxt "#31080"
+msgid "Ends at"
+msgstr "Befejezési időpont"
+
+msgctxt "#31082"
+msgid "Lyrics add-on"
+msgstr "Dalszöveg kiegészítő"
+
+msgctxt "#31083"
+msgid "Lyrics add-on settings"
+msgstr "Dalszöveg kiegészítő beállítások"
+
+msgctxt "#31084"
+msgid "Visualisation settings"
+msgstr "Vizualizáció beállítások"
+
+msgctxt "#31089"
+msgid "Available groups"
+msgstr "Elérhető csoportok"
+
+msgctxt "#31092"
+msgid "Video menu"
+msgstr "Videó menü"
+
+msgctxt "#31093"
+msgid "Show weather info in top bar"
+msgstr "Időjárás információ megjelenítése a felső sávban"
+
+msgctxt "#31095"
+msgid "Use slide animations"
+msgstr "Dia animációk használata"
+
+msgctxt "#31096"
+msgid "Local subtitle available"
+msgstr "Helyi felirat elérhető"
+
+msgctxt "#31097"
+msgid "Channel options"
+msgstr "Csatorna opciók"
+
+msgctxt "#31098"
+msgid "Select your Kodi user profile[CR]to login and continue"
+msgstr "Válaszd ki a Kodi felhasználói profilod[CR]a belépéshez"
+
+#. viewtype name
+msgctxt "#31099"
+msgid "IconWall"
+msgstr "Ikon Fal"
+
+#. viewtype name
+msgctxt "#31100"
+msgid "Shift"
+msgstr "Eltolás"
+
+#. viewtype name
+msgctxt "#31101"
+msgid "InfoWall"
+msgstr "Infó Fal"
+
+#. viewtype name
+msgctxt "#31102"
+msgid "Wall"
+msgstr "Fal"
+
+msgctxt "#31103"
+msgid "Enter text here..."
+msgstr "Ide írja a szöveget…"
+
+msgctxt "#31104"
+msgid "Your library is currently empty. In order to populate it with your personal media, enter \"Files\" section, add a media source and configure it. After the source has been added and indexed you will be able to browse your library."
+msgstr "A médiatár jelenleg üres. A saját médiafájlok hozzáadásához, menjen a \"Fájlok\" menüponthoz, adjon hozzá egy médiaforrást és konfigurálja azt. Miután a forrás hozzáadásra és indexelésre került, böngészni tudja a médiatárat."
+
+msgctxt "#31105"
+msgid "Add video sources and set the appropriate content type in order to populate your video libraries."
+msgstr "Adjon hozzá videóforrásokat és állítsa be a megfelelő tartalomtípust a médiatárak kialakításához."
+
+msgctxt "#31106"
+msgid "Teletext"
+msgstr "Teletext"
+
+#. viewtype name
+msgctxt "#31107"
+msgid "WideList"
+msgstr "Széles Lista"
+
+msgctxt "#31110"
+msgid "Enter files section"
+msgstr "Fájlok megadása szakasz"
+
+msgctxt "#31111"
+msgid "View your personal pictures or download one of the many image add-ons from the official repository."
+msgstr "Nézd meg a saját fényképeidet vagy tölts le egyet a sok képkiegészítő közül a hivatalos kiegészítő tárhelyről."
+
+msgctxt "#31112"
+msgid "Toggle audio stream"
+msgstr "Hangfolyam ki- és bekapcsolása"
+
+msgctxt "#31113"
+msgid "Search local library"
+msgstr "Helyi könyvtár keresése"
+
+msgctxt "#31114"
+msgid "Search YouTube"
+msgstr "YouTube keresés"
+
+msgctxt "#31115"
+msgid "Toggle subtitle"
+msgstr "Felirat váltás"
+
+msgctxt "#31116"
+msgid "Remove this main menu item"
+msgstr "Főmenü elem eltávolítása"
+
+msgctxt "#31117"
+msgid "Edit nodes"
+msgstr "Csomópontok szerkesztése"
+
+msgctxt "#31118"
+msgid "Enter add-on browser"
+msgstr "Belépés a kiegészítő böngészőbe"
+
+msgctxt "#31119"
+msgid "You do not have any add-ons installed yet. Visit our add-on browser to browse through our collection and improve your Kodi experience."
+msgstr "Még nincs telepített kiegészítő. Látogass el a kiegészítő böngészőhöz és válassz a gyűjteményből a Kodi felhasználói élmény javítása érdekében."
+
+msgctxt "#31120"
+msgid "You did not set up a weather provider yet. In order to view weather information, choose a weather provider and set up your location."
+msgstr "Még nem állítottál be időjárás szolgáltatót. Az időjárási adatok megtekintéséhez, válassz egy szolgáltatót és állítsd be a helyet."
+
+msgctxt "#31121"
+msgid "Set weather provider"
+msgstr "Időjárás-szolgáltató beállítása"
+
+msgctxt "#31122"
+msgid "Unwatched TV Shows"
+msgstr "Nem látott Sorozatok"
+
+msgctxt "#31123"
+msgid "Same director"
+msgstr "Egyazon rendező"
+
+msgctxt "#31125"
+msgid "Press up for actor info"
+msgstr "Nyomja meg a fel gombot a színész információkhoz"
+
+msgctxt "#31126"
+msgid "Press OK to read plot"
+msgstr "Nyomjon OK-t a tartalom elolvasásához"
+
+msgctxt "#31127"
+msgid "Show icons"
+msgstr "Ikonok megjelenítése"
+
+msgctxt "#31128"
+msgid "Contributors"
+msgstr "Közreműködők"
+
+msgctxt "#31129"
+msgid "General settings applying to all areas of the skin."
+msgstr "Általános beállítások a felszín minden egyes területére vonatkozóan."
+
+msgctxt "#31130"
+msgid "Main menu-related settings: Configure the home screen to your likings."
+msgstr "Főmenüvel kapcsolatos beállítások: állítsa be a főképernyőt az ízlésének megfelelően."
+
+msgctxt "#31131"
+msgid "Choose skin fanart pack"
+msgstr "Válassz felszín-illusztráció csomagot"
+
+msgctxt "#31132"
+msgid "Select Program"
+msgstr "Műsor kiválasztása"
+
+msgctxt "#31133"
+msgid "Select Resolution"
+msgstr "Felbontás kiválasztása"
+
+msgctxt "#31134"
+msgid "Remaining"
+msgstr "Hátralévő"
+
+msgctxt "#31135"
+msgid "Binary"
+msgstr "Bináris"
+
+msgctxt "#31136"
+msgid "Click here to see latest changes..."
+msgstr "Legfrissebb változtatások..."
+
+#. Label to show PVR info page
+msgctxt "#31137"
+msgid "PVR"
+msgstr "PVR"
+
+#. Label to show player info page
+msgctxt "#31138"
+msgid "Player"
+msgstr "Lejátszó"
+
+#. Label to show video decoder name
+msgctxt "#31139"
+msgid "Video decoder"
+msgstr "Videó dekóder"
+
+#. Label to show the video pixel format
+msgctxt "#31140"
+msgid "Pixel format"
+msgstr "Képpont formátum"
+
+msgctxt "#31141"
+msgid "Changes for version"
+msgstr "Változások a verzióban"
+
+msgctxt "#31142"
+msgid "Play speed"
+msgstr "Lejátszási sebesség"
+
+msgctxt "#31143"
+msgid "You did not set up PVR yet. In order to use PVR, choose a PVR client addon and configure it. Please visit http://kodi.wiki/view/PVR to learn more."
+msgstr "Még nem állítottad be a PVT-t. A PVR használata érdekében, válassz egy PVR-ügyfél bővítményt és konfiguráld. Kérünk látogass el a http://kodi.wiki/view/PVR oldalra több információért."
+
+msgctxt "#31144"
+msgid "Enter add-on browser"
+msgstr "Belépés a kiegészítő böngészőbe"
+
+msgctxt "#31145"
+msgid "Search add-ons"
+msgstr "Kiegészítők keresése"
+
+msgctxt "#31146"
+msgid "In cinemas"
+msgstr "Mozikban"
+
+msgctxt "#31147"
+msgid "In cinemas soon"
+msgstr "Hamarosan a mozikban"
+
+msgctxt "#31148"
+msgid "Categories"
+msgstr "Kategóriák"
+
+msgctxt "#31149"
+msgid "Select genre fanart pack"
+msgstr "Műfaj illusztrációs csomag kiválasztása"
+
+msgctxt "#31150"
+msgid "Origin"
+msgstr "Eredet"
+
+msgctxt "#31151"
+msgid "Unwatched music videos"
+msgstr "Nem látott videóklipek"
+
+msgctxt "#31152"
+msgid "Random music videos"
+msgstr "Véletlenszerű videóklipek"
+
+msgctxt "#31153"
+msgid "You do not have any add-ons of this type installed. Enter the add-on browser to download add-ons created by our community."
+msgstr "Nincs telepítve ilyen típusú kiegészítő. Nyissa meg a kiegészítő-böngészőt a közösségünk által létrehozott kiegészítő letöltéséhez."
+
+msgctxt "#31154"
+msgid "Press OK to switch between locations"
+msgstr "Nyomja meg az OK-t a helyek közötti váltáshoz"
+
+msgctxt "#31155"
+msgid "No bookmarks created yet."
+msgstr "Még nincs létrehozva könyvjelző."
+
+msgctxt "#31156"
+msgid "Choose background pattern"
+msgstr "Válasszon háttérmintát"
+
+msgctxt "#31157"
+msgid "Edit categories"
+msgstr "Kategóriák szerkesztése"
+
+msgctxt "#31158"
+msgid "Touch mode"
+msgstr "Érintős mód"
+
+msgctxt "#31159"
+msgid "Artwork"
+msgstr "Illusztráció"
+
+msgctxt "#31160"
+msgid "Show media flags"
+msgstr "Média ikonok megjelenítése"
+
+msgctxt "#31161"
+msgid "Numeric pad"
+msgstr "Numerikus billentyűzet"
+
+msgctxt "#31162"
+msgid "Play your personal games or download one of the many game add-ons from the official repository."
+msgstr "Játssz a saját játékaiddal vagy töltsd le a számos játék kiegészítő egyikét a hivatalos tárolóból."
+
+msgctxt "#31163"
+msgid "Show Fanart background"
+msgstr "Illusztráció háttér megjelenítése"
+
+#. Choose profile identifier
+msgctxt "#31164"
+msgid "Choose kind of profile identification"
+msgstr "Válassza ki a profil azonosítását"
+
+#. Label for the kind of profile identification
+msgctxt "#31165"
+msgid "Profile name"
+msgstr "Profilnév"
+
+#. Label for the kind of profile identification
+msgctxt "#31166"
+msgid "Profile avatar"
+msgstr "Profilkép"
+
+#. Label of a setting
+msgctxt "#31167"
+msgid "Animate background"
+msgstr "Animált háttér"
+
+#. Label of a setting
+msgctxt "#31168"
+msgid "Show posters instead of thumbs for musicvideos"
+msgstr "Poszterek megjelenítése bélyegképek helyett a zenei videóknál"
+
+#. Description label for skin settings area
+msgctxt "#31169"
+msgid "Artwork related settings."
+msgstr "Illusztrációval kapcsolatos beállítások."
+
+#. Label for OSD settings category
+msgctxt "#31170"
+msgid "On screen display"
+msgstr "Képernyőkijelzés"
+
+#. Helper text for the label of OSD settings category
+msgctxt "#31171"
+msgid "On screen display (OSD) related settings"
+msgstr "A képernyőn megjelenő (OSD) beállítások"
+
+#. Setting Automatically close video OSD
+msgctxt "#31172"
+msgid "Automatically close video OSD"
+msgstr "Videó OSD automatikus bezárása"
+
+#. Setting auto close time for video osd
+msgctxt "#31173"
+msgid "Video OSD autoclose time (seconds)"
+msgstr "Videó OSD automatikus bezárási ideje (másodperc)"
+
+#. Setting to control what happens when clicking a music album on the home screen
+msgctxt "#31174"
+msgid "Default select action for albums on the home screen"
+msgstr "Az albumok alapértelmezett kiválasztási művelete a kezdőképernyőn"
+
+#. Setting to control what happens when clicking a TV show on the home screen
+msgctxt "#31175"
+msgid "Default select action for TV shows on the home screen"
+msgstr "A Sorozatok alapértelmezett kiválasztási művelete a kezdőképernyőn"
+
+#. Setting to control what happens when clicking a movie set on the home screen
+msgctxt "#31176"
+msgid "Default select action for movie sets on the home screen"
+msgstr "A filmgyűjtemények alapértelmezett kiválasztási művelete a kezdőképernyőn"
+
+# empty strings from id 31170 to 31599
+#. Label to show the video codec name
+msgctxt "#31600"
+msgid "Video codec"
+msgstr "Videó kodek"
+
+#. Label to show the video resolution
+msgctxt "#31601"
+msgid "Video resolution"
+msgstr "Felbontás"
+
+#. Label to show the video aspect
+msgctxt "#31602"
+msgid "Video aspect"
+msgstr "Videó képarány"
+
+#. Label to show the video bitrate
+msgctxt "#31603"
+msgid "Video bitrate"
+msgstr "Video bitráta"
+
+#. Label to show the audio codec name
+msgctxt "#31604"
+msgid "Audio codec"
+msgstr "Hang kodek"
+
+#. Label to show the number of audio channels
+msgctxt "#31605"
+msgid "Audio channels"
+msgstr "Hangcsatornák"
+
+#. Label to show the audio bitrate
+msgctxt "#31606"
+msgid "Audio bitrate"
+msgstr "Audió bitráta"
+
+#. Label to show the screen resolution
+msgctxt "#31607"
+msgid "Screen resolution"
+msgstr "Képernyő felbontása"
+
+#. Label to show the system rendering speed
+msgctxt "#31608"
+msgid "System rendering speed"
+msgstr "A rendszer renderelési sebessége"
+
+#. Label to show the system CPU usage
+msgctxt "#31609"
+msgid "System CPU usage"
+msgstr "Rendszer CPU használat"
+
+#. Label to show the media (metadata) info page
+msgctxt "#31610"
+msgid "Media"
+msgstr "Média"
+
+#. Label to show the system info page
+msgctxt "#31611"
+msgid "System"
+msgstr "Rendszer"
+
+#~ msgctxt "#31612"
+#~ msgid "Add version"
+#~ msgstr "Verzió hozzáadása"
+
+#~ msgctxt "#31613"
+#~ msgid "Add extras"
+#~ msgstr "Extrák hozzáadása"
+
+#~ msgctxt "#31614"
+#~ msgid "Set default"
+#~ msgstr "Alapállapotba állít"
+
+#~ msgctxt "#31615"
+#~ msgid "Extras"
+#~ msgstr "Extrák"
+
+#~ msgctxt "#31059"
+#~ msgid "Select + X"
+#~ msgstr "Kiválasztás + X"
+
+#~ msgctxt "#31060"
+#~ msgid "Select + Start"
+#~ msgstr "Kiválasztás + indítás"
+
+#~ msgctxt "#31137"
+#~ msgid "PVR info"
+#~ msgstr "PVR információ"
+
+#~ msgctxt "#31138"
+#~ msgid "Player process info"
+#~ msgstr "Feldolgozási információ"

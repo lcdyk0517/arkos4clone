@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">55</defaultcontrol>
+	<backgroundcolor>background</backgroundcolor>
+	<menucontrol>9000</menucontrol>
+	<views>55,503</views>
+	<controls>
+		<include>DefaultBackground</include>
+		<control type="group">
+			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
+			<include>View_55_WideList</include>
+			<include condition="Window.IsActive(musicplaylist)">View_503_NowPlaying</include>
+			<include>CommonScrollbars</include>
+			<control type="group">
+				<include>OpenClose_Left</include>
+				<include>Visible_Left</include>
+				<include>ListThumbInfoPanel</include>
+			</control>
+			<include content="TopBar" condition="Window.IsActive(videoplaylist)">
+				<param name="breadcrumbs_label" value="$LOCALIZE[31065]" />
+				<param name="sublabel">$LOCALIZE[31073] - $INFO[Container.TotalTime,,  ∙  ]$INFO[Container.CurrentItem,,/]$INFO[Container.NumItems]</param>
+			</include>
+			<include content="TopBar" condition="Window.IsActive(musicplaylist)">
+				<param name="breadcrumbs_label" value="$LOCALIZE[31066]" />
+				<param name="sublabel">$LOCALIZE[31074] - $INFO[Container.TotalTime]</param>
+			</include>
+			<include content="BottomBar">
+				<param name="info_visible" value="true" />
+			</include>
+			<control type="group">
+				<visible>!Container.Content(songs)</visible>
+				<depth>DepthBars</depth>
+				<bottom>0</bottom>
+				<height>70</height>
+				<animation effect="fade" start="0" end="100" time="300" delay="300">WindowOpen</animation>
+				<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+				<include condition="!Skin.HasSetting(hide_mediaflags)">MediaFlags</include>
+			</control>
+			<include>MediaMenuMouseOverlay</include>
+			<control type="group">
+				<include>MediaMenuCommon</include>
+				<control type="grouplist" id="9000">
+					<top>50</top>
+					<include>MediaMenuListCommon</include>
+					<control type="label" id="203">
+						<description>Actions</description>
+						<include>MediaMenuLabelCommon</include>
+						<label>$LOCALIZE[31020]</label>
+					</control>
+					<control type="radiobutton" id="20">
+						<height>80</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<texturefocus colordiffuse="button_focus">lists/focus.png</texturefocus>
+						<texturenofocus />
+						<radioposx>280</radioposx>
+						<textoffsetx>20</textoffsetx>
+						<label>$LOCALIZE[191]</label>
+					</control>
+					<control type="button" id="26">
+						<height>80</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<texturefocus colordiffuse="button_focus">lists/focus.png</texturefocus>
+						<texturenofocus />
+						<textoffsetx>20</textoffsetx>
+						<label></label>
+					</control>
+					<control type="button" id="21">
+						<height>80</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<texturefocus colordiffuse="button_focus">lists/focus.png</texturefocus>
+						<texturenofocus />
+						<textoffsetx>20</textoffsetx>
+						<label>$LOCALIZE[190]</label>
+					</control>
+					<control type="button" id="22">
+						<height>80</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<texturefocus colordiffuse="button_focus">lists/focus.png</texturefocus>
+						<texturenofocus />
+						<textoffsetx>20</textoffsetx>
+						<label>$LOCALIZE[192]</label>
+					</control>
+					<include>MediaMenuNowPlaying</include>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

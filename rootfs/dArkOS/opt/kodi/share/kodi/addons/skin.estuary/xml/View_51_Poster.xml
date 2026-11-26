@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="View_51_Poster">
+		<control type="button" id="20000">
+			<description>Dummy button to get animations right (hide focusedlayout on animations)</description>
+			<include>HiddenObject</include>
+			<animation effect="fade" delay="500" time="0" start="100" end="0">Visible</animation>
+			<animation effect="fade" delay="500" time="0" start="100" end="0">WindowOpen</animation>
+			<onclick>noop</onclick>
+			<visible>Control.IsVisible(51)</visible>
+		</control>
+		<control type="group">
+			<description>Poster Viewtype</description>
+			<centertop>50%</centertop>
+			<height>720</height>
+			<control type="image">
+				<left>0</left>
+				<top>8</top>
+				<width>100%</width>
+				<height>415</height>
+				<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+				<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+				<animation effect="fade" time="200">VisibleChange</animation>
+				<texture colordiffuse="E6FFFFFF">dialogs/dialog-bg-nobo.png</texture>
+				<visible>Control.IsVisible(51)</visible>
+			</control>
+			<control type="group">
+				<visible>Control.IsVisible(51)</visible>
+				<include>Visible_Right</include>
+				<include>OpenClose_Right</include>
+				<control type="fixedlist" id="51">
+					<left>0</left>
+					<top>0</top>
+					<width>110%</width>
+					<height>704</height>
+					<focusposition>1</focusposition>
+					<movement>0</movement>
+					<pagecontrol>5199</pagecontrol>
+					<scrolltime tween="cubic" easing="out">500</scrolltime>
+					<orientation>horizontal</orientation>
+					<onleft>51</onleft>
+					<onup>9000</onup>
+					<ondown>5199</ondown>
+					<onright>51</onright>
+					<hitrect x="100" y="0" w="800" h="400" />
+					<visible>Container.Content(movies) | Container.Content(seasons) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(games)</visible>
+					<preloaditems>1</preloaditems>
+					<viewtype label="20021">icon</viewtype>
+					<itemlayout width="317">
+						<control type="group">
+							<left>-220</left>
+							<top>18</top>
+							<include>InfoWallMovieLayout</include>
+						</control>
+					</itemlayout>
+					<focusedlayout width="490">
+						<control type="group">
+							<control type="group">
+								<left>-220</left>
+								<top>18</top>
+								<visible>Container.OnScrollPrevious</visible>
+								<visible>Control.IsVisible(20000)</visible>
+								<animation effect="fade" time="200" start="100" end="0">Hidden</animation>
+								<include>InfoWallMovieLayout</include>
+							</control>
+							<control type="group">
+								<left>-40</left>
+								<top>18</top>
+								<visible>Container.OnScrollNext</visible>
+								<visible>Control.IsVisible(20000)</visible>
+								<animation effect="fade" time="200" start="100" end="0">Hidden</animation>
+								<include>InfoWallMovieLayout</include>
+							</control>
+						</control>
+					</focusedlayout>
+				</control>
+				<control type="group">
+					<top>25</top>
+					<control type="group">
+						<left>635</left>
+						<top>480</top>
+						<height>245</height>
+						<visible>ListItem.IsCollection + String.IsEmpty(ListItem.PlotOutline) + String.IsEmpty(ListItem.Plot)</visible>
+						<include content="InfoList">
+							<param name="bottom" value="0" />
+							<param name="sortby" value="year" />
+							<param name="sortorder" value="ascending" />
+							<param name="font" value="font13" />
+						</include>
+					</control>
+					<control type="label">
+						<left>645</left>
+						<top>400</top>
+						<right>50</right>
+						<height>40</height>
+						<label>$INFO[ListItem.Label]$VAR[ListSubLabelVar]</label>
+						<font>font45_title</font>
+						<shadowcolor>text_shadow</shadowcolor>
+					</control>
+					<control type="textbox">
+						<left>645</left>
+						<top>480</top>
+						<height>250</height>
+						<right>115</right>
+						<autoscroll time="3000" delay="7000" repeat="5000">!System.HasActiveModalDialog + Skin.HasSetting(AutoScroll)</autoscroll>
+						<label>$VAR[PlotTextBoxVar]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+						<visible>![ListItem.IsCollection + String.IsEmpty(ListItem.PlotOutline) + String.IsEmpty(ListItem.Plot)]</visible>
+					</control>
+				</control>
+			</control>
+		</control>
+		<control type="group">
+			<centertop>50%</centertop>
+			<height>670</height>
+			<left>101</left>
+			<depth>DepthContentPopout</depth>
+			<visible>Control.IsVisible(51)</visible>
+			<include>OpenClose_Left</include>
+			<include>Visible_Left</include>
+			<control type="image">
+				<top>-16</top>
+				<left>-16</left>
+				<width>516</width>
+				<height>756</height>
+				<texture>colors/black.png</texture>
+				<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+				<bordersize>20</bordersize>
+			</control>
+			<control type="image">
+				<left>4</left>
+				<top>4</top>
+				<width>476</width>
+				<height>716</height>
+				<fadetime>200</fadetime>
+				<aspectratio>scale</aspectratio>
+				<texture fallback="DefaultMovies.png" background="true">$VAR[PosterThumbVar]</texture>
+			</control>
+			<control type="group">
+				<visible>String.IsEqual(ListItem.DBtype,tvshow) | String.IsEqual(ListItem.DBType,season) | ListItem.IsRecording | ListItem.HasReminder | ListItem.HasTimer | ListItem.IsCollection | ListItem.HasVideoVersions | ListItem.IsPlaying | ListItem.IsResumable | ListItem.HasVideoExtras | ListItem.HasArchive | Integer.IsGreater(ListItem.Playcount,0)</visible>
+				<control type="image">
+					<left>4</left>
+					<top>670</top>
+					<width>476</width>
+					<height>50</height>
+					<texture colordiffuse="CCFFFFFF">overlays/overlayfade.png</texture>
+					<visible>!String.IsEmpty(ListItem.Art(poster))</visible>
+				</control>
+				<control type="image">
+					<left>10</left>
+					<top>684</top>
+					<width>32</width>
+					<height>32</height>
+					<align>left</align>
+					<aligny>center</aligny>
+					<texture>$VAR[ItemTypeIconVar]</texture>
+				</control>
+				<control type="image">
+					<left>45</left>
+					<top>684</top>
+					<width>32</width>
+					<height>32</height>
+					<align>left</align>
+					<aligny>center</aligny>
+					<texture>overlays/extras.png</texture>
+					<visible>ListItem.HasVideoVersions + ListItem.HasVideoExtras</visible>
+				</control>
+				<control type="label">
+					<left>100</left>
+					<top>684</top>
+					<width>330</width>
+					<height>32</height>
+					<label>$VAR[WatchedStatusVar]</label>
+					<font>font20_title</font>
+					<shadowcolor>text_shadow</shadowcolor>
+					<align>right</align>
+					<aligny>center</aligny>
+					<visible>String.IsEqual(ListItem.DBtype,tvshow) | String.IsEqual(ListItem.DBtype,set) | String.IsEqual(ListItem.DBType,season)</visible>
+				</control>
+				<control type="image">
+					<left>435</left>
+					<top>684</top>
+					<width>32</width>
+					<height>32</height>
+					<texture>$VAR[ItemStatusIconVar]</texture>
+					<align>right</align>
+					<aligny>center</aligny>
+				</control>
+			</control>
+			<control type="progress">
+				<left>4</left>
+				<top>702</top>
+				<width>476</width>
+				<height>1</height>
+				<texturebg></texturebg>
+				<midtexture colordiffuse="button_focus" border="3">progress/texturebg_alt_white.png</midtexture>
+				<info>ListItem.PercentPlayed</info>
+				<visible>!Integer.IsEqual(ListItem.PercentPlayed,0)</visible>
+			</control>
+			<control type="image">
+				<left>1</left>
+				<top>1</top>
+				<width>482</width>
+				<height>721</height>
+				<visible>Control.HasFocus(51)</visible>
+				<animation effect="fade" time="100">VisibleChange</animation>
+				<texture border="8" colordiffuse="button_focus">buttons/thumbnail_focused.png</texture>
+			</control>
+			<control type="group">
+				<left>216</left>
+				<top>-18</top>
+				<include content="RatingCircle">
+					<param name="animation" value="True" />
+				</include>
+			</control>
+		</control>
+	</include>
+</includes>

@@ -1,0 +1,745 @@
+# Kodi Media Center language file
+# Addon Name: Estuary
+# Addon id: skin.estuary
+# Addon Provider: Team Kodi
+msgid ""
+msgstr ""
+"Project-Id-Version: KODI Main\n"
+"Report-Msgid-Bugs-To: https://github.com/xbmc/xbmc/issues/\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2023-12-04 09:42+0000\n"
+"Last-Translator: Christian Gade <gade@kodi.tv>\n"
+"Language-Team: Thai <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-estuary/th_th/>\n"
+"Language: th_th\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.2.1\n"
+
+msgctxt "Addon Summary"
+msgid "Estuary skin by phil65. (Kodi's default skin)"
+msgstr "สกิน Estuary โดย phil65 และ Piers (หน้าตาเริ่มต้นของKodi)"
+
+msgctxt "Addon Description"
+msgid "Estuary is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
+msgstr "Estuary คือหน้าตาเริ่มต้นของ Kodi 17.0 และสูงกว่า เป็นความพยายามที่จะทำให้ง่ายสำหรับผู้ใช้ Kodi ในครั้งแรก ที่จะเข้าใจและใช้งาน"
+
+msgctxt "Addon Disclaimer"
+msgid "Estuary is the default skin for Kodi, removing it may cause issues"
+msgstr "Estuary เป็นหน้าตาเริ่มต้นสำหรับ Kodi, การลบมัน อาจทำให้เกิดปัญหา"
+
+msgctxt "#31000"
+msgid "Now playing"
+msgstr "ขณะนี้กำลังเล่น"
+
+msgctxt "#31001"
+msgid "Search..."
+msgstr "ค้นหา..."
+
+msgctxt "#31002"
+msgid "Show media fanart as background"
+msgstr "แสดงแฟนอาร์ตของสื่อเป็นพื้นหลัง"
+
+msgctxt "#31003"
+msgid "Cinema mode"
+msgstr "โหมดโรงภาพยนตร์"
+
+msgctxt "#31004"
+msgid "Change mode"
+msgstr "เปลี่ยนโหมด"
+
+msgctxt "#31005"
+msgid "Watch as 2D"
+msgstr "ชมแบบ 2 มิติ"
+
+msgctxt "#31006"
+msgid "Random movies"
+msgstr "สุ่มภาพยนตร์"
+
+msgctxt "#31007"
+msgid "Unwatched movies"
+msgstr "ภาพยนตร์ที่ยังไม่ได้ดู"
+
+msgctxt "#31008"
+msgid "Enable category widgets"
+msgstr ""
+
+msgctxt "#31009"
+msgid "Download icons"
+msgstr "ดาวน์โหลดไอคอน"
+
+msgctxt "#31010"
+msgid "In progress movies"
+msgstr "ภาพยนตร์ที่ดำเนินการอยู่"
+
+msgctxt "#31011"
+msgid "Most played albums"
+msgstr "อัลบั้มที่เล่นบ่อยสุด"
+
+msgctxt "#31012"
+msgid "Random albums"
+msgstr "สุ่มอัลบั้ม"
+
+msgctxt "#31013"
+msgid "Random artists"
+msgstr "สุ่มศิลปิน"
+
+msgctxt "#31014"
+msgid "Unplayed albums"
+msgstr "อัลบั้มที่ยังไม่ได้เล่น"
+
+#. home screen recordings widget: recent tv / radio recordings
+msgctxt "#31015"
+msgid "Recent recordings"
+msgstr "การบันทึกล่าสุด"
+
+#. home screen channel widget: recently played tv channels. (please note that in some non-english languages #31018 and #31016 might not be equal)
+msgctxt "#31016"
+msgid "Recently played channels"
+msgstr "ช่องรายการที่เล่นล่าสุด"
+
+msgctxt "#31017"
+msgid "Rated"
+msgstr "เรต"
+
+#. home screen channel widget: recently played radio channels. (please note that in some non-english languages #31018 and #31016 might not be equal)
+msgctxt "#31018"
+msgid "Recently played channels"
+msgstr "ช่องรายการที่เล่นล่าสุด"
+
+msgctxt "#31019"
+msgid "Forecast"
+msgstr "พยากรณ์"
+
+msgctxt "#31020"
+msgid "Actions"
+msgstr "การกระทำ"
+
+msgctxt "#31021"
+msgid "Misc options"
+msgstr "ตัวเลือกอื่นๆ"
+
+msgctxt "#31022"
+msgid "Sort by"
+msgstr "เรียงโดย"
+
+msgctxt "#31023"
+msgid "Viewtype"
+msgstr "แบบมุมมอง"
+
+msgctxt "#31024"
+msgid "Choose rating to display for media items"
+msgstr ""
+
+msgctxt "#31025"
+msgid "No favourites found. You can add any item from media views to this list by using the context menu."
+msgstr "ไม่พบรายการที่ชื่นชอบ คุณสามารถเพิ่มรายการใด ๆ จากมุมมองสื่อมายังรายการนี้ โดยใช้เมนูตามเนื้อหา"
+
+msgctxt "#31026"
+msgid "Timeshift"
+msgstr ""
+
+msgctxt "#31027"
+msgid "Next aired"
+msgstr ""
+
+msgctxt "#31028"
+msgid "Show fanart"
+msgstr "แสดงแฟนอาร์ต"
+
+msgctxt "#31029"
+msgid "Last logged in"
+msgstr "เข้าระบบล่าสุด"
+
+#. Label to show the system memory usage
+msgctxt "#31030"
+msgid "System memory usage"
+msgstr "หน่วยความจำของระบบที่ใช้"
+
+msgctxt "#31031"
+msgid "Version info"
+msgstr "ข้อมูลเวอร์ชั่น"
+
+msgctxt "#31032"
+msgid "Order"
+msgstr "ลำดับ"
+
+msgctxt "#31033"
+msgid "Your rating"
+msgstr "เรตติ้งของคุณ"
+
+msgctxt "#31034"
+msgid "Extended info"
+msgstr "ข้อมูลเพิ่มเติม"
+
+msgctxt "#31035"
+msgid "Pages"
+msgstr "หน้า"
+
+msgctxt "#31036"
+msgid "items"
+msgstr "รายการ"
+
+msgctxt "#31037"
+msgid "Selected track"
+msgstr ""
+
+msgctxt "#31038"
+msgid "Rewind"
+msgstr "ย้อนกลับเร็ว"
+
+msgctxt "#31039"
+msgid "Fast forward"
+msgstr "ไปหน้าแบบเร็ว"
+
+msgctxt "#31041"
+msgid "Camera manufacturer"
+msgstr "ผู้ผลิตกล้อง"
+
+msgctxt "#31042"
+msgid "Playlist options"
+msgstr "ตัวเลือกของรายการเล่น"
+
+msgctxt "#31043"
+msgid "Set the type and add rules to create a smart playlist. These playlists are dynamic and include all media items from your database which apply to your chosen rules."
+msgstr "กำหนดประเภทและเพิ่มกฎเพื่อสร้างรายการเล่นอัจฉริยะ รายการเล่นเหล่านี้จะเป็นแบบไดนามิกและรวมทุกรายการสื่อจากฐานข้อมูลของคุณ ที่ถูกนำมาใช้โดยกฎที่คุณเลือก"
+
+msgctxt "#31044"
+msgid "Add group"
+msgstr "เพิ่มกลุ่ม"
+
+msgctxt "#31045"
+msgid "Rename group"
+msgstr "เปลี่ยนชื่อกลุ่ม"
+
+msgctxt "#31046"
+msgid "Delete group"
+msgstr "ลบกลุ่ม"
+
+msgctxt "#31048"
+msgid "Available"
+msgstr "ที่มีอยู่"
+
+msgctxt "#31052"
+msgid "filtered"
+msgstr "ที่กรองแล้ว"
+
+msgctxt "#31053"
+msgid "Arial based"
+msgstr "ใช้ฟ้อนท์ Arial"
+
+msgctxt "#31054"
+msgid "Press [B]Left[/B] to step back, or [B]Right[/B] to step forward"
+msgstr ""
+
+msgctxt "#31055"
+msgid "Press [B]Right[/B] to frame advance"
+msgstr ""
+
+msgctxt "#31056"
+msgid "Go to playlist"
+msgstr "ไปยังรายการเล่น"
+
+msgctxt "#31057"
+msgid "Show login screen on startup"
+msgstr "แสดงหน้าจอลงชื่อเข้าใช้เมื่อเริ่มต้น"
+
+msgctxt "#31058"
+msgid "Automatic Login on startup"
+msgstr "เข้าใช้โดยอัตโนมัติเมื่อเริ่มต้น"
+
+msgctxt "#31061"
+msgid "Main menu items"
+msgstr "รายการเมนูหลัก"
+
+msgctxt "#31062"
+msgid "Choose weather fanart pack"
+msgstr "เลือกแพ็คแฟนอาร์ตสภาพอากาศ"
+
+msgctxt "#31063"
+msgid "Sections"
+msgstr "ส่วน"
+
+msgctxt "#31065"
+msgid "Video playlist"
+msgstr "รายการเล่นวิดีโอ"
+
+msgctxt "#31066"
+msgid "Music playlist"
+msgstr "รายการเล่นเพลง"
+
+msgctxt "#31067"
+msgid "Event log"
+msgstr "บันทึกกิจกรรม"
+
+msgctxt "#31068"
+msgid "Choose presets"
+msgstr "เลือกแม่แบบ"
+
+msgctxt "#31069"
+msgid "Last Updated"
+msgstr "ปรับปรุงล่าสุด"
+
+msgctxt "#31071"
+msgid "by"
+msgstr "โดย"
+
+msgctxt "#31072"
+msgid "Power Options"
+msgstr "ตัวเลือก ด้านพลังงาน"
+
+msgctxt "#31073"
+msgid "Total length"
+msgstr ""
+
+msgctxt "#31074"
+msgid "Total duration"
+msgstr "รวมระยะเวลา"
+
+msgctxt "#31075"
+msgid "Movie sets"
+msgstr "ภาพยนตร์ชุด"
+
+msgctxt "#31079"
+msgid "Cast not available"
+msgstr "ไม่พบผู้แสดง"
+
+msgctxt "#31080"
+msgid "Ends at"
+msgstr "สิ้นสุดที่"
+
+msgctxt "#31082"
+msgid "Lyrics add-on"
+msgstr "ส่วนเสริมเนื้อเพลง"
+
+msgctxt "#31083"
+msgid "Lyrics add-on settings"
+msgstr "การตั้งค่าส่วนเสริมเนื้อเพลง"
+
+msgctxt "#31084"
+msgid "Visualisation settings"
+msgstr "การตั้งค่าแสดงแสงสี"
+
+msgctxt "#31089"
+msgid "Available groups"
+msgstr "กลุ่มที่พบ"
+
+msgctxt "#31092"
+msgid "Video menu"
+msgstr "เมนูวิดีโอ"
+
+msgctxt "#31093"
+msgid "Show weather info in top bar"
+msgstr "แสดงข้อมูลสภาพอากาศในแถบบน"
+
+msgctxt "#31095"
+msgid "Use slide animations"
+msgstr "ใช้การเคลื่อนไหวแบบเลื่อน"
+
+msgctxt "#31096"
+msgid "Local subtitle available"
+msgstr "พบคำบรรยายภายใน"
+
+msgctxt "#31097"
+msgid "Channel options"
+msgstr "ตัวเลือกของช่อง"
+
+msgctxt "#31098"
+msgid "Select your Kodi user profile[CR]to login and continue"
+msgstr "เลือกโปรไฟล์ผู้ใช้ Kodi ของคุณ[CR]เพื่อเข้าสู่ระบบและดำเนินการต่อไป"
+
+#. viewtype name
+msgctxt "#31099"
+msgid "IconWall"
+msgstr "ผนังไอคอน"
+
+#. viewtype name
+msgctxt "#31100"
+msgid "Shift"
+msgstr "Shift"
+
+#. viewtype name
+msgctxt "#31101"
+msgid "InfoWall"
+msgstr "ผนังข้อมูล"
+
+#. viewtype name
+msgctxt "#31102"
+msgid "Wall"
+msgstr "ผนัง"
+
+msgctxt "#31103"
+msgid "Enter text here..."
+msgstr "ป้อนอักษรที่นี่..."
+
+msgctxt "#31104"
+msgid "Your library is currently empty. In order to populate it with your personal media, enter \"Files\" section, add a media source and configure it. After the source has been added and indexed you will be able to browse your library."
+msgstr "คลังข้อมูลของคุณตอนนี้ว่างเปล่า เพื่อจะเพิ่มข้อมูลด้วยสื่อส่วนบุคคลของคุณ เข้าไปที่ส่วน \"แฟ้ม\" เพิ่มแหล่งของสื่อและกำหนดค่า หลังจากที่แหล่งข้อมูลได้รับการเพิ่มและจัดทำดัชนี คุณจะเรียกดูคลังข้อมูลของคุณได้"
+
+msgctxt "#31105"
+msgid "Add video sources and set the appropriate content type in order to populate your video libraries."
+msgstr "เพิ่มแหล่งวิดีโอและกำหนดชนิดของเนื้อหาที่เหมาะสม ในการเพิ่มข้อมูลสู่คลังวิดีโอของคุณ"
+
+msgctxt "#31106"
+msgid "Teletext"
+msgstr "Teletext"
+
+#. viewtype name
+msgctxt "#31107"
+msgid "WideList"
+msgstr "รายการแบบกว้าง"
+
+msgctxt "#31110"
+msgid "Enter files section"
+msgstr "เข้าสู่ส่วนแฟ้ม"
+
+msgctxt "#31111"
+msgid "View your personal pictures or download one of the many image add-ons from the official repository."
+msgstr "ดูรูปภาพส่วนตัวของคุณหรือดาวน์โหลดหนึ่งในส่วนเสริมรูปภาพอันหลากหลาย จากแหล่งโปรแกรมอย่างเป็นทางการ"
+
+msgctxt "#31112"
+msgid "Toggle audio stream"
+msgstr "สลับกระแสเสียง"
+
+msgctxt "#31113"
+msgid "Search local library"
+msgstr "ค้นหาจากคลังข้อมูลท้องถิ่น"
+
+msgctxt "#31114"
+msgid "Search YouTube"
+msgstr "ค้นหาจากยูทูป"
+
+msgctxt "#31115"
+msgid "Toggle subtitle"
+msgstr ""
+
+msgctxt "#31116"
+msgid "Remove this main menu item"
+msgstr "ลบรายการเมนูหลักนี้"
+
+msgctxt "#31117"
+msgid "Edit nodes"
+msgstr "แก้ไขส่วนเชื่อมโยง"
+
+msgctxt "#31118"
+msgid "Enter add-on browser"
+msgstr "เข้าสู่สืบค้นส่วนเสริม"
+
+msgctxt "#31119"
+msgid "You do not have any add-ons installed yet. Visit our add-on browser to browse through our collection and improve your Kodi experience."
+msgstr "คุณไม่มีส่วนเสริมใดๆติดตั้งอยู่ เยี่ยมชมการเรียกดูส่วนเสริมของเรา เพื่อเรียกดูการรวบรวมของเราและปรับปรุงประสบการณ์ Kodi ของคุณ"
+
+msgctxt "#31120"
+msgid "You did not set up a weather provider yet. In order to view weather information, choose a weather provider and set up your location."
+msgstr "คุณยังไม่ได้ตั้งค่าผู้ให้บริการสภาพอากาศเลย เพื่อที่จะดูข้อมูลสภาพอากาศ เลือกผู้ให้บริการสภาพอากาศและตั้งค่าสถานที่ของคุณ"
+
+msgctxt "#31121"
+msgid "Set weather provider"
+msgstr "ตั้งค่าผู้ให้บริการสภาพอากาศ"
+
+msgctxt "#31122"
+msgid "Unwatched TV Shows"
+msgstr "รายการทีวีที่ยังไม่ได้ดู"
+
+msgctxt "#31123"
+msgid "Same director"
+msgstr "ผู้กำกับเดียวกัน"
+
+msgctxt "#31125"
+msgid "Press up for actor info"
+msgstr "กด ขึ้น สำหรับข้อมูลนักแสดง"
+
+msgctxt "#31126"
+msgid "Press OK to read plot"
+msgstr "กด ตกลง เพื่ออ่านเรื่องย่อ"
+
+msgctxt "#31127"
+msgid "Show icons"
+msgstr "แสดงไอคอน"
+
+msgctxt "#31128"
+msgid "Contributors"
+msgstr "ผู้ให้ข้อมูล"
+
+msgctxt "#31129"
+msgid "General settings applying to all areas of the skin."
+msgstr "การตั้งค่าทั่วไปที่ถูกนำไปใช้ในทุกพื้นที่ของหน้าตา"
+
+msgctxt "#31130"
+msgid "Main menu-related settings: Configure the home screen to your likings."
+msgstr "เมนูที่เกี่ยวข้องกับตั้งค่าเมนูหลัก: การกำหนดค่าหน้าจอหลักตามความชอบของคุณ"
+
+msgctxt "#31131"
+msgid "Choose skin fanart pack"
+msgstr "เลือกแพ็คแฟนอาร์ตของหน้าตา"
+
+msgctxt "#31132"
+msgid "Select Program"
+msgstr ""
+
+msgctxt "#31133"
+msgid "Select Resolution"
+msgstr ""
+
+msgctxt "#31134"
+msgid "Remaining"
+msgstr "ที่เหลืออยู่"
+
+msgctxt "#31135"
+msgid "Binary"
+msgstr ""
+
+msgctxt "#31136"
+msgid "Click here to see latest changes..."
+msgstr "คลิกที่นี่เพื่อดูการเปลี่ยนแปลงล่าสุด..."
+
+#. Label to show PVR info page
+msgctxt "#31137"
+msgid "PVR"
+msgstr ""
+
+#. Label to show player info page
+msgctxt "#31138"
+msgid "Player"
+msgstr "ตัวเล่น"
+
+#. Label to show video decoder name
+msgctxt "#31139"
+msgid "Video decoder"
+msgstr "ตัวถอดรหัสวิดีโอ"
+
+#. Label to show the video pixel format
+msgctxt "#31140"
+msgid "Pixel format"
+msgstr "รูปแบบพิกเซล"
+
+msgctxt "#31141"
+msgid "Changes for version"
+msgstr "การเปลี่ยนแปลงสำหรับรุ่น"
+
+msgctxt "#31142"
+msgid "Play speed"
+msgstr "ความเร็วการเล่น"
+
+msgctxt "#31143"
+msgid "You did not set up PVR yet. In order to use PVR, choose a PVR client addon and configure it. Please visit http://kodi.wiki/view/PVR to learn more."
+msgstr "คุณยังไม่ได้ตั้งค่า PVR เพื่อที่จะใช้ PVR เลือกส่วนเสริม ลูกข่าย PVR และกำหนดค่า เยี่ยมชม http://kodi.wiki/view/PVR เพื่อเรียนรู้เพิ่มเติม"
+
+msgctxt "#31144"
+msgid "Enter add-on browser"
+msgstr "เข้าสู่สืบค้นส่วนเสริม"
+
+msgctxt "#31145"
+msgid "Search add-ons"
+msgstr "ค้นหาส่วนเสริม"
+
+msgctxt "#31146"
+msgid "In cinemas"
+msgstr "ในโรงภาพยนตร์"
+
+msgctxt "#31147"
+msgid "In cinemas soon"
+msgstr ""
+
+msgctxt "#31148"
+msgid "Categories"
+msgstr "หมวดหมู่"
+
+msgctxt "#31149"
+msgid "Select genre fanart pack"
+msgstr "เลือกแพ็คแฟนอาร์ตประเภท"
+
+msgctxt "#31150"
+msgid "Origin"
+msgstr ""
+
+msgctxt "#31151"
+msgid "Unwatched music videos"
+msgstr "วิดีโอเพลงที่ยังไม่ได้ดู"
+
+msgctxt "#31152"
+msgid "Random music videos"
+msgstr "สุ่มวิดีโอเพลง"
+
+msgctxt "#31153"
+msgid "You do not have any add-ons of this type installed. Enter the add-on browser to download add-ons created by our community."
+msgstr "คุณยังไม่มี ส่วนเสริมประเภทนี้ติดตั้ง เข้าสู่การเรียกดูส่วนเสริม เพื่อดาวน์โหลดส่วนเสริมที่สร้างขึ้นโดยชุมชนของเรา"
+
+msgctxt "#31154"
+msgid "Press OK to switch between locations"
+msgstr "กด ตกลง เพื่อสลับสถานที่"
+
+msgctxt "#31155"
+msgid "No bookmarks created yet."
+msgstr "ยังไม่มีที่คั่นหน้าที่ถูกสร้าง"
+
+msgctxt "#31156"
+msgid "Choose background pattern"
+msgstr "เลือกพื้นหลังแบบลวดลาย"
+
+msgctxt "#31157"
+msgid "Edit categories"
+msgstr "แก้ไขหมวดหมู่"
+
+msgctxt "#31158"
+msgid "Touch mode"
+msgstr "โหมดสัมผัส"
+
+msgctxt "#31159"
+msgid "Artwork"
+msgstr "งานศิลป์"
+
+msgctxt "#31160"
+msgid "Show media flags"
+msgstr "แสดงป้ายสื่อ"
+
+msgctxt "#31161"
+msgid "Numeric pad"
+msgstr "แป้นตัวเลข"
+
+msgctxt "#31162"
+msgid "Play your personal games or download one of the many game add-ons from the official repository."
+msgstr ""
+
+msgctxt "#31163"
+msgid "Show Fanart background"
+msgstr ""
+
+#. Choose profile identifier
+msgctxt "#31164"
+msgid "Choose kind of profile identification"
+msgstr ""
+
+#. Label for the kind of profile identification
+msgctxt "#31165"
+msgid "Profile name"
+msgstr "ชื่อ ข้อมูลส่วนตัว"
+
+#. Label for the kind of profile identification
+msgctxt "#31166"
+msgid "Profile avatar"
+msgstr ""
+
+#. Label of a setting
+msgctxt "#31167"
+msgid "Animate background"
+msgstr ""
+
+#. Label of a setting
+msgctxt "#31168"
+msgid "Show posters instead of thumbs for musicvideos"
+msgstr ""
+
+#. Description label for skin settings area
+msgctxt "#31169"
+msgid "Artwork related settings."
+msgstr ""
+
+#. Label for OSD settings category
+msgctxt "#31170"
+msgid "On screen display"
+msgstr ""
+
+#. Helper text for the label of OSD settings category
+msgctxt "#31171"
+msgid "On screen display (OSD) related settings"
+msgstr ""
+
+#. Setting Automatically close video OSD
+msgctxt "#31172"
+msgid "Automatically close video OSD"
+msgstr ""
+
+#. Setting auto close time for video osd
+msgctxt "#31173"
+msgid "Video OSD autoclose time (seconds)"
+msgstr ""
+
+#. Setting to control what happens when clicking a music album on the home screen
+msgctxt "#31174"
+msgid "Default select action for albums on the home screen"
+msgstr ""
+
+#. Setting to control what happens when clicking a TV show on the home screen
+msgctxt "#31175"
+msgid "Default select action for TV shows on the home screen"
+msgstr ""
+
+#. Setting to control what happens when clicking a movie set on the home screen
+msgctxt "#31176"
+msgid "Default select action for movie sets on the home screen"
+msgstr ""
+
+# empty strings from id 31170 to 31599
+#. Label to show the video codec name
+msgctxt "#31600"
+msgid "Video codec"
+msgstr "ตัวแปลงสัญญาณวิดีโอ"
+
+#. Label to show the video resolution
+msgctxt "#31601"
+msgid "Video resolution"
+msgstr "ความละเอียดภาพยนต์"
+
+#. Label to show the video aspect
+msgctxt "#31602"
+msgid "Video aspect"
+msgstr "ลักษณะวิดีโอ"
+
+#. Label to show the video bitrate
+msgctxt "#31603"
+msgid "Video bitrate"
+msgstr ""
+
+#. Label to show the audio codec name
+msgctxt "#31604"
+msgid "Audio codec"
+msgstr "ตัวแปลงสัญญาณเสียง"
+
+#. Label to show the number of audio channels
+msgctxt "#31605"
+msgid "Audio channels"
+msgstr "ช่องเสียง"
+
+#. Label to show the audio bitrate
+msgctxt "#31606"
+msgid "Audio bitrate"
+msgstr ""
+
+#. Label to show the screen resolution
+msgctxt "#31607"
+msgid "Screen resolution"
+msgstr "ความละเอียดหน้าจอ"
+
+#. Label to show the system rendering speed
+msgctxt "#31608"
+msgid "System rendering speed"
+msgstr ""
+
+#. Label to show the system CPU usage
+msgctxt "#31609"
+msgid "System CPU usage"
+msgstr "การใช้งานซีพียูของระบบ"
+
+#. Label to show the media (metadata) info page
+msgctxt "#31610"
+msgid "Media"
+msgstr "สื่อ"
+
+#. Label to show the system info page
+msgctxt "#31611"
+msgid "System"
+msgstr "ระบบ"
+
+#~ msgctxt "#31615"
+#~ msgid "Extras"
+#~ msgstr "ส่วนพิเศษ"
+
+#~ msgctxt "#31137"
+#~ msgid "PVR info"
+#~ msgstr "ข้อมูล PVR"
+
+#~ msgctxt "#31138"
+#~ msgid "Player process info"
+#~ msgstr "ข้อมูลการดำเนินการของตัวเล่น"

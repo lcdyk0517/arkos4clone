@@ -1,0 +1,741 @@
+# Kodi Media Center language file
+# Addon Name: Estuary
+# Addon id: skin.estuary
+# Addon Provider: Team Kodi
+msgid ""
+msgstr ""
+"Project-Id-Version: KODI Main\n"
+"Report-Msgid-Bugs-To: https://github.com/xbmc/xbmc/issues/\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2022-02-26 16:13+0000\n"
+"Last-Translator: Christian Gade <gade@kodi.tv>\n"
+"Language-Team: Basque (Spain) <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-estuary/eu_es/>\n"
+"Language: eu_es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.11\n"
+
+msgctxt "Addon Summary"
+msgid "Estuary skin by phil65. (Kodi's default skin)"
+msgstr "Estuary azala phil65-ek egina. (Kodiren azal lehenetsia)"
+
+msgctxt "Addon Description"
+msgid "Estuary is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
+msgstr "Estuary azala kodi 17.0 eta berriagoen azal lehenetsia da. Kodiren erabiltzaile hasiberrientzako erabilerraza eta ulerterraza izaten saiatzen da."
+
+msgctxt "Addon Disclaimer"
+msgid "Estuary is the default skin for Kodi, removing it may cause issues"
+msgstr "Estuary Kodiren azal lehenetsia da. Ezabatzeak arazoak eragin ditzake"
+
+msgctxt "#31000"
+msgid "Now playing"
+msgstr "Orain erreproduzitzen"
+
+msgctxt "#31001"
+msgid "Search..."
+msgstr "Bilatu..."
+
+msgctxt "#31002"
+msgid "Show media fanart as background"
+msgstr "Erakutsi multimediaren fanart-a atzeko plano bezala"
+
+msgctxt "#31003"
+msgid "Cinema mode"
+msgstr "Zinema modua"
+
+msgctxt "#31004"
+msgid "Change mode"
+msgstr "Aldatu modua"
+
+msgctxt "#31005"
+msgid "Watch as 2D"
+msgstr "Ikusi 2D bezala"
+
+msgctxt "#31006"
+msgid "Random movies"
+msgstr "Ausazko pelikulak"
+
+msgctxt "#31007"
+msgid "Unwatched movies"
+msgstr "Ikusi gabeko pelikulak"
+
+msgctxt "#31008"
+msgid "Enable category widgets"
+msgstr "Gaitu kategoria widgetak"
+
+msgctxt "#31009"
+msgid "Download icons"
+msgstr "Deskargatu ikonoak"
+
+msgctxt "#31010"
+msgid "In progress movies"
+msgstr "Hasitako pelikulak"
+
+msgctxt "#31011"
+msgid "Most played albums"
+msgstr "Gehien erreproduzitutako albumak"
+
+msgctxt "#31012"
+msgid "Random albums"
+msgstr "Ausazko albumak"
+
+msgctxt "#31013"
+msgid "Random artists"
+msgstr "Ausazko artistak"
+
+msgctxt "#31014"
+msgid "Unplayed albums"
+msgstr "Erreproduzitu gabeko albumak"
+
+#. home screen recordings widget: recent tv / radio recordings
+msgctxt "#31015"
+msgid "Recent recordings"
+msgstr "Grabazio berriak"
+
+#. home screen channel widget: recently played tv channels. (please note that in some non-english languages #31018 and #31016 might not be equal)
+msgctxt "#31016"
+msgid "Recently played channels"
+msgstr "Orain dela gutxi erreproduzitutako kanalak"
+
+msgctxt "#31017"
+msgid "Rated"
+msgstr "Klasifikatuta"
+
+#. home screen channel widget: recently played radio channels. (please note that in some non-english languages #31018 and #31016 might not be equal)
+msgctxt "#31018"
+msgid "Recently played channels"
+msgstr "Orain dela gutxi erreproduzitutako kanalak"
+
+msgctxt "#31019"
+msgid "Forecast"
+msgstr "Iragarpena"
+
+msgctxt "#31020"
+msgid "Actions"
+msgstr "Ekintzak"
+
+msgctxt "#31021"
+msgid "Misc options"
+msgstr "Bestelako aukerak"
+
+msgctxt "#31022"
+msgid "Sort by"
+msgstr "Ordenatu honen baitan"
+
+msgctxt "#31023"
+msgid "Viewtype"
+msgstr "Ikusteko modua"
+
+msgctxt "#31024"
+msgid "Choose rating to display for media items"
+msgstr "Aukeratu klasifikazioa ikusteko multimedia elementuak"
+
+msgctxt "#31025"
+msgid "No favourites found. You can add any item from media views to this list by using the context menu."
+msgstr "Ez da gogokorik aurkitu. Elementuak gehitu ditzakezu edozein multimedia ikuspegitik zerrenda honetara laster-menua erabiliz."
+
+msgctxt "#31026"
+msgid "Timeshift"
+msgstr "Denbora aldaketa"
+
+msgctxt "#31027"
+msgid "Next aired"
+msgstr ""
+
+msgctxt "#31028"
+msgid "Show fanart"
+msgstr "Irakutsi fanart-a"
+
+msgctxt "#31029"
+msgid "Last logged in"
+msgstr "Azken saio hasiera"
+
+#. Label to show the system memory usage
+msgctxt "#31030"
+msgid "System memory usage"
+msgstr "Sistemaren memoria erabilera"
+
+msgctxt "#31031"
+msgid "Version info"
+msgstr "Bertsioaren informazioa"
+
+msgctxt "#31032"
+msgid "Order"
+msgstr "Ordenatu"
+
+msgctxt "#31033"
+msgid "Your rating"
+msgstr "Zure balorazioa"
+
+msgctxt "#31034"
+msgid "Extended info"
+msgstr "Informazio zabaldua"
+
+msgctxt "#31035"
+msgid "Pages"
+msgstr "Orriak"
+
+msgctxt "#31036"
+msgid "items"
+msgstr "elementu"
+
+msgctxt "#31037"
+msgid "Selected track"
+msgstr ""
+
+msgctxt "#31038"
+msgid "Rewind"
+msgstr "Birbobinatu"
+
+msgctxt "#31039"
+msgid "Fast forward"
+msgstr "Bizkor aurreratu"
+
+msgctxt "#31041"
+msgid "Camera manufacturer"
+msgstr "Kameraren egilea"
+
+msgctxt "#31042"
+msgid "Playlist options"
+msgstr "Erreprodukzio zerrenda aukerak"
+
+msgctxt "#31043"
+msgid "Set the type and add rules to create a smart playlist. These playlists are dynamic and include all media items from your database which apply to your chosen rules."
+msgstr "Ezarri mota eta gehitu arauak erreprodukzio-zerrenda adimentsu bat sortzeko. Erreprodukzio-zerrenda hauek dinamikoak dira eta zuk aukeratutako arauekin bat datozen datu-baseko multimedia elementu guztiak biltzen dituzte."
+
+msgctxt "#31044"
+msgid "Add group"
+msgstr "Gehitu taldea"
+
+msgctxt "#31045"
+msgid "Rename group"
+msgstr "Berrizendatu taldea"
+
+msgctxt "#31046"
+msgid "Delete group"
+msgstr "Ezabatu taldea"
+
+msgctxt "#31048"
+msgid "Available"
+msgstr "Eskuragarri"
+
+msgctxt "#31052"
+msgid "filtered"
+msgstr "iragazita"
+
+msgctxt "#31053"
+msgid "Arial based"
+msgstr "Arial-en oinarritua"
+
+msgctxt "#31054"
+msgid "Press [B]Left[/B] to step back, or [B]Right[/B] to step forward"
+msgstr ""
+
+msgctxt "#31055"
+msgid "Press [B]Right[/B] to frame advance"
+msgstr ""
+
+msgctxt "#31056"
+msgid "Go to playlist"
+msgstr "Joan erreprodukzio zerrendara"
+
+msgctxt "#31057"
+msgid "Show login screen on startup"
+msgstr "Erakutsi saio hasierako pantaila abioan"
+
+msgctxt "#31058"
+msgid "Automatic Login on startup"
+msgstr "Hasi saioa automatikoki abioan"
+
+msgctxt "#31061"
+msgid "Main menu items"
+msgstr "Menuko elementu nagusiak"
+
+msgctxt "#31062"
+msgid "Choose weather fanart pack"
+msgstr "Aukeratu eguraldiaren fanart paketea"
+
+msgctxt "#31063"
+msgid "Sections"
+msgstr "Sekzioak"
+
+msgctxt "#31065"
+msgid "Video playlist"
+msgstr "Bideo erreprodukzio zerrenda"
+
+msgctxt "#31066"
+msgid "Music playlist"
+msgstr "Musika erreprodukzio zerrenda"
+
+msgctxt "#31067"
+msgid "Event log"
+msgstr "Gertaeren erregistroa"
+
+msgctxt "#31068"
+msgid "Choose presets"
+msgstr "Aukeratu aurrezarpenak"
+
+msgctxt "#31069"
+msgid "Last Updated"
+msgstr "Azken eguneraketa"
+
+msgctxt "#31071"
+msgid "by"
+msgstr "norena"
+
+msgctxt "#31072"
+msgid "Power Options"
+msgstr "Energia-aukerak"
+
+msgctxt "#31073"
+msgid "Total length"
+msgstr ""
+
+msgctxt "#31074"
+msgid "Total duration"
+msgstr "Iraupen osoa"
+
+msgctxt "#31075"
+msgid "Movie sets"
+msgstr "Pelikula sortak"
+
+msgctxt "#31079"
+msgid "Cast not available"
+msgstr "Aktoreen zerrenda ez dago eskuragarri"
+
+msgctxt "#31080"
+msgid "Ends at"
+msgstr "Amaiera ordua"
+
+msgctxt "#31082"
+msgid "Lyrics add-on"
+msgstr "Letren gehigarria"
+
+msgctxt "#31083"
+msgid "Lyrics add-on settings"
+msgstr "Letren gehigarriaren aukerak"
+
+msgctxt "#31084"
+msgid "Visualisation settings"
+msgstr "Bistaratze-aukerak"
+
+msgctxt "#31089"
+msgid "Available groups"
+msgstr "Eskuragarri dauden taldeak"
+
+msgctxt "#31092"
+msgid "Video menu"
+msgstr "Bideoaren menua"
+
+msgctxt "#31093"
+msgid "Show weather info in top bar"
+msgstr "Erakutsi eguraldiaren informazioa goiko barran"
+
+msgctxt "#31095"
+msgid "Use slide animations"
+msgstr "Erabili diapositiba animazioak"
+
+msgctxt "#31096"
+msgid "Local subtitle available"
+msgstr "Azpititulu lokala erabilgarri"
+
+msgctxt "#31097"
+msgid "Channel options"
+msgstr "Kanalaren aukerak"
+
+msgctxt "#31098"
+msgid "Select your Kodi user profile[CR]to login and continue"
+msgstr "Hautatu zure Kodi profila[CR] saioa hasi eta jarraitzeko"
+
+#. viewtype name
+msgctxt "#31099"
+msgid "IconWall"
+msgstr "Ikono horma"
+
+#. viewtype name
+msgctxt "#31100"
+msgid "Shift"
+msgstr "Maius"
+
+#. viewtype name
+msgctxt "#31101"
+msgid "InfoWall"
+msgstr "Informazio horma"
+
+#. viewtype name
+msgctxt "#31102"
+msgid "Wall"
+msgstr "Horma"
+
+msgctxt "#31103"
+msgid "Enter text here..."
+msgstr "Idatzi testua hemen..."
+
+msgctxt "#31104"
+msgid "Your library is currently empty. In order to populate it with your personal media, enter \"Files\" section, add a media source and configure it. After the source has been added and indexed you will be able to browse your library."
+msgstr "Zure liburutegia hutsik dago. Zure multimediarekin betetzeko, joan \"Fitxategiak\" sekziora, gehitu multimedia iturburua eta konfiguratu. Iturburua gehitu eta indexatutakoan zure liburutegia arakatu ahalko duzu."
+
+msgctxt "#31105"
+msgid "Add video sources and set the appropriate content type in order to populate your video libraries."
+msgstr "Gehitu bideo iturriak eta ezarri eduki mota zure bideo biltegia betetzeko."
+
+msgctxt "#31106"
+msgid "Teletext"
+msgstr "Teletestua"
+
+#. viewtype name
+msgctxt "#31107"
+msgid "WideList"
+msgstr "Zerrenda zabala"
+
+msgctxt "#31110"
+msgid "Enter files section"
+msgstr "Sartu fitxategiak sekziora"
+
+msgctxt "#31111"
+msgid "View your personal pictures or download one of the many image add-ons from the official repository."
+msgstr "Ikusi zure irudi pertsonalak edo deskargatu biltegi ofizialeko irudi gehigarri ugarietako bat."
+
+msgctxt "#31112"
+msgid "Toggle audio stream"
+msgstr "Txandakatu audio korrontea"
+
+msgctxt "#31113"
+msgid "Search local library"
+msgstr "Bilatu liburutegi lokalean"
+
+msgctxt "#31114"
+msgid "Search YouTube"
+msgstr "Bilatu YouTube"
+
+msgctxt "#31115"
+msgid "Toggle subtitle"
+msgstr ""
+
+msgctxt "#31116"
+msgid "Remove this main menu item"
+msgstr "Kendu menu nagusiko elementu hau"
+
+msgctxt "#31117"
+msgid "Edit nodes"
+msgstr "Editatu nodoak"
+
+msgctxt "#31118"
+msgid "Enter add-on browser"
+msgstr "Sartu gehigarri arakatzailera"
+
+msgctxt "#31119"
+msgid "You do not have any add-ons installed yet. Visit our add-on browser to browse through our collection and improve your Kodi experience."
+msgstr "Ez daukazu gehigarririk instalatuta oraindik. Sartu gehigarri arakatzailean zure bilduma arakatu eta zure Kodi esperientzia hobetzeko."
+
+msgctxt "#31120"
+msgid "You did not set up a weather provider yet. In order to view weather information, choose a weather provider and set up your location."
+msgstr "Ez duzu eguraldi hornitzailerik konfiguratu oraindik. Eguraldiaren informazioa ikusteko, aukeratu hornitzaile bat eta zure kokapena konfiguratu."
+
+msgctxt "#31121"
+msgid "Set weather provider"
+msgstr "Ezarri eguraldi hornitzailea"
+
+msgctxt "#31122"
+msgid "Unwatched TV Shows"
+msgstr "Ikusi gabeko TB saioak"
+
+msgctxt "#31123"
+msgid "Same director"
+msgstr "Zuzendari bera"
+
+msgctxt "#31125"
+msgid "Press up for actor info"
+msgstr "Sakatu gora aktorearen informazioa ikusteko"
+
+msgctxt "#31126"
+msgid "Press OK to read plot"
+msgstr "Sakatu Ados argumentua irakurtzeko"
+
+msgctxt "#31127"
+msgid "Show icons"
+msgstr "Erakutsi ikonoak"
+
+msgctxt "#31128"
+msgid "Contributors"
+msgstr "Kolaboratzaileak"
+
+msgctxt "#31129"
+msgid "General settings applying to all areas of the skin."
+msgstr "Ezarpen orokorrak azalaren zati guztietan aplikatzen dira."
+
+msgctxt "#31130"
+msgid "Main menu-related settings: Configure the home screen to your likings."
+msgstr "Menu nagusiarekin erlazionatutako ezarpenak: Konfiguratu etxeko pantaila nahi duzun bezala."
+
+msgctxt "#31131"
+msgid "Choose skin fanart pack"
+msgstr "Aukeratu azalaren fanart paketea"
+
+msgctxt "#31132"
+msgid "Select Program"
+msgstr "Hautatu Programa"
+
+msgctxt "#31133"
+msgid "Select Resolution"
+msgstr "Hautatu Bereizmena"
+
+msgctxt "#31134"
+msgid "Remaining"
+msgstr "Geratzen dena"
+
+msgctxt "#31135"
+msgid "Binary"
+msgstr ""
+
+msgctxt "#31136"
+msgid "Click here to see latest changes..."
+msgstr "Klikatu hemen azken aldaketak ikusteko..."
+
+#. Label to show PVR info page
+msgctxt "#31137"
+msgid "PVR"
+msgstr "PVR"
+
+#. Label to show player info page
+msgctxt "#31138"
+msgid "Player"
+msgstr "Erreproduzitzailea"
+
+#. Label to show video decoder name
+msgctxt "#31139"
+msgid "Video decoder"
+msgstr "Bideo deskodetzailea"
+
+#. Label to show the video pixel format
+msgctxt "#31140"
+msgid "Pixel format"
+msgstr "Pixel formatua"
+
+msgctxt "#31141"
+msgid "Changes for version"
+msgstr "Aldaketak bertsiorako"
+
+msgctxt "#31142"
+msgid "Play speed"
+msgstr "Erreprodukzio abiadura"
+
+msgctxt "#31143"
+msgid "You did not set up PVR yet. In order to use PVR, choose a PVR client addon and configure it. Please visit http://kodi.wiki/view/PVR to learn more."
+msgstr "Ez duzu PVR konfiguratu oraindik. PVR erabiltzeko, aukeratu PVR bezero gehigarri bat eta konfiguratu. Joan http://kodi.wiki/view/PVR orrira informazio gehiagorako."
+
+msgctxt "#31144"
+msgid "Enter add-on browser"
+msgstr "Sartu gehigarri arakatzailera"
+
+msgctxt "#31145"
+msgid "Search add-ons"
+msgstr "Bilatu gehigarriak"
+
+msgctxt "#31146"
+msgid "In cinemas"
+msgstr "En los cines"
+
+msgctxt "#31147"
+msgid "In cinemas soon"
+msgstr ""
+
+msgctxt "#31148"
+msgid "Categories"
+msgstr "Kategoriak"
+
+msgctxt "#31149"
+msgid "Select genre fanart pack"
+msgstr "Hautatu generoaren fanart paketea"
+
+msgctxt "#31150"
+msgid "Origin"
+msgstr ""
+
+msgctxt "#31151"
+msgid "Unwatched music videos"
+msgstr "Ikusi gabeko musika bideoak"
+
+msgctxt "#31152"
+msgid "Random music videos"
+msgstr "Ausazko musika bideoak"
+
+msgctxt "#31153"
+msgid "You do not have any add-ons of this type installed. Enter the add-on browser to download add-ons created by our community."
+msgstr "Ez daukazu mota honetako gehigarririk instalatuta. Sartu gehigarri-arakatzailean komunitateak sortutako gehigarriak deskargatzeko."
+
+msgctxt "#31154"
+msgid "Press OK to switch between locations"
+msgstr "Sakatu Ados kokalekuen artean aldatzeko."
+
+msgctxt "#31155"
+msgid "No bookmarks created yet."
+msgstr "Laster-markarik ez dago oraindik."
+
+msgctxt "#31156"
+msgid "Choose background pattern"
+msgstr "Aukeratu atzeko planoko eredua"
+
+msgctxt "#31157"
+msgid "Edit categories"
+msgstr "Editatu kategoriak"
+
+msgctxt "#31158"
+msgid "Touch mode"
+msgstr "Ukipen modua"
+
+msgctxt "#31159"
+msgid "Artwork"
+msgstr "Artea"
+
+msgctxt "#31160"
+msgid "Show media flags"
+msgstr "Erakutsi multimedia banderak"
+
+msgctxt "#31161"
+msgid "Numeric pad"
+msgstr "Zenbakizko teklatua"
+
+msgctxt "#31162"
+msgid "Play your personal games or download one of the many game add-ons from the official repository."
+msgstr "Jokatu zure joko pertsonaletan edo deskargatu biltegi ofizialeko joko gehigarri ugarietako bat."
+
+msgctxt "#31163"
+msgid "Show Fanart background"
+msgstr "Irakutsi fanart atzean"
+
+#. Choose profile identifier
+msgctxt "#31164"
+msgid "Choose kind of profile identification"
+msgstr ""
+
+#. Label for the kind of profile identification
+msgctxt "#31165"
+msgid "Profile name"
+msgstr "Profilaren izena"
+
+#. Label for the kind of profile identification
+msgctxt "#31166"
+msgid "Profile avatar"
+msgstr ""
+
+#. Label of a setting
+msgctxt "#31167"
+msgid "Animate background"
+msgstr ""
+
+#. Label of a setting
+msgctxt "#31168"
+msgid "Show posters instead of thumbs for musicvideos"
+msgstr ""
+
+#. Description label for skin settings area
+msgctxt "#31169"
+msgid "Artwork related settings."
+msgstr ""
+
+#. Label for OSD settings category
+msgctxt "#31170"
+msgid "On screen display"
+msgstr ""
+
+#. Helper text for the label of OSD settings category
+msgctxt "#31171"
+msgid "On screen display (OSD) related settings"
+msgstr ""
+
+#. Setting Automatically close video OSD
+msgctxt "#31172"
+msgid "Automatically close video OSD"
+msgstr ""
+
+#. Setting auto close time for video osd
+msgctxt "#31173"
+msgid "Video OSD autoclose time (seconds)"
+msgstr ""
+
+#. Setting to control what happens when clicking a music album on the home screen
+msgctxt "#31174"
+msgid "Default select action for albums on the home screen"
+msgstr ""
+
+#. Setting to control what happens when clicking a TV show on the home screen
+msgctxt "#31175"
+msgid "Default select action for TV shows on the home screen"
+msgstr ""
+
+#. Setting to control what happens when clicking a movie set on the home screen
+msgctxt "#31176"
+msgid "Default select action for movie sets on the home screen"
+msgstr ""
+
+# empty strings from id 31170 to 31599
+#. Label to show the video codec name
+msgctxt "#31600"
+msgid "Video codec"
+msgstr "Bideo codec-a"
+
+#. Label to show the video resolution
+msgctxt "#31601"
+msgid "Video resolution"
+msgstr "Bideoaren erresoluzioa"
+
+#. Label to show the video aspect
+msgctxt "#31602"
+msgid "Video aspect"
+msgstr "Bideo aspektua"
+
+#. Label to show the video bitrate
+msgctxt "#31603"
+msgid "Video bitrate"
+msgstr ""
+
+#. Label to show the audio codec name
+msgctxt "#31604"
+msgid "Audio codec"
+msgstr "Audio codec-a"
+
+#. Label to show the number of audio channels
+msgctxt "#31605"
+msgid "Audio channels"
+msgstr "Audio kanalak"
+
+#. Label to show the audio bitrate
+msgctxt "#31606"
+msgid "Audio bitrate"
+msgstr ""
+
+#. Label to show the screen resolution
+msgctxt "#31607"
+msgid "Screen resolution"
+msgstr "Pantailaren bereizmena"
+
+#. Label to show the system rendering speed
+msgctxt "#31608"
+msgid "System rendering speed"
+msgstr ""
+
+#. Label to show the system CPU usage
+msgctxt "#31609"
+msgid "System CPU usage"
+msgstr "Sistemaren PUZ erabilera"
+
+#. Label to show the media (metadata) info page
+msgctxt "#31610"
+msgid "Media"
+msgstr "Media"
+
+#. Label to show the system info page
+msgctxt "#31611"
+msgid "System"
+msgstr "Sistema"
+
+#~ msgctxt "#31137"
+#~ msgid "PVR info"
+#~ msgstr "PVR informazioa"
+
+#~ msgctxt "#31138"
+#~ msgid "Player process info"
+#~ msgstr "Erreproduzigailuaren prozesuaren informazioa"

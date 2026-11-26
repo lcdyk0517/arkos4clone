@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol>9000</defaultcontrol>
+	<include>Animation_DialogPopupOpenClose</include>
+	<controls>
+		<control type="group">
+			<centerleft>50%</centerleft>
+			<width>600</width>
+			<centertop>50%</centertop>
+			<height>700</height>
+			<include content="DialogBackgroundCommons">
+				<param name="width" value="600" />
+				<param name="height" value="80" />
+				<param name="header_label" value="$LOCALIZE[31072]" />
+				<param name="header_id" value="2" />
+			</include>
+			<control type="panel" id="9000">
+				<include>ButtonMenuList</include>
+				<content>
+					<item>
+						<label>$LOCALIZE[13012]</label>
+						<onclick>Quit()</onclick>
+					</item>
+				</content>
+			</control>
+		</control>
+	</controls>
+</window>

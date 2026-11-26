@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">999</defaultcontrol>
+	<controls>
+		<control type="button" id="999">
+			<left>0</left>
+			<top>0</top>
+			<width>100%</width>
+			<height>100%</height>
+			<texturefocus />
+			<texturenofocus />
+			<onright>StepForward</onright>
+			<onleft>StepBack</onleft>
+			<onup>ChapterOrBigStepForward</onup>
+			<ondown>ChapterOrBigStepBack</ondown>
+			<onclick>OSD</onclick>
+		</control>
+	</controls>
+</window>

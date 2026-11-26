@@ -2885,4 +2885,35 @@
 		<release>2006</release>
 		<hardware>console</hardware>
 	</system>
+	<system>
+		<name>ps2</name>
+		<fullname>Sony PlayStation 2</fullname>
+		<path>/roms/ps2/</path>
+		<extension>.iso .ISO .chd .CHD .bin .BIN .elf .ELF .7z .7Z .zip .ZIP</extension>
+		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/armsx2.sh %ROM%; sudo perfnorm</command>
+		<platform>ps2</platform>
+		<theme>ps2</theme>
+		<manufacturer>Sony</manufacturer>
+		<release>2000</release>
+		<hardware>console</hardware>
+	</system>
+	<system>
+		<name>3ds</name>
+		<fullname>Nintendo 3DS</fullname>
+		<path>/roms/3ds/</path>
+		<extension>.3ds .3DS .cci .CCI .cxi .CXI .app .APP .cia .CIA .3dsx .3DSX .zip .ZIP .7z .7Z</extension>
+		<command>sudo perfmax %GOVERNOR% %ROM%; nice -n -19 /usr/local/bin/azahar-dec.sh %ROM%; sudo perfnorm</command>
+		<emulators>
+			<emulator name="retroarch">
+				<cores>
+					<core>azahar</core>
+				</cores>
+			</emulator>
+		</emulators>
+		<platform>3ds</platform>
+		<theme>3ds</theme>
+		<manufacturer>Nintendo</manufacturer>
+		<release>2011</release>
+		<hardware>handheld</hardware>
+	</system>
 </systemList>

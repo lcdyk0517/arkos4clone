@@ -1,0 +1,753 @@
+# Kodi Media Center language file
+# Addon Name: Estuary
+# Addon id: skin.estuary
+# Addon Provider: Team Kodi
+msgid ""
+msgstr ""
+"Project-Id-Version: KODI Main\n"
+"Report-Msgid-Bugs-To: https://github.com/xbmc/xbmc/issues/\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2023-12-04 09:42+0000\n"
+"Last-Translator: Christian Gade <gade@kodi.tv>\n"
+"Language-Team: Dutch <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-estuary/nl_nl/>\n"
+"Language: nl_nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.2.1\n"
+
+msgctxt "Addon Summary"
+msgid "Estuary skin by phil65. (Kodi's default skin)"
+msgstr "Estuary skin door phil65 en Piers. (Kodi's standaardskin)"
+
+msgctxt "Addon Description"
+msgid "Estuary is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
+msgstr "Estuary is de standaardskin voor Kodi 17.0 en hoger. Het tracht eenvoudig te begrijpen en te gebruiken te zijn voor beginnende Kodi-gebruikers."
+
+msgctxt "Addon Disclaimer"
+msgid "Estuary is the default skin for Kodi, removing it may cause issues"
+msgstr "Estuary is de standaardskin voor Kodi, het verwijderen van Estuary kan leiden tot problemen."
+
+msgctxt "#31000"
+msgid "Now playing"
+msgstr "Nu afspelend"
+
+msgctxt "#31001"
+msgid "Search..."
+msgstr "Zoeken..."
+
+msgctxt "#31002"
+msgid "Show media fanart as background"
+msgstr "Toon mediafanart als achtergrond"
+
+msgctxt "#31003"
+msgid "Cinema mode"
+msgstr "Bioscoopmodus"
+
+msgctxt "#31004"
+msgid "Change mode"
+msgstr "Verander modus"
+
+msgctxt "#31005"
+msgid "Watch as 2D"
+msgstr "Bekijk als 2D"
+
+msgctxt "#31006"
+msgid "Random movies"
+msgstr "Willekeurige films"
+
+msgctxt "#31007"
+msgid "Unwatched movies"
+msgstr "Niet-bekeken films"
+
+msgctxt "#31008"
+msgid "Enable category widgets"
+msgstr "Activeer categoriewidgets"
+
+msgctxt "#31009"
+msgid "Download icons"
+msgstr "Download pictogrammen"
+
+msgctxt "#31010"
+msgid "In progress movies"
+msgstr "Gedeeltelijk bekeken films"
+
+msgctxt "#31011"
+msgid "Most played albums"
+msgstr "Meest afgespeelde albums"
+
+msgctxt "#31012"
+msgid "Random albums"
+msgstr "Willekeurige albums"
+
+msgctxt "#31013"
+msgid "Random artists"
+msgstr "Willekeurige artiesten"
+
+msgctxt "#31014"
+msgid "Unplayed albums"
+msgstr "Niet-afgespeelde albums"
+
+#. home screen recordings widget: recent tv / radio recordings
+msgctxt "#31015"
+msgid "Recent recordings"
+msgstr "Recente opnames"
+
+#. home screen channel widget: recently played tv channels. (please note that in some non-english languages #31018 and #31016 might not be equal)
+msgctxt "#31016"
+msgid "Recently played channels"
+msgstr "Onlangs afgespeelde kanalen"
+
+msgctxt "#31017"
+msgid "Rated"
+msgstr "Waardering"
+
+#. home screen channel widget: recently played radio channels. (please note that in some non-english languages #31018 and #31016 might not be equal)
+msgctxt "#31018"
+msgid "Recently played channels"
+msgstr "Onlangs afgespeelde kanalen"
+
+msgctxt "#31019"
+msgid "Forecast"
+msgstr "Voorspelling"
+
+msgctxt "#31020"
+msgid "Actions"
+msgstr "Acties"
+
+msgctxt "#31021"
+msgid "Misc options"
+msgstr "Overige opties"
+
+msgctxt "#31022"
+msgid "Sort by"
+msgstr "Sorteer op"
+
+msgctxt "#31023"
+msgid "Viewtype"
+msgstr "Viewtype"
+
+msgctxt "#31024"
+msgid "Choose rating to display for media items"
+msgstr "Kies waardering voor mediabestanden"
+
+msgctxt "#31025"
+msgid "No favourites found. You can add any item from media views to this list by using the context menu."
+msgstr "Geen favorieten gevonden. U kunt elk item uit media-weergaven toevoegen aan deze lijst met het contextmenu."
+
+msgctxt "#31026"
+msgid "Timeshift"
+msgstr "Timeshift"
+
+msgctxt "#31027"
+msgid "Next aired"
+msgstr "Volgende uitzending"
+
+msgctxt "#31028"
+msgid "Show fanart"
+msgstr "Toon fanart"
+
+msgctxt "#31029"
+msgid "Last logged in"
+msgstr "Laatst ingelogd op"
+
+#. Label to show the system memory usage
+msgctxt "#31030"
+msgid "System memory usage"
+msgstr "Systeemgeheugengebruik"
+
+msgctxt "#31031"
+msgid "Version info"
+msgstr "Versie-info"
+
+msgctxt "#31032"
+msgid "Order"
+msgstr "Volgorde"
+
+msgctxt "#31033"
+msgid "Your rating"
+msgstr "Uw waardering"
+
+msgctxt "#31034"
+msgid "Extended info"
+msgstr "Uitgebreide info"
+
+msgctxt "#31035"
+msgid "Pages"
+msgstr "Pagina's"
+
+msgctxt "#31036"
+msgid "items"
+msgstr "items"
+
+msgctxt "#31037"
+msgid "Selected track"
+msgstr "Geselecteerde track"
+
+msgctxt "#31038"
+msgid "Rewind"
+msgstr "Terugspoelen"
+
+msgctxt "#31039"
+msgid "Fast forward"
+msgstr "Vooruitspoelen"
+
+msgctxt "#31041"
+msgid "Camera manufacturer"
+msgstr "Camerafabrikant"
+
+msgctxt "#31042"
+msgid "Playlist options"
+msgstr "Afspeellijstopties"
+
+msgctxt "#31043"
+msgid "Set the type and add rules to create a smart playlist. These playlists are dynamic and include all media items from your database which apply to your chosen rules."
+msgstr "Stel het type in en voeg regels toe om een slimme afspeellijst te maken. Deze afspeellijsten zijn dynamisch en bevatten alle media-items in je database die voldoen aan jouw gekozen regels."
+
+msgctxt "#31044"
+msgid "Add group"
+msgstr "Voeg groep toe"
+
+msgctxt "#31045"
+msgid "Rename group"
+msgstr "Hernoem groep"
+
+msgctxt "#31046"
+msgid "Delete group"
+msgstr "Verwijder groep"
+
+msgctxt "#31048"
+msgid "Available"
+msgstr "Beschikbaar"
+
+msgctxt "#31052"
+msgid "filtered"
+msgstr "gefilterd"
+
+msgctxt "#31053"
+msgid "Arial based"
+msgstr "Gebaseerd op Arial"
+
+msgctxt "#31054"
+msgid "Press [B]Left[/B] to step back, or [B]Right[/B] to step forward"
+msgstr "Druk [B]Links[/B] voor een stap terug, of [B]Rechts[/B] voor een stap vooruit"
+
+msgctxt "#31055"
+msgid "Press [B]Right[/B] to frame advance"
+msgstr "Druk [B]Rechts[/B] om een frame op te schuiven"
+
+msgctxt "#31056"
+msgid "Go to playlist"
+msgstr "Ga naar afspeellijst"
+
+msgctxt "#31057"
+msgid "Show login screen on startup"
+msgstr "Toon inlogscherm bij opstarten"
+
+msgctxt "#31058"
+msgid "Automatic Login on startup"
+msgstr "Automatisch inloggen tijdens opstarten"
+
+msgctxt "#31061"
+msgid "Main menu items"
+msgstr "Hoofdmenu-items"
+
+msgctxt "#31062"
+msgid "Choose weather fanart pack"
+msgstr "Kies weer fanartpakket"
+
+msgctxt "#31063"
+msgid "Sections"
+msgstr "Secties"
+
+msgctxt "#31065"
+msgid "Video playlist"
+msgstr "Videoafspeellijst"
+
+msgctxt "#31066"
+msgid "Music playlist"
+msgstr "Muziekafspeellijst"
+
+msgctxt "#31067"
+msgid "Event log"
+msgstr "Gebeurtenisregistratie"
+
+msgctxt "#31068"
+msgid "Choose presets"
+msgstr "Kies voorinstellingen"
+
+msgctxt "#31069"
+msgid "Last Updated"
+msgstr "Laatst bijgewerkt"
+
+msgctxt "#31071"
+msgid "by"
+msgstr "door"
+
+msgctxt "#31072"
+msgid "Power Options"
+msgstr "Energiebeheer"
+
+msgctxt "#31073"
+msgid "Total length"
+msgstr "Totale lengte"
+
+msgctxt "#31074"
+msgid "Total duration"
+msgstr "Totale duur"
+
+msgctxt "#31075"
+msgid "Movie sets"
+msgstr "Filmsets"
+
+msgctxt "#31079"
+msgid "Cast not available"
+msgstr "Acteurs niet beschikbaar"
+
+msgctxt "#31080"
+msgid "Ends at"
+msgstr "Eindigt om"
+
+msgctxt "#31082"
+msgid "Lyrics add-on"
+msgstr "Songtekst add-on"
+
+msgctxt "#31083"
+msgid "Lyrics add-on settings"
+msgstr "Songtekst add-on instellingen"
+
+msgctxt "#31084"
+msgid "Visualisation settings"
+msgstr "Visualisatie-instellingen"
+
+msgctxt "#31089"
+msgid "Available groups"
+msgstr "Beschikbare groepen"
+
+msgctxt "#31092"
+msgid "Video menu"
+msgstr "Videomenu"
+
+msgctxt "#31093"
+msgid "Show weather info in top bar"
+msgstr "Toon weerbericht in bovenbalk"
+
+msgctxt "#31095"
+msgid "Use slide animations"
+msgstr "Gebruik schuifanimaties"
+
+msgctxt "#31096"
+msgid "Local subtitle available"
+msgstr "Lokale ondertitel aanwezig"
+
+msgctxt "#31097"
+msgid "Channel options"
+msgstr "Kanaalopties"
+
+msgctxt "#31098"
+msgid "Select your Kodi user profile[CR]to login and continue"
+msgstr "Selecteer je Kodi-gebruikersprofiel[CR]om in te loggen en door te gaan"
+
+#. viewtype name
+msgctxt "#31099"
+msgid "IconWall"
+msgstr "iconenmuur"
+
+#. viewtype name
+msgctxt "#31100"
+msgid "Shift"
+msgstr "Scheiden"
+
+#. viewtype name
+msgctxt "#31101"
+msgid "InfoWall"
+msgstr "Infomuur"
+
+#. viewtype name
+msgctxt "#31102"
+msgid "Wall"
+msgstr "Muur"
+
+msgctxt "#31103"
+msgid "Enter text here..."
+msgstr "Voor hier tekst in..."
+
+msgctxt "#31104"
+msgid "Your library is currently empty. In order to populate it with your personal media, enter \"Files\" section, add a media source and configure it. After the source has been added and indexed you will be able to browse your library."
+msgstr "Je bibliotheek is momenteel leeg. Om deze te vullen met je eigen media, ga naar de \"Bestanden\" sectie, voeg een medialocatie toe en configureer deze. Nadat de bron is toegevoegd en geïndexeerd, kun je de bibliotheek bekijken."
+
+msgctxt "#31105"
+msgid "Add video sources and set the appropriate content type in order to populate your video libraries."
+msgstr "Voeg video bronnen toe en stel het juiste contenttype in om je videobibliotheken te vullen."
+
+msgctxt "#31106"
+msgid "Teletext"
+msgstr "Teletekst"
+
+#. viewtype name
+msgctxt "#31107"
+msgid "WideList"
+msgstr "Brede lijst"
+
+msgctxt "#31110"
+msgid "Enter files section"
+msgstr "Ga naar bestandensectie"
+
+msgctxt "#31111"
+msgid "View your personal pictures or download one of the many image add-ons from the official repository."
+msgstr "Toon je persoonlijke afbeeldingen of download één van de vele afbeeldingsadd-ons uit de officiële repository."
+
+msgctxt "#31112"
+msgid "Toggle audio stream"
+msgstr "Verander audiostream"
+
+msgctxt "#31113"
+msgid "Search local library"
+msgstr "Zoek in lokale bibliotheek"
+
+msgctxt "#31114"
+msgid "Search YouTube"
+msgstr "Zoek in YouTube"
+
+msgctxt "#31115"
+msgid "Toggle subtitle"
+msgstr "Schakel ondertitel"
+
+msgctxt "#31116"
+msgid "Remove this main menu item"
+msgstr "Verwijder dit hoofdmenu-item"
+
+msgctxt "#31117"
+msgid "Edit nodes"
+msgstr "Wijzig nodes"
+
+msgctxt "#31118"
+msgid "Enter add-on browser"
+msgstr "Ga naar add-on verkenner"
+
+msgctxt "#31119"
+msgid "You do not have any add-ons installed yet. Visit our add-on browser to browse through our collection and improve your Kodi experience."
+msgstr "Je hebt nog geen add-ons geïnstalleerd. Bezoek onze add-on verkenner om door onze collectie te browsen en je Kodi-beleving te verbeteren."
+
+msgctxt "#31120"
+msgid "You did not set up a weather provider yet. In order to view weather information, choose a weather provider and set up your location."
+msgstr "Je hebt nog geen weerprovider ingesteld. Om weerberichten te zien, kies een weerprovider en stel je locatie in."
+
+msgctxt "#31121"
+msgid "Set weather provider"
+msgstr "Stel weerprovider in"
+
+msgctxt "#31122"
+msgid "Unwatched TV Shows"
+msgstr "Niet-bekeken TV-series"
+
+msgctxt "#31123"
+msgid "Same director"
+msgstr "Zelfde regisseur"
+
+msgctxt "#31125"
+msgid "Press up for actor info"
+msgstr "Kies 'Omhoog' voor acteursinformatie"
+
+msgctxt "#31126"
+msgid "Press OK to read plot"
+msgstr "Kies 'OK' om het plot te lezen"
+
+msgctxt "#31127"
+msgid "Show icons"
+msgstr "Toon pictogrammen"
+
+msgctxt "#31128"
+msgid "Contributors"
+msgstr "Bijdragers"
+
+msgctxt "#31129"
+msgid "General settings applying to all areas of the skin."
+msgstr "Algemene instellingen die van toepassing zijn op alle onderdelen van de skin."
+
+msgctxt "#31130"
+msgid "Main menu-related settings: Configure the home screen to your likings."
+msgstr "Hoofdmenu gerelateerde instellingen: Configureer het homescreen naar wens."
+
+msgctxt "#31131"
+msgid "Choose skin fanart pack"
+msgstr "Kies skinfanartpakket"
+
+msgctxt "#31132"
+msgid "Select Program"
+msgstr "Selecteer programma"
+
+msgctxt "#31133"
+msgid "Select Resolution"
+msgstr "Kies resolutie"
+
+msgctxt "#31134"
+msgid "Remaining"
+msgstr "Resterend"
+
+msgctxt "#31135"
+msgid "Binary"
+msgstr "Binair"
+
+msgctxt "#31136"
+msgid "Click here to see latest changes..."
+msgstr "Klik hier om de laatste veranderingen te zien..."
+
+#. Label to show PVR info page
+msgctxt "#31137"
+msgid "PVR"
+msgstr "PVR"
+
+#. Label to show player info page
+msgctxt "#31138"
+msgid "Player"
+msgstr "Speler"
+
+#. Label to show video decoder name
+msgctxt "#31139"
+msgid "Video decoder"
+msgstr "Videodecoder"
+
+#. Label to show the video pixel format
+msgctxt "#31140"
+msgid "Pixel format"
+msgstr "Pixelformaat"
+
+msgctxt "#31141"
+msgid "Changes for version"
+msgstr "Veranderingen in versie"
+
+msgctxt "#31142"
+msgid "Play speed"
+msgstr "Afspeelsnelheid"
+
+msgctxt "#31143"
+msgid "You did not set up PVR yet. In order to use PVR, choose a PVR client addon and configure it. Please visit http://kodi.wiki/view/PVR to learn more."
+msgstr "U heeft nog geen PVR ingesteld. Om gebruikt te kinen maken van PVR, kieze een PVR cliënt addon en configureer deze. Bezoek http://kodi.wiki/view/PVR om meer te weten tekomen."
+
+msgctxt "#31144"
+msgid "Enter add-on browser"
+msgstr "Ga naar add-on verkenner"
+
+msgctxt "#31145"
+msgid "Search add-ons"
+msgstr "Zoek add-ons"
+
+msgctxt "#31146"
+msgid "In cinemas"
+msgstr "In de bioscoop"
+
+msgctxt "#31147"
+msgid "In cinemas soon"
+msgstr "Binnenkort in de bioscoop"
+
+msgctxt "#31148"
+msgid "Categories"
+msgstr "Categoriëen"
+
+msgctxt "#31149"
+msgid "Select genre fanart pack"
+msgstr "Selecteer genre fanartpakket"
+
+msgctxt "#31150"
+msgid "Origin"
+msgstr "Bron"
+
+msgctxt "#31151"
+msgid "Unwatched music videos"
+msgstr "Niet bekeken muziekvideo`s"
+
+msgctxt "#31152"
+msgid "Random music videos"
+msgstr "Willekeurige muziekvideo`s"
+
+msgctxt "#31153"
+msgid "You do not have any add-ons of this type installed. Enter the add-on browser to download add-ons created by our community."
+msgstr "U heeft nog geen enkele add-on van dit type geïnstalleerd. Bezoek de add-onverkenner om add-ons te downloaden gecreëerd door onze community."
+
+msgctxt "#31154"
+msgid "Press OK to switch between locations"
+msgstr "Druk OK om de schakelen tussen locaties"
+
+msgctxt "#31155"
+msgid "No bookmarks created yet."
+msgstr "Nog geen bladwijzer gecreëerd."
+
+msgctxt "#31156"
+msgid "Choose background pattern"
+msgstr "Kies achtergrondpatroon"
+
+msgctxt "#31157"
+msgid "Edit categories"
+msgstr "Aanpassen categoriëen"
+
+msgctxt "#31158"
+msgid "Touch mode"
+msgstr "Aanraakmodus"
+
+msgctxt "#31159"
+msgid "Artwork"
+msgstr "Artwork"
+
+msgctxt "#31160"
+msgid "Show media flags"
+msgstr "Toon media-informatie"
+
+msgctxt "#31161"
+msgid "Numeric pad"
+msgstr "Numeriek pad"
+
+msgctxt "#31162"
+msgid "Play your personal games or download one of the many game add-ons from the official repository."
+msgstr "Speel je eigen spellen, of download één van de vele spellen uit de officiële repository."
+
+msgctxt "#31163"
+msgid "Show Fanart background"
+msgstr "Toon fanartachtergrond"
+
+#. Choose profile identifier
+msgctxt "#31164"
+msgid "Choose kind of profile identification"
+msgstr "Kies het type profielidentificatie"
+
+#. Label for the kind of profile identification
+msgctxt "#31165"
+msgid "Profile name"
+msgstr "Profielnaam"
+
+#. Label for the kind of profile identification
+msgctxt "#31166"
+msgid "Profile avatar"
+msgstr "Profielafbeelding"
+
+#. Label of a setting
+msgctxt "#31167"
+msgid "Animate background"
+msgstr "Achtergrondanimatie"
+
+#. Label of a setting
+msgctxt "#31168"
+msgid "Show posters instead of thumbs for musicvideos"
+msgstr "Laat posters zien in plaats van miniatuur voor muziekvideo's"
+
+#. Description label for skin settings area
+msgctxt "#31169"
+msgid "Artwork related settings."
+msgstr ""
+
+#. Label for OSD settings category
+msgctxt "#31170"
+msgid "On screen display"
+msgstr "Schermweergave"
+
+#. Helper text for the label of OSD settings category
+msgctxt "#31171"
+msgid "On screen display (OSD) related settings"
+msgstr "On-screen display (OSD) gerelateerde instellingen"
+
+#. Setting Automatically close video OSD
+msgctxt "#31172"
+msgid "Automatically close video OSD"
+msgstr "Video OSD automatisch sluiten"
+
+#. Setting auto close time for video osd
+msgctxt "#31173"
+msgid "Video OSD autoclose time (seconds)"
+msgstr ""
+
+#. Setting to control what happens when clicking a music album on the home screen
+msgctxt "#31174"
+msgid "Default select action for albums on the home screen"
+msgstr ""
+
+#. Setting to control what happens when clicking a TV show on the home screen
+msgctxt "#31175"
+msgid "Default select action for TV shows on the home screen"
+msgstr ""
+
+#. Setting to control what happens when clicking a movie set on the home screen
+msgctxt "#31176"
+msgid "Default select action for movie sets on the home screen"
+msgstr ""
+
+# empty strings from id 31170 to 31599
+#. Label to show the video codec name
+msgctxt "#31600"
+msgid "Video codec"
+msgstr "Videocodec"
+
+#. Label to show the video resolution
+msgctxt "#31601"
+msgid "Video resolution"
+msgstr "Videoresolutie"
+
+#. Label to show the video aspect
+msgctxt "#31602"
+msgid "Video aspect"
+msgstr "Beeldverhouding"
+
+#. Label to show the video bitrate
+msgctxt "#31603"
+msgid "Video bitrate"
+msgstr ""
+
+#. Label to show the audio codec name
+msgctxt "#31604"
+msgid "Audio codec"
+msgstr "Audiocodec"
+
+#. Label to show the number of audio channels
+msgctxt "#31605"
+msgid "Audio channels"
+msgstr "Audiokanalen"
+
+#. Label to show the audio bitrate
+msgctxt "#31606"
+msgid "Audio bitrate"
+msgstr ""
+
+#. Label to show the screen resolution
+msgctxt "#31607"
+msgid "Screen resolution"
+msgstr "Schermresolutie"
+
+#. Label to show the system rendering speed
+msgctxt "#31608"
+msgid "System rendering speed"
+msgstr "Rendersnelheid van het systeem"
+
+#. Label to show the system CPU usage
+msgctxt "#31609"
+msgid "System CPU usage"
+msgstr "Systeem-CPU gebruik"
+
+#. Label to show the media (metadata) info page
+msgctxt "#31610"
+msgid "Media"
+msgstr "Media"
+
+#. Label to show the system info page
+msgctxt "#31611"
+msgid "System"
+msgstr "Systeem"
+
+#~ msgctxt "#31615"
+#~ msgid "Extras"
+#~ msgstr "Extra's"
+
+#~ msgctxt "#31059"
+#~ msgid "Select + X"
+#~ msgstr "Select + X"
+
+#~ msgctxt "#31060"
+#~ msgid "Select + Start"
+#~ msgstr "Select + Start"
+
+#~ msgctxt "#31137"
+#~ msgid "PVR info"
+#~ msgstr "PVR info"
+
+#~ msgctxt "#31138"
+#~ msgid "Player process info"
+#~ msgstr "Voortgangsinfo speler"

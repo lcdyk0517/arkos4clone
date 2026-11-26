@@ -1,0 +1,746 @@
+# Kodi Media Center language file
+# Addon Name: Estuary
+# Addon id: skin.estuary
+# Addon Provider: Team Kodi
+msgid ""
+msgstr ""
+"Project-Id-Version: KODI Main\n"
+"Report-Msgid-Bugs-To: https://github.com/xbmc/xbmc/issues/\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2023-12-04 09:42+0000\n"
+"Last-Translator: Christian Gade <gade@kodi.tv>\n"
+"Language-Team: Slovenian <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-estuary/sl_si/>\n"
+"Language: sl_si\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3;\n"
+"X-Generator: Weblate 5.2.1\n"
+
+msgctxt "Addon Summary"
+msgid "Estuary skin by phil65. (Kodi's default skin)"
+msgstr ""
+
+msgctxt "Addon Description"
+msgid "Estuary is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
+msgstr ""
+
+msgctxt "Addon Disclaimer"
+msgid "Estuary is the default skin for Kodi, removing it may cause issues"
+msgstr ""
+
+msgctxt "#31000"
+msgid "Now playing"
+msgstr "Trenutno v predvajanju"
+
+msgctxt "#31001"
+msgid "Search..."
+msgstr "Poišči …"
+
+msgctxt "#31002"
+msgid "Show media fanart as background"
+msgstr ""
+
+msgctxt "#31003"
+msgid "Cinema mode"
+msgstr "Filmski način"
+
+msgctxt "#31004"
+msgid "Change mode"
+msgstr "Spremeni način"
+
+msgctxt "#31005"
+msgid "Watch as 2D"
+msgstr "Glej kot 2D"
+
+msgctxt "#31006"
+msgid "Random movies"
+msgstr "Naključni filmi"
+
+msgctxt "#31007"
+msgid "Unwatched movies"
+msgstr "Neogledani filmi"
+
+msgctxt "#31008"
+msgid "Enable category widgets"
+msgstr ""
+
+msgctxt "#31009"
+msgid "Download icons"
+msgstr "Prejmi ikone"
+
+msgctxt "#31010"
+msgid "In progress movies"
+msgstr "Filmi v predvajanju"
+
+msgctxt "#31011"
+msgid "Most played albums"
+msgstr "Največkrat predvajani albumi"
+
+msgctxt "#31012"
+msgid "Random albums"
+msgstr "Naključni albumi"
+
+msgctxt "#31013"
+msgid "Random artists"
+msgstr "Naključni izvajalci"
+
+msgctxt "#31014"
+msgid "Unplayed albums"
+msgstr "Nepredvajani albumi"
+
+#. home screen recordings widget: recent tv / radio recordings
+msgctxt "#31015"
+msgid "Recent recordings"
+msgstr "Nedavni posnetki"
+
+#. home screen channel widget: recently played tv channels. (please note that in some non-english languages #31018 and #31016 might not be equal)
+msgctxt "#31016"
+msgid "Recently played channels"
+msgstr "Nedavno predvajani kanali"
+
+msgctxt "#31017"
+msgid "Rated"
+msgstr ""
+
+#. home screen channel widget: recently played radio channels. (please note that in some non-english languages #31018 and #31016 might not be equal)
+msgctxt "#31018"
+msgid "Recently played channels"
+msgstr "Nedavno predvajani kanali"
+
+msgctxt "#31019"
+msgid "Forecast"
+msgstr "Napoved"
+
+msgctxt "#31020"
+msgid "Actions"
+msgstr "Dejanja"
+
+msgctxt "#31021"
+msgid "Misc options"
+msgstr "Druge možnosti"
+
+msgctxt "#31022"
+msgid "Sort by"
+msgstr "Razvrsti po"
+
+msgctxt "#31023"
+msgid "Viewtype"
+msgstr "Vrsta pogleda"
+
+msgctxt "#31024"
+msgid "Choose rating to display for media items"
+msgstr ""
+
+msgctxt "#31025"
+msgid "No favourites found. You can add any item from media views to this list by using the context menu."
+msgstr ""
+
+msgctxt "#31026"
+msgid "Timeshift"
+msgstr "Časovni zamik"
+
+msgctxt "#31027"
+msgid "Next aired"
+msgstr ""
+
+msgctxt "#31028"
+msgid "Show fanart"
+msgstr ""
+
+msgctxt "#31029"
+msgid "Last logged in"
+msgstr "Zadnja prijava"
+
+#. Label to show the system memory usage
+msgctxt "#31030"
+msgid "System memory usage"
+msgstr ""
+
+msgctxt "#31031"
+msgid "Version info"
+msgstr "Podrobnosti različice"
+
+msgctxt "#31032"
+msgid "Order"
+msgstr ""
+
+msgctxt "#31033"
+msgid "Your rating"
+msgstr ""
+
+msgctxt "#31034"
+msgid "Extended info"
+msgstr "Razširjene podrobnosti"
+
+msgctxt "#31035"
+msgid "Pages"
+msgstr "Strani"
+
+msgctxt "#31036"
+msgid "items"
+msgstr ""
+
+msgctxt "#31037"
+msgid "Selected track"
+msgstr "Izbrane sledi"
+
+msgctxt "#31038"
+msgid "Rewind"
+msgstr "Nazaj"
+
+msgctxt "#31039"
+msgid "Fast forward"
+msgstr "Naprej"
+
+# empty string with id 31040
+msgctxt "#31041"
+msgid "Camera manufacturer"
+msgstr ""
+
+msgctxt "#31042"
+msgid "Playlist options"
+msgstr "Možnosti seznama predvajanja"
+
+msgctxt "#31043"
+msgid "Set the type and add rules to create a smart playlist. These playlists are dynamic and include all media items from your database which apply to your chosen rules."
+msgstr ""
+
+msgctxt "#31044"
+msgid "Add group"
+msgstr "Dodaj skupino"
+
+msgctxt "#31045"
+msgid "Rename group"
+msgstr "Preimenuj skupino"
+
+msgctxt "#31046"
+msgid "Delete group"
+msgstr "Izbriši skupino"
+
+# empty string with id 31047
+msgctxt "#31048"
+msgid "Available"
+msgstr "Na voljo"
+
+# empty strings from id 31049 to 31051
+msgctxt "#31052"
+msgid "filtered"
+msgstr ""
+
+msgctxt "#31053"
+msgid "Arial based"
+msgstr "Arial"
+
+msgctxt "#31054"
+msgid "Press [B]Left[/B] to step back, or [B]Right[/B] to step forward"
+msgstr ""
+
+msgctxt "#31055"
+msgid "Press [B]Right[/B] to frame advance"
+msgstr ""
+
+msgctxt "#31056"
+msgid "Go to playlist"
+msgstr ""
+
+msgctxt "#31057"
+msgid "Show login screen on startup"
+msgstr ""
+
+msgctxt "#31058"
+msgid "Automatic Login on startup"
+msgstr ""
+
+msgctxt "#31061"
+msgid "Main menu items"
+msgstr ""
+
+msgctxt "#31062"
+msgid "Choose weather fanart pack"
+msgstr ""
+
+msgctxt "#31063"
+msgid "Sections"
+msgstr "Razdelki"
+
+# empty string with id 31064
+msgctxt "#31065"
+msgid "Video playlist"
+msgstr "Seznam predvajanja posnetkov"
+
+msgctxt "#31066"
+msgid "Music playlist"
+msgstr "Seznam predvajanja glasbe"
+
+msgctxt "#31067"
+msgid "Event log"
+msgstr "Zapisnik dogodkov"
+
+msgctxt "#31068"
+msgid "Choose presets"
+msgstr "Izbor sheme nastavitev"
+
+msgctxt "#31069"
+msgid "Last Updated"
+msgstr "Zadnja posodobitev"
+
+# empty string with id 31070
+msgctxt "#31071"
+msgid "by"
+msgstr ""
+
+msgctxt "#31072"
+msgid "Power Options"
+msgstr "Možnosti varčevanja z energijo"
+
+msgctxt "#31073"
+msgid "Total length"
+msgstr "Skupna dolžina"
+
+msgctxt "#31074"
+msgid "Total duration"
+msgstr "Skupno trajanje"
+
+msgctxt "#31075"
+msgid "Movie sets"
+msgstr ""
+
+msgctxt "#31079"
+msgid "Cast not available"
+msgstr "Igralska zasedba ni na voljo"
+
+msgctxt "#31080"
+msgid "Ends at"
+msgstr ""
+
+msgctxt "#31082"
+msgid "Lyrics add-on"
+msgstr "Razširitev za prikaz besedil skladb"
+
+msgctxt "#31083"
+msgid "Lyrics add-on settings"
+msgstr "Nastavitve razširitve za besedila skladb"
+
+msgctxt "#31084"
+msgid "Visualisation settings"
+msgstr "Nastavitve vizualizacije"
+
+msgctxt "#31089"
+msgid "Available groups"
+msgstr "Skupine na voljo"
+
+# empty strings from id 31090 to 31091
+msgctxt "#31092"
+msgid "Video menu"
+msgstr "Meni videa"
+
+msgctxt "#31093"
+msgid "Show weather info in top bar"
+msgstr "Pokaži podrobnosti vremena v vrhnji vrstici"
+
+# empty string with id 31094
+msgctxt "#31095"
+msgid "Use slide animations"
+msgstr ""
+
+msgctxt "#31096"
+msgid "Local subtitle available"
+msgstr "Na voljo so krajevne datoteke podnapisov"
+
+msgctxt "#31097"
+msgid "Channel options"
+msgstr "Možnosti kanala"
+
+msgctxt "#31098"
+msgid "Select your Kodi user profile[CR]to login and continue"
+msgstr "Izberite uporabniški profil Kodi[CR]za prijavo in nadaljevanje"
+
+#. viewtype name
+msgctxt "#31099"
+msgid "IconWall"
+msgstr ""
+
+#. viewtype name
+msgctxt "#31100"
+msgid "Shift"
+msgstr "Zamik"
+
+#. viewtype name
+msgctxt "#31101"
+msgid "InfoWall"
+msgstr ""
+
+#. viewtype name
+msgctxt "#31102"
+msgid "Wall"
+msgstr "Ikone"
+
+msgctxt "#31103"
+msgid "Enter text here..."
+msgstr "Vpis besedila ..."
+
+msgctxt "#31104"
+msgid "Your library is currently empty. In order to populate it with your personal media, enter \"Files\" section, add a media source and configure it. After the source has been added and indexed you will be able to browse your library."
+msgstr ""
+
+msgctxt "#31105"
+msgid "Add video sources and set the appropriate content type in order to populate your video libraries."
+msgstr ""
+
+msgctxt "#31106"
+msgid "Teletext"
+msgstr "Teletekst"
+
+#. viewtype name
+msgctxt "#31107"
+msgid "WideList"
+msgstr ""
+
+# empty strings from id 31108 to 31109
+msgctxt "#31110"
+msgid "Enter files section"
+msgstr ""
+
+msgctxt "#31111"
+msgid "View your personal pictures or download one of the many image add-ons from the official repository."
+msgstr ""
+
+msgctxt "#31112"
+msgid "Toggle audio stream"
+msgstr ""
+
+msgctxt "#31113"
+msgid "Search local library"
+msgstr ""
+
+msgctxt "#31114"
+msgid "Search YouTube"
+msgstr "Poišči na YouTube"
+
+msgctxt "#31115"
+msgid "Toggle subtitle"
+msgstr "Preklopi podnapise"
+
+msgctxt "#31116"
+msgid "Remove this main menu item"
+msgstr ""
+
+msgctxt "#31117"
+msgid "Edit nodes"
+msgstr ""
+
+msgctxt "#31118"
+msgid "Enter add-on browser"
+msgstr "Vnesi brskalnik dodatkov"
+
+msgctxt "#31119"
+msgid "You do not have any add-ons installed yet. Visit our add-on browser to browse through our collection and improve your Kodi experience."
+msgstr ""
+
+msgctxt "#31120"
+msgid "You did not set up a weather provider yet. In order to view weather information, choose a weather provider and set up your location."
+msgstr ""
+
+msgctxt "#31121"
+msgid "Set weather provider"
+msgstr "Nastavi ponudnika vremenskih podatkov"
+
+msgctxt "#31122"
+msgid "Unwatched TV Shows"
+msgstr "Neogledane TV serije"
+
+msgctxt "#31123"
+msgid "Same director"
+msgstr ""
+
+# empty string with id 31124
+msgctxt "#31125"
+msgid "Press up for actor info"
+msgstr ""
+
+msgctxt "#31126"
+msgid "Press OK to read plot"
+msgstr ""
+
+msgctxt "#31127"
+msgid "Show icons"
+msgstr "Pokaži ikone"
+
+msgctxt "#31128"
+msgid "Contributors"
+msgstr ""
+
+msgctxt "#31129"
+msgid "General settings applying to all areas of the skin."
+msgstr ""
+
+msgctxt "#31130"
+msgid "Main menu-related settings: Configure the home screen to your likings."
+msgstr ""
+
+msgctxt "#31131"
+msgid "Choose skin fanart pack"
+msgstr ""
+
+msgctxt "#31132"
+msgid "Select Program"
+msgstr "Izbor programa"
+
+msgctxt "#31133"
+msgid "Select Resolution"
+msgstr "Izbor ločljivosti"
+
+msgctxt "#31134"
+msgid "Remaining"
+msgstr ""
+
+msgctxt "#31135"
+msgid "Binary"
+msgstr "Dvojiško"
+
+msgctxt "#31136"
+msgid "Click here to see latest changes..."
+msgstr ""
+
+#. Label to show PVR info page
+msgctxt "#31137"
+msgid "PVR"
+msgstr ""
+
+#. Label to show player info page
+msgctxt "#31138"
+msgid "Player"
+msgstr "Predvajalnik"
+
+#. Label to show video decoder name
+msgctxt "#31139"
+msgid "Video decoder"
+msgstr "Odkodirnik slike"
+
+#. Label to show the video pixel format
+msgctxt "#31140"
+msgid "Pixel format"
+msgstr "Oblika točke"
+
+msgctxt "#31141"
+msgid "Changes for version"
+msgstr "Spremembe različice"
+
+msgctxt "#31142"
+msgid "Play speed"
+msgstr "Hitrost predvajanja"
+
+msgctxt "#31143"
+msgid "You did not set up PVR yet. In order to use PVR, choose a PVR client addon and configure it. Please visit http://kodi.wiki/view/PVR to learn more."
+msgstr ""
+
+msgctxt "#31144"
+msgid "Enter add-on browser"
+msgstr "Vnesite brskalnik dodatkov"
+
+msgctxt "#31145"
+msgid "Search add-ons"
+msgstr "Poišči razširitve"
+
+msgctxt "#31146"
+msgid "In cinemas"
+msgstr "Že v kinematografih"
+
+msgctxt "#31147"
+msgid "In cinemas soon"
+msgstr "Kmalu v kinematografih"
+
+msgctxt "#31148"
+msgid "Categories"
+msgstr "Kategorije"
+
+msgctxt "#31149"
+msgid "Select genre fanart pack"
+msgstr ""
+
+msgctxt "#31150"
+msgid "Origin"
+msgstr "Izvor"
+
+msgctxt "#31151"
+msgid "Unwatched music videos"
+msgstr "Neogledani videospoti"
+
+msgctxt "#31152"
+msgid "Random music videos"
+msgstr "Naključni videospoti"
+
+msgctxt "#31153"
+msgid "You do not have any add-ons of this type installed. Enter the add-on browser to download add-ons created by our community."
+msgstr ""
+
+msgctxt "#31154"
+msgid "Press OK to switch between locations"
+msgstr ""
+
+msgctxt "#31155"
+msgid "No bookmarks created yet."
+msgstr ""
+
+msgctxt "#31156"
+msgid "Choose background pattern"
+msgstr "Izbor vzorca ozadja"
+
+msgctxt "#31157"
+msgid "Edit categories"
+msgstr "Uredi kategorije"
+
+msgctxt "#31158"
+msgid "Touch mode"
+msgstr ""
+
+msgctxt "#31159"
+msgid "Artwork"
+msgstr "Grafična podoba"
+
+msgctxt "#31160"
+msgid "Show media flags"
+msgstr "Pokaži zastavice predstavne vsebine"
+
+msgctxt "#31161"
+msgid "Numeric pad"
+msgstr "Številčnica"
+
+msgctxt "#31162"
+msgid "Play your personal games or download one of the many game add-ons from the official repository."
+msgstr ""
+
+msgctxt "#31163"
+msgid "Show Fanart background"
+msgstr ""
+
+#. Choose profile identifier
+msgctxt "#31164"
+msgid "Choose kind of profile identification"
+msgstr ""
+
+#. Label for the kind of profile identification
+msgctxt "#31165"
+msgid "Profile name"
+msgstr "Ime profila"
+
+#. Label for the kind of profile identification
+msgctxt "#31166"
+msgid "Profile avatar"
+msgstr "Podoba profila"
+
+#. Label of a setting
+msgctxt "#31167"
+msgid "Animate background"
+msgstr "Animirano ozadje"
+
+#. Label of a setting
+msgctxt "#31168"
+msgid "Show posters instead of thumbs for musicvideos"
+msgstr ""
+
+#. Description label for skin settings area
+msgctxt "#31169"
+msgid "Artwork related settings."
+msgstr "Nastavitve grafične podobe"
+
+#. Label for OSD settings category
+msgctxt "#31170"
+msgid "On screen display"
+msgstr ""
+
+#. Helper text for the label of OSD settings category
+msgctxt "#31171"
+msgid "On screen display (OSD) related settings"
+msgstr ""
+
+#. Setting Automatically close video OSD
+msgctxt "#31172"
+msgid "Automatically close video OSD"
+msgstr ""
+
+#. Setting auto close time for video osd
+msgctxt "#31173"
+msgid "Video OSD autoclose time (seconds)"
+msgstr ""
+
+#. Setting to control what happens when clicking a music album on the home screen
+msgctxt "#31174"
+msgid "Default select action for albums on the home screen"
+msgstr ""
+
+#. Setting to control what happens when clicking a TV show on the home screen
+msgctxt "#31175"
+msgid "Default select action for TV shows on the home screen"
+msgstr ""
+
+#. Setting to control what happens when clicking a movie set on the home screen
+msgctxt "#31176"
+msgid "Default select action for movie sets on the home screen"
+msgstr ""
+
+# empty strings from id 31170 to 31599
+#. Label to show the video codec name
+msgctxt "#31600"
+msgid "Video codec"
+msgstr "Slikovni kodek"
+
+#. Label to show the video resolution
+msgctxt "#31601"
+msgid "Video resolution"
+msgstr "Ločljivost slike"
+
+#. Label to show the video aspect
+msgctxt "#31602"
+msgid "Video aspect"
+msgstr "Razmerje slike"
+
+#. Label to show the video bitrate
+msgctxt "#31603"
+msgid "Video bitrate"
+msgstr "Bitna hitrost slike"
+
+#. Label to show the audio codec name
+msgctxt "#31604"
+msgid "Audio codec"
+msgstr "Zvočni kodek"
+
+#. Label to show the number of audio channels
+msgctxt "#31605"
+msgid "Audio channels"
+msgstr "Zvočni kanali"
+
+#. Label to show the audio bitrate
+msgctxt "#31606"
+msgid "Audio bitrate"
+msgstr "Bitna hitrost zvoka"
+
+#. Label to show the screen resolution
+msgctxt "#31607"
+msgid "Screen resolution"
+msgstr "Ločljivost zaslona"
+
+#. Label to show the system rendering speed
+msgctxt "#31608"
+msgid "System rendering speed"
+msgstr "Hitrost sistemskega izrisovanja"
+
+#. Label to show the system CPU usage
+msgctxt "#31609"
+msgid "System CPU usage"
+msgstr "Raba sistemske CPE"
+
+#. Label to show the media (metadata) info page
+msgctxt "#31610"
+msgid "Media"
+msgstr "Predstavne vsebine"
+
+#. Label to show the system info page
+msgctxt "#31611"
+msgid "System"
+msgstr "Sistem"
+
+#~ msgctxt "#31615"
+#~ msgid "Extras"
+#~ msgstr "Dodatki"

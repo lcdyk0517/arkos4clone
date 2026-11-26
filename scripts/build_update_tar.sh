@@ -375,11 +375,11 @@ if [[ -f "$BASE/VERSION" && -f "$PLYMOUTH_THEME" ]]; then
   # 新版 payload 已直接使用正式文件名 (atomiswave.sh / es_systems.cfg 等)，
   # 旧版按系统改名/删除 darkos4* 的逻辑随目录树重构一并移除
   if [[ "$IS_DARKOS" == "true" ]]; then
-    sed -i "/^title=/c\title=dArkOS4Clone (${UPDATE_DATE})(${MODDER})" "$PLYMOUTH_THEME" 2>/dev/null || true
-    log "Plymouth updated: dArkOS4Clone (${UPDATE_DATE})(${MODDER})"
+    sed -i "/^title=/c\title=dArkOS4Clone (${UPDATE_DATE})" "$PLYMOUTH_THEME" 2>/dev/null || true
+    log "Plymouth updated: dArkOS4Clone (${UPDATE_DATE})"
   else
-    sed -i "/^title=/c\title=ArkOS4Clone (${UPDATE_DATE})(${MODDER})" "$PLYMOUTH_THEME" 2>/dev/null || true
-    log "Plymouth updated: ArkOS4Clone (${UPDATE_DATE})(${MODDER})"
+    sed -i "/^title=/c\title=ArkOS4Clone (${UPDATE_DATE})" "$PLYMOUTH_THEME" 2>/dev/null || true
+    log "Plymouth updated: ArkOS4Clone (${UPDATE_DATE})"
   fi
 fi
 

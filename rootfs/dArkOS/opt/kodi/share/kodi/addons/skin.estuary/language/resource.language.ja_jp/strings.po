@@ -1,0 +1,753 @@
+# Kodi Media Center language file
+# Addon Name: Estuary
+# Addon id: skin.estuary
+# Addon Provider: Team Kodi
+msgid ""
+msgstr ""
+"Project-Id-Version: KODI Main\n"
+"Report-Msgid-Bugs-To: https://github.com/xbmc/xbmc/issues/\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2023-12-04 09:42+0000\n"
+"Last-Translator: Christian Gade <gade@kodi.tv>\n"
+"Language-Team: Japanese <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-estuary/ja_jp/>\n"
+"Language: ja_jp\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.2.1\n"
+
+msgctxt "Addon Summary"
+msgid "Estuary skin by phil65. (Kodi's default skin)"
+msgstr "Estuaryスキン by phil65 and Piers (Kodi デフォルトスキン)"
+
+msgctxt "Addon Description"
+msgid "Estuary is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
+msgstr "EstuaryはKodi 17.0およびそれ以上のバージョンで標準のスキンです。ユーザーが初めてKodiに触れる際にわかりやすく使えるようにしてあります。"
+
+msgctxt "Addon Disclaimer"
+msgid "Estuary is the default skin for Kodi, removing it may cause issues"
+msgstr "EstuaryはKodiのデフォルトスキンなので、これを削除するとうまく動かなくなる可能性があります"
+
+msgctxt "#31000"
+msgid "Now playing"
+msgstr "再生中"
+
+msgctxt "#31001"
+msgid "Search..."
+msgstr "検索..."
+
+msgctxt "#31002"
+msgid "Show media fanart as background"
+msgstr "背景にメディアのファンアートを表示"
+
+msgctxt "#31003"
+msgid "Cinema mode"
+msgstr "シネマモード"
+
+msgctxt "#31004"
+msgid "Change mode"
+msgstr "モード変更"
+
+msgctxt "#31005"
+msgid "Watch as 2D"
+msgstr "2Dで観る"
+
+msgctxt "#31006"
+msgid "Random movies"
+msgstr "ランダムムービー"
+
+msgctxt "#31007"
+msgid "Unwatched movies"
+msgstr "未視聴の映画"
+
+msgctxt "#31008"
+msgid "Enable category widgets"
+msgstr "カテゴリーウィジェット有効"
+
+msgctxt "#31009"
+msgid "Download icons"
+msgstr "ダウンロードアイコン"
+
+msgctxt "#31010"
+msgid "In progress movies"
+msgstr "進行中のムービー"
+
+msgctxt "#31011"
+msgid "Most played albums"
+msgstr "最も再生したアルバム"
+
+msgctxt "#31012"
+msgid "Random albums"
+msgstr "ランダムアルバム"
+
+msgctxt "#31013"
+msgid "Random artists"
+msgstr "ランダムアーティスト"
+
+msgctxt "#31014"
+msgid "Unplayed albums"
+msgstr "再生していないアルバム"
+
+#. home screen recordings widget: recent tv / radio recordings
+msgctxt "#31015"
+msgid "Recent recordings"
+msgstr "最近の録画"
+
+#. home screen channel widget: recently played tv channels. (please note that in some non-english languages #31018 and #31016 might not be equal)
+msgctxt "#31016"
+msgid "Recently played channels"
+msgstr "最近再生したチャンネル"
+
+msgctxt "#31017"
+msgid "Rated"
+msgstr "評価済"
+
+#. home screen channel widget: recently played radio channels. (please note that in some non-english languages #31018 and #31016 might not be equal)
+msgctxt "#31018"
+msgid "Recently played channels"
+msgstr "最近再生したチャンネル"
+
+msgctxt "#31019"
+msgid "Forecast"
+msgstr "予報"
+
+msgctxt "#31020"
+msgid "Actions"
+msgstr "アクション"
+
+msgctxt "#31021"
+msgid "Misc options"
+msgstr "その他オプション"
+
+msgctxt "#31022"
+msgid "Sort by"
+msgstr "ソート"
+
+msgctxt "#31023"
+msgid "Viewtype"
+msgstr "表示タイプ"
+
+msgctxt "#31024"
+msgid "Choose rating to display for media items"
+msgstr "メディアアイテムへ表示する評価を選択"
+
+msgctxt "#31025"
+msgid "No favourites found. You can add any item from media views to this list by using the context menu."
+msgstr "お気に入りは見つかりませんでした。メディアビューでコンテキストメニューを使用してこのリストにアイテムを追加できます。"
+
+msgctxt "#31026"
+msgid "Timeshift"
+msgstr "タイムシフト"
+
+msgctxt "#31027"
+msgid "Next aired"
+msgstr "次回の放送"
+
+msgctxt "#31028"
+msgid "Show fanart"
+msgstr "ファンアートを見る"
+
+msgctxt "#31029"
+msgid "Last logged in"
+msgstr "最終ログイン"
+
+#. Label to show the system memory usage
+msgctxt "#31030"
+msgid "System memory usage"
+msgstr "システムメモリ使用量"
+
+msgctxt "#31031"
+msgid "Version info"
+msgstr "バージョン情報"
+
+msgctxt "#31032"
+msgid "Order"
+msgstr "並べ替え"
+
+msgctxt "#31033"
+msgid "Your rating"
+msgstr "評価"
+
+msgctxt "#31034"
+msgid "Extended info"
+msgstr "メディア情報"
+
+msgctxt "#31035"
+msgid "Pages"
+msgstr "ページ"
+
+msgctxt "#31036"
+msgid "items"
+msgstr "アイテム"
+
+msgctxt "#31037"
+msgid "Selected track"
+msgstr "選択したトラック"
+
+msgctxt "#31038"
+msgid "Rewind"
+msgstr "巻き戻し"
+
+msgctxt "#31039"
+msgid "Fast forward"
+msgstr "早送り"
+
+msgctxt "#31041"
+msgid "Camera manufacturer"
+msgstr "カメラメーカー"
+
+msgctxt "#31042"
+msgid "Playlist options"
+msgstr "プレイリストオプション"
+
+msgctxt "#31043"
+msgid "Set the type and add rules to create a smart playlist. These playlists are dynamic and include all media items from your database which apply to your chosen rules."
+msgstr "タイプとルールを指定してスマートプレイリストを作成します。すべてのデータベースから指定したルールを使用し動的なプレイリストを作ることができます。"
+
+msgctxt "#31044"
+msgid "Add group"
+msgstr "グループ追加"
+
+msgctxt "#31045"
+msgid "Rename group"
+msgstr "グループの名称変更"
+
+msgctxt "#31046"
+msgid "Delete group"
+msgstr "グループ削除"
+
+msgctxt "#31048"
+msgid "Available"
+msgstr "利用可能"
+
+msgctxt "#31052"
+msgid "filtered"
+msgstr "フィルター済み"
+
+msgctxt "#31053"
+msgid "Arial based"
+msgstr "Arialベース"
+
+msgctxt "#31054"
+msgid "Press [B]Left[/B] to step back, or [B]Right[/B] to step forward"
+msgstr "[B]左[/B] を押してバックか、[B]右[/B] を押してフォワード"
+
+msgctxt "#31055"
+msgid "Press [B]Right[/B] to frame advance"
+msgstr "[B]右[/B] を押してフレームを進める"
+
+msgctxt "#31056"
+msgid "Go to playlist"
+msgstr "プレイリストに移動"
+
+msgctxt "#31057"
+msgid "Show login screen on startup"
+msgstr "起動時にログイン画面を表示"
+
+msgctxt "#31058"
+msgid "Automatic Login on startup"
+msgstr "スタートアップ時に自動ログイン"
+
+msgctxt "#31061"
+msgid "Main menu items"
+msgstr "メインメニューアイテム"
+
+msgctxt "#31062"
+msgid "Choose weather fanart pack"
+msgstr "天気のファンアートパック選択"
+
+msgctxt "#31063"
+msgid "Sections"
+msgstr "セクション"
+
+msgctxt "#31065"
+msgid "Video playlist"
+msgstr "ビデオプレイリスト"
+
+msgctxt "#31066"
+msgid "Music playlist"
+msgstr "ミュージックプレイリスト"
+
+msgctxt "#31067"
+msgid "Event log"
+msgstr "イベントログ"
+
+msgctxt "#31068"
+msgid "Choose presets"
+msgstr "プリセット選択"
+
+msgctxt "#31069"
+msgid "Last Updated"
+msgstr "最終更新時刻"
+
+msgctxt "#31071"
+msgid "by"
+msgstr "by"
+
+msgctxt "#31072"
+msgid "Power Options"
+msgstr "電源オプション"
+
+msgctxt "#31073"
+msgid "Total length"
+msgstr "全長"
+
+msgctxt "#31074"
+msgid "Total duration"
+msgstr "総時間"
+
+msgctxt "#31075"
+msgid "Movie sets"
+msgstr "ムービーセット"
+
+msgctxt "#31079"
+msgid "Cast not available"
+msgstr "キャストは利用できません"
+
+msgctxt "#31080"
+msgid "Ends at"
+msgstr "終了時間"
+
+msgctxt "#31082"
+msgid "Lyrics add-on"
+msgstr "歌詞アドオン"
+
+msgctxt "#31083"
+msgid "Lyrics add-on settings"
+msgstr "歌詞アドオン設定"
+
+msgctxt "#31084"
+msgid "Visualisation settings"
+msgstr "ビジュアライザ設定"
+
+msgctxt "#31089"
+msgid "Available groups"
+msgstr "利用可能なグループ"
+
+msgctxt "#31092"
+msgid "Video menu"
+msgstr "ビデオメニュー"
+
+msgctxt "#31093"
+msgid "Show weather info in top bar"
+msgstr "トップバーに天気予報を表示"
+
+msgctxt "#31095"
+msgid "Use slide animations"
+msgstr "スライドアニメーション使用"
+
+msgctxt "#31096"
+msgid "Local subtitle available"
+msgstr "ローカルの字幕が利用可能"
+
+msgctxt "#31097"
+msgid "Channel options"
+msgstr "チャンネルオプション"
+
+msgctxt "#31098"
+msgid "Select your Kodi user profile[CR]to login and continue"
+msgstr "Kodiユーザープロファイルを選択して[CR]ログインしてください"
+
+#. viewtype name
+msgctxt "#31099"
+msgid "IconWall"
+msgstr "アイコン壁紙"
+
+#. viewtype name
+msgctxt "#31100"
+msgid "Shift"
+msgstr "シフト"
+
+#. viewtype name
+msgctxt "#31101"
+msgid "InfoWall"
+msgstr "インフォウォール"
+
+#. viewtype name
+msgctxt "#31102"
+msgid "Wall"
+msgstr "ウォール"
+
+msgctxt "#31103"
+msgid "Enter text here..."
+msgstr "テキスト入力..."
+
+msgctxt "#31104"
+msgid "Your library is currently empty. In order to populate it with your personal media, enter \"Files\" section, add a media source and configure it. After the source has been added and indexed you will be able to browse your library."
+msgstr "現在ライブラリには何もありません。手持ちのメディアを追加するにはファイルセクションから設定してください。ソースを追加後インデックス化されライブラリを利用できるようになります。"
+
+msgctxt "#31105"
+msgid "Add video sources and set the appropriate content type in order to populate your video libraries."
+msgstr "ビデオライブラリに追加するために、適切なコンテンツタイプのビデオソースを追加し設定します。"
+
+msgctxt "#31106"
+msgid "Teletext"
+msgstr "文字多重放送"
+
+#. viewtype name
+msgctxt "#31107"
+msgid "WideList"
+msgstr "ワイドリスト"
+
+msgctxt "#31110"
+msgid "Enter files section"
+msgstr "ファイルセクションに入る"
+
+msgctxt "#31111"
+msgid "View your personal pictures or download one of the many image add-ons from the official repository."
+msgstr "個人的な写真を表示またはオフィシャルリポジトリから画像アドオンをダウンロード。"
+
+msgctxt "#31112"
+msgid "Toggle audio stream"
+msgstr "オーディオストリームをトグル"
+
+msgctxt "#31113"
+msgid "Search local library"
+msgstr "ローカルライブラリ検索"
+
+msgctxt "#31114"
+msgid "Search YouTube"
+msgstr "YouTube検索"
+
+msgctxt "#31115"
+msgid "Toggle subtitle"
+msgstr "字幕を切り替える"
+
+msgctxt "#31116"
+msgid "Remove this main menu item"
+msgstr "メインメニューから消去"
+
+msgctxt "#31117"
+msgid "Edit nodes"
+msgstr "ノード編集"
+
+msgctxt "#31118"
+msgid "Enter add-on browser"
+msgstr "アドオンブラウザー"
+
+msgctxt "#31119"
+msgid "You do not have any add-ons installed yet. Visit our add-on browser to browse through our collection and improve your Kodi experience."
+msgstr "アドオンはまだ何もインストールされていません。アドオンブラウザを利用してアドオンを追加しましょう。Kodiがより便利になります。"
+
+msgctxt "#31120"
+msgid "You did not set up a weather provider yet. In order to view weather information, choose a weather provider and set up your location."
+msgstr "天気プロパイダーを設定していません。天気予報プロパイダーを選択し現在地を設定すれば天気予報を表示できます。"
+
+msgctxt "#31121"
+msgid "Set weather provider"
+msgstr "天気プロパイダーを設定"
+
+msgctxt "#31122"
+msgid "Unwatched TV Shows"
+msgstr "未視聴のTV番組"
+
+msgctxt "#31123"
+msgid "Same director"
+msgstr "同じ監督"
+
+msgctxt "#31125"
+msgid "Press up for actor info"
+msgstr "上を押して出演者情報"
+
+msgctxt "#31126"
+msgid "Press OK to read plot"
+msgstr "決定を押してあらすじを読む"
+
+msgctxt "#31127"
+msgid "Show icons"
+msgstr "アイコン表示"
+
+msgctxt "#31128"
+msgid "Contributors"
+msgstr "協力者"
+
+msgctxt "#31129"
+msgid "General settings applying to all areas of the skin."
+msgstr "このスキンのすべての範囲に一般設定を適用する。"
+
+msgctxt "#31130"
+msgid "Main menu-related settings: Configure the home screen to your likings."
+msgstr "メインメニュー関連設定: 好きなようにホーム画面を設定できます。"
+
+msgctxt "#31131"
+msgid "Choose skin fanart pack"
+msgstr "スキンのファンアートパック選択"
+
+msgctxt "#31132"
+msgid "Select Program"
+msgstr "プログラム選択"
+
+msgctxt "#31133"
+msgid "Select Resolution"
+msgstr "解像度選択"
+
+msgctxt "#31134"
+msgid "Remaining"
+msgstr "残り"
+
+msgctxt "#31135"
+msgid "Binary"
+msgstr "バイナリー"
+
+msgctxt "#31136"
+msgid "Click here to see latest changes..."
+msgstr "ここをクリックして最近の変更を見る..."
+
+#. Label to show PVR info page
+msgctxt "#31137"
+msgid "PVR"
+msgstr "PVR"
+
+#. Label to show player info page
+msgctxt "#31138"
+msgid "Player"
+msgstr "プレーヤー"
+
+#. Label to show video decoder name
+msgctxt "#31139"
+msgid "Video decoder"
+msgstr "ビデオデコーダー"
+
+#. Label to show the video pixel format
+msgctxt "#31140"
+msgid "Pixel format"
+msgstr "ピクセル形式"
+
+msgctxt "#31141"
+msgid "Changes for version"
+msgstr "バージョン変更"
+
+msgctxt "#31142"
+msgid "Play speed"
+msgstr "再生速度"
+
+msgctxt "#31143"
+msgid "You did not set up PVR yet. In order to use PVR, choose a PVR client addon and configure it. Please visit http://kodi.wiki/view/PVR to learn more."
+msgstr "まだPVRを設定していません。PVRを使用するには、PVRクライアントアドオンを選択して設定します。詳細については、http://kodi.wiki/view/PVR をご覧ください。"
+
+msgctxt "#31144"
+msgid "Enter add-on browser"
+msgstr "アドオンブラウザー"
+
+msgctxt "#31145"
+msgid "Search add-ons"
+msgstr "アドオン選択"
+
+msgctxt "#31146"
+msgid "In cinemas"
+msgstr "映画館にて"
+
+msgctxt "#31147"
+msgid "In cinemas soon"
+msgstr "もうすぐ映画館で"
+
+msgctxt "#31148"
+msgid "Categories"
+msgstr "カテゴリー"
+
+msgctxt "#31149"
+msgid "Select genre fanart pack"
+msgstr "ジャンルのファンアートパック選択"
+
+msgctxt "#31150"
+msgid "Origin"
+msgstr "オリジン"
+
+msgctxt "#31151"
+msgid "Unwatched music videos"
+msgstr "未視聴なミュージックビデオ"
+
+msgctxt "#31152"
+msgid "Random music videos"
+msgstr "ランダムミュージックビデオ"
+
+msgctxt "#31153"
+msgid "You do not have any add-ons of this type installed. Enter the add-on browser to download add-ons created by our community."
+msgstr "この種類のアドオンはインストールされていません。アドオンブラウザを使用して、私たちのコミュニティによって作成されたアドオンをダウンロードしてください。"
+
+msgctxt "#31154"
+msgid "Press OK to switch between locations"
+msgstr "OKを押して場所を切り替える"
+
+msgctxt "#31155"
+msgid "No bookmarks created yet."
+msgstr "ブックマークをまだ作成していません。"
+
+msgctxt "#31156"
+msgid "Choose background pattern"
+msgstr "背景のパターン選択"
+
+msgctxt "#31157"
+msgid "Edit categories"
+msgstr "カテゴリー編集"
+
+msgctxt "#31158"
+msgid "Touch mode"
+msgstr "タッチモード"
+
+msgctxt "#31159"
+msgid "Artwork"
+msgstr "アートワーク"
+
+msgctxt "#31160"
+msgid "Show media flags"
+msgstr "メディアのフラグを表示"
+
+msgctxt "#31161"
+msgid "Numeric pad"
+msgstr "テンキー"
+
+msgctxt "#31162"
+msgid "Play your personal games or download one of the many game add-ons from the official repository."
+msgstr "ゲームで遊ぶ、[CR]もしくは公式レポジトリからたくさんあるゲームのアドオンをダウンロードしてみる。"
+
+msgctxt "#31163"
+msgid "Show Fanart background"
+msgstr "背景にファンアートを表示"
+
+#. Choose profile identifier
+msgctxt "#31164"
+msgid "Choose kind of profile identification"
+msgstr "プロファイルの確認と種類を選択"
+
+#. Label for the kind of profile identification
+msgctxt "#31165"
+msgid "Profile name"
+msgstr "プロファイル名"
+
+#. Label for the kind of profile identification
+msgctxt "#31166"
+msgid "Profile avatar"
+msgstr "プロファイルアバター"
+
+#. Label of a setting
+msgctxt "#31167"
+msgid "Animate background"
+msgstr "アニメーション背景"
+
+#. Label of a setting
+msgctxt "#31168"
+msgid "Show posters instead of thumbs for musicvideos"
+msgstr "ミュージックビデオのサムネイルの代わりにポスターを表示する"
+
+#. Description label for skin settings area
+msgctxt "#31169"
+msgid "Artwork related settings."
+msgstr "アートワーク関連の設定。"
+
+#. Label for OSD settings category
+msgctxt "#31170"
+msgid "On screen display"
+msgstr "画面上に表示"
+
+#. Helper text for the label of OSD settings category
+msgctxt "#31171"
+msgid "On screen display (OSD) related settings"
+msgstr "オンスクリーンディスプレイ(OSD)関連の設定"
+
+#. Setting Automatically close video OSD
+msgctxt "#31172"
+msgid "Automatically close video OSD"
+msgstr "ビデオOSDを自動的に閉じる"
+
+#. Setting auto close time for video osd
+msgctxt "#31173"
+msgid "Video OSD autoclose time (seconds)"
+msgstr "ビデオOSDを自動的に閉じるまでの時間(秒)"
+
+#. Setting to control what happens when clicking a music album on the home screen
+msgctxt "#31174"
+msgid "Default select action for albums on the home screen"
+msgstr "ホーム画面のアルバムのデフォルトの選択アクション"
+
+#. Setting to control what happens when clicking a TV show on the home screen
+msgctxt "#31175"
+msgid "Default select action for TV shows on the home screen"
+msgstr "ホーム画面上のテレビ番組のデフォルトの選択アクション"
+
+#. Setting to control what happens when clicking a movie set on the home screen
+msgctxt "#31176"
+msgid "Default select action for movie sets on the home screen"
+msgstr "ホーム画面でのムービーセットのデフォルトの選択アクション"
+
+# empty strings from id 31170 to 31599
+#. Label to show the video codec name
+msgctxt "#31600"
+msgid "Video codec"
+msgstr "ビデオコーデック"
+
+#. Label to show the video resolution
+msgctxt "#31601"
+msgid "Video resolution"
+msgstr "ビデオの解像度"
+
+#. Label to show the video aspect
+msgctxt "#31602"
+msgid "Video aspect"
+msgstr "ビデオ アスペクト"
+
+#. Label to show the video bitrate
+msgctxt "#31603"
+msgid "Video bitrate"
+msgstr "ビデオのビットレート"
+
+#. Label to show the audio codec name
+msgctxt "#31604"
+msgid "Audio codec"
+msgstr "オーディオコーデック"
+
+#. Label to show the number of audio channels
+msgctxt "#31605"
+msgid "Audio channels"
+msgstr "オーディオチャンネル"
+
+#. Label to show the audio bitrate
+msgctxt "#31606"
+msgid "Audio bitrate"
+msgstr "オーディオのビットレート"
+
+#. Label to show the screen resolution
+msgctxt "#31607"
+msgid "Screen resolution"
+msgstr "画面解像度"
+
+#. Label to show the system rendering speed
+msgctxt "#31608"
+msgid "System rendering speed"
+msgstr "システムのレンダリング速度"
+
+#. Label to show the system CPU usage
+msgctxt "#31609"
+msgid "System CPU usage"
+msgstr "CPU使用率"
+
+#. Label to show the media (metadata) info page
+msgctxt "#31610"
+msgid "Media"
+msgstr "メディア"
+
+#. Label to show the system info page
+msgctxt "#31611"
+msgid "System"
+msgstr "システム"
+
+#~ msgctxt "#31615"
+#~ msgid "Extras"
+#~ msgstr "エクストラ"
+
+#~ msgctxt "#31059"
+#~ msgid "Select + X"
+#~ msgstr "セレクト + X"
+
+#~ msgctxt "#31060"
+#~ msgid "Select + Start"
+#~ msgstr "セレクト + スタート"
+
+#~ msgctxt "#31137"
+#~ msgid "PVR info"
+#~ msgstr "PVR詳細"
+
+#~ msgctxt "#31138"
+#~ msgid "Player process info"
+#~ msgstr "プレイヤーのプロセス詳細"

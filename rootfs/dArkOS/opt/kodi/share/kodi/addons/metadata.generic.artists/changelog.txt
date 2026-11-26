@@ -1,0 +1,58 @@
+v1.0.18
+- add video links from theaudiodb
+
+v1.0.17
+- add artist cutout image support
+
+v1.0.16
+- fix extra art sorting
+- language updates
+
+v1.0.15
+- sort extra art
+- language updates
+
+v1.0.14
+- add translations
+
+v1.0.13
+- provide fanart as part of thumbs list
+
+v1.0.12
+- don't populate the art table, this is handled by kodi now
+
+v1.0.11
+- use our own api keys
+
+v1.0.10
+- option for less accurate results
+
+v1.0.9
+- add wikipedia support
+
+v1.0.8
+- use musicbrainz provided links to allmusic / discogs
+- speed up scraping, improve api rate limit timing
+
+v1.0.7
+- include alias and sortname in artist search
+- filter inaccurate search results from discogs
+
+v1.0.6
+- provide musicbrainzreleasegroupid for artist albums
+
+v1.0.5
+- add artist gender
+- disallow 0 value born/formed/died/disbanded dates from theaudiodb
+
+v1.0.4
+- catch time-outs
+
+v1.0.3
+- replace beautifulsoup with regex
+
+v1.0.2
+- replace requests with urllib
+
+v1.0.1
+- release

@@ -1,0 +1,102 @@
+# Kodi Media Center language file
+# Addon Name: Default Controller
+# Addon id: game.controller.default
+# Addon Provider: Team Kodi
+msgid ""
+msgstr ""
+"Project-Id-Version: KODI Main\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
+"POT-Creation-Date: 2014-05-30 17:00+8\n"
+"PO-Revision-Date: 2021-08-26 10:37+0000\n"
+"Last-Translator: Minho Park <parkmino@gmail.com>\n"
+"Language-Team: Korean <https://kodi.weblate.cloud/projects/kodi-core/game-controller-default/ko_kr/>\n"
+"Language: ko_kr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.8\n"
+
+msgctxt "Addon Summary"
+msgid "Default Controller"
+msgstr "기본 콘트롤러"
+
+msgctxt "Addon Description"
+msgid "The default media center controller is based on the Xbox 360 controller."
+msgstr "기본 미디어 센터 컨트롤러는 Xbox 360 컨트롤러를 기반으로 합니다."
+
+msgctxt "Addon Disclaimer"
+msgid "Image credit: Wikipedia (wikipedia.org)"
+msgstr "이미지 제공: Wikipedia(wikipedia.org)"
+
+msgctxt "#30000"
+msgid "Kodi"
+msgstr "Kodi"
+
+msgctxt "#30001"
+msgid "A"
+msgstr "A"
+
+msgctxt "#30002"
+msgid "B"
+msgstr "B"
+
+msgctxt "#30003"
+msgid "X"
+msgstr "X"
+
+msgctxt "#30004"
+msgid "Y"
+msgstr "Y"
+
+msgctxt "#30005"
+msgid "Start"
+msgstr "시작"
+
+msgctxt "#30006"
+msgid "Back"
+msgstr "뒤로"
+
+msgctxt "#30007"
+msgid "Guide"
+msgstr "편성표"
+
+msgctxt "#30008"
+msgid "Left Stick"
+msgstr "왼쪽 스틱"
+
+msgctxt "#30009"
+msgid "Right Stick"
+msgstr "오른쪽 스틱"
+
+msgctxt "#30010"
+msgid "Up"
+msgstr "위"
+
+msgctxt "#30011"
+msgid "Down"
+msgstr "아래"
+
+msgctxt "#30012"
+msgid "Right"
+msgstr "오른쪽"
+
+msgctxt "#30013"
+msgid "Left"
+msgstr "왼쪽"
+
+msgctxt "#30014"
+msgid "Left Shoulder"
+msgstr "왼쪽 어깨"
+
+msgctxt "#30015"
+msgid "Right Shoulder"
+msgstr "오른쪽 어깨"
+
+msgctxt "#30016"
+msgid "Left Trigger"
+msgstr "왼쪽 방아쇠"
+
+msgctxt "#30017"
+msgid "Right Trigger"
+msgstr "오른쪽 방아쇠"

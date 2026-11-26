@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<node order="30" type="filter">
+	<label>10024</label>
+	<icon>DefaultMusicVideoTitle.png</icon>
+	<content>musicvideos</content>
+	<order direction="ascending">title</order>
+</node>

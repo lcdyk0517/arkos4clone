@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file contains the mapping of joystick buttons to actions within    -->
+<!-- Kodi.                                                                   -->
+<!--                                                                         -->
+<!-- The format is:                                                          -->
+<!--   <window>                                                              -->
+<!--     <joystick profile="game.controller.default">                        -->
+<!--       <button>action</button>                                           -->
+<!--     </joystick>                                                         -->
+<!--   </window>                                                             -->
+<!--                                                                         -->
+<!-- The <global> section is a fall through - they will only be used if the  -->
+<!-- button is not used in the current window's section.                     -->
+<!--                                                                         -->
+<!-- The "profile" attribute specifies the controller profile whose buttons  -->
+<!-- are being mapped. Currently, the default controller profile is used for -->
+<!-- every controller. In the future it may be possible to specify mappings  -->
+<!-- for the controller profile most similar to the user's physical          -->
+<!-- controller.                                                             -->
+<!--                                                                         -->
+<!-- Actions can be built-in functions.                                      -->
+<!--   eg <b>ActivateWindow(Music)</b>                                       -->
+<!-- would automatically go to Music on the press of the B button.           -->
+<!--                                                                         -->
+<!-- Buttons can be overloaded with hold durations, in milliseconds:         -->
+<!--   <joystick profile="game.controller.default">                          -->
+<!--     <a>Select</a>                                                       -->
+<!--     <a holdtime="500">ContextMenu</a>                                   -->
+<!--   </joystick>                                                           -->
+<!--                                                                         -->
+<!-- Buttons can be also require hotkeys to be pressed:                      -->
+<!--   <joystick profile="game.controller.default">                          -->
+<!--     <start hotkey="back">Stop</start>                                   -->
+<!--   </joystick>                                                           -->
+<!--                                                                         -->
+<!-- Due to limitations in the button mapper, buttons can be overloaded with -->
+<!-- different hold durations, but not different hotkeys for the same        -->
+<!-- duration.                                                               -->
+<!--                                                                         -->
+<!-- More documentation on keymaps can be found on                           -->
+<!-- http://kodi.wiki/view/keymaps                                           -->
+<!--                                                                         -->
+<keymap>
+  <global>
+    <joystick profile="game.controller.default">
+      <a>Select</a>
+      <a holdtime="500">ContextMenu</a>
+      <b>Back</b>
+      <x>ContextMenu</x>
+      <y>FullScreen</y>
+      <start>ActivateWindow(PlayerControls)</start>
+      <back>ActivateWindow(Home)</back>
+      <guide>ActivateWindow(Home)</guide>
+      <up>Up</up>
+      <down>Down</down>
+      <right>Right</right>
+      <left>Left</left>
+      <leftthumb>Screenshot</leftthumb>
+      <rightthumb>ActivateWindow(ShutdownMenu)</rightthumb>
+      <lefttrigger>ScrollUp</lefttrigger>
+      <righttrigger>ScrollDown</righttrigger>
+      <leftbumper>ScrollUp</leftbumper>
+      <rightbumper>ScrollDown</rightbumper>
+      <leftstick direction="left">Left</leftstick>
+      <leftstick direction="right">Right</leftstick>
+      <leftstick direction="up">Up</leftstick>
+      <leftstick direction="down">Down</leftstick>
+      <rightstick direction="left">VolumeDown</rightstick>
+      <rightstick direction="right">VolumeUp</rightstick>
+      <rightstick direction="up">VolumeUp</rightstick>
+      <rightstick direction="down">VolumeDown</rightstick>
+    </joystick>
+  </global>
+  <Home>
+    <joystick profile="game.controller.default">
+      <b>Back</b>
+      <b holdtime="500">ActivateWindow(ShutdownMenu)</b>
+    </joystick>
+  </Home>
+  <FileManager>
+    <joystick profile="game.controller.default">
+      <rightbumper>Highlight</rightbumper>
+    </joystick>
+  </FileManager>
+  <MusicPlaylist>
+    <joystick profile="game.controller.default">
+      <leftbumper>Delete</leftbumper>
+    </joystick>
+  </MusicPlaylist>
+  <Music>
+  </Music>
+  <FullscreenVideo>
+    <joystick profile="game.controller.default">
+      <a>Pause</a>
+      <b>Stop</b>
+      <b holdtime="500">FullScreen</b>
+      <x>OSD</x>
+      <y>FullScreen</y>
+      <start>Info</start>
+      <back>FullScreen</back>
+      <guide>OSD</guide>
+      <up>ChapterOrBigStepForward</up>
+      <down>ChapterOrBigStepBack</down>
+      <right>StepForward</right>
+      <left>StepBack</left>
+      <leftthumb>ShowSubtitles</leftthumb>
+      <rightthumb>AspectRatio</rightthumb>
+      <lefttrigger>AnalogRewind</lefttrigger>
+      <righttrigger>AnalogFastForward</righttrigger>
+      <leftbumper>AnalogRewind</leftbumper>
+      <rightbumper>AnalogFastForward</rightbumper>
+      <leftstick direction="left">AnalogSeekBack</leftstick>
+      <leftstick direction="right">AnalogSeekForward</leftstick>
+      <leftstick direction="up">noop</leftstick>
+      <leftstick direction="down">noop</leftstick>
+    </joystick>
+  </FullscreenVideo>
+  <FullscreenGame>
+    <joystick profile="game.controller.default">
+      <start holdtime="1000">OSD</start>
+      <guide>OSD</guide>
+      <!-- Give games access to volume controls -->
+      <rightstick direction="left" hotkey="back">VolumeDown</rightstick>
+      <rightstick direction="right" hotkey="back">VolumeUp</rightstick>
+      <rightstick direction="up" hotkey="back">VolumeUp</rightstick>
+      <rightstick direction="down" hotkey="back">VolumeDown</rightstick>
+      <!-- RetroPie hotkeys, ref: https://github.com/RetroPie/RetroPie-Setup/wiki/RetroArch-Configuration -->
+      <!--
+      <b hotkey="back">Player.Reset</b>
+      <x hotkey="back">OSD</x>
+      <start hotkey="back">Stop</start>
+      <rightbumper hotkey="back">Save</rightbumper>
+      <leftbumper hotkey="back">Load</leftbumper>
+      <righttrigger hotkey="back">AnalogFastForward</righttrigger>
+      <lefttrigger hotkey="back">AnalogRewind</lefttrigger>
+      <right hotkey="back">SaveSlotIncrease</right>
+      <left hotkey="back">SaveSlotDecrease</left>
+      -->
+      <!-- Hotkeys courtesy Julipo -->
+      <!--
+      <a hotkey="back">Screenshot</a>
+      <x hotkey="back">FullScreen</x>
+      <y hotkey="back">OSD</y>
+      <start hotkey="back">OSD</start>
+      <rightbumper hotkey="back">Save</rightbumper>
+      <leftbumper hotkey="back">Load</leftbumper>
+      <leftstick direction="left" hotkey="back">SaveSlotDecrease</leftstick>
+      <leftstick direction="right" hotkey="back">SaveSlotIncrease</leftstick>
+      -->
+      <!-- Merged -->
+      <!-- Screenshot is disabled until it has been further automated
+           (currently pops up multiple annoying confusing dialogs) -->
+      <!-- <a hotkey="back">Screenshot</a> -->
+      <!-- Reset is disabled until player can undo a reset -->
+      <!--<b hotkey="back">PlayerControl(Reset)</b> -->
+      <x hotkey="back">OSD</x>
+      <y hotkey="back">OSD</y>
+      <start hotkey="back">Stop</start>
+      <rightbumper hotkey="back">AnalogFastForward</rightbumper>
+      <leftbumper hotkey="back">AnalogRewind</leftbumper>
+      <righttrigger hotkey="back">AnalogFastForward</righttrigger>
+      <lefttrigger hotkey="back">AnalogRewind</lefttrigger>
+      <!--
+      <right hotkey="back">SaveSlotIncrease</right>
+      <left hotkey="back">SaveSlotDecrease</left>
+      <leftstick direction="left" hotkey="back">SaveSlotDecrease</leftstick>
+      <leftstick direction="right" hotkey="back">SaveSlotIncrease</leftstick>
+      -->
+    </joystick>
+  </FullscreenGame>
+  <FullscreenLiveTV>
+    <joystick profile="game.controller.default">
+      <a>Pause</a>
+      <b>Stop</b>
+      <b holdtime="500">FullScreen</b>
+      <x>OSD</x>
+      <back>OSD</back>
+      <guide>OSD</guide>
+      <start>Info</start>
+      <up>ChannelUp</up>
+      <down>ChannelDown</down>
+      <left>StepBack</left>
+      <right>StepForward</right>
+    </joystick>
+  </FullscreenLiveTV>
+  <TVGuide>
+    <joystick profile="game.controller.default">
+      <back>Menu</back>
+    </joystick>
+  </TVGuide>
+  <FullscreenRadio>
+    <joystick profile="game.controller.default">
+      <a>Pause</a>
+      <b>Stop</b>
+      <b holdtime="500">FullScreen</b>
+      <x>OSD</x>
+      <back>OSD</back>
+      <guide>OSD</guide>
+      <start>Info</start>
+      <up>ChannelUp</up>
+      <down>ChannelDown</down>
+      <left>StepBack</left>
+      <right>StepForward</right>
+    </joystick>
+  </FullscreenRadio>
+  <RadioGuide>
+    <joystick profile="game.controller.default">
+      <back>Menu</back>
+    </joystick>
+  </RadioGuide>
+  <FullscreenInfo>
+    <joystick profile="game.controller.default">
+      <b>Close</b>
+      <x>OSD</x>
+      <start>Close</start>
+      <lefttrigger>AnalogRewind</lefttrigger>
+      <righttrigger>AnalogFastForward</righttrigger>
+      <leftbumper>AnalogRewind</leftbumper>
+      <rightbumper>AnalogFastForward</rightbumper>
+    </joystick>
+  </FullscreenInfo>
+  <PlayerControls>
+    <joystick profile="game.controller.default">
+      <x>Close</x>
+      <leftthumb>Close</leftthumb>
+      <rightthumb>Close</rightthumb>
+    </joystick>
+  </PlayerControls>
+  <Visualisation>
+    <joystick profile="game.controller.default">
+      <a>Pause</a>
+      <b>Stop</b>
+      <x>Addon.Default.OpenSettings(xbmc.player.musicviz)</x>
+      <y>ActivateWindow(VisualisationPresetList)</y>
+      <start>Info</start>
+      <rightthumb>ActivateWindow(MusicOSD)</rightthumb>
+      <up>SkipNext</up>
+      <down>SkipPrevious</down>
+      <left>StepBack</left>
+      <right>StepForward</right>
+      <lefttrigger>AnalogRewind</lefttrigger>
+      <righttrigger>AnalogFastForward</righttrigger>
+      <leftbumper>AnalogRewind</leftbumper>
+      <rightbumper>AnalogFastForward</rightbumper>
+      <leftstick direction="left">PreviousPreset</leftstick>
+      <leftstick direction="right">NextPreset</leftstick>
+      <leftstick direction="up">noop</leftstick>
+      <leftstick direction="down">noop</leftstick>
+    </joystick>
+  </Visualisation>
+  <MusicOSD>
+    <joystick profile="game.controller.default">
+      <b>Close</b>
+      <start>Info</start>
+    </joystick>
+  </MusicOSD>
+  <VisualisationPresetList>
+    <joystick profile="game.controller.default">
+      <b>Close</b>
+    </joystick>
+  </VisualisationPresetList>
+  <SlideShow>
+    <joystick profile="game.controller.default">
+      <a>Pause</a>
+      <b>Stop</b>
+      <y>ZoomNormal</y>
+      <leftbumper>Rotate</leftbumper>
+      <rightbumper>Info</rightbumper>
+      <up>ZoomIn</up>
+      <down>ZoomOut</down>
+      <left>PreviousPicture</left>
+      <right>NextPicture</right>
+      <leftstick direction="left">AnalogMoveXLeft</leftstick>
+      <leftstick direction="right">AnalogMoveXRight</leftstick>
+      <leftstick direction="up">AnalogMoveYUp</leftstick>
+      <leftstick direction="down">AnalogMoveYDown</leftstick>
+      <lefttrigger>ZoomOut</lefttrigger>
+      <righttrigger>ZoomIn</righttrigger>
+    </joystick>
+  </SlideShow>
+  <ScreenCalibration>
+    <joystick profile="game.controller.default">
+      <x>ResetCalibration</x>
+      <leftbumper>NextResolution</leftbumper>
+      <rightbumper>NextCalibration</rightbumper>
+    </joystick>
+  </ScreenCalibration>
+  <ScreenCalibration>
+    <joystick profile="game.controller.default">
+      <x>ResetCalibration</x>
+      <leftbumper>NextResolution</leftbumper>
+      <rightbumper>NextCalibration</rightbumper>
+    </joystick>
+  </ScreenCalibration>
+  <VideoOSD>
+    <joystick profile="game.controller.default">
+      <b>Close</b>
+    </joystick>
+  </VideoOSD>
+  <VideoMenu>
+    <joystick profile="game.controller.default">
+      <b>Stop</b>
+      <x>OSD</x>
+      <leftbumper>AspectRatio</leftbumper>
+      <start>Info</start>
+    </joystick>
+  </VideoMenu>
+  <OSDVideoSettings>
+    <joystick profile="game.controller.default">
+      <leftbumper>AspectRatio</leftbumper>
+      <x>Close</x>
+    </joystick>
+  </OSDVideoSettings>
+  <OSDAudioSettings>
+    <joystick profile="game.controller.default">
+      <leftbumper>AspectRatio</leftbumper>
+      <x>Close</x>
+    </joystick>
+  </OSDAudioSettings>
+  <VideoBookmarks>
+    <joystick profile="game.controller.default">
+      <leftbumper>Delete</leftbumper>
+    </joystick>
+  </VideoBookmarks>
+  <Videos>
+  </Videos>
+  <VideoPlaylist>
+    <joystick profile="game.controller.default">
+      <leftbumper>Delete</leftbumper>
+    </joystick>
+  </VideoPlaylist>
+  <VirtualKeyboard>
+    <joystick profile="game.controller.default">
+      <a>Select</a>
+      <a holdtime="500">Shift</a>
+      <b>BackSpace</b>
+      <y>Symbols</y>
+      <leftbumper>Shift</leftbumper>
+      <leftthumb>Enter</leftthumb>
+      <lefttrigger>CursorLeft</lefttrigger>
+      <righttrigger>CursorRight</righttrigger>
+      <x>VoiceRecognizer</x>
+      <start>VoiceRecognizer</start>
+    </joystick>
+  </VirtualKeyboard>
+  <ContextMenu>
+    <joystick profile="game.controller.default">
+      <b>Close</b>
+    </joystick>
+  </ContextMenu>
+  <Settings>
+    <joystick profile="game.controller.default">
+      <b>PreviousMenu</b>
+    </joystick>
+  </Settings>
+  <AddonInformation>
+    <joystick profile="game.controller.default">
+      <b>Close</b>
+    </joystick>
+  </AddonInformation>
+  <AddonSettings>
+    <joystick profile="game.controller.default">
+      <b>Close</b>
+    </joystick>
+  </AddonSettings>
+  <TextViewer>
+    <joystick profile="game.controller.default">
+      <b>Close</b>
+    </joystick>
+  </TextViewer>
+  <shutdownmenu>
+    <joystick profile="game.controller.default">
+      <b>PreviousMenu</b>
+      <leftthumb>PreviousMenu</leftthumb>
+    </joystick>
+  </shutdownmenu>
+  <submenu>
+    <joystick profile="game.controller.default">
+      <b>PreviousMenu</b>
+    </joystick>
+  </submenu>
+  <MusicInformation>
+    <joystick profile="game.controller.default">
+      <b>Close</b>
+    </joystick>
+  </MusicInformation>
+  <MovieInformation>
+    <joystick profile="game.controller.default">
+      <b>Close</b>
+    </joystick>
+  </MovieInformation>
+  <NumericInput>
+    <joystick profile="game.controller.default">
+      <b>BackSpace</b>
+      <leftthumb>Enter</leftthumb>
+    </joystick>
+  </NumericInput>
+  <GamepadInput>
+    <joystick profile="game.controller.default">
+      <leftthumb>Stop</leftthumb>
+    </joystick>
+  </GamepadInput>
+  <LockSettings>
+    <joystick profile="game.controller.default">
+      <b>PreviousMenu</b>
+      <leftthumb>Close</leftthumb>
+    </joystick>
+  </LockSettings>
+  <ProfileSettings>
+    <joystick profile="game.controller.default">
+      <b>PreviousMenu</b>
+      <leftthumb>Close</leftthumb>
+    </joystick>
+  </ProfileSettings>
+</keymap>

@@ -1,0 +1,745 @@
+# Kodi Media Center language file
+# Addon Name: Estuary
+# Addon id: skin.estuary
+# Addon Provider: Team Kodi
+msgid ""
+msgstr ""
+"Project-Id-Version: KODI Main\n"
+"Report-Msgid-Bugs-To: https://github.com/xbmc/xbmc/issues/\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2023-12-04 09:42+0000\n"
+"Last-Translator: Christian Gade <gade@kodi.tv>\n"
+"Language-Team: Romanian <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-estuary/ro_ro/>\n"
+"Language: ro_ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2;\n"
+"X-Generator: Weblate 5.2.1\n"
+
+msgctxt "Addon Summary"
+msgid "Estuary skin by phil65. (Kodi's default skin)"
+msgstr "Tema Estuary de phil65. (Temă implicită pentru Kodi)"
+
+msgctxt "Addon Description"
+msgid "Estuary is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
+msgstr "Estuary este tema implicită pentru Kodi 17.0 și versiunile ulterioare. Încearcă să fie ușor de înțeles și folosit pentru utilizatorii care folosesc Kodi pentru prima dată."
+
+msgctxt "Addon Disclaimer"
+msgid "Estuary is the default skin for Kodi, removing it may cause issues"
+msgstr "Estuary este tema implicită pentru Kodi, eliminarea ei poate cauza probleme"
+
+msgctxt "#31000"
+msgid "Now playing"
+msgstr "Acum în redare"
+
+msgctxt "#31001"
+msgid "Search..."
+msgstr "Căutare..."
+
+msgctxt "#31002"
+msgid "Show media fanart as background"
+msgstr "Arată decorul media ca fundal"
+
+msgctxt "#31003"
+msgid "Cinema mode"
+msgstr "Modul cinema"
+
+msgctxt "#31004"
+msgid "Change mode"
+msgstr "Schimbare mod"
+
+msgctxt "#31005"
+msgid "Watch as 2D"
+msgstr "Afișează în 2D"
+
+msgctxt "#31006"
+msgid "Random movies"
+msgstr "Film aleator"
+
+msgctxt "#31007"
+msgid "Unwatched movies"
+msgstr "Filme nevăzute"
+
+msgctxt "#31008"
+msgid "Enable category widgets"
+msgstr "Activați widget-urile categoriei"
+
+msgctxt "#31009"
+msgid "Download icons"
+msgstr "Descarcă pictogramele"
+
+msgctxt "#31010"
+msgid "In progress movies"
+msgstr "Filme în curs de vizionare"
+
+msgctxt "#31011"
+msgid "Most played albums"
+msgstr "Cele mai redate albume"
+
+msgctxt "#31012"
+msgid "Random albums"
+msgstr "Albume aleatoare"
+
+msgctxt "#31013"
+msgid "Random artists"
+msgstr "Artist aleator"
+
+msgctxt "#31014"
+msgid "Unplayed albums"
+msgstr "Albume neredate"
+
+#. home screen recordings widget: recent tv / radio recordings
+msgctxt "#31015"
+msgid "Recent recordings"
+msgstr "Înregistrări recente"
+
+#. home screen channel widget: recently played tv channels. (please note that in some non-english languages #31018 and #31016 might not be equal)
+msgctxt "#31016"
+msgid "Recently played channels"
+msgstr "Canale redate recent"
+
+msgctxt "#31017"
+msgid "Rated"
+msgstr "Evaluat"
+
+#. home screen channel widget: recently played radio channels. (please note that in some non-english languages #31018 and #31016 might not be equal)
+msgctxt "#31018"
+msgid "Recently played channels"
+msgstr "Canale redate recent"
+
+msgctxt "#31019"
+msgid "Forecast"
+msgstr "Prognoză"
+
+msgctxt "#31020"
+msgid "Actions"
+msgstr "Acțiuni"
+
+msgctxt "#31021"
+msgid "Misc options"
+msgstr "Opțiuni diverse"
+
+msgctxt "#31022"
+msgid "Sort by"
+msgstr "Sortează după"
+
+msgctxt "#31023"
+msgid "Viewtype"
+msgstr "Tip de vizualizare"
+
+msgctxt "#31024"
+msgid "Choose rating to display for media items"
+msgstr "Alegeți clasificarea care să fie afișată pentru elementele media"
+
+msgctxt "#31025"
+msgid "No favourites found. You can add any item from media views to this list by using the context menu."
+msgstr "Nu a fost găsit niciun elemen favorit. Puteți adăuga orice element din vizualizările media la această listă folosind meniul contextual."
+
+msgctxt "#31026"
+msgid "Timeshift"
+msgstr "Decalaj temporal"
+
+msgctxt "#31027"
+msgid "Next aired"
+msgstr "Următoarea difuzare"
+
+msgctxt "#31028"
+msgid "Show fanart"
+msgstr "Arată decorul"
+
+msgctxt "#31029"
+msgid "Last logged in"
+msgstr "Ultimul autentificat"
+
+#. Label to show the system memory usage
+msgctxt "#31030"
+msgid "System memory usage"
+msgstr "Utilizare memorie sistem"
+
+msgctxt "#31031"
+msgid "Version info"
+msgstr "Informații versiune"
+
+msgctxt "#31032"
+msgid "Order"
+msgstr "Ordine"
+
+msgctxt "#31033"
+msgid "Your rating"
+msgstr "Nota dvs."
+
+msgctxt "#31034"
+msgid "Extended info"
+msgstr "Mai multe informații"
+
+msgctxt "#31035"
+msgid "Pages"
+msgstr "Pagini"
+
+msgctxt "#31036"
+msgid "items"
+msgstr "Elemente"
+
+msgctxt "#31037"
+msgid "Selected track"
+msgstr "Pista selectată"
+
+msgctxt "#31038"
+msgid "Rewind"
+msgstr "Derulează înapoi"
+
+msgctxt "#31039"
+msgid "Fast forward"
+msgstr "Derulează înainte"
+
+msgctxt "#31041"
+msgid "Camera manufacturer"
+msgstr "Producător aparat foto"
+
+msgctxt "#31042"
+msgid "Playlist options"
+msgstr "Opțiuni listă de redare"
+
+msgctxt "#31043"
+msgid "Set the type and add rules to create a smart playlist. These playlists are dynamic and include all media items from your database which apply to your chosen rules."
+msgstr "Stabiliți tipul și adăugați reguli pentru a crea o listă de redare inteligentă. Aceste liste de redare sunt dinamice și includ toate elementele media din baza de date care se potrivesc cu regulile alese."
+
+msgctxt "#31044"
+msgid "Add group"
+msgstr "Adăugare grup"
+
+msgctxt "#31045"
+msgid "Rename group"
+msgstr "Redenumire grup"
+
+msgctxt "#31046"
+msgid "Delete group"
+msgstr "Ștergere grup"
+
+msgctxt "#31048"
+msgid "Available"
+msgstr "Disponibil"
+
+msgctxt "#31052"
+msgid "filtered"
+msgstr "filtrat"
+
+msgctxt "#31053"
+msgid "Arial based"
+msgstr "Cu Arial la bază"
+
+msgctxt "#31054"
+msgid "Press [B]Left[/B] to step back, or [B]Right[/B] to step forward"
+msgstr ""
+
+msgctxt "#31055"
+msgid "Press [B]Right[/B] to frame advance"
+msgstr ""
+
+msgctxt "#31056"
+msgid "Go to playlist"
+msgstr "Du-te la lista de redare"
+
+msgctxt "#31057"
+msgid "Show login screen on startup"
+msgstr "Arată ecranul de autentificare la pornire"
+
+msgctxt "#31058"
+msgid "Automatic Login on startup"
+msgstr "Autentificare automată la pornire"
+
+msgctxt "#31061"
+msgid "Main menu items"
+msgstr "Elemente meniu principal"
+
+msgctxt "#31062"
+msgid "Choose weather fanart pack"
+msgstr "Alegeți pachetul de decoruri pentru vreme"
+
+msgctxt "#31063"
+msgid "Sections"
+msgstr "Secțiuni"
+
+msgctxt "#31065"
+msgid "Video playlist"
+msgstr "Listă de redare video"
+
+msgctxt "#31066"
+msgid "Music playlist"
+msgstr "Listă de redare muzică"
+
+msgctxt "#31067"
+msgid "Event log"
+msgstr "Jurnal de evenimente"
+
+msgctxt "#31068"
+msgid "Choose presets"
+msgstr "Alegeți setările"
+
+msgctxt "#31069"
+msgid "Last Updated"
+msgstr "Ultima actualizare"
+
+msgctxt "#31071"
+msgid "by"
+msgstr "de"
+
+msgctxt "#31072"
+msgid "Power Options"
+msgstr "Opțiuni de alimentare"
+
+msgctxt "#31073"
+msgid "Total length"
+msgstr "Lungime totală"
+
+msgctxt "#31074"
+msgid "Total duration"
+msgstr "Durata totală"
+
+msgctxt "#31075"
+msgid "Movie sets"
+msgstr "Colecție de filme"
+
+msgctxt "#31079"
+msgid "Cast not available"
+msgstr "Distribuție indisponibilă"
+
+msgctxt "#31080"
+msgid "Ends at"
+msgstr "Se termină la"
+
+msgctxt "#31082"
+msgid "Lyrics add-on"
+msgstr "Supliment versuri"
+
+msgctxt "#31083"
+msgid "Lyrics add-on settings"
+msgstr "Setări supliment versuri"
+
+msgctxt "#31084"
+msgid "Visualisation settings"
+msgstr "Setări vizualizare"
+
+msgctxt "#31089"
+msgid "Available groups"
+msgstr "Grupuri disponibile"
+
+msgctxt "#31092"
+msgid "Video menu"
+msgstr "Meniu video"
+
+msgctxt "#31093"
+msgid "Show weather info in top bar"
+msgstr "Arată vremea in bara de sus"
+
+msgctxt "#31095"
+msgid "Use slide animations"
+msgstr "Folosește animații de glisare"
+
+msgctxt "#31096"
+msgid "Local subtitle available"
+msgstr "Este disponibil un subtitlu local"
+
+msgctxt "#31097"
+msgid "Channel options"
+msgstr "Opțiuni canal"
+
+msgctxt "#31098"
+msgid "Select your Kodi user profile[CR]to login and continue"
+msgstr "Selectați profilul dumneavoastră de utilizator Kodi[CR]pentru a vă autentifica și continua"
+
+#. viewtype name
+msgctxt "#31099"
+msgid "IconWall"
+msgstr "Fundal de iconițe"
+
+#. viewtype name
+msgctxt "#31100"
+msgid "Shift"
+msgstr "Schimbare"
+
+#. viewtype name
+msgctxt "#31101"
+msgid "InfoWall"
+msgstr "Fundal cu informații"
+
+#. viewtype name
+msgctxt "#31102"
+msgid "Wall"
+msgstr "Fundal"
+
+msgctxt "#31103"
+msgid "Enter text here..."
+msgstr "Introduceți text"
+
+msgctxt "#31104"
+msgid "Your library is currently empty. In order to populate it with your personal media, enter \"Files\" section, add a media source and configure it. After the source has been added and indexed you will be able to browse your library."
+msgstr "Mediateca dumneavoastră este momentan goală. Pentru a o popula cu fișiere media, intrați în secțiunea de „Fișiere”, adăugați o sursă media și configurați-o. După ce sursa a fost adăugată și indexată veți putea să vă răsfoiți mediateca."
+
+msgctxt "#31105"
+msgid "Add video sources and set the appropriate content type in order to populate your video libraries."
+msgstr "Adăugați surse video și setați tipul de conținut potrivit pentru ca să populați mediatecile video."
+
+msgctxt "#31106"
+msgid "Teletext"
+msgstr "Teletext"
+
+#. viewtype name
+msgctxt "#31107"
+msgid "WideList"
+msgstr "Listă lată"
+
+msgctxt "#31110"
+msgid "Enter files section"
+msgstr "Intrare secțiune fișiere"
+
+msgctxt "#31111"
+msgid "View your personal pictures or download one of the many image add-ons from the official repository."
+msgstr "Vizualizați-vă imaginile personale sau descărcați unul dintre numeroasele suplimente de imagini din depozitul oficial."
+
+msgctxt "#31112"
+msgid "Toggle audio stream"
+msgstr "Comută fluxul audio"
+
+msgctxt "#31113"
+msgid "Search local library"
+msgstr "Caută în mediateca locală"
+
+msgctxt "#31114"
+msgid "Search YouTube"
+msgstr "Caută pe YouTube"
+
+msgctxt "#31115"
+msgid "Toggle subtitle"
+msgstr "Comută subtitlul"
+
+msgctxt "#31116"
+msgid "Remove this main menu item"
+msgstr "Elimină acest element din meniul principal"
+
+msgctxt "#31117"
+msgid "Edit nodes"
+msgstr "Modificare noduri"
+
+msgctxt "#31118"
+msgid "Enter add-on browser"
+msgstr "Navigator suplimente"
+
+msgctxt "#31119"
+msgid "You do not have any add-ons installed yet. Visit our add-on browser to browse through our collection and improve your Kodi experience."
+msgstr "Deocamdată nu aveți niciun supliment instalat. Vizitați navigatorul nostru de suplimente pentru a răsfoi colecția noastră și a vă îmbunătăți experiența cu Kodi."
+
+msgctxt "#31120"
+msgid "You did not set up a weather provider yet. In order to view weather information, choose a weather provider and set up your location."
+msgstr "Nu ați configura încă un furnizor de informații meteorologige. Pentru a vedea informații meteo, alegeți un furnizor de informații meteo și configurați-vă locația."
+
+msgctxt "#31121"
+msgid "Set weather provider"
+msgstr "Alege sursa de informații meteo"
+
+msgctxt "#31122"
+msgid "Unwatched TV Shows"
+msgstr "Seriale TV nevăzute"
+
+msgctxt "#31123"
+msgid "Same director"
+msgstr "Același regizor"
+
+msgctxt "#31125"
+msgid "Press up for actor info"
+msgstr "Apasă în sus pentru informații despre actori"
+
+msgctxt "#31126"
+msgid "Press OK to read plot"
+msgstr "Apasă „Bine” pentru a citi intriga"
+
+msgctxt "#31127"
+msgid "Show icons"
+msgstr "Arată pictogramele"
+
+msgctxt "#31128"
+msgid "Contributors"
+msgstr "Contribuitori"
+
+msgctxt "#31129"
+msgid "General settings applying to all areas of the skin."
+msgstr "Setări generale care se aplică tuturor porțiunilor costumului."
+
+msgctxt "#31130"
+msgid "Main menu-related settings: Configure the home screen to your likings."
+msgstr "Setări conexe meniului principal: Configurați ecranul inițial cum vă place."
+
+msgctxt "#31131"
+msgid "Choose skin fanart pack"
+msgstr "Alegeți pachetul de decoruri pentru costum"
+
+msgctxt "#31132"
+msgid "Select Program"
+msgstr "Selectare program"
+
+msgctxt "#31133"
+msgid "Select Resolution"
+msgstr "Selectare rezoluție"
+
+msgctxt "#31134"
+msgid "Remaining"
+msgstr "Rămas"
+
+msgctxt "#31135"
+msgid "Binary"
+msgstr "Binar"
+
+msgctxt "#31136"
+msgid "Click here to see latest changes..."
+msgstr "Clic aici pentru a vedea ultimele schimbări..."
+
+#. Label to show PVR info page
+msgctxt "#31137"
+msgid "PVR"
+msgstr ""
+
+#. Label to show player info page
+msgctxt "#31138"
+msgid "Player"
+msgstr "Redator"
+
+#. Label to show video decoder name
+msgctxt "#31139"
+msgid "Video decoder"
+msgstr "Decodor video"
+
+#. Label to show the video pixel format
+msgctxt "#31140"
+msgid "Pixel format"
+msgstr "Format pixeli"
+
+msgctxt "#31141"
+msgid "Changes for version"
+msgstr "Schimbări pentru versiune"
+
+msgctxt "#31142"
+msgid "Play speed"
+msgstr "Viteză de redare"
+
+msgctxt "#31143"
+msgid "You did not set up PVR yet. In order to use PVR, choose a PVR client addon and configure it. Please visit http://kodi.wiki/view/PVR to learn more."
+msgstr "Nu ați configurat funcția PVR încă. Pentru a folosi această funcție, alegeți un supliment client PVR și configurați-l. Vizitați http://kodi.wiki/view/PVR pentru a afla mai multe."
+
+msgctxt "#31144"
+msgid "Enter add-on browser"
+msgstr "Navigator suplimente"
+
+msgctxt "#31145"
+msgid "Search add-ons"
+msgstr "Căutare suplimente"
+
+msgctxt "#31146"
+msgid "In cinemas"
+msgstr "În cinematografe"
+
+msgctxt "#31147"
+msgid "In cinemas soon"
+msgstr "În curând în cinematografe"
+
+msgctxt "#31148"
+msgid "Categories"
+msgstr "Categorii"
+
+msgctxt "#31149"
+msgid "Select genre fanart pack"
+msgstr "Alegeți pachetul de decoruri"
+
+msgctxt "#31150"
+msgid "Origin"
+msgstr "Origine"
+
+msgctxt "#31151"
+msgid "Unwatched music videos"
+msgstr "Videoclipuri muzicale nevăzute"
+
+msgctxt "#31152"
+msgid "Random music videos"
+msgstr "Videoclipuri muzicale aleatoare"
+
+msgctxt "#31153"
+msgid "You do not have any add-ons of this type installed. Enter the add-on browser to download add-ons created by our community."
+msgstr "Nu aveți nici un supliment de acest tip instalat. Vizitați navigatorul nostru de suplimente pentru a descărca suplimente create de comunitatea noastră."
+
+msgctxt "#31154"
+msgid "Press OK to switch between locations"
+msgstr "Apăsați OK pentru a comuta între locații"
+
+msgctxt "#31155"
+msgid "No bookmarks created yet."
+msgstr "Nici un semn de carte creat deocamdata."
+
+msgctxt "#31156"
+msgid "Choose background pattern"
+msgstr "Alege tiparul fundalului"
+
+msgctxt "#31157"
+msgid "Edit categories"
+msgstr "Editare categorii"
+
+msgctxt "#31158"
+msgid "Touch mode"
+msgstr "Mod tactil"
+
+msgctxt "#31159"
+msgid "Artwork"
+msgstr "Creație artistică"
+
+msgctxt "#31160"
+msgid "Show media flags"
+msgstr "Arată marcajele media"
+
+msgctxt "#31161"
+msgid "Numeric pad"
+msgstr "Tastatură numerică"
+
+msgctxt "#31162"
+msgid "Play your personal games or download one of the many game add-ons from the official repository."
+msgstr "Rulati jocurile personale sau descărcați unul din multele add-on-uri de jocuri din libraria oficiala."
+
+msgctxt "#31163"
+msgid "Show Fanart background"
+msgstr "Arată decorul media ca fundal"
+
+#. Choose profile identifier
+msgctxt "#31164"
+msgid "Choose kind of profile identification"
+msgstr "Alegeți tipul de identificare profil"
+
+#. Label for the kind of profile identification
+msgctxt "#31165"
+msgid "Profile name"
+msgstr "Nume profil"
+
+#. Label for the kind of profile identification
+msgctxt "#31166"
+msgid "Profile avatar"
+msgstr "Avatar profil"
+
+#. Label of a setting
+msgctxt "#31167"
+msgid "Animate background"
+msgstr "Animați fundalul"
+
+#. Label of a setting
+msgctxt "#31168"
+msgid "Show posters instead of thumbs for musicvideos"
+msgstr ""
+
+#. Description label for skin settings area
+msgctxt "#31169"
+msgid "Artwork related settings."
+msgstr ""
+
+#. Label for OSD settings category
+msgctxt "#31170"
+msgid "On screen display"
+msgstr ""
+
+#. Helper text for the label of OSD settings category
+msgctxt "#31171"
+msgid "On screen display (OSD) related settings"
+msgstr ""
+
+#. Setting Automatically close video OSD
+msgctxt "#31172"
+msgid "Automatically close video OSD"
+msgstr ""
+
+#. Setting auto close time for video osd
+msgctxt "#31173"
+msgid "Video OSD autoclose time (seconds)"
+msgstr ""
+
+#. Setting to control what happens when clicking a music album on the home screen
+msgctxt "#31174"
+msgid "Default select action for albums on the home screen"
+msgstr ""
+
+#. Setting to control what happens when clicking a TV show on the home screen
+msgctxt "#31175"
+msgid "Default select action for TV shows on the home screen"
+msgstr ""
+
+#. Setting to control what happens when clicking a movie set on the home screen
+msgctxt "#31176"
+msgid "Default select action for movie sets on the home screen"
+msgstr ""
+
+# empty strings from id 31170 to 31599
+#. Label to show the video codec name
+msgctxt "#31600"
+msgid "Video codec"
+msgstr "Codec video"
+
+#. Label to show the video resolution
+msgctxt "#31601"
+msgid "Video resolution"
+msgstr "Rezoluție video"
+
+#. Label to show the video aspect
+msgctxt "#31602"
+msgid "Video aspect"
+msgstr "Aspect video"
+
+#. Label to show the video bitrate
+msgctxt "#31603"
+msgid "Video bitrate"
+msgstr ""
+
+#. Label to show the audio codec name
+msgctxt "#31604"
+msgid "Audio codec"
+msgstr "Codec audio"
+
+#. Label to show the number of audio channels
+msgctxt "#31605"
+msgid "Audio channels"
+msgstr "Canale audio"
+
+#. Label to show the audio bitrate
+msgctxt "#31606"
+msgid "Audio bitrate"
+msgstr ""
+
+#. Label to show the screen resolution
+msgctxt "#31607"
+msgid "Screen resolution"
+msgstr "Rezoluție ecran"
+
+#. Label to show the system rendering speed
+msgctxt "#31608"
+msgid "System rendering speed"
+msgstr ""
+
+#. Label to show the system CPU usage
+msgctxt "#31609"
+msgid "System CPU usage"
+msgstr "Utilizare procesor sistem"
+
+#. Label to show the media (metadata) info page
+msgctxt "#31610"
+msgid "Media"
+msgstr "Media"
+
+#. Label to show the system info page
+msgctxt "#31611"
+msgid "System"
+msgstr "Sistem"
+
+#~ msgctxt "#31615"
+#~ msgid "Extras"
+#~ msgstr "Extra"
+
+#~ msgctxt "#31137"
+#~ msgid "PVR info"
+#~ msgstr "Informații PVR"
+
+#~ msgctxt "#31138"
+#~ msgid "Player process info"
+#~ msgstr "Informații de procesare player"

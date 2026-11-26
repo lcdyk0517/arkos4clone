@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+Please use English language names instead.
+Default font lacks support for all characters
+-->
+<keyboardlayouts>
+  <layout language="German" layout="QWERTZ">
+    <keyboard>
+      <row>1234567890ß'</row>
+      <row>qwertzuiopü+</row>
+      <row>asdfghjklöä#</row>
+      <row>yxcvbnm,.-/@</row>
+    </keyboard>
+    <keyboard modifiers="shift">
+      <row>!"§$%&amp;/()=?`</row>
+      <row>QWERTZUIOPÜ*</row>
+      <row>ASDFGHJKLÖÄ'</row>
+      <row>YXCVBNM;:_/@</row>
+    </keyboard>
+    <keyboard modifiers="symbol">
+      <row>^£€[]{}\|&lt;&gt;µ</row>
+      <row>áàâäãåæçéè</row>
+      <row>êëíìîïñóòô</row>
+      <row>õøœßúùû</row>
+    </keyboard>
+    <keyboard modifiers="shift+symbol">
+      <row>°¹²³¼½¾±µ¤«»·</row>
+      <row>ÁÀÂÄÃÅÆÇÉÈ</row>
+      <row>ÊËÍÌÎÏÑÓÒÔ</row>
+      <row>ÕØŒẞÚÙÛ</row>
+    </keyboard>
+  </layout>
+  <layout language="German" layout="ABC">
+    <keyboard>
+      <row>1234567890ß'</row>
+      <row>abcdefghijk+</row>
+      <row>lmnopqrstuv#</row>
+      <row>wxyzäöü,.-@</row>
+    </keyboard>
+    <keyboard modifiers="shift">
+      <row>!"§$%&amp;/()=?`</row>
+      <row>ABCDEFGHIJK*</row>
+      <row>LMNOPQRSTUV'</row>
+      <row>WXYZÄÖÜ;:_@</row>
+    </keyboard>
+    <keyboard modifiers="symbol">
+      <row>^£€[]{}\|&lt;&gt;µ</row>
+      <row>áàâäãåæçéè</row>
+      <row>êëíìîïñóòô</row>
+      <row>õøœßúùû</row>
+    </keyboard>
+    <keyboard modifiers="shift+symbol">
+      <row>°¹²³¼½¾±µ¤«»·</row>
+      <row>ÁÀÂÄÃÅÆÇÉÈ</row>
+      <row>ÊËÍÌÎÏÑÓÒÔ</row>
+      <row>ÕØŒẞÚÙÛ</row>
+    </keyboard>
+  </layout>
+</keyboardlayouts>

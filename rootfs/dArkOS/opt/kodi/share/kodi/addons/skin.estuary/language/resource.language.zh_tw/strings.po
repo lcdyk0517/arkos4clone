@@ -1,0 +1,753 @@
+# Kodi Media Center language file
+# Addon Name: Estuary
+# Addon id: skin.estuary
+# Addon Provider: Team Kodi
+msgid ""
+msgstr ""
+"Project-Id-Version: KODI Main\n"
+"Report-Msgid-Bugs-To: https://github.com/xbmc/xbmc/issues/\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2023-12-04 09:42+0000\n"
+"Last-Translator: Christian Gade <gade@kodi.tv>\n"
+"Language-Team: Chinese (Taiwan) <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-estuary/zh_tw/>\n"
+"Language: zh_tw\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.2.1\n"
+
+msgctxt "Addon Summary"
+msgid "Estuary skin by phil65. (Kodi's default skin)"
+msgstr "phil65與Piers 製作的Estuary佈景主題（Kodi的預設佈景主題）"
+
+msgctxt "Addon Description"
+msgid "Estuary is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use."
+msgstr "Estuary是Kodi 17.0開始搭載的預設佈景主題。主要在讓第一次使用 Kodi 的使用者可以簡單地上手。"
+
+msgctxt "Addon Disclaimer"
+msgid "Estuary is the default skin for Kodi, removing it may cause issues"
+msgstr "Estuary 是 Kodi 預設的佈景主題，移除它可能會造成問題"
+
+msgctxt "#31000"
+msgid "Now playing"
+msgstr "現正播放"
+
+msgctxt "#31001"
+msgid "Search..."
+msgstr "搜尋..."
+
+msgctxt "#31002"
+msgid "Show media fanart as background"
+msgstr "以背景圖的方式顯示劇照"
+
+msgctxt "#31003"
+msgid "Cinema mode"
+msgstr "劇院模式"
+
+msgctxt "#31004"
+msgid "Change mode"
+msgstr "更改設定"
+
+msgctxt "#31005"
+msgid "Watch as 2D"
+msgstr "以 2D 模式觀賞"
+
+msgctxt "#31006"
+msgid "Random movies"
+msgstr "隨機選擇電影"
+
+msgctxt "#31007"
+msgid "Unwatched movies"
+msgstr "還沒看過的電影"
+
+msgctxt "#31008"
+msgid "Enable category widgets"
+msgstr "啟用類別小工具"
+
+msgctxt "#31009"
+msgid "Download icons"
+msgstr "下載圖示"
+
+msgctxt "#31010"
+msgid "In progress movies"
+msgstr "還沒看完的電影"
+
+msgctxt "#31011"
+msgid "Most played albums"
+msgstr "最常播放的專輯"
+
+msgctxt "#31012"
+msgid "Random albums"
+msgstr "隨機選擇專輯"
+
+msgctxt "#31013"
+msgid "Random artists"
+msgstr "隨機選擇演出者"
+
+msgctxt "#31014"
+msgid "Unplayed albums"
+msgstr "還沒聽過的專輯"
+
+#. home screen recordings widget: recent tv / radio recordings
+msgctxt "#31015"
+msgid "Recent recordings"
+msgstr "最近的錄影"
+
+#. home screen channel widget: recently played tv channels. (please note that in some non-english languages #31018 and #31016 might not be equal)
+msgctxt "#31016"
+msgid "Recently played channels"
+msgstr "最近收看的頻道"
+
+msgctxt "#31017"
+msgid "Rated"
+msgstr "分級"
+
+#. home screen channel widget: recently played radio channels. (please note that in some non-english languages #31018 and #31016 might not be equal)
+msgctxt "#31018"
+msgid "Recently played channels"
+msgstr "最近收聽的頻道"
+
+msgctxt "#31019"
+msgid "Forecast"
+msgstr "預報"
+
+msgctxt "#31020"
+msgid "Actions"
+msgstr "動作"
+
+msgctxt "#31021"
+msgid "Misc options"
+msgstr "其他選項"
+
+msgctxt "#31022"
+msgid "Sort by"
+msgstr "排序以"
+
+msgctxt "#31023"
+msgid "Viewtype"
+msgstr "檢視模式"
+
+msgctxt "#31024"
+msgid "Choose rating to display for media items"
+msgstr "選擇欲顯示的評等類型"
+
+msgctxt "#31025"
+msgid "No favourites found. You can add any item from media views to this list by using the context menu."
+msgstr "沒有找到最愛項目。你可以使用快捷選單來將媒體檔檢視器中的物件加入此列表。"
+
+msgctxt "#31026"
+msgid "Timeshift"
+msgstr "時間平移"
+
+msgctxt "#31027"
+msgid "Next aired"
+msgstr "下期上檔"
+
+msgctxt "#31028"
+msgid "Show fanart"
+msgstr "顯示劇照"
+
+msgctxt "#31029"
+msgid "Last logged in"
+msgstr "上次登入在"
+
+#. Label to show the system memory usage
+msgctxt "#31030"
+msgid "System memory usage"
+msgstr "系統記憶體用量"
+
+msgctxt "#31031"
+msgid "Version info"
+msgstr "版本資訊"
+
+msgctxt "#31032"
+msgid "Order"
+msgstr "排序"
+
+msgctxt "#31033"
+msgid "Your rating"
+msgstr "你的評分"
+
+msgctxt "#31034"
+msgid "Extended info"
+msgstr "延伸資訊"
+
+msgctxt "#31035"
+msgid "Pages"
+msgstr "頁"
+
+msgctxt "#31036"
+msgid "items"
+msgstr "項目"
+
+msgctxt "#31037"
+msgid "Selected track"
+msgstr "選中的曲目"
+
+msgctxt "#31038"
+msgid "Rewind"
+msgstr "倒轉"
+
+msgctxt "#31039"
+msgid "Fast forward"
+msgstr "快轉"
+
+msgctxt "#31041"
+msgid "Camera manufacturer"
+msgstr "攝影機製造商"
+
+msgctxt "#31042"
+msgid "Playlist options"
+msgstr "播放清單選項"
+
+msgctxt "#31043"
+msgid "Set the type and add rules to create a smart playlist. These playlists are dynamic and include all media items from your database which apply to your chosen rules."
+msgstr "設定類型及規則來產生一個智慧型播放列表。這些播放列表是動態的，並且會包含資料庫中所有符合條件的媒體檔案。"
+
+msgctxt "#31044"
+msgid "Add group"
+msgstr "新增群組"
+
+msgctxt "#31045"
+msgid "Rename group"
+msgstr "重新命名群組"
+
+msgctxt "#31046"
+msgid "Delete group"
+msgstr "刪除群組"
+
+msgctxt "#31048"
+msgid "Available"
+msgstr "可用"
+
+msgctxt "#31052"
+msgid "filtered"
+msgstr "經篩選過的"
+
+msgctxt "#31053"
+msgid "Arial based"
+msgstr "基於 Arial"
+
+msgctxt "#31054"
+msgid "Press [B]Left[/B] to step back, or [B]Right[/B] to step forward"
+msgstr "按 [B]左 [/B]倒轉，或按 [B]右 [/B]前進"
+
+msgctxt "#31055"
+msgid "Press [B]Right[/B] to frame advance"
+msgstr "按[B]右[/B]逐格前進"
+
+msgctxt "#31056"
+msgid "Go to playlist"
+msgstr "檢視播放列表"
+
+msgctxt "#31057"
+msgid "Show login screen on startup"
+msgstr "啟動時顯示登入畫面"
+
+msgctxt "#31058"
+msgid "Automatic Login on startup"
+msgstr "啟動時自動登入"
+
+msgctxt "#31061"
+msgid "Main menu items"
+msgstr "主選單項目"
+
+msgctxt "#31062"
+msgid "Choose weather fanart pack"
+msgstr "選擇天氣劇照合輯"
+
+msgctxt "#31063"
+msgid "Sections"
+msgstr "區"
+
+msgctxt "#31065"
+msgid "Video playlist"
+msgstr "視訊播放列表"
+
+msgctxt "#31066"
+msgid "Music playlist"
+msgstr "音樂播放列表"
+
+msgctxt "#31067"
+msgid "Event log"
+msgstr "事件記錄"
+
+msgctxt "#31068"
+msgid "Choose presets"
+msgstr "選擇預設值"
+
+msgctxt "#31069"
+msgid "Last Updated"
+msgstr "最後更新"
+
+msgctxt "#31071"
+msgid "by"
+msgstr "以"
+
+msgctxt "#31072"
+msgid "Power Options"
+msgstr "電源選項"
+
+msgctxt "#31073"
+msgid "Total length"
+msgstr "總計長度"
+
+msgctxt "#31074"
+msgid "Total duration"
+msgstr "總計時間"
+
+msgctxt "#31075"
+msgid "Movie sets"
+msgstr "電影集"
+
+msgctxt "#31079"
+msgid "Cast not available"
+msgstr "無法取得串流"
+
+msgctxt "#31080"
+msgid "Ends at"
+msgstr "結束於"
+
+msgctxt "#31082"
+msgid "Lyrics add-on"
+msgstr "歌詞附加元件"
+
+msgctxt "#31083"
+msgid "Lyrics add-on settings"
+msgstr "歌詞附加元件設定"
+
+msgctxt "#31084"
+msgid "Visualisation settings"
+msgstr "視覺效果設定"
+
+msgctxt "#31089"
+msgid "Available groups"
+msgstr "可用的群組"
+
+msgctxt "#31092"
+msgid "Video menu"
+msgstr "視訊選單"
+
+msgctxt "#31093"
+msgid "Show weather info in top bar"
+msgstr "在置頂列顯示天氣資訊"
+
+msgctxt "#31095"
+msgid "Use slide animations"
+msgstr "使用滑動效果"
+
+msgctxt "#31096"
+msgid "Local subtitle available"
+msgstr "有本地語言的字幕可選用"
+
+msgctxt "#31097"
+msgid "Channel options"
+msgstr "頻道選項"
+
+msgctxt "#31098"
+msgid "Select your Kodi user profile[CR]to login and continue"
+msgstr "選擇您的 Kodi 使用者設定檔[CR]登入並繼續"
+
+#. viewtype name
+msgctxt "#31099"
+msgid "IconWall"
+msgstr "圖示牆"
+
+#. viewtype name
+msgctxt "#31100"
+msgid "Shift"
+msgstr "橫列海報"
+
+#. viewtype name
+msgctxt "#31101"
+msgid "InfoWall"
+msgstr "資訊牆"
+
+#. viewtype name
+msgctxt "#31102"
+msgid "Wall"
+msgstr "海報牆"
+
+msgctxt "#31103"
+msgid "Enter text here..."
+msgstr "在此輸入文字..."
+
+msgctxt "#31104"
+msgid "Your library is currently empty. In order to populate it with your personal media, enter \"Files\" section, add a media source and configure it. After the source has been added and indexed you will be able to browse your library."
+msgstr "你的資料庫現在是空的。若要將你收藏的影音檔拉進來這裡，請到\"檔案\"區，加入一個媒體來源並且做些設定，針對該來源內容完成清點及索引後，你即可瀏覽你的資料庫。"
+
+msgctxt "#31105"
+msgid "Add video sources and set the appropriate content type in order to populate your video libraries."
+msgstr "加入視訊來源並且設定合適的內容類型，以豐富你的視訊資料庫。"
+
+msgctxt "#31106"
+msgid "Teletext"
+msgstr "電傳聞訊"
+
+#. viewtype name
+msgctxt "#31107"
+msgid "WideList"
+msgstr "寬版面列表"
+
+msgctxt "#31110"
+msgid "Enter files section"
+msgstr "進入檔案區"
+
+msgctxt "#31111"
+msgid "View your personal pictures or download one of the many image add-ons from the official repository."
+msgstr "檢視你的個人圖片，或下載官方的眾多影像附加元件。"
+
+msgctxt "#31112"
+msgid "Toggle audio stream"
+msgstr "切換聲道"
+
+msgctxt "#31113"
+msgid "Search local library"
+msgstr "搜尋本地資料庫"
+
+msgctxt "#31114"
+msgid "Search YouTube"
+msgstr "搜尋YouTube"
+
+msgctxt "#31115"
+msgid "Toggle subtitle"
+msgstr "切換字幕"
+
+msgctxt "#31116"
+msgid "Remove this main menu item"
+msgstr "移除這個主選單項目"
+
+msgctxt "#31117"
+msgid "Edit nodes"
+msgstr "編輯節點"
+
+msgctxt "#31118"
+msgid "Enter add-on browser"
+msgstr "進入附加元件瀏覽器"
+
+msgctxt "#31119"
+msgid "You do not have any add-ons installed yet. Visit our add-on browser to browse through our collection and improve your Kodi experience."
+msgstr "你還沒安裝任何附加元件。請到我們的附加元件瀏覽器逛逛，讓你的Kodi更好用。"
+
+msgctxt "#31120"
+msgid "You did not set up a weather provider yet. In order to view weather information, choose a weather provider and set up your location."
+msgstr "你還沒設定天氣資訊提供者。請選取一個並設定你的位置來取得天氣資訊。"
+
+msgctxt "#31121"
+msgid "Set weather provider"
+msgstr "設定天氣資訊提供者"
+
+msgctxt "#31122"
+msgid "Unwatched TV Shows"
+msgstr "還沒看過的電視劇集"
+
+msgctxt "#31123"
+msgid "Same director"
+msgstr "同一位導演的作品"
+
+msgctxt "#31125"
+msgid "Press up for actor info"
+msgstr "按上鍵查看演員資料"
+
+msgctxt "#31126"
+msgid "Press OK to read plot"
+msgstr "按OK鍵查看劇情簡介"
+
+msgctxt "#31127"
+msgid "Show icons"
+msgstr "顯示圖示"
+
+msgctxt "#31128"
+msgid "Contributors"
+msgstr "發行單位"
+
+msgctxt "#31129"
+msgid "General settings applying to all areas of the skin."
+msgstr "適用於佈景主題所有區塊的通用設定。"
+
+msgctxt "#31130"
+msgid "Main menu-related settings: Configure the home screen to your likings."
+msgstr "主選單相關設定：將首頁依照您的喜好做規劃。"
+
+msgctxt "#31131"
+msgid "Choose skin fanart pack"
+msgstr "選擇佈景主題粉絲自製圖集"
+
+msgctxt "#31132"
+msgid "Select Program"
+msgstr "選擇程式"
+
+msgctxt "#31133"
+msgid "Select Resolution"
+msgstr "選擇解析度"
+
+msgctxt "#31134"
+msgid "Remaining"
+msgstr "後結束"
+
+msgctxt "#31135"
+msgid "Binary"
+msgstr "二進位"
+
+msgctxt "#31136"
+msgid "Click here to see latest changes..."
+msgstr "按這裡以檢視最新的更新項目..."
+
+#. Label to show PVR info page
+msgctxt "#31137"
+msgid "PVR"
+msgstr "PVR"
+
+#. Label to show player info page
+msgctxt "#31138"
+msgid "Player"
+msgstr "播放設定"
+
+#. Label to show video decoder name
+msgctxt "#31139"
+msgid "Video decoder"
+msgstr "影像解碼器"
+
+#. Label to show the video pixel format
+msgctxt "#31140"
+msgid "Pixel format"
+msgstr "畫面格式"
+
+msgctxt "#31141"
+msgid "Changes for version"
+msgstr "版本更新之變動"
+
+msgctxt "#31142"
+msgid "Play speed"
+msgstr "播放速度"
+
+msgctxt "#31143"
+msgid "You did not set up PVR yet. In order to use PVR, choose a PVR client addon and configure it. Please visit http://kodi.wiki/view/PVR to learn more."
+msgstr "您尚未設置 PVR。欲使用 PVR，請選取並設置 PVR 客戶端附加元件。請參考 http://kodi.wiki/view/PVR。"
+
+msgctxt "#31144"
+msgid "Enter add-on browser"
+msgstr "進入附加元件瀏覽器"
+
+msgctxt "#31145"
+msgid "Search add-ons"
+msgstr "搜尋附加元件"
+
+msgctxt "#31146"
+msgid "In cinemas"
+msgstr "上映中"
+
+msgctxt "#31147"
+msgid "In cinemas soon"
+msgstr "即將上映"
+
+msgctxt "#31148"
+msgid "Categories"
+msgstr "分類"
+
+msgctxt "#31149"
+msgid "Select genre fanart pack"
+msgstr "選擇影音類型的粉絲自製圖集"
+
+msgctxt "#31150"
+msgid "Origin"
+msgstr "原始"
+
+msgctxt "#31151"
+msgid "Unwatched music videos"
+msgstr "還沒看過的音樂影片"
+
+msgctxt "#31152"
+msgid "Random music videos"
+msgstr "隨機音樂影片"
+
+msgctxt "#31153"
+msgid "You do not have any add-ons of this type installed. Enter the add-on browser to download add-ons created by our community."
+msgstr "您尚未安裝本類型的任何附加元件。請到附加元件區下載本社群所製作的附加元件。"
+
+msgctxt "#31154"
+msgid "Press OK to switch between locations"
+msgstr "按下OK以切換地區"
+
+msgctxt "#31155"
+msgid "No bookmarks created yet."
+msgstr "尚未建立任何書籤。"
+
+msgctxt "#31156"
+msgid "Choose background pattern"
+msgstr "選擇背景貼圖樣式"
+
+msgctxt "#31157"
+msgid "Edit categories"
+msgstr "編輯分類"
+
+msgctxt "#31158"
+msgid "Touch mode"
+msgstr "觸控模式"
+
+msgctxt "#31159"
+msgid "Artwork"
+msgstr "美術作品"
+
+msgctxt "#31160"
+msgid "Show media flags"
+msgstr "顯示媒體內容標籤"
+
+msgctxt "#31161"
+msgid "Numeric pad"
+msgstr "數字鍵盤"
+
+msgctxt "#31162"
+msgid "Play your personal games or download one of the many game add-ons from the official repository."
+msgstr "執行您收藏的遊戲，或下載官方的眾多遊戲附加元件。"
+
+msgctxt "#31163"
+msgid "Show Fanart background"
+msgstr "顯示劇照背景"
+
+#. Choose profile identifier
+msgctxt "#31164"
+msgid "Choose kind of profile identification"
+msgstr "選擇設定檔案的標識類型"
+
+#. Label for the kind of profile identification
+msgctxt "#31165"
+msgid "Profile name"
+msgstr "設定檔名稱"
+
+#. Label for the kind of profile identification
+msgctxt "#31166"
+msgid "Profile avatar"
+msgstr "個人資料圖像"
+
+#. Label of a setting
+msgctxt "#31167"
+msgid "Animate background"
+msgstr "動畫背景"
+
+#. Label of a setting
+msgctxt "#31168"
+msgid "Show posters instead of thumbs for musicvideos"
+msgstr "為音樂影片顯示海報而不是縮圖"
+
+#. Description label for skin settings area
+msgctxt "#31169"
+msgid "Artwork related settings."
+msgstr "美術圖片相關的設定。"
+
+#. Label for OSD settings category
+msgctxt "#31170"
+msgid "On screen display"
+msgstr ""
+
+#. Helper text for the label of OSD settings category
+msgctxt "#31171"
+msgid "On screen display (OSD) related settings"
+msgstr ""
+
+#. Setting Automatically close video OSD
+msgctxt "#31172"
+msgid "Automatically close video OSD"
+msgstr ""
+
+#. Setting auto close time for video osd
+msgctxt "#31173"
+msgid "Video OSD autoclose time (seconds)"
+msgstr ""
+
+#. Setting to control what happens when clicking a music album on the home screen
+msgctxt "#31174"
+msgid "Default select action for albums on the home screen"
+msgstr ""
+
+#. Setting to control what happens when clicking a TV show on the home screen
+msgctxt "#31175"
+msgid "Default select action for TV shows on the home screen"
+msgstr ""
+
+#. Setting to control what happens when clicking a movie set on the home screen
+msgctxt "#31176"
+msgid "Default select action for movie sets on the home screen"
+msgstr ""
+
+# empty strings from id 31170 to 31599
+#. Label to show the video codec name
+msgctxt "#31600"
+msgid "Video codec"
+msgstr "影片編碼"
+
+#. Label to show the video resolution
+msgctxt "#31601"
+msgid "Video resolution"
+msgstr "影片解析度"
+
+#. Label to show the video aspect
+msgctxt "#31602"
+msgid "Video aspect"
+msgstr "視訊模式"
+
+#. Label to show the video bitrate
+msgctxt "#31603"
+msgid "Video bitrate"
+msgstr "影片位元率"
+
+#. Label to show the audio codec name
+msgctxt "#31604"
+msgid "Audio codec"
+msgstr "音效編碼"
+
+#. Label to show the number of audio channels
+msgctxt "#31605"
+msgid "Audio channels"
+msgstr "音效聲道數"
+
+#. Label to show the audio bitrate
+msgctxt "#31606"
+msgid "Audio bitrate"
+msgstr "音訊位元率"
+
+#. Label to show the screen resolution
+msgctxt "#31607"
+msgid "Screen resolution"
+msgstr "螢幕解析度"
+
+#. Label to show the system rendering speed
+msgctxt "#31608"
+msgid "System rendering speed"
+msgstr "系統渲染速度"
+
+#. Label to show the system CPU usage
+msgctxt "#31609"
+msgid "System CPU usage"
+msgstr "系統CPU負載"
+
+#. Label to show the media (metadata) info page
+msgctxt "#31610"
+msgid "Media"
+msgstr "媒體"
+
+#. Label to show the system info page
+msgctxt "#31611"
+msgid "System"
+msgstr "系統"
+
+#~ msgctxt "#31615"
+#~ msgid "Extras"
+#~ msgstr "額外資訊"
+
+#~ msgctxt "#31059"
+#~ msgid "Select + X"
+#~ msgstr "選擇 + X"
+
+#~ msgctxt "#31060"
+#~ msgid "Select + Start"
+#~ msgstr "選擇 + 開始"
+
+#~ msgctxt "#31137"
+#~ msgid "PVR info"
+#~ msgstr "PVR 資訊"
+
+#~ msgctxt "#31138"
+#~ msgid "Player process info"
+#~ msgstr "播放器運作資料"

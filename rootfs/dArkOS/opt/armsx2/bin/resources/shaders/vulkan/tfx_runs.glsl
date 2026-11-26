@@ -1,0 +1,360 @@
+// SPDX-FileCopyrightText: 2002-2026 PCSX2 Dev Team, 2026 ARMSX2 contributors
+// SPDX-License-Identifier: GPL-3.0+
+
+// The run program (GSRunEmitterVK). A run is a stretch of consecutive draws of one render pass that the classic path would
+// have drawn under different programs, textures and constants but under one fixed-function state (blend, depth test
+// and write, colour mask). The run is one host draw. Each draw keeps its own row in a table: the vertex carries the
+// draw's row number in the high bytes of its FOG word, the vertex program hands the row to the fragment program as
+// two flat values, and the fragment program does what that draw's classic program (tfx.glsl) does, sampling the draw's
+// own texture through its own sampler from the run's descriptor array.
+//
+// The arithmetic is tfx.glsl's for the state set the emitter accepts: FST 0, a 32-bit colour target, no palette in the
+// shader, the hardware's bilinear (LTF 0), CLAMP or REPEAT (the sampler's), alpha fail KEEP, the texture functions 0-4,
+// and the blend family (Cs - 0) * C + 0 in the shader with the rest in the blend unit (BLEND_MIX). How the classic path
+// chose to blend is one of eight ways under a dual-source pipeline, (ONE, INV_SRC1_COLOR / ONE, ZERO) for ways 0 to 5 and
+// the classic draw's own (SRC1_COLOR, INV_SRC1_COLOR / ONE, ZERO) for 6 and 7:
+//   0  the shader blend, C = As, second output As
+//   1  the shader blend, C = Af (the blend constant, or the second output where the driver ignores the constant)
+//   2  blending elided, every channel written                (second output 1: the target's term is 0)
+//   3  blending elided, alpha written alone                  (colour 0 and second output 0: RGB kept)
+//   4  additive, Cs * As in the shader and the target added in the blend unit (second output 0)
+//   5  additive, Cs * Af likewise
+//   6  the blend unit's Cs * As + Cd * (1 - As) (Minimum blending): Cs written unblended, second output As
+//   7  the same with Af, where the classic draw already sends Af through the second output
+//
+// Specialisation: each per-draw state the run holds one value of arrives as a compile-time constant RUN_C_<state>; only
+// the states that vary inside the run are read from the row.
+
+layout(std140, set = 0, binding = 0) uniform RunHeader
+{
+	vec2 VertexScale;
+	vec2 VertexOffset;
+	vec2 TextureOffset;
+	vec2 STScale;
+	uint MaxDepth;
+	uint run_pad0;
+	uint run_pad1;
+	uint run_pad2;
+};
+
+#if defined(VERTEX_SHADER)
+
+layout(std430, set = 0, binding = 1) readonly buffer RunTable
+{
+	uvec4 run_table[];
+};
+
+layout(location = 0) in vec2 a_st;
+layout(location = 1) in uvec4 a_c;
+layout(location = 2) in float a_q;
+layout(location = 3) in uvec2 a_p;
+layout(location = 4) in uint a_z;
+layout(location = 5) in uvec2 a_uv;
+layout(location = 6) in vec4 a_f;
+layout(location = 7) in uint a_fword; // the same FOG word: fog in its low byte, the draw's row above it
+
+layout(location = 0) out VSOutput
+{
+	vec4 t;
+	vec4 c;
+	flat vec4 cf;
+	flat uvec4 s0;
+	flat vec4 s1;
+} vsOut;
+
+void main()
+{
+	uint z = min(a_z, MaxDepth);
+	gl_Position = vec4(a_p, float(z), 1.0f) - vec4(0.05f, 0.05f, 0, 0);
+	gl_Position.xy = gl_Position.xy * vec2(VertexScale.x, -VertexScale.y) - vec2(VertexOffset.x, -VertexOffset.y);
+	gl_Position.z *= exp2(-32.0f);
+	gl_Position.y = -gl_Position.y;
+#if GPU_PROFILE_MALI
+	if (gl_Position.z == gl_Position.w) gl_Position.z *= 0.999999f; // tfx.glsl's
+#endif
+
+	vsOut.t.xy = a_st - TextureOffset;
+	vsOut.t.w = a_q;
+	vsOut.t.z = a_f.r;
+	vsOut.c = vec4(a_c);
+	vsOut.cf = vec4(a_c);
+
+	uint row = (a_fword >> 8) * 2u;
+	vsOut.s0 = run_table[row];
+	vsOut.s1 = uintBitsToFloat(run_table[row + 1u]);
+}
+
+#endif
+
+#if defined(FRAGMENT_SHADER)
+
+layout(set = 1, binding = 0) uniform sampler2D RunTextures[];
+
+layout(location = 0) in VSOutput
+{
+	vec4 t;
+	vec4 c;
+	flat vec4 cf;
+	flat uvec4 s0;
+	flat vec4 s1;
+} vsIn;
+
+#if RUN_DUAL
+layout(location = 0, index = 0) out vec4 o_col0;
+layout(location = 0, index = 1) out vec4 o_col1;
+#else
+layout(location = 0) out vec4 o_col0;
+#endif
+
+#if RUN_ZFLOOR
+// The floored depth is never above gl_FragCoord.z (see the declaration in tfx.glsl), so the depth
+// test may run before this shader as well as after it.
+layout(depth_less) out float gl_FragDepth;
+#endif
+
+// s0.x, the draw's flags (GSRunsPolicy.h): 0-2 tfx, 3 tcc, 4 fog, 5 iip, 6-8 alpha test, 9-11 blend way,
+//   12-13 lod (0 none, 1 manual, 2 the hardware's), 14 RTA source correction
+// s0.y: the draw's slot in the run's texture array in bits 0-15; where the program fetches (RUN_FETCH), bit 16 says the
+//   row is filtered by hand, and 17 repeat in u, 18 repeat in v, 19 bilinear give its sampler (GSRunsPolicy::FetchBits)
+// s0.z: fog colour in bytes 0-2, Af * 128 in byte 3
+// s0.w: AREF (float bits)
+// s1: the manual lod's K, L, bias, max lod (LODParams)
+uint fld(uint v, int s, int n)
+{
+	return bitfieldExtract(v, s, n);
+}
+
+#ifdef RUN_C_TFX
+#define S_TFX uint(RUN_C_TFX)
+#else
+#define S_TFX fld(f, 0, 3)
+#endif
+#ifdef RUN_C_TCC
+#define S_TCC uint(RUN_C_TCC)
+#else
+#define S_TCC fld(f, 3, 1)
+#endif
+#ifdef RUN_C_FOG
+#define S_FOG uint(RUN_C_FOG)
+#else
+#define S_FOG fld(f, 4, 1)
+#endif
+#ifdef RUN_C_IIP
+#define S_IIP uint(RUN_C_IIP)
+#else
+#define S_IIP fld(f, 5, 1)
+#endif
+#ifdef RUN_C_ATST
+#define S_ATST uint(RUN_C_ATST)
+#else
+#define S_ATST fld(f, 6, 3)
+#endif
+#ifdef RUN_C_WAY
+#define S_WAY uint(RUN_C_WAY)
+#else
+#define S_WAY fld(f, 9, 3)
+#endif
+#ifdef RUN_C_LOD
+#define S_LOD uint(RUN_C_LOD)
+#else
+#define S_LOD fld(f, 12, 2)
+#endif
+#ifdef RUN_C_RTASRC
+#define S_RTASRC uint(RUN_C_RTASRC)
+#else
+#define S_RTASRC fld(f, 14, 1)
+#endif
+
+#ifdef RUN_FETCH
+// The GPU stalls when a run draw samples many textures through the filtered sampler (the Adreno 650 under Turnip);
+// fetching avoids the sampler. A small row past its group's bound on sampled textures (GSRunsPolicy::PlaceRow), whose
+// texture has one level, is filtered here from texelFetch on level 0, with the sampler's address modes and filter. The filter is the Adreno 650's
+// as far as it was measured (one level off on about 2% of channel samples):
+//   RUN_FILTER_FRAC_BITS  bits of the position below a texel that the filter keeps; the weights have as many (1 to 11)
+//   RUN_FILTER_POS_ROUND  added to the position, in those steps, before the rest is dropped (0.5 rounds to the nearest
+//                         step, 0 truncates)
+// The position is uv * size - 0.5, the multiply and the subtract each rounded to single precision, uv first wrapped
+// into [0, 1) on an axis that repeats. The four 8-bit texels times their integer weights are summed exactly, and the
+// sum, taken to 16 fraction bits, is returned as 16-bit unorm (times 257, truncated).
+#define RUN_FILTER_FRAC_BITS 8
+#define RUN_FILTER_POS_ROUND 0.0f
+
+#define RUN_FETCH_ROW 0x10000u
+#define RUN_FETCH_REPEAT_U 0x20000u
+#define RUN_FETCH_REPEAT_V 0x40000u
+#define RUN_FETCH_LINEAR 0x80000u
+
+// The sampler's address mode on an integer texel coordinate, per axis.
+ivec2 run_wrap(ivec2 i, ivec2 size, bvec2 repeat)
+{
+	ivec2 r = i - size * ivec2(floor(vec2(i) / vec2(size)));
+	r += ivec2(lessThan(r, ivec2(0))) * size; // the division's rounding can leave r one size out either way
+	r -= ivec2(greaterThanEqual(r, size)) * size;
+	const ivec2 c = clamp(i, ivec2(0), size - 1);
+	return ivec2(repeat.x ? r.x : c.x, repeat.y ? r.y : c.y);
+}
+
+// The row's sampler on level 0 of texture ti, by hand. bits: the row's slot word.
+vec4 run_filter(uint ti, uint bits, vec2 uv)
+{
+	const ivec2 size = textureSize(RunTextures[nonuniformEXT(ti)], 0);
+	const bvec2 repeat = bvec2((bits & RUN_FETCH_REPEAT_U) != 0u, (bits & RUN_FETCH_REPEAT_V) != 0u);
+	const vec2 u = vec2(repeat.x ? uv.x - floor(uv.x) : uv.x, repeat.y ? uv.y - floor(uv.y) : uv.y);
+	precise const vec2 t = u * vec2(size);
+	const int one = 1 << RUN_FILTER_FRAC_BITS;
+	if ((bits & RUN_FETCH_LINEAR) == 0u)
+	{
+		// Nearest: the texel under the position.
+		const ivec2 q = ivec2(floor(t * float(one) + RUN_FILTER_POS_ROUND));
+		return texelFetch(RunTextures[nonuniformEXT(ti)], run_wrap(q >> RUN_FILTER_FRAC_BITS, size, repeat), 0);
+	}
+	// Bilinear: the four texels around the position half a texel back, weighted by its fraction.
+	precise const vec2 p = t - 0.5f;
+	const ivec2 q = ivec2(floor(p * float(one) + RUN_FILTER_POS_ROUND));
+	const ivec2 b = q >> RUN_FILTER_FRAC_BITS;
+	const ivec2 w = q & (one - 1);
+	const ivec2 v = one - w;
+	const ivec2 i0 = run_wrap(b, size, repeat);
+	const ivec2 i1 = run_wrap(b + 1, size, repeat);
+	const ivec4 t00 = ivec4(round(texelFetch(RunTextures[nonuniformEXT(ti)], i0, 0) * 255.0f));
+	const ivec4 t10 = ivec4(round(texelFetch(RunTextures[nonuniformEXT(ti)], ivec2(i1.x, i0.y), 0) * 255.0f));
+	const ivec4 t01 = ivec4(round(texelFetch(RunTextures[nonuniformEXT(ti)], ivec2(i0.x, i1.y), 0) * 255.0f));
+	const ivec4 t11 = ivec4(round(texelFetch(RunTextures[nonuniformEXT(ti)], i1, 0) * 255.0f));
+	const ivec4 sum = (t00 * v.x + t10 * w.x) * v.y + (t01 * v.x + t11 * w.x) * w.y;
+	const int shift = 2 * RUN_FILTER_FRAC_BITS;
+	const uvec4 s16 = (shift <= 16) ? (uvec4(sum) << uint(16 - shift)) : (uvec4(sum) >> uint(shift - 16));
+	return vec4((s16 * 257u) >> 16) / 65535.0f;
+}
+#endif
+
+void main()
+{
+	uvec4 s0 = vsIn.s0;
+	vec4 s1 = vsIn.s1;
+	uint f = s0.x;
+	uint tfx = S_TFX;
+
+	// ps_color(), FST 0, ADJS/ADJT 0: sample_c's uv
+	vec2 st = vsIn.t.xy / vsIn.t.w;
+	vec2 uv = st * STScale;
+
+	vec4 T = vec4(0.0f);
+	if (tfx != 4u)
+	{
+		uint ti = s0.y;
+		uint lod_mode = S_LOD;
+		vec4 c;
+		// The same three calls tfx.glsl's sample_c makes, on the draw's own texture and sampler. The row's values are
+		// the same across a quad (a quad never spans two primitives), so the hardware lod's implicit derivatives are
+		// the classic draw's even where the call sits under a branch on them.
+#ifdef RUN_FETCH
+		if ((ti & RUN_FETCH_ROW) != 0u)
+			c = run_filter(ti & 0xFFFFu, ti, uv);
+		else
+#endif
+		if (lod_mode == 2u)
+			c = texture(RunTextures[nonuniformEXT(ti)], uv);
+		else if (lod_mode == 1u)
+			c = textureLod(RunTextures[nonuniformEXT(ti)], uv, min(s1.x - log2(abs(vsIn.t.w)) * s1.y, s1.w) - s1.z);
+		else
+			c = textureLod(RunTextures[nonuniformEXT(ti)], uv, 0);
+		if (S_RTASRC != 0u)
+			c.a = c.a * (128.5f / 255.0f); // PS_RTA_SRC_CORRECTION
+		T = trunc(c * 255.0f + 0.05f);
+	}
+
+	// tfx()
+	vec4 Cv = (S_IIP != 0u) ? vsIn.c : vsIn.cf;
+	vec4 FxT = trunc((Cv * T) / 128.0f);
+	vec4 C;
+	if (tfx == 0u)
+		C = FxT;
+	else if (tfx == 1u)
+		C = T;
+	else if (tfx == 2u)
+		C = vec4(FxT.rgb + Cv.a, T.a + Cv.a);
+	else if (tfx == 3u)
+		C = vec4(FxT.rgb + Cv.a, T.a);
+	else
+		C = Cv;
+	if (S_TCC == 0u)
+		C.a = Cv.a;
+	if (tfx == 0u || tfx == 2u || tfx == 3u)
+		C = min(C, 255.0f);
+
+	// fog()
+	if (S_FOG != 0u)
+	{
+		vec3 fog_color = vec3(float(fld(s0.z, 0, 8)), float(fld(s0.z, 8, 8)), float(fld(s0.z, 16, 8)));
+		C.rgb = trunc(mix(fog_color, C.rgb, (vsIn.t.z * 255.0f) / 256.0f));
+	}
+
+	// atst(), alpha fail KEEP
+	uint atst = S_ATST;
+	if (atst != 0u)
+	{
+		float aref = uintBitsToFloat(s0.w);
+		bool pass = true;
+		if (atst == 1u)
+			pass = (C.a <= aref);
+		else if (atst == 2u)
+			pass = (C.a >= aref);
+		else if (atst == 3u)
+			pass = (abs(C.a - aref) <= 0.5f);
+		else if (atst == 4u)
+			pass = (abs(C.a - aref) >= 0.5f);
+		if (!pass)
+			discard;
+	}
+
+	vec4 alpha_blend = vec4(C.a / 128.0f);
+	uint way = S_WAY;
+
+	// ps_blend() for the family (A = Cs, B = 0, D = 0, BLEND_MIX), then ps_color_clamp_wrap()
+	if (way <= 1u)
+	{
+		float Cb = (way == 0u) ? alpha_blend.a : (float(fld(s0.z, 24, 8)) / 128.0f);
+		C.rgb = (C.rgb * min(Cb, 1.0f)) - (124.0f / 256.0f);
+		C.rgb = clamp(C.rgb, vec3(0.0f), vec3(255.0f));
+	}
+	else if (way == 4u || way == 5u)
+	{
+		// BLEND_MIX 0: C unclamped, the product truncated (tfx.glsl's trunc((A - B) * C + D))
+		float Cb = (way == 4u) ? alpha_blend.a : (float(fld(s0.z, 24, 8)) / 128.0f);
+		C.rgb = clamp(trunc(C.rgb * Cb), vec3(0.0f), vec3(255.0f));
+	}
+
+#if RUN_RTA_CORRECTION
+	o_col0.a = C.a / 128.0f;
+#else
+	o_col0.a = C.a / 255.0f;
+#endif
+	o_col0.rgb = C.rgb / 255.0f;
+#if RUN_ZFLOOR
+	// PS_ZFLOOR: the depth floored to the GS's integer grid before the test, written from here.
+	gl_FragDepth = floor(gl_FragCoord.z * exp2(32.0f)) * exp2(-32.0f);
+#endif
+#if RUN_DUAL
+	if (way == 0u || way == 6u)
+		o_col1 = alpha_blend;
+	else if (way == 1u || way == 7u)
+		o_col1 = vec4(float(fld(s0.z, 24, 8)) / 128.0f);
+	else if (way == 2u)
+		o_col1 = vec4(1.0f);
+	else if (way == 3u)
+	{
+		o_col0.rgb = vec3(0.0f);
+		o_col1 = vec4(0.0f);
+	}
+	else
+		o_col1 = vec4(0.0f);
+	// A draw the classic path writes unblended (way 2) goes through the blend unit in a blending run, and the blend unit
+	// rounds the output differently from the attachment's own conversion (Mali-G57 and G615: scattered pixels moved by up
+	// to 8 levels, here and wherever such a draw shared a run with a blended one). Rounded half up to the target's 8 bits
+	// as the attachment rounds, the output passes the blend unit unchanged.
+	if (way == 2u)
+		o_col0 = floor(o_col0 * 255.0f + 0.5f) / 255.0f;
+#endif
+}
+
+#endif

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Chorus Video Player</title>
+
+    <link href="lib/video-js/video-js.min.css" rel="stylesheet">
+    <link href="lib/video-js/plugins/videojs-chromecast/videojs-chromecast.css?01217" rel="stylesheet">
+
+    <script src="lib/jquery/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="lib/video-js/plugins/videojs-chromecast/cast_sender.js"></script>
+
+    <script>
+
+        // Helpers.
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                    results = regex.exec(location.search);
+            return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+        function getBaseURL() {
+            var parts = window.location.href.split('videoPlayer.html');
+            return parts[0].replace(/\/\s*$/, '');
+        }
+
+        // Vars.
+        var src = getParameterByName('src'),
+          player = getParameterByName('player'),
+          yt = getParameterByName('yt'),
+          bg = getParameterByName('bg'),
+          $player = $('<div>'),
+          width = '100%',
+          height = '90%',
+          id = "videoplayer";
+
+        // Do we have something to play?
+        if(src != ''){
+
+            // Make the html5 player
+            if(player == 'html5'){
+                $player = $('<video>', {
+                    "id": id,
+                    "class": "video-js vjs-default-skin",
+                    "controls": "controls",
+                    "preload": "auto",
+                    "autoplay": "autoplay",
+                    "data-setup": JSON.stringify({}),
+                    "poster": getBaseURL() + bg
+                });
+                $player.append($('<source>', {
+                    "type": 'video/mp4',
+                    "src": getBaseURL() + '/' + src
+                }));
+                $player.attr('width', width).attr('height', height);
+            }
+
+            // Make the VLC player.
+            if(player == 'vlc'){
+                $player = $('<embed>', {
+                    "type": "application/x-vlc-plugin",
+                    "pluginspage": "http://www.videolan.org",
+                    "version": "VideoLAN.VLCPlugin.2",
+                    "width": width,
+                    "height": height,
+                    "target": '/' + src,
+                    "id": id
+                });
+            }
+
+            // Make the divX player.
+            if(player == 'divx'){
+                $player = $('<object>', {
+                    "id": id,
+                    "classid": "clsid:67DABFBF-D0AB-41fa-9C46-CC0F21721616",
+                    "width": width,
+                    "height": height,
+                    "codebase": "http://go.divx.com/plugin/DivXBrowserPlugin.cab"
+                });
+                $player.append($('<param>', {name: 'custommode', value: 'none'}));
+                $player.append($('<param>', {name: 'previewImage', value: ''}));
+                $player.append($('<param>', {name: 'autoPlay', value: 'true'}));
+                $player.append($('<param>', {name: 'src', value: '/' + src}));
+                $player.append($('<embed>', {
+                    type: 'video/divx',
+                    src: '/' + src,
+                    custommode: 'none',
+                    width: width,
+                    height: height,
+                    autoplay: "true",
+                    previewImage: '',
+                    pluginspage: 'http://go.divx.com/plugin/download/'
+                }));
+            }
+
+            // Dom ready actions.
+            $(document).ready(function(){
+
+                // update download link
+                $('.dl').attr('href', src);
+
+                $('#stream').click(function(e){
+                    e.preventDefault($(this).attr('href'));
+                    console.log($(this).attr('href'));
+                    window.location = $(this).attr('href');
+                });
+
+                // Switch player.
+                $('#switch-player')
+                  .val(player)
+                  .on('change', function(e){
+                    var url = 'videoPlayer.html?player=' + $(this).val() + '&src=' + encodeURIComponent(src) + '&bg=' + encodeURIComponent(bg);
+                    window.location = url;
+                  });
+
+            });
+        }
+        else if (yt != '') {
+            // If playing a youtube video.
+            $player = $('<iframe>', {
+                width: width,
+                height: height,
+                src: 'https://www.youtube.com/embed/' + yt  + '?rel=0&amp;showinfo=0&amp;autoplay=1&amp;iv_load_policy=3',
+                frameborder: 0,
+                allowfullscreen: 'allowfullscreen',
+                allow: 'autoplay; encrypted-media'
+            });
+            $(document).ready(function(){
+               $('#switch-player').empty();
+               $('#download').empty();
+            });
+        }
+    </script>
+    <style type="text/css">
+        body, html {
+            height: 100%;
+        }
+        body {
+            margin: 0; background: #000; padding: 0; overflow: hidden; color: #333;
+        }
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+        #player {
+            margin: 0px 10px 0;
+            height: 98%;
+            margin-top: 1%;
+        }
+        #switch-player,
+        #actions {
+            display: block;
+            font: 12px Arial, Helvetica, "Nimbus Sans L", sans-serif;
+            margin: 1px 0 0;
+            padding: 5px 10px 0 0;
+            float: right;
+        }
+        #switch-player {
+            float: left;
+            padding: 5px 0 0 10px;
+        }
+        select:hover,
+        .dl:hover {
+            color: #aaa;
+        }
+        #videoplayer {
+            min-height: 300px;
+        }
+        select {
+            float: right;
+            background: #000;
+            border: none;
+            color: #333;
+        }
+        select:focus {
+            color: #aaa;
+        }
+        #player {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            padding-top: 25px;
+            height: 0;
+        }
+        #player iframe,
+        #player .video-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .vjs-error .vjs-error-display .vjs-modal-dialog-content {
+            background: rgba(0,0,0,0.5);
+            height: auto;
+            font-size: 1.7em;
+            padding: 2% 15%;
+            top: auto;
+            bottom: 5%;
+        }
+        .vjs-error .vjs-error-display:before {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="player-wrapper">
+        <div id="player">
+        </div>
+        <div id="player-actions">
+            <div id="actions">
+                <a href="" title="Force download of this video" class="dl" id="download" download>Download</a> -
+                <a href="" title="Navigate to video so the browser can try and native stream it. Some browsers may still download" class="dl" id="stream">Stream</a>
+            </div>
+            <select id="switch-player">
+                <option value="html5">html5</option>
+                <option value="vlc">VLC Web player</option>
+                <option value="divx">DivX Webplayer</option>
+            </select>
+        </div>
+    </div>
+    <script> $('#player').prepend($player);</script>
+    <script src="lib/video-js/video.min.js"></script>
+    <script src="lib/video-js/plugins/videojs-chromecast/videojs-chromecast.min.js"></script>
+</body>
+</html>

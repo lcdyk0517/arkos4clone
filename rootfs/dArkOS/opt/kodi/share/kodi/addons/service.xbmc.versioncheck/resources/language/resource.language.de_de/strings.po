@@ -1,0 +1,137 @@
+# Kodi Media Center language file
+# Addon Name: Version Check
+# Addon id: service.xbmc.versioncheck
+# Addon Provider: Team Kodi
+msgid ""
+msgstr ""
+"Project-Id-Version: XBMC Addons\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2023-02-05 23:15+0000\n"
+"Last-Translator: Kai Sommerfeld <kai.sommerfeld@gmx.com>\n"
+"Language-Team: German <https://kodi.weblate.cloud/projects/kodi-core/service-xbmc-versioncheck/de_de/>\n"
+"Language: de_de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.15.2\n"
+
+msgctxt "Addon Summary"
+msgid "Kodi Version Check checks if you are running latest released version."
+msgstr "Kodi Version Check prüft, ob die neuste Version von Kodi installiert ist."
+
+msgctxt "Addon Description"
+msgid "Kodi Version Check only supports a number of platforms/distros as releases may differ between them. For more information visit the kodi.tv website."
+msgstr "Kodi Version Check unterstützt nur ausgewählte Plattformen/Distributionen, da sich die jeweiligen Veröffentlichungen unterscheiden können. Mehr Informationen dazu gibt es auf der kodi.tv-Website."
+
+msgctxt "Addon Disclaimer"
+msgid "Feel free to use this script. For information visit kodi.tv"
+msgstr "Dieses Skript ist sehr nützlich und jeder sollte es verwenden. Mehr Informationen dazu gibt es auf der kodi.tv-Website"
+
+msgctxt "#32001"
+msgid "We would like to recommend you to upgrade."
+msgstr "Es gibt eine Aktualisierung."
+
+msgctxt "#32002"
+msgid "Visit Kodi.tv for more information."
+msgstr "Mehr Informationen gibt es auf der kodi.tv-Website."
+
+msgctxt "#32009"
+msgid "Would you like to remove this reminder?"
+msgstr "Soll diese Erinnerung gelöscht werden?"
+
+msgctxt "#32010"
+msgid "You can enable/disable it through add-on settings."
+msgstr "Dies kann in den Addon-Einstellungen aktiviert/deaktiviert werden."
+
+msgctxt "#32011"
+msgid "Use your package manager(apt) to upgrade."
+msgstr "Bitte den System-Paketmanager (apt) zum Aktualisieren verwenden."
+
+msgctxt "#32012"
+msgid "A new version is available, do you want to upgrade now?"
+msgstr "Eine neue Version ist verfügbar. Jetzt aktualisieren?"
+
+msgctxt "#32013"
+msgid "Upgrade successful"
+msgstr "Aktualisierung erfolgreich"
+
+msgctxt "#32014"
+msgid "Do you want to restart Kodi to finish the upgrade?"
+msgstr "Soll Kodi neu gestartet werden, um die Aktualisierung abzuschließen?"
+
+msgctxt "#32015"
+msgid "Do you want to check the repository for a new version?"
+msgstr "Soll das Addon-Repository auf eine neue Version überprüft werden?"
+
+msgctxt "#32016"
+msgid "There is a newer stable Kodi version available."
+msgstr "Eine neuere stabile Kodi-Version ist verfügbar."
+
+msgctxt "#32020"
+msgid "General"
+msgstr "Allgemein"
+
+msgctxt "#32021"
+msgid "Enable Kodi version check?"
+msgstr "Kodi-Versionsprüfung aktivieren?"
+
+msgctxt "#32022"
+msgid "Please enter your password"
+msgstr "Bitte Passwort eingeben"
+
+msgctxt "#32023"
+msgid "Linux: Upgrade complete system"
+msgstr "Linux: Komplettes System aktualisieren"
+
+msgctxt "#32024"
+msgid "Linux: Upgrade using apt"
+msgstr "Linux: Aktualisierung durch apt"
+
+#. Used in OK dialog
+msgctxt "#32030"
+msgid "A new stable version of Kodi is available."
+msgstr "Eine neue stabile Kodi-Version ist verfügbar."
+
+#. Direct people to the website. Used in OK dialog
+msgctxt "#32031"
+msgid "Visit http://kodi.tv for more information."
+msgstr "Mehr Informationen gibt es auf http://kodi.tv."
+
+#. Used in OK dialog
+msgctxt "#32032"
+msgid "A new stable version of Kodi is available."
+msgstr "Eine neue stabile Kodi-Version ist verfügbar."
+
+#. Direct people to the website. Used in OK dialog
+msgctxt "#32033"
+msgid "Visit http://kodi.tv for more information."
+msgstr "Mehr Informationen gibt es auf http://kodi.tv."
+
+#. For example: "You are using 13.1 prealpha while 13.2 stable is available"
+msgctxt "#32034"
+msgid "Using %s while %s is available."
+msgstr "%s wird verwendet, obwohl %s verfügbar ist."
+
+#. Used in OK dialog
+msgctxt "#32035"
+msgid "It is recommended that you upgrade to a newer version."
+msgstr "Ein Upgrade auf eine neuere Version wird empfohlen."
+
+# empty strings from id 32036 to 32039
+msgctxt "#32040"
+msgid "Your version %s of the Python cryptography module is too old. You need at least version 1.7."
+msgstr "Die installierte Version des Python-Kryptogafiemoduls ist zu alt. Es wird mindestens Version 1.7 benötigt."
+
+msgctxt "#32041"
+msgid "Please upgrade your operating system."
+msgstr "Bitte das Betriebssystem aktualisieren."
+
+msgctxt "#32042"
+msgid "For more information, see https://kodi.wiki/view/Linux"
+msgstr "Mehr Informationen dazu gibt es unter https://kodi.wiki/view/Linux"
+
+#~ msgctxt "#32035"
+#~ msgid "It is recommended that you to upgrade to a newer version."
+#~ msgstr "Es wird empfohlen, auf eine neuere Version zu aktualisieren."
