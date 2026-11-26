@@ -19,7 +19,7 @@ command -v perfmax >/dev/null 2>&1 && sudo perfmax kodi
 
 # kodi runs as ark; the MPP service node ships root-only, which makes rkmpp
 # fail and video fall back to software decoding.
-sudo chmod 666 /dev/mpp_service 2>/dev/null
+sudo chmod 666 /dev/mpp_service /dev/vpu_service /dev/hevc_service 2>/dev/null
 
 # Keep Kodi from grabbing the volume/power keys
 for ev in /dev/input/event0 /dev/input/event2; do
