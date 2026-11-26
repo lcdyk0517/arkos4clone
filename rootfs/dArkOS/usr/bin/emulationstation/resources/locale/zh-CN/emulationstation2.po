@@ -4512,6 +4512,9 @@ msgid "ARKOS4CLONE SETTINGS"
 msgstr "ArkOS4Clone 设置"
 
 
+msgid "LAUNCH KODI"
+msgstr "启动 KODI"
+
 msgid "WIFI SETTINGS"
 msgstr "Wi-Fi 设置"
 

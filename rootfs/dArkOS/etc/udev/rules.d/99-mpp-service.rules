@@ -1,0 +1,2 @@
+# Kodi decodes video through rkmpp as user ark
+KERNEL=="mpp_service", MODE="0666"
