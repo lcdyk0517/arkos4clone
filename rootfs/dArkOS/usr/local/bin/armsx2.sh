@@ -4,29 +4,6 @@
 # because ARMSX2 rewrites them on an abnormal exit.
 ROM="${1:-}"
 
-# ARMSX2 needs Vulkan, which the 4.4 kernel does not provide.
-case "$(uname -r)" in
-  4.4*)
-    export TERM=linux
-    sudo chmod 666 /dev/tty1 2>/dev/null
-    printf "\033c" > /dev/tty1
-    dialog --title "ARMSX2" --infobox $'Vulkan is not available on the 4.4 kernel.\n\nSwitch to the 5.10 kernel and launch ARMSX2 again.\n\nPress A or B to exit.' 12 64 > /dev/tty1 2>&1
-    . /usr/local/bin/buttonmon.sh 2>/dev/null
-    dev="/dev/input/event${event_num:-2}"
-    btn_a="${event_btn_a:-BTN_EAST}"
-    btn_b="${event_btn_b:-BTN_SOUTH}"
-    while :; do
-      evtest --query "$dev" EV_KEY "$btn_a" >/dev/null 2>&1
-      [ $? -eq 10 ] && break
-      evtest --query "$dev" EV_KEY "$btn_b" >/dev/null 2>&1
-      [ $? -eq 10 ] && break
-      sleep 0.1
-    done
-    printf "\033c" > /dev/tty1
-    exit 0
-    ;;
-esac
-
 DATA=/roms/ps2/armsx2
 APP=/opt/armsx2/bin/armsx2-sdl
 [ -x "$APP" ] || { echo "PS2: missing $APP"; sleep 5; exit 1; }
@@ -47,6 +24,9 @@ export HOME="$DATA"
 export XDG_CONFIG_HOME="$DATA/.config"
 export XDG_DATA_HOME="$DATA/.local/share"
 
+# Vulkan works on 4.4 as well (malisx2 falls back to its 11.7 atom layout), so
+# both kernels launch the same way.
+#
 # A PS2 BIOS is 4-8 MB; a PS1 one (512K) next to it is skipped by ARMSX2 itself.
 BIOS_DIR=""
 for d in /roms/bios /roms/ps2/bios /roms2/bios "$DATA/.config/ARMSX2/bios" /home/ark/.config/ARMSX2/bios; do
@@ -109,10 +89,12 @@ LOG="$DATA/logs/last_run.log"
 # ArkOS 2.30 cannot load a trixie binary directly: start it through the bundled
 # glibc runtime, as dolphin.sh does. dArkOS4Clone runs a current glibc (2.41),
 # so there the binary starts natively.
-if [ -x /opt/glibc-2.42/64/lib/ld-linux-aarch64.so.1 ]; then
-	/opt/glibc-2.42/64/lib/ld-linux-aarch64.so.1 \
-		--library-path /opt/armsx2/lib:/opt/glibc-2.42/64/lib:/usr/lib/aarch64-linux-gnu:/lib/aarch64-linux-gnu \
-		"$APP" ${ROM:+"$ROM"} > "$LOG" 2>&1
+# The explicit loader leaves /proc/self/exe pointing at ld.so, which breaks
+# ARMSX2's AppRoot lookup; use the binary whose interpreter is the bundled
+# runtime instead. dArkOS4Clone's glibc is current enough for the native one.
+if [ -x /opt/glibc-2.42/64/lib/ld-linux-aarch64.so.1 ] && [ -x "$APP.glibc242" ]; then
+	LD_LIBRARY_PATH="/opt/armsx2/lib:/opt/glibc-2.42/64/lib:/usr/lib/aarch64-linux-gnu:/lib/aarch64-linux-gnu" \
+		"$APP.glibc242" ${ROM:+"$ROM"} > "$LOG" 2>&1
 	RC=$?
 else
 	LD_LIBRARY_PATH="/opt/armsx2/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}" \
